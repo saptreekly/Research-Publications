@@ -3,7 +3,6 @@ mod components;
 use components::animated_background::AnimatedBackground;
 use leptos::*;
 use leptos_meta::*;
-use wasm_bindgen::JsCast;
 
 #[component]
 fn App() -> impl IntoView {
@@ -109,6 +108,5 @@ fn App() -> impl IntoView {
 
 fn main() {
     console_error_panic_hook::set_once();
-    let app = document().get_element_by_id("app").expect("should have #app");
-    mount_to(app.unchecked_into(), || view! { <App /> });
+    leptos::mount_to_body(|| view! { <App /> });
 }

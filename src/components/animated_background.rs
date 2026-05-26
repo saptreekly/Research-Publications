@@ -58,23 +58,22 @@ pub fn AnimatedBackground() -> impl IntoView {
                 let state_inner = Rc::clone(&state);
                 let f_inner = Rc::clone(&f);
                 
-                // Pre-allocate JsValues to avoid string allocation in the loop
-                let bg_color = JsValue::from_str("#0d1117");
+                // JET-BLACK Background
+                let bg_color = JsValue::from_str("#000000");
                 let dot_color = JsValue::from_str("#a855f7");
 
                 *g.borrow_mut() = Some(Closure::wrap(Box::new(move || {
                     let s = state_inner.borrow();
                     let time = perf.now();
 
-                    // 1. Clear Frame (Zero-allocation path)
                     ctx.set_fill_style(&bg_color);
                     ctx.fill_rect(0.0, 0.0, s.width, s.height);
 
-                    // 2. Set Constant Draw State
                     ctx.set_fill_style(&dot_color);
 
-                    const SPACING: f64 = 24.0;
-                    const DOT_SIZE: f64 = 1.2;
+                    // Refined Spacing for bigger impact
+                    const SPACING: f64 = 32.0; 
+                    const DOT_SIZE: f64 = 2.0; // BIGGER DOTS
                     
                     let mut x = 0.0;
                     while x < s.width {
@@ -85,10 +84,14 @@ pub fn AnimatedBackground() -> impl IntoView {
                             let dist_sq = dx * dx + dy * dy;
                             let dist = dist_sq.sqrt();
 
-                            let wave = ((dist * 0.04) - (time * 0.005)).sin();
+                            // Refined Wave Mechanics:
+                            // dist * 0.01 -> BIGGER RIPPLE (Lower spatial frequency)
+                            // time * 0.002 -> LESS FREQUENT (Slower temporal speed)
+                            let wave = ((dist * 0.01) - (time * 0.002)).sin();
                             let intensity = ((wave + 1.0) * 0.5).powf(3.0);
                             
-                            let warp = (wave * 8.0) * intensity;
+                            // BIGGER Warp for more physical deformation
+                            let warp = (wave * 12.0) * intensity;
                             let unit_x = if dist > 0.0 { dx / dist } else { 0.0 };
                             let unit_y = if dist > 0.0 { dy / dist } else { 0.0 };
                             
@@ -96,7 +99,7 @@ pub fn AnimatedBackground() -> impl IntoView {
                             let draw_y = y + (unit_y * warp);
                             
                             ctx.set_global_alpha(0.1 + (0.9 * intensity));
-                            let current_size = DOT_SIZE * (1.0 + intensity * 1.5);
+                            let current_size = DOT_SIZE * (1.0 + intensity * 2.0);
                             
                             ctx.fill_rect(
                                 draw_x - (current_size * 0.5), 
