@@ -48,7 +48,7 @@ pub fn AnimatedBackground() -> impl IntoView {
                 
                 let bg_color = JsValue::from_str("#000000");
                 let ring_color = JsValue::from_str("#a855f7");
-                let echo_bg = JsValue::from_str("rgba(0, 0, 0, 0.15)");
+                let echo_bg = JsValue::from_str("rgba(0, 0, 0, 0.4)"); // Increased from 0.15 to 0.4 to reduce trail strength
 
                 *g.borrow_mut() = Some(Closure::wrap(Box::new(move || {
                     let s = state_inner.borrow();
