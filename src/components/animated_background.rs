@@ -48,21 +48,20 @@ pub fn AnimatedBackground() -> impl IntoView {
                 
                 let bg_color = JsValue::from_str("#000000");
                 let ring_color = JsValue::from_str("#a855f7");
-                let echo_bg = JsValue::from_str("rgba(0, 0, 0, 0.8)"); // Increased from 0.4 to 0.8 to drastically reduce trail strength
 
                 *g.borrow_mut() = Some(Closure::wrap(Box::new(move || {
                     let s = state_inner.borrow();
                     let time = perf.now();
 
-                    // Echo effect: partial clear
-                    ctx.set_fill_style(&echo_bg);
+                    // Solid clear to ensure consistent animation performance
+                    ctx.set_fill_style(&bg_color);
                     ctx.fill_rect(0.0, 0.0, s.width, s.height);
 
                     ctx.set_stroke_style(&ring_color);
                     ctx.set_line_width(1.0);
 
-                    const SPACING: f64 = 40.0; // WIDER spacing
-                    const BASE_RADIUS: f64 = 3.0; // BIGGER rings
+                    const SPACING: f64 = 40.0;
+                    const BASE_RADIUS: f64 = 3.0;
                     
                     let origin_x = s.width / 2.0;
                     let origin_y = s.height / 2.0;
