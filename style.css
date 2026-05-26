@@ -1,118 +1,84 @@
 :root {
-    --bg-color: #000000;
-    --text-color: #c9d1d9;
-    --accent-color: #58a6ff;
-    --purple-tint: #a855f7;
-    --muted-text: #8b949e;
-    --border-color: rgba(240, 246, 252, 0.1);
-    --glass-bg: rgba(13, 17, 23, 0.45);
+    --text-color: #ffffff;
+    --purple: #a855f7;
+    --line-color: rgba(255, 255, 255, 0.08);
+    --border-color: rgba(168, 85, 247, 0.2);
 }
 
 body {
     font-family: 'Inter', sans-serif;
-    background-color: transparent;
+    background-color: #000000;
     color: var(--text-color);
     margin: 0;
-    padding: 0;
+    padding: 20px;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+}
+
+/* Screen Frame */
+body::before {
+    content: "";
+    position: fixed;
+    top: 20px; left: 20px; right: 20px; bottom: 20px;
+    border: 1px solid var(--border-color);
+    pointer-events: none;
+    box-shadow: inset 0 0 10px rgba(168, 85, 247, 0.05);
 }
 
 #app-container {
+    width: 100%;
+    max-width: 1000px;
     display: grid;
     grid-template-columns: 300px 1fr;
-    gap: 40px;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 40px;
-    min-height: 100vh;
+    gap: 60px;
+    padding: 60px;
 }
 
 @media (max-width: 850px) {
-    #app-container {
-        grid-template-columns: 1fr;
-    }
+    #app-container { grid-template-columns: 1fr; }
 }
 
-aside {
-    position: sticky;
-    top: 40px;
-    height: calc(100vh - 80px);
-}
-
-.frosted-panel {
-    background: rgba(13, 17, 23, 0.8);
-    backdrop-filter: blur(12px);
-    border: 1px solid var(--border-color);
-    border-radius: 8px;
-    padding: 24px;
-}
-
-header { border-bottom: none; padding: 0; }
-
-.title-line { 
-    font-family: 'IBM Plex Mono', monospace; 
-    font-size: 0.8rem; 
-    color: var(--purple-tint); 
-    margin-bottom: 10px;
-}
-
-h1 { font-size: 2rem; margin: 0 0 10px 0; }
-h2 { 
-    font-size: 1.2rem; 
+h1 { 
+    font-size: 4rem; 
+    line-height: 0.9;
+    letter-spacing: -0.05em;
+    margin: 0;
     text-transform: uppercase;
-    letter-spacing: 0.05em;
+}
+
+h2 { 
+    font-size: 0.8rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--purple);
     margin-bottom: 20px;
 }
 
-h2::before {
-    content: "// ";
-    color: var(--purple-tint);
+h2::before { content: "// "; }
+
+p, li {
+    font-size: 0.95rem;
+    color: rgba(255,255,255,0.7);
+    line-height: 1.5;
 }
 
-.social-links { margin-top: 20px; display: flex; gap: 10px; }
-.social-links a {
-    background: rgba(255,255,255,0.05);
-    padding: 10px;
-    border-radius: 4px;
-    transition: all 0.3s;
-}
-.social-links a:hover {
-    background: var(--purple-tint);
-    transform: translateY(-2px);
-}
-.social-links svg { width: 20px; height: 20px; fill: white; }
+.title-line { font-family: 'IBM Plex Mono', monospace; font-size: 0.7rem; color: var(--purple); margin-top: 10px; }
 
-.project-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
-@media (max-width: 600px) { .project-grid { grid-template-columns: 1fr; } }
+section { border-top: 1px solid var(--line-color); padding: 40px 0; }
 
-.project-card { 
-    background: var(--glass-bg);
-    border: 1px solid var(--border-color); 
-    padding: 20px; 
-    border-radius: 4px; 
-}
+.project-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; }
+
+.project-card h3 { font-size: 1rem; margin: 0 0 10px 0; }
+.project-card p { font-size: 0.8rem; }
 
 .tag { 
     font-family: 'IBM Plex Mono', monospace; 
-    font-size: 0.75rem; 
-    background: rgba(168, 85, 247, 0.1);
-    padding: 4px 8px; 
-    border: 1px solid var(--purple-tint);
-    border-radius: 3px; 
-    color: var(--purple-tint);
-    display: inline-block;
-    margin: 2px;
+    font-size: 0.7rem; 
+    color: var(--purple);
+    margin-right: 15px;
 }
 
-.certs { list-style: none; padding: 0; display: grid; gap: 10px; }
-.cert-item { 
-    background: var(--glass-bg);
-    border: 1px solid var(--border-color);
-    padding: 15px;
-    border-radius: 4px;
-}
-.cert-label {
-    font-family: 'IBM Plex Mono', monospace;
-    font-size: 0.7rem;
-    color: var(--purple-tint);
-    text-transform: uppercase;
-}
+.certs { list-style: none; padding: 0; }
+.cert-item { margin-bottom: 20px; }
+.cert-label { font-size: 0.6rem; color: var(--purple); text-transform: uppercase; letter-spacing: 0.1em; }
