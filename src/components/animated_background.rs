@@ -48,12 +48,14 @@ pub fn AnimatedBackground() -> impl IntoView {
                 
                 let bg_color = JsValue::from_str("#000000");
                 let ring_color = JsValue::from_str("#a855f7");
+                let echo_bg = JsValue::from_str("rgba(0, 0, 0, 0.15)");
 
                 *g.borrow_mut() = Some(Closure::wrap(Box::new(move || {
                     let s = state_inner.borrow();
                     let time = perf.now();
 
-                    ctx.set_fill_style(&bg_color);
+                    // Echo effect: partial clear
+                    ctx.set_fill_style(&echo_bg);
                     ctx.fill_rect(0.0, 0.0, s.width, s.height);
 
                     ctx.set_stroke_style(&ring_color);
