@@ -15,14 +15,14 @@ fn App() -> impl IntoView {
         <AnimatedBackground />
 
         <div id="app-container">
-            <aside>
+            <aside class="text-layer">
                 <h1>"JACK WEEKLY"</h1>
                 <div class="title-line">"CYBERSECURITY RESEARCHER"</div>
                 <div class="title-line">"THREAT INTEL · DFIR · MALWARE"</div>
                 <div class="location">"Wellington, New Zealand"</div>
             </aside>
 
-            <main>
+            <main class="text-layer">
                 <section id="about">
                     <h2>"About"</h2>
                     <p>"Most threat intelligence professionals come from either a policy background or a technical one. I work across both. My Master of Strategic Studies specialized in cyber warfare as an instrument of state power, which sits alongside hands-on experience in reverse engineering advanced malware, vulnerability assessment, and security architecture."</p>
