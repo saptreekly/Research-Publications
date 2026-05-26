@@ -54,6 +54,7 @@ pub fn AnimatedBackground() -> impl IntoView {
                     let time = perf.now();
 
                     // Solid clear to ensure consistent animation performance
+                    ctx.set_global_alpha(1.0);
                     ctx.set_fill_style(&bg_color);
                     ctx.fill_rect(0.0, 0.0, s.width, s.height);
 
