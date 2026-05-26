@@ -86,7 +86,7 @@ pub fn AnimatedBackground() -> impl IntoView {
                             let draw_x = x + (unit_x * warp);
                             let draw_y = y + (unit_y * warp);
                             
-                            ctx.set_global_alpha(0.2 + (0.8 * intensity));
+                            ctx.set_global_alpha(intensity);
                             let current_radius = BASE_RADIUS * (1.0 + intensity * 2.0);
                             
                             ctx.begin_path();
