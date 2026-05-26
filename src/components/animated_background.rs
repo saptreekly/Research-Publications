@@ -1,6 +1,7 @@
 use leptos::*;
 use std::cell::RefCell;
 use std::rc::Rc;
+use std::f64::consts::TAU;
 use wasm_bindgen::prelude::*;
 use web_sys::{CanvasRenderingContext2d, HtmlCanvasElement};
 
@@ -46,7 +47,7 @@ pub fn AnimatedBackground() -> impl IntoView {
                 let f_inner = Rc::clone(&f);
                 
                 let bg_color = JsValue::from_str("#000000");
-                let dot_color = JsValue::from_str("#a855f7");
+                let ring_color = JsValue::from_str("#a855f7");
 
                 *g.borrow_mut() = Some(Closure::wrap(Box::new(move || {
                     let s = state_inner.borrow();
@@ -55,12 +56,12 @@ pub fn AnimatedBackground() -> impl IntoView {
                     ctx.set_fill_style(&bg_color);
                     ctx.fill_rect(0.0, 0.0, s.width, s.height);
 
-                    ctx.set_fill_style(&dot_color);
+                    ctx.set_stroke_style(&ring_color);
+                    ctx.set_line_width(1.0);
 
-                    const SPACING: f64 = 32.0; 
-                    const DOT_SIZE: f64 = 2.0;
+                    const SPACING: f64 = 40.0; // WIDER spacing
+                    const BASE_RADIUS: f64 = 3.0; // BIGGER rings
                     
-                    // Locked origin at screen center
                     let origin_x = s.width / 2.0;
                     let origin_y = s.height / 2.0;
                     
@@ -73,26 +74,22 @@ pub fn AnimatedBackground() -> impl IntoView {
                             let dist_sq = dx * dx + dy * dy;
                             let dist = dist_sq.sqrt();
 
-                            // EVEN SLOWER: time * 0.0008
-                            let wave = ((dist * 0.01) - (time * 0.0008)).sin();
+                            let wave = ((dist * 0.008) - (time * 0.0006)).sin();
                             let intensity = ((wave + 1.0) * 0.5).powf(3.0);
                             
-                            let warp = (wave * 12.0) * intensity;
+                            let warp = (wave * 15.0) * intensity;
                             let unit_x = if dist > 0.0 { dx / dist } else { 0.0 };
                             let unit_y = if dist > 0.0 { dy / dist } else { 0.0 };
                             
                             let draw_x = x + (unit_x * warp);
                             let draw_y = y + (unit_y * warp);
                             
-                            ctx.set_global_alpha(0.1 + (0.9 * intensity));
-                            let current_size = DOT_SIZE * (1.0 + intensity * 2.0);
+                            ctx.set_global_alpha(0.2 + (0.8 * intensity));
+                            let current_radius = BASE_RADIUS * (1.0 + intensity * 2.0);
                             
-                            ctx.fill_rect(
-                                draw_x - (current_size * 0.5), 
-                                draw_y - (current_size * 0.5), 
-                                current_size, 
-                                current_size
-                            );
+                            ctx.begin_path();
+                            let _ = ctx.arc(draw_x, draw_y, current_radius, 0.0, TAU);
+                            ctx.stroke();
 
                             y += SPACING;
                         }
