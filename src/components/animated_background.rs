@@ -9,8 +9,6 @@ pub fn AnimatedBackground() -> impl IntoView {
     let canvas_ref = create_node_ref::<html::Canvas>();
 
     let state = Rc::new(RefCell::new(AppState {
-        mouse_x: 0.0,
-        mouse_y: 0.0,
         width: 0.0,
         height: 0.0,
     }));
@@ -34,17 +32,6 @@ pub fn AnimatedBackground() -> impl IntoView {
                 win.add_event_listener_with_callback("resize", handle_resize.as_ref().unchecked_ref())
                     .unwrap();
 
-                let handle_mousemove = {
-                    let state = Rc::clone(&state);
-                    Closure::wrap(Box::new(move |e: web_sys::MouseEvent| {
-                        let mut s = state.borrow_mut();
-                        s.mouse_x = e.client_x() as f64;
-                        s.mouse_y = e.client_y() as f64;
-                    }) as Box<dyn FnMut(_)>)
-                };
-                win.add_event_listener_with_callback("mousemove", handle_mousemove.as_ref().unchecked_ref())
-                    .unwrap();
-
                 let ctx = canvas
                     .get_context("2d")
                     .unwrap()
@@ -58,7 +45,6 @@ pub fn AnimatedBackground() -> impl IntoView {
                 let state_inner = Rc::clone(&state);
                 let f_inner = Rc::clone(&f);
                 
-                // JET-BLACK Background
                 let bg_color = JsValue::from_str("#000000");
                 let dot_color = JsValue::from_str("#a855f7");
 
@@ -71,26 +57,26 @@ pub fn AnimatedBackground() -> impl IntoView {
 
                     ctx.set_fill_style(&dot_color);
 
-                    // Refined Spacing for bigger impact
                     const SPACING: f64 = 32.0; 
-                    const DOT_SIZE: f64 = 2.0; // BIGGER DOTS
+                    const DOT_SIZE: f64 = 2.0;
+                    
+                    // Locked origin at screen center
+                    let origin_x = s.width / 2.0;
+                    let origin_y = s.height / 2.0;
                     
                     let mut x = 0.0;
                     while x < s.width {
                         let mut y = 0.0;
                         while y < s.height {
-                            let dx = x - s.mouse_x;
-                            let dy = y - s.mouse_y;
+                            let dx = x - origin_x;
+                            let dy = y - origin_y;
                             let dist_sq = dx * dx + dy * dy;
                             let dist = dist_sq.sqrt();
 
-                            // Refined Wave Mechanics:
-                            // dist * 0.01 -> BIGGER RIPPLE (Lower spatial frequency)
-                            // time * 0.002 -> LESS FREQUENT (Slower temporal speed)
-                            let wave = ((dist * 0.01) - (time * 0.002)).sin();
+                            // EVEN SLOWER: time * 0.0008
+                            let wave = ((dist * 0.01) - (time * 0.0008)).sin();
                             let intensity = ((wave + 1.0) * 0.5).powf(3.0);
                             
-                            // BIGGER Warp for more physical deformation
                             let warp = (wave * 12.0) * intensity;
                             let unit_x = if dist > 0.0 { dx / dist } else { 0.0 };
                             let unit_y = if dist > 0.0 { dy / dist } else { 0.0 };
@@ -121,7 +107,6 @@ pub fn AnimatedBackground() -> impl IntoView {
                 let f_cleanup = Rc::clone(&f);
                 on_cleanup(move || {
                     drop(handle_resize);
-                    drop(handle_mousemove);
                     let _ = f_cleanup.borrow_mut().take();
                 });
             }
@@ -137,8 +122,6 @@ pub fn AnimatedBackground() -> impl IntoView {
 }
 
 struct AppState {
-    mouse_x: f64,
-    mouse_y: f64,
     width: f64,
     height: f64,
 }
@@ -153,11 +136,6 @@ fn update_dimensions(canvas: &HtmlCanvasElement, state: &mut AppState) {
     
     state.width = w;
     state.height = h;
-    
-    if state.mouse_x == 0.0 && state.mouse_y == 0.0 {
-        state.mouse_x = w / 2.0;
-        state.mouse_y = h / 2.0;
-    }
 }
 
 fn request_animation_frame(f: &Closure<dyn FnMut()>) {
