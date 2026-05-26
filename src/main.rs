@@ -1,3 +1,6 @@
+mod components;
+
+use components::animated_background::AnimatedBackground;
 use leptos::*;
 use leptos_meta::*;
 
@@ -8,6 +11,8 @@ fn App() -> impl IntoView {
     view! {
         <Title text="Jack Weekly | Cybersecurity Researcher" />
         <Link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=IBM+Plex+Mono:wght@400&display=swap" rel="stylesheet" />
+
+        <AnimatedBackground />
 
         <header>
             <h1>"Jack Weekly"</h1>
