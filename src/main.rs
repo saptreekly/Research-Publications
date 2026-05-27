@@ -18,12 +18,14 @@ fn App() -> impl IntoView {
         <Title text="JACK WEEKLY | CYBERSECURITY" />
         <Link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;700&family=IBM+Plex+Mono:wght@400&display=swap" rel="stylesheet" />
 
-        <Router base="/Research-Publications" trailing_slash=TrailingSlash::Exact>
-            <Routes base="/Research-Publications".to_string()>
-                <Route path="/" view=RootLayout>
-                    <Route path="" view=HomePage />
-                    <Route path="curriculum" view=CurriculumPage />
-                </Route>
+        <Router base="/Research-Publications" trailing_slash=TrailingSlash::Redirect>
+            <Routes>
+                <Route path="/Research-Publications/" view=move || view! {
+                    <RootLayout><HomePage /></RootLayout>
+                } />
+                <Route path="/Research-Publications/curriculum" view=move || view! {
+                    <RootLayout><CurriculumPage /></RootLayout>
+                } />
             </Routes>
         </Router>
     }
