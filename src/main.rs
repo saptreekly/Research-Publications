@@ -20,12 +20,13 @@ fn App() -> impl IntoView {
                     <h1>"JACK WEEKLY"</h1>
                     <div class="row-tag">"CYBERSECURITY RESEARCHER"</div>
                     <div class="stack-matrix">
+                        <div class="stack-tag">"GO"</div>
                         <div class="stack-tag">"RUST"</div>
-                        <div class="stack-tag">"ZIG"</div>
+                        <div class="stack-tag">"JULIA"</div>
                         <div class="stack-tag">"ELIXIR"</div>
-                        <div class="stack-tag">"WASM"</div>
-                        <div class="stack-tag">"H3-INDEX"</div>
-                        <div class="stack-tag">"X86_64"</div>
+                        <div class="stack-tag">"ASSEMBLY"</div>
+                        <div class="stack-tag">"ZIG"</div>
+                        <div class="stack-tag">"ODIN"</div>
                     </div>
                     <div class="social-links">
                         <a href="https://x.com/weeklyjack1" class="social-link">
