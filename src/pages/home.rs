@@ -1,7 +1,12 @@
 use leptos::*;
 use leptos_router::*;
 use crate::components::stack_matrix::StackMatrix;
-use crate::utils::{curriculum_href, report_href};
+use crate::projects::find_by_slug;
+use crate::utils::{curriculum_href, project_href, report_href};
+
+fn project_tag(slug: &str) -> &'static str {
+    find_by_slug(slug).expect("registered project").tag
+}
 
 #[component]
 pub fn HomePage() -> impl IntoView {
@@ -76,26 +81,42 @@ pub fn HomePage() -> impl IntoView {
                     </p>
                 </div>
                 <div class="home-card-grid">
-                    <article class="home-card">
+                    <A href=project_href("hlidskjalf") class="home-card home-card-link">
                         <div class="home-card-meta">
-                            <span class="home-tag">"Rust · Zig"</span>
+                            <span class="home-tag">{project_tag("hlidskjalf")}</span>
                             <time class="home-date" datetime="2026-04">"Apr 2026"</time>
                         </div>
                         <h3 class="home-card-title">"Project Hliðskjálf"</h3>
                         <p class="home-card-body">
-                            "Bare-metal Type-1.5 hypervisor research focused on isolation, trusted execution boundaries, and low-level systems security."
+                            "Bare-metal Type-1.5 hypervisor that virtualizes a live x86_64 host at Ring -1 for EPT-backed isolation, "
+                            "kernel write-protection, and anti-evasion monitoring on legacy Windows systems."
                         </p>
-                    </article>
-                    <article class="home-card">
+                        <span class="home-card-cta">"VIEW PROJECT →"</span>
+                    </A>
+                    <A href=project_href("siem-ensemble") class="home-card home-card-link">
                         <div class="home-card-meta">
-                            <span class="home-tag">"Rust · Elixir"</span>
+                            <span class="home-tag">{project_tag("siem-ensemble")}</span>
                             <time class="home-date" datetime="2026-04">"Apr 2026"</time>
                         </div>
                         <h3 class="home-card-title">"SIEM Ensemble"</h3>
                         <p class="home-card-body">
-                            "High-throughput log analytics for detection workflows: ingestion, enrichment, correlation, and query performance."
+                            "Polyglot log pipeline with Rust ingestion, Zig shared-memory forwarding, Odin analytics, "
+                            "and Elixir supervision for high-throughput detection workflows."
                         </p>
-                    </article>
+                        <span class="home-card-cta">"VIEW PROJECT →"</span>
+                    </A>
+                    <A href=project_href("geospatial-intel") class="home-card home-card-link">
+                        <div class="home-card-meta">
+                            <span class="home-tag">{project_tag("geospatial-intel")}</span>
+                            <time class="home-date" datetime="2026-04">"Apr 2026"</time>
+                        </div>
+                        <h3 class="home-card-title">"Geospatial Intel Server"</h3>
+                        <p class="home-card-body">
+                            "WebSocket streaming server for OpenSky aircraft data with a Go backend, Rust spatial engine, "
+                            "and Wasm frontend. Viewport filtering, H3 hex clustering, and delta updates for geospatial monitoring."
+                        </p>
+                        <span class="home-card-cta">"VIEW PROJECT →"</span>
+                    </A>
                 </div>
             </section>
 

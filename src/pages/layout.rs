@@ -39,7 +39,8 @@ pub fn RootLayout(children: Children) -> impl IntoView {
                     class="site-sidebar-panel"
                     class:site-sidebar-panel-open=move || mobile_nav_open.get()
                 >
-                    <div class="site-sidebar-top">
+                    <div class="site-sidebar-panel-inner">
+                        <div class="site-sidebar-top">
                         <nav class="site-nav" aria-label="Primary">
                             <div class="site-nav-label">"NAVIGATION"</div>
                             <ul class="site-nav-list">
@@ -88,6 +89,7 @@ pub fn RootLayout(children: Children) -> impl IntoView {
                         <div class="site-meta">
                             <div class="row-date">"WELLINGTON, NZ · DUAL US & NZ CITIZEN"</div>
                         </div>
+                    </div>
                     </div>
                 </div>
             </aside>
