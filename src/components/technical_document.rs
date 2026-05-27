@@ -1,6 +1,6 @@
 use leptos::*;
-use comrak::{markdown_to_html, Options};
-use crate::utils::{is_html_content, resolve_asset_url};
+use crate::components::markdown_content::MarkdownContent;
+use crate::utils::{is_html_content, markdown::markdown_to_rendered_html, resolve_asset_url};
 
 #[component]
 pub fn TechnicalDocument(src: &'static str) -> impl IntoView {
@@ -24,17 +24,15 @@ pub fn TechnicalDocument(src: &'static str) -> impl IntoView {
             return Err("Document source returned HTML instead of markdown.".to_string());
         }
 
-        Ok(text)
+        Ok(markdown_to_rendered_html(&text))
     });
 
     view! {
         <Suspense fallback=move || view! { <p>"Loading module..."</p> }>
             {move || content.get().map(|result| match result {
-                Ok(md) => {
-                    let options = Options::default();
-                    let html = markdown_to_html(&md, &options);
-                    view! { <div class="markdown-content" inner_html=html /> }.into_view()
-                }
+                Ok(html) => view! {
+                    <MarkdownContent html=html />
+                }.into_view(),
                 Err(message) => view! {
                     <p class="doc-error">{message.clone()}</p>
                 }.into_view(),

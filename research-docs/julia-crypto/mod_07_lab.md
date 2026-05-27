@@ -1,0 +1,49 @@
+::: brief id=objectives title=Learning Objectives
+> **LEARNING OBJECTIVES**
+> * Compute $\phi(n) = (p-1)(q-1)$ for RSA.
+> * Choose public exponent $e$ coprime to $\phi(n)$.
+> * Derive private exponent $d \equiv e^{-1} \pmod{\phi(n)}$.
+:::
+
+::: brief id=theory title=Theory: RSA Key Generation
+Choose distinct primes $p, q$. Set $n = pq$ and $\phi(n) = (p-1)(q-1)$. Pick $e$ with $\gcd(e, \phi(n)) = 1$. Compute $d = e^{-1} \pmod{\phi(n)}$.
+
+Public key: $(e, n)$. Private key: $(d, n)$.
+:::
+
+::: probe id=params
+p: 61, min=11, max=97
+q: 53, min=11, max=97
+e: 7, min=3, max=20
+:::
+
+::: blueprint id=rsa_keygen lang=julia
+```julia
+using Primes
+
+p, q = 61, 53
+n = p * q
+phi_n = (p - 1) * (q - 1)
+e = 7
+d = invmod(e, phi_n)
+
+println("n = $n")
+println("phi(n) = $phi_n")
+println("d = $d")
+println((e * d) % phi_n)  # should be 1
+```
+:::
+
+::: verify id=exercise_07
+- rsa_phi(61, 53) == 3120
+- rsa_ed_check(7, 1783, 3120) == 1
+- rsa_phi(p, q) == 3120
+- rsa_ed_check(e, 1783, 3120) == 1
+:::
+
+::: brief id=exercise title=Exercise 07
+> **EXERCISE 07**
+> * Walk through key generation with the classic $p=61, q=53$ example.
+> * Verify $ed \equiv 1 \pmod{\phi(n)}$.
+> * See Module 08 for encryption with these keys.
+:::

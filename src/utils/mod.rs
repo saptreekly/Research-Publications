@@ -30,3 +30,27 @@ pub fn is_html_content(content: &str) -> bool {
         || trimmed.contains("TrunkApplicationStarted")
         || trimmed.contains("Build failure")
 }
+
+pub mod markdown;
+
+pub const APP_BASE: &str = "/Research-Publications";
+
+pub fn home_href() -> String {
+    format!("{APP_BASE}/")
+}
+
+pub fn curriculum_href() -> String {
+    format!("{APP_BASE}/curriculum")
+}
+
+pub fn module_href(slug: &str) -> String {
+    format!("{APP_BASE}/curriculum/{slug}")
+}
+
+pub fn lab_href(slug: &str) -> String {
+    format!("{APP_BASE}/curriculum/lab/{slug}")
+}
+
+pub fn report_href(slug: &str) -> String {
+    format!("{APP_BASE}/research/{slug}")
+}

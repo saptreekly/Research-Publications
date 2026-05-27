@@ -39,6 +39,7 @@ pub fn AnimatedBackground() -> impl IntoView {
         update_dimensions(&canvas, &ctx, &mut state.borrow_mut());
 
         let running = Rc::new(Cell::new(true));
+        let animating = Rc::new(Cell::new(true));
         let frame_id = Rc::new(Cell::new(0i32));
 
         let resize_listener = Rc::new(RefCell::new(None::<Closure<dyn FnMut(web_sys::Event)>>));
@@ -65,11 +66,36 @@ pub fn AnimatedBackground() -> impl IntoView {
             .expect("resize listener should register");
         }
 
+        let visibility_listener = Rc::new(RefCell::new(None::<Closure<dyn FnMut(web_sys::Event)>>));
+        {
+            let animating = Rc::clone(&animating);
+            let visibility_listener = Rc::clone(&visibility_listener);
+            *visibility_listener.borrow_mut() = Some(Closure::wrap(Box::new(
+                move |_e: web_sys::Event| {
+                    let visible = !document().hidden();
+                    animating.set(visible);
+                },
+            ) as Box<dyn FnMut(_)>));
+
+            let listener = visibility_listener.borrow();
+            document()
+                .add_event_listener_with_callback(
+                    "visibilitychange",
+                    listener
+                        .as_ref()
+                        .expect("visibility listener")
+                        .as_ref()
+                        .unchecked_ref(),
+                )
+                .expect("visibility listener should register");
+        }
+
         let frame_closure = Rc::new(RefCell::new(None::<Closure<dyn FnMut()>>));
         {
             let state_inner = Rc::clone(&state);
             let frame_loop = Rc::clone(&frame_closure);
             let running_cb = Rc::clone(&running);
+            let animating_cb = Rc::clone(&animating);
             let frame_id_cb = Rc::clone(&frame_id);
             let ctx = ctx.clone();
             let bg_color = JsValue::from_str("#000000");
@@ -80,54 +106,56 @@ pub fn AnimatedBackground() -> impl IntoView {
                     return;
                 }
 
-                let s = state_inner.borrow();
-                let time = perf.now();
+                if animating_cb.get() {
+                    let s = state_inner.borrow();
+                    let time = perf.now();
 
-                ctx.set_global_alpha(1.0);
-                ctx.set_fill_style(&bg_color);
-                ctx.fill_rect(0.0, 0.0, s.width, s.height);
+                    ctx.set_global_alpha(1.0);
+                    ctx.set_fill_style(&bg_color);
+                    ctx.fill_rect(0.0, 0.0, s.width, s.height);
 
-                ctx.set_stroke_style(&ring_color);
-                ctx.set_line_width(1.0);
+                    ctx.set_stroke_style(&ring_color);
+                    ctx.set_line_width(1.0);
 
-                const SPACING: f64 = 50.0;
-                const BASE_RADIUS: f64 = 3.0;
+                    const SPACING: f64 = 64.0;
+                    const BASE_RADIUS: f64 = 3.0;
 
-                let origin_x = s.width / 2.0;
-                let origin_y = s.height / 2.0;
+                    let origin_x = s.width / 2.0;
+                    let origin_y = s.height / 2.0;
 
-                let mut x = 0.0;
-                while x < s.width {
-                    let mut y = 0.0;
-                    while y < s.height {
-                        let dx = x - origin_x;
-                        let dy = y - origin_y;
-                        let dist_sq = dx * dx + dy * dy;
-                        let dist = dist_sq.sqrt();
+                    let mut x = 0.0;
+                    while x < s.width {
+                        let mut y = 0.0;
+                        while y < s.height {
+                            let dx = x - origin_x;
+                            let dy = y - origin_y;
+                            let dist_sq = dx * dx + dy * dy;
+                            let dist = dist_sq.sqrt();
 
-                        let wave = ((dist * 0.01) - (time * 0.0006)).sin();
-                        let intensity = ((wave + 1.0) * 0.5).powf(3.0);
+                            let wave = ((dist * 0.01) - (time * 0.0006)).sin();
+                            let intensity = ((wave + 1.0) * 0.5).powf(3.0);
 
-                        let warp = (wave * 15.0) * intensity;
-                        let unit_x = if dist > 0.0 { dx / dist } else { 0.0 };
-                        let unit_y = if dist > 0.0 { dy / dist } else { 0.0 };
+                            let warp = (wave * 15.0) * intensity;
+                            let unit_x = if dist > 0.0 { dx / dist } else { 0.0 };
+                            let unit_y = if dist > 0.0 { dy / dist } else { 0.0 };
 
-                        let draw_x = x + (unit_x * warp);
-                        let draw_y = y + (unit_y * warp);
+                            let draw_x = x + (unit_x * warp);
+                            let draw_y = y + (unit_y * warp);
 
-                        ctx.set_global_alpha(intensity);
-                        let current_radius = BASE_RADIUS * (1.0 + intensity * 2.0);
+                            ctx.set_global_alpha(intensity);
+                            let current_radius = BASE_RADIUS * (1.0 + intensity * 2.0);
 
-                        ctx.begin_path();
-                        let _ = ctx.arc(draw_x, draw_y, current_radius, 0.0, TAU);
-                        ctx.stroke();
+                            ctx.begin_path();
+                            let _ = ctx.arc(draw_x, draw_y, current_radius, 0.0, TAU);
+                            ctx.stroke();
 
-                        y += SPACING;
+                            y += SPACING;
+                        }
+                        x += SPACING;
                     }
-                    x += SPACING;
-                }
 
-                drop(s);
+                    drop(s);
+                }
 
                 if running_cb.get() {
                     if let Some(next) = frame_loop.borrow().as_ref() {
@@ -150,6 +178,7 @@ pub fn AnimatedBackground() -> impl IntoView {
 
         on_cleanup({
             let resize_listener = Rc::clone(&resize_listener);
+            let visibility_listener = Rc::clone(&visibility_listener);
             let frame_closure = Rc::clone(&frame_closure);
             let running = Rc::clone(&running);
             let frame_id = Rc::clone(&frame_id);
@@ -167,7 +196,14 @@ pub fn AnimatedBackground() -> impl IntoView {
                         listener.as_ref().unchecked_ref(),
                     );
                 }
+                if let Some(listener) = visibility_listener.borrow().as_ref() {
+                    let _ = document().remove_event_listener_with_callback(
+                        "visibilitychange",
+                        listener.as_ref().unchecked_ref(),
+                    );
+                }
                 *resize_listener.borrow_mut() = None;
+                *visibility_listener.borrow_mut() = None;
                 *frame_closure.borrow_mut() = None;
             }
         });
