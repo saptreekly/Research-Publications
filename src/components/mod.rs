@@ -1,3 +1,4 @@
+pub mod seo_head;
 pub mod animated_background;
 pub mod contact_form;
 pub mod markdown_content;
