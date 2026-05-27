@@ -387,3 +387,313 @@ aside .row-tag {
     background: var(--purple-subtle);
     margin: 0;
 }
+
+/* Lab workspace */
+#lab-nav {
+    margin-bottom: 24px;
+}
+
+.lab-workspace {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.lab-workspace-intro {
+    margin-top: -24px;
+}
+
+.lab-workspace-body {
+    display: grid;
+    grid-template-columns: 1fr 280px;
+    gap: 20px;
+    align-items: start;
+}
+
+.lab-workspace-main {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    min-width: 0;
+}
+
+.lab-stream {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.lab-block {
+    padding: 20px;
+    border: 1px solid var(--line-color);
+    background: var(--bg-subtle);
+    transition: border-color 0.3s, background 0.3s;
+    cursor: pointer;
+}
+
+.lab-block:hover {
+    border-color: rgba(168, 85, 247, 0.5);
+}
+
+.lab-block-selected {
+    border-color: var(--purple);
+    background: var(--purple-subtle);
+}
+
+.lab-block-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-bottom: 12px;
+}
+
+.lab-block-title {
+    margin-bottom: 12px;
+}
+
+.lab-block-body {
+    margin-top: 4px;
+}
+
+.lab-code-editor {
+    width: 100%;
+    box-sizing: border-box;
+    font-family: var(--mono);
+    font-size: 0.75rem;
+    line-height: 1.6;
+    color: var(--text-color);
+    background: rgba(0, 0, 0, 0.4);
+    border: 1px solid var(--line-color);
+    padding: 16px;
+    resize: vertical;
+    min-height: 200px;
+}
+
+.lab-code-editor:focus {
+    outline: none;
+    border-color: var(--purple);
+}
+
+.lab-output {
+    margin-top: 16px;
+    border-top: 1px solid var(--line-color);
+    padding-top: 16px;
+}
+
+.lab-output-meta {
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-bottom: 12px;
+}
+
+.lab-output-stdout,
+.lab-output-error {
+    font-family: var(--mono);
+    font-size: 0.7rem;
+    line-height: 1.6;
+    margin: 0;
+    padding: 12px;
+    border: 1px solid var(--line-color);
+    background: rgba(0, 0, 0, 0.35);
+    overflow-x: auto;
+    white-space: pre-wrap;
+}
+
+.lab-output-error {
+    color: #f87171;
+    border-color: rgba(248, 113, 113, 0.4);
+}
+
+.lab-inspector {
+    border: 1px solid var(--line-color);
+    background: var(--bg-subtle);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    position: sticky;
+    top: 20px;
+}
+
+.lab-inspector-heading {
+    margin-bottom: 0;
+    padding-top: 0;
+    border-top: none;
+}
+
+.lab-inspector-section {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.lab-inspector-meta {
+    display: block;
+}
+
+.lab-inspector-var {
+    display: flex;
+    justify-content: space-between;
+    gap: 8px;
+    padding: 8px 0;
+    border-bottom: 1px solid var(--line-color);
+}
+
+.lab-inspector-var:last-child {
+    border-bottom: none;
+}
+
+.lab-command-bar {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+    padding: 16px;
+    border: 1px solid var(--line-color);
+    background: var(--bg-subtle);
+}
+
+.lab-command-btn {
+    font-family: var(--mono);
+    font-size: 0.75rem;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: var(--text-color);
+    background: transparent;
+    border: 1px solid var(--line-color);
+    padding: 10px 16px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.lab-command-btn:hover:not(:disabled) {
+    border-color: var(--purple);
+    background: var(--purple-subtle);
+}
+
+.lab-command-btn:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+}
+
+.lab-command-btn-secondary {
+    color: var(--text-muted);
+}
+
+.lab-command-hint {
+    font-family: var(--mono);
+    font-size: 0.6rem;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-left: auto;
+}
+
+.lab-loading {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    padding: 20px;
+    border: 1px solid var(--line-color);
+    background: var(--bg-subtle);
+}
+
+@media (max-width: 950px) {
+    .lab-workspace-body {
+        grid-template-columns: 1fr;
+    }
+
+    .lab-inspector {
+        position: static;
+    }
+
+    .lab-command-hint {
+        margin-left: 0;
+        width: 100%;
+    }
+}
+
+/* Probe blocks */
+.lab-probe-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.lab-probe-control {
+    padding: 16px;
+    border: 1px solid var(--line-color);
+    background: rgba(0, 0, 0, 0.25);
+}
+
+.lab-probe-control-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+}
+
+.lab-probe-slider {
+    width: 100%;
+    accent-color: var(--purple);
+    cursor: pointer;
+}
+
+.lab-probe-range {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 8px;
+}
+
+/* Verify blocks */
+.lab-verify-hint {
+    display: block;
+    margin-top: 4px;
+}
+
+.lab-verify-results {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.lab-verify-row {
+    padding: 14px;
+    border: 1px solid var(--line-color);
+    background: rgba(0, 0, 0, 0.25);
+}
+
+.lab-verify-pass {
+    border-color: rgba(168, 85, 247, 0.5);
+}
+
+.lab-verify-fail {
+    border-color: rgba(248, 113, 113, 0.5);
+    background: rgba(248, 113, 113, 0.05);
+}
+
+.lab-verify-row-header {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-bottom: 8px;
+}
+
+.lab-verify-expression {
+    text-transform: none;
+    letter-spacing: 0.02em;
+}
+
+.lab-verify-row-detail {
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+

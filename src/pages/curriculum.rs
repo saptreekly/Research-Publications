@@ -1,4 +1,5 @@
 use leptos::*;
+use leptos_router::*;
 use crate::components::technical_document::TechnicalDocument;
 
 #[component]
@@ -20,6 +21,8 @@ pub fn CurriculumPage() -> impl IntoView {
 
         <section id="curriculum">
             <h2>"05 / JULIA CRYPTOGRAPHY"</h2>
+            <p class="section-intro">"Module 01 — modular foundations. Open the interactive lab to run Julia code in the browser."</p>
+            <A href="curriculum/lab/mod-01" class="social-link cta-link">"OPEN INTERACTIVE LAB"</A>
             <TechnicalDocument src="research-docs/julia-crypto/mod_01.md" />
         </section>
     }

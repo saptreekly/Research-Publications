@@ -1,6 +1,5 @@
 use leptos::*;
 use leptos_router::*;
-use crate::components::animated_background::AnimatedBackground;
 use crate::utils::resolve_asset_url;
 use serde::{Deserialize, Serialize};
 
@@ -51,8 +50,6 @@ fn StackMatrix() -> impl IntoView {
 #[component]
 pub fn RootLayout(children: Children) -> impl IntoView {
     view! {
-        <AnimatedBackground />
-
         <div id="app-container">
             <aside>
                 <div>

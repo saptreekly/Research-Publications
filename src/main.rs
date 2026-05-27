@@ -1,13 +1,16 @@
 mod components;
+mod lab;
 mod pages;
 mod utils;
 
 use leptos::*;
 use leptos_meta::*;
 use leptos_router::*;
+use crate::components::animated_background::AnimatedBackground;
 use pages::layout::RootLayout;
 use pages::home::HomePage;
 use pages::curriculum::CurriculumPage;
+use pages::lab::LabPage;
 use web_sys::console;
 
 #[component]
@@ -19,6 +22,8 @@ fn App() -> impl IntoView {
         <Title text="JACK WEEKLY | CYBERSECURITY" />
         <Link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;700&family=IBM+Plex+Mono:wght@400&display=swap" rel="stylesheet" />
 
+        <AnimatedBackground />
+
         <Router base="/Research-Publications" trailing_slash=TrailingSlash::Redirect>
             <Routes>
                 <Route path="/Research-Publications/" view=move || view! {
@@ -26,6 +31,9 @@ fn App() -> impl IntoView {
                 } />
                 <Route path="/Research-Publications/curriculum" view=move || view! {
                     <RootLayout><CurriculumPage /></RootLayout>
+                } />
+                <Route path="/Research-Publications/curriculum/lab/mod-01" view=move || view! {
+                    <RootLayout><LabPage /></RootLayout>
                 } />
             </Routes>
         </Router>
