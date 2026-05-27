@@ -1,6 +1,7 @@
 use leptos::*;
 use leptos_router::*;
 use crate::components::stack_matrix::StackMatrix;
+use crate::components::contact_form::ContactForm;
 use crate::utils::{curriculum_href, report_href};
 
 #[component]
@@ -83,6 +84,34 @@ pub fn HomePage() -> impl IntoView {
                         </p>
                     </article>
                 </div>
+            </section>
+
+            <section class="home-section" id="education" aria-labelledby="education-heading">
+                <div class="home-section-header">
+                    <p class="home-section-kicker">"Academic background"</p>
+                    <h2 id="education-heading" class="home-section-title">"Education"</h2>
+                    <p class="home-section-desc">
+                        "Formal training in strategy and international business, alongside the technical security work in this portfolio."
+                    </p>
+                </div>
+                <ul class="home-cred-list">
+                    <li>
+                        <div class="home-cred">
+                            <span class="home-cred-type">"Graduate degree"</span>
+                            <span class="home-cred-provider">"Victoria University of Wellington"</span>
+                            <span class="home-cred-name">"Master of Strategic Studies"</span>
+                            <span class="home-cred-detail">"Awarded with Merit"</span>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="home-cred">
+                            <span class="home-cred-type">"Undergraduate degree"</span>
+                            <span class="home-cred-provider">"University of Auckland"</span>
+                            <span class="home-cred-name">"Bachelor of Commerce (BCom)"</span>
+                            <span class="home-cred-detail">"Double major: International Business · Innovation & Entrepreneurship"</span>
+                        </div>
+                    </li>
+                </ul>
             </section>
 
             <section class="home-section" id="credentials" aria-labelledby="credentials-heading">
@@ -168,6 +197,17 @@ pub fn HomePage() -> impl IntoView {
                     </p>
                 </div>
                 <A href=curriculum_href() class="home-cta">"Browse curriculum & labs"</A>
+            </section>
+
+            <section class="home-section" id="contact" aria-labelledby="contact-heading">
+                <div class="home-section-header">
+                    <p class="home-section-kicker">"Get in touch"</p>
+                    <h2 id="contact-heading" class="home-section-title">"Contact"</h2>
+                    <p class="home-section-desc">
+                        "Research collaboration, hiring conversations, or questions about the work on this site."
+                    </p>
+                </div>
+                <ContactForm />
             </section>
 
             <section class="home-section home-section-muted" id="stack" aria-labelledby="stack-heading">
