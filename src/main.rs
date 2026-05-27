@@ -10,6 +10,8 @@ use pages::curriculum::CurriculumPage;
 
 #[component]
 fn App() -> impl IntoView {
+    provide_meta_context();
+
     view! {
         <Title text="JACK WEEKLY | CYBERSECURITY" />
         <Link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;700&family=IBM+Plex+Mono:wght@400&display=swap" rel="stylesheet" />
