@@ -18,26 +18,27 @@ pub fn AnimatedBackground() -> impl IntoView {
         let state = Rc::clone(&state);
         move |_| {
             if let Some(canvas) = canvas_ref.get() {
-                let win = window();
-                let perf = win.performance().expect("performance required");
-                
-                update_dimensions(&canvas, &mut state.borrow_mut());
-
-                let handle_resize = {
-                    let state = Rc::clone(&state);
-                    let canvas = canvas.clone();
-                    Closure::wrap(Box::new(move |_e: web_sys::Event| {
-                        update_dimensions(&canvas, &mut state.borrow_mut());
-                    }) as Box<dyn FnMut(_)>)
-                };
-                win.add_event_listener_with_callback("resize", handle_resize.as_ref().unchecked_ref())
-                    .unwrap();
-
                 let ctx = canvas
                     .get_context("2d")
                     .unwrap()
                     .unwrap()
                     .dyn_into::<CanvasRenderingContext2d>()
+                    .unwrap();
+
+                let win = window();
+                let perf = win.performance().expect("performance required");
+                
+                update_dimensions(&canvas, &ctx, &mut state.borrow_mut());
+
+                let handle_resize = {
+                    let state = Rc::clone(&state);
+                    let canvas = canvas.clone();
+                    let ctx = ctx.clone();
+                    Closure::wrap(Box::new(move |_e: web_sys::Event| {
+                        update_dimensions(&canvas, &ctx, &mut state.borrow_mut());
+                    }) as Box<dyn FnMut(_)>)
+                };
+                win.add_event_listener_with_callback("resize", handle_resize.as_ref().unchecked_ref())
                     .unwrap();
 
                 let f = Rc::new(RefCell::new(None));
@@ -53,7 +54,7 @@ pub fn AnimatedBackground() -> impl IntoView {
                     let s = state_inner.borrow();
                     let time = perf.now();
 
-                    // Solid clear to ensure consistent animation performance
+                    // Solid clear
                     ctx.set_global_alpha(1.0);
                     ctx.set_fill_style(&bg_color);
                     ctx.fill_rect(0.0, 0.0, s.width, s.height);
@@ -61,10 +62,9 @@ pub fn AnimatedBackground() -> impl IntoView {
                     ctx.set_stroke_style(&ring_color);
                     ctx.set_line_width(1.0);
 
-                    // Responsive scaling: Wider spacing and smaller rings on small screens
-                    let is_mobile = s.width < 600.0;
-                    let spacing = if is_mobile { 60.0 } else { 40.0 };
-                    let base_radius = if is_mobile { 1.5 } else { 3.0 };
+                    // Unified Desktop-Mobile Spacing
+                    const SPACING: f64 = 50.0; 
+                    const BASE_RADIUS: f64 = 3.0;
                     
                     let origin_x = s.width / 2.0;
                     let origin_y = s.height / 2.0;
@@ -78,7 +78,7 @@ pub fn AnimatedBackground() -> impl IntoView {
                             let dist_sq = dx * dx + dy * dy;
                             let dist = dist_sq.sqrt();
 
-                            let wave = ((dist * 0.008) - (time * 0.0006)).sin();
+                            let wave = ((dist * 0.01) - (time * 0.0006)).sin();
                             let intensity = ((wave + 1.0) * 0.5).powf(3.0);
                             
                             let warp = (wave * 15.0) * intensity;
@@ -89,15 +89,15 @@ pub fn AnimatedBackground() -> impl IntoView {
                             let draw_y = y + (unit_y * warp);
                             
                             ctx.set_global_alpha(intensity);
-                            let current_radius = base_radius * (1.0 + intensity * 2.0);
+                            let current_radius = BASE_RADIUS * (1.0 + intensity * 2.0);
                             
                             ctx.begin_path();
                             let _ = ctx.arc(draw_x, draw_y, current_radius, 0.0, TAU);
                             ctx.stroke();
 
-                            y += spacing;
+                            y += SPACING;
                         }
-                        x += spacing;
+                        x += SPACING;
                     }
 
                     request_animation_frame(f_inner.borrow().as_ref().unwrap());
@@ -127,12 +127,17 @@ struct AppState {
     height: f64,
 }
 
-fn update_dimensions(canvas: &HtmlCanvasElement, state: &mut AppState) {
+fn update_dimensions(canvas: &HtmlCanvasElement, ctx: &CanvasRenderingContext2d, state: &mut AppState) {
+    let win = window();
+    let ratio = win.device_pixel_ratio();
+    
     let w = canvas.offset_width() as f64;
     let h = canvas.offset_height() as f64;
     
-    canvas.set_width(w as u32);
-    canvas.set_height(h as u32);
+    canvas.set_width((w * ratio) as u32);
+    canvas.set_height((h * ratio) as u32);
+    
+    ctx.scale(ratio, ratio).expect("Failed to scale context");
     
     state.width = w;
     state.height = h;
