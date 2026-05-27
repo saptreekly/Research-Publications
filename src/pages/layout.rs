@@ -1,9 +1,19 @@
 use leptos::*;
 use leptos_router::*;
-use crate::utils::{curriculum_href, home_href};
+use crate::utils::{contact_href, curriculum_href, home_href};
 
 #[component]
 pub fn RootLayout(children: Children) -> impl IntoView {
+    let location = use_location();
+    let path = move || location.pathname.get();
+
+    create_effect(move |_| {
+        let _ = path();
+        if let Some(window) = web_sys::window() {
+            let _ = window.scroll_to_with_x_and_y(0.0, 0.0);
+        }
+    });
+
     view! {
         <div id="app-container">
             <aside class="site-sidebar">
@@ -18,6 +28,7 @@ pub fn RootLayout(children: Children) -> impl IntoView {
                         <ul class="site-nav-list">
                             <li><A href=home_href() class="nav-link">"HOME"</A></li>
                             <li><A href=curriculum_href() class="nav-link">"CURRICULUM"</A></li>
+                            <li><A href=contact_href() class="nav-link">"CONTACT"</A></li>
                             <li>
                                 <a
                                     href="https://github.com/saptreekly/Computational-Mathematics-for-Cybersecurity-with-Julia"
@@ -56,7 +67,9 @@ pub fn RootLayout(children: Children) -> impl IntoView {
             </aside>
 
             <main class="site-main">
-                {children()}
+                <div class="page-transition" key=path>
+                    {children()}
+                </div>
             </main>
         </div>
     }
