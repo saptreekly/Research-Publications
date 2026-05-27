@@ -16,14 +16,6 @@ body {
     justify-content: center;
 }
 
-body::before {
-    content: "";
-    position: fixed;
-    top: 20px; left: 20px; right: 20px; bottom: 20px;
-    border: 1px solid rgba(168, 85, 247, 0.2);
-    pointer-events: none;
-}
-
 #app-container {
     width: 100%;
     max-width: 1200px;
