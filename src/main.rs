@@ -7,9 +7,11 @@ use leptos_router::*;
 use pages::layout::RootLayout;
 use pages::home::HomePage;
 use pages::curriculum::CurriculumPage;
+use web_sys::console;
 
 #[component]
 fn App() -> impl IntoView {
+    console::log_1(&"App component rendering...".into());
     provide_meta_context();
 
     view! {
@@ -18,7 +20,6 @@ fn App() -> impl IntoView {
 
         <Router>
             <Routes>
-                // Match the repository subfolder path directly for production
                 <Route path="/Research-Publications" view=RootLayout>
                     <Route path="" view=HomePage />
                     <Route path="curriculum" view=CurriculumPage />
@@ -30,5 +31,9 @@ fn App() -> impl IntoView {
 
 fn main() {
     console_error_panic_hook::set_once();
-    leptos::mount_to_body(|| view! { <App /> });
+    console::log_1(&"Main function executing...".into());
+    leptos::mount_to_body(|| {
+        console::log_1(&"Mounting App...".into());
+        view! { <App /> }
+    });
 }
