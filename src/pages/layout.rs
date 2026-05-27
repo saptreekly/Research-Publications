@@ -2,7 +2,6 @@ use leptos::*;
 use leptos_router::*;
 use crate::components::animated_background::AnimatedBackground;
 use serde::{Deserialize, Serialize};
-use web_sys::console;
 
 #[derive(Clone, Deserialize, Serialize)]
 struct StackItem { language: String, bytes: u64 }
@@ -49,11 +48,7 @@ fn StackMatrix() -> impl IntoView {
 
 #[component]
 pub fn RootLayout() -> impl IntoView {
-    console::log_1(&"RootLayout rendering...".into());
     view! {
-        <div style="position: fixed; top: 0; left: 0; z-index: 9999; background: red; color: white;">
-            "DEBUG: RootLayout rendered"
-        </div>
         <AnimatedBackground />
 
         <div id="app-container">
