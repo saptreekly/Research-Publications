@@ -27,6 +27,7 @@ body::before {
 #app-container {
     width: 100%;
     max-width: 1200px;
+    min-height: 100vh; /* Force height */
     display: grid;
     grid-template-columns: 320px 1fr;
     border-left: 1px solid var(--line-color);
