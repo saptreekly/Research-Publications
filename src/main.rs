@@ -1,6 +1,7 @@
 mod components;
 
 use components::animated_background::AnimatedBackground;
+use components::technical_document::TechnicalDocument;
 use leptos::*;
 use leptos_meta::*;
 use serde::{Deserialize, Serialize};
@@ -29,8 +30,7 @@ fn StackMatrix() -> impl IntoView {
             <Suspense fallback=move || view! { <div class="stack-label">"Loading..."</div> }>
                 {move || stack.get().map(|data| view! {
                     {data.languages.into_iter().map(|item| {
-                        // Normalize against the largest to make graph readable
-                        let max_bytes = 100000.0; // Fixed cap for consistency
+                        let max_bytes = 100000.0;
                         let percentage = ((item.bytes as f64 / max_bytes) * 100.0).min(100.0);
                         view! {
                             <div class="stack-row">
@@ -81,61 +81,38 @@ fn App() -> impl IntoView {
                         </a>
                     </div>
                 </div>
-                <div>
-                    <div class="row-date">"WELLINGTON, NZ"</div>
-                </div>
             </aside>
 
             <main>
                 <section id="about">
-                    <h2>"01 / ABOUT"</h2>
+                    <h2>"ABOUT"</h2>
                     <p>"Most threat intelligence professionals come from either a policy background or a technical one. I work across both. My Master of Strategic Studies specialized in cyber warfare as an instrument of state power, which sits alongside hands-on experience in reverse engineering advanced malware, vulnerability assessment, and security architecture."</p>
                 </section>
 
-                <section id="publications">
-                    <h2>"02 / INVESTIGATIVE RESEARCH"</h2>
-                    <div class="row">
-                        <div class="row-tag">"[TYPE: REVERSE_ENG]"</div>
-                        <div class="row-date">"2026.05 //"</div>
-                        <div>
-                            <h3>"LovelyMalware Analysis Report"</h3>
-                            <p>"Full forensic analysis of a PE32+ ransomware binary. Kill chain reconstruction, custom AES-256-CBC analysis, and file decryption."</p>
-                        </div>
-                    </div>
+                <section id="curriculum">
+                    <h2>"TECHNICAL CURRICULUM"</h2>
+                    <TechnicalDocument content=r#"
+### Cryptographic Implementation
+To implement the Extended Euclidean Algorithm for $ax + by = \gcd(a, b)$, we must define the iterative process.
+```julia
+function extended_gcd(a, b)
+    if a == 0
+        return (b, 0, 1)
+    else
+        g, y, x = extended_gcd(b % a, a)
+        return (g, x - (b ÷ a) * y, y)
+    end
+end
+```
+"# />
                 </section>
 
                 <section id="projects">
-                    <h2>"03 / CORE ENGINE ARCHITECTURE"</h2>
-                    <div class="row">
-                        <div class="row-tag">"[LANG: RUST/ZIG]"</div>
-                        <div class="row-date">"2026.04 //"</div>
-                        <div>
-                            <h3>"Project Hliðskjálf"</h3>
-                            <p>"Bare-metal Type-1.5 Rust hypervisor."</p>
-                        </div>
+                    <h2>"PROJECTS"</h2>
+                    <div class="project-card">
+                        <h3>"Project Hliðskjálf"</h3>
+                        <p>"Bare-metal Type-1.5 Rust hypervisor."</p>
                     </div>
-                    <div class="row">
-                        <div class="row-tag">"[LANG: RUST/ELIXIR]"</div>
-                        <div class="row-date">"2026.04 //"</div>
-                        <div>
-                            <h3>"SIEM Ensemble"</h3>
-                            <p>"High-velocity log analytics engine."</p>
-                        </div>
-                    </div>
-                </section>
-
-                <section id="certs">
-                    <h2>"04 / VALIDATED METRICS"</h2>
-                    <ul class="certs">
-                        <li class="cert-item">
-                            <div class="cert-label">"STATUS: VERIFIED"</div>
-                            <div class="cert-title">"SOC Level 2 · TryHackMe"</div>
-                        </li>
-                        <li class="cert-item">
-                            <div class="cert-label">"STATUS: VERIFIED"</div>
-                            <div class="cert-title">"Google Cybersecurity"</div>
-                        </li>
-                    </ul>
                 </section>
             </main>
         </div>
