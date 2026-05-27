@@ -20,7 +20,7 @@ fn App() -> impl IntoView {
         <Router>
             <Routes>
                 // This route matches /Research-Publications/
-                <Route path="/" view=RootLayout>
+                <Route path="/Research-Publications" view=RootLayout>
                     <Route path="" view=HomePage />
                     <Route path="curriculum" view=CurriculumPage />
                 </Route>
