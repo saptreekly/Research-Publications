@@ -131,8 +131,8 @@ fn update_dimensions(canvas: &HtmlCanvasElement, ctx: &CanvasRenderingContext2d,
     let win = window();
     let ratio = win.device_pixel_ratio();
     
-    let w = canvas.offset_width() as f64;
-    let h = canvas.offset_height() as f64;
+    let w = win.inner_width().unwrap().as_f64().unwrap();
+    let h = win.inner_height().unwrap().as_f64().unwrap();
     
     canvas.set_width((w * ratio) as u32);
     canvas.set_height((h * ratio) as u32);

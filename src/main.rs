@@ -17,13 +17,14 @@ fn App() -> impl IntoView {
         <Link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;700&family=IBM+Plex+Mono:wght@400&display=swap" rel="stylesheet" />
 
         // Router base must match the subfolder on GitHub Pages
-        <Router base="/Research-Publications">
+        <Router>
             <Routes>
                 // This route matches /Research-Publications/
                 <Route path="/" view=RootLayout>
                     <Route path="" view=HomePage />
                     <Route path="curriculum" view=CurriculumPage />
                 </Route>
+                <Route path="/*any" view=|| view! { <div style="color: white; padding: 40px; font-family: monospace; z-index: 9999; position: fixed;">"ROUTING ERROR: Unmatched Path Locality"</div> }/>
             </Routes>
         </Router>
     }
