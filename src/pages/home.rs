@@ -36,21 +36,35 @@ pub fn HomePage() -> impl IntoView {
                     <p class="home-section-kicker">"Intelligence products"</p>
                     <h2 id="research-heading" class="home-section-title">"Technical analysis & reporting"</h2>
                     <p class="home-section-desc">
-                        "Finished analytic work from triage through network forensics to actionable indicators and detection rules."
+                        "Finished analytic work—from malware forensics to strategic studies writing samples."
                     </p>
                 </div>
-                <A href=report_href("lovely-malware") class="home-card home-card-link">
-                    <div class="home-card-meta">
-                        <span class="home-tag">"Malware analysis"</span>
-                        <time class="home-date" datetime="2026-04">"Apr 2026"</time>
-                    </div>
-                    <h3 class="home-card-title">"LovelyMalware analysis report"</h3>
-                    <p class="home-card-body">
-                        "Intelligence-style forensic report on a PE32+ ransomware sample: static and dynamic analysis, PCAP review, "
-                        "decryption, Sigma rules, and IOC packages suitable for operational use."
-                    </p>
-                    <span class="home-card-cta">"READ REPORT →"</span>
-                </A>
+                <div class="home-card-grid">
+                    <A href=report_href("lovely-malware") class="home-card home-card-link">
+                        <div class="home-card-meta">
+                            <span class="home-tag">"Malware analysis"</span>
+                            <time class="home-date" datetime="2026-04">"Apr 2026"</time>
+                        </div>
+                        <h3 class="home-card-title">"LovelyMalware analysis report"</h3>
+                        <p class="home-card-body">
+                            "Intelligence-style forensic report on a PE32+ ransomware sample: static and dynamic analysis, PCAP review, "
+                            "decryption, Sigma rules, and IOC packages suitable for operational use."
+                        </p>
+                        <span class="home-card-cta">"READ REPORT →"</span>
+                    </A>
+                    <A href=report_href("thesis-summary") class="home-card home-card-link">
+                        <div class="home-card-meta">
+                            <span class="home-tag">"Strategic analysis"</span>
+                            <time class="home-date" datetime="2024">"2024"</time>
+                        </div>
+                        <h3 class="home-card-title">"5th-gen fighter exports & APAC middle-power competition"</h3>
+                        <p class="home-card-body">
+                            "Condensed writing sample from MStrat thesis work: how US export controls and China's FC-31 programme "
+                            "reshape alignment choices for Indonesia, Malaysia, Pakistan, and other APAC middle powers."
+                        </p>
+                        <span class="home-card-cta">"READ ESSAY →"</span>
+                    </A>
+                </div>
             </section>
 
             <section class="home-section" id="projects" aria-labelledby="projects-heading">
@@ -95,12 +109,12 @@ pub fn HomePage() -> impl IntoView {
                 </div>
                 <ul class="home-cred-list">
                     <li>
-                        <div class="home-cred">
+                        <a href=report_href("thesis-summary") class="home-cred home-cred-link">
                             <span class="home-cred-type">"Graduate degree"</span>
                             <span class="home-cred-provider">"Victoria University of Wellington"</span>
                             <span class="home-cred-name">"Master of Strategic Studies"</span>
                             <span class="home-cred-detail">"Awarded with Merit · Thesis: Evaluating US and Chinese 5th-Generation Aerospace Capabilities as Instruments of Coercive Statecraft in Asia-Pacific"</span>
-                        </div>
+                        </a>
                     </li>
                     <li>
                         <div class="home-cred">
