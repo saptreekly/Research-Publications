@@ -137,6 +137,8 @@ fn update_dimensions(canvas: &HtmlCanvasElement, ctx: &CanvasRenderingContext2d,
     canvas.set_width((w * ratio) as u32);
     canvas.set_height((h * ratio) as u32);
     
+    // Reset transform to identity, then scale
+    ctx.set_transform(1.0, 0.0, 0.0, 1.0, 0.0, 0.0).expect("Failed to reset transform");
     ctx.scale(ratio, ratio).expect("Failed to scale context");
     
     state.width = w;
