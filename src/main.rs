@@ -3,12 +3,14 @@ mod lab;
 mod pages;
 mod projects;
 mod reports;
+mod seo;
 mod utils;
 
 use leptos::*;
 use leptos_meta::*;
 use leptos_router::*;
 use crate::components::animated_background::AnimatedBackground;
+use crate::components::seo_head::SeoHead;
 use pages::layout::RootLayout;
 use pages::home::HomePage;
 use pages::contact::ContactPage;
@@ -34,12 +36,12 @@ fn App() -> impl IntoView {
     console::log_1(&"[WASM TELEMETRY] Initializing App Router Tree".into());
 
     view! {
-        <Title text="JACK WEEKLY | ANALYSIS & SECURITY" />
         <Link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;700&family=IBM+Plex+Mono:wght@400&display=swap" rel="stylesheet" />
 
         <AnimatedBackground />
 
         <Router base=APP_BASE trailing_slash=TrailingSlash::Redirect>
+            <SeoHead />
             <Routes>
                 <Route path=ROUTE_HOME view=move || view! {
                     <RootLayout><HomePage /></RootLayout>
@@ -69,10 +71,10 @@ fn App() -> impl IntoView {
 
 fn main() {
     console_error_panic_hook::set_once();
-    
+
     if let Ok(path) = leptos::window().location().pathname() {
         console::log_1(&format!("[WASM TELEMETRY] Absolute Browser Pathname: {}", path).into());
     }
-    
+
     leptos::mount_to_body(|| view! { <App /> });
 }
