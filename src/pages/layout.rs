@@ -12,13 +12,14 @@ struct StackData { updated_at: String, languages: Vec<StackItem> }
 #[component]
 fn StackMatrix() -> impl IntoView {
     let stack = create_resource(|| (), |_| async move {
-        gloo_net::http::Request::get("static/stack.json")
-            .send()
-            .await
-            .unwrap()
-            .json::<StackData>()
-            .await
-            .unwrap_or_else(|_| StackData { updated_at: "N/A".to_string(), languages: vec![] })
+        // Safe, non-panicking network fetch block
+        if let Ok(response) = gloo_net::http::Request::get("static/stack.json").send().await {
+            if let Ok(data) = response.json::<StackData>().await {
+                return data;
+            }
+        }
+        // Fallback gracefully without thread destruction if data lags on boot
+        StackData { updated_at: "N/A".to_string(), languages: vec![] }
     });
 
     view! {
@@ -55,7 +56,7 @@ pub fn RootLayout() -> impl IntoView {
         <div id="app-container">
             <aside>
                 <div>
-                    <h1><A href="/">"JACK WEEKLY"</A></h1>
+                    <h1><A href="/Research-Publications/">"JACK WEEKLY"</A></h1>
                     <div class="row-tag">"CYBERSECURITY RESEARCHER"</div>
                     <StackMatrix />
                     <div class="social-links">
