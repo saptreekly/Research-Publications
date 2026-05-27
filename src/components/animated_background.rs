@@ -5,10 +5,38 @@ use std::rc::Rc;
 use wasm_bindgen::prelude::*;
 use web_sys::{CanvasRenderingContext2d, HtmlCanvasElement};
 
+use crate::theme::{Theme, use_theme};
+
+struct CanvasColors {
+    bg: JsValue,
+    ring: JsValue,
+    fill: JsValue,
+}
+
+impl CanvasColors {
+    fn for_theme(theme: Theme) -> Self {
+        let (bg, ring, fill) = theme.canvas_colors();
+        Self {
+            bg: JsValue::from_str(bg),
+            ring: JsValue::from_str(ring),
+            fill: JsValue::from_str(fill),
+        }
+    }
+}
+
 #[component]
 pub fn AnimatedBackground() -> impl IntoView {
     let canvas_ref = create_node_ref::<html::Canvas>();
     let initialized = store_value(false);
+    let theme = use_theme();
+    let colors = Rc::new(RefCell::new(CanvasColors::for_theme(theme.get())));
+
+    create_effect({
+        let colors = Rc::clone(&colors);
+        move |_| {
+            *colors.borrow_mut() = CanvasColors::for_theme(theme.get());
+        }
+    });
 
     create_effect(move |_| {
         if initialized.get_value() {
@@ -122,9 +150,7 @@ pub fn AnimatedBackground() -> impl IntoView {
             let frame_id_cb = Rc::clone(&frame_id);
             let frame_counter_cb = Rc::clone(&frame_counter);
             let ctx = ctx.clone();
-            let bg_color = JsValue::from_str("#000000");
-            let ring_color = JsValue::from_str("#a855f7");
-            let fill_color = JsValue::from_str("rgba(168, 85, 247, 0.85)");
+            let colors_cb = Rc::clone(&colors);
 
             *frame_closure.borrow_mut() = Some(Closure::wrap(Box::new(move || {
                 if !running_cb.get() {
@@ -141,9 +167,10 @@ pub fn AnimatedBackground() -> impl IntoView {
                     if should_draw {
                         let s = state_inner.borrow();
                         let time = perf.now();
+                        let palette = colors_cb.borrow();
 
                         ctx.set_global_alpha(1.0);
-                        ctx.set_fill_style(&bg_color);
+                        ctx.set_fill_style(&palette.bg);
                         ctx.fill_rect(0.0, 0.0, s.width, s.height);
 
                         let origin_x = s.width / 2.0;
@@ -175,12 +202,12 @@ pub fn AnimatedBackground() -> impl IntoView {
                                     ctx.set_global_alpha(intensity * profile.alpha_scale);
 
                                     if profile.use_fill {
-                                        ctx.set_fill_style(&fill_color);
+                                        ctx.set_fill_style(&palette.fill);
                                         ctx.begin_path();
                                         let _ = ctx.arc(draw_x, draw_y, current_radius, 0.0, TAU);
                                         ctx.fill();
                                     } else {
-                                        ctx.set_stroke_style(&ring_color);
+                                        ctx.set_stroke_style(&palette.ring);
                                         ctx.set_line_width(1.0);
                                         ctx.begin_path();
                                         let _ = ctx.arc(draw_x, draw_y, current_radius, 0.0, TAU);

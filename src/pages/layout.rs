@@ -1,5 +1,6 @@
 use leptos::*;
 use leptos_router::*;
+use crate::components::theme_toggle::ThemeToggle;
 use crate::utils::{contact_href, curriculum_href, home_href};
 
 #[component]
@@ -71,6 +72,9 @@ pub fn RootLayout(children: Children) -> impl IntoView {
                     </div>
 
                     <div class="site-sidebar-bottom">
+                        <div class="site-theme-row">
+                            <ThemeToggle />
+                        </div>
                         <div class="site-nav-label">"CONNECT"</div>
                         <div class="social-links">
                             <a href="https://x.com/weeklyjack1" class="social-link">

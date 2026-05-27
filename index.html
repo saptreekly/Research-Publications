@@ -3,6 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="color-scheme" content="dark light">
+    <script>
+    (function () {
+        var theme = 'dark';
+        try {
+            var stored = localStorage.getItem('theme');
+            if (stored === 'light' || stored === 'dark') {
+                theme = stored;
+            }
+        } catch (e) {}
+        document.documentElement.setAttribute('data-theme', theme);
+    })();
+    </script>
     <title>Jack Weekly | Analysis &amp; Security</title>
     <meta name="description" content="Portfolio of Jack Weekly: malware forensics, strategic studies, security engineering, and applied cryptography research. Dual US &amp; NZ citizen.">
     <meta name="author" content="Jack Weekly">
@@ -47,7 +60,7 @@
     }
     </script>
 </head>
-<body style="background-color: #000000; margin: 0; padding: 0;">
+<body style="margin: 0; padding: 0;">
     <div id="seo-static" class="seo-static" aria-hidden="true">
         <header>
             <h1>Jack Weekly</h1>

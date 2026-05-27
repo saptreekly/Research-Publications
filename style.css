@@ -1,17 +1,74 @@
-:root {
+:root,
+[data-theme="dark"] {
+    color-scheme: dark;
+    --bg-page: #000000;
     --text-color: #ffffff;
     --text-muted: rgba(255, 255, 255, 0.6);
+    --text-soft: rgba(255, 255, 255, 0.78);
+    --text-softer: rgba(255, 255, 255, 0.82);
+    --text-strong: rgba(255, 255, 255, 0.88);
+    --text-faint: rgba(255, 255, 255, 0.72);
+    --text-dim: rgba(255, 255, 255, 0.55);
+    --text-body: rgba(255, 255, 255, 0.85);
     --purple: #a855f7;
     --purple-subtle: rgba(168, 85, 247, 0.05);
+    --purple-muted: rgba(168, 85, 247, 0.08);
+    --purple-border: rgba(168, 85, 247, 0.2);
+    --purple-border-strong: rgba(168, 85, 247, 0.35);
+    --purple-border-hover: rgba(168, 85, 247, 0.45);
+    --purple-surface: rgba(168, 85, 247, 0.1);
+    --purple-surface-hover: rgba(168, 85, 247, 0.16);
     --line-color: rgba(255, 255, 255, 0.1);
+    --line-color-strong: rgba(255, 255, 255, 0.08);
+    --line-color-top: rgba(255, 255, 255, 0.1);
     --bg-subtle: rgba(255, 255, 255, 0.05);
-    --mono: 'IBM Plex Mono', monospace;
     --panel-surface: rgba(6, 6, 8, 0.64);
+    --panel-surface-mobile: rgba(6, 6, 8, 0.74);
+    --panel-shadow: 0 24px 80px rgba(0, 0, 0, 0.45);
+    --panel-inset: inset 0 1px 0 rgba(255, 255, 255, 0.04);
+    --selection-bg: rgba(168, 85, 247, 0.35);
+    --surface-inset: rgba(0, 0, 0, 0.4);
+    --surface-inset-soft: rgba(0, 0, 0, 0.35);
+    --surface-inset-muted: rgba(0, 0, 0, 0.25);
+    --mono: 'IBM Plex Mono', monospace;
+}
+
+[data-theme="light"] {
+    color-scheme: light;
+    --bg-page: #f5f4f0;
+    --text-color: #151515;
+    --text-muted: rgba(21, 21, 21, 0.58);
+    --text-soft: rgba(21, 21, 21, 0.78);
+    --text-softer: rgba(21, 21, 21, 0.82);
+    --text-strong: rgba(21, 21, 21, 0.88);
+    --text-faint: rgba(21, 21, 21, 0.72);
+    --text-dim: rgba(21, 21, 21, 0.55);
+    --text-body: rgba(21, 21, 21, 0.85);
+    --purple: #9333ea;
+    --purple-subtle: rgba(147, 51, 234, 0.06);
+    --purple-muted: rgba(147, 51, 234, 0.1);
+    --purple-border: rgba(147, 51, 234, 0.22);
+    --purple-border-strong: rgba(147, 51, 234, 0.35);
+    --purple-border-hover: rgba(147, 51, 234, 0.45);
+    --purple-surface: rgba(147, 51, 234, 0.1);
+    --purple-surface-hover: rgba(147, 51, 234, 0.16);
+    --line-color: rgba(21, 21, 21, 0.12);
+    --line-color-strong: rgba(21, 21, 21, 0.1);
+    --line-color-top: rgba(21, 21, 21, 0.14);
+    --bg-subtle: rgba(21, 21, 21, 0.04);
+    --panel-surface: rgba(255, 255, 255, 0.88);
+    --panel-surface-mobile: rgba(255, 255, 255, 0.94);
+    --panel-shadow: 0 24px 80px rgba(21, 21, 21, 0.08);
+    --panel-inset: inset 0 1px 0 rgba(255, 255, 255, 0.9);
+    --selection-bg: rgba(147, 51, 234, 0.22);
+    --surface-inset: rgba(21, 21, 21, 0.04);
+    --surface-inset-soft: rgba(21, 21, 21, 0.05);
+    --surface-inset-muted: rgba(21, 21, 21, 0.03);
 }
 
 body {
     font-family: 'Inter', sans-serif;
-    background-color: #000000;
+    background-color: var(--bg-page);
     color: var(--text-color);
     margin: 0;
     padding: 12px;
@@ -19,6 +76,7 @@ body {
     display: flex;
     justify-content: center;
     position: relative;
+    transition: background-color 0.25s ease, color 0.25s ease;
 }
 
 .seo-static {
@@ -37,9 +95,9 @@ body {
     max-width: 720px;
     margin: 0 auto 24px;
     padding: 16px 24px;
-    border: 1px solid rgba(168, 85, 247, 0.35);
-    background: rgba(168, 85, 247, 0.08);
-    color: rgba(255, 255, 255, 0.85);
+    border: 1px solid var(--purple-border-strong);
+    background: var(--purple-muted);
+    color: var(--text-body);
 }
 
 .animated-background {
@@ -55,7 +113,7 @@ body::before {
     content: "";
     position: fixed;
     top: 12px; left: 12px; right: 12px; bottom: 12px;
-    border: 1px solid rgba(168, 85, 247, 0.2);
+    border: 1px solid var(--purple-border);
     pointer-events: none;
 }
 
@@ -65,16 +123,15 @@ body::before {
     min-height: calc(100vh - 24px);
     display: grid;
     grid-template-columns: 280px minmax(0, 1fr);
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    border: 1px solid var(--line-color-strong);
+    border-top: 1px solid var(--line-color-top);
     background: var(--panel-surface);
-    box-shadow:
-        0 24px 80px rgba(0, 0, 0, 0.45),
-        inset 0 1px 0 rgba(255, 255, 255, 0.04);
+    box-shadow: var(--panel-shadow), var(--panel-inset);
     user-select: none;
     -webkit-user-select: none;
     position: relative;
     z-index: 1;
+    transition: background-color 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
 }
 
 #app-container textarea,
@@ -95,7 +152,7 @@ body::before {
 #app-container .markdown-content :not(pre) > code::selection,
 #app-container .markdown-content table td::selection,
 #app-container .markdown-content blockquote::selection {
-    background: rgba(168, 85, 247, 0.35);
+    background: var(--selection-bg);
     color: var(--text-color);
 }
 
@@ -301,8 +358,10 @@ body::before {
 }
 
 @media (max-width: 768px) {
-    :root {
-        --panel-surface: rgba(6, 6, 8, 0.74);
+    :root,
+    [data-theme="dark"],
+    [data-theme="light"] {
+        --panel-surface: var(--panel-surface-mobile);
     }
 
     html,
@@ -538,8 +597,8 @@ body::before {
     display: flex;
     flex-direction: column;
     gap: 8px;
-    border: 1px solid rgba(168, 85, 247, 0.45);
-    background: rgba(168, 85, 247, 0.1);
+    border: 1px solid var(--purple-border-hover);
+    background: var(--purple-surface);
     padding: 16px 18px;
     text-decoration: none;
     color: inherit;
@@ -548,7 +607,7 @@ body::before {
 
 .site-availability:hover {
     border-color: var(--purple);
-    background: rgba(168, 85, 247, 0.16);
+    background: var(--purple-surface-hover);
     transform: translateY(-1px);
 }
 
@@ -583,7 +642,7 @@ body::before {
 .site-availability-desc {
     font-size: 0.88rem;
     line-height: 1.55;
-    color: rgba(255, 255, 255, 0.78);
+    color: var(--text-soft);
 }
 
 .site-availability-cta {
@@ -727,7 +786,7 @@ a:focus-visible,
 .home-lead {
     font-size: 1.0625rem;
     line-height: 1.75;
-    color: rgba(255, 255, 255, 0.82);
+    color: var(--text-softer);
     max-width: 68ch;
     margin: 0 0 28px 0;
 }
@@ -761,7 +820,7 @@ a:focus-visible,
 .home-highlight-text {
     font-size: 0.95rem;
     line-height: 1.5;
-    color: rgba(255, 255, 255, 0.88);
+    color: var(--text-strong);
 }
 
 .home-section {
@@ -809,7 +868,7 @@ a:focus-visible,
 .home-section-desc {
     font-size: 1rem;
     line-height: 1.65;
-    color: rgba(255, 255, 255, 0.72);
+    color: var(--text-faint);
     max-width: 65ch;
     margin: 0;
 }
@@ -828,7 +887,7 @@ a:focus-visible,
 }
 
 .home-card:hover {
-    border-color: rgba(168, 85, 247, 0.45);
+    border-color: var(--purple-border-hover);
     background: var(--purple-subtle);
 }
 
@@ -846,8 +905,8 @@ a:focus-visible,
     font-size: 0.72rem;
     letter-spacing: 0.04em;
     color: var(--purple);
-    background: rgba(168, 85, 247, 0.08);
-    border: 1px solid rgba(168, 85, 247, 0.25);
+    background: var(--purple-muted);
+    border: 1px solid var(--purple-border);
     padding: 4px 10px;
 }
 
@@ -870,7 +929,7 @@ a:focus-visible,
 .home-card-body {
     font-size: 0.98rem;
     line-height: 1.65;
-    color: rgba(255, 255, 255, 0.78);
+    color: var(--text-soft);
     margin: 0;
 }
 
@@ -963,7 +1022,7 @@ a:focus-visible,
 }
 
 .report-tab:hover {
-    border-color: rgba(168, 85, 247, 0.45);
+    border-color: var(--purple-border-hover);
     color: var(--text-color);
 }
 
@@ -1007,7 +1066,7 @@ a:focus-visible,
 }
 
 .home-cred-link:hover {
-    border-color: rgba(168, 85, 247, 0.45);
+    border-color: var(--purple-border-hover);
     background: var(--purple-subtle);
 }
 
@@ -1041,7 +1100,7 @@ a:focus-visible,
 .home-cred-detail {
     font-size: 0.92rem;
     line-height: 1.5;
-    color: rgba(255, 255, 255, 0.72);
+    color: var(--text-faint);
 }
 
 .home-cred-in-progress {
@@ -1049,7 +1108,7 @@ a:focus-visible,
 }
 
 .home-cred-in-progress .home-cred-type {
-    color: rgba(255, 255, 255, 0.55);
+    color: var(--text-dim);
 }
 
 .home-cta {
@@ -1069,7 +1128,7 @@ a:focus-visible,
 }
 
 .home-cta:hover {
-    background: rgba(168, 85, 247, 0.12);
+    background: var(--purple-surface);
     border-color: var(--text-color);
 }
 
@@ -1096,7 +1155,7 @@ a:focus-visible,
 .contact-page-desc {
     font-size: 0.98rem;
     line-height: 1.65;
-    color: rgba(255, 255, 255, 0.78);
+    color: var(--text-soft);
     margin: 0;
 }
 
@@ -1200,7 +1259,7 @@ a:focus-visible,
 
 .home-page .stack-label {
     font-size: 0.72rem;
-    color: rgba(255, 255, 255, 0.85);
+    color: var(--text-body);
 }
 
 @media (max-width: 600px) {
@@ -1429,7 +1488,7 @@ aside .row-tag {
     text-transform: uppercase;
     letter-spacing: 0.05em;
     font-weight: 400;
-    background: rgba(168, 85, 247, 0.06);
+    background: var(--purple-subtle);
 }
 
 .markdown-content td {
@@ -1476,7 +1535,7 @@ aside .row-tag {
 }
 
 .bar-container {
-    background: rgba(255, 255, 255, 0.05);
+    background: var(--bg-subtle);
     height: 4px;
     width: 100%;
 }
@@ -1487,6 +1546,44 @@ aside .row-tag {
 }
 
 /* Social links & CTAs */
+.theme-toggle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    padding: 0;
+    color: var(--text-muted);
+    background: transparent;
+    border: 1px solid var(--line-color);
+    cursor: pointer;
+    flex-shrink: 0;
+    transition: border-color 0.25s ease, background 0.25s ease, color 0.25s ease, transform 0.15s ease;
+}
+
+.theme-toggle-icon {
+    width: 15px;
+    height: 15px;
+    display: block;
+}
+
+.theme-toggle:hover,
+.theme-toggle:focus-visible {
+    border-color: var(--purple);
+    background: var(--purple-subtle);
+    color: var(--purple);
+    outline: none;
+}
+
+.theme-toggle:active {
+    transform: scale(0.94);
+}
+
+.site-theme-row {
+    display: flex;
+    align-items: center;
+}
+
 .social-links {
     display: grid;
     gap: 8px;
@@ -1629,7 +1726,7 @@ aside .row-tag {
 }
 
 .lab-block:hover {
-    border-color: rgba(168, 85, 247, 0.5);
+    border-color: var(--purple-border-hover);
 }
 
 .lab-block-selected {
@@ -1661,7 +1758,7 @@ aside .row-tag {
     font-size: 0.75rem;
     line-height: 1.6;
     color: var(--text-color);
-    background: rgba(0, 0, 0, 0.4);
+    background: var(--surface-inset);
     border: 1px solid var(--line-color);
     padding: 16px;
     resize: vertical;
@@ -1695,7 +1792,7 @@ aside .row-tag {
     margin: 0;
     padding: 12px;
     border: 1px solid var(--line-color);
-    background: rgba(0, 0, 0, 0.35);
+    background: var(--surface-inset-soft);
     overflow-x: auto;
     white-space: pre-wrap;
 }
@@ -1824,7 +1921,7 @@ aside .row-tag {
 .lab-probe-control {
     padding: 16px;
     border: 1px solid var(--line-color);
-    background: rgba(0, 0, 0, 0.25);
+    background: var(--surface-inset-muted);
 }
 
 .lab-probe-control-header {
@@ -1861,11 +1958,11 @@ aside .row-tag {
 .lab-verify-row {
     padding: 14px;
     border: 1px solid var(--line-color);
-    background: rgba(0, 0, 0, 0.25);
+    background: var(--surface-inset-muted);
 }
 
 .lab-verify-pass {
-    border-color: rgba(168, 85, 247, 0.5);
+    border-color: var(--purple-border-hover);
 }
 
 .lab-verify-fail {

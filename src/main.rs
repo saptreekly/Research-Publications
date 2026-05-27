@@ -4,6 +4,7 @@ mod pages;
 mod projects;
 mod reports;
 mod seo;
+mod theme;
 mod utils;
 
 use leptos::*;
@@ -11,6 +12,7 @@ use leptos_meta::*;
 use leptos_router::*;
 use crate::components::animated_background::AnimatedBackground;
 use crate::components::seo_head::SeoHead;
+use crate::theme::provide_theme;
 use pages::layout::RootLayout;
 use pages::home::HomePage;
 use pages::contact::ContactPage;
@@ -33,6 +35,7 @@ const ROUTE_PROJECT: &str = "/Research-Publications/projects/:slug";
 #[component]
 fn App() -> impl IntoView {
     provide_meta_context();
+    provide_theme();
     console::log_1(&"[WASM TELEMETRY] Initializing App Router Tree".into());
 
     view! {
