@@ -59,7 +59,7 @@ pub fn RootLayout() -> impl IntoView {
         <div id="app-container">
             <aside>
                 <div>
-                    <h1><A href="/Research-Publications/">"JACK WEEKLY"</A></h1>
+                    <h1><A href="/">"JACK WEEKLY"</A></h1>
                     <div class="row-tag">"CYBERSECURITY RESEARCHER"</div>
                     <StackMatrix />
                     <div class="social-links">

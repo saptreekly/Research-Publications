@@ -24,7 +24,7 @@ pub fn HomePage() -> impl IntoView {
         <section id="curriculum-link">
             <h2>"04 / ACADEMIC CURRICULUM"</h2>
             <p>"Explore my structured technical curriculum in Julia for cryptographic systems."</p>
-            <A href="/curriculum" class="social-link" attr:style="width: fit-content; text-align: center;">"VIEW CURRICULUM"</A>
+            <A href="curriculum" class="social-link" attr:style="width: fit-content; text-align: center;">"VIEW CURRICULUM"</A>
         </section>
 
         <section id="projects">
