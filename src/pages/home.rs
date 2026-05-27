@@ -1,7 +1,6 @@
 use leptos::*;
 use leptos_router::*;
 use crate::components::stack_matrix::StackMatrix;
-use crate::components::contact_form::ContactForm;
 use crate::utils::{curriculum_href, report_href};
 
 #[component]
@@ -197,17 +196,6 @@ pub fn HomePage() -> impl IntoView {
                     </p>
                 </div>
                 <A href=curriculum_href() class="home-cta">"Browse curriculum & labs"</A>
-            </section>
-
-            <section class="home-section" id="contact" aria-labelledby="contact-heading">
-                <div class="home-section-header">
-                    <p class="home-section-kicker">"Get in touch"</p>
-                    <h2 id="contact-heading" class="home-section-title">"Contact"</h2>
-                    <p class="home-section-desc">
-                        "Research collaboration, hiring conversations, or questions about the work on this site."
-                    </p>
-                </div>
-                <ContactForm />
             </section>
 
             <section class="home-section home-section-muted" id="stack" aria-labelledby="stack-heading">

@@ -10,6 +10,7 @@ use leptos_router::*;
 use crate::components::animated_background::AnimatedBackground;
 use pages::layout::RootLayout;
 use pages::home::HomePage;
+use pages::contact::ContactPage;
 use pages::curriculum::CurriculumPage;
 use pages::lab::LabPage;
 use pages::module::ModulePage;
@@ -21,6 +22,7 @@ const ROUTE_HOME: &str = "/Research-Publications/";
 const ROUTE_CURRICULUM: &str = "/Research-Publications/curriculum";
 const ROUTE_MODULE: &str = "/Research-Publications/curriculum/:slug";
 const ROUTE_LAB: &str = "/Research-Publications/curriculum/lab/:slug";
+const ROUTE_CONTACT: &str = "/Research-Publications/contact";
 const ROUTE_REPORT: &str = "/Research-Publications/research/:slug";
 
 #[component]
@@ -50,6 +52,9 @@ fn App() -> impl IntoView {
                 } />
                 <Route path=ROUTE_CURRICULUM view=move || view! {
                     <RootLayout><CurriculumPage /></RootLayout>
+                } />
+                <Route path=ROUTE_CONTACT view=move || view! {
+                    <RootLayout><ContactPage /></RootLayout>
                 } />
             </Routes>
         </Router>
