@@ -33,6 +33,13 @@ body::before {
     border-right: 1px solid var(--line-color);
 }
 
+@media (max-width: 850px) {
+    #app-container { grid-template-columns: 1fr; border-left: none; border-right: none; }
+    aside { border-right: none; border-bottom: 1px solid var(--line-color); padding: 20px; height: auto; }
+    main { padding: 20px; }
+    h1 { font-size: 2rem; }
+}
+
 aside {
     border-right: 1px solid var(--line-color);
     padding: 40px;
@@ -61,6 +68,10 @@ h2 {
     grid-template-columns: 200px 120px 1fr;
     padding: 20px 0;
     border-bottom: 1px solid var(--line-color);
+}
+
+@media (max-width: 600px) {
+    .row { grid-template-columns: 1fr; gap: 10px; }
 }
 
 .row-tag { font-family: var(--mono); font-size: 0.65rem; color: var(--purple); }
