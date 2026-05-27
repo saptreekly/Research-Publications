@@ -17,6 +17,19 @@ fn App() -> impl IntoView {
     view! {
         <Title text="JACK WEEKLY | CYBERSECURITY" />
         <Link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;700&family=IBM+Plex+Mono:wght@400&display=swap" rel="stylesheet" />
+        <Link href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" rel="stylesheet" />
+        <Script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js" defer="true" />
+        <Script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js" defer="true" />
+        <Script>
+            "document.addEventListener('DOMContentLoaded', function() {
+                renderMathInElement(document.body, {
+                    delimiters: [
+                        {left: '$$', right: '$$', display: true},
+                        {left: '$', right: '$', display: false}
+                    ]
+                });
+            });"
+        </Script>
 
         <Router base="/Research-Publications/">
             <Routes>
