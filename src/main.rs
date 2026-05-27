@@ -1,6 +1,7 @@
 mod components;
 mod lab;
 mod pages;
+mod reports;
 mod utils;
 
 use leptos::*;
@@ -11,7 +12,16 @@ use pages::layout::RootLayout;
 use pages::home::HomePage;
 use pages::curriculum::CurriculumPage;
 use pages::lab::LabPage;
+use pages::module::ModulePage;
+use pages::report::ReportPage;
 use web_sys::console;
+
+pub const APP_BASE: &str = "/Research-Publications";
+const ROUTE_HOME: &str = "/Research-Publications/";
+const ROUTE_CURRICULUM: &str = "/Research-Publications/curriculum";
+const ROUTE_MODULE: &str = "/Research-Publications/curriculum/:slug";
+const ROUTE_LAB: &str = "/Research-Publications/curriculum/lab/:slug";
+const ROUTE_REPORT: &str = "/Research-Publications/research/:slug";
 
 #[component]
 fn App() -> impl IntoView {
@@ -24,16 +34,22 @@ fn App() -> impl IntoView {
 
         <AnimatedBackground />
 
-        <Router base="/Research-Publications" trailing_slash=TrailingSlash::Redirect>
+        <Router base=APP_BASE trailing_slash=TrailingSlash::Redirect>
             <Routes>
-                <Route path="/Research-Publications/" view=move || view! {
+                <Route path=ROUTE_HOME view=move || view! {
                     <RootLayout><HomePage /></RootLayout>
                 } />
-                <Route path="/Research-Publications/curriculum" view=move || view! {
-                    <RootLayout><CurriculumPage /></RootLayout>
-                } />
-                <Route path="/Research-Publications/curriculum/lab/mod-01" view=move || view! {
+                <Route path=ROUTE_LAB view=move || view! {
                     <RootLayout><LabPage /></RootLayout>
+                } />
+                <Route path=ROUTE_REPORT view=move || view! {
+                    <RootLayout><ReportPage /></RootLayout>
+                } />
+                <Route path=ROUTE_MODULE view=move || view! {
+                    <RootLayout><ModulePage /></RootLayout>
+                } />
+                <Route path=ROUTE_CURRICULUM view=move || view! {
+                    <RootLayout><CurriculumPage /></RootLayout>
                 } />
             </Routes>
         </Router>

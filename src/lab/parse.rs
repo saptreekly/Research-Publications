@@ -343,4 +343,23 @@ n: 11, min=2, max=50
         assert_eq!(module.blocks[0].type_label(), "PROBE");
         assert_eq!(module.blocks[1].type_label(), "VERIFY");
     }
+
+    #[test]
+    fn parses_all_curriculum_lab_modules() {
+        use crate::lab::modules::ALL_MODULES;
+
+        for module in ALL_MODULES {
+            let source = std::fs::read_to_string(module.lab_src).unwrap_or_else(|err| {
+                panic!("Failed to read {}: {err}", module.lab_src);
+            });
+            let parsed = parse_lab_module(module.id, module.title, &source).unwrap_or_else(|err| {
+                panic!("Failed to parse {}: {err:?}", module.lab_src);
+            });
+            assert!(
+                parsed.blocks.iter().any(|block| block.is_verifiable()),
+                "{} must include at least one verify block",
+                module.lab_src
+            );
+        }
+    }
 }

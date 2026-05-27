@@ -1,5 +1,6 @@
-use comrak::{markdown_to_html, Options};
 use leptos::*;
+use crate::components::markdown_content::MarkdownContent;
+use crate::utils::markdown::markdown_to_rendered_html;
 
 #[component]
 pub fn BriefBlock(
@@ -10,9 +11,7 @@ pub fn BriefBlock(
     selected: ReadSignal<Option<usize>>,
     on_select: WriteSignal<Option<usize>>,
 ) -> impl IntoView {
-    let options = Options::default();
-    let html = markdown_to_html(&body_md, &options);
-
+    let html = markdown_to_rendered_html(&body_md);
     let is_selected = move || selected.get() == Some(cell_index);
 
     view! {
@@ -26,7 +25,7 @@ pub fn BriefBlock(
                 <span class="row-date">{format!("[ID: {}]", id.to_uppercase())}</span>
             </div>
             {title.map(|t| view! { <h3 class="lab-block-title">{t}</h3> })}
-            <div class="markdown-content lab-block-body" inner_html=html />
+            <MarkdownContent html=html class="markdown-content lab-block-body" />
         </article>
     }
 }

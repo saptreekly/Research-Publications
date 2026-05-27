@@ -1,13 +1,18 @@
 ::: brief id=objectives title=Learning Objectives
 > **LEARNING OBJECTIVES**
-> * Understand the mechanics of modular exponentiation.
-> * Implement the Extended Euclidean Algorithm for inverse calculation.
+> * Understand when a modular inverse exists ($\gcd(a,m)=1$).
+> * Implement the Extended Euclidean Algorithm.
+> * Normalize negative inverse coefficients into $[0, m)$.
 :::
 
-::: brief id=theory title=Theory: The Euclidean Ring
-To perform cryptographic operations, we rely on the ring $\mathbb{Z}/n\mathbb{Z}$. The core primitive is finding the modular multiplicative inverse.
+::: brief id=theory title=Theory: Modular Inverses
+In $\mathbb{Z}/m\mathbb{Z}$, the inverse of $a$ is an integer $x$ such that $ax \equiv 1 \pmod m$.
 
-Given $a$ and $n$, find $x$ such that $ax \equiv 1 \pmod n$.
+An inverse exists **if and only if** $\gcd(a,m)=1$. When $\gcd(a,m)\neq 1$, no inverse exists (e.g. $2 \pmod 4$).
+
+The Extended Euclidean Algorithm finds integers $u,v$ with $au+bv=\gcd(a,b)$. When $\gcd(a,m)=1$, reducing $au+bv=1 \pmod m$ gives $au \equiv 1 \pmod m$, so $u$ is the inverse.
+
+Visualizations from the original notebook (clock face mod 7, gcd heatmap) are described in the curriculum theory section.
 :::
 
 ::: probe id=params
@@ -35,19 +40,21 @@ function modInverse(a, n)
 end
 
 println(modInverse(3, 11))
+println(invmod(7, 10))  # Julia built-in: 3
 ```
 :::
 
 ::: verify id=exercise_01
 - modInverse(3, 11) == 4
 - modInverse(5, 12) == 5
+- modInverse(7, 10) == 3
 - modInverse(2, 4) throws
 - modInverse(a, n) == 4
 :::
 
 ::: brief id=exercise title=Exercise 01
 > **EXERCISE 01**
-> * Implement `modInverse` in Julia using the blueprint above.
-> * Adjust probe parameters and verify your understanding with the test cases.
-> * Expected: `modInverse(3, 11)` returns `4`.
+> * Implement `modInverse` using the Extended Euclidean Algorithm.
+> * Compare with Julia's `invmod(a, m)` and `gcdx(a, m)`.
+> * Adjust probe parameters and verify with the test cases.
 :::
