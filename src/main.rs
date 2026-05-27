@@ -20,6 +20,7 @@ fn App() -> impl IntoView {
 
         <Router base="/Research-Publications/">
             <Routes>
+                // Use path="" to match the base path directly
                 <Route path="" view=|| {
                     console::log_1(&"RootLayout route triggered".into());
                     view! { <RootLayout /> }
