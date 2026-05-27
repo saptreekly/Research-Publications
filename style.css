@@ -103,16 +103,16 @@ body::before {
 }
 
 /* Mobile nav toggle — hidden on desktop */
-.site-sidebar-header {
-    display: contents;
-}
-
 .site-nav-toggle {
     display: none;
 }
 
 .site-sidebar-panel {
-    display: contents;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    justify-content: space-between;
+    gap: 28px;
 }
 
 @media (max-width: 900px) {
@@ -166,6 +166,7 @@ body::before {
 
     .site-sidebar-panel {
         display: none;
+        flex: none;
         flex-direction: column;
         gap: 24px;
         padding: 8px 20px 24px;
