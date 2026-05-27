@@ -106,21 +106,28 @@ p { font-size: 0.8rem; margin: 0; color: rgba(255,255,255,0.7); line-height: 1.4
 
 /* Technical Stack Matrix */
 .stack-matrix {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
     margin-top: 30px;
 }
-.stack-tag {
+.stack-row {
+    display: grid;
+    grid-template-columns: 80px 1fr;
+    align-items: center;
+    gap: 10px;
+}
+.stack-label {
     font-family: var(--mono);
     font-size: 0.6rem;
-    color: var(--purple);
-    border: 1px solid var(--line-color);
-    padding: 8px 4px;
-    text-align: center;
-    transition: all 0.2s;
+    color: var(--text-color);
 }
-.stack-tag:hover {
-    background: rgba(168, 85, 247, 0.05);
-    border-color: var(--purple);
+.bar-container {
+    background: rgba(255, 255, 255, 0.05);
+    height: 4px;
+    width: 100%;
+}
+.bar {
+    background: var(--purple);
+    height: 100%;
 }

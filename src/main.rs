@@ -6,7 +6,7 @@ use leptos_meta::*;
 use serde::{Deserialize, Serialize};
 
 #[derive(Clone, Deserialize, Serialize)]
-struct StackItem { language: String }
+struct StackItem { language: String, bytes: u64 }
 
 #[component]
 fn StackMatrix() -> impl IntoView {
@@ -22,11 +22,22 @@ fn StackMatrix() -> impl IntoView {
 
     view! {
         <div class="stack-matrix">
-            <Suspense fallback=move || view! { <div class="stack-tag">"..."</div> }>
-                {move || stack.get().map(|items| view! {
-                    {items.into_iter().map(|item| view! {
-                        <div class="stack-tag">{item.language}</div>
-                    }).collect_view()}
+            <Suspense fallback=move || view! { <div class="stack-label">"Loading..."</div> }>
+                {move || stack.get().map(|items| {
+                    let max_bytes = items.iter().map(|i| i.bytes).max().unwrap_or(1);
+                    view! {
+                        {items.into_iter().map(|item| {
+                            let percentage = (item.bytes as f64 / max_bytes as f64) * 100.0;
+                            view! {
+                                <div class="stack-row">
+                                    <div class="stack-label">{item.language}</div>
+                                    <div class="bar-container">
+                                        <div class="bar" style=format!("width: {}%;", percentage)></div>
+                                    </div>
+                                </div>
+                            }
+                        }).collect_view()}
+                    }
                 })}
             </Suspense>
         </div>
