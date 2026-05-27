@@ -2,6 +2,7 @@ use leptos::*;
 use leptos_router::*;
 use crate::components::animated_background::AnimatedBackground;
 use serde::{Deserialize, Serialize};
+use web_sys::console;
 
 #[derive(Clone, Deserialize, Serialize)]
 struct StackItem { language: String, bytes: u64 }
@@ -11,12 +12,16 @@ struct StackData { updated_at: String, languages: Vec<StackItem> }
 
 #[component]
 fn StackMatrix() -> impl IntoView {
+    console::log_1(&"StackMatrix component rendering...".into());
     let stack = create_resource(|| (), |_| async move {
+        console::log_1(&"Fetching stack data...".into());
         if let Ok(response) = gloo_net::http::Request::get("static/stack.json").send().await {
             if let Ok(data) = response.json::<StackData>().await {
+                console::log_1(&"Stack data fetched successfully.".into());
                 return data;
             }
         }
+        console::log_1(&"Stack data fetch failed or returned empty.".into());
         StackData { updated_at: "N/A".to_string(), languages: vec![] }
     });
 
@@ -48,10 +53,20 @@ fn StackMatrix() -> impl IntoView {
 
 #[component]
 pub fn RootLayout() -> impl IntoView {
+    console::log_1(&"RootLayout component rendering...".into());
+    
+    // Lifecycle trace using create_effect to detect mount
+    create_effect(move |_| {
+        console::log_1(&"RootLayout effect triggered (mounted check)".into());
+        let el = web_sys::window().unwrap().document().unwrap().get_element_by_id("app-container");
+        if el.is_some() {
+            console::log_1(&"FOUND #app-container in DOM".into());
+        } else {
+            console::log_1(&"ERROR: #app-container NOT FOUND in DOM".into());
+        }
+    });
+
     view! {
-        <div style="position: fixed; top: 0; left: 0; z-index: 1000; background: red; color: white;">
-            "DEBUG: RootLayout rendered"
-        </div>
         <AnimatedBackground />
 
         <div id="app-container">
