@@ -47,7 +47,7 @@ fn StackMatrix() -> impl IntoView {
 }
 
 #[component]
-pub fn RootLayout() -> impl IntoView {
+pub fn RootLayout(children: Children) -> impl IntoView {
     view! {
         <AnimatedBackground />
 
@@ -78,7 +78,7 @@ pub fn RootLayout() -> impl IntoView {
             </aside>
 
             <main>
-                <Outlet />
+                {children()}
             </main>
         </div>
     }
