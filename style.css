@@ -30,6 +30,12 @@
     --surface-inset: rgba(0, 0, 0, 0.4);
     --surface-inset-soft: rgba(0, 0, 0, 0.35);
     --surface-inset-muted: rgba(0, 0, 0, 0.25);
+    --code-comment: rgba(255, 255, 255, 0.42);
+    --code-keyword: #c084fc;
+    --code-function: #67e8f9;
+    --code-string: #86efac;
+    --code-number: #fbbf24;
+    --code-operator: rgba(255, 255, 255, 0.72);
     --mono: 'IBM Plex Mono', monospace;
 }
 
@@ -64,6 +70,12 @@
     --surface-inset: rgba(21, 21, 21, 0.04);
     --surface-inset-soft: rgba(21, 21, 21, 0.05);
     --surface-inset-muted: rgba(21, 21, 21, 0.03);
+    --code-comment: rgba(21, 21, 21, 0.48);
+    --code-keyword: #9333ea;
+    --code-function: #0891b2;
+    --code-string: #15803d;
+    --code-number: #b45309;
+    --code-operator: rgba(21, 21, 21, 0.72);
 }
 
 body {
@@ -1751,23 +1763,102 @@ aside .row-tag {
     margin-top: 4px;
 }
 
-.lab-code-editor {
+.lab-code-editor-shell {
+    display: grid;
     width: 100%;
+    border: 1px solid var(--line-color);
+    background: var(--surface-inset);
+}
+
+.lab-code-editor-shell:focus-within {
+    border-color: var(--purple);
+}
+
+.lab-code-editor-shell > .lab-code-highlight,
+.lab-code-editor-shell > .lab-code-editor {
+    grid-area: 1 / 1;
+}
+
+.lab-code-highlight,
+.lab-code-editor {
     box-sizing: border-box;
+    width: 100%;
+    margin: 0;
+    padding: 16px;
     font-family: var(--mono);
     font-size: 0.75rem;
     line-height: 1.6;
-    color: var(--text-color);
-    background: var(--surface-inset);
-    border: 1px solid var(--line-color);
-    padding: 16px;
-    resize: vertical;
+    tab-size: 4;
+    white-space: pre;
     min-height: 200px;
 }
 
-.lab-code-editor:focus {
+.lab-code-highlight {
+    pointer-events: none;
+    overflow: hidden;
+    color: var(--text-color);
+    background: transparent;
+    border: none;
+}
+
+.lab-code-highlight code {
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+    white-space: pre;
+    display: block;
+    min-height: 100%;
+    background: transparent !important;
+    text-shadow: none;
+}
+
+.lab-code-editor {
+    resize: vertical;
+    overflow: auto;
+    color: transparent;
+    caret-color: var(--text-color);
+    background: transparent;
+    border: none;
     outline: none;
-    border-color: var(--purple);
+}
+
+.lab-code-editor::selection {
+    background: var(--selection-bg);
+    color: transparent;
+}
+
+.lab-code-highlight .token.comment,
+.lab-code-highlight .token.prolog,
+.lab-code-highlight .token.doctype,
+.lab-code-highlight .token.cdata {
+    color: var(--code-comment);
+}
+
+.lab-code-highlight .token.keyword {
+    color: var(--code-keyword);
+}
+
+.lab-code-highlight .token.function,
+.lab-code-highlight .token.class-name,
+.lab-code-highlight .token.builtin {
+    color: var(--code-function);
+}
+
+.lab-code-highlight .token.string,
+.lab-code-highlight .token.char,
+.lab-code-highlight .token.inserted {
+    color: var(--code-string);
+}
+
+.lab-code-highlight .token.number,
+.lab-code-highlight .token.boolean,
+.lab-code-highlight .token.constant {
+    color: var(--code-number);
+}
+
+.lab-code-highlight .token.operator,
+.lab-code-highlight .token.punctuation {
+    color: var(--code-operator);
 }
 
 .lab-output {

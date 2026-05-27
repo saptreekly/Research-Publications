@@ -1,7 +1,6 @@
 use leptos::*;
 use leptos_meta::*;
 use leptos_router::use_location;
-use wasm_bindgen::JsCast;
 
 use crate::seo::{seo_for_path, DEFAULT_DESCRIPTION, DEFAULT_TITLE, OG_IMAGE_URL, SITE_NAME};
 
@@ -19,12 +18,12 @@ pub fn SeoHead() -> impl IntoView {
         let canonical_url = seo.canonical_url();
         title.set(seo.title);
         description.set(seo.description);
-        canonical.set(canonical_url.clone());
-        update_canonical_link(&canonical_url);
+        canonical.set(canonical_url);
     });
 
     view! {
         <Title text=move || title.get() />
+        <Link rel="canonical" attr:href=move || canonical.get() />
         <Meta name="description" content=move || description.get() />
         <Meta name="author" content=SITE_NAME />
         <Meta name="robots" content="index, follow" />
@@ -41,36 +40,5 @@ pub fn SeoHead() -> impl IntoView {
         <Meta name="twitter:title" content=move || title.get() />
         <Meta name="twitter:description" content=move || description.get() />
         <Meta name="twitter:image" content=OG_IMAGE_URL />
-    }
-}
-
-fn update_canonical_link(url: &str) {
-    let Some(document) = web_sys::window().and_then(|window| window.document()) else {
-        return;
-    };
-
-    let Ok(link) = document.query_selector("link[data-seo-canonical='true']") else {
-        return;
-    };
-
-    if let Some(link) = link {
-        let _ = link.set_attribute("href", url);
-        return;
-    }
-
-    let Some(head) = document.head() else {
-        return;
-    };
-
-    let Ok(link) = document.create_element("link") else {
-        return;
-    };
-
-    let _ = link.set_attribute("rel", "canonical");
-    let _ = link.set_attribute("href", url);
-    let _ = link.set_attribute("data-seo-canonical", "true");
-
-    if let Ok(html_link) = link.dyn_into::<web_sys::HtmlLinkElement>() {
-        let _ = head.append_child(&html_link);
     }
 }

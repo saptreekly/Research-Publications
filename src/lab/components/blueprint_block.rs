@@ -1,4 +1,6 @@
 use leptos::*;
+
+use crate::lab::editor;
 use crate::lab::types::{BlockExecution, BlockKind, ExecutionStatus, LabBlock};
 
 #[component]
@@ -40,6 +42,23 @@ pub fn BlueprintBlock(
     });
 
     let is_selected = move || selected.get() == Some(index);
+    let textarea_ref = create_node_ref::<html::Textarea>();
+
+    create_effect(move |_| {
+        let value = code.get();
+        if let Some(textarea) = textarea_ref.get() {
+            if textarea.value() != value {
+                textarea.set_value(&value);
+            }
+            editor::refresh(&textarea);
+        }
+    });
+
+    create_effect(move |_| {
+        if let Some(textarea) = textarea_ref.get() {
+            editor::init(&textarea);
+        }
+    });
 
     let status_label = move || match execution.get().status {
         ExecutionStatus::Idle => "[STATE: IDLE]",
@@ -64,23 +83,34 @@ pub fn BlueprintBlock(
                     format!("{} // {}", id.to_uppercase(), language.to_uppercase())
                 }}
             </h3>
-            <textarea
-                class="lab-code-editor"
-                prop:value=move || code.get()
-                on:input=move |ev| {
-                    let value = event_target_value(&ev);
-                    set_blocks.update(|all| {
-                        if let Some(block) = all.get_mut(index) {
-                            if let BlockKind::Blueprint { code, .. } = &mut block.kind {
-                                *code = value;
+            <div class="lab-code-editor-shell" on:click=|ev| ev.stop_propagation()>
+                <pre class="lab-code-highlight language-julia" aria-hidden="true">
+                    <code class="language-julia"></code>
+                </pre>
+                <textarea
+                    node_ref=textarea_ref
+                    class="lab-code-editor language-julia"
+                    prop:value=move || code.get()
+                    on:input=move |ev| {
+                        let value = event_target_value(&ev);
+                        set_blocks.update(|all| {
+                            if let Some(block) = all.get_mut(index) {
+                                if let BlockKind::Blueprint { code, .. } = &mut block.kind {
+                                    *code = value;
+                                }
                             }
+                        });
+                        if let Some(textarea) = textarea_ref.get() {
+                            editor::refresh(&textarea);
                         }
-                    });
-                }
-                on:click=|ev| ev.stop_propagation()
-                spellcheck="false"
-                rows=12
-            />
+                    }
+                    spellcheck="false"
+                    rows=12
+                    autocapitalize="off"
+                    autocomplete="off"
+                    autocorrect="off"
+                />
+            </div>
             <BlueprintOutput execution=execution />
         </article>
     }

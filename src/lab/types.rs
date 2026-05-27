@@ -137,7 +137,7 @@ pub struct KernelSession {
 impl KernelSession {
     pub fn local_stub() -> Self {
         Self {
-            kernel_label: "LOCAL // STUB".to_string(),
+            kernel_label: "LOCAL // JULIA".to_string(),
             ..Default::default()
         }
     }

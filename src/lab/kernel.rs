@@ -1,4 +1,7 @@
 use std::collections::HashMap;
+
+use crate::lab::crypto;
+use crate::lab::julia_interp;
 use crate::lab::types::{
     BlockExecution, ExecutionStatus, KernelSession, VerifyCase, VerifyExpectation, VerifyResult,
 };
@@ -26,28 +29,46 @@ pub fn run_blueprint(code: &str, session: &KernelSession) -> RunOutcome {
     }
 
     let mut next_session = session.clone();
-    next_session.variables = vec![
-        ("__status".to_string(), "QUEUED".to_string()),
-        ("__bytes".to_string(), trimmed.len().to_string()),
-    ];
+    let elapsed_ms;
 
-    let elapsed_ms = now_ms().saturating_sub(start).max(1);
-    next_session.last_run_ms = Some(elapsed_ms);
+    match julia_interp::execute(trimmed) {
+        Ok((stdout, result)) => {
+            elapsed_ms = now_ms().saturating_sub(start).max(1);
+            next_session.variables = vec![
+                ("__status".to_string(), "OK".to_string()),
+                ("__lines".to_string(), stdout.len().to_string()),
+            ];
+            next_session.last_run_ms = Some(elapsed_ms);
 
-    RunOutcome {
-        execution: BlockExecution {
-            status: ExecutionStatus::Success,
-            stdout: vec![
-                "[KERNEL] Local Julia subset kernel pending integration.".to_string(),
-                format!("[KERNEL] Received {} bytes of julia code.", trimmed.len()),
-                "[KERNEL] Code queued for execution.".to_string(),
-            ],
-            result: Some("-".to_string()),
-            error: None,
-            verify_results: Vec::new(),
-        },
-        session: next_session,
-        elapsed_ms,
+            RunOutcome {
+                execution: BlockExecution {
+                    status: ExecutionStatus::Success,
+                    stdout,
+                    result,
+                    error: None,
+                    verify_results: Vec::new(),
+                },
+                session: next_session,
+                elapsed_ms,
+            }
+        }
+        Err(message) => {
+            elapsed_ms = now_ms().saturating_sub(start).max(1);
+            next_session.variables = vec![("__status".to_string(), "ERROR".to_string())];
+            next_session.last_run_ms = Some(elapsed_ms);
+
+            RunOutcome {
+                execution: BlockExecution {
+                    status: ExecutionStatus::Error,
+                    stdout: Vec::new(),
+                    result: None,
+                    error: Some(message),
+                    verify_results: Vec::new(),
+                },
+                session: next_session,
+                elapsed_ms,
+            }
+        }
     }
 }
 
@@ -126,19 +147,19 @@ fn evaluate_case(case: &VerifyCase, probes: &HashMap<String, i64>) -> VerifyResu
     };
 
     let outcome = match (case.function.as_str(), args.len()) {
-        ("modInverse", 2) => mod_inverse(args[0], args[1]),
-        ("powermod", 3) => powermod(args[0], args[1], args[2]),
-        ("crt_two", 4) => crt_two(args[0], args[1], args[2], args[3]),
-        ("euler_phi", 1) => euler_phi(args[0]),
-        ("fermat_check", 2) => fermat_check(args[0], args[1]),
-        ("is_prime", 1) => is_prime(args[0]),
-        ("prime_count", 1) => prime_count(args[0]),
-        ("nth_prime", 1) => nth_prime(args[0]),
-        ("isprime_check", 1) => isprime_check(args[0]),
-        ("rsa_phi", 2) => rsa_phi(args[0], args[1]),
-        ("rsa_ed_check", 3) => rsa_ed_check(args[0], args[1], args[2]),
-        ("rsa_encrypt", 3) => rsa_encrypt(args[0], args[1], args[2]),
-        ("rsa_decrypt", 3) => rsa_decrypt(args[0], args[1], args[2]),
+        ("modInverse", 2) => crypto::mod_inverse(args[0], args[1]),
+        ("powermod", 3) => crypto::powermod(args[0], args[1], args[2]),
+        ("crt_two", 4) => crypto::crt_two(args[0], args[1], args[2], args[3]),
+        ("euler_phi", 1) => crypto::euler_phi(args[0]),
+        ("fermat_check", 2) => crypto::fermat_check(args[0], args[1]),
+        ("is_prime", 1) => crypto::is_prime(args[0]),
+        ("prime_count", 1) => crypto::prime_count(args[0]),
+        ("nth_prime", 1) => crypto::nth_prime(args[0]),
+        ("isprime_check", 1) => crypto::isprime_check(args[0]),
+        ("rsa_phi", 2) => crypto::rsa_phi(args[0], args[1]),
+        ("rsa_ed_check", 3) => crypto::rsa_ed_check(args[0], args[1], args[2]),
+        ("rsa_encrypt", 3) => crypto::rsa_encrypt(args[0], args[1], args[2]),
+        ("rsa_decrypt", 3) => crypto::rsa_decrypt(args[0], args[1], args[2]),
         (other, _) => Err(format!("Unsupported function: {other}")),
     };
 
@@ -181,168 +202,6 @@ fn format_expectation(expected: &VerifyExpectation) -> String {
     }
 }
 
-fn extended_gcd(a: i64, b: i64) -> (i64, i64, i64) {
-    if b == 0 {
-        return (a, 1, 0);
-    }
-    let (g, x1, y1) = extended_gcd(b, a % b);
-    (g, y1, x1 - (a / b) * y1)
-}
-
-fn mod_inverse(a: i64, n: i64) -> Result<i64, String> {
-    if n <= 0 {
-        return Err("Modulus must be positive.".to_string());
-    }
-    let (g, x, _) = extended_gcd(a, n);
-    if g != 1 {
-        return Err("Modular inverse does not exist.".to_string());
-    }
-    Ok(((x % n) + n) % n)
-}
-
-fn powermod(base: i64, exp: i64, modulus: i64) -> Result<i64, String> {
-    if modulus <= 0 {
-        return Err("Modulus must be positive.".to_string());
-    }
-    if exp < 0 {
-        return Err("Exponent must be non-negative.".to_string());
-    }
-    let mut result = 1_i64;
-    let mut b = base % modulus;
-    let mut e = exp;
-    while e > 0 {
-        if e % 2 == 1 {
-            result = (result * b) % modulus;
-        }
-        b = (b * b) % modulus;
-        e /= 2;
-    }
-    Ok(result)
-}
-
-fn crt_two(r1: i64, m1: i64, r2: i64, m2: i64) -> Result<i64, String> {
-    if m1 <= 0 || m2 <= 0 {
-        return Err("Moduli must be positive.".to_string());
-    }
-    let n = m1 * m2;
-    let n1 = n / m1;
-    let n2 = n / m2;
-    let inv1 = mod_inverse(n1, m1)?;
-    let inv2 = mod_inverse(n2, m2)?;
-    Ok((r1 * n1 * inv1 + r2 * n2 * inv2) % n)
-}
-
-fn euler_phi(n: i64) -> Result<i64, String> {
-    if n <= 1 {
-        return Ok(0);
-    }
-    let mut count = 0;
-    for i in 1..n {
-        if gcd(i, n) == 1 {
-            count += 1;
-        }
-    }
-    Ok(count)
-}
-
-fn fermat_check(a: i64, p: i64) -> Result<i64, String> {
-    if p <= 1 {
-        return Err("Prime must be greater than 1.".to_string());
-    }
-    powermod(a, p - 1, p)
-}
-
-fn sieve_primes(limit: i64) -> Result<Vec<i64>, String> {
-    if limit < 0 {
-        return Err("Limit must be non-negative.".to_string());
-    }
-    let n = limit as usize;
-    let mut is_prime = vec![true; n + 1];
-    if n >= 1 {
-        is_prime[1] = false;
-    }
-    for i in 2..=n {
-        if is_prime[i] && (i as i64) * (i as i64) <= limit {
-            let mut j = i * i;
-            while j <= n {
-                is_prime[j] = false;
-                j += i;
-            }
-        }
-    }
-    Ok((2..=limit).filter(|&i| is_prime[i as usize]).collect())
-}
-
-fn is_prime(n: i64) -> Result<i64, String> {
-    if n < 2 {
-        return Ok(0);
-    }
-    let primes = sieve_primes(n)?;
-    Ok(if primes.contains(&n) { 1 } else { 0 })
-}
-
-fn prime_count(n: i64) -> Result<i64, String> {
-    Ok(sieve_primes(n)?.len() as i64)
-}
-
-fn nth_prime(n: i64) -> Result<i64, String> {
-    if n <= 0 {
-        return Err("Index must be positive.".to_string());
-    }
-    let mut count = 0_i64;
-    let mut candidate = 2_i64;
-    loop {
-        if is_prime(candidate)? == 1 {
-            count += 1;
-            if count == n {
-                return Ok(candidate);
-            }
-        }
-        candidate += 1;
-        if candidate > 1_000_000 {
-            return Err("Search limit exceeded.".to_string());
-        }
-    }
-}
-
-fn isprime_check(n: i64) -> Result<i64, String> {
-    is_prime(n)
-}
-
-fn rsa_phi(p: i64, q: i64) -> Result<i64, String> {
-    if p <= 1 || q <= 1 {
-        return Err("Primes must be greater than 1.".to_string());
-    }
-    Ok((p - 1) * (q - 1))
-}
-
-fn rsa_ed_check(e: i64, d: i64, phi: i64) -> Result<i64, String> {
-    if phi <= 0 {
-        return Err("Phi must be positive.".to_string());
-    }
-    Ok(if (e * d) % phi == 1 { 1 } else { 0 })
-}
-
-fn rsa_encrypt(message: i64, e: i64, n: i64) -> Result<i64, String> {
-    if message >= n {
-        return Err("Message must be less than n.".to_string());
-    }
-    powermod(message, e, n)
-}
-
-fn rsa_decrypt(ciphertext: i64, d: i64, n: i64) -> Result<i64, String> {
-    powermod(ciphertext, d, n)
-}
-
-fn gcd(mut a: i64, mut b: i64) -> i64 {
-    while b != 0 {
-        let temp = b;
-        b = a % b;
-        a = temp;
-    }
-    a.abs()
-}
-
 fn now_ms() -> u32 {
     #[cfg(target_arch = "wasm32")]
     {
@@ -364,45 +223,45 @@ mod tests {
 
     #[test]
     fn mod_inverse_matches_expected_values() {
-        assert_eq!(mod_inverse(3, 11), Ok(4));
-        assert_eq!(mod_inverse(5, 12), Ok(5));
-        assert!(mod_inverse(2, 4).is_err());
+        assert_eq!(crypto::mod_inverse(3, 11), Ok(4));
+        assert_eq!(crypto::mod_inverse(5, 12), Ok(5));
+        assert!(crypto::mod_inverse(2, 4).is_err());
     }
 
     #[test]
     fn powermod_matches_expected_values() {
-        assert_eq!(powermod(2, 10, 13), Ok(10));
-        assert_eq!(powermod(3, 13, 97), Ok(31));
-        assert_eq!(powermod(2, 1000, 13), Ok(3));
+        assert_eq!(crypto::powermod(2, 10, 13), Ok(10));
+        assert_eq!(crypto::powermod(3, 13, 97), Ok(31));
+        assert_eq!(crypto::powermod(2, 1000, 13), Ok(3));
     }
 
     #[test]
     fn crt_two_matches_expected_values() {
-        assert_eq!(crt_two(2, 3, 3, 5), Ok(8));
-        assert_eq!(crt_two(1, 3, 4, 7), Ok(4));
+        assert_eq!(crypto::crt_two(2, 3, 3, 5), Ok(8));
+        assert_eq!(crypto::crt_two(1, 3, 4, 7), Ok(4));
     }
 
     #[test]
     fn euler_and_fermat_match_expected_values() {
-        assert_eq!(euler_phi(10), Ok(4));
-        assert_eq!(euler_phi(7), Ok(6));
-        assert_eq!(fermat_check(3, 7), Ok(1));
+        assert_eq!(crypto::euler_phi(10), Ok(4));
+        assert_eq!(crypto::euler_phi(7), Ok(6));
+        assert_eq!(crypto::fermat_check(3, 7), Ok(1));
     }
 
     #[test]
     fn sieve_and_primes_match_expected_values() {
-        assert_eq!(is_prime(17), Ok(1));
-        assert_eq!(is_prime(10), Ok(0));
-        assert_eq!(prime_count(30), Ok(10));
-        assert_eq!(nth_prime(30), Ok(113));
+        assert_eq!(crypto::is_prime(17), Ok(1));
+        assert_eq!(crypto::is_prime(10), Ok(0));
+        assert_eq!(crypto::prime_count(30), Ok(10));
+        assert_eq!(crypto::nth_prime(30), Ok(113));
     }
 
     #[test]
     fn rsa_matches_expected_values() {
-        assert_eq!(rsa_phi(61, 53), Ok(3120));
-        assert_eq!(rsa_ed_check(7, 1783, 3120), Ok(1));
-        assert_eq!(rsa_encrypt(42, 7, 3233), Ok(240));
-        assert_eq!(rsa_decrypt(240, 1783, 3233), Ok(42));
+        assert_eq!(crypto::rsa_phi(61, 53), Ok(3120));
+        assert_eq!(crypto::rsa_ed_check(7, 1783, 3120), Ok(1));
+        assert_eq!(crypto::rsa_encrypt(42, 7, 3233), Ok(240));
+        assert_eq!(crypto::rsa_decrypt(240, 1783, 3233), Ok(42));
     }
 
     #[test]
