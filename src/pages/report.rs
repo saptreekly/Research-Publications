@@ -33,7 +33,7 @@ pub fn ReportPage() -> impl IntoView {
                                 <time class="home-date" datetime=report.date>{report.date}</time>
                             </div>
                             <h2 class="report-title">{report.title}</h2>
-                            <p class="report-subtitle">"Malware analysis report · HackTheBox Insane"</p>
+                            <p class="report-subtitle">{report.subtitle}</p>
                         </header>
 
                         {has_tabs.then(|| view! {
