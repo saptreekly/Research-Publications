@@ -20,7 +20,7 @@ pub fn RootLayout(children: Children) -> impl IntoView {
                 <div class="site-sidebar-top">
                     <div class="site-brand">
                         <h1><A href=home_href()>"JACK WEEKLY"</A></h1>
-                        <div class="row-tag">"CYBERSECURITY RESEARCHER"</div>
+                        <div class="row-tag">"STRATEGIC & TECHNICAL ANALYSIS"</div>
                     </div>
 
                     <nav class="site-nav" aria-label="Primary">
@@ -41,6 +41,15 @@ pub fn RootLayout(children: Children) -> impl IntoView {
                             </li>
                         </ul>
                     </nav>
+
+                    <A href=contact_href() class="site-availability">
+                        <span class="site-availability-status">"Currently open"</span>
+                        <span class="site-availability-title">"National security & mission roles"</span>
+                        <span class="site-availability-desc">
+                            "Open to intelligence, cyber, and defence-adjacent opportunities. Dual US & NZ citizen, eligible for vetting, willing to relocate."
+                        </span>
+                        <span class="site-availability-cta">"Get in touch →"</span>
+                    </A>
                 </div>
 
                 <div class="site-sidebar-bottom">
@@ -60,8 +69,7 @@ pub fn RootLayout(children: Children) -> impl IntoView {
                         </a>
                     </div>
                     <div class="site-meta">
-                        <div class="row-date">"WELLINGTON, NZ"</div>
-                        <div class="row-date">"AVAILABLE FOR RESEARCH COLLABORATION"</div>
+                        <div class="row-date">"WELLINGTON, NZ · DUAL US & NZ CITIZEN"</div>
                     </div>
                 </div>
             </aside>
