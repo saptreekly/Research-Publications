@@ -16,6 +16,14 @@ body {
     justify-content: center;
 }
 
+body::before {
+    content: "";
+    position: fixed;
+    top: 20px; left: 20px; right: 20px; bottom: 20px;
+    border: 1px solid rgba(168, 85, 247, 0.2);
+    pointer-events: none;
+}
+
 #app-container {
     width: 100%;
     max-width: 1200px;
@@ -95,3 +103,24 @@ p { font-size: 0.8rem; margin: 0; color: rgba(255,255,255,0.7); line-height: 1.4
     background: rgba(168, 85, 247, 0.05);
 }
 .social-link svg { width: 16px; height: 16px; fill: white; }
+
+/* Technical Stack Matrix */
+.stack-matrix {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+    margin-top: 30px;
+}
+.stack-tag {
+    font-family: var(--mono);
+    font-size: 0.6rem;
+    color: var(--purple);
+    border: 1px solid var(--line-color);
+    padding: 8px 4px;
+    text-align: center;
+    transition: all 0.2s;
+}
+.stack-tag:hover {
+    background: rgba(168, 85, 247, 0.05);
+    border-color: var(--purple);
+}
