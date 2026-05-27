@@ -11,40 +11,50 @@ pub fn HomePage() -> impl IntoView {
 
         <section id="publications">
             <h2>"02 / INVESTIGATIVE RESEARCH"</h2>
-            <div class="row">
-                <div class="row-tag">"[TYPE: REVERSE_ENG]"</div>
-                <div class="row-date">"2026.05 //"</div>
-                <div>
-                    <h3>"LovelyMalware Analysis Report"</h3>
-                    <p>"Full forensic analysis of a PE32+ ransomware binary. Kill chain reconstruction, custom AES-256-CBC analysis, and file decryption."</p>
+            <div class="dashboard-section">
+                <div class="row">
+                    <div class="row-meta">
+                        <span class="row-tag">"[TYPE: REVERSE_ENG]"</span>
+                        <span class="row-date">"2026.05 //"</span>
+                    </div>
+                    <div class="row-content">
+                        <h3>"LovelyMalware Analysis Report"</h3>
+                        <p>"Full forensic analysis of a PE32+ ransomware binary. Kill chain reconstruction, custom AES-256-CBC analysis, and file decryption."</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects">
+            <h2>"03 / CORE ENGINE ARCHITECTURE"</h2>
+            <div class="dashboard-section">
+                <div class="row">
+                    <div class="row-meta">
+                        <span class="row-tag">"[LANG: RUST/ZIG]"</span>
+                        <span class="row-date">"2026.04 //"</span>
+                    </div>
+                    <div class="row-content">
+                        <h3>"Project Hliðskjálf"</h3>
+                        <p>"Bare-metal Type-1.5 Rust hypervisor."</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="row-meta">
+                        <span class="row-tag">"[LANG: RUST/ELIXIR]"</span>
+                        <span class="row-date">"2026.04 //"</span>
+                    </div>
+                    <div class="row-content">
+                        <h3>"SIEM Ensemble"</h3>
+                        <p>"High-velocity log analytics engine."</p>
+                    </div>
                 </div>
             </div>
         </section>
 
         <section id="curriculum-link">
             <h2>"04 / ACADEMIC CURRICULUM"</h2>
-            <p>"Explore my structured technical curriculum in Julia for cryptographic systems."</p>
-            <A href="curriculum" class="social-link" attr:style="width: fit-content; text-align: center;">"VIEW CURRICULUM"</A>
-        </section>
-
-        <section id="projects">
-            <h2>"03 / CORE ENGINE ARCHITECTURE"</h2>
-            <div class="row">
-                <div class="row-tag">"[LANG: RUST/ZIG]"</div>
-                <div class="row-date">"2026.04 //"</div>
-                <div>
-                    <h3>"Project Hliðskjálf"</h3>
-                    <p>"Bare-metal Type-1.5 Rust hypervisor."</p>
-                </div>
-            </div>
-            <div class="row">
-                <div class="row-tag">"[LANG: RUST/ELIXIR]"</div>
-                <div class="row-date">"2026.04 //"</div>
-                <div>
-                    <h3>"SIEM Ensemble"</h3>
-                    <p>"High-velocity log analytics engine."</p>
-                </div>
-            </div>
+            <p class="section-intro">"Explore my structured technical curriculum in Julia for cryptographic systems."</p>
+            <A href="curriculum" class="social-link cta-link">"VIEW CURRICULUM"</A>
         </section>
     }
 }

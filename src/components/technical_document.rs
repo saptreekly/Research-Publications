@@ -1,24 +1,43 @@
 use leptos::*;
 use comrak::{markdown_to_html, Options};
+use crate::utils::{is_html_content, resolve_asset_url};
 
 #[component]
 pub fn TechnicalDocument(src: &'static str) -> impl IntoView {
     let content = create_resource(move || src, |src| async move {
-        gloo_net::http::Request::get(src)
-            .send()
-            .await
-            .unwrap()
-            .text()
-            .await
-            .unwrap_or_else(|_| "Error loading document".to_string())
+        let url = resolve_asset_url(src);
+        let response = match gloo_net::http::Request::get(&url).send().await {
+            Ok(response) => response,
+            Err(_) => return Err("Unable to reach document source.".to_string()),
+        };
+
+        if !response.ok() {
+            return Err(format!("Document not found ({})", response.status()));
+        }
+
+        let text = match response.text().await {
+            Ok(text) => text,
+            Err(_) => return Err("Unable to read document contents.".to_string()),
+        };
+
+        if is_html_content(&text) {
+            return Err("Document source returned HTML instead of markdown.".to_string());
+        }
+
+        Ok(text)
     });
 
     view! {
         <Suspense fallback=move || view! { <p>"Loading module..."</p> }>
-            {move || content.get().map(|md| {
-                let options = Options::default();
-                let html = markdown_to_html(&md, &options);
-                view! { <div class="markdown-content" inner_html=html /> }
+            {move || content.get().map(|result| match result {
+                Ok(md) => {
+                    let options = Options::default();
+                    let html = markdown_to_html(&md, &options);
+                    view! { <div class="markdown-content" inner_html=html /> }.into_view()
+                }
+                Err(message) => view! {
+                    <p class="doc-error">{message.clone()}</p>
+                }.into_view(),
             })}
         </Suspense>
     }
