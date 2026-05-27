@@ -126,9 +126,8 @@ struct AppState {
 }
 
 fn update_dimensions(canvas: &HtmlCanvasElement, state: &mut AppState) {
-    let win = window();
-    let w = win.inner_width().unwrap().as_f64().unwrap();
-    let h = win.inner_height().unwrap().as_f64().unwrap();
+    let w = canvas.offset_width() as f64;
+    let h = canvas.offset_height() as f64;
     
     canvas.set_width(w as u32);
     canvas.set_height(h as u32);
