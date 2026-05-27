@@ -90,21 +90,8 @@ fn App() -> impl IntoView {
                 </section>
 
                 <section id="curriculum">
-                    <h2>"TECHNICAL CURRICULUM"</h2>
-                    <TechnicalDocument content=r#"
-### Cryptographic Implementation
-To implement the Extended Euclidean Algorithm for $ax + by = \gcd(a, b)$, we must define the iterative process.
-```julia
-function extended_gcd(a, b)
-    if a == 0
-        return (b, 0, 1)
-    else
-        g, y, x = extended_gcd(b % a, a)
-        return (g, x - (b ÷ a) * y, y)
-    end
-end
-```
-"# />
+                    <h2>"05 / JULIA CRYPTOGRAPHY"</h2>
+                    <TechnicalDocument src="research-docs/julia-crypto/mod_01.md" />
                 </section>
 
                 <section id="projects">
