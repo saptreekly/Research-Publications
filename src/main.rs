@@ -1,5 +1,6 @@
 mod components;
 mod pages;
+mod utils;
 
 use leptos::*;
 use leptos_meta::*;

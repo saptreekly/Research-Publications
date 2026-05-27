@@ -1,6 +1,7 @@
 use leptos::*;
 use leptos_router::*;
 use crate::components::animated_background::AnimatedBackground;
+use crate::utils::resolve_asset_url;
 use serde::{Deserialize, Serialize};
 
 #[derive(Clone, Deserialize, Serialize)]
@@ -12,7 +13,8 @@ struct StackData { updated_at: String, languages: Vec<StackItem> }
 #[component]
 fn StackMatrix() -> impl IntoView {
     let stack = create_resource(|| (), |_| async move {
-        if let Ok(response) = gloo_net::http::Request::get("static/stack.json").send().await {
+        let url = resolve_asset_url("static/stack.json");
+        if let Ok(response) = gloo_net::http::Request::get(&url).send().await {
             if let Ok(data) = response.json::<StackData>().await {
                 return data;
             }
@@ -22,7 +24,7 @@ fn StackMatrix() -> impl IntoView {
 
     view! {
         <div class="stack-matrix">
-            <h2 style="margin-bottom: 15px; border: none; padding: 0;">"LANGUAGE DISTRIBUTION"</h2>
+            <h2 class="stack-heading">"LANGUAGE DISTRIBUTION"</h2>
             <Suspense fallback=move || view! { <div class="stack-label">"Loading..."</div> }>
                 {move || stack.get().map(|data| view! {
                     {data.languages.into_iter().map(|item| {
@@ -37,7 +39,7 @@ fn StackMatrix() -> impl IntoView {
                             </div>
                         }
                     }).collect_view()}
-                    <div class="row-date" style="margin-top: 15px; font-size: 0.55rem;">
+                    <div class="row-date stack-audit">
                         "LAST AUDIT: " {data.updated_at}
                     </div>
                 })}

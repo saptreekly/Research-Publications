@@ -1,0 +1,32 @@
+pub fn resolve_asset_url(relative_path: &str) -> String {
+    let window = web_sys::window().expect("window");
+    let document = window.document().expect("document");
+
+    let base: String = document
+        .base_uri()
+        .ok()
+        .flatten()
+        .unwrap_or_else(|| {
+            window
+                .location()
+                .href()
+                .unwrap_or_else(|_| "/".to_string())
+        });
+
+    format!(
+        "{}/{}",
+        base.trim_end_matches('/'),
+        relative_path.trim_start_matches('/')
+    )
+}
+
+pub fn is_html_content(content: &str) -> bool {
+    let trimmed = content.trim_start();
+    trimmed.starts_with("<!DOCTYPE")
+        || trimmed.starts_with("<!doctype")
+        || trimmed.starts_with("<html")
+        || trimmed.starts_with("<HTML")
+        || trimmed.contains("<head>")
+        || trimmed.contains("TrunkApplicationStarted")
+        || trimmed.contains("Build failure")
+}
