@@ -4,4 +4,5 @@ pub mod contact;
 pub mod lab;
 pub mod layout;
 pub mod module;
+pub mod project;
 pub mod report;

@@ -58,3 +58,7 @@ pub fn contact_href() -> String {
 pub fn report_href(slug: &str) -> String {
     format!("{APP_BASE}/research/{slug}")
 }
+
+pub fn project_href(slug: &str) -> String {
+    format!("{APP_BASE}/projects/{slug}")
+}

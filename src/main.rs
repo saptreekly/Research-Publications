@@ -1,6 +1,7 @@
 mod components;
 mod lab;
 mod pages;
+mod projects;
 mod reports;
 mod utils;
 
@@ -15,6 +16,7 @@ use pages::curriculum::CurriculumPage;
 use pages::lab::LabPage;
 use pages::module::ModulePage;
 use pages::report::ReportPage;
+use pages::project::ProjectPage;
 use web_sys::console;
 
 pub const APP_BASE: &str = "/Research-Publications";
@@ -24,6 +26,7 @@ const ROUTE_MODULE: &str = "/Research-Publications/curriculum/:slug";
 const ROUTE_LAB: &str = "/Research-Publications/curriculum/lab/:slug";
 const ROUTE_CONTACT: &str = "/Research-Publications/contact";
 const ROUTE_REPORT: &str = "/Research-Publications/research/:slug";
+const ROUTE_PROJECT: &str = "/Research-Publications/projects/:slug";
 
 #[component]
 fn App() -> impl IntoView {
@@ -46,6 +49,9 @@ fn App() -> impl IntoView {
                 } />
                 <Route path=ROUTE_REPORT view=move || view! {
                     <RootLayout><ReportPage /></RootLayout>
+                } />
+                <Route path=ROUTE_PROJECT view=move || view! {
+                    <RootLayout><ProjectPage /></RootLayout>
                 } />
                 <Route path=ROUTE_MODULE view=move || view! {
                     <RootLayout><ModulePage /></RootLayout>
