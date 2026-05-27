@@ -73,3 +73,22 @@ p { font-size: 0.8rem; margin: 0; color: rgba(255,255,255,0.7); line-height: 1.4
 .cert-item { border-bottom: 1px solid var(--line-color); padding: 20px 0; }
 .cert-label { font-family: var(--mono); font-size: 0.55rem; color: var(--purple); margin-bottom: 5px; }
 .cert-title { font-size: 0.85rem; font-weight: bold; }
+
+.social-links { margin-top: 30px; display: grid; gap: 10px; }
+.social-link {
+    font-family: var(--mono);
+    font-size: 0.75rem;
+    color: var(--text-color);
+    border: 1px solid var(--line-color);
+    padding: 12px;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: all 0.3s;
+}
+.social-link:hover {
+    border-color: var(--purple);
+    background: rgba(168, 85, 247, 0.05);
+}
+.social-link svg { width: 16px; height: 16px; fill: white; }
