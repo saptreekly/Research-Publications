@@ -8,35 +8,35 @@ pub fn HomePage() -> impl IntoView {
     view! {
         <div class="home-page">
             <header class="home-hero">
-                <p class="home-eyebrow">"Cybersecurity researcher · Wellington, New Zealand"</p>
-                <h2 class="home-title">"Policy depth and technical execution in the same portfolio."</h2>
+                <p class="home-eyebrow">"Dual US & NZ citizen · Wellington, New Zealand"</p>
+                <h2 class="home-title">"Strategic analysis and technical collection in one analyst."</h2>
                 <p class="home-lead">
-                    "I'm Jack Weekly. I work across threat intelligence, malware analysis, and security engineering, "
-                    "with graduate training in cyber warfare as statecraft and day-to-day experience in reverse engineering, "
-                    "vulnerability assessment, and security architecture."
+                    "I'm Jack Weekly. I work across malware forensics, threat reporting, and security engineering, "
+                    "with graduate training in coercive statecraft and Asia-Pacific security competition. "
+                    "This site is a sample of analytic writing, operational technical work, and applied cryptography research."
                 </p>
                 <ul class="home-highlights" aria-label="Core focus areas">
                     <li class="home-highlight">
                         <span class="home-highlight-label">"Analysis"</span>
-                        <span class="home-highlight-text">"Malware reverse engineering and forensic reporting"</span>
+                        <span class="home-highlight-text">"Malware forensics, kill-chain reconstruction, and CTI-style reporting"</span>
                     </li>
                     <li class="home-highlight">
                         <span class="home-highlight-label">"Engineering"</span>
-                        <span class="home-highlight-text">"Security tooling in Rust, Zig, and Elixir"</span>
+                        <span class="home-highlight-text">"Collection pipelines and security tooling in Rust, Zig, and Elixir"</span>
                     </li>
                     <li class="home-highlight">
                         <span class="home-highlight-label">"Research"</span>
-                        <span class="home-highlight-text">"Applied cryptography curriculum built in Julia"</span>
+                        <span class="home-highlight-text">"Strategic studies and applied cryptography foundations"</span>
                     </li>
                 </ul>
             </header>
 
             <section class="home-section" id="research" aria-labelledby="research-heading">
                 <div class="home-section-header">
-                    <p class="home-section-kicker">"Featured work"</p>
-                    <h2 id="research-heading" class="home-section-title">"Research & analysis"</h2>
+                    <p class="home-section-kicker">"Intelligence products"</p>
+                    <h2 id="research-heading" class="home-section-title">"Technical analysis & reporting"</h2>
                     <p class="home-section-desc">
-                        "Published investigative work demonstrating end-to-end technical depth, from binary triage to decryption and reporting."
+                        "Finished analytic work from triage through network forensics to actionable indicators and detection rules."
                     </p>
                 </div>
                 <A href=report_href("lovely-malware") class="home-card home-card-link">
@@ -46,8 +46,8 @@ pub fn HomePage() -> impl IntoView {
                     </div>
                     <h3 class="home-card-title">"LovelyMalware analysis report"</h3>
                     <p class="home-card-body">
-                        "Forensic write-up of a PE32+ ransomware sample: kill chain reconstruction, custom AES-256-CBC usage, "
-                        "and successful file recovery. Shows practical reverse engineering and documentation skills."
+                        "Intelligence-style forensic report on a PE32+ ransomware sample: static and dynamic analysis, PCAP review, "
+                        "decryption, Sigma rules, and IOC packages suitable for operational use."
                     </p>
                     <span class="home-card-cta">"READ REPORT →"</span>
                 </A>
@@ -55,10 +55,10 @@ pub fn HomePage() -> impl IntoView {
 
             <section class="home-section" id="projects" aria-labelledby="projects-heading">
                 <div class="home-section-header">
-                    <p class="home-section-kicker">"Build portfolio"</p>
+                    <p class="home-section-kicker">"Operational tooling"</p>
                     <h2 id="projects-heading" class="home-section-title">"Engineering projects"</h2>
                     <p class="home-section-desc">
-                        "Longer-horizon systems work: low-level infrastructure and data pipelines relevant to security operations."
+                        "Systems work oriented toward collection, enrichment, isolation, and security operations at scale."
                     </p>
                 </div>
                 <div class="home-card-grid">
@@ -69,7 +69,7 @@ pub fn HomePage() -> impl IntoView {
                         </div>
                         <h3 class="home-card-title">"Project Hliðskjálf"</h3>
                         <p class="home-card-body">
-                            "Bare-metal Type-1.5 hypervisor research. Focus on systems programming, isolation, and low-level security primitives."
+                            "Bare-metal Type-1.5 hypervisor research focused on isolation, trusted execution boundaries, and low-level systems security."
                         </p>
                     </article>
                     <article class="home-card">
@@ -79,7 +79,7 @@ pub fn HomePage() -> impl IntoView {
                         </div>
                         <h3 class="home-card-title">"SIEM Ensemble"</h3>
                         <p class="home-card-body">
-                            "High-throughput log analytics engine for security monitoring workflows: ingestion, enrichment, and query performance."
+                            "High-throughput log analytics for detection workflows: ingestion, enrichment, correlation, and query performance."
                         </p>
                     </article>
                 </div>
@@ -87,10 +87,10 @@ pub fn HomePage() -> impl IntoView {
 
             <section class="home-section" id="education" aria-labelledby="education-heading">
                 <div class="home-section-header">
-                    <p class="home-section-kicker">"Academic background"</p>
+                    <p class="home-section-kicker">"Analytic foundation"</p>
                     <h2 id="education-heading" class="home-section-title">"Education"</h2>
                     <p class="home-section-desc">
-                        "Formal training in strategy and international business, alongside the technical security work in this portfolio."
+                        "Graduate training in strategic competition and statecraft, paired with undergraduate work in international business."
                     </p>
                 </div>
                 <ul class="home-cred-list">
@@ -99,7 +99,7 @@ pub fn HomePage() -> impl IntoView {
                             <span class="home-cred-type">"Graduate degree"</span>
                             <span class="home-cred-provider">"Victoria University of Wellington"</span>
                             <span class="home-cred-name">"Master of Strategic Studies"</span>
-                            <span class="home-cred-detail">"Awarded with Merit"</span>
+                            <span class="home-cred-detail">"Awarded with Merit · Thesis: Evaluating US and Chinese 5th-Generation Aerospace Capabilities as Instruments of Coercive Statecraft in Asia-Pacific"</span>
                         </div>
                     </li>
                     <li>

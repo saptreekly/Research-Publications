@@ -31,7 +31,7 @@ fn App() -> impl IntoView {
     console::log_1(&"[WASM TELEMETRY] Initializing App Router Tree".into());
 
     view! {
-        <Title text="JACK WEEKLY | CYBERSECURITY" />
+        <Title text="JACK WEEKLY | ANALYSIS & SECURITY" />
         <Link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;700&family=IBM+Plex+Mono:wght@400&display=swap" rel="stylesheet" />
 
         <AnimatedBackground />
