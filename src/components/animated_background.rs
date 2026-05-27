@@ -61,8 +61,10 @@ pub fn AnimatedBackground() -> impl IntoView {
                     ctx.set_stroke_style(&ring_color);
                     ctx.set_line_width(1.0);
 
-                    const SPACING: f64 = 40.0;
-                    const BASE_RADIUS: f64 = 3.0;
+                    // Responsive scaling: Wider spacing and smaller rings on small screens
+                    let is_mobile = s.width < 600.0;
+                    let spacing = if is_mobile { 60.0 } else { 40.0 };
+                    let base_radius = if is_mobile { 1.5 } else { 3.0 };
                     
                     let origin_x = s.width / 2.0;
                     let origin_y = s.height / 2.0;
@@ -87,15 +89,15 @@ pub fn AnimatedBackground() -> impl IntoView {
                             let draw_y = y + (unit_y * warp);
                             
                             ctx.set_global_alpha(intensity);
-                            let current_radius = BASE_RADIUS * (1.0 + intensity * 2.0);
+                            let current_radius = base_radius * (1.0 + intensity * 2.0);
                             
                             ctx.begin_path();
                             let _ = ctx.arc(draw_x, draw_y, current_radius, 0.0, TAU);
                             ctx.stroke();
 
-                            y += SPACING;
+                            y += spacing;
                         }
-                        x += SPACING;
+                        x += spacing;
                     }
 
                     request_animation_frame(f_inner.borrow().as_ref().unwrap());
