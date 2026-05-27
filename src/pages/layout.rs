@@ -12,13 +12,11 @@ struct StackData { updated_at: String, languages: Vec<StackItem> }
 #[component]
 fn StackMatrix() -> impl IntoView {
     let stack = create_resource(|| (), |_| async move {
-        // Safe, non-panicking network fetch block
         if let Ok(response) = gloo_net::http::Request::get("static/stack.json").send().await {
             if let Ok(data) = response.json::<StackData>().await {
                 return data;
             }
         }
-        // Fallback gracefully without thread destruction if data lags on boot
         StackData { updated_at: "N/A".to_string(), languages: vec![] }
     });
 
@@ -51,6 +49,9 @@ fn StackMatrix() -> impl IntoView {
 #[component]
 pub fn RootLayout() -> impl IntoView {
     view! {
+        <div style="position: fixed; top: 0; left: 0; z-index: 1000; background: red; color: white;">
+            "DEBUG: RootLayout rendered"
+        </div>
         <AnimatedBackground />
 
         <div id="app-container">
