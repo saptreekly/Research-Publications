@@ -1,6 +1,7 @@
 import os
 import json
 import requests
+from datetime import datetime
 
 def run_audit():
     token = os.environ.get('GH_PAT')
@@ -19,15 +20,18 @@ def run_audit():
         for lang, byte_count in langs.items():
             stats[lang] = stats.get(lang, 0) + byte_count
             
-    # Filter and format for display
-    # Keep only the top relevant languages
     sorted_stats = sorted([{'language': k.upper(), 'bytes': v} for k, v in stats.items()], key=lambda x: x['bytes'], reverse=True)
     
-    # Just take top 7
-    top_7 = sorted_stats[:7]
+    # Increase limit to 12 to include less frequent languages
+    top_languages = sorted_stats[:12]
+    
+    data = {
+        'updated_at': datetime.utcnow().strftime('%Y-%m-%d %H:%M UTC'),
+        'languages': top_languages
+    }
     
     with open('static/stack.json', 'w') as f:
-        json.dump(top_7, f)
+        json.dump(data, f)
 
 if __name__ == "__main__":
     run_audit()

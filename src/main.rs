@@ -8,6 +8,9 @@ use serde::{Deserialize, Serialize};
 #[derive(Clone, Deserialize, Serialize)]
 struct StackItem { language: String, bytes: u64 }
 
+#[derive(Clone, Deserialize, Serialize)]
+struct StackData { updated_at: String, languages: Vec<StackItem> }
+
 #[component]
 fn StackMatrix() -> impl IntoView {
     let stack = create_resource(|| (), |_| async move {
@@ -15,29 +18,32 @@ fn StackMatrix() -> impl IntoView {
             .send()
             .await
             .unwrap()
-            .json::<Vec<StackItem>>()
+            .json::<StackData>()
             .await
-            .unwrap_or_default()
+            .unwrap_or_else(|_| StackData { updated_at: "N/A".to_string(), languages: vec![] })
     });
 
     view! {
         <div class="stack-matrix">
+            <h2 style="margin-bottom: 15px; border: none; padding: 0;">"LANGUAGE DISTRIBUTION"</h2>
             <Suspense fallback=move || view! { <div class="stack-label">"Loading..."</div> }>
-                {move || stack.get().map(|items| {
-                    let max_bytes = items.iter().map(|i| i.bytes).max().unwrap_or(1);
-                    view! {
-                        {items.into_iter().map(|item| {
-                            let percentage = (item.bytes as f64 / max_bytes as f64) * 100.0;
-                            view! {
-                                <div class="stack-row">
-                                    <div class="stack-label">{item.language}</div>
-                                    <div class="bar-container">
-                                        <div class="bar" style=format!("width: {}%;", percentage)></div>
-                                    </div>
+                {move || stack.get().map(|data| view! {
+                    {data.languages.into_iter().map(|item| {
+                        // Normalize against the largest to make graph readable
+                        let max_bytes = 100000.0; // Fixed cap for consistency
+                        let percentage = ((item.bytes as f64 / max_bytes) * 100.0).min(100.0);
+                        view! {
+                            <div class="stack-row">
+                                <div class="stack-label">{item.language}</div>
+                                <div class="bar-container">
+                                    <div class="bar" style=format!("width: {}%;", percentage)></div>
                                 </div>
-                            }
-                        }).collect_view()}
-                    }
+                            </div>
+                        }
+                    }).collect_view()}
+                    <div class="row-date" style="margin-top: 15px; font-size: 0.55rem;">
+                        "LAST AUDIT: " {data.updated_at}
+                    </div>
                 })}
             </Suspense>
         </div>
