@@ -1,6 +1,7 @@
 use crate::lab::modules::find_by_slug as find_module;
 use crate::projects::find_by_slug as find_project;
 use crate::reports::find_by_slug as find_report;
+use crate::tidy_tuesday::find_by_slug as find_tidy_tuesday;
 use crate::utils::APP_BASE;
 
 pub const SITE_NAME: &str = "Jack Weekly";
@@ -95,6 +96,24 @@ pub fn seo_for_path(pathname: &str) -> SeoMeta {
                 &path,
                 &format!("{} | Jack Weekly", project.title),
                 &format!("{} · {}", project.subtitle, project.tag),
+            );
+        }
+    }
+
+    if path == "/tidy-tuesday" {
+        return page(
+            "/tidy-tuesday",
+            "Tidy Tuesday | Jack Weekly",
+            "Weekly Julia data explorations using TidyTuesday community datasets.",
+        );
+    }
+
+    if let Some(slug) = path.strip_prefix("/tidy-tuesday/") {
+        if let Some(entry) = find_tidy_tuesday(slug) {
+            return page(
+                &path,
+                &format!("{} | Jack Weekly", entry.title),
+                &format!("{} · {}", entry.subtitle, entry.tag),
             );
         }
     }

@@ -59,6 +59,16 @@ ROUTES: list[dict[str, str]] = [
         "title": "Geospatial Intel Server | Jack Weekly",
         "description": "Viewport-filtered aircraft tracking over WebSocket with H3 indexing · Go · Rust · Wasm",
     },
+    {
+        "path": "/tidy-tuesday",
+        "title": "Tidy Tuesday | Jack Weekly",
+        "description": "Weekly Julia data explorations using TidyTuesday community datasets.",
+    },
+    {
+        "path": "/tidy-tuesday/se4all-2026-05-26",
+        "title": "Sustainable Energy for All | Jack Weekly",
+        "description": "Tidy Tuesday · SE4ALL country-level energy metrics · Julia analysis · Data analysis",
+    },
 ]
 
 for slug in MODULE_SLUGS:
@@ -86,6 +96,7 @@ ROUTE_CONTENT: dict[str, list[str]] = {
     "/projects/hlidskjalf": ["research-docs/projects/hlidskjalf.md"],
     "/projects/siem-ensemble": ["research-docs/projects/siem-ensemble.md"],
     "/projects/geospatial-intel": ["research-docs/projects/geospatial-intel.md"],
+    "/tidy-tuesday/se4all-2026-05-26": ["research-docs/tidy-tuesday/se4all-2026-05-26.md"],
 }
 
 for route in ROUTES:

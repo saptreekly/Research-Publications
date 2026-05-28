@@ -2,7 +2,7 @@ use leptos::*;
 use leptos_router::*;
 use crate::components::stack_matrix::StackMatrix;
 use crate::projects::find_by_slug;
-use crate::utils::{contact_href, curriculum_href, lab_href, project_href, report_href};
+use crate::utils::{contact_href, curriculum_href, lab_href, project_href, report_href, tidy_tuesday_href, tidy_tuesday_index_href};
 
 fn project_tag(slug: &str) -> &'static str {
     find_by_slug(slug).expect("registered project").tag
@@ -283,6 +283,31 @@ pub fn HomePage() -> impl IntoView {
                         </a>
                     </li>
                 </ul>
+            </section>
+
+            <section class="home-section" id="tidy-tuesday" aria-labelledby="tidy-tuesday-heading">
+                <div class="home-section-header">
+                    <p class="home-section-kicker">"Julia data analysis"</p>
+                    <h2 id="tidy-tuesday-heading" class="home-section-title">"Tidy Tuesday"</h2>
+                    <p class="home-section-desc">
+                        "Weekly explorations of community datasets in Julia — data cleaning, visualization, and reproducible analysis."
+                    </p>
+                </div>
+                <div class="home-card-grid">
+                    <A href=tidy_tuesday_href("se4all-2026-05-26") class="home-card home-card-link">
+                        <div class="home-card-meta">
+                            <span class="home-tag">"Data analysis"</span>
+                            <time class="home-date" datetime="2026-05-26">"May 2026"</time>
+                        </div>
+                        <h3 class="home-card-title">"Sustainable Energy for All"</h3>
+                        <p class="home-card-body">
+                            "SE4ALL country-level energy metrics: renewable adoption rates, wind consumption in Nordic leaders, "
+                            "and solar access gaps — analyzed with DataFrames.jl and Plots.jl."
+                        </p>
+                        <span class="home-card-cta">"READ ANALYSIS →"</span>
+                    </A>
+                </div>
+                <A href=tidy_tuesday_index_href() class="home-cta">"Browse all Tidy Tuesday entries"</A>
             </section>
 
             <section class="home-section" id="curriculum-link" aria-labelledby="curriculum-heading">
