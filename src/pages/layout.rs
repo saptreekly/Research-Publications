@@ -63,9 +63,10 @@ pub fn RootLayout(children: Children) -> impl IntoView {
 
                         <A href=contact_href() class="site-availability">
                             <span class="site-availability-status">"Currently open"</span>
-                            <span class="site-availability-title">"National security & mission roles"</span>
+                            <span class="site-availability-title">"Open to opportunities"</span>
                             <span class="site-availability-desc">
-                                "Open to intelligence, cyber, and defence-adjacent opportunities. Dual US & NZ citizen, eligible for vetting, willing to relocate."
+                                "Dual US & NZ citizen (US-born), Wellington. Not currently cleared. "
+                                "Open to relocation and employer-required background screening."
                             </span>
                             <span class="site-availability-cta">"Get in touch →"</span>
                         </A>
@@ -91,7 +92,7 @@ pub fn RootLayout(children: Children) -> impl IntoView {
                             </a>
                         </div>
                         <div class="site-meta">
-                            <div class="row-date">"WELLINGTON, NZ · DUAL US & NZ CITIZEN"</div>
+                            <div class="row-date">"WELLINGTON · DUAL US/NZ CITIZEN"</div>
                         </div>
                     </div>
                     </div>

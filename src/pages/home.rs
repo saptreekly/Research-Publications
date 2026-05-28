@@ -2,7 +2,7 @@ use leptos::*;
 use leptos_router::*;
 use crate::components::stack_matrix::StackMatrix;
 use crate::projects::find_by_slug;
-use crate::utils::{curriculum_href, project_href, report_href};
+use crate::utils::{contact_href, curriculum_href, lab_href, project_href, report_href};
 
 fn project_tag(slug: &str) -> &'static str {
     find_by_slug(slug).expect("registered project").tag
@@ -14,34 +14,98 @@ pub fn HomePage() -> impl IntoView {
         <div class="home-page">
             <header class="home-hero">
                 <p class="home-eyebrow">"Dual US & NZ citizen · Wellington, New Zealand"</p>
-                <h2 class="home-title">"Strategic analysis and technical collection in one analyst."</h2>
+                <h2 class="home-title">"All-source analysis with technical depth."</h2>
                 <p class="home-lead">
-                    "I'm Jack Weekly. I work across malware forensics, threat reporting, and security engineering, "
-                    "with graduate training in coercive statecraft and Asia-Pacific security competition. "
-                    "This site is a sample of analytic writing, operational technical work, and applied cryptography research."
+                    "I'm Jack Weekly. My training is in strategic studies and Asia-Pacific security competition; "
+                    "my technical work spans cyber forensics, security engineering, and applied cryptography. "
+                    "I use cyber to demonstrate depth, but this portfolio is built for general intelligence work: "
+                    "finished analytic writing, operational tooling, and research that connects policy to operational reality."
                 </p>
                 <ul class="home-highlights" aria-label="Core focus areas">
                     <li class="home-highlight">
                         <span class="home-highlight-label">"Analysis"</span>
-                        <span class="home-highlight-text">"Malware forensics, kill-chain reconstruction, and CTI-style reporting"</span>
+                        <span class="home-highlight-text">"Regional security assessment, coercive statecraft, and intelligence-style reporting"</span>
                     </li>
                     <li class="home-highlight">
                         <span class="home-highlight-label">"Engineering"</span>
-                        <span class="home-highlight-text">"Collection pipelines and security tooling in Rust, Zig, and Elixir"</span>
+                        <span class="home-highlight-text">"Security tooling and data pipelines; cyber work as technical proof of tradecraft"</span>
                     </li>
                     <li class="home-highlight">
                         <span class="home-highlight-label">"Research"</span>
-                        <span class="home-highlight-text">"Strategic studies and applied cryptography foundations"</span>
+                        <span class="home-highlight-text">"Asia-Pacific competition, strategic studies, and cryptologic foundations"</span>
                     </li>
                 </ul>
             </header>
+
+            <section class="home-section home-start-section" id="start-here" aria-labelledby="start-here-heading">
+                <div class="home-section-header">
+                    <p class="home-section-kicker">"For reviewers"</p>
+                    <h2 id="start-here-heading" class="home-section-title">"Start here"</h2>
+                    <p class="home-section-desc">
+                        "Curated entry points for intelligence and national security roles. "
+                        "Each link is a finished deliverable, not a project overview."
+                    </p>
+                </div>
+                <ol class="home-start-list">
+                    <li class="home-start-item">
+                        <A href=report_href("lovely-malware") class="home-start-link">
+                            <span class="home-start-track">"Cyber threat intelligence"</span>
+                            <span class="home-start-title">"LovelyMalware forensic report"</span>
+                            <span class="home-start-body">
+                                "End-to-end CTI deliverable: static/dynamic forensics, network analysis, decryption, "
+                                "Sigma detection rules, and IOC packages formatted for operational use."
+                            </span>
+                            <span class="home-start-cta">"Open CTI sample →"</span>
+                        </A>
+                    </li>
+                    <li class="home-start-item">
+                        <A href=report_href("thesis-summary") class="home-start-link">
+                            <span class="home-start-track">"Strategic & all-source analysis"</span>
+                            <span class="home-start-title">"5th-gen fighter exports & APAC competition"</span>
+                            <span class="home-start-body">
+                                "MStrat writing sample on coercive statecraft, export controls, and alignment pressure "
+                                "on Indonesia, Malaysia, Pakistan, and other Asia-Pacific middle powers."
+                            </span>
+                            <span class="home-start-cta">"Open writing sample →"</span>
+                        </A>
+                    </li>
+                    <li class="home-start-item">
+                        <A href=project_href("geospatial-intel") class="home-start-link">
+                            <span class="home-start-track">"Systems engineering"</span>
+                            <span class="home-start-title">"Geospatial Intel Server"</span>
+                            <span class="home-start-body">
+                                "Real-time streaming architecture: OpenSky ingest, viewport-filtered WebSocket streaming, "
+                                "H3 spatial indexing, and delta updates for sub-100k entity workloads."
+                            </span>
+                            <span class="home-start-cta">"Open engineering sample →"</span>
+                        </A>
+                    </li>
+                    <li class="home-start-item">
+                        <A href=lab_href("mod-01") class="home-start-link">
+                            <span class="home-start-track">"Applied cryptography & tradecraft depth"</span>
+                            <span class="home-start-title">"Interactive modular arithmetic lab"</span>
+                            <span class="home-start-body">
+                                "Browser-based Julia lab with automated verification. Demonstrates math foundations "
+                                "relevant to cryptologic and cyber operations work (inverses, modular arithmetic)."
+                            </span>
+                            <span class="home-start-cta">"Run live lab →"</span>
+                        </A>
+                    </li>
+                </ol>
+                <p class="home-start-footer">
+                    "Prefer a single PDF or clearance conversation? "
+                    <A href=contact_href() class="home-start-footer-link">"Contact"</A>
+                    " · "
+                    <A href=curriculum_href() class="home-start-footer-link">"Full curriculum"</A>
+                </p>
+            </section>
 
             <section class="home-section" id="research" aria-labelledby="research-heading">
                 <div class="home-section-header">
                     <p class="home-section-kicker">"Intelligence products"</p>
                     <h2 id="research-heading" class="home-section-title">"Technical analysis & reporting"</h2>
                     <p class="home-section-desc">
-                        "Finished analytic work—from malware forensics to strategic studies writing samples."
+                        "Finished analytic work, from malware forensics to strategic studies writing samples."
                     </p>
                 </div>
                 <div class="home-card-grid">
@@ -77,7 +141,7 @@ pub fn HomePage() -> impl IntoView {
                     <p class="home-section-kicker">"Operational tooling"</p>
                     <h2 id="projects-heading" class="home-section-title">"Engineering projects"</h2>
                     <p class="home-section-desc">
-                        "Systems work oriented toward collection, enrichment, isolation, and security operations at scale."
+                        "Systems work oriented toward ingestion, enrichment, isolation, and security operations at scale."
                     </p>
                 </div>
                 <div class="home-card-grid">
