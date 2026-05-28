@@ -20,8 +20,27 @@ impl CanvasColors {
     }
 }
 
+fn prefers_reduced_motion() -> bool {
+    web_sys::window()
+        .and_then(|window| window.match_media("(prefers-reduced-motion: reduce)").ok())
+        .flatten()
+        .map(|query| query.matches())
+        .unwrap_or(false)
+}
+
 #[component]
 pub fn AnimatedBackground() -> impl IntoView {
+    let enabled = Memo::new(|_| !prefers_reduced_motion());
+
+    view! {
+        <Show when=move || enabled.get()>
+            <AnimatedBackgroundCanvas />
+        </Show>
+    }
+}
+
+#[component]
+fn AnimatedBackgroundCanvas() -> impl IntoView {
     let canvas_ref = create_node_ref::<html::Canvas>();
     let initialized = store_value(false);
     let theme = use_theme();
@@ -158,7 +177,8 @@ pub fn AnimatedBackground() -> impl IntoView {
                     let frame = frame_counter_cb.get();
                     frame_counter_cb.set(frame.wrapping_add(1));
 
-                    let should_draw = profile.frame_skip == 0 || frame % (profile.frame_skip + 1) == 0;
+                    let should_draw =
+                        profile.frame_skip == 0 || frame % (profile.frame_skip + 1) == 0;
 
                     if should_draw {
                         let s = state_inner.borrow();
@@ -183,7 +203,8 @@ pub fn AnimatedBackground() -> impl IntoView {
 
                                 let wave =
                                     ((dist * profile.dist_scale) - (time * profile.time_scale)).sin();
-                                let intensity = ((wave + 1.0) * 0.5).powf(profile.intensity_power);
+                                let intensity =
+                                    ((wave + 1.0) * 0.5).powf(profile.intensity_power);
 
                                 if intensity > profile.min_intensity {
                                     let warp = (wave * profile.warp_scale) * intensity;
@@ -192,8 +213,8 @@ pub fn AnimatedBackground() -> impl IntoView {
 
                                     let draw_x = x + (unit_x * warp);
                                     let draw_y = y + (unit_y * warp);
-                                    let current_radius =
-                                        profile.base_radius * (1.0 + intensity * profile.radius_boost);
+                                    let current_radius = profile.base_radius
+                                        * (1.0 + intensity * profile.radius_boost);
 
                                     ctx.set_global_alpha(intensity * profile.alpha_scale);
 
@@ -278,6 +299,8 @@ pub fn AnimatedBackground() -> impl IntoView {
 }
 
 const MOBILE_BREAKPOINT: f64 = 768.0;
+const DESKTOP_MAX_DPR: f64 = 1.0;
+const MAX_CANVAS_PIXELS: f64 = 800.0 * 450.0;
 
 #[derive(Clone, Copy)]
 struct RenderProfile {
@@ -299,7 +322,7 @@ impl RenderProfile {
     fn for_width(width: f64) -> Self {
         if width < MOBILE_BREAKPOINT {
             Self {
-                spacing: 72.0,
+                spacing: 80.0,
                 base_radius: 2.75,
                 warp_scale: 10.0,
                 time_scale: 0.00045,
@@ -308,13 +331,13 @@ impl RenderProfile {
                 radius_boost: 2.0,
                 alpha_scale: 1.0,
                 min_intensity: 0.0,
-                max_dpr: 1.5,
+                max_dpr: 1.0,
                 use_fill: false,
-                frame_skip: 0,
+                frame_skip: 1,
             }
         } else {
             Self {
-                spacing: 64.0,
+                spacing: 80.0,
                 base_radius: 3.0,
                 warp_scale: 15.0,
                 time_scale: 0.0006,
@@ -323,9 +346,9 @@ impl RenderProfile {
                 radius_boost: 2.0,
                 alpha_scale: 1.0,
                 min_intensity: 0.0,
-                max_dpr: f64::MAX,
+                max_dpr: DESKTOP_MAX_DPR,
                 use_fill: false,
-                frame_skip: 0,
+                frame_skip: 1,
             }
         }
     }
@@ -336,6 +359,18 @@ struct AppState {
     height: f64,
 }
 
+fn effective_dpr(css_w: f64, css_h: f64, max_dpr: f64) -> f64 {
+    let device = window().device_pixel_ratio();
+    let mut ratio = device.min(max_dpr);
+
+    let pixels = css_w * css_h * ratio * ratio;
+    if pixels > MAX_CANVAS_PIXELS {
+        ratio = (MAX_CANVAS_PIXELS / (css_w * css_h)).sqrt().min(max_dpr);
+    }
+
+    ratio.max(1.0)
+}
+
 fn update_dimensions(
     canvas: &HtmlCanvasElement,
     ctx: &CanvasRenderingContext2d,
@@ -343,10 +378,10 @@ fn update_dimensions(
     max_dpr: f64,
 ) {
     let win = window();
-    let ratio = win.device_pixel_ratio().min(max_dpr);
 
     let w = win.inner_width().unwrap().as_f64().unwrap();
     let h = win.inner_height().unwrap().as_f64().unwrap();
+    let ratio = effective_dpr(w, h, max_dpr);
 
     canvas.set_width((w * ratio) as u32);
     canvas.set_height((h * ratio) as u32);

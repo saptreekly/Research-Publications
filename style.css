@@ -112,6 +112,11 @@ body {
     color: var(--text-body);
 }
 
+.lazy-section-placeholder {
+    width: 100%;
+    pointer-events: none;
+}
+
 .animated-background {
     position: fixed;
     inset: 0;

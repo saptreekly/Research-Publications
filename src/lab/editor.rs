@@ -10,9 +10,17 @@ extern "C" {
 }
 
 pub fn init(textarea: &web_sys::HtmlTextAreaElement) {
-    init_lab_code_editor(textarea);
+    let element = textarea.clone();
+    leptos::spawn_local(async move {
+        crate::utils::script_loader::ensure_lab_editor().await;
+        init_lab_code_editor(&element);
+    });
 }
 
 pub fn refresh(textarea: &web_sys::HtmlTextAreaElement) {
-    refresh_lab_code_editor(textarea);
+    if js_sys::Reflect::has(&js_sys::global(), &JsValue::from_str("refreshLabCodeEditor"))
+        .unwrap_or(false)
+    {
+        refresh_lab_code_editor(textarea);
+    }
 }

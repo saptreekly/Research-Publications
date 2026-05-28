@@ -31,7 +31,9 @@ pub fn is_html_content(content: &str) -> bool {
         || trimmed.contains("Build failure")
 }
 
+pub mod debounce;
 pub mod markdown;
+pub mod script_loader;
 
 pub const APP_BASE: &str = "/Research-Publications";
 

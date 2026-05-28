@@ -103,8 +103,22 @@ pub fn is_prime(n: i64) -> Result<i64, String> {
     if n < 2 {
         return Ok(0);
     }
-    let primes = sieve_primes(n)?;
-    Ok(if primes.contains(&n) { 1 } else { 0 })
+    if n == 2 {
+        return Ok(1);
+    }
+    if n % 2 == 0 {
+        return Ok(0);
+    }
+
+    let mut divisor = 3;
+    while divisor * divisor <= n {
+        if n % divisor == 0 {
+            return Ok(0);
+        }
+        divisor += 2;
+    }
+
+    Ok(1)
 }
 
 pub fn prime_count(n: i64) -> Result<i64, String> {
@@ -115,17 +129,15 @@ pub fn nth_prime(n: i64) -> Result<i64, String> {
     if n <= 0 {
         return Err("Index must be positive.".to_string());
     }
-    let mut count = 0_i64;
-    let mut candidate = 2_i64;
+
+    let mut limit = 32_i64;
     loop {
-        if is_prime(candidate)? == 1 {
-            count += 1;
-            if count == n {
-                return Ok(candidate);
-            }
+        let primes = sieve_primes(limit)?;
+        if primes.len() >= n as usize {
+            return Ok(primes[n as usize - 1]);
         }
-        candidate += 1;
-        if candidate > 1_000_000 {
+        limit = limit.saturating_mul(2);
+        if limit > 1_000_000 {
             return Err("Search limit exceeded.".to_string());
         }
     }

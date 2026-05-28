@@ -49,8 +49,7 @@ pub fn LabWorkspace(module_src: &'static str, module_id: &'static str, module_ti
 
 #[component]
 fn LabWorkspaceLoaded(module: LabModule) -> impl IntoView {
-    let blocks = store_value(module.blocks);
-    let blocks_signal = create_rw_signal(blocks.get_value());
+    let blocks_signal = create_rw_signal(module.blocks);
     let selected = create_rw_signal(None::<usize>);
     let session = create_rw_signal(KernelSession::local_stub());
 

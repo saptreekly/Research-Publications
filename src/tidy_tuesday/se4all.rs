@@ -1,4 +1,5 @@
 use leptos::*;
+use crate::components::lazy_section::LazySection;
 use crate::tidy_tuesday::analysis::{
     access_renewables_scatter, adoption_wave_crossover,
     adoption_wave_data, adoption_wave_insights, adoption_wave_stat_cards, compute_era_insights,
@@ -16,6 +17,7 @@ use crate::tidy_tuesday::charts::{
 };
 use crate::tidy_tuesday::controls::{year_range_presets, YearRangePicker};
 use crate::tidy_tuesday::{country_series, solar_ranking, year_bounds, ExploreData};
+use crate::utils::debounce::{debounced_i32, debounced_usize};
 use crate::utils::resolve_asset_url;
 
 const LINE_COLORS: [&str; 6] = [
@@ -47,7 +49,7 @@ pub fn Se4AllExplorer(data_url: &'static str) -> impl IntoView {
     view! {
         <Suspense fallback=move || view! { <p class="tt-explorer-loading">"Loading interactive charts..."</p> }>
             {move || match data.get() {
-                Some(Ok(dataset)) => view! { <Se4AllExplorerLoaded dataset=dataset.clone() /> }.into_view(),
+                Some(Ok(dataset)) => view! { <Se4AllExplorerLoaded dataset /> }.into_view(),
                 Some(Err(message)) => view! {
                     <p class="doc-error">{message.clone()}</p>
                 }.into_view(),
@@ -60,7 +62,7 @@ pub fn Se4AllExplorer(data_url: &'static str) -> impl IntoView {
 #[component]
 fn Se4AllExplorerLoaded(dataset: ExploreData) -> impl IntoView {
     let dataset = store_value(dataset);
-    let country_options = dataset.with_value(|data| country_names(&data.records));
+    let country_options = store_value(dataset.with_value(|data| country_names(&data.records)));
     let (min_year, max_year) = dataset.with_value(|data| year_bounds(&data.records));
     let year_presets = year_range_presets(min_year, max_year);
     let stat_cards = dataset.with_value(|data| {
@@ -87,11 +89,16 @@ fn Se4AllExplorerLoaded(dataset: ExploreData) -> impl IntoView {
 
     let growth_start = create_rw_signal(2000_i32.max(min_year));
     let growth_end = create_rw_signal(max_year);
+    let growth_start_chart = debounced_i32(growth_start, 120);
+    let growth_end_chart = debounced_i32(growth_end, 120);
     let mix_country = create_rw_signal("Germany".to_string());
     let scatter_year = create_rw_signal(max_year);
+    let scatter_year_chart = debounced_i32(scatter_year, 120);
     let trend_metric = create_rw_signal("wind_tfec".to_string());
     let trend_start = create_rw_signal(min_year);
     let trend_end = create_rw_signal(max_year);
+    let trend_start_chart = debounced_i32(trend_start, 120);
+    let trend_end_chart = debounced_i32(trend_end, 120);
     let selected_countries = create_rw_signal(vec![
         "Denmark".to_string(),
         "Ireland".to_string(),
@@ -100,13 +107,16 @@ fn Se4AllExplorerLoaded(dataset: ExploreData) -> impl IntoView {
     let heatmap_metric = create_rw_signal("solar_tfec".to_string());
     let hist_metric = create_rw_signal("wind_tfec".to_string());
     let hist_year = create_rw_signal(max_year);
+    let hist_year_chart = debounced_i32(hist_year, 120);
     let rank_year = create_rw_signal(max_year);
+    let rank_year_chart = debounced_i32(rank_year, 120);
     let rank_count = create_rw_signal(15_usize);
+    let rank_count_chart = debounced_usize(rank_count, 120);
     let rank_ascending = create_rw_signal(true);
     let delta_metric = create_rw_signal("elec_pct".to_string());
 
     let growth_presets = year_presets.clone();
-    let trend_presets = year_presets;
+    let trend_presets = year_presets.clone();
 
     view! {
         <div class="tt-explorer">
@@ -138,7 +148,9 @@ fn Se4AllExplorerLoaded(dataset: ExploreData) -> impl IntoView {
                     <h3>"Global median trajectories"</h3>
                     <p>"How the typical country changed on access, renewables, and emerging technologies."</p>
                 </div>
-                {move || dataset.with_value(|data| median_trends_chart(data, min_year, max_year))}
+                <LazySection min_height=360>
+                    {move || dataset.with_value(|data| median_trends_chart(data, min_year, max_year))}
+                </LazySection>
             </section>
 
             <section class="tt-panel">
@@ -146,9 +158,11 @@ fn Se4AllExplorerLoaded(dataset: ExploreData) -> impl IntoView {
                     <h3>"Technology adoption wave"</h3>
                     <p>"How solar and wind TFEC reporting spread across countries, and where the technologies overlapped."</p>
                 </div>
-                {move || dataset.with_value(|data| {
-                    adoption_wave_chart(data, min_year, max_year)
-                })}
+                <LazySection min_height=360>
+                    {move || dataset.with_value(|data| {
+                        adoption_wave_chart(data, min_year, max_year)
+                    })}
+                </LazySection>
             </section>
 
             <section class="tt-panel">
@@ -156,25 +170,27 @@ fn Se4AllExplorerLoaded(dataset: ExploreData) -> impl IntoView {
                     <h3>"Biggest gainers"</h3>
                     <p>{format!("Dumbbell chart: start value (blue) → end value (purple) for {min_year}–{max_year}. Longer lines = more change.")}</p>
                 </div>
-                <label class="tt-control tt-control-metric">
-                    <span class="tt-control-label">"Metric"</span>
-                    <select
-                        prop:value=move || delta_metric.get()
-                        on:change=move |ev| delta_metric.set(event_target_value(&ev))
-                    >
-                        <option value="elec_pct">"Electricity access (%)"</option>
-                        <option value="renew_tfec">"Renewable TFEC share (%)"</option>
-                        <option value="solar_tfec">"Solar TFEC share (%)"</option>
-                        <option value="wind_tfec">"Wind TFEC share (%)"</option>
-                        <option value="solar_tj">"Solar consumption (TJ)"</option>
-                    </select>
-                </label>
-                {move || dataset.with_value(|data| delta_chart(
-                    data,
-                    &delta_metric.get(),
-                    min_year,
-                    max_year,
-                ))}
+                <LazySection min_height=320>
+                    <label class="tt-control tt-control-metric">
+                        <span class="tt-control-label">"Metric"</span>
+                        <select
+                            prop:value=move || delta_metric.get()
+                            on:change=move |ev| delta_metric.set(event_target_value(&ev))
+                        >
+                            <option value="elec_pct">"Electricity access (%)"</option>
+                            <option value="renew_tfec">"Renewable TFEC share (%)"</option>
+                            <option value="solar_tfec">"Solar TFEC share (%)"</option>
+                            <option value="wind_tfec">"Wind TFEC share (%)"</option>
+                            <option value="solar_tj">"Solar consumption (TJ)"</option>
+                        </select>
+                    </label>
+                    {move || dataset.with_value(|data| delta_chart(
+                        data,
+                        &delta_metric.get(),
+                        min_year,
+                        max_year,
+                    ))}
+                </LazySection>
             </section>
 
             <section class="tt-panel">
@@ -182,7 +198,9 @@ fn Se4AllExplorerLoaded(dataset: ExploreData) -> impl IntoView {
                                 <h3>"Solar rank race"</h3>
                                 <p>"Tracks the 2010 top 5 plus former #1 Japan. Lower on the chart is better. Shaded band = top 5. Hover points for terajoule values."</p>
                             </div>
-                {move || dataset.with_value(|data| bump_chart(data))}
+                <LazySection min_height=320>
+                    {move || dataset.with_value(|data| bump_chart(data))}
+                </LazySection>
             </section>
 
             <section class="tt-panel tt-panel-growth">
@@ -190,16 +208,18 @@ fn Se4AllExplorerLoaded(dataset: ExploreData) -> impl IntoView {
                     <h3>"Which renewables grew fastest?"</h3>
                     <p>"Compare technologies by mean TFEC share growth and see which countries drove the steepest trajectories."</p>
                 </div>
-                <YearRangePicker
-                    min_year=min_year
-                    max_year=max_year
-                    start=growth_start
-                    end=growth_end
-                    presets=growth_presets
-                />
-                {move || dataset.with_value(|data| {
-                    growth_chart(data, growth_start.get(), growth_end.get())
-                })}
+                <LazySection min_height=420>
+                    <YearRangePicker
+                        min_year=min_year
+                        max_year=max_year
+                        start=growth_start
+                        end=growth_end
+                        presets=growth_presets.clone()
+                    />
+                    {move || dataset.with_value(|data| {
+                        growth_chart(data, growth_start_chart.get(), growth_end_chart.get())
+                    })}
+                </LazySection>
             </section>
 
             <section class="tt-panel">
@@ -207,23 +227,25 @@ fn Se4AllExplorerLoaded(dataset: ExploreData) -> impl IntoView {
                     <h3>"Renewable mix over time"</h3>
                     <p>"Stacked area chart of how each technology contributes to a country's renewable TFEC share. Hydro often dominates; watch solar and wind layers grow."</p>
                 </div>
-                <label class="tt-control tt-control-add-country">
-                    <span class="tt-control-label">"Country"</span>
-                    <select
-                        prop:value=move || mix_country.get()
-                        on:change=move |ev| mix_country.set(event_target_value(&ev))
-                    >
-                        {country_options.clone().into_iter().map(|country| view! {
-                            <option value=country.clone()>{country}</option>
-                        }).collect_view()}
-                    </select>
-                </label>
-                {move || dataset.with_value(|data| mix_chart(
-                    data,
-                    &mix_country.get(),
-                    min_year,
-                    max_year,
-                ))}
+                <LazySection min_height=320>
+                    <label class="tt-control tt-control-add-country">
+                        <span class="tt-control-label">"Country"</span>
+                        <select
+                            prop:value=move || mix_country.get()
+                            on:change=move |ev| mix_country.set(event_target_value(&ev))
+                        >
+                            {country_options.with_value(|options| options.clone()).into_iter().map(|country| view! {
+                                <option value=country.clone()>{country}</option>
+                            }).collect_view()}
+                        </select>
+                    </label>
+                    {move || dataset.with_value(|data| mix_chart(
+                        data,
+                        &mix_country.get(),
+                        min_year,
+                        max_year,
+                    ))}
+                </LazySection>
             </section>
 
             <section class="tt-panel">
@@ -231,25 +253,27 @@ fn Se4AllExplorerLoaded(dataset: ExploreData) -> impl IntoView {
                     <h3>"Access vs. renewable share"</h3>
                     <p>"Each dot is a country. Dashed lines mark the median on each axis. Upper-right countries combine high grid access with high renewable TFEC share."</p>
                 </div>
-                <label class="tt-control">
-                    <span class="tt-control-label">"Year"</span>
-                    <input
-                        type="range"
-                        min=min_year.to_string()
-                        max=max_year.to_string()
-                        prop:value=move || scatter_year.get().to_string()
-                        on:input=move |ev| {
-                            scatter_year.set(
-                                event_target_value(&ev)
-                                    .parse()
-                                    .unwrap_or(max_year)
-                                    .clamp(min_year, max_year),
-                            );
-                        }
-                    />
-                    <span class="tt-control-value">{move || scatter_year.get()}</span>
-                </label>
-                {move || dataset.with_value(|data| scatter_chart(data, scatter_year.get()))}
+                <LazySection min_height=320>
+                    <label class="tt-control">
+                        <span class="tt-control-label">"Year"</span>
+                        <input
+                            type="range"
+                            min=min_year.to_string()
+                            max=max_year.to_string()
+                            prop:value=move || scatter_year.get().to_string()
+                            on:input=move |ev| {
+                                scatter_year.set(
+                                    event_target_value(&ev)
+                                        .parse()
+                                        .unwrap_or(max_year)
+                                        .clamp(min_year, max_year),
+                                );
+                            }
+                        />
+                        <span class="tt-control-value">{move || scatter_year.get()}</span>
+                    </label>
+                    {move || dataset.with_value(|data| scatter_chart(data, scatter_year_chart.get()))}
+                </LazySection>
             </section>
 
             <section class="tt-panel">
@@ -257,90 +281,92 @@ fn Se4AllExplorerLoaded(dataset: ExploreData) -> impl IntoView {
                     <h3>"Country energy trends"</h3>
                     <p>"Track how each country's share of total final energy consumption changed over time. Hover points for exact values."</p>
                 </div>
-                <div class="tt-controls tt-controls-wrap">
-                    <label class="tt-control tt-control-metric">
-                        <span class="tt-control-label">"Metric"</span>
-                        <select
-                            prop:value=move || trend_metric.get()
-                            on:change=move |ev| trend_metric.set(event_target_value(&ev))
+                <LazySection min_height=420>
+                    <div class="tt-controls tt-controls-wrap">
+                        <label class="tt-control tt-control-metric">
+                            <span class="tt-control-label">"Metric"</span>
+                            <select
+                                prop:value=move || trend_metric.get()
+                                on:change=move |ev| trend_metric.set(event_target_value(&ev))
+                            >
+                                {dataset.with_value(|data| data.metrics.iter().filter(|metric| metric.key.ends_with("_tfec")).map(|metric| view! {
+                                    <option value=metric.key.clone()>{metric.label.clone()}</option>
+                                }).collect_view())}
+                            </select>
+                        </label>
+                        <YearRangePicker
+                            min_year=min_year
+                            max_year=max_year
+                            start=trend_start
+                            end=trend_end
+                            presets=trend_presets.clone()
+                        />
+                    </div>
+                    <div class="tt-chip-row">
+                        <button
+                            type="button"
+                            class="tt-chip tt-chip-action"
+                            on:click=move |_| selected_countries.set(vec![
+                                "Denmark".into(), "Ireland".into(), "Norway".into(),
+                            ])
                         >
-                            {dataset.with_value(|data| data.metrics.iter().filter(|metric| metric.key.ends_with("_tfec")).map(|metric| view! {
-                                <option value=metric.key.clone()>{metric.label.clone()}</option>
-                            }).collect_view())}
+                            "Nordic wind leaders"
+                        </button>
+                        <button
+                            type="button"
+                            class="tt-chip tt-chip-action"
+                            on:click=move |_| selected_countries.set(vec![
+                                "China".into(), "United States of America".into(), "Germany".into(),
+                            ])
+                        >
+                            "Major economies"
+                        </button>
+                        {move || selected_countries.get().into_iter().map(|country| {
+                            let country_for_click = country.clone();
+                            view! {
+                                <button
+                                    type="button"
+                                    class="tt-chip tt-chip-active"
+                                    on:click=move |_| {
+                                        selected_countries.update(|list| {
+                                            list.retain(|entry| entry != &country_for_click);
+                                        });
+                                    }
+                                >
+                                    {country.clone()}
+                                </button>
+                            }
+                        }).collect_view()}
+                    </div>
+                    <label class="tt-control tt-control-add-country">
+                        <span class="tt-control-label">"Add country"</span>
+                        <select
+                            on:change=move |ev| {
+                                let country = event_target_value(&ev);
+                                if country.is_empty() {
+                                    return;
+                                }
+                                selected_countries.update(|list| {
+                                    if !list.contains(&country) && list.len() < 6 {
+                                        list.push(country);
+                                    }
+                                });
+                            }
+                        >
+                            <option value="">"Choose a country…"</option>
+                            {country_options.with_value(|options| options.clone()).into_iter().map(|country| view! {
+                                <option value=country.clone()>{country}</option>
+                            }).collect_view()}
                         </select>
                     </label>
-                    <YearRangePicker
-                        min_year=min_year
-                        max_year=max_year
-                        start=trend_start
-                        end=trend_end
-                        presets=trend_presets
-                    />
-                </div>
-                <div class="tt-chip-row">
-                    <button
-                        type="button"
-                        class="tt-chip tt-chip-action"
-                        on:click=move |_| selected_countries.set(vec![
-                            "Denmark".into(), "Ireland".into(), "Norway".into(),
-                        ])
-                    >
-                        "Nordic wind leaders"
-                    </button>
-                    <button
-                        type="button"
-                        class="tt-chip tt-chip-action"
-                        on:click=move |_| selected_countries.set(vec![
-                            "China".into(), "United States of America".into(), "Germany".into(),
-                        ])
-                    >
-                        "Major economies"
-                    </button>
-                    {move || selected_countries.get().into_iter().map(|country| {
-                        let country_for_click = country.clone();
-                        view! {
-                            <button
-                                type="button"
-                                class="tt-chip tt-chip-active"
-                                on:click=move |_| {
-                                    selected_countries.update(|list| {
-                                        list.retain(|entry| entry != &country_for_click);
-                                    });
-                                }
-                            >
-                                {country.clone()}
-                            </button>
-                        }
-                    }).collect_view()}
-                </div>
-                <label class="tt-control tt-control-add-country">
-                    <span class="tt-control-label">"Add country"</span>
-                    <select
-                        on:change=move |ev| {
-                            let country = event_target_value(&ev);
-                            if country.is_empty() {
-                                return;
-                            }
-                            selected_countries.update(|list| {
-                                if !list.contains(&country) && list.len() < 6 {
-                                    list.push(country);
-                                }
-                            });
-                        }
-                    >
-                        <option value="">"Choose a country…"</option>
-                        {country_options.into_iter().map(|country| view! {
-                            <option value=country.clone()>{country}</option>
-                        }).collect_view()}
-                    </select>
-                </label>
-                {move || dataset.with_value(|data| trend_chart(
-                    data,
-                    &trend_metric.get(),
-                    trend_start.get(),
-                    trend_end.get(),
-                    &selected_countries.get(),
-                ))}
+                    {move || dataset.with_value(|data| trend_chart(
+                        data,
+                        &trend_metric.get(),
+                        trend_start_chart.get(),
+                        trend_end_chart.get(),
+                        &selected_countries.get(),
+                    ))}
+                </LazySection>
             </section>
 
             <section class="tt-panel">
@@ -348,23 +374,25 @@ fn Se4AllExplorerLoaded(dataset: ExploreData) -> impl IntoView {
                     <h3>"Adoption heatmap"</h3>
                     <p>{format!("Top 16 countries by the selected metric in {max_year}. Brighter cells = higher TFEC share that year.")}</p>
                 </div>
-                <label class="tt-control tt-control-metric">
-                    <span class="tt-control-label">"Metric"</span>
-                    <select
-                        prop:value=move || heatmap_metric.get()
-                        on:change=move |ev| heatmap_metric.set(event_target_value(&ev))
-                    >
-                        {dataset.with_value(|data| data.metrics.iter().filter(|metric| metric.key.ends_with("_tfec")).map(|metric| view! {
-                            <option value=metric.key.clone()>{metric.label.clone()}</option>
-                        }).collect_view())}
-                    </select>
-                </label>
-                {move || dataset.with_value(|data| heatmap_chart(
-                    data,
-                    &heatmap_metric.get(),
-                    min_year,
-                    max_year,
-                ))}
+                <LazySection min_height=320>
+                    <label class="tt-control tt-control-metric">
+                        <span class="tt-control-label">"Metric"</span>
+                        <select
+                            prop:value=move || heatmap_metric.get()
+                            on:change=move |ev| heatmap_metric.set(event_target_value(&ev))
+                        >
+                            {dataset.with_value(|data| data.metrics.iter().filter(|metric| metric.key.ends_with("_tfec")).map(|metric| view! {
+                                <option value=metric.key.clone()>{metric.label.clone()}</option>
+                            }).collect_view())}
+                        </select>
+                    </label>
+                    {move || dataset.with_value(|data| heatmap_chart(
+                        data,
+                        &heatmap_metric.get(),
+                        min_year,
+                        max_year,
+                    ))}
+                </LazySection>
             </section>
 
             <section class="tt-panel">
@@ -372,42 +400,44 @@ fn Se4AllExplorerLoaded(dataset: ExploreData) -> impl IntoView {
                     <h3>"How widely adopted is it?"</h3>
                     <p>"Distribution of non-zero TFEC shares across all countries in a given year. Most countries cluster near zero for newer technologies."</p>
                 </div>
-                <div class="tt-controls tt-controls-wrap">
-                    <label class="tt-control tt-control-metric">
-                        <span class="tt-control-label">"Metric"</span>
-                        <select
-                            prop:value=move || hist_metric.get()
-                            on:change=move |ev| hist_metric.set(event_target_value(&ev))
-                        >
-                            {dataset.with_value(|data| data.metrics.iter().filter(|metric| metric.key.ends_with("_tfec")).map(|metric| view! {
-                                <option value=metric.key.clone()>{metric.label.clone()}</option>
-                            }).collect_view())}
-                        </select>
-                    </label>
-                    <label class="tt-control">
-                        <span class="tt-control-label">"Year"</span>
-                        <input
-                            type="range"
-                            min=min_year.to_string()
-                            max=max_year.to_string()
-                            prop:value=move || hist_year.get().to_string()
-                            on:input=move |ev| {
-                                hist_year.set(
-                                    event_target_value(&ev)
-                                        .parse()
-                                        .unwrap_or(max_year)
-                                        .clamp(min_year, max_year),
-                                );
-                            }
-                        />
-                        <span class="tt-control-value">{move || hist_year.get()}</span>
-                    </label>
-                </div>
-                {move || dataset.with_value(|data| histogram_chart(
-                    data,
-                    &hist_metric.get(),
-                    hist_year.get(),
-                ))}
+                <LazySection min_height=320>
+                    <div class="tt-controls tt-controls-wrap">
+                        <label class="tt-control tt-control-metric">
+                            <span class="tt-control-label">"Metric"</span>
+                            <select
+                                prop:value=move || hist_metric.get()
+                                on:change=move |ev| hist_metric.set(event_target_value(&ev))
+                            >
+                                {dataset.with_value(|data| data.metrics.iter().filter(|metric| metric.key.ends_with("_tfec")).map(|metric| view! {
+                                    <option value=metric.key.clone()>{metric.label.clone()}</option>
+                                }).collect_view())}
+                            </select>
+                        </label>
+                        <label class="tt-control">
+                            <span class="tt-control-label">"Year"</span>
+                            <input
+                                type="range"
+                                min=min_year.to_string()
+                                max=max_year.to_string()
+                                prop:value=move || hist_year.get().to_string()
+                                on:input=move |ev| {
+                                    hist_year.set(
+                                        event_target_value(&ev)
+                                            .parse()
+                                            .unwrap_or(max_year)
+                                            .clamp(min_year, max_year),
+                                    );
+                                }
+                            />
+                            <span class="tt-control-value">{move || hist_year.get()}</span>
+                        </label>
+                    </div>
+                    {move || dataset.with_value(|data| histogram_chart(
+                        data,
+                        &hist_metric.get(),
+                        hist_year_chart.get(),
+                    ))}
+                </LazySection>
             </section>
 
             <section class="tt-panel">
@@ -415,57 +445,59 @@ fn Se4AllExplorerLoaded(dataset: ExploreData) -> impl IntoView {
                     <h3>"Solar consumption ranking"</h3>
                     <p>"Rank countries by absolute solar terajoules, a different lens from TFEC share that captures total scale."</p>
                 </div>
-                <div class="tt-controls">
-                    <label class="tt-control">
-                        <span class="tt-control-label">"Year"</span>
-                        <input
-                            type="range"
-                            min=min_year.to_string()
-                            max=max_year.to_string()
-                            prop:value=move || rank_year.get().to_string()
-                            on:input=move |ev| {
-                                rank_year.set(
-                                    event_target_value(&ev)
-                                        .parse()
-                                        .unwrap_or(max_year)
-                                        .clamp(min_year, max_year),
-                                );
-                            }
-                        />
-                        <span class="tt-control-value">{move || rank_year.get()}</span>
-                    </label>
-                    <label class="tt-control">
-                        <span class="tt-control-label">"Countries shown"</span>
-                        <input
-                            type="range"
-                            min="5"
-                            max="25"
-                            prop:value=move || rank_count.get().to_string()
-                            on:input=move |ev| {
-                                rank_count.set(event_target_value(&ev).parse().unwrap_or(15));
-                            }
-                        />
-                        <span class="tt-control-value">{move || rank_count.get()}</span>
-                    </label>
-                    <label class="tt-control tt-control-toggle">
-                        <span class="tt-control-label">"Order"</span>
-                        <button
-                            type="button"
-                            class="tt-chip tt-chip-action"
-                            on:click=move |_| rank_ascending.update(|value| *value = !*value)
-                        >
-                            {move || if rank_ascending.get() { "Lowest first" } else { "Highest first" }}
-                        </button>
-                    </label>
-                </div>
-                {move || dataset.with_value(|data| rank_chart(
-                    data,
-                    min_year,
-                    max_year,
-                    rank_year.get(),
-                    rank_count.get(),
-                    rank_ascending.get(),
-                ))}
+                <LazySection min_height=320>
+                    <div class="tt-controls">
+                        <label class="tt-control">
+                            <span class="tt-control-label">"Year"</span>
+                            <input
+                                type="range"
+                                min=min_year.to_string()
+                                max=max_year.to_string()
+                                prop:value=move || rank_year.get().to_string()
+                                on:input=move |ev| {
+                                    rank_year.set(
+                                        event_target_value(&ev)
+                                            .parse()
+                                            .unwrap_or(max_year)
+                                            .clamp(min_year, max_year),
+                                    );
+                                }
+                            />
+                            <span class="tt-control-value">{move || rank_year.get()}</span>
+                        </label>
+                        <label class="tt-control">
+                            <span class="tt-control-label">"Countries shown"</span>
+                            <input
+                                type="range"
+                                min="5"
+                                max="25"
+                                prop:value=move || rank_count.get().to_string()
+                                on:input=move |ev| {
+                                    rank_count.set(event_target_value(&ev).parse().unwrap_or(15));
+                                }
+                            />
+                            <span class="tt-control-value">{move || rank_count.get()}</span>
+                        </label>
+                        <label class="tt-control tt-control-toggle">
+                            <span class="tt-control-label">"Order"</span>
+                            <button
+                                type="button"
+                                class="tt-chip tt-chip-action"
+                                on:click=move |_| rank_ascending.update(|value| *value = !*value)
+                            >
+                                {move || if rank_ascending.get() { "Lowest first" } else { "Highest first" }}
+                            </button>
+                        </label>
+                    </div>
+                    {move || dataset.with_value(|data| rank_chart(
+                        data,
+                        min_year,
+                        max_year,
+                        rank_year_chart.get(),
+                        rank_count_chart.get(),
+                        rank_ascending.get(),
+                    ))}
+                </LazySection>
             </section>
         </div>
     }
