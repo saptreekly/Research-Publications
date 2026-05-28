@@ -10,7 +10,8 @@ pub fn ContactPage() -> impl IntoView {
                 <p class="home-section-kicker">"Get in touch"</p>
                 <h2 class="contact-page-title">"Contact"</h2>
                 <p class="contact-page-desc">
-                    "Professional inquiries welcome."
+                    "Professional inquiries welcome, including national security and intelligence roles "
+                    "in New Zealand and internationally."
                 </p>
             </header>
             <ClearanceBlock />
