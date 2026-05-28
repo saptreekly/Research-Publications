@@ -44,8 +44,44 @@ impl Value {
     fn as_int(&self) -> Result<i64, String> {
         match self {
             Value::Int(n) => Ok(*n),
+            Value::Unit => Err("Uninitialized element: expected integer, got nothing.".to_string()),
             other => Err(format!("Expected integer, got {}.", other.display())),
         }
+    }
+
+    fn default_of_same_type(&self) -> Value {
+        match self {
+            Value::Int(_) => Value::Int(0),
+            Value::Bool(_) => Value::Bool(false),
+            Value::Str(_) => Value::Str(String::new()),
+            Value::Array(_) => Value::Array(Vec::new()),
+            Value::Tuple(_) => Value::Tuple(Vec::new()),
+            Value::Unit => Value::Unit,
+        }
+    }
+
+    fn infer_array_padding(items: &[Value], assigned: &Value) -> Value {
+        let typed: Vec<&Value> = items
+            .iter()
+            .filter(|value| !matches!(value, Value::Unit))
+            .collect();
+
+        if !typed.is_empty() {
+            let first = typed[0];
+            if typed
+                .iter()
+                .all(|value| std::mem::discriminant(*value) == std::mem::discriminant(first))
+            {
+                return first.default_of_same_type();
+            }
+            return Value::Unit;
+        }
+
+        assigned.default_of_same_type()
+    }
+
+    fn uninitialized_binary_error(op: &str) -> String {
+        format!("Uninitialized element: cannot apply `{op}` to nothing.")
     }
 }
 
@@ -105,10 +141,16 @@ enum AssignLhs {
     Index { target: String, index: Expr },
 }
 
+const INSTRUCTION_QUOTA_EXCEEDED: &str =
+    "Instruction quota exceeded: Execution halted to prevent thread lock.";
+pub const DEFAULT_INSTRUCTION_BUDGET: usize = 100_000;
+const MAX_INSTRUCTION_BUDGET: usize = 1_000_000;
+
 struct Interpreter {
     globals: HashMap<String, Value>,
     functions: HashMap<String, FunctionDef>,
     stdout: Vec<String>,
+    instruction_budget: usize,
 }
 
 enum Flow {
@@ -117,10 +159,19 @@ enum Flow {
 }
 
 pub fn execute(source: &str) -> Result<(Vec<String>, Option<String>), String> {
+    execute_with_budget(source, DEFAULT_INSTRUCTION_BUDGET)
+}
+
+pub fn execute_with_budget(
+    source: &str,
+    instruction_budget: usize,
+) -> Result<(Vec<String>, Option<String>), String> {
+    let instruction_budget = instruction_budget.clamp(1, MAX_INSTRUCTION_BUDGET);
     let mut interpreter = Interpreter {
         globals: HashMap::new(),
         functions: HashMap::new(),
         stdout: Vec::new(),
+        instruction_budget,
     };
 
     let mut parser = Parser::new(source);
@@ -155,7 +206,16 @@ enum ProgramItem {
 }
 
 impl Interpreter {
+    fn consume_instruction(&mut self) -> Result<(), String> {
+        if self.instruction_budget == 0 {
+            return Err(INSTRUCTION_QUOTA_EXCEEDED.to_string());
+        }
+        self.instruction_budget -= 1;
+        Ok(())
+    }
+
     fn run_stmt(&mut self, stmt: &Stmt) -> Result<Flow, String> {
+        self.consume_instruction()?;
         match stmt {
             Stmt::Assign { names, expr } => {
                 let value = self.eval_expr(expr)?;
@@ -176,7 +236,8 @@ impl Interpreter {
                     return Err(format!("{target} is not an array."));
                 };
                 if items.len() < idx {
-                    items.resize(idx, Value::Bool(false));
+                    let padding = Value::infer_array_padding(items, &val);
+                    items.resize(idx, padding);
                 }
                 items[idx - 1] = val;
                 Ok(Flow::None)
@@ -200,6 +261,7 @@ impl Interpreter {
             }
             Stmt::While { cond, body } => {
                 while self.eval_expr(cond)?.is_truthy() {
+                    self.consume_instruction()?;
                     match self.run_block(body)? {
                         Flow::None => {}
                         flow => return Ok(flow),
@@ -209,6 +271,7 @@ impl Interpreter {
             }
             Stmt::For { var, iter, body } => {
                 for item in self.eval_iterable(iter)? {
+                    self.consume_instruction()?;
                     self.globals.insert(var.clone(), item);
                     match self.run_block(body)? {
                         Flow::None => {}
@@ -267,6 +330,7 @@ impl Interpreter {
     }
 
     fn eval_expr(&mut self, expr: &Expr) -> Result<Value, String> {
+        self.consume_instruction()?;
         match expr {
             Expr::Int(value) => Ok(Value::Int(*value)),
             Expr::Bool(value) => Ok(Value::Bool(*value)),
@@ -292,6 +356,7 @@ impl Interpreter {
             }
             Expr::Unary { op, expr } => match (*op, self.eval_expr(expr)?) {
                 ("-", Value::Int(n)) => Ok(Value::Int(-n)),
+                ("-", Value::Unit) => Err(Value::uninitialized_binary_error("-")),
                 ("!", value) => Ok(Value::Bool(!value.is_truthy())),
                 (_, other) => Err(format!("Unsupported unary operation on {}.", other.display())),
             },
@@ -324,6 +389,7 @@ impl Interpreter {
                 let mut values = Vec::new();
                 let mut current = start;
                 loop {
+                    self.consume_instruction()?;
                     if step > 0 {
                         if current > end {
                             break;
@@ -344,6 +410,7 @@ impl Interpreter {
             } => {
                 let mut results = Vec::new();
                 for candidate in self.eval_iterable(iter)? {
+                    self.consume_instruction()?;
                     self.globals.insert(var.clone(), candidate);
                     if let Some(filter) = filter {
                         if !self.eval_expr(filter)?.is_truthy() {
@@ -381,6 +448,15 @@ impl Interpreter {
 
         let left = self.eval_expr(left)?;
         let right = self.eval_expr(right)?;
+        if matches!(left, Value::Unit) || matches!(right, Value::Unit) {
+            return match op {
+                "==" | "!=" => Ok(Value::Bool(match op {
+                    "==" => left == right,
+                    _ => left != right,
+                })),
+                _ => Err(Value::uninitialized_binary_error(op)),
+            };
+        }
         match (op, left, right) {
             ("+", Value::Int(a), Value::Int(b)) => Ok(Value::Int(a + b)),
             ("+", Value::Str(a), Value::Str(b)) => Ok(Value::Str(format!("{a}{b}"))),
@@ -464,9 +540,11 @@ impl Interpreter {
             globals: locals,
             functions: self.functions.clone(),
             stdout: Vec::new(),
+            instruction_budget: self.instruction_budget,
         };
 
         let flow = frame.run_block(&function.body)?;
+        self.instruction_budget = frame.instruction_budget;
         self.stdout.extend(frame.stdout);
         match flow {
             Flow::Return(value) => Ok(value),
@@ -1305,5 +1383,83 @@ println(modInverse(2, 4))
             err.contains("Modular inverse does not exist"),
             "got: {err}"
         );
+    }
+
+    #[test]
+    fn index_assign_pads_int_arrays_with_zero() {
+        let code = r#"
+function padded_sum()
+    a = [1, 2]
+    a[5] = 9
+    return a[3] + a[4]
+end
+padded_sum()
+"#;
+        let (_, result) = execute(code).expect("int array padding should run");
+        assert_eq!(result.as_deref(), Some("0"));
+    }
+
+    #[test]
+    fn index_assign_pads_string_arrays_with_empty_string() {
+        let code = r#"
+function padded_slot()
+    s = ["hello"]
+    s[3] = "!"
+    return s[2] == ""
+end
+padded_slot()
+"#;
+        let (_, result) = execute(code).expect("string array padding should run");
+        assert_eq!(result.as_deref(), Some("true"));
+    }
+
+    #[test]
+    fn index_assign_mixed_array_pads_with_unit_and_reports_uninitialized_math() {
+        let code = r#"
+a = [1, "x"]
+a[4] = 7
+println(a[2] + a[3])
+"#;
+        let err = execute(code).expect_err("mixed array padding should use nothing");
+        assert!(
+            err.contains("Uninitialized element"),
+            "got: {err}"
+        );
+    }
+
+    #[test]
+    fn infinite_while_loop_hits_instruction_quota() {
+        let code = r#"
+while true
+    println("loop")
+end
+"#;
+        let err = execute_with_budget(code, 100).expect_err("should halt infinite loop");
+        assert!(
+            err.contains("Instruction quota exceeded"),
+            "got: {err}"
+        );
+    }
+
+    #[test]
+    fn large_for_loop_hits_instruction_quota() {
+        let code = r#"
+total = 0
+for i in 1:1000000
+    total = total + i
+end
+total
+"#;
+        let err = execute_with_budget(code, 500).expect_err("should halt large for loop");
+        assert!(
+            err.contains("Instruction quota exceeded"),
+            "got: {err}"
+        );
+    }
+
+    #[test]
+    fn blueprint_still_runs_within_default_budget() {
+        let code = extract_blueprint_julia("research-docs/julia-crypto/mod_01_lab.md");
+        execute(&code).expect("mod_01 blueprint should stay within default instruction budget");
     }
 }

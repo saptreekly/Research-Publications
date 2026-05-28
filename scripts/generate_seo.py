@@ -6,6 +6,7 @@ from __future__ import annotations
 import html
 import re
 import sys
+from dataclasses import dataclass
 from datetime import date
 from pathlib import Path
 
@@ -109,6 +110,195 @@ SEO_STATIC_PATTERN = re.compile(
 )
 
 
+@dataclass(frozen=True)
+class ValidationIssue:
+    file: str
+    line: int | None
+    message: str
+
+
+class MarkdownStructureError(Exception):
+    def __init__(self, file: str, line: int | None, message: str) -> None:
+        self.file = file
+        self.line = line
+        self.message = message
+        super().__init__(self.format_message())
+
+    def format_message(self) -> str:
+        if self.line is not None:
+            return f"{self.file}:{self.line}: {self.message}"
+        return f"{self.file}: {self.message}"
+
+
+def collect_markdown_sources() -> list[str]:
+    sources: set[str] = set()
+    for route in ROUTES:
+        content_src = route.get("content_src")
+        if content_src:
+            sources.add(content_src)
+    for content_paths in ROUTE_CONTENT.values():
+        sources.update(content_paths)
+    return sorted(sources)
+
+
+def log_validation_issues(issues: list[ValidationIssue]) -> None:
+    for issue in issues:
+        location = f"{issue.file}:{issue.line}" if issue.line is not None else issue.file
+        print(f"ERROR: {location}: {issue.message}", file=sys.stderr)
+    print(
+        f"\nPreflight validation failed ({len(issues)} issue(s)). "
+        "Compilation aborted to prevent corrupt SEO HTML.",
+        file=sys.stderr,
+    )
+
+
+def validate_route_source_files() -> list[ValidationIssue]:
+    issues: list[ValidationIssue] = []
+
+    for route in ROUTES:
+        content_src = route.get("content_src")
+        if not content_src:
+            continue
+        source_path = REPO_ROOT / content_src
+        if not source_path.is_file():
+            issues.append(
+                ValidationIssue(
+                    content_src,
+                    None,
+                    f"Route {route['path']!r} references missing content_src.",
+                )
+            )
+
+    for route_path, content_paths in ROUTE_CONTENT.items():
+        for content_src in content_paths:
+            source_path = REPO_ROOT / content_src
+            if not source_path.is_file():
+                issues.append(
+                    ValidationIssue(
+                        content_src,
+                        None,
+                        f"ROUTE_CONTENT[{route_path!r}] references missing markdown source.",
+                    )
+                )
+
+    return issues
+
+
+def table_column_count(line: str) -> int:
+    stripped = line.strip()
+    if not stripped.startswith("|"):
+        return 0
+    return len([cell for cell in stripped.strip("|").split("|")])
+
+
+def validate_code_fences(relative_path: str, lines: list[str]) -> list[ValidationIssue]:
+    fence_lines = [
+        line_number
+        for line_number, line in enumerate(lines, start=1)
+        if line.strip().startswith("```")
+    ]
+    if len(fence_lines) % 2 == 0:
+        return []
+
+    return [
+        ValidationIssue(
+            relative_path,
+            fence_lines[-1],
+            (
+                f"Unclosed code fence: found {len(fence_lines)} delimiter line(s) "
+                "starting with ```; expected an even number."
+            ),
+        )
+    ]
+
+
+def validate_tables(relative_path: str, lines: list[str]) -> list[ValidationIssue]:
+    issues: list[ValidationIssue] = []
+    index = 0
+
+    while index < len(lines):
+        stripped = lines[index].strip()
+        if stripped.startswith("|") and index + 1 < len(lines) and is_table_divider(lines[index + 1]):
+            header_line = index + 1
+            header_count = table_column_count(lines[index])
+            if header_count == 0:
+                issues.append(
+                    ValidationIssue(
+                        relative_path,
+                        header_line,
+                        "Markdown table header has no columns.",
+                    )
+                )
+
+            divider_count = table_column_count(lines[index + 1])
+            if header_count and divider_count != header_count:
+                issues.append(
+                    ValidationIssue(
+                        relative_path,
+                        index + 2,
+                        (
+                            f"Table divider column count ({divider_count}) does not match "
+                            f"header column count ({header_count})."
+                        ),
+                    )
+                )
+
+            index += 2
+            while index < len(lines) and lines[index].strip().startswith("|"):
+                row_count = table_column_count(lines[index])
+                if header_count and row_count != header_count:
+                    issues.append(
+                        ValidationIssue(
+                            relative_path,
+                            index + 1,
+                            (
+                                f"Table row column count ({row_count}) does not match "
+                                f"header column count ({header_count})."
+                            ),
+                        )
+                    )
+                index += 1
+            continue
+
+        index += 1
+
+    return issues
+
+
+def validate_markdown_structure(relative_path: str, markdown_text: str) -> list[ValidationIssue]:
+    lines = markdown_text.replace("\r\n", "\n").split("\n")
+    issues: list[ValidationIssue] = []
+    issues.extend(validate_code_fences(relative_path, lines))
+    issues.extend(validate_tables(relative_path, lines))
+    return issues
+
+
+def run_preflight_validation() -> None:
+    issues: list[ValidationIssue] = []
+    issues.extend(validate_route_source_files())
+
+    for relative_path in collect_markdown_sources():
+        source_path = REPO_ROOT / relative_path
+        if not source_path.is_file():
+            continue
+        try:
+            markdown_text = source_path.read_text(encoding="utf-8")
+        except OSError as exc:
+            issues.append(
+                ValidationIssue(
+                    relative_path,
+                    None,
+                    f"Could not read markdown source: {exc}",
+                )
+            )
+            continue
+        issues.extend(validate_markdown_structure(relative_path, markdown_text))
+
+    if issues:
+        log_validation_issues(issues)
+        sys.exit(1)
+
+
 def canonical_url(path: str) -> str:
     if path == "/":
         return f"{SITE_URL}/"
@@ -192,14 +382,17 @@ def render_inline(text: str) -> str:
     def italic_repl(match: re.Match[str]) -> str:
         return stash(f"<em>{html.escape(match.group(1))}</em>")
 
-    text = re.sub(r"`([^`]+)`", code_repl, text)
-    text = re.sub(r"\[([^\]]+)\]\(([^)]+)\)", link_repl, text)
-    text = re.sub(r"\*\*([^*]+)\*\*", bold_repl, text)
-    text = re.sub(r"(?<!\*)\*([^*]+)\*(?!\*)", italic_repl, text)
+    # Process inline syntax from least to most ambiguous:
+    # code and links before emphasis so inner delimiters stay literal.
+    text = re.sub(r"`(.*?)`", code_repl, text)
+    text = re.sub(r"\[(.*?)\]\((.*?)\)", link_repl, text)
+    text = re.sub(r"\*\*(.*?)\*\*", bold_repl, text)
+    text = re.sub(r"(?<!\*)\*(.*?)\*(?!\*)", italic_repl, text)
     text = html.escape(text, quote=False)
 
-    for index, value in enumerate(placeholders):
-        text = text.replace(f"@@SEO{index}@@", value)
+    # Restore placeholders highest-index first so token ids never overlap.
+    for index in range(len(placeholders) - 1, -1, -1):
+        text = text.replace(f"@@SEO{index}@@", placeholders[index])
 
     return text
 
@@ -231,7 +424,7 @@ def render_table(lines: list[str]) -> str:
     return "".join(parts)
 
 
-def render_markdown(markdown_text: str) -> str:
+def render_markdown(markdown_text: str, *, source_path: str = "<markdown>") -> str:
     lines = markdown_text.replace("\r\n", "\n").split("\n")
     output: list[str] = []
     index = 0
@@ -245,13 +438,19 @@ def render_markdown(markdown_text: str) -> str:
             continue
 
         if stripped.startswith("```"):
+            fence_line = index + 1
             index += 1
             code_lines: list[str] = []
             while index < len(lines) and not lines[index].strip().startswith("```"):
                 code_lines.append(lines[index])
                 index += 1
-            if index < len(lines):
-                index += 1
+            if index >= len(lines):
+                raise MarkdownStructureError(
+                    source_path,
+                    fence_line,
+                    "Unclosed code fence reached end of file during compilation.",
+                )
+            index += 1
             code = html.escape("\n".join(code_lines))
             output.append(f"<pre><code>{code}</code></pre>")
             continue
@@ -275,8 +474,35 @@ def render_markdown(markdown_text: str) -> str:
 
         if stripped.startswith("|") and index + 1 < len(lines) and is_table_divider(lines[index + 1]):
             table_lines = [lines[index], lines[index + 1]]
+            header_count = table_column_count(lines[index])
+            divider_count = table_column_count(lines[index + 1])
+            if header_count == 0:
+                raise MarkdownStructureError(
+                    source_path,
+                    index + 1,
+                    "Markdown table header has no columns.",
+                )
+            if divider_count != header_count:
+                raise MarkdownStructureError(
+                    source_path,
+                    index + 2,
+                    (
+                        f"Table divider column count ({divider_count}) does not match "
+                        f"header column count ({header_count})."
+                    ),
+                )
             index += 2
             while index < len(lines) and lines[index].strip().startswith("|"):
+                row_count = table_column_count(lines[index])
+                if row_count != header_count:
+                    raise MarkdownStructureError(
+                        source_path,
+                        index + 1,
+                        (
+                            f"Table row column count ({row_count}) does not match "
+                            f"header column count ({header_count})."
+                        ),
+                    )
                 table_lines.append(lines[index])
                 index += 1
             output.append(render_table(table_lines))
@@ -355,7 +581,7 @@ def build_seo_static(route: dict[str, str]) -> str:
     if content_sources:
         parts.append('        <article class="seo-article">')
         for source in content_sources:
-            parts.append(render_markdown(load_markdown(source)))
+            parts.append(render_markdown(load_markdown(source), source_path=source))
         parts.append("        </article>")
 
     parts.append(f"        {site_nav_html()}")
@@ -454,6 +680,8 @@ def write_sitemap() -> None:
 
 
 def main() -> int:
+    run_preflight_validation()
+
     if not INDEX.exists():
         print("dist/index.html not found. Run trunk build first.", file=sys.stderr)
         return 1
@@ -461,8 +689,21 @@ def main() -> int:
     template = INDEX.read_text(encoding="utf-8")
     content_routes = sum(1 for route in ROUTES if route["path"] in ROUTE_CONTENT or route["path"] == "/curriculum")
 
-    for route in ROUTES:
-        write_route_html(template, route)
+    try:
+        for route in ROUTES:
+            write_route_html(template, route)
+    except MarkdownStructureError as exc:
+        print(f"ERROR: {exc.format_message()}", file=sys.stderr)
+        print("Compilation aborted to prevent corrupt SEO HTML.", file=sys.stderr)
+        return 1
+    except FileNotFoundError as exc:
+        print(f"ERROR: {exc}", file=sys.stderr)
+        print("Compilation aborted to prevent corrupt SEO HTML.", file=sys.stderr)
+        return 1
+    except RuntimeError as exc:
+        print(f"ERROR: {exc}", file=sys.stderr)
+        print("Compilation aborted to prevent corrupt SEO HTML.", file=sys.stderr)
+        return 1
 
     write_sitemap()
     print(
