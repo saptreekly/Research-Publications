@@ -9,7 +9,6 @@ use crate::lab::types::{
 pub struct RunOutcome {
     pub execution: BlockExecution,
     pub session: KernelSession,
-    pub elapsed_ms: u32,
 }
 
 pub fn run_blueprint(code: &str, session: &KernelSession) -> RunOutcome {
@@ -24,7 +23,6 @@ pub fn run_blueprint(code: &str, session: &KernelSession) -> RunOutcome {
                 ..Default::default()
             },
             session: session.clone(),
-            elapsed_ms: now_ms().saturating_sub(start),
         };
     }
 
@@ -49,7 +47,6 @@ pub fn run_blueprint(code: &str, session: &KernelSession) -> RunOutcome {
                     verify_results: Vec::new(),
                 },
                 session: next_session,
-                elapsed_ms,
             }
         }
         Err(message) => {
@@ -66,7 +63,6 @@ pub fn run_blueprint(code: &str, session: &KernelSession) -> RunOutcome {
                     verify_results: Vec::new(),
                 },
                 session: next_session,
-                elapsed_ms,
             }
         }
     }
@@ -129,7 +125,6 @@ pub fn run_verify(
             verify_results: results,
         },
         session: next_session,
-        elapsed_ms,
     }
 }
 

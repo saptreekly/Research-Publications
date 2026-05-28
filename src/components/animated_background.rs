@@ -8,19 +8,15 @@ use web_sys::{CanvasRenderingContext2d, HtmlCanvasElement};
 use crate::theme::{Theme, use_theme};
 
 struct CanvasColors {
-    bg: JsValue,
-    ring: JsValue,
-    fill: JsValue,
+    bg: &'static str,
+    ring: &'static str,
+    fill: &'static str,
 }
 
 impl CanvasColors {
     fn for_theme(theme: Theme) -> Self {
         let (bg, ring, fill) = theme.canvas_colors();
-        Self {
-            bg: JsValue::from_str(bg),
-            ring: JsValue::from_str(ring),
-            fill: JsValue::from_str(fill),
-        }
+        Self { bg, ring, fill }
     }
 }
 
@@ -170,7 +166,7 @@ pub fn AnimatedBackground() -> impl IntoView {
                         let palette = colors_cb.borrow();
 
                         ctx.set_global_alpha(1.0);
-                        ctx.set_fill_style(&palette.bg);
+                        ctx.set_fill_style_str(palette.bg);
                         ctx.fill_rect(0.0, 0.0, s.width, s.height);
 
                         let origin_x = s.width / 2.0;
@@ -202,12 +198,12 @@ pub fn AnimatedBackground() -> impl IntoView {
                                     ctx.set_global_alpha(intensity * profile.alpha_scale);
 
                                     if profile.use_fill {
-                                        ctx.set_fill_style(&palette.fill);
+                                        ctx.set_fill_style_str(palette.fill);
                                         ctx.begin_path();
                                         let _ = ctx.arc(draw_x, draw_y, current_radius, 0.0, TAU);
                                         ctx.fill();
                                     } else {
-                                        ctx.set_stroke_style(&palette.ring);
+                                        ctx.set_stroke_style_str(palette.ring);
                                         ctx.set_line_width(1.0);
                                         ctx.begin_path();
                                         let _ = ctx.arc(draw_x, draw_y, current_radius, 0.0, TAU);

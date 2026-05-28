@@ -6,3 +6,4 @@ pub mod layout;
 pub mod module;
 pub mod project;
 pub mod report;
+pub mod tidy_tuesday;

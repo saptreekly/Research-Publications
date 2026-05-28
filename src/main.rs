@@ -5,6 +5,7 @@ mod projects;
 mod reports;
 mod seo;
 mod theme;
+mod tidy_tuesday;
 mod utils;
 
 use leptos::*;
@@ -21,6 +22,7 @@ use pages::lab::LabPage;
 use pages::module::ModulePage;
 use pages::report::ReportPage;
 use pages::project::ProjectPage;
+use pages::tidy_tuesday::{TidyTuesdayIndexPage, TidyTuesdayPage};
 use web_sys::console;
 
 pub const APP_BASE: &str = "/Research-Publications";
@@ -31,6 +33,8 @@ const ROUTE_LAB: &str = "/Research-Publications/curriculum/lab/:slug";
 const ROUTE_CONTACT: &str = "/Research-Publications/contact";
 const ROUTE_REPORT: &str = "/Research-Publications/research/:slug";
 const ROUTE_PROJECT: &str = "/Research-Publications/projects/:slug";
+const ROUTE_TIDY_TUESDAY: &str = "/Research-Publications/tidy-tuesday";
+const ROUTE_TIDY_TUESDAY_ENTRY: &str = "/Research-Publications/tidy-tuesday/:slug";
 
 #[component]
 fn App() -> impl IntoView {
@@ -66,6 +70,12 @@ fn App() -> impl IntoView {
                 } />
                 <Route path=ROUTE_CONTACT view=move || view! {
                     <RootLayout><ContactPage /></RootLayout>
+                } />
+                <Route path=ROUTE_TIDY_TUESDAY_ENTRY view=move || view! {
+                    <RootLayout><TidyTuesdayPage /></RootLayout>
+                } />
+                <Route path=ROUTE_TIDY_TUESDAY view=move || view! {
+                    <RootLayout><TidyTuesdayIndexPage /></RootLayout>
                 } />
             </Routes>
         </Router>
