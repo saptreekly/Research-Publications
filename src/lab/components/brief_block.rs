@@ -11,7 +11,7 @@ pub fn BriefBlock(
     selected: ReadSignal<Option<usize>>,
     on_select: WriteSignal<Option<usize>>,
 ) -> impl IntoView {
-    let html = markdown_to_rendered_html(&body_md);
+    let html = store_value(markdown_to_rendered_html(&body_md));
     let is_selected = move || selected.get() == Some(cell_index);
 
     view! {
@@ -25,7 +25,9 @@ pub fn BriefBlock(
                 <span class="row-date">{format!("[ID: {}]", id.to_uppercase())}</span>
             </div>
             {title.map(|t| view! { <h3 class="lab-block-title">{t}</h3> })}
-            <MarkdownContent html=html class="markdown-content lab-block-body" />
+            {html.with_value(|content| view! {
+                <MarkdownContent html=content.clone() class="markdown-content lab-block-body" />
+            })}
         </article>
     }
 }

@@ -2,6 +2,8 @@ use leptos::*;
 use leptos::html::Div;
 use wasm_bindgen::prelude::*;
 
+use crate::utils::script_loader;
+
 #[wasm_bindgen]
 extern "C" {
     #[wasm_bindgen(js_namespace = window, js_name = renderMarkdownMath)]
@@ -21,9 +23,15 @@ pub fn MarkdownContent(
         if current.is_empty() {
             return;
         }
-        if let Some(element) = node_ref.get() {
+
+        let Some(element) = node_ref.get() else {
+            return;
+        };
+
+        spawn_local(async move {
+            script_loader::ensure_katex().await;
             render_markdown_math(&element);
-        }
+        });
     });
 
     view! {

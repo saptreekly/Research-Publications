@@ -23,7 +23,6 @@ use pages::module::ModulePage;
 use pages::report::ReportPage;
 use pages::project::ProjectPage;
 use pages::tidy_tuesday::{TidyTuesdayIndexPage, TidyTuesdayPage};
-use web_sys::console;
 
 pub const APP_BASE: &str = "/Research-Publications";
 const ROUTE_HOME: &str = "/Research-Publications/";
@@ -40,14 +39,12 @@ const ROUTE_TIDY_TUESDAY_ENTRY: &str = "/Research-Publications/tidy-tuesday/:slu
 fn App() -> impl IntoView {
     provide_meta_context();
     provide_theme();
-    console::log_1(&"[WASM TELEMETRY] Initializing App Router Tree".into());
 
     view! {
         <Link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;700&family=IBM+Plex+Mono:wght@400&display=swap" rel="stylesheet" />
 
-        <AnimatedBackground />
-
         <Router base=APP_BASE trailing_slash=TrailingSlash::Redirect>
+            <AnimatedBackground />
             <SeoHead />
             <Routes>
                 <Route path=ROUTE_HOME view=move || view! {
@@ -85,8 +82,11 @@ fn App() -> impl IntoView {
 fn main() {
     console_error_panic_hook::set_once();
 
+    #[cfg(debug_assertions)]
     if let Ok(path) = leptos::window().location().pathname() {
-        console::log_1(&format!("[WASM TELEMETRY] Absolute Browser Pathname: {}", path).into());
+        web_sys::console::log_1(
+            &format!("[WASM TELEMETRY] Absolute Browser Pathname: {}", path).into(),
+        );
     }
 
     leptos::mount_to_body(|| view! { <App /> });

@@ -35,17 +35,18 @@
     <meta name="twitter:description" content="Portfolio of Jack Weekly: malware forensics, strategic studies, security engineering, and applied cryptography research.">
     <meta name="twitter:image" content="https://saptreekly.github.io/Research-Publications/static/og-card.png">
     <base href="/Research-Publications/" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" crossorigin="anonymous">
-    <link rel="rust" data-trunk href="Cargo.toml" />
+    <link
+        rel="rust"
+        data-trunk
+        href="Cargo.toml"
+        data-wasm-opt="z"
+        data-wasm-opt-params="--enable-bulk-memory --enable-sign-ext --enable-nontrapping-float-to-int"
+    />
     <link rel="css" data-trunk href="style.css" />
     <link rel="copy-dir" data-trunk href="research-docs" />
     <link rel="copy-dir" data-trunk href="static" />
-    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js" crossorigin="anonymous"></script>
-    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js" crossorigin="anonymous"></script>
+    <script defer src="static/vendor-loader.js"></script>
     <script defer src="static/katex-init.js"></script>
-    <script defer src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/prism.min.js"></script>
-    <script defer src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-julia.min.js"></script>
-    <script defer src="static/lab-editor.js"></script>
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
