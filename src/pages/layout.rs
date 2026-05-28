@@ -66,7 +66,7 @@ pub fn RootLayout(children: Children) -> impl IntoView {
                             <span class="site-availability-title">"Open to opportunities"</span>
                             <span class="site-availability-desc">
                                 "Dual US & NZ citizen (US-born), Wellington. Not currently cleared. "
-                                "Open to relocation and employer-required background screening."
+                                "Open to NZ and international roles, including NZSIS or equivalent vetting."
                             </span>
                             <span class="site-availability-cta">"Get in touch →"</span>
                         </A>
