@@ -76,3 +76,11 @@ pub fn tidy_tuesday_index_href() -> String {
 pub fn situation_monitor_href() -> String {
     format!("{APP_BASE}/situation-monitor")
 }
+
+pub fn malware_traffic_href(slug: &str) -> String {
+    format!("{APP_BASE}/malware-traffic/{slug}")
+}
+
+pub fn malware_traffic_index_href() -> String {
+    format!("{APP_BASE}/malware-traffic")
+}

@@ -2,7 +2,7 @@ use leptos::*;
 use leptos_router::*;
 use crate::components::stack_matrix::StackMatrix;
 use crate::projects::find_by_slug;
-use crate::utils::{contact_href, curriculum_href, lab_href, project_href, report_href, tidy_tuesday_href, tidy_tuesday_index_href};
+use crate::utils::{contact_href, curriculum_href, lab_href, malware_traffic_href, project_href, report_href, tidy_tuesday_href, tidy_tuesday_index_href, malware_traffic_index_href};
 
 fn project_tag(slug: &str) -> &'static str {
     find_by_slug(slug).expect("registered project").tag
@@ -133,7 +133,22 @@ pub fn HomePage() -> impl IntoView {
                         </p>
                         <span class="home-card-cta">"READ ESSAY →"</span>
                     </A>
+                    <A href=malware_traffic_href("smartapesg-2026-05-22") class="home-card home-card-link">
+                        <div class="home-card-meta">
+                            <span class="home-tag">"Malware traffic"</span>
+                            <time class="home-date" datetime="2026-05-22">"May 2026"</time>
+                        </div>
+                        <h3 class="home-card-title">"SmartApeSG ClickFix → NetSupport RAT"</h3>
+                        <p class="home-card-body">
+                            "Interactive PCAP analysis of a ClickFix infection chain: compromised WordPress site, PowerShell staging, "
+                            "33 MB ZIP payload, unidentified RAT C2, and NetSupport persistence."
+                        </p>
+                        <span class="home-card-cta">"OPEN ANALYSIS →"</span>
+                    </A>
                 </div>
+                <p class="home-section-footer">
+                    <A href=malware_traffic_index_href() class="home-start-footer-link">"All malware traffic reports →"</A>
+                </p>
             </section>
 
             <section class="home-section" id="projects" aria-labelledby="projects-heading">

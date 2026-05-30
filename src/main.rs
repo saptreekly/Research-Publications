@@ -1,5 +1,6 @@
 mod components;
 mod lab;
+mod malware_traffic;
 mod pages;
 mod projects;
 mod reports;
@@ -23,6 +24,7 @@ use pages::lab::LabPage;
 use pages::module::ModulePage;
 use pages::report::ReportPage;
 use pages::project::ProjectPage;
+use pages::malware_traffic::{MalwareTrafficIndexPage, MalwareTrafficPage};
 use pages::situation_monitor::SituationMonitorPage;
 use pages::tidy_tuesday::{TidyTuesdayIndexPage, TidyTuesdayPage};
 
@@ -37,6 +39,8 @@ const ROUTE_PROJECT: &str = "/Research-Publications/projects/:slug";
 const ROUTE_TIDY_TUESDAY: &str = "/Research-Publications/tidy-tuesday";
 const ROUTE_TIDY_TUESDAY_ENTRY: &str = "/Research-Publications/tidy-tuesday/:slug";
 const ROUTE_SITUATION_MONITOR: &str = "/Research-Publications/situation-monitor";
+const ROUTE_MALWARE_TRAFFIC: &str = "/Research-Publications/malware-traffic";
+const ROUTE_MALWARE_TRAFFIC_ENTRY: &str = "/Research-Publications/malware-traffic/:slug";
 
 #[component]
 fn App() -> impl IntoView {
@@ -79,6 +83,12 @@ fn App() -> impl IntoView {
                 } />
                 <Route path=ROUTE_SITUATION_MONITOR view=move || view! {
                     <RootLayout><SituationMonitorPage /></RootLayout>
+                } />
+                <Route path=ROUTE_MALWARE_TRAFFIC_ENTRY view=move || view! {
+                    <RootLayout><MalwareTrafficPage /></RootLayout>
+                } />
+                <Route path=ROUTE_MALWARE_TRAFFIC view=move || view! {
+                    <RootLayout><MalwareTrafficIndexPage /></RootLayout>
                 } />
             </Routes>
         </Router>
