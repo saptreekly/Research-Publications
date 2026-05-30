@@ -62,11 +62,11 @@ pub fn SituationMonitorPage() -> impl IntoView {
         });
     });
 
-    on_mount(move || {
+    create_effect(move |_| {
         let interval = Interval::new(FEED_POLL_MS, move || {
             set_refresh_tick.update(|tick| *tick += 1);
         });
-        move || drop(interval)
+        on_cleanup(move || drop(interval));
     });
 
     view! {
@@ -100,6 +100,9 @@ fn SituationMonitorLoaded(snapshot: ReadSignal<Option<FeedSnapshot>>) -> impl In
     let filtered_items = move || {
         let data = snapshot.get().expect("feed loaded");
         filter_items(&data.items, &active_category.get(), &query.get())
+            .into_iter()
+            .cloned()
+            .collect::<Vec<_>>()
     };
 
     let filtered_count = move || filtered_items().len();
@@ -124,7 +127,10 @@ fn SituationMonitorLoaded(snapshot: ReadSignal<Option<FeedSnapshot>>) -> impl In
                 </div>
                 <div class="sm-stat">
                     <span class="sm-stat-label">"Sources live"</span>
-                    <span class="sm-stat-value">{move || active_source_count(snapshot.get().expect("feed loaded"))}</span>
+                    <span class="sm-stat-value">{move || {
+                        let data = snapshot.get().expect("feed loaded");
+                        active_source_count(&data)
+                    }}</span>
                 </div>
                 <div class="sm-stat">
                     <span class="sm-stat-label">"Showing"</span>
@@ -159,14 +165,12 @@ fn SituationMonitorLoaded(snapshot: ReadSignal<Option<FeedSnapshot>>) -> impl In
                             />
                             {data.categories.clone().into_iter().map(|category| {
                                 let id = category.id.clone();
+                                let active_id = id.clone();
                                 view! {
                                     <CategoryTab
                                         category=category
-                                        active=move || active_category.get() == id
-                                        on_select={
-                                            let id = id.clone();
-                                            move || set_active_category.set(id.clone())
-                                        }
+                                        active=move || active_category.get() == active_id
+                                        on_select=move || set_active_category.set(id.clone())
                                     />
                                 }
                             }).collect_view()}
@@ -253,15 +257,18 @@ fn CategoryTab<F>(
     on_select: impl Fn() + 'static + Clone,
 ) -> impl IntoView
 where
-    F: Fn() -> bool + 'static,
+    F: Fn() -> bool + 'static + Clone,
 {
+    let active_class = active.clone();
+    let active_selected = active;
+
     view! {
         <button
             type="button"
             class="sm-tab"
-            class:sm-tab-active=move || active()
+            class:sm-tab-active=move || active_class()
             role="tab"
-            aria-selected=move || active()
+            aria-selected=move || active_selected()
             on:click=move |_| on_select.clone()()
         >
             <span>{category.label.clone()}</span>

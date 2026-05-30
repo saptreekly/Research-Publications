@@ -57,6 +57,7 @@ pub fn category_label(category: &str) -> &'static str {
         "apac-security" => "APAC Security",
         "cyber" => "Cyber",
         "global" => "Global",
+        "osint" => "OSINT",
         ALL_CATEGORY => "All",
         _ => "Other",
     }

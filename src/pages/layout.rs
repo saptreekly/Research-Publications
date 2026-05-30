@@ -1,7 +1,7 @@
 use leptos::*;
 use leptos_router::*;
 use crate::components::theme_toggle::ThemeToggle;
-use crate::utils::{contact_href, curriculum_href, home_href, tidy_tuesday_index_href};
+use crate::utils::{contact_href, curriculum_href, home_href, situation_monitor_href, tidy_tuesday_index_href};
 
 #[component]
 pub fn RootLayout(children: Children) -> impl IntoView {

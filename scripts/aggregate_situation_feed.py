@@ -14,11 +14,15 @@ from pathlib import Path
 from typing import Any
 from urllib.request import Request, urlopen
 
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+
 try:
     import feedparser
 except ImportError:
     print("feedparser is required: pip install feedparser", file=sys.stderr)
     raise
+
+from x_list_client import fetch_list_timeline, load_credentials
 
 REPO_ROOT = Path(__file__).resolve().parent.parent
 OUTPUT = REPO_ROOT / "static" / "situation-monitor" / "feed.json"
@@ -92,11 +96,22 @@ FEEDS: list[dict[str, str]] = [
     },
 ]
 
+X_LISTS: list[dict[str, str]] = [
+    {
+        "id": "x-osint-list",
+        "name": "OSINT (X List)",
+        "category": "osint",
+        "list_id": "1978231089639690329",
+        "url": "https://x.com/i/lists/1978231089639690329",
+    },
+]
+
 CATEGORY_LABELS = {
     "nz-pacific": "NZ & Pacific",
     "apac-security": "APAC Security",
     "cyber": "Cyber",
     "global": "Global",
+    "osint": "OSINT",
 }
 
 
@@ -181,6 +196,62 @@ def fetch_feed(feed: dict[str, str]) -> tuple[list[dict[str, Any]], str | None]:
     return items, None
 
 
+def fetch_x_list(source: dict[str, str]) -> tuple[list[dict[str, Any]], str | None]:
+    credentials = load_credentials()
+    if credentials is None:
+        return [], "Set AUTH_TOKEN and CT0 to enable X list ingestion"
+
+    auth_token, ct0 = credentials
+    try:
+        tweets = fetch_list_timeline(
+            source["list_id"],
+            auth_token=auth_token,
+            ct0=ct0,
+            count=MAX_ITEMS_PER_SOURCE,
+        )
+    except Exception as exc:  # noqa: BLE001 - report per-source failures
+        return [], str(exc)
+
+    items: list[dict[str, Any]] = []
+    for tweet in tweets[:MAX_ITEMS_PER_SOURCE]:
+        title = clean_text(tweet.get("text"), limit=160)
+        if not title:
+            continue
+
+        published = _parse_created_at(tweet.get("created_at"))
+        published_at = published.isoformat().replace("+00:00", "Z") if published else None
+        screen_name = tweet.get("screen_name") or "unknown"
+        link = tweet.get("url") or source["url"]
+
+        items.append(
+            {
+                "id": item_id(source["id"], link, title),
+                "title": title,
+                "summary": f"@{screen_name}",
+                "url": link,
+                "published_at": published_at,
+                "published_label": format_label(published) if published else "Unknown",
+                "source_id": source["id"],
+                "source_name": source["name"],
+                "category": source["category"],
+            }
+        )
+
+    return items, None
+
+
+def _parse_created_at(raw: str | None) -> datetime | None:
+    if not raw:
+        return None
+    try:
+        dt = parsedate_to_datetime(raw)
+        if dt.tzinfo is None:
+            dt = dt.replace(tzinfo=timezone.utc)
+        return dt.astimezone(timezone.utc)
+    except (TypeError, ValueError):
+        return None
+
+
 def aggregate() -> dict[str, Any]:
     all_items: list[dict[str, Any]] = []
     source_status: list[dict[str, Any]] = []
@@ -193,6 +264,21 @@ def aggregate() -> dict[str, Any]:
                 "name": feed["name"],
                 "category": feed["category"],
                 "url": feed["url"],
+                "item_count": len(items),
+                "status": "ok" if error is None else "error",
+                "error": error,
+            }
+        )
+        all_items.extend(items)
+
+    for source in X_LISTS:
+        items, error = fetch_x_list(source)
+        source_status.append(
+            {
+                "id": source["id"],
+                "name": source["name"],
+                "category": source["category"],
+                "url": source["url"],
                 "item_count": len(items),
                 "status": "ok" if error is None else "error",
                 "error": error,

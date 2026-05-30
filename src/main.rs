@@ -4,6 +4,7 @@ mod pages;
 mod projects;
 mod reports;
 mod seo;
+mod situation_monitor;
 mod theme;
 mod tidy_tuesday;
 mod utils;
@@ -35,6 +36,7 @@ const ROUTE_REPORT: &str = "/Research-Publications/research/:slug";
 const ROUTE_PROJECT: &str = "/Research-Publications/projects/:slug";
 const ROUTE_TIDY_TUESDAY: &str = "/Research-Publications/tidy-tuesday";
 const ROUTE_TIDY_TUESDAY_ENTRY: &str = "/Research-Publications/tidy-tuesday/:slug";
+const ROUTE_SITUATION_MONITOR: &str = "/Research-Publications/situation-monitor";
 
 #[component]
 fn App() -> impl IntoView {
@@ -74,6 +76,9 @@ fn App() -> impl IntoView {
                 } />
                 <Route path=ROUTE_TIDY_TUESDAY view=move || view! {
                     <RootLayout><TidyTuesdayIndexPage /></RootLayout>
+                } />
+                <Route path=ROUTE_SITUATION_MONITOR view=move || view! {
+                    <RootLayout><SituationMonitorPage /></RootLayout>
                 } />
             </Routes>
         </Router>

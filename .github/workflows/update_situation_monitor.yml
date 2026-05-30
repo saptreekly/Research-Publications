@@ -17,6 +17,9 @@ jobs:
       - name: Install feedparser
         run: pip install feedparser
       - name: Aggregate public RSS feeds
+        env:
+          AUTH_TOKEN: ${{ secrets.AUTH_TOKEN }}
+          CT0: ${{ secrets.CT0 }}
         run: python scripts/aggregate_situation_feed.py
       - name: Commit and push
         run: |

@@ -2,7 +2,7 @@ use leptos::*;
 use leptos_router::*;
 use crate::components::stack_matrix::StackMatrix;
 use crate::projects::find_by_slug;
-use crate::utils::{contact_href, curriculum_href, lab_href, project_href, report_href, situation_monitor_href, tidy_tuesday_href, tidy_tuesday_index_href};
+use crate::utils::{contact_href, curriculum_href, lab_href, project_href, report_href, tidy_tuesday_href, tidy_tuesday_index_href};
 
 fn project_tag(slug: &str) -> &'static str {
     find_by_slug(slug).expect("registered project").tag
