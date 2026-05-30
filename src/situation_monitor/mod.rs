@@ -1,6 +1,10 @@
 use serde::{Deserialize, Serialize};
 
-pub const FEED_URL: &str = "static/situation-monitor/feed.json";
+pub const FEED_LOCAL_URL: &str = "static/situation-monitor/feed.json";
+pub const FEED_RAW_URL: &str =
+    "https://raw.githubusercontent.com/saptreekly/Research-Publications/main/static/situation-monitor/feed.json";
+/// Browser poll interval (5 minutes). Matches server aggregation cadence.
+pub const FEED_POLL_MS: u32 = 300_000;
 
 #[derive(Clone, Debug, Deserialize, Serialize, PartialEq, Eq)]
 pub struct CategoryMeta {

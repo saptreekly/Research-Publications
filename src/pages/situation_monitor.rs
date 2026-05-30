@@ -1,70 +1,105 @@
 use leptos::*;
 use leptos_router::*;
+use gloo_timers::callback::Interval;
 use crate::situation_monitor::{
     active_source_count, category_label, filter_items, CategoryMeta, FeedSnapshot, ALL_CATEGORY,
-    FEED_URL,
+    FEED_LOCAL_URL, FEED_POLL_MS, FEED_RAW_URL,
 };
 use crate::utils::{home_href, resolve_asset_url};
 
+async fn fetch_feed_snapshot(cache_bust: u32) -> Result<FeedSnapshot, String> {
+    let raw_url = format!("{FEED_RAW_URL}?t={cache_bust}");
+    if let Ok(response) = gloo_net::http::Request::get(&raw_url).send().await {
+        if response.ok() {
+            if let Ok(snapshot) = response.json::<FeedSnapshot>().await {
+                return Ok(snapshot);
+            }
+        }
+    }
+
+    let resolved = resolve_asset_url(FEED_LOCAL_URL);
+    let response = gloo_net::http::Request::get(&format!("{resolved}?t={cache_bust}"))
+        .send()
+        .await
+        .map_err(|_| "Unable to load situation monitor feed.".to_string())?;
+
+    if !response.ok() {
+        return Err(format!("Feed not found ({})", response.status()));
+    }
+
+    response
+        .json::<FeedSnapshot>()
+        .await
+        .map_err(|_| "Unable to parse situation monitor feed.".to_string())
+}
+
 #[component]
 pub fn SituationMonitorPage() -> impl IntoView {
-    let feed = create_resource(
-        || FEED_URL,
-        |url| async move {
-            let resolved = resolve_asset_url(url);
-            let response = gloo_net::http::Request::get(&resolved)
-                .send()
-                .await
-                .map_err(|_| "Unable to load situation monitor feed.".to_string())?;
+    let snapshot = create_rw_signal(None::<FeedSnapshot>);
+    let (error, set_error) = create_signal(None::<String>);
+    let (refresh_tick, set_refresh_tick) = create_signal(0_u32);
 
-            if !response.ok() {
-                return Err(format!("Feed not found ({})", response.status()));
+    create_effect(move |_| {
+        let tick = refresh_tick.get();
+        spawn_local(async move {
+            match fetch_feed_snapshot(tick).await {
+                Ok(data) => {
+                    if snapshot
+                        .get_untracked()
+                        .is_some_and(|current| current.updated_at == data.updated_at)
+                    {
+                        return;
+                    }
+                    snapshot.set(Some(data));
+                    set_error.set(None);
+                }
+                Err(message) => {
+                    if snapshot.get_untracked().is_none() {
+                        set_error.set(Some(message));
+                    }
+                }
             }
+        });
+    });
 
-            response
-                .json::<FeedSnapshot>()
-                .await
-                .map_err(|_| "Unable to parse situation monitor feed.".to_string())
-        },
-    );
+    on_mount(move || {
+        let interval = Interval::new(FEED_POLL_MS, move || {
+            set_refresh_tick.update(|tick| *tick += 1);
+        });
+        move || drop(interval)
+    });
 
     view! {
         <section id="situation-monitor-nav">
             <A href=home_href() class="social-link cta-link">"← BACK TO HOME"</A>
         </section>
 
-        <Suspense fallback=move || view! {
-            <section class="report-page situation-monitor-page">
-                <p class="sm-loading">"Loading situation monitor..."</p>
-            </section>
-        }>
-            {move || match feed.get() {
-                Some(Ok(snapshot)) => view! { <SituationMonitorLoaded snapshot /> }.into_view(),
-                Some(Err(message)) => view! {
-                    <section class="report-page situation-monitor-page">
-                        <p class="doc-error">{message.clone()}</p>
-                    </section>
-                }.into_view(),
-                None => view! {
-                    <section class="report-page situation-monitor-page">
-                        <p class="sm-loading">"Loading situation monitor..."</p>
-                    </section>
-                }.into_view(),
-            }}
-        </Suspense>
+        {move || match (snapshot.get(), error.get()) {
+            (Some(_), _) => view! {
+                <SituationMonitorLoaded snapshot=snapshot.read_only() />
+            }.into_view(),
+            (None, Some(message)) => view! {
+                <section class="report-page situation-monitor-page">
+                    <p class="doc-error">{message.clone()}</p>
+                </section>
+            }.into_view(),
+            (None, None) => view! {
+                <section class="report-page situation-monitor-page">
+                    <p class="sm-loading">"Loading situation monitor..."</p>
+                </section>
+            }.into_view(),
+        }}
     }
 }
 
 #[component]
-fn SituationMonitorLoaded(snapshot: FeedSnapshot) -> impl IntoView {
-    let snapshot = store_value(snapshot);
+fn SituationMonitorLoaded(snapshot: ReadSignal<Option<FeedSnapshot>>) -> impl IntoView {
     let (active_category, set_active_category) = create_signal(ALL_CATEGORY.to_string());
     let (query, set_query) = create_signal(String::new());
 
     let filtered_items = move || {
-        snapshot.with_value(|data| {
-            filter_items(&data.items, &active_category.get(), &query.get())
-        })
+        let data = snapshot.get().expect("feed loaded");
+        filter_items(&data.items, &active_category.get(), &query.get())
     };
 
     let filtered_count = move || filtered_items().len();
@@ -74,22 +109,22 @@ fn SituationMonitorLoaded(snapshot: FeedSnapshot) -> impl IntoView {
             <header class="report-header">
                 <div class="report-header-meta">
                     <span class="home-tag">"Open source"</span>
-                    <time class="home-date">{move || snapshot.with_value(|data| data.updated_label.clone())}</time>
+                    <time class="home-date">{move || snapshot.get().expect("feed loaded").updated_label.clone()}</time>
                 </div>
                 <h2 class="report-title">"Situation Monitor"</h2>
                 <p class="report-subtitle">
-                    "Public-source aggregation for regional awareness. Updated on a schedule from open RSS feeds."
+                    "Public-source aggregation for regional awareness. Refreshes quietly every five minutes."
                 </p>
             </header>
 
             <div class="sm-stats">
                 <div class="sm-stat">
                     <span class="sm-stat-label">"Items"</span>
-                    <span class="sm-stat-value">{move || snapshot.with_value(|data| data.items.len())}</span>
+                    <span class="sm-stat-value">{move || snapshot.get().expect("feed loaded").items.len()}</span>
                 </div>
                 <div class="sm-stat">
                     <span class="sm-stat-label">"Sources live"</span>
-                    <span class="sm-stat-value">{move || snapshot.with_value(active_source_count)}</span>
+                    <span class="sm-stat-value">{move || active_source_count(snapshot.get().expect("feed loaded"))}</span>
                 </div>
                 <div class="sm-stat">
                     <span class="sm-stat-label">"Showing"</span>
@@ -110,28 +145,33 @@ fn SituationMonitorLoaded(snapshot: FeedSnapshot) -> impl IntoView {
                 </label>
 
                 <div class="sm-tabs" role="tablist" aria-label="Category filters">
-                    <CategoryTab
-                        category=CategoryMeta {
-                            id: ALL_CATEGORY.to_string(),
-                            label: "All".to_string(),
-                            count: snapshot.with_value(|data| data.items.len()),
-                        }
-                        active=move || active_category.get() == ALL_CATEGORY
-                        on_select=move || set_active_category.set(ALL_CATEGORY.to_string())
-                    />
-                    {move || snapshot.with_value(|data| data.categories.clone()).into_iter().map(|category| {
-                        let id = category.id.clone();
+                    {move || {
+                        let data = snapshot.get().expect("feed loaded");
                         view! {
                             <CategoryTab
-                                category=category
-                                active=move || active_category.get() == id
-                                on_select={
-                                    let id = id.clone();
-                                    move || set_active_category.set(id.clone())
+                                category=CategoryMeta {
+                                    id: ALL_CATEGORY.to_string(),
+                                    label: "All".to_string(),
+                                    count: data.items.len(),
                                 }
+                                active=move || active_category.get() == ALL_CATEGORY
+                                on_select=move || set_active_category.set(ALL_CATEGORY.to_string())
                             />
+                            {data.categories.clone().into_iter().map(|category| {
+                                let id = category.id.clone();
+                                view! {
+                                    <CategoryTab
+                                        category=category
+                                        active=move || active_category.get() == id
+                                        on_select={
+                                            let id = id.clone();
+                                            move || set_active_category.set(id.clone())
+                                        }
+                                    />
+                                }
+                            }).collect_view()}
                         }
-                    }).collect_view()}
+                    }}
                 </div>
             </div>
 
@@ -178,7 +218,7 @@ fn SituationMonitorLoaded(snapshot: FeedSnapshot) -> impl IntoView {
                 <details class="sm-sources-panel">
                     <summary class="sm-sources-toggle">"Source list"</summary>
                     <ul class="sm-sources-list">
-                        {move || snapshot.with_value(|data| data.sources.clone()).into_iter().map(|source| view! {
+                        {move || snapshot.get().expect("feed loaded").sources.clone().into_iter().map(|source| view! {
                             <li class="sm-sources-item">
                                 <a
                                     href=source.url.clone()
