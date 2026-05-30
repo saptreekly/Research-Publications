@@ -100,6 +100,14 @@ pub fn seo_for_path(pathname: &str) -> SeoMeta {
         }
     }
 
+    if path == "/situation-monitor" {
+        return page(
+            "/situation-monitor",
+            "Situation Monitor | Jack Weekly",
+            "Open-source intelligence dashboard aggregating public RSS feeds for NZ, Pacific, APAC security, and cyber awareness.",
+        );
+    }
+
     if path == "/tidy-tuesday" {
         return page(
             "/tidy-tuesday",

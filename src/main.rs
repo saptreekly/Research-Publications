@@ -22,6 +22,7 @@ use pages::lab::LabPage;
 use pages::module::ModulePage;
 use pages::report::ReportPage;
 use pages::project::ProjectPage;
+use pages::situation_monitor::SituationMonitorPage;
 use pages::tidy_tuesday::{TidyTuesdayIndexPage, TidyTuesdayPage};
 
 pub const APP_BASE: &str = "/Research-Publications";

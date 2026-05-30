@@ -2,7 +2,7 @@ use leptos::*;
 use leptos_router::*;
 use crate::components::stack_matrix::StackMatrix;
 use crate::projects::find_by_slug;
-use crate::utils::{contact_href, curriculum_href, lab_href, project_href, report_href, tidy_tuesday_href, tidy_tuesday_index_href};
+use crate::utils::{contact_href, curriculum_href, lab_href, project_href, report_href, situation_monitor_href, tidy_tuesday_href, tidy_tuesday_index_href};
 
 fn project_tag(slug: &str) -> &'static str {
     find_by_slug(slug).expect("registered project").tag
@@ -13,7 +13,7 @@ pub fn HomePage() -> impl IntoView {
     view! {
         <div class="home-page">
             <header class="home-hero">
-                <p class="home-eyebrow">"US-born · NZ resident since 2008 · Wellington, New Zealand"</p>
+                <p class="home-eyebrow">"Dual US & NZ citizen · Wellington, New Zealand"</p>
                 <h2 class="home-title">"All-source analysis with technical depth."</h2>
                 <p class="home-lead">
                     "I'm Jack Weekly. My training is in strategic studies and Asia-Pacific security competition; "

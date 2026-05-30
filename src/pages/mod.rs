@@ -6,4 +6,5 @@ pub mod layout;
 pub mod module;
 pub mod project;
 pub mod report;
+pub mod situation_monitor;
 pub mod tidy_tuesday;

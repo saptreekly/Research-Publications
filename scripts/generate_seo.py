@@ -60,6 +60,11 @@ ROUTES: list[dict[str, str]] = [
         "description": "Viewport-filtered aircraft tracking over WebSocket with H3 indexing · Go · Rust · Wasm",
     },
     {
+        "path": "/situation-monitor",
+        "title": "Situation Monitor | Jack Weekly",
+        "description": "Open-source intelligence dashboard aggregating public RSS feeds for NZ, Pacific, APAC security, and cyber awareness.",
+    },
+    {
         "path": "/tidy-tuesday",
         "title": "Tidy Tuesday | Jack Weekly",
         "description": "Weekly Julia data explorations using TidyTuesday community datasets.",

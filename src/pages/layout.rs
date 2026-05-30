@@ -48,6 +48,7 @@ pub fn RootLayout(children: Children) -> impl IntoView {
                                 <li><A href=home_href() class="nav-link">"HOME"</A></li>
                                 <li><A href=curriculum_href() class="nav-link">"CURRICULUM"</A></li>
                                 <li><A href=tidy_tuesday_index_href() class="nav-link">"TIDY TUESDAY"</A></li>
+                                <li><A href=situation_monitor_href() class="nav-link">"SITUATION MONITOR"</A></li>
                                 <li><A href=contact_href() class="nav-link">"CONTACT"</A></li>
                                 <li>
                                     <a
@@ -66,8 +67,8 @@ pub fn RootLayout(children: Children) -> impl IntoView {
                             <span class="site-availability-status">"Currently open"</span>
                             <span class="site-availability-title">"Open to opportunities"</span>
                             <span class="site-availability-desc">
-                                "US-born, NZ permanent resident since 2008, naturalised 2025. Wellington. "
-                                "Not currently cleared. Open to NZ and international roles requiring TSS vetting."
+                                "Dual US & NZ citizen (US-born), Wellington. Not currently cleared. "
+                                "Open to NZ and international roles, including NZSIS or equivalent vetting."
                             </span>
                             <span class="site-availability-cta">"Get in touch →"</span>
                         </A>
