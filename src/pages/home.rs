@@ -13,7 +13,7 @@ pub fn HomePage() -> impl IntoView {
     view! {
         <div class="home-page">
             <header class="home-hero">
-                <p class="home-eyebrow">"Dual US & NZ citizen · Wellington, New Zealand"</p>
+                <p class="home-eyebrow">"US-born · NZ resident since 2008 · Wellington, New Zealand"</p>
                 <h2 class="home-title">"All-source analysis with technical depth."</h2>
                 <p class="home-lead">
                     "I'm Jack Weekly. My training is in strategic studies and Asia-Pacific security competition; "

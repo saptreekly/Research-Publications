@@ -16,8 +16,20 @@ pub fn ClearanceBlock() -> impl IntoView {
                 <div class="clearance-block-row">
                     <dt>"Citizenship"</dt>
                     <dd>
-                        "United States (born Portland, Oregon). New Zealand (2025). Dual national."
+                        "United States (born Portland, Oregon; citizen since birth). "
+                        "New Zealand (naturalised 2025). Dual national."
                     </dd>
+                </div>
+                <div class="clearance-block-row">
+                    <dt>"Residency"</dt>
+                    <dd>
+                        "New Zealand permanent resident since 2008. Resided only in the United States "
+                        "and New Zealand; brief leisure visits to Australia."
+                    </dd>
+                </div>
+                <div class="clearance-block-row">
+                    <dt>"Driver's licence"</dt>
+                    <dd>"Full New Zealand licence (since 2019)."</dd>
                 </div>
                 <div class="clearance-block-row">
                     <dt>"Clearance"</dt>
@@ -32,9 +44,9 @@ pub fn ClearanceBlock() -> impl IntoView {
                 <div class="clearance-block-row">
                     <dt>"Screening"</dt>
                     <dd>
-                        "Willing to complete employer-required personnel security screening, including "
-                        "NZSIS vetting for New Zealand government and national security roles, and equivalent "
-                        "United States or allied-nation processes where applicable."
+                        "Eligible for Top Secret Special (TSS) vetting under NZ residency since 2008 "
+                        "with prior US citizenship. Willing to complete employer-required personnel security "
+                        "screening, including NZSIS vetting and equivalent allied-nation processes where applicable."
                     </dd>
                 </div>
             </dl>
