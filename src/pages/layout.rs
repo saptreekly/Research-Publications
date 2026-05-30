@@ -93,7 +93,7 @@ pub fn RootLayout(children: Children) -> impl IntoView {
                             </a>
                         </div>
                         <div class="site-meta">
-                            <div class="row-date">"WELLINGTON · DUAL US/NZ CITIZEN"</div>
+                            <div class="row-date">"WELLINGTON · US/NZ · RESIDENT SINCE 2008"</div>
                         </div>
                     </div>
                     </div>
