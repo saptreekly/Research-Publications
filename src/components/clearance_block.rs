@@ -28,6 +28,10 @@ pub fn ClearanceBlock() -> impl IntoView {
                     </dd>
                 </div>
                 <div class="clearance-block-row">
+                    <dt>"Driver's licence"</dt>
+                    <dd>"Full New Zealand licence (since 2019)."</dd>
+                </div>
+                <div class="clearance-block-row">
                     <dt>"Clearance"</dt>
                     <dd>"None held."</dd>
                 </div>
