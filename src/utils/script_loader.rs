@@ -8,6 +8,13 @@ extern "C" {
 
     #[wasm_bindgen(js_namespace = window)]
     fn ensureLabEditor() -> js_sys::Promise;
+
+    #[wasm_bindgen(js_namespace = window)]
+    fn ensureSituationMap() -> js_sys::Promise;
+}
+
+pub async fn ensure_situation_map() {
+    let _ = JsFuture::from(ensureSituationMap()).await;
 }
 
 pub async fn ensure_katex() {

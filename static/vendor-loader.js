@@ -105,4 +105,34 @@
 
     return window.__labEditorReady;
   };
+
+  window.ensureLeaflet = function () {
+    if (window.__leafletReady) {
+      return window.__leafletReady;
+    }
+
+    window.__leafletReady = loadStylesheet(
+      "leaflet-css",
+      "https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.css"
+    ).then(function () {
+      return loadScript(
+        "leaflet-js",
+        "https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.js"
+      );
+    });
+
+    return window.__leafletReady;
+  };
+
+  window.ensureSituationMap = function () {
+    if (window.__situationMapReady) {
+      return window.__situationMapReady;
+    }
+
+    window.__situationMapReady = window.ensureLeaflet().then(function () {
+      return loadScript("situation-map-js", resolveAsset("static/situation-map.js"));
+    });
+
+    return window.__situationMapReady;
+  };
 })();

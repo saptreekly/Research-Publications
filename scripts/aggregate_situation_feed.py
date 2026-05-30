@@ -30,8 +30,9 @@ USER_AGENT = (
     "Mozilla/5.0 (compatible; SituationMonitor/1.0; "
     "+https://github.com/saptreekly/Research-Publications)"
 )
-MAX_ITEMS_PER_SOURCE = 12
-MAX_TOTAL_ITEMS = 120
+MAX_ITEMS_PER_SOURCE = 15
+MAX_TOTAL_ITEMS = 160
+MAX_X_LIST_ITEMS = 25
 
 FEEDS: list[dict[str, str]] = [
     {
@@ -94,12 +95,42 @@ FEEDS: list[dict[str, str]] = [
         "category": "cyber",
         "url": "https://www.cisa.gov/cybersecurity-advisories/all.xml",
     },
+    {
+        "id": "the-record",
+        "name": "The Record",
+        "category": "cyber",
+        "url": "https://therecord.media/feed/",
+    },
+    {
+        "id": "krebs",
+        "name": "Krebs on Security",
+        "category": "cyber",
+        "url": "https://krebsonsecurity.com/feed/",
+    },
+    {
+        "id": "lowy-interpreter",
+        "name": "Lowy Interpreter",
+        "category": "apac-security",
+        "url": "https://www.lowyinstitute.org/the-interpreter/rss.xml",
+    },
+    {
+        "id": "nikkei-asia",
+        "name": "Nikkei Asia",
+        "category": "apac-security",
+        "url": "https://asia.nikkei.com/rss/feed/nar",
+    },
+    {
+        "id": "war-on-the-rocks",
+        "name": "War on the Rocks",
+        "category": "apac-security",
+        "url": "https://warontherocks.com/feed/",
+    },
 ]
 
 X_LISTS: list[dict[str, str]] = [
     {
         "id": "x-osint-list",
-        "name": "OSINT (X List)",
+        "name": "OSINT Watchlist",
         "category": "osint",
         "list_id": "1978231089639690329",
         "url": "https://x.com/i/lists/1978231089639690329",
@@ -113,6 +144,139 @@ CATEGORY_LABELS = {
     "global": "Global",
     "osint": "OSINT",
 }
+
+REGION_KEYWORDS: dict[str, list[str]] = {
+    "nz": ["new zealand", "wellington", "auckland", "christchurch", "nzdf", "rnz"],
+    "pacific": [
+        "pacific",
+        "fiji",
+        "samoa",
+        "tonga",
+        "vanuatu",
+        "papua",
+        "solomon",
+        "micronesia",
+        "polynesia",
+        "guam",
+    ],
+    "australia": ["australia", "sydney", "canberra", "melbourne", "australian"],
+    "china": ["china", "beijing", "shanghai", "chinese", "prc", "south china sea"],
+    "taiwan": ["taiwan", "taipei", "strait"],
+    "japan": ["japan", "tokyo", "japanese", "okinawa"],
+    "korea": ["korea", "seoul", "pyongyang", "dprk"],
+    "se-asia": [
+        "indonesia",
+        "malaysia",
+        "singapore",
+        "philippines",
+        "vietnam",
+        "thailand",
+        "asean",
+        "myanmar",
+        "cambodia",
+    ],
+    "india": ["india", "delhi", "mumbai", "indian", "modi"],
+    "middle-east": [
+        "iran",
+        "israel",
+        "gaza",
+        "syria",
+        "yemen",
+        "saudi",
+        "middle east",
+        "red sea",
+        "houthi",
+    ],
+    "europe": ["europe", "ukraine", "nato", "european", "london", "berlin", "france", "eu "],
+    "us": ["united states", "u.s.", "washington", "pentagon", "american", "white house"],
+    "africa": ["africa", "sudan", "sahel", "nigeria", "congo"],
+    "russia": ["russia", "moscow", "kremlin", "putin"],
+}
+
+PRIORITY_KEYWORDS = [
+    "cve-",
+    "zero-day",
+    "zero day",
+    "breaking",
+    "missile",
+    "sanction",
+    "cyber attack",
+    "earthquake",
+    "nuclear",
+    "invasion",
+    "coup",
+    "kinetic",
+    "critical",
+    "emergency",
+]
+
+TREND_STOPWORDS = {
+    "about",
+    "after",
+    "from",
+    "into",
+    "more",
+    "news",
+    "over",
+    "says",
+    "that",
+    "their",
+    "there",
+    "this",
+    "under",
+    "will",
+    "with",
+    "have",
+    "been",
+    "than",
+    "they",
+    "what",
+    "when",
+    "your",
+}
+
+
+def infer_regions(title: str, summary: str, category: str) -> list[str]:
+    text = f"{title} {summary}".lower()
+    regions = [
+        region for region, keywords in REGION_KEYWORDS.items() if any(key in text for key in keywords)
+    ]
+    if category == "nz-pacific" and not any(r in regions for r in ("nz", "pacific", "australia")):
+        regions.append("pacific")
+    if category == "apac-security" and not regions:
+        regions.append("se-asia")
+    return regions or ["global"]
+
+
+def priority_score(title: str, summary: str, category: str, published: datetime | None) -> int:
+    text = f"{title} {summary}".lower()
+    score = 0
+    if category == "cyber":
+        score += 12
+    if category == "osint":
+        score += 8
+    score += sum(18 for keyword in PRIORITY_KEYWORDS if keyword in text)
+    if published:
+        age_hours = (datetime.now(timezone.utc) - published).total_seconds() / 3600
+        if age_hours < 1:
+            score += 30
+        elif age_hours < 6:
+            score += 20
+        elif age_hours < 24:
+            score += 10
+    return min(score, 100)
+
+
+def extract_trends(items: list[dict[str, Any]], limit: int = 10) -> list[dict[str, Any]]:
+    counts: dict[str, int] = {}
+    for item in items:
+        words = re.findall(r"[a-z0-9][a-z0-9-]{3,}", item["title"].lower())
+        for word in words:
+            if word in TREND_STOPWORDS:
+                continue
+            counts[word] = counts.get(word, 0) + 1
+    ranked = sorted(counts.items(), key=lambda pair: (-pair[1], pair[0]))
+    return [{"term": term, "count": count} for term, count in ranked[:limit]]
 
 
 def clean_text(value: str | None, limit: int = 280) -> str:
@@ -153,6 +317,37 @@ def format_label(dt: datetime) -> str:
     return dt.strftime("%d %b %Y · %H:%MZ")
 
 
+def age_label(dt: datetime) -> str:
+    delta = datetime.now(timezone.utc) - dt
+    seconds = max(int(delta.total_seconds()), 0)
+    if seconds < 60:
+        return "just now"
+    if seconds < 3600:
+        return f"{seconds // 60}m ago"
+    if seconds < 86400:
+        return f"{seconds // 3600}h ago"
+    if seconds < 604_800:
+        return f"{seconds // 86400}d ago"
+    return format_label(dt)
+
+
+def normalize_title_key(title: str) -> str:
+    text = re.sub(r"[^\w\s]", "", title.lower())
+    return " ".join(text.split())[:96]
+
+
+def dedupe_items(items: list[dict[str, Any]]) -> list[dict[str, Any]]:
+    seen: set[str] = set()
+    deduped: list[dict[str, Any]] = []
+    for item in items:
+        key = normalize_title_key(item["title"])
+        if not key or key in seen:
+            continue
+        seen.add(key)
+        deduped.append(item)
+    return deduped
+
+
 def item_id(source_id: str, link: str, title: str) -> str:
     digest = hashlib.sha1(f"{source_id}|{link}|{title}".encode("utf-8")).hexdigest()
     return digest[:16]
@@ -178,6 +373,8 @@ def fetch_feed(feed: dict[str, str]) -> tuple[list[dict[str, Any]], str | None]:
         published = parse_published(entry)
         published_at = published.isoformat().replace("+00:00", "Z") if published else None
         summary = clean_text(entry.get("summary") or entry.get("description"))
+        regions = infer_regions(title, summary, feed["category"])
+        cluster_key = normalize_title_key(title)
 
         items.append(
             {
@@ -187,9 +384,14 @@ def fetch_feed(feed: dict[str, str]) -> tuple[list[dict[str, Any]], str | None]:
                 "url": link,
                 "published_at": published_at,
                 "published_label": format_label(published) if published else "Unknown",
+                "age_label": age_label(published) if published else "Unknown",
                 "source_id": feed["id"],
                 "source_name": feed["name"],
+                "source_kind": "rss",
                 "category": feed["category"],
+                "regions": regions,
+                "priority": priority_score(title, summary, feed["category"], published),
+                "cluster_key": cluster_key,
             }
         )
 
@@ -207,33 +409,41 @@ def fetch_x_list(source: dict[str, str]) -> tuple[list[dict[str, Any]], str | No
             source["list_id"],
             auth_token=auth_token,
             ct0=ct0,
-            count=MAX_ITEMS_PER_SOURCE,
+            count=MAX_X_LIST_ITEMS,
         )
     except Exception as exc:  # noqa: BLE001 - report per-source failures
         return [], str(exc)
 
     items: list[dict[str, Any]] = []
-    for tweet in tweets[:MAX_ITEMS_PER_SOURCE]:
-        title = clean_text(tweet.get("text"), limit=160)
-        if not title:
+    for tweet in tweets[:MAX_X_LIST_ITEMS]:
+        text = clean_text(tweet.get("text"), limit=280)
+        if not text:
             continue
 
         published = _parse_created_at(tweet.get("created_at"))
         published_at = published.isoformat().replace("+00:00", "Z") if published else None
         screen_name = tweet.get("screen_name") or "unknown"
         link = tweet.get("url") or source["url"]
+        headline = clean_text(tweet.get("text"), limit=160)
+        regions = infer_regions(headline, text, source["category"])
+        cluster_key = normalize_title_key(headline)
 
         items.append(
             {
-                "id": item_id(source["id"], link, title),
-                "title": title,
-                "summary": f"@{screen_name}",
+                "id": item_id(source["id"], link, headline),
+                "title": headline,
+                "summary": text if text != headline else f"Post from @{screen_name}",
                 "url": link,
                 "published_at": published_at,
                 "published_label": format_label(published) if published else "Unknown",
+                "age_label": age_label(published) if published else "Unknown",
                 "source_id": source["id"],
-                "source_name": source["name"],
+                "source_name": f"@{screen_name}",
+                "source_kind": "social",
                 "category": source["category"],
+                "regions": regions,
+                "priority": priority_score(headline, text, source["category"], published),
+                "cluster_key": cluster_key,
             }
         )
 
@@ -290,7 +500,7 @@ def aggregate() -> dict[str, Any]:
         key=lambda item: item.get("published_at") or "",
         reverse=True,
     )
-    all_items = all_items[:MAX_TOTAL_ITEMS]
+    all_items = dedupe_items(all_items)[:MAX_TOTAL_ITEMS]
 
     category_counts = {key: 0 for key in CATEGORY_LABELS}
     for item in all_items:
@@ -305,6 +515,7 @@ def aggregate() -> dict[str, Any]:
         ],
         "sources": source_status,
         "items": all_items,
+        "trends": extract_trends(all_items),
     }
 
 
