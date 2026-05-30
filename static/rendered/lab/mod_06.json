@@ -1,0 +1,168 @@
+{
+  "id": "mod_06",
+  "title": "02.2 / Primes.jl",
+  "blocks": [
+    {
+      "kind": {
+        "Brief": {
+          "id": "objectives",
+          "title": "Learning",
+          "brief_html": "<blockquote>\n<p><strong>LEARNING OBJECTIVES</strong></p>\n<ul>\n<li>Use Primes.jl for primality testing and enumeration.</li>\n<li>Find the $n$th prime with <code>prime(n)</code>.</li>\n<li>Factor integers with <code>factor</code>.</li>\n</ul>\n</blockquote>\n"
+        }
+      },
+      "execution": {
+        "status": "Idle",
+        "stdout": [],
+        "result": null,
+        "error": null,
+        "verify_results": []
+      }
+    },
+    {
+      "kind": {
+        "Brief": {
+          "id": "theory",
+          "title": "Theory:",
+          "brief_html": "<p>RSA depends on the asymmetry between multiplying large primes and factoring their product. Primes.jl provides production-quality prime utilities used throughout cryptographic Julia code.</p>\n"
+        }
+      },
+      "execution": {
+        "status": "Idle",
+        "stdout": [],
+        "result": null,
+        "error": null,
+        "verify_results": []
+      }
+    },
+    {
+      "kind": {
+        "Probe": {
+          "id": "params",
+          "params": [
+            {
+              "name": "n",
+              "value": 30,
+              "min": 1,
+              "max": 100
+            }
+          ]
+        }
+      },
+      "execution": {
+        "status": "Idle",
+        "stdout": [],
+        "result": null,
+        "error": null,
+        "verify_results": []
+      }
+    },
+    {
+      "kind": {
+        "Blueprint": {
+          "id": "primes_demo",
+          "language": "julia",
+          "code": "\nusing Primes\n\nprintln(isprime(7), isprime(10))\nprintln(primes(30))\nprintln(prime(30))  # 113\nprintln(factor(561))  # 3 * 11 * 17"
+        }
+      },
+      "execution": {
+        "status": "Idle",
+        "stdout": [],
+        "result": null,
+        "error": null,
+        "verify_results": []
+      }
+    },
+    {
+      "kind": {
+        "Verify": {
+          "id": "exercise_06",
+          "cases": [
+            {
+              "expression": "nth_prime(1) == 2",
+              "function": "nth_prime",
+              "args": [
+                {
+                  "Literal": 1
+                }
+              ],
+              "expected": {
+                "Value": 2
+              }
+            },
+            {
+              "expression": "nth_prime(6) == 13",
+              "function": "nth_prime",
+              "args": [
+                {
+                  "Literal": 6
+                }
+              ],
+              "expected": {
+                "Value": 13
+              }
+            },
+            {
+              "expression": "nth_prime(10) == 29",
+              "function": "nth_prime",
+              "args": [
+                {
+                  "Literal": 10
+                }
+              ],
+              "expected": {
+                "Value": 29
+              }
+            },
+            {
+              "expression": "nth_prime(30) == 113",
+              "function": "nth_prime",
+              "args": [
+                {
+                  "Literal": 30
+                }
+              ],
+              "expected": {
+                "Value": 113
+              }
+            },
+            {
+              "expression": "isprime_check(104729) == 1",
+              "function": "isprime_check",
+              "args": [
+                {
+                  "Literal": 104729
+                }
+              ],
+              "expected": {
+                "Value": 1
+              }
+            }
+          ]
+        }
+      },
+      "execution": {
+        "status": "Idle",
+        "stdout": [],
+        "result": null,
+        "error": null,
+        "verify_results": []
+      }
+    },
+    {
+      "kind": {
+        "Brief": {
+          "id": "exercise",
+          "title": "Exercise",
+          "brief_html": "<blockquote>\n<p><strong>EXERCISE 06</strong></p>\n<ul>\n<li>Explore Primes.jl functions in the blueprint.</li>\n<li>Verify the $n$th prime mapping for small indices.</li>\n</ul>\n</blockquote>\n"
+        }
+      },
+      "execution": {
+        "status": "Idle",
+        "stdout": [],
+        "result": null,
+        "error": null,
+        "verify_results": []
+      }
+    }
+  ]
+}

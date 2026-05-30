@@ -1,4 +1,4 @@
-use crate::lab::types::{
+use lab_types::types::{
     BlockExecution, BlockKind, LabBlock, LabModule, ProbeParam, VerifyArg, VerifyCase,
     VerifyExpectation,
 };
@@ -114,6 +114,7 @@ fn parse_directive(
                     id,
                     title,
                     body_md: body.trim().to_string(),
+                    brief_html: String::new(),
                 },
                 execution,
             })
@@ -322,6 +323,7 @@ fn extract_fenced_code(body: &str, language: &str) -> Option<String> {
 #[cfg(test)]
 mod tests {
     use super::*;
+    use lab_types::modules::ALL_MODULES;
 
     #[test]
     fn parses_probe_and_verify_blocks() {
@@ -346,8 +348,6 @@ n: 11, min=2, max=50
 
     #[test]
     fn parses_all_curriculum_lab_modules() {
-        use crate::lab::modules::ALL_MODULES;
-
         for module in ALL_MODULES {
             let source = std::fs::read_to_string(module.lab_src).unwrap_or_else(|err| {
                 panic!("Failed to read {}: {err}", module.lab_src);

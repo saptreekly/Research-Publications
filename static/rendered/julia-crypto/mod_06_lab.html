@@ -1,0 +1,43 @@
+<p>::: brief id=objectives title=Learning Objectives</p>
+<blockquote>
+<p><strong>LEARNING OBJECTIVES</strong></p>
+<ul>
+<li>Use Primes.jl for primality testing and enumeration.</li>
+<li>Find the $n$th prime with <code>prime(n)</code>.</li>
+<li>Factor integers with <code>factor</code>.
+:::</li>
+</ul>
+</blockquote>
+<p>::: brief id=theory title=Theory: Primes.jl
+RSA depends on the asymmetry between multiplying large primes and factoring their product. Primes.jl provides production-quality prime utilities used throughout cryptographic Julia code.
+:::</p>
+<p>::: probe id=params
+n: 30, min=1, max=100
+:::</p>
+<p>::: blueprint id=primes_demo lang=julia</p>
+<pre><code class="language-julia">using Primes
+
+println(isprime(7), isprime(10))
+println(primes(30))
+println(prime(30))  # 113
+println(factor(561))  # 3 * 11 * 17
+</code></pre>
+<p>:::</p>
+<p>::: verify id=exercise_06</p>
+<ul>
+<li>nth_prime(1) == 2</li>
+<li>nth_prime(6) == 13</li>
+<li>nth_prime(10) == 29</li>
+<li>nth_prime(30) == 113</li>
+<li>isprime_check(104729) == 1
+:::</li>
+</ul>
+<p>::: brief id=exercise title=Exercise 06</p>
+<blockquote>
+<p><strong>EXERCISE 06</strong></p>
+<ul>
+<li>Explore Primes.jl functions in the blueprint.</li>
+<li>Verify the $n$th prime mapping for small indices.
+:::</li>
+</ul>
+</blockquote>

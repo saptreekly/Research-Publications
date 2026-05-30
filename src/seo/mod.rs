@@ -1,6 +1,7 @@
 use crate::lab::modules::find_by_slug as find_module;
 use crate::projects::find_by_slug as find_project;
 use crate::reports::find_by_slug as find_report;
+#[cfg(feature = "tidy-tuesday")]
 use crate::tidy_tuesday::find_by_slug as find_tidy_tuesday;
 use crate::utils::APP_BASE;
 
@@ -108,6 +109,7 @@ pub fn seo_for_path(pathname: &str) -> SeoMeta {
         );
     }
 
+    #[cfg(feature = "tidy-tuesday")]
     if path == "/tidy-tuesday" {
         return page(
             "/tidy-tuesday",
@@ -116,12 +118,33 @@ pub fn seo_for_path(pathname: &str) -> SeoMeta {
         );
     }
 
+    #[cfg(feature = "tidy-tuesday")]
     if let Some(slug) = path.strip_prefix("/tidy-tuesday/") {
         if let Some(entry) = find_tidy_tuesday(slug) {
             return page(
                 &path,
                 &format!("{} | Jack Weekly", entry.title),
                 &format!("{} · {}", entry.subtitle, entry.tag),
+            );
+        }
+    }
+
+    #[cfg(feature = "malware-traffic")]
+    if path == "/malware-traffic" {
+        return page(
+            "/malware-traffic",
+            "Malware Traffic Analysis | Jack Weekly",
+            "Interactive PCAP-driven malware traffic analyses with kill chain reconstruction and IOC extraction.",
+        );
+    }
+
+    #[cfg(feature = "malware-traffic")]
+    if let Some(slug) = path.strip_prefix("/malware-traffic/") {
+        if let Some(report) = crate::malware_traffic::find_by_slug(slug) {
+            return page(
+                &path,
+                &format!("{} | Jack Weekly", report.title),
+                &format!("{} · {}", report.subtitle, report.tag),
             );
         }
     }

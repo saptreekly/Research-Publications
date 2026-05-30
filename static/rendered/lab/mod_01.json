@@ -1,0 +1,187 @@
+{
+  "id": "mod_01",
+  "title": "01.1 / Modular Inverses",
+  "blocks": [
+    {
+      "kind": {
+        "Brief": {
+          "id": "objectives",
+          "title": "Learning",
+          "brief_html": "<blockquote>\n<p><strong>LEARNING OBJECTIVES</strong></p>\n<ul>\n<li>Understand when a modular inverse exists ($\\gcd(a,m)=1$).</li>\n<li>Implement the Extended Euclidean Algorithm.</li>\n<li>Normalize negative inverse coefficients into $[0, m)$.</li>\n</ul>\n</blockquote>\n"
+        }
+      },
+      "execution": {
+        "status": "Idle",
+        "stdout": [],
+        "result": null,
+        "error": null,
+        "verify_results": []
+      }
+    },
+    {
+      "kind": {
+        "Brief": {
+          "id": "theory",
+          "title": "Theory:",
+          "brief_html": "<p>In $\\mathbb{Z}/m\\mathbb{Z}$, the inverse of $a$ is an integer $x$ such that $ax \\equiv 1 \\pmod m$.</p>\n<p>An inverse exists <strong>if and only if</strong> $\\gcd(a,m)=1$. When $\\gcd(a,m)\\neq 1$, no inverse exists (e.g. $2 \\pmod 4$).</p>\n<p>The Extended Euclidean Algorithm finds integers $u,v$ with $au+bv=\\gcd(a,b)$. When $\\gcd(a,m)=1$, reducing $au+bv=1 \\pmod m$ gives $au \\equiv 1 \\pmod m$, so $u$ is the inverse.</p>\n<p>Visualizations from the original notebook (clock face mod 7, gcd heatmap) are described in the curriculum theory section.</p>\n"
+        }
+      },
+      "execution": {
+        "status": "Idle",
+        "stdout": [],
+        "result": null,
+        "error": null,
+        "verify_results": []
+      }
+    },
+    {
+      "kind": {
+        "Probe": {
+          "id": "params",
+          "params": [
+            {
+              "name": "a",
+              "value": 3,
+              "min": 1,
+              "max": 20
+            },
+            {
+              "name": "n",
+              "value": 11,
+              "min": 2,
+              "max": 50
+            }
+          ]
+        }
+      },
+      "execution": {
+        "status": "Idle",
+        "stdout": [],
+        "result": null,
+        "error": null,
+        "verify_results": []
+      }
+    },
+    {
+      "kind": {
+        "Blueprint": {
+          "id": "mod_inverse",
+          "language": "julia",
+          "code": "\nfunction extended_gcd(a, b)\n    if b == 0\n        return (a, 1, 0)\n    end\n    g, x1, y1 = extended_gcd(b, a % b)\n    return (g, y1, x1 - (a ÷ b) * y1)\nend\n\nfunction modInverse(a, n)\n    g, x, _ = extended_gcd(a, n)\n    if g != 1\n        error(\"Modular inverse does not exist\")\n    else\n        return (x % n + n) % n\n    end\nend\n\nprintln(modInverse(3, 11))\nprintln(invmod(7, 10))  # Julia built-in: 3"
+        }
+      },
+      "execution": {
+        "status": "Idle",
+        "stdout": [],
+        "result": null,
+        "error": null,
+        "verify_results": []
+      }
+    },
+    {
+      "kind": {
+        "Verify": {
+          "id": "exercise_01",
+          "cases": [
+            {
+              "expression": "modInverse(3, 11) == 4",
+              "function": "modInverse",
+              "args": [
+                {
+                  "Literal": 3
+                },
+                {
+                  "Literal": 11
+                }
+              ],
+              "expected": {
+                "Value": 4
+              }
+            },
+            {
+              "expression": "modInverse(5, 12) == 5",
+              "function": "modInverse",
+              "args": [
+                {
+                  "Literal": 5
+                },
+                {
+                  "Literal": 12
+                }
+              ],
+              "expected": {
+                "Value": 5
+              }
+            },
+            {
+              "expression": "modInverse(7, 10) == 3",
+              "function": "modInverse",
+              "args": [
+                {
+                  "Literal": 7
+                },
+                {
+                  "Literal": 10
+                }
+              ],
+              "expected": {
+                "Value": 3
+              }
+            },
+            {
+              "expression": "modInverse(2, 4) throws",
+              "function": "modInverse",
+              "args": [
+                {
+                  "Literal": 2
+                },
+                {
+                  "Literal": 4
+                }
+              ],
+              "expected": "Error"
+            },
+            {
+              "expression": "modInverse(a, n) == 4",
+              "function": "modInverse",
+              "args": [
+                {
+                  "Probe": "a"
+                },
+                {
+                  "Probe": "n"
+                }
+              ],
+              "expected": {
+                "Value": 4
+              }
+            }
+          ]
+        }
+      },
+      "execution": {
+        "status": "Idle",
+        "stdout": [],
+        "result": null,
+        "error": null,
+        "verify_results": []
+      }
+    },
+    {
+      "kind": {
+        "Brief": {
+          "id": "exercise",
+          "title": "Exercise",
+          "brief_html": "<blockquote>\n<p><strong>EXERCISE 01</strong></p>\n<ul>\n<li>Implement <code>modInverse</code> using the Extended Euclidean Algorithm.</li>\n<li>Compare with Julia's <code>invmod(a, m)</code> and <code>gcdx(a, m)</code>.</li>\n<li>Adjust probe parameters and verify with the test cases.</li>\n</ul>\n</blockquote>\n"
+        }
+      },
+      "execution": {
+        "status": "Idle",
+        "stdout": [],
+        "result": null,
+        "error": null,
+        "verify_results": []
+      }
+    }
+  ]
+}

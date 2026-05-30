@@ -1,0 +1,56 @@
+<p>::: brief id=objectives title=Learning Objectives</p>
+<blockquote>
+<p><strong>LEARNING OBJECTIVES</strong></p>
+<ul>
+<li>State Fermat's Little Theorem and Euler's Theorem.</li>
+<li>Compute Euler's totient $\phi(n)$.</li>
+<li>Use $a^{\phi(n)-1}$ as a modular inverse when $\gcd(a,n)=1$.
+:::</li>
+</ul>
+</blockquote>
+<p>::: brief id=theory title=Theory: Fermat and Euler
+<strong>Fermat's Little Theorem:</strong> If $p$ is prime and $\gcd(a,p)=1$, then $a^{p-1} \equiv 1 \pmod p$.</p>
+<p><strong>Euler's Theorem:</strong> If $\gcd(a,n)=1$, then $a^{\phi(n)} \equiv 1 \pmod n$, where $\phi(n)$ counts integers in $[1,n)$ coprime to $n$.</p>
+<p>For prime $p$, $\phi(p)=p-1$, recovering Fermat.
+:::</p>
+<p>::: probe id=params
+a: 3, min=1, max=20
+n: 10, min=2, max=50
+:::</p>
+<p>::: blueprint id=euler_impl lang=julia</p>
+<pre><code class="language-julia">function euler_phi(n)
+    count = 0
+    for i in 1:n-1
+        if gcd(i, n) == 1
+            count += 1
+        end
+    end
+    return count
+end
+
+function fermat_check(a, p)
+    return powermod(a, p - 1, p)
+end
+
+println(euler_phi(10))       # 4
+println(fermat_check(3, 7))  # 1
+</code></pre>
+<p>:::</p>
+<p>::: verify id=exercise_04</p>
+<ul>
+<li>euler_phi(10) == 4</li>
+<li>euler_phi(7) == 6</li>
+<li>fermat_check(3, 7) == 1</li>
+<li>fermat_check(2, 13) == 1</li>
+<li>euler_phi(n) == 4
+:::</li>
+</ul>
+<p>::: brief id=exercise title=Exercise 04</p>
+<blockquote>
+<p><strong>EXERCISE 04</strong></p>
+<ul>
+<li>Implement <code>euler_phi</code> by counting coprime integers.</li>
+<li>Verify Fermat's Little Theorem for probe values when $\gcd(a,n)=1$.
+:::</li>
+</ul>
+</blockquote>

@@ -6,24 +6,27 @@ use crate::lab::components::block_stream::BlockStream;
 use crate::lab::components::command_bar::CommandBar;
 use crate::lab::components::inspector::Inspector;
 use crate::lab::kernel::{run_blueprint, run_verify};
-use crate::lab::parse::parse_lab_module;
 use crate::lab::types::{
     collect_probe_values, BlockKind, ExecutionStatus, KernelSession, LabModule,
 };
-use crate::utils::resolve_asset_url;
+use crate::utils::{markdown::rendered_lab_cache_path, resolve_asset_url};
 
 #[component]
 pub fn LabWorkspace(module_src: &'static str, module_id: &'static str, module_title: &'static str) -> impl IntoView {
+    let _ = module_src;
     let module = create_resource(
-        move || module_src,
-        move |src| async move {
-            let url = resolve_asset_url(src);
+        move || (module_id, module_title),
+        move |(module_id, module_title)| async move {
+            let url = resolve_asset_url(&rendered_lab_cache_path(module_id));
             let response = Request::get(&url).send().await.ok()?;
             if !response.ok() {
                 return None;
             }
-            let text = response.text().await.ok()?;
-            parse_lab_module(module_id, module_title, &text).ok()
+            let mut module: LabModule = response.json().await.ok()?;
+            if module.title.is_empty() {
+                module.title = module_title.to_string();
+            }
+            Some(module)
         },
     );
 

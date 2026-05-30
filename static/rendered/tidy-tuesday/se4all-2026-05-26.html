@@ -1,0 +1,59 @@
+<p>Julia analysis of the <a href="https://github.com/rfordatascience/tidytuesday/tree/main/data/2026/2026-05-26">Tidy Tuesday 2026-05-26</a> dataset: <strong>Sustainable Energy for All</strong> (SE4ALL). The data tracks country-level access to electricity, renewable energy shares by technology, and energy intensity from 1990–2010.</p>
+<h2>Dataset</h2>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Detail</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Source</td>
+<td><a href="https://www.se4all.org/">SE4ALL Global Tracking Framework</a> via TidyTuesday</td>
+</tr>
+<tr>
+<td>Records</td>
+<td>5,271 country-year observations (228 countries)</td>
+</tr>
+<tr>
+<td>Years</td>
+<td>1990–2010</td>
+</tr>
+<tr>
+<td>Key columns</td>
+<td>Electricity access, renewable TFEC shares by technology, solar terajoules</td>
+</tr>
+<tr>
+<td>Tools</td>
+<td>Julia 1.12, CSV.jl, DataFrames.jl, Plots.jl</td>
+</tr>
+</tbody>
+</table>
+<p>The UN's SE4ALL initiative (2010) set three 2030 targets: universal energy access, doubled energy efficiency improvement, and doubled renewable share in the global energy mix. This dataset measures progress toward those goals through 2010.</p>
+<h2>What to explore</h2>
+<p>The interactive explorer below computes statistics and charts live in the browser:</p>
+<ul>
+<li><strong>What this era reveals</strong>: narrative insight cards backed by computed numbers</li>
+<li><strong>Global median trajectories</strong>: three-panel view (access at reporting years, renewable TFEC with IQR band, solar/wind among adopters) plus narrative insights</li>
+<li><strong>Technology adoption wave</strong>: stacked area of solar-only, both, and wind-only reporters, with growth stats and key findings</li>
+<li><strong>Biggest gainers</strong>: dumbbell chart of who changed most (access, solar, wind, etc.)</li>
+<li><strong>Solar rank race</strong>: bump chart of top-5 solar consumers shifting over time</li>
+<li><strong>At a glance</strong>: headline stats (medians, adoption counts, outliers)</li>
+<li><strong>Renewable mix, scatter, heatmap, histogram</strong>: composition, access vs renewables, adoption patterns</li>
+<li><strong>Which renewables grew fastest?</strong>: ranked horizontal bars by technology with median comparison, country leader board, and key findings</li>
+<li><strong>Country trends &amp; rankings</strong>: line charts and solar terajoule rankings</li>
+</ul>
+<h2>Reproducing the analysis</h2>
+<p>The Julia script loads the cleaned dataset, exports browser-ready JSON for the interactive charts, and writes static PNG fallbacks:</p>
+<pre><code class="language-julia">using CSV, DataFrames, Statistics, Plots
+
+energy = CSV.read(&quot;research-docs/tidy-tuesday/data/energy_cleaned.csv&quot;, DataFrame; missingstring=&quot;NA&quot;)
+export_explore_json(energy)  # writes static/tidy-tuesday/2026-05-26/explore.json
+</code></pre>
+<p>Run from the repository root:</p>
+<pre><code class="language-bash">julia research-docs/tidy-tuesday/analysis-2026-05-26.jl
+</code></pre>
+<p>Outputs land in <code>static/tidy-tuesday/2026-05-26/</code>.</p>
+<h2>Data credit</h2>
+<p>Dataset curated by <a href="https://github.com/afrikaniz3d-za">Ntobeko Sosibo</a> for TidyTuesday. Original source: SE4ALL Global Tracking Framework.</p>

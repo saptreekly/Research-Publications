@@ -1,0 +1,44 @@
+<h1>Fermat's Little Theorem and Euler's Theorem</h1>
+<p>In the modular inverses section, I established that $a^{-1} \pmod{m}$ exists <strong>if and only if</strong> $\gcd(a,m) = 1$. We also saw that <code>gcdx</code> gives us the inverse directly, if it exists.</p>
+<p>The deeper question beneath all of this is: <em>why</em> does that structure exist at all? What is it about modular arithmetic that makes inverses behave this way?</p>
+<h2>Fermat's Little Theorem</h2>
+<p><strong>Fermat's Little Theorem</strong> is the first real answer to the question.</p>
+<blockquote>
+<p>If you've studied mathematics, you've likely heard of Fermat's <em>Last</em> Theorem. These are not the same.</p>
+</blockquote>
+<p>It works like this:</p>
+<p>Pick a prime number $p$ and any $a$ that is not divisible by it. That is, $a$ is not a multiple of $p$. Then, compute $a^{p-1} \pmod{p}$ for every valid $a$:</p>
+<blockquote>
+<p><code>powermod(a, k, m)</code> computes $a^k \pmod{m}$ efficienty using repeated squaring. I'll cover what this actually is in the modular exponentiation notebook, but for now, think of it as a fast way to raise a number to a very large power and take the remainder.</p>
+</blockquote>
+<p>Every result is $1$. Let's try a different prime:</p>
+<p>Every result is 1! Let's visualize this pattern across different primes:</p>
+<p>It doesn't take genius mathematician to recognize that that result too is all just $1$s.</p>
+<p>This pattern holds for every prime, which is exactly what <strong>Fermat's Little Theorem</strong> states:</p>
+<p>$$a^{p-1} \equiv 1 \pmod{p}$$</p>
+<p>for any prime $p$ and any $a$ not divisible by $p$.</p>
+<h3>The Inverse Corollary</h3>
+<p>It was later found that we can rewrite $a^{p-1}$ by splitting the exponent:</p>
+<p>$$a^{p-1} = a \cdot a^{p-2}$$</p>
+<p>This works because $1 + (p-2) = p-1$. Substituting into Fermat:</p>
+<p>$$a \cdot a^{p-2} \equiv 1 \pmod{p}$$</p>
+<p>This is exactly the form $a \cdot x \equiv 1 \pmod{p}$ which means $a^{p-2}$ <strong>is</strong> the modular inverse of $a$ mod $p$.</p>
+<p>Both match but there's a catch... this only works when $p$ is a prime number. If the modulus is a composite, Fermat's Little Theorem doesn't hold and this breaks down entirely.</p>
+<h2>Euler's Theorem</h2>
+<p>Euler's theorem picks up where Fermat's doesn't work.</p>
+<p>It's written as:</p>
+<p>$$a^{\phi(b)} \equiv 1 \pmod{b}$$</p>
+<p>$\phi(b)$ is a number that answers: &quot;How many integers in the range $1$ to $b$ are coprime to $b$?&quot;. This is known as <strong>Euler's Totient Function</strong>.</p>
+<p>It works for any arbitrary $b$ as long as it is greater than $0$ and $\gcd(a,b) = 1$.</p>
+<p>When $b$ is a prime number, this is the exact same as Fermat's Little Theorem.</p>
+<p>$\phi(p) = p - 1$, therefore $a^{\phi (p)}=a^{p-1}$</p>
+<p>We can verify Euler's Theorem the same way we verified Fermat's:</p>
+<p>Verify $a^{\phi(b)} \equiv 1 \pmod{b}$ for all $a$ coprime to $b$:</p>
+<p>Every $a$ coprime to $10$ gives $a^{\phi(10)} \equiv 1 \pmod{10}$.</p>
+<p>Which numbers are coprime to n? Here's a visual showing φ(n) as filled circles:</p>
+<p>Notice that values $2, 4, 5, 6,$ and $8$ are skipped since they share a factor with $10$.</p>
+<p>With a prime modulus:</p>
+<p>When $b$ is prime, every number from $1$ to $b-1$ is coprime to $b$.</p>
+<p>And $\phi(7) = 6 = 7 - 1$, which is exactly Fermat's exponent.</p>
+<p>This will become relevant to RSA encryption as RSA's modulus is $n = pq$ where $p$ and $q$ are two large primes, which is composite. Fermat breaks down here, but Euler doesn't.</p>
+<p>$\phi(n) = (p-1)(q-1)$ as I will discuss, is what makes RSA work.</p>

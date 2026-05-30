@@ -1,46 +1,31 @@
-mod components;
-mod lab;
-mod malware_traffic;
-mod pages;
-mod projects;
-mod reports;
-mod seo;
-mod situation_monitor;
-mod theme;
-mod tidy_tuesday;
-mod utils;
+mod routes;
 
 use leptos::*;
 use leptos_meta::*;
 use leptos_router::*;
-use crate::components::animated_background::AnimatedBackground;
-use crate::components::seo_head::SeoHead;
-use crate::theme::provide_theme;
-use pages::layout::RootLayout;
-use pages::home::HomePage;
-use pages::contact::ContactPage;
-use pages::curriculum::CurriculumPage;
-use pages::lab::LabPage;
-use pages::module::ModulePage;
-use pages::report::ReportPage;
-use pages::project::ProjectPage;
-use pages::malware_traffic::{MalwareTrafficIndexPage, MalwareTrafficPage};
-use pages::situation_monitor::SituationMonitorPage;
-use pages::tidy_tuesday::{TidyTuesdayIndexPage, TidyTuesdayPage};
+use research_publications::components::animated_background::AnimatedBackground;
+use research_publications::components::seo_head::SeoHead;
+use research_publications::pages::contact::ContactPage;
+use research_publications::pages::curriculum::CurriculumPage;
+use research_publications::pages::home::HomePage;
+use research_publications::pages::layout::RootLayout;
+use research_publications::pages::module::ModulePage;
+use research_publications::pages::project::ProjectPage;
+use research_publications::pages::report::ReportPage;
+use research_publications::theme::provide_theme;
+use research_publications::APP_BASE;
 
-pub const APP_BASE: &str = "/Research-Publications";
+use routes::{
+    LabRoute, MalwareTrafficEntryRoute, MalwareTrafficIndexRoute, SituationMonitorRoute,
+    TidyTuesdayEntryRoute, TidyTuesdayIndexRoute,
+};
+
 const ROUTE_HOME: &str = "/Research-Publications/";
 const ROUTE_CURRICULUM: &str = "/Research-Publications/curriculum";
 const ROUTE_MODULE: &str = "/Research-Publications/curriculum/:slug";
-const ROUTE_LAB: &str = "/Research-Publications/curriculum/lab/:slug";
 const ROUTE_CONTACT: &str = "/Research-Publications/contact";
 const ROUTE_REPORT: &str = "/Research-Publications/research/:slug";
 const ROUTE_PROJECT: &str = "/Research-Publications/projects/:slug";
-const ROUTE_TIDY_TUESDAY: &str = "/Research-Publications/tidy-tuesday";
-const ROUTE_TIDY_TUESDAY_ENTRY: &str = "/Research-Publications/tidy-tuesday/:slug";
-const ROUTE_SITUATION_MONITOR: &str = "/Research-Publications/situation-monitor";
-const ROUTE_MALWARE_TRAFFIC: &str = "/Research-Publications/malware-traffic";
-const ROUTE_MALWARE_TRAFFIC_ENTRY: &str = "/Research-Publications/malware-traffic/:slug";
 
 #[component]
 fn App() -> impl IntoView {
@@ -57,9 +42,6 @@ fn App() -> impl IntoView {
                 <Route path=ROUTE_HOME view=move || view! {
                     <RootLayout><HomePage /></RootLayout>
                 } />
-                <Route path=ROUTE_LAB view=move || view! {
-                    <RootLayout><LabPage /></RootLayout>
-                } />
                 <Route path=ROUTE_REPORT view=move || view! {
                     <RootLayout><ReportPage /></RootLayout>
                 } />
@@ -75,27 +57,19 @@ fn App() -> impl IntoView {
                 <Route path=ROUTE_CONTACT view=move || view! {
                     <RootLayout><ContactPage /></RootLayout>
                 } />
-                <Route path=ROUTE_TIDY_TUESDAY_ENTRY view=move || view! {
-                    <RootLayout><TidyTuesdayPage /></RootLayout>
-                } />
-                <Route path=ROUTE_TIDY_TUESDAY view=move || view! {
-                    <RootLayout><TidyTuesdayIndexPage /></RootLayout>
-                } />
-                <Route path=ROUTE_SITUATION_MONITOR view=move || view! {
-                    <RootLayout><SituationMonitorPage /></RootLayout>
-                } />
-                <Route path=ROUTE_MALWARE_TRAFFIC_ENTRY view=move || view! {
-                    <RootLayout><MalwareTrafficPage /></RootLayout>
-                } />
-                <Route path=ROUTE_MALWARE_TRAFFIC view=move || view! {
-                    <RootLayout><MalwareTrafficIndexPage /></RootLayout>
-                } />
+                <LabRoute />
+                <TidyTuesdayEntryRoute />
+                <TidyTuesdayIndexRoute />
+                <SituationMonitorRoute />
+                <MalwareTrafficEntryRoute />
+                <MalwareTrafficIndexRoute />
             </Routes>
         </Router>
     }
 }
 
 fn main() {
+    #[cfg(debug_assertions)]
     console_error_panic_hook::set_once();
 
     #[cfg(debug_assertions)]

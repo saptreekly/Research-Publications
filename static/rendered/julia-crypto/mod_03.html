@@ -1,0 +1,59 @@
+<h1>Chinese Remainder Theorem</h1>
+<p>The Chinese Remainder Theorem (CRT) is one of the oldest proofs in number theory. It appears in Chinese mathematical texts from the 3rd century.</p>
+<p>The question it answers is: <em>Given a system of congruences with coprime moduli, can we always find a solution?</em></p>
+<p>The answer is yes. And not only does a solution exist, it's unique modulo the product of the moduli.</p>
+<h2>The Idea</h2>
+<p>Suppose you know what some unknown number $x$ satisfied:</p>
+<p>$$x \equiv 2 \pmod{3}$$
+$$x \equiv 3 \pmod{5}$$</p>
+<p>We're not given $x$ directly, only these two remainders. Can you recover $x$?</p>
+<p>We can do a naive search for it:</p>
+<p>Notice how the solutions repeat with a regular period. Let's visualize this:</p>
+<p>We get $x = 8$ and $x = 23$ and the gap between them is $15 = 3 \times 5$.</p>
+<p>This is what the CRT predicts. Solutions repeat with period equal to the product of the moduli.</p>
+<p>So the complete solution is $x \equiv 8 \pmod{15}$.</p>
+<h2>Why Coprime Moduli?</h2>
+<p>Great question.</p>
+<p>The moduli must be coprime for a solution to be guaranteed. If they share a factor, for example:</p>
+<p>$$x \equiv 1 \pmod{2}$$
+$$x \equiv 2 \pmod{4}$$</p>
+<p>the system becomes inconsistent where no solution exists at all.</p>
+<p>The first condition requires $x$ to be odd. The second requires $x$ to be even.</p>
+<p>These are mutually exclusive.</p>
+<p>We can verify that no solution exists:</p>
+<h2>The General Statement</h2>
+<p>Given a system of $k$ congruences:</p>
+<p>$$x \equiv a_1 \pmod{n_1}$$
+$$x \equiv a_2 \pmod{n_2}$$
+$$\vdots$$
+$$x \equiv a_k \pmod{n_k}$$</p>
+<p>where $n_1, n_2, \ldots, n_k$ are pairwise coprime, there exists a unique solution modulo $N = n_1 \cdot n_2 \cdots n_k$.</p>
+<h2>Constructing the Solution</h2>
+<p>Like almost everything in cryptography, finding the solution by brute force works for small numbers but not at cryptographic scale. The CRT construction gives us a direct formula.</p>
+<p>Let $N = n_1 \cdot n_2 \cdots n_k$. For each $i$, define:</p>
+<p>$$N_i = \frac{N}{n_i}$$</p>
+<p>$$M_i = N_i^{-1} \pmod{n_i}$$</p>
+<p>Then the solution is:</p>
+<p>$$x = \left(\sum_{i=1}^{k} a_i \cdot N_i \cdot M_i \right) \pmod{N}$$</p>
+<p>Each term $a_i \cdot N_i \cdot M_i$ contributes exactly $a_i$ mod $n_i$ and $0$ mod all other moduli.</p>
+<p>The sum picks up all the remainders simultaneously.</p>
+<h2>Implementation</h2>
+<p>We can verify:</p>
+<h2>Three-Congruence Example</h2>
+<p>CRT works for any number of congruences. Let's try three:</p>
+<p>$$x \equiv 1 \pmod{3}$$
+$$x \equiv 4 \pmod{7}$$
+$$x \equiv 6 \pmod{11}$$</p>
+<h2>Why This Matters for Cryptography</h2>
+<p>CRT shows up in two important places in RSA:</p>
+<ol>
+<li><strong>Håstad's broadcast attack</strong>: if the same message is encrypted to three recipients using $e = 3$ with no padding, an attacker has three ciphertexts $c_1, c_2, c_3$ satisfying:</li>
+</ol>
+<p>$$m^3 \equiv c_1 \pmod{n_1}$$
+$$m^3 \equiv c_2 \pmod{n_2}$$
+$$m^3 \equiv c_3 \pmod{n_3}$$</p>
+<p>CRT recovers $m^3$ directly, and since $m < n_i$ for all $i$, taking the integer cube root gives $m$. No factoring required.</p>
+<ol start="2">
+<li><strong>RSA-CRT decryption</strong>: a standard optimisation in real RSA implementations that uses CRT to speed up decryption by a factor of ~4.</li>
+</ol>
+<p>The Håstad attack is covered in the next notebook.</p>

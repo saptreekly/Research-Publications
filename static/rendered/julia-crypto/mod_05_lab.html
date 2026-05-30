@@ -1,0 +1,58 @@
+<p>::: brief id=objectives title=Learning Objectives</p>
+<blockquote>
+<p><strong>LEARNING OBJECTIVES</strong></p>
+<ul>
+<li>Implement the Sieve of Eratosthenes.</li>
+<li>Understand $O(n \log \log n)$ prime generation.</li>
+<li>Compare with Primes.jl in the next module.
+:::</li>
+</ul>
+</blockquote>
+<p>::: brief id=theory title=Theory: Sieve of Eratosthenes
+Mark multiples of each prime starting at $i^2$. Unmarked integers up to $n$ are prime. The algorithm is one of the most efficient ways to enumerate all primes up to a limit.
+:::</p>
+<p>::: probe id=params
+limit: 30, min=10, max=100
+:::</p>
+<p>::: blueprint id=sieve_impl lang=julia</p>
+<pre><code class="language-julia">function sieve(n)
+    is_prime = fill(true, n + 1)
+    is_prime[1] = false
+
+    for i in 2:n
+        if is_prime[i] &amp;&amp; i * i &lt;= n
+            for j in i*i:i:n
+                is_prime[j] = false
+            end
+        end
+    end
+
+    return [i for i in 1:n if is_prime[i]]
+end
+
+function is_prime(n)
+    n &gt;= 2 &amp;&amp; n in sieve(n)
+end
+
+println(sieve(30))
+println(is_prime(17), is_prime(10))
+</code></pre>
+<p>:::</p>
+<p>::: verify id=exercise_05</p>
+<ul>
+<li>is_prime(17) == 1</li>
+<li>is_prime(10) == 0</li>
+<li>is_prime(2) == 1</li>
+<li>prime_count(30) == 10</li>
+<li>prime_count(limit) == 10
+:::</li>
+</ul>
+<p>::: brief id=exercise title=Exercise 05</p>
+<blockquote>
+<p><strong>EXERCISE 05</strong></p>
+<ul>
+<li>Implement the sieve and an <code>is_prime</code> helper.</li>
+<li>Verify the count of primes up to 30 is 10.
+:::</li>
+</ul>
+</blockquote>

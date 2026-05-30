@@ -1,0 +1,96 @@
+<p>Real-time geospatial data server that streams aircraft positions from OpenSky Network to WebSocket clients. Instead of broadcasting every entity globally, the server filters by client viewport and clusters out-of-view traffic with H3 hex bins.</p>
+<h2>Problem</h2>
+<p>Naive map backends push full global state to every browser tab. At OpenSky scale that wastes bandwidth and makes interactive clients sluggish. This server sends only what the viewport needs plus cluster counts for everything else.</p>
+<h2>Architecture</h2>
+<table>
+<thead>
+<tr>
+<th>Module</th>
+<th>Language</th>
+<th>Role</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>spatial/</code>, <code>store/</code>, <code>server/</code>, <code>seeder/</code></td>
+<td>Go</td>
+<td>H3 indexing, entity storage, WebSocket server, OpenSky ingest</td>
+</tr>
+<tr>
+<td><code>spatial_engine/</code></td>
+<td>Rust</td>
+<td>Spatial query and indexing performance path</td>
+</tr>
+<tr>
+<td><code>frontend_wasm/</code></td>
+<td>Rust (Wasm)</td>
+<td>Browser map client compiled to WebAssembly</td>
+</tr>
+<tr>
+<td>Demo UI</td>
+<td>HTML / Leaflet</td>
+<td>Embedded live map for integration testing</td>
+</tr>
+</tbody>
+</table>
+<h3>Data flow</h3>
+<ol>
+<li>Seeder polls OpenSky on an interval (5s authenticated, 10s anonymous).</li>
+<li>Store applies entity updates and evicts stale tracks after missed polls.</li>
+<li>Each WebSocket client declares a bounding box and zoom level.</li>
+<li>Server emits delta messages (<code>added</code>, <code>updated</code>, <code>removed</code>, <code>clusters</code>) rather than full snapshots.</li>
+</ol>
+<h3>H3 resolution by zoom</h3>
+<table>
+<thead>
+<tr>
+<th>Zoom</th>
+<th>H3 resolution</th>
+<th>Approx. cell area</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0–4</td>
+<td>2</td>
+<td>~86,700 km²</td>
+</tr>
+<tr>
+<td>5–7</td>
+<td>4</td>
+<td>~1,770 km²</td>
+</tr>
+<tr>
+<td>8–10</td>
+<td>6</td>
+<td>~36 km²</td>
+</tr>
+<tr>
+<td>11+</td>
+<td>7</td>
+<td>~5 km²</td>
+</tr>
+</tbody>
+</table>
+<p>Low zoom shows cluster counts. High zoom resolves individual tracks.</p>
+<h2>Protocol sketch</h2>
+<p>Client viewport declaration:</p>
+<pre><code class="language-json">{
+  &quot;type&quot;: &quot;viewport&quot;,
+  &quot;north&quot;: 40.8,
+  &quot;south&quot;: 40.0,
+  &quot;east&quot;: -73.8,
+  &quot;west&quot;: -74.2,
+  &quot;zoom&quot;: 6
+}
+</code></pre>
+<p>Server delta response includes sequenced entity changes and H3 cluster keys with counts for cells outside the viewport.</p>
+<h2>Operational notes</h2>
+<ul>
+<li>Viewports crossing the antimeridian split into two polygon queries before union.</li>
+<li>Per-client push rate limiting defaults to 500ms minimum interval.</li>
+<li>OpenSky seeder uses exponential backoff on 429 and 5xx responses.</li>
+<li>Suitable for sub-100k entity workloads. Larger deployments would need quadrant partitioning or snapshot streaming.</li>
+</ul>
+<h2>Status</h2>
+<p>Public repository with integration test script and embedded demo UI. Run with <code>go run .</code> and open <code>http://localhost:8080</code>.</p>

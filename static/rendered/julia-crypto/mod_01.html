@@ -1,0 +1,56 @@
+<h1>Modular Inverses</h1>
+<p>The key question here is: &quot;<em>what does it mean for a number for have a multiplicative inverse?</em>&quot;</p>
+<p>Every nonzero number $a$ has an inverse $a^{-1}$ such that $a \cdot a^{-1} = 1$.</p>
+<p>For example, the inverse of $7$ is $7^{-1}$ or $\frac{1}{7}$.</p>
+<p>In modular arithmetic, fractions don't exist since we only care about integers. So we need a better way to think about inverses.</p>
+<p>Instead of asking &quot;what is $a^{-1}$,&quot; we ask: <em>is there an integer $x$ such that $a \cdot x \equiv 1 \pmod{m}$?</em></p>
+<p>Modular arithmetic wraps around like a clock. Here's what it looks like for mod 7:</p>
+<blockquote>
+<p><em>Quick note:</em> If you're new to cryptography or number theory $\equiv$ means &quot;congruent to&quot;. Though I prefer to think of it as &quot;these things are the same for some condition&quot;. For example, $7 \equiv 2 \pmod{5}$ means $7$ and $2$ have the same remainder when divided by $5$.</p>
+</blockquote>
+<p>This doesn't always have an answer. As an example, we can try finding a solution to $2x \equiv 1 \pmod{4}$ for $x = 1, 2, 3$.</p>
+<p>None of them work.</p>
+<p>But $7x \equiv 1 \pmod{10}$ does have a solution:</p>
+<p>$x = 3$ is a solution for $7x \equiv 1 \pmod{10}$.</p>
+<p>The reason why we have a solution here and not in the previous example comes down to one condition: a modular inverse $a^{-1} (\text{mod } m)$ exists <strong>if and only if</strong> $\gcd(a,m) = 1$.</p>
+<blockquote>
+<p>$\gcd$ is the <strong>Greatest Common Divisor</strong> between two (or more) numbers.</p>
+</blockquote>
+<p>We say that $a$ and $b$ are <strong>coprime</strong> (or <strong>relatively prime</strong>) if their $\gcd$ is $1$. This means they share <strong>no</strong> common factors except for $1$.</p>
+<p><strong>This is the condition for a modular inverse to exist.</strong></p>
+<p>Going back to our two examples:</p>
+<ul>
+<li>$\gcd(2, 4) = 2 \neq 1$ - No inverse exists for $2 \pmod{4}$. $2$ and $4$ are <strong>not</strong> coprime.</li>
+<li>$\gcd(7, 10) = 1$ - An inverse exists for $7 \pmod{10}$. $7$ and $10$ are coprime.</li>
+</ul>
+<p>Julia has an operator built in for finding the gcd between two or more numbers: <code>gcd(a,b)</code></p>
+<p>But simply knowing an inverse <em>exists</em> is one thing. Finding it is another.</p>
+<p>There are many different ways we can calculate the inverse. Here I'll focus on the <strong>Extended Euclidean Algorithm</strong>, though several others exists.</p>
+<p>What's useful about the Euclidean algorithm is that helps us find $\gcd(a,b)$ easily but it also finds two integers $u$ and $v$, such that:</p>
+<p>$$
+au + bv = \gcd(a,b)
+$$</p>
+<p>When $a$ and $b$ are <strong>coprime</strong> $(\gcd(a,b) = 1)$, this becomes:</p>
+<p>$$au + bv = 1$$</p>
+<p>Reducing both sides $\text{mod } b$, the $bv$ term term disappears (as it's a multiple of $b$) leaving:</p>
+<p>$$au \equiv 1 \pmod{b}$$</p>
+<p>This means that $u$ <strong>is</strong> the modular inverse of $a \text{ mod } b$.</p>
+<blockquote>
+<p>I won't go into how the algorithm works here, but Numberphile has a great explainer video <a href="https://www.youtube.com/watch?v=6Y3jHHE_hbA&amp;t">here</a> if you're curious.</p>
+</blockquote>
+<p>Believe it or not, Julia also has an operator baked into the language to calculate this: <code>gcdx(a,b)</code>.</p>
+<p><code>gcdx(7, 10)</code> returns $1$, $3$, and $-2$, where $1$ is the $\gcd(7, 10)$, $3$ is the inverse $(u)$, and $-2$ is our $v$.</p>
+<p>We can verify this:</p>
+<p>Julia also has a clean inverse modulo operator <code>invmod(a, m)</code> which is just a wrapper around the Euclidean algorithm:</p>
+<blockquote>
+<p>If you're reading down to here and are understanding it well, check out the section on RSA where all of this is practically relevant.</p>
+</blockquote>
+<p><strong>A Note on Negative $u$</strong></p>
+<p>Sometimes <code>gcdx</code> returns a negative $u$. Since we're working mod $m$, we can always add $m$ to bring it into the range $[0, m)$. The inverse is only defined up to multiples of $m$ anyway.</p>
+<p>This still works:</p>
+<p>Both $-2$ and $5$ are valid inverses of $3 \text{ mod } 7$. They're the same number in modular arithmetic.</p>
+<p>In $\mathbb{Z}_7$, adding or subtracting $7$ doesn't change what a number <em>is</em>. The point of normalizing to a positive integer is simply because it's cleaner and easier to work with. That's it.</p>
+<p>In $\mathbb{Z}_7, -6 \equiv 1$ since $-6 + 7 = 1$.</p>
+<blockquote>
+<p>$\mathbb{Z}_7$ is the set of all integers mod $7$. That is, $\{0, 1, 2, 3, 4, 5, 6\}$. Every integer lives somewhere on this set. If you're just starting out in mathematical cryptography, you can read up on <em>primitive roots</em>, but I'll be saving that for another section later on. It looks scary, but I promise that it becomes quite intuitive soon.</p>
+</blockquote>

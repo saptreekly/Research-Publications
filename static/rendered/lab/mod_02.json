@@ -1,0 +1,192 @@
+{
+  "id": "mod_02",
+  "title": "01.2 / Modular Exponentiation",
+  "blocks": [
+    {
+      "kind": {
+        "Brief": {
+          "id": "objectives",
+          "title": "Learning",
+          "brief_html": "<blockquote>\n<p><strong>LEARNING OBJECTIVES</strong></p>\n<ul>\n<li>Understand why naive $a^k \\pmod m$ overflows for large $k$.</li>\n<li>Implement square-and-multiply (binary exponentiation).</li>\n<li>Relate <code>powermod</code> to RSA encryption steps.</li>\n</ul>\n</blockquote>\n"
+        }
+      },
+      "execution": {
+        "status": "Idle",
+        "stdout": [],
+        "result": null,
+        "error": null,
+        "verify_results": []
+      }
+    },
+    {
+      "kind": {
+        "Brief": {
+          "id": "theory",
+          "title": "Theory:",
+          "brief_html": "<p>Computing $a^k \\pmod m$ by raising $a$ to the $k$ first fails for large exponents. Intermediate values explode before the final <code>% m</code>.</p>\n<p>Square-and-multiply processes bits of $k$: square the base each step, multiply into the result when the current bit is 1. Julia's <code>powermod(a, k, m)</code> uses this internally.</p>\n"
+        }
+      },
+      "execution": {
+        "status": "Idle",
+        "stdout": [],
+        "result": null,
+        "error": null,
+        "verify_results": []
+      }
+    },
+    {
+      "kind": {
+        "Probe": {
+          "id": "params",
+          "params": [
+            {
+              "name": "base",
+              "value": 3,
+              "min": 2,
+              "max": 20
+            },
+            {
+              "name": "exp",
+              "value": 13,
+              "min": 1,
+              "max": 100
+            },
+            {
+              "name": "modulus",
+              "value": 97,
+              "min": 2,
+              "max": 200
+            }
+          ]
+        }
+      },
+      "execution": {
+        "status": "Idle",
+        "stdout": [],
+        "result": null,
+        "error": null,
+        "verify_results": []
+      }
+    },
+    {
+      "kind": {
+        "Blueprint": {
+          "id": "powermod_impl",
+          "language": "julia",
+          "code": "\nfunction manual_powermod(a, k, m)\n    result = 1\n    base   = a % m\n    e      = k\n\n    while e > 0\n        if isodd(e)\n            result = (result * base) % m\n        end\n        base = (base * base) % m\n        e    = div(e, 2)\n    end\n\n    return result\nend\n\na, k, m = 3, 13, 97\nprintln(manual_powermod(a, k, m))\nprintln(powermod(a, k, m))"
+        }
+      },
+      "execution": {
+        "status": "Idle",
+        "stdout": [],
+        "result": null,
+        "error": null,
+        "verify_results": []
+      }
+    },
+    {
+      "kind": {
+        "Verify": {
+          "id": "exercise_02",
+          "cases": [
+            {
+              "expression": "powermod(2, 10, 13) == 10",
+              "function": "powermod",
+              "args": [
+                {
+                  "Literal": 2
+                },
+                {
+                  "Literal": 10
+                },
+                {
+                  "Literal": 13
+                }
+              ],
+              "expected": {
+                "Value": 10
+              }
+            },
+            {
+              "expression": "powermod(3, 13, 97) == 31",
+              "function": "powermod",
+              "args": [
+                {
+                  "Literal": 3
+                },
+                {
+                  "Literal": 13
+                },
+                {
+                  "Literal": 97
+                }
+              ],
+              "expected": {
+                "Value": 31
+              }
+            },
+            {
+              "expression": "powermod(2, 1000, 13) == 3",
+              "function": "powermod",
+              "args": [
+                {
+                  "Literal": 2
+                },
+                {
+                  "Literal": 1000
+                },
+                {
+                  "Literal": 13
+                }
+              ],
+              "expected": {
+                "Value": 3
+              }
+            },
+            {
+              "expression": "powermod(base, exp, modulus) == 31",
+              "function": "powermod",
+              "args": [
+                {
+                  "Probe": "base"
+                },
+                {
+                  "Probe": "exp"
+                },
+                {
+                  "Probe": "modulus"
+                }
+              ],
+              "expected": {
+                "Value": 31
+              }
+            }
+          ]
+        }
+      },
+      "execution": {
+        "status": "Idle",
+        "stdout": [],
+        "result": null,
+        "error": null,
+        "verify_results": []
+      }
+    },
+    {
+      "kind": {
+        "Brief": {
+          "id": "exercise",
+          "title": "Exercise",
+          "brief_html": "<blockquote>\n<p><strong>EXERCISE 02</strong></p>\n<ul>\n<li>Implement square-and-multiply in <code>manual_powermod</code>.</li>\n<li>Verify against Julia's <code>powermod</code> for the probe values.</li>\n</ul>\n</blockquote>\n"
+        }
+      },
+      "execution": {
+        "status": "Idle",
+        "stdout": [],
+        "result": null,
+        "error": null,
+        "verify_results": []
+      }
+    }
+  ]
+}

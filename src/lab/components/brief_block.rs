@@ -1,17 +1,16 @@
 use leptos::*;
 use crate::components::markdown_content::MarkdownContent;
-use crate::utils::markdown::markdown_to_rendered_html;
 
 #[component]
 pub fn BriefBlock(
     id: String,
     title: Option<String>,
-    body_md: String,
+    brief_html: String,
     cell_index: usize,
     selected: ReadSignal<Option<usize>>,
     on_select: WriteSignal<Option<usize>>,
 ) -> impl IntoView {
-    let html = store_value(markdown_to_rendered_html(&body_md));
+    let html = store_value(brief_html);
     let is_selected = move || selected.get() == Some(cell_index);
 
     view! {

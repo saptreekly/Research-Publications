@@ -1,0 +1,168 @@
+{
+  "id": "mod_05",
+  "title": "02.1 / Sieve of Eratosthenes",
+  "blocks": [
+    {
+      "kind": {
+        "Brief": {
+          "id": "objectives",
+          "title": "Learning",
+          "brief_html": "<blockquote>\n<p><strong>LEARNING OBJECTIVES</strong></p>\n<ul>\n<li>Implement the Sieve of Eratosthenes.</li>\n<li>Understand $O(n \\log \\log n)$ prime generation.</li>\n<li>Compare with Primes.jl in the next module.</li>\n</ul>\n</blockquote>\n"
+        }
+      },
+      "execution": {
+        "status": "Idle",
+        "stdout": [],
+        "result": null,
+        "error": null,
+        "verify_results": []
+      }
+    },
+    {
+      "kind": {
+        "Brief": {
+          "id": "theory",
+          "title": "Theory:",
+          "brief_html": "<p>Mark multiples of each prime starting at $i^2$. Unmarked integers up to $n$ are prime. The algorithm is one of the most efficient ways to enumerate all primes up to a limit.</p>\n"
+        }
+      },
+      "execution": {
+        "status": "Idle",
+        "stdout": [],
+        "result": null,
+        "error": null,
+        "verify_results": []
+      }
+    },
+    {
+      "kind": {
+        "Probe": {
+          "id": "params",
+          "params": [
+            {
+              "name": "limit",
+              "value": 30,
+              "min": 10,
+              "max": 100
+            }
+          ]
+        }
+      },
+      "execution": {
+        "status": "Idle",
+        "stdout": [],
+        "result": null,
+        "error": null,
+        "verify_results": []
+      }
+    },
+    {
+      "kind": {
+        "Blueprint": {
+          "id": "sieve_impl",
+          "language": "julia",
+          "code": "\nfunction sieve(n)\n    is_prime = fill(true, n + 1)\n    is_prime[1] = false\n\n    for i in 2:n\n        if is_prime[i] && i * i <= n\n            for j in i*i:i:n\n                is_prime[j] = false\n            end\n        end\n    end\n\n    return [i for i in 1:n if is_prime[i]]\nend\n\nfunction is_prime(n)\n    n >= 2 && n in sieve(n)\nend\n\nprintln(sieve(30))\nprintln(is_prime(17), is_prime(10))"
+        }
+      },
+      "execution": {
+        "status": "Idle",
+        "stdout": [],
+        "result": null,
+        "error": null,
+        "verify_results": []
+      }
+    },
+    {
+      "kind": {
+        "Verify": {
+          "id": "exercise_05",
+          "cases": [
+            {
+              "expression": "is_prime(17) == 1",
+              "function": "is_prime",
+              "args": [
+                {
+                  "Literal": 17
+                }
+              ],
+              "expected": {
+                "Value": 1
+              }
+            },
+            {
+              "expression": "is_prime(10) == 0",
+              "function": "is_prime",
+              "args": [
+                {
+                  "Literal": 10
+                }
+              ],
+              "expected": {
+                "Value": 0
+              }
+            },
+            {
+              "expression": "is_prime(2) == 1",
+              "function": "is_prime",
+              "args": [
+                {
+                  "Literal": 2
+                }
+              ],
+              "expected": {
+                "Value": 1
+              }
+            },
+            {
+              "expression": "prime_count(30) == 10",
+              "function": "prime_count",
+              "args": [
+                {
+                  "Literal": 30
+                }
+              ],
+              "expected": {
+                "Value": 10
+              }
+            },
+            {
+              "expression": "prime_count(limit) == 10",
+              "function": "prime_count",
+              "args": [
+                {
+                  "Probe": "limit"
+                }
+              ],
+              "expected": {
+                "Value": 10
+              }
+            }
+          ]
+        }
+      },
+      "execution": {
+        "status": "Idle",
+        "stdout": [],
+        "result": null,
+        "error": null,
+        "verify_results": []
+      }
+    },
+    {
+      "kind": {
+        "Brief": {
+          "id": "exercise",
+          "title": "Exercise",
+          "brief_html": "<blockquote>\n<p><strong>EXERCISE 05</strong></p>\n<ul>\n<li>Implement the sieve and an <code>is_prime</code> helper.</li>\n<li>Verify the count of primes up to 30 is 10.</li>\n</ul>\n</blockquote>\n"
+        }
+      },
+      "execution": {
+        "status": "Idle",
+        "stdout": [],
+        "result": null,
+        "error": null,
+        "verify_results": []
+      }
+    }
+  ]
+}

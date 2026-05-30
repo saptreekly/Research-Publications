@@ -1,0 +1,198 @@
+{
+  "id": "mod_08",
+  "title": "03.2 / RSA Encryption and Decryption",
+  "blocks": [
+    {
+      "kind": {
+        "Brief": {
+          "id": "objectives",
+          "title": "Learning",
+          "brief_html": "<blockquote>\n<p><strong>LEARNING OBJECTIVES</strong></p>\n<ul>\n<li>Encrypt with $c \\equiv m^e \\pmod n$.</li>\n<li>Decrypt with $m \\equiv c^d \\pmod n$.</li>\n<li>Verify end-to-end RSA on small keys.</li>\n</ul>\n</blockquote>\n"
+        }
+      },
+      "execution": {
+        "status": "Idle",
+        "stdout": [],
+        "result": null,
+        "error": null,
+        "verify_results": []
+      }
+    },
+    {
+      "kind": {
+        "Brief": {
+          "id": "theory",
+          "title": "Theory:",
+          "brief_html": "<p>Both encryption and decryption are a single modular exponentiation. The message $m$ must satisfy $m < n$. This educational implementation uses deterministic encryption without OAEP padding and is not suitable for production.</p>\n"
+        }
+      },
+      "execution": {
+        "status": "Idle",
+        "stdout": [],
+        "result": null,
+        "error": null,
+        "verify_results": []
+      }
+    },
+    {
+      "kind": {
+        "Probe": {
+          "id": "params",
+          "params": [
+            {
+              "name": "message",
+              "value": 42,
+              "min": 1,
+              "max": 100
+            },
+            {
+              "name": "e",
+              "value": 7,
+              "min": 3,
+              "max": 20
+            },
+            {
+              "name": "d",
+              "value": 1783,
+              "min": 100,
+              "max": 5000
+            },
+            {
+              "name": "n",
+              "value": 3233,
+              "min": 100,
+              "max": 10000
+            }
+          ]
+        }
+      },
+      "execution": {
+        "status": "Idle",
+        "stdout": [],
+        "result": null,
+        "error": null,
+        "verify_results": []
+      }
+    },
+    {
+      "kind": {
+        "Blueprint": {
+          "id": "rsa_crypto",
+          "language": "julia",
+          "code": "\np, q = 61, 53\nn = p * q\ne = 7\nd = invmod(e, (p - 1) * (q - 1))\n\nm = 42\nc = powermod(m, e, n)\nm_decrypted = powermod(c, d, n)\n\nprintln(\"Message:    $m\")\nprintln(\"Ciphertext: $c\")\nprintln(\"Decrypted:  $m_decrypted\")"
+        }
+      },
+      "execution": {
+        "status": "Idle",
+        "stdout": [],
+        "result": null,
+        "error": null,
+        "verify_results": []
+      }
+    },
+    {
+      "kind": {
+        "Verify": {
+          "id": "exercise_08",
+          "cases": [
+            {
+              "expression": "rsa_encrypt(42, 7, 3233) == 240",
+              "function": "rsa_encrypt",
+              "args": [
+                {
+                  "Literal": 42
+                },
+                {
+                  "Literal": 7
+                },
+                {
+                  "Literal": 3233
+                }
+              ],
+              "expected": {
+                "Value": 240
+              }
+            },
+            {
+              "expression": "rsa_decrypt(240, 1783, 3233) == 42",
+              "function": "rsa_decrypt",
+              "args": [
+                {
+                  "Literal": 240
+                },
+                {
+                  "Literal": 1783
+                },
+                {
+                  "Literal": 3233
+                }
+              ],
+              "expected": {
+                "Value": 42
+              }
+            },
+            {
+              "expression": "rsa_encrypt(message, e, n) == 240",
+              "function": "rsa_encrypt",
+              "args": [
+                {
+                  "Probe": "message"
+                },
+                {
+                  "Probe": "e"
+                },
+                {
+                  "Probe": "n"
+                }
+              ],
+              "expected": {
+                "Value": 240
+              }
+            },
+            {
+              "expression": "rsa_decrypt(240, d, n) == 42",
+              "function": "rsa_decrypt",
+              "args": [
+                {
+                  "Literal": 240
+                },
+                {
+                  "Probe": "d"
+                },
+                {
+                  "Probe": "n"
+                }
+              ],
+              "expected": {
+                "Value": 42
+              }
+            }
+          ]
+        }
+      },
+      "execution": {
+        "status": "Idle",
+        "stdout": [],
+        "result": null,
+        "error": null,
+        "verify_results": []
+      }
+    },
+    {
+      "kind": {
+        "Brief": {
+          "id": "exercise",
+          "title": "Exercise",
+          "brief_html": "<blockquote>\n<p><strong>EXERCISE 08</strong></p>\n<ul>\n<li>Encrypt message 42 with the $(e=7, n=3233)$ public key.</li>\n<li>Decrypt the ciphertext with the private key.</li>\n<li>Confirm the round-trip matches the original message.</li>\n</ul>\n</blockquote>\n"
+        }
+      },
+      "execution": {
+        "status": "Idle",
+        "stdout": [],
+        "result": null,
+        "error": null,
+        "verify_results": []
+      }
+    }
+  ]
+}

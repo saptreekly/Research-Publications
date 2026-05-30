@@ -1,0 +1,49 @@
+<p>::: brief id=objectives title=Learning Objectives</p>
+<blockquote>
+<p><strong>LEARNING OBJECTIVES</strong></p>
+<ul>
+<li>Encrypt with $c \equiv m^e \pmod n$.</li>
+<li>Decrypt with $m \equiv c^d \pmod n$.</li>
+<li>Verify end-to-end RSA on small keys.
+:::</li>
+</ul>
+</blockquote>
+<p>::: brief id=theory title=Theory: RSA Encryption
+Both encryption and decryption are a single modular exponentiation. The message $m$ must satisfy $m < n$. This educational implementation uses deterministic encryption without OAEP padding and is not suitable for production.
+:::</p>
+<p>::: probe id=params
+message: 42, min=1, max=100
+e: 7, min=3, max=20
+d: 1783, min=100, max=5000
+n: 3233, min=100, max=10000
+:::</p>
+<p>::: blueprint id=rsa_crypto lang=julia</p>
+<pre><code class="language-julia">p, q = 61, 53
+n = p * q
+e = 7
+d = invmod(e, (p - 1) * (q - 1))
+
+m = 42
+c = powermod(m, e, n)
+m_decrypted = powermod(c, d, n)
+
+println(&quot;Message:    $m")
+println("Ciphertext: $c&quot;)
+println(&quot;Decrypted:  $m_decrypted")
+```
+:::
+
+::: verify id=exercise_08
+- rsa_encrypt(42, 7, 3233) == 240
+- rsa_decrypt(240, 1783, 3233) == 42
+- rsa_encrypt(message, e, n) == 240
+- rsa_decrypt(240, d, n) == 42
+:::
+
+::: brief id=exercise title=Exercise 08
+> **EXERCISE 08**
+> * Encrypt message 42 with the $(e=7, n=3233)$ public key.
+&gt; * Decrypt the ciphertext with the private key.
+&gt; * Confirm the round-trip matches the original message.
+:::
+</code></pre>

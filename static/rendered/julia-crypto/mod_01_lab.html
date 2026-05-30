@@ -1,0 +1,61 @@
+<p>::: brief id=objectives title=Learning Objectives</p>
+<blockquote>
+<p><strong>LEARNING OBJECTIVES</strong></p>
+<ul>
+<li>Understand when a modular inverse exists ($\gcd(a,m)=1$).</li>
+<li>Implement the Extended Euclidean Algorithm.</li>
+<li>Normalize negative inverse coefficients into $[0, m)$.
+:::</li>
+</ul>
+</blockquote>
+<p>::: brief id=theory title=Theory: Modular Inverses
+In $\mathbb{Z}/m\mathbb{Z}$, the inverse of $a$ is an integer $x$ such that $ax \equiv 1 \pmod m$.</p>
+<p>An inverse exists <strong>if and only if</strong> $\gcd(a,m)=1$. When $\gcd(a,m)\neq 1$, no inverse exists (e.g. $2 \pmod 4$).</p>
+<p>The Extended Euclidean Algorithm finds integers $u,v$ with $au+bv=\gcd(a,b)$. When $\gcd(a,m)=1$, reducing $au+bv=1 \pmod m$ gives $au \equiv 1 \pmod m$, so $u$ is the inverse.</p>
+<p>Visualizations from the original notebook (clock face mod 7, gcd heatmap) are described in the curriculum theory section.
+:::</p>
+<p>::: probe id=params
+a: 3, min=1, max=20
+n: 11, min=2, max=50
+:::</p>
+<p>::: blueprint id=mod_inverse lang=julia</p>
+<pre><code class="language-julia">function extended_gcd(a, b)
+    if b == 0
+        return (a, 1, 0)
+    end
+    g, x1, y1 = extended_gcd(b, a % b)
+    return (g, y1, x1 - (a ÷ b) * y1)
+end
+
+function modInverse(a, n)
+    g, x, _ = extended_gcd(a, n)
+    if g != 1
+        error(&quot;Modular inverse does not exist&quot;)
+    else
+        return (x % n + n) % n
+    end
+end
+
+println(modInverse(3, 11))
+println(invmod(7, 10))  # Julia built-in: 3
+</code></pre>
+<p>:::</p>
+<p>::: verify id=exercise_01</p>
+<ul>
+<li>modInverse(3, 11) == 4</li>
+<li>modInverse(5, 12) == 5</li>
+<li>modInverse(7, 10) == 3</li>
+<li>modInverse(2, 4) throws</li>
+<li>modInverse(a, n) == 4
+:::</li>
+</ul>
+<p>::: brief id=exercise title=Exercise 01</p>
+<blockquote>
+<p><strong>EXERCISE 01</strong></p>
+<ul>
+<li>Implement <code>modInverse</code> using the Extended Euclidean Algorithm.</li>
+<li>Compare with Julia's <code>invmod(a, m)</code> and <code>gcdx(a, m)</code>.</li>
+<li>Adjust probe parameters and verify with the test cases.
+:::</li>
+</ul>
+</blockquote>

@@ -1,0 +1,26 @@
+<h1>RSA Encryption and Decryption</h1>
+<p>With the keys from the key generation notebook, encryption and decryption is surprisingly simple. Both are just a single modular exponentiation.</p>
+<h2>Setup</h2>
+<p>Reusing the keys from the key generation notebook:</p>
+<h2>Encryption</h2>
+<p>Given a message $m$ (as an integer, where $m \lt n$), encryption is:</p>
+<p>$$c = m^e \pmod{n}$$</p>
+<p>The message is raised to the public exponent and reduced mod $n$.</p>
+<p>The output is the ciphertext $c$.</p>
+<p>$42$ becomes $240$. Without knowing $d$, recovering $m$ from $c$ requires solving the <strong>discrete logarithm problem</strong>, which is effectively impossible for large $n$.</p>
+<h2>Decryption</h2>
+<p>Given ciphertext $c$, decryption is:</p>
+<p>$$m = c^d \pmod{n}$$</p>
+<p>The private exponent $d$ undoes what $e$ did.</p>
+<p>RSA encryption is a bijection (permutation) on the message space. Every plaintext maps to exactly one ciphertext:</p>
+<h2>Why Does This Work?</h2>
+<p>This is essentially just Euler's Theorem.</p>
+<p>Recall that $d$ is chosen so that $ed \equiv 1 \pmod{\phi(n)}$. This means that $ed = 1 + k\phi(n)$ for some integer $k$. So:</p>
+<p>$$m^{ed} = m^{1 + k\phi(n)} = m \cdot (m^{\phi(n)})^k$$</p>
+<p>By Euler's Theorem, $m^{\phi(n)} \equiv 1 \pmod{n}$ when $\gcd(m, n) = 1$. So:</p>
+<p>$$m^{ed} \equiv m \cdot 1^k \equiv m \pmod{n}$$</p>
+<p>Encrypting with $e$ then decrypting with $d$ gives back $m$. This is because $e$ and $d$ are modular inverses of each other in the exponent.</p>
+<h2>Limitations</h2>
+<p>The implementation I've written here is intentionally limited. RSA in practice is much more complex in two important ways: Padding and Small Public Exponents.</p>
+<p>Encrypting the same message twice with the same key always produces the same ciphertext. This is a very serious problem. An attacker can build a dictionary of known plaintexts and ciphertexts. Real RSA uses padding schemes like OAEP to randomize encryption.</p>
+<p>Using a small $e$, like $7$ in this example, without padding opens the door to attacks. If the same message is encrypted to several recipients with the same small $e$, an attacker can recover the message using the <strong>Chinese Remainder Theorem</strong>. This is Håstad's broadcast attack which is covered in a separate notebook.</p>

@@ -1,0 +1,38 @@
+<h1>RSA Key Generation</h1>
+<p>RSA is built entirely on number theory that was developed over centuries, long before anyone imagined it would be used in cryptography.</p>
+<h2>The Setup</h2>
+<p>Key generation in RSA has four steps:</p>
+<ol>
+<li>Pick two large primes $p$ and $q$. Compute $n = pq$.</li>
+<li>Compute $\phi(n) = (p-1)(q-1)$</li>
+<li>Pick a public exponent $e$ such that $\gcd(e, \phi(n)) = 1$.</li>
+<li>Compute the private exponent $d = e^{-1} \pmod{\phi{n}}$.</li>
+</ol>
+<p>Your public key is $(e, n)$. Your private key is $(d, n)$. That's it.</p>
+<h2>Step 1: Choose $p$, $q$, and $n$</h2>
+<p>In practice, $p$ and $q$ are randomly generated primes of equal bit length.</p>
+<p>Typically they are $1024$ bits each, giving a $2048$-bit modulus.</p>
+<p>I'll use small primes here so that the arithmetic is a bit more tangible.</p>
+<h2>Step 2: Compute $\phi(n)$</h2>
+<p>$\phi(n)$ counts how many integers in $1$ to $n$ are coprime to $n$. For $n = pq$, the formula is:</p>
+<p>$$\phi(pq) = (p-1)(q-1)$$</p>
+<blockquote>
+<p>See the Fermat and Euler notebook in Number Theory for the derivation.</p>
+</blockquote>
+<h2>Step 3: Choose the Public Exponent $e$</h2>
+<p>$e$ must satisfy $\gcd(e, \phi(n)) = 1$. In real RSA, $e = 65537$ is almost universally used. It's prime, coprime to virtually any $\phi(n)$, and has a sparse binary representation that makes modular exponentiation fast.</p>
+<p>For our stripped-down version, we can find the first valid $e$ automatically:</p>
+<h2>Step 4: Compute the Private Exponent $d$</h2>
+<p>$d$ is the modular inverse of $e \text{ mod } \phi(n)$. It satisfies:</p>
+<p>$$ed \equiv 1 \pmod{\phi(n)}$$</p>
+<blockquote>
+<p>This is computed using the Extended Euclidean Algorithm. See the Modular Inverses notebook in Number Theory for the derivation.</p>
+</blockquote>
+<h2>The Keys</h2>
+<p>$n$ appears in both keys since it's the modulus for all the arithmetic and is public. What's secret is $d$.</p>
+<p>An attacker who knows $n$ and $e$ would need to factor $n$ back into $p$ and $q$ to compute $\phi(n)$ and recover $d$. For a $2048$-bit $n$, this is infeasible with any known algorithm.</p>
+<h2>Putting it all together</h2>
+<p>Here's a diagram showing the entire RSA key generation process with our example values:</p>
+<h2>With Cryptographic-Scale Primes</h2>
+<p>The same code works, just use larger primes.</p>
+<p>Encryption and decryption are covered in the next notebook.</p>

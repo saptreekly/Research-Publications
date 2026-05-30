@@ -1,11 +1,11 @@
 use leptos::*;
 use crate::components::markdown_content::MarkdownContent;
-use crate::utils::{is_html_content, markdown::markdown_to_rendered_html, resolve_asset_url};
+use crate::utils::{is_html_content, markdown::rendered_html_path, resolve_asset_url};
 
 #[component]
 pub fn TechnicalDocument(src: &'static str) -> impl IntoView {
     let content = create_resource(move || src, |src| async move {
-        let url = resolve_asset_url(src);
+        let url = resolve_asset_url(&rendered_html_path(src));
         let response = match gloo_net::http::Request::get(&url).send().await {
             Ok(response) => response,
             Err(_) => return Err("Unable to reach document source.".to_string()),
@@ -21,10 +21,10 @@ pub fn TechnicalDocument(src: &'static str) -> impl IntoView {
         };
 
         if is_html_content(&text) {
-            return Err("Document source returned HTML instead of markdown.".to_string());
+            return Ok(text);
         }
 
-        Ok(markdown_to_rendered_html(&text))
+        Err("Document was not pre-rendered to HTML. Run cargo build to regenerate static/rendered assets.".to_string())
     });
 
     view! {

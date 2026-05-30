@@ -1,0 +1,186 @@
+{
+  "id": "mod_07",
+  "title": "03.1 / RSA Key Generation",
+  "blocks": [
+    {
+      "kind": {
+        "Brief": {
+          "id": "objectives",
+          "title": "Learning",
+          "brief_html": "<blockquote>\n<p><strong>LEARNING OBJECTIVES</strong></p>\n<ul>\n<li>Compute $\\phi(n) = (p-1)(q-1)$ for RSA.</li>\n<li>Choose public exponent $e$ coprime to $\\phi(n)$.</li>\n<li>Derive private exponent $d \\equiv e^{-1} \\pmod{\\phi(n)}$.</li>\n</ul>\n</blockquote>\n"
+        }
+      },
+      "execution": {
+        "status": "Idle",
+        "stdout": [],
+        "result": null,
+        "error": null,
+        "verify_results": []
+      }
+    },
+    {
+      "kind": {
+        "Brief": {
+          "id": "theory",
+          "title": "Theory:",
+          "brief_html": "<p>Choose distinct primes $p, q$. Set $n = pq$ and $\\phi(n) = (p-1)(q-1)$. Pick $e$ with $\\gcd(e, \\phi(n)) = 1$. Compute $d = e^{-1} \\pmod{\\phi(n)}$.</p>\n<p>Public key: $(e, n)$. Private key: $(d, n)$.</p>\n"
+        }
+      },
+      "execution": {
+        "status": "Idle",
+        "stdout": [],
+        "result": null,
+        "error": null,
+        "verify_results": []
+      }
+    },
+    {
+      "kind": {
+        "Probe": {
+          "id": "params",
+          "params": [
+            {
+              "name": "p",
+              "value": 61,
+              "min": 11,
+              "max": 97
+            },
+            {
+              "name": "q",
+              "value": 53,
+              "min": 11,
+              "max": 97
+            },
+            {
+              "name": "e",
+              "value": 7,
+              "min": 3,
+              "max": 20
+            }
+          ]
+        }
+      },
+      "execution": {
+        "status": "Idle",
+        "stdout": [],
+        "result": null,
+        "error": null,
+        "verify_results": []
+      }
+    },
+    {
+      "kind": {
+        "Blueprint": {
+          "id": "rsa_keygen",
+          "language": "julia",
+          "code": "\nusing Primes\n\np, q = 61, 53\nn = p * q\nphi_n = (p - 1) * (q - 1)\ne = 7\nd = invmod(e, phi_n)\n\nprintln(\"n = $n\")\nprintln(\"phi(n) = $phi_n\")\nprintln(\"d = $d\")\nprintln((e * d) % phi_n)  # should be 1"
+        }
+      },
+      "execution": {
+        "status": "Idle",
+        "stdout": [],
+        "result": null,
+        "error": null,
+        "verify_results": []
+      }
+    },
+    {
+      "kind": {
+        "Verify": {
+          "id": "exercise_07",
+          "cases": [
+            {
+              "expression": "rsa_phi(61, 53) == 3120",
+              "function": "rsa_phi",
+              "args": [
+                {
+                  "Literal": 61
+                },
+                {
+                  "Literal": 53
+                }
+              ],
+              "expected": {
+                "Value": 3120
+              }
+            },
+            {
+              "expression": "rsa_ed_check(7, 1783, 3120) == 1",
+              "function": "rsa_ed_check",
+              "args": [
+                {
+                  "Literal": 7
+                },
+                {
+                  "Literal": 1783
+                },
+                {
+                  "Literal": 3120
+                }
+              ],
+              "expected": {
+                "Value": 1
+              }
+            },
+            {
+              "expression": "rsa_phi(p, q) == 3120",
+              "function": "rsa_phi",
+              "args": [
+                {
+                  "Probe": "p"
+                },
+                {
+                  "Probe": "q"
+                }
+              ],
+              "expected": {
+                "Value": 3120
+              }
+            },
+            {
+              "expression": "rsa_ed_check(e, 1783, 3120) == 1",
+              "function": "rsa_ed_check",
+              "args": [
+                {
+                  "Probe": "e"
+                },
+                {
+                  "Literal": 1783
+                },
+                {
+                  "Literal": 3120
+                }
+              ],
+              "expected": {
+                "Value": 1
+              }
+            }
+          ]
+        }
+      },
+      "execution": {
+        "status": "Idle",
+        "stdout": [],
+        "result": null,
+        "error": null,
+        "verify_results": []
+      }
+    },
+    {
+      "kind": {
+        "Brief": {
+          "id": "exercise",
+          "title": "Exercise",
+          "brief_html": "<blockquote>\n<p><strong>EXERCISE 07</strong></p>\n<ul>\n<li>Walk through key generation with the classic $p=61, q=53$ example.</li>\n<li>Verify $ed \\equiv 1 \\pmod{\\phi(n)}$.</li>\n<li>See Module 08 for encryption with these keys.</li>\n</ul>\n</blockquote>\n"
+        }
+      },
+      "execution": {
+        "status": "Idle",
+        "stdout": [],
+        "result": null,
+        "error": null,
+        "verify_results": []
+      }
+    }
+  ]
+}

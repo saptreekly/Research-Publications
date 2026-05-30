@@ -5,7 +5,9 @@ pub enum BlockKind {
     Brief {
         id: String,
         title: Option<String>,
+        #[serde(default, skip_serializing)]
         body_md: String,
+        brief_html: String,
     },
     Probe {
         id: String,

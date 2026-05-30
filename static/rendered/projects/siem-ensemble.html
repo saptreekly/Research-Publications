@@ -1,0 +1,69 @@
+<p>High-performance log ingestion and real-time analytics built as a polyglot ensemble. Rust handles ingestion throughput, Zig moves frames into shared memory with minimal copying, Odin consumes the ring buffer for low-latency analysis, and Elixir supervises process lifecycle and recovery.</p>
+<h2>Problem</h2>
+<p>Single-language SIEM stacks often trade ingestion speed against analytics flexibility. This project splits the pipeline by responsibility and connects components through a strict binary wire format over shared memory so each stage can be optimized independently.</p>
+<h2>Architecture</h2>
+<pre><code class="language-plaintext">TCP ingest (Rust) → dedupe/cache → Zig forwarder → shared memory ring
+                                                      ↓
+                                            Odin analytics engine
+                                                      ↓
+                                            Elixir control plane (supervision, API)
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>Component</th>
+<th>Language</th>
+<th>Role</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Core performer</td>
+<td>Rust</td>
+<td>TCP log ingestion, FNV-1a deduplication, dispatch</td>
+</tr>
+<tr>
+<td>Forwarder</td>
+<td>Zig</td>
+<td>Zero-copy routing into <code>/tmp/siem_shm.bin</code> circular buffer</td>
+</tr>
+<tr>
+<td>Analytics</td>
+<td>Odin</td>
+<td>Structured log consumption and real-time event processing</td>
+</tr>
+<tr>
+<td>Control plane</td>
+<td>Elixir</td>
+<td>Orchestration, crash recovery, health and threshold API</td>
+</tr>
+<tr>
+<td>VM-Exit / low-level paths</td>
+<td>Assembly</td>
+<td>Platform-specific hot paths where required</td>
+</tr>
+</tbody>
+</table>
+<h2>Wire protocol</h2>
+<p>Rust and Odin share a fixed-layout <code>ShmFrame</code> struct for byte-level compatibility across the shared-memory boundary:</p>
+<pre><code class="language-rust">#[repr(C)]
+pub struct ShmFrame {
+    pub timestamp: i64,
+    pub severity: [u8; 24],
+    pub source_ip: [u8; 24],
+    pub facility: [u8; 24],
+    pub message: [u8; 24],
+}
+</code></pre>
+<p>Ingestion uses a richer <code>LogEvent</code> layout internally. Frames are normalized before crossing into shared memory to keep the binary contract stable.</p>
+<h2>Resilience</h2>
+<p>The Elixir supervisor traps exits from the Rust performer. On crash it cleans stale Unix domain socket artifacts, restarts the core process, and logs the failure for diagnosis. The Makefile exposes <code>build</code>, <code>run</code>, <code>stop</code>, and <code>stress-test</code> targets for local orchestration and load testing.</p>
+<h2>Requirements</h2>
+<ul>
+<li>Rust (Cargo)</li>
+<li>Zig 0.16+</li>
+<li>Odin (2026-05+)</li>
+<li>Elixir/Erlang OTP 27+</li>
+</ul>
+<h2>Status</h2>
+<p>Active development on macOS. See the repository for Makefile workflows and extension notes when modifying the wire protocol.</p>

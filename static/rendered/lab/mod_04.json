@@ -1,0 +1,180 @@
+{
+  "id": "mod_04",
+  "title": "01.4 / Fermat and Euler Theorems",
+  "blocks": [
+    {
+      "kind": {
+        "Brief": {
+          "id": "objectives",
+          "title": "Learning",
+          "brief_html": "<blockquote>\n<p><strong>LEARNING OBJECTIVES</strong></p>\n<ul>\n<li>State Fermat's Little Theorem and Euler's Theorem.</li>\n<li>Compute Euler's totient $\\phi(n)$.</li>\n<li>Use $a^{\\phi(n)-1}$ as a modular inverse when $\\gcd(a,n)=1$.</li>\n</ul>\n</blockquote>\n"
+        }
+      },
+      "execution": {
+        "status": "Idle",
+        "stdout": [],
+        "result": null,
+        "error": null,
+        "verify_results": []
+      }
+    },
+    {
+      "kind": {
+        "Brief": {
+          "id": "theory",
+          "title": "Theory:",
+          "brief_html": "<p><strong>Fermat's Little Theorem:</strong> If $p$ is prime and $\\gcd(a,p)=1$, then $a^{p-1} \\equiv 1 \\pmod p$.</p>\n<p><strong>Euler's Theorem:</strong> If $\\gcd(a,n)=1$, then $a^{\\phi(n)} \\equiv 1 \\pmod n$, where $\\phi(n)$ counts integers in $[1,n)$ coprime to $n$.</p>\n<p>For prime $p$, $\\phi(p)=p-1$, recovering Fermat.</p>\n"
+        }
+      },
+      "execution": {
+        "status": "Idle",
+        "stdout": [],
+        "result": null,
+        "error": null,
+        "verify_results": []
+      }
+    },
+    {
+      "kind": {
+        "Probe": {
+          "id": "params",
+          "params": [
+            {
+              "name": "a",
+              "value": 3,
+              "min": 1,
+              "max": 20
+            },
+            {
+              "name": "n",
+              "value": 10,
+              "min": 2,
+              "max": 50
+            }
+          ]
+        }
+      },
+      "execution": {
+        "status": "Idle",
+        "stdout": [],
+        "result": null,
+        "error": null,
+        "verify_results": []
+      }
+    },
+    {
+      "kind": {
+        "Blueprint": {
+          "id": "euler_impl",
+          "language": "julia",
+          "code": "\nfunction euler_phi(n)\n    count = 0\n    for i in 1:n-1\n        if gcd(i, n) == 1\n            count += 1\n        end\n    end\n    return count\nend\n\nfunction fermat_check(a, p)\n    return powermod(a, p - 1, p)\nend\n\nprintln(euler_phi(10))       # 4\nprintln(fermat_check(3, 7))  # 1"
+        }
+      },
+      "execution": {
+        "status": "Idle",
+        "stdout": [],
+        "result": null,
+        "error": null,
+        "verify_results": []
+      }
+    },
+    {
+      "kind": {
+        "Verify": {
+          "id": "exercise_04",
+          "cases": [
+            {
+              "expression": "euler_phi(10) == 4",
+              "function": "euler_phi",
+              "args": [
+                {
+                  "Literal": 10
+                }
+              ],
+              "expected": {
+                "Value": 4
+              }
+            },
+            {
+              "expression": "euler_phi(7) == 6",
+              "function": "euler_phi",
+              "args": [
+                {
+                  "Literal": 7
+                }
+              ],
+              "expected": {
+                "Value": 6
+              }
+            },
+            {
+              "expression": "fermat_check(3, 7) == 1",
+              "function": "fermat_check",
+              "args": [
+                {
+                  "Literal": 3
+                },
+                {
+                  "Literal": 7
+                }
+              ],
+              "expected": {
+                "Value": 1
+              }
+            },
+            {
+              "expression": "fermat_check(2, 13) == 1",
+              "function": "fermat_check",
+              "args": [
+                {
+                  "Literal": 2
+                },
+                {
+                  "Literal": 13
+                }
+              ],
+              "expected": {
+                "Value": 1
+              }
+            },
+            {
+              "expression": "euler_phi(n) == 4",
+              "function": "euler_phi",
+              "args": [
+                {
+                  "Probe": "n"
+                }
+              ],
+              "expected": {
+                "Value": 4
+              }
+            }
+          ]
+        }
+      },
+      "execution": {
+        "status": "Idle",
+        "stdout": [],
+        "result": null,
+        "error": null,
+        "verify_results": []
+      }
+    },
+    {
+      "kind": {
+        "Brief": {
+          "id": "exercise",
+          "title": "Exercise",
+          "brief_html": "<blockquote>\n<p><strong>EXERCISE 04</strong></p>\n<ul>\n<li>Implement <code>euler_phi</code> by counting coprime integers.</li>\n<li>Verify Fermat's Little Theorem for probe values when $\\gcd(a,n)=1$.</li>\n</ul>\n</blockquote>\n"
+        }
+      },
+      "execution": {
+        "status": "Idle",
+        "stdout": [],
+        "result": null,
+        "error": null,
+        "verify_results": []
+      }
+    }
+  ]
+}

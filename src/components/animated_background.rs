@@ -1,4 +1,5 @@
 use leptos::*;
+use gloo_timers::callback::Timeout;
 use std::cell::{Cell, RefCell};
 use std::f64::consts::TAU;
 use std::rc::Rc;
@@ -31,9 +32,19 @@ fn prefers_reduced_motion() -> bool {
 #[component]
 pub fn AnimatedBackground() -> impl IntoView {
     let enabled = Memo::new(|_| !prefers_reduced_motion());
+    let mount_canvas = create_rw_signal(false);
+
+    create_effect(move |_| {
+        if !enabled.get() {
+            return;
+        }
+        let mount_canvas = mount_canvas;
+        let handle = Timeout::new(150, move || mount_canvas.set(true));
+        handle.forget();
+    });
 
     view! {
-        <Show when=move || enabled.get()>
+        <Show when=move || enabled.get() && mount_canvas.get()>
             <AnimatedBackgroundCanvas />
         </Show>
     }
@@ -44,7 +55,7 @@ fn AnimatedBackgroundCanvas() -> impl IntoView {
     let canvas_ref = create_node_ref::<html::Canvas>();
     let initialized = store_value(false);
     let theme = use_theme();
-    let colors = Rc::new(RefCell::new(CanvasColors::for_theme(theme.get())));
+    let colors = Rc::new(RefCell::new(CanvasColors::for_theme(theme.get_untracked())));
 
     create_effect({
         let colors = Rc::clone(&colors);

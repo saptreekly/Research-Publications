@@ -21,12 +21,12 @@ pub fn BlockStream(
                 (0..count).map(|index| {
                     let block = blocks.get().get(index).cloned();
                     match block {
-                        Some(LabBlock { kind: BlockKind::Brief { id, title, body_md }, .. }) => {
+                        Some(LabBlock { kind: BlockKind::Brief { id, title, brief_html, .. }, .. }) => {
                             view! {
                                 <BriefBlock
                                     id=id
                                     title=title
-                                    body_md=body_md
+                                    brief_html=brief_html
                                     cell_index=index
                                     selected=selected
                                     on_select=set_selected

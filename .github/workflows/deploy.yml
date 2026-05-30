@@ -47,6 +47,9 @@ jobs:
         with:
           version: 'latest'
 
+      - name: Pre-render markdown assets
+        run: cargo run -p prebuild --release
+
       - name: Build (release WASM)
         env:
           WEB3FORMS_ACCESS_KEY: ${{ secrets.WEB3FORMS_ACCESS_KEY }}

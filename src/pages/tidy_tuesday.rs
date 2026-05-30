@@ -1,5 +1,6 @@
 use leptos::*;
 use leptos_router::*;
+use crate::components::lazy_section::LazySection;
 use crate::components::technical_document::TechnicalDocument;
 use crate::tidy_tuesday::se4all::Se4AllExplorer;
 use crate::tidy_tuesday::{find_by_slug, ENTRIES};
@@ -78,7 +79,9 @@ pub fn TidyTuesdayPage() -> impl IntoView {
                         </a>
                     </header>
                     {entry.explore_data.map(|data_url| view! {
-                        <Se4AllExplorer data_url=data_url />
+                        <LazySection min_height=480>
+                            <Se4AllExplorer data_url=data_url />
+                        </LazySection>
                     })}
                     <TechnicalDocument src=entry.src />
                 </section>

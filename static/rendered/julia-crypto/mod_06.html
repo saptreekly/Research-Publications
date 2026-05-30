@@ -1,0 +1,44 @@
+<h1>Primes.jl Demo</h1>
+<p>Prime numbers are what make cryptography actually work. RSA depends entirely on the fact that multiplying two large primes together is easy, but factoring the result back into those primes is effectively impossible.</p>
+<p><a href="https://juliamath.github.io/Primes.jl/stable/api/">Primes.jl</a> is Julia's dedicated prime number library. This notebook is a tour of its most useful functions.</p>
+<h2><code>isprime</code></h2>
+<p>The most basic question: is this number prime?</p>
+<p>Simple enough for small numbers. But for cryptographic use, primes need to be hundreds of digits long.</p>
+<p>Testing primality naively (checking every divisor up to $\sqrt{n}$ ) is practically impossible that this scale.</p>
+<p><code>isprime</code> in Julia uses a combination of trial division for small factors and the Miller-Rabin primality test for large numbers, the latter I'll cover in depth in a later notebook.</p>
+<h2><code>primes</code> and <code>prime</code></h2>
+<p>Though they both look and sound similar, these two functions answer two different questions:</p>
+<ul>
+<li><code>primes(n)</code> gives all primes <strong>up to</strong> $n$.</li>
+<li><code>prime(n)</code> gives the $n\text{th}$ prime.</li>
+</ul>
+<p>Let's look at the gaps between consecutive primes to see the pattern in their distribution:</p>
+<p>This is equivalent to running the <strong>Sieve of Eratosthenes</strong> up to $30$, a topic which deserves it's own dedicated notebook.</p>
+<p>For anyone who's manually written the Sieve of Eratosthenes with an upper bound estimate knows how much cleaner that is.</p>
+<p><code>prime(n)</code> handles all of that internally.</p>
+<h2><code>factor</code></h2>
+<p><code>factor(n)</code> returns the complete prime factorization of $n$ as a <code>Factorization</code> object (essentially a dictionary mapping each prime factor to its exponent).</p>
+<p>As touched on earlier, the reason factoring matters in cryptography is that it's a fundamentally difficult problem.</p>
+<p>Given $n = pq$ in RSA where $p$ and $q$ are both large prime numbers, there is no known efficient algorithm for recovering $p$ and $q$ from $n$ alone. This is essentially what makes RSA secure.</p>
+<h2><code>nextprime</code> and <code>prevprime</code></h2>
+<p>These return the nearest prime above or below a given value:</p>
+<p>Note that these take a <strong>value</strong>, not an index.</p>
+<p><code>nextprime(100)</code> means &quot;the first prime greater than $100$, not &quot;the $100\text{th}$ prime&quot;. Compare:</p>
+<p>In practice, <code>nextprime</code> is how you'd generate primes for RSA key generation.</p>
+<p>Essentially: pick a random large number and find the nearest prime:</p>
+<p>That's a cryptographic-scale prime generated in one line.</p>
+<p>In RSA, two primes not unlike the one above become $p$ and $q$.</p>
+<h2>Some Bonus Useful Functions</h2>
+<p>A few more functions worth knowing:</p>
+<h3><code>totient</code></h3>
+<p>This computes Euler's totient function $\phi(n)$ directly (see notebook on Fermat's and Euler's theorems for explanation of both).</p>
+<p><em>&quot;How many integers in $1:n$ are coprime to $n$?&quot;</em></p>
+<h3><code>eachfactor</code></h3>
+<p>This iterates over prime, exponent pairs.</p>
+<h3><code>radical</code></h3>
+<p>This returns the product of distinct prime factors.</p>
+<h3><code>ismersenneprime</code></h3>
+<p>Checks if $n$ is of the form $2^p - 1$.</p>
+<blockquote>
+<p>Note: <code>ismersenneprime</code> throws an error if the input is not a valid Mersenne number of the form $2^p - 1$. It doesn't just return <code>false</code>.</p>
+</blockquote>

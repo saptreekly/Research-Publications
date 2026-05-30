@@ -1,0 +1,58 @@
+<p>::: brief id=objectives title=Learning Objectives</p>
+<blockquote>
+<p><strong>LEARNING OBJECTIVES</strong></p>
+<ul>
+<li>Understand why naive $a^k \pmod m$ overflows for large $k$.</li>
+<li>Implement square-and-multiply (binary exponentiation).</li>
+<li>Relate <code>powermod</code> to RSA encryption steps.
+:::</li>
+</ul>
+</blockquote>
+<p>::: brief id=theory title=Theory: Modular Exponentiation
+Computing $a^k \pmod m$ by raising $a$ to the $k$ first fails for large exponents. Intermediate values explode before the final <code>% m</code>.</p>
+<p>Square-and-multiply processes bits of $k$: square the base each step, multiply into the result when the current bit is 1. Julia's <code>powermod(a, k, m)</code> uses this internally.
+:::</p>
+<p>::: probe id=params
+base: 3, min=2, max=20
+exp: 13, min=1, max=100
+modulus: 97, min=2, max=200
+:::</p>
+<p>::: blueprint id=powermod_impl lang=julia</p>
+<pre><code class="language-julia">function manual_powermod(a, k, m)
+    result = 1
+    base   = a % m
+    e      = k
+
+    while e &gt; 0
+        if isodd(e)
+            result = (result * base) % m
+        end
+        base = (base * base) % m
+        e    = div(e, 2)
+    end
+
+    return result
+end
+
+a, k, m = 3, 13, 97
+println(manual_powermod(a, k, m))
+println(powermod(a, k, m))
+</code></pre>
+<p>:::</p>
+<p>::: verify id=exercise_02</p>
+<ul>
+<li>powermod(2, 10, 13) == 10</li>
+<li>powermod(3, 13, 97) == 31</li>
+<li>powermod(2, 1000, 13) == 3</li>
+<li>powermod(base, exp, modulus) == 31
+:::</li>
+</ul>
+<p>::: brief id=exercise title=Exercise 02</p>
+<blockquote>
+<p><strong>EXERCISE 02</strong></p>
+<ul>
+<li>Implement square-and-multiply in <code>manual_powermod</code>.</li>
+<li>Verify against Julia's <code>powermod</code> for the probe values.
+:::</li>
+</ul>
+</blockquote>
