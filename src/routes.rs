@@ -22,8 +22,8 @@ const ROUTE_LAB: &str = "/Research-Publications/curriculum/lab/:slug";
 const ROUTE_TIDY_TUESDAY: &str = "/Research-Publications/tidy-tuesday";
 const ROUTE_TIDY_TUESDAY_ENTRY: &str = "/Research-Publications/tidy-tuesday/:slug";
 const ROUTE_SITUATION_MONITOR: &str = "/Research-Publications/situation-monitor";
-const ROUTE_MALWARE_TRAFFIC: &str = "/Research-Publications/malware-traffic";
-const ROUTE_MALWARE_TRAFFIC_ENTRY: &str = "/Research-Publications/malware-traffic/:slug";
+const ROUTE_MALWARE_REPORTS: &str = "/Research-Publications/malware-reports";
+const ROUTE_MALWARE_REPORTS_ENTRY: &str = "/Research-Publications/malware-reports/:slug";
 
 #[allow(unused_macros)]
 macro_rules! noop_route {
@@ -106,7 +106,7 @@ pub fn MalwareTrafficEntryRoute() -> impl IntoView {
     #[cfg(feature = "malware-traffic")]
     {
         view! {
-            <Route path=ROUTE_MALWARE_TRAFFIC_ENTRY view=move || view! {
+            <Route path=ROUTE_MALWARE_REPORTS_ENTRY view=move || view! {
                 <RootLayout><MalwareTrafficPage /></RootLayout>
             } />
         }
@@ -122,7 +122,7 @@ pub fn MalwareTrafficIndexRoute() -> impl IntoView {
     #[cfg(feature = "malware-traffic")]
     {
         view! {
-            <Route path=ROUTE_MALWARE_TRAFFIC view=move || view! {
+            <Route path=ROUTE_MALWARE_REPORTS view=move || view! {
                 <RootLayout><MalwareTrafficIndexPage /></RootLayout>
             } />
         }

@@ -14,6 +14,16 @@ RSA depends on the asymmetry between multiplying large primes and factoring thei
 <p>::: probe id=params
 n: 30, min=1, max=100
 :::</p>
+<p>::: starter id=primes_demo lang=julia</p>
+<pre><code class="language-julia">function nth_prime(n)
+    # TODO: Return the nth prime (1-indexed). Hint: `prime(n)` is available as a builtin
+end
+
+function isprime_check(n)
+    # TODO: Return 1 if n is prime, 0 otherwise
+end
+</code></pre>
+<p>:::</p>
 <p>::: blueprint id=primes_demo lang=julia</p>
 <pre><code class="language-julia">using Primes
 

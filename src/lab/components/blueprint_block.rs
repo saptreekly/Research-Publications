@@ -50,13 +50,8 @@ pub fn BlueprintBlock(
             if textarea.value() != value {
                 textarea.set_value(&value);
             }
-            editor::refresh(&textarea);
-        }
-    });
-
-    create_effect(move |_| {
-        if let Some(textarea) = textarea_ref.get() {
             editor::init(&textarea);
+            editor::refresh(&textarea);
         }
     });
 
@@ -91,6 +86,22 @@ pub fn BlueprintBlock(
                     node_ref=textarea_ref
                     class="lab-code-editor language-julia"
                     prop:value=move || code.get()
+                    on:keydown=move |ev| {
+                        if let Some(textarea) = textarea_ref.get() {
+                            if crate::lab::editor_keys::handle_keydown(&ev, &textarea) {
+                                ev.prevent_default();
+                                ev.stop_propagation();
+                                set_blocks.update(|all| {
+                                    if let Some(block) = all.get_mut(index) {
+                                        if let BlockKind::Blueprint { code, .. } = &mut block.kind {
+                                            *code = textarea.value();
+                                        }
+                                    }
+                                });
+                                editor::refresh(&textarea);
+                            }
+                        }
+                    }
                     on:input=move |ev| {
                         let value = event_target_value(&ev);
                         set_blocks.update(|all| {

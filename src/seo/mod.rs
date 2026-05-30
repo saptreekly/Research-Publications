@@ -130,16 +130,16 @@ pub fn seo_for_path(pathname: &str) -> SeoMeta {
     }
 
     #[cfg(feature = "malware-traffic")]
-    if path == "/malware-traffic" {
+    if path == "/malware-reports" {
         return page(
-            "/malware-traffic",
-            "Malware Traffic Analysis | Jack Weekly",
-            "Interactive PCAP-driven malware traffic analyses with kill chain reconstruction and IOC extraction.",
+            "/malware-reports",
+            "Malware Reports | Jack Weekly",
+            "Forensic malware analysis and PCAP-driven traffic investigations with kill chain reconstruction and IOC extraction.",
         );
     }
 
     #[cfg(feature = "malware-traffic")]
-    if let Some(slug) = path.strip_prefix("/malware-traffic/") {
+    if let Some(slug) = path.strip_prefix("/malware-reports/") {
         if let Some(report) = crate::malware_traffic::find_by_slug(slug) {
             return page(
                 &path,

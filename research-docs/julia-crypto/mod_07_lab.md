@@ -17,6 +17,18 @@ q: 53, min=11, max=97
 e: 7, min=3, max=20
 :::
 
+::: starter id=rsa_keygen lang=julia
+```julia
+function rsa_phi(p, q)
+    # TODO: Return Euler's totient (p-1) * (q-1)
+end
+
+function rsa_ed_check(e, d, phi_n)
+    # TODO: Return 1 if (e * d) % phi_n == 1, else 0
+end
+```
+:::
+
 ::: blueprint id=rsa_keygen lang=julia
 ```julia
 using Primes

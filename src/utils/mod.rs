@@ -22,13 +22,21 @@ pub fn resolve_asset_url(relative_path: &str) -> String {
 
 pub fn is_html_content(content: &str) -> bool {
     let trimmed = content.trim_start();
+
+    if trimmed.contains("TrunkApplicationStarted") || trimmed.contains("Build failure") {
+        return false;
+    }
+
+    if trimmed.starts_with('#') || trimmed.starts_with("---") {
+        return false;
+    }
+
     trimmed.starts_with("<!DOCTYPE")
         || trimmed.starts_with("<!doctype")
         || trimmed.starts_with("<html")
         || trimmed.starts_with("<HTML")
         || trimmed.contains("<head>")
-        || trimmed.contains("TrunkApplicationStarted")
-        || trimmed.contains("Build failure")
+        || trimmed.starts_with('<')
 }
 
 pub mod debounce;
@@ -77,10 +85,10 @@ pub fn situation_monitor_href() -> String {
     format!("{APP_BASE}/situation-monitor")
 }
 
-pub fn malware_traffic_href(slug: &str) -> String {
-    format!("{APP_BASE}/malware-traffic/{slug}")
+pub fn malware_reports_href(slug: &str) -> String {
+    format!("{APP_BASE}/malware-reports/{slug}")
 }
 
-pub fn malware_traffic_index_href() -> String {
-    format!("{APP_BASE}/malware-traffic")
+pub fn malware_reports_index_href() -> String {
+    format!("{APP_BASE}/malware-reports")
 }

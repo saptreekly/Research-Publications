@@ -20,6 +20,15 @@ r2: 3, min=0, max=10
 m2: 5, min=2, max=20
 :::
 
+::: starter id=crt_impl lang=julia
+```julia
+function crt_two(r1, m1, r2, m2)
+    # TODO: N = m1 * m2, N1 = N ÷ m1, N2 = N ÷ m2
+    # TODO: Combine residues with invmod(N1, m1) and invmod(N2, m2)
+end
+```
+:::
+
 ::: blueprint id=crt_impl lang=julia
 ```julia
 function crt_two(r1, m1, r2, m2)

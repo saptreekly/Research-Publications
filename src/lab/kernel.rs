@@ -68,6 +68,66 @@ pub fn run_blueprint(code: &str, session: &KernelSession) -> RunOutcome {
     }
 }
 
+pub fn run_verify_user_code(
+    code: &str,
+    cases: &[VerifyCase],
+    probes: &HashMap<String, i64>,
+    session: &KernelSession,
+) -> RunOutcome {
+    let start = now_ms();
+
+    match julia_interp::grade_user_code(code, cases, probes) {
+        Ok(results) => {
+            let pass_count = results.iter().filter(|r| r.passed).count();
+            let all_passed = pass_count == results.len();
+            let mut next_session = session.clone();
+            next_session.variables = vec![
+                ("__grader".to_string(), "USER".to_string()),
+                (
+                    "__tests".to_string(),
+                    format!("{}/{}", pass_count, results.len()),
+                ),
+            ];
+            next_session.last_run_ms = Some(now_ms().saturating_sub(start).max(1));
+
+            RunOutcome {
+                execution: BlockExecution {
+                    status: if all_passed {
+                        ExecutionStatus::Success
+                    } else {
+                        ExecutionStatus::Error
+                    },
+                    stdout: vec![format!(
+                        "[GRADER] Your solution: {}/{} tests passed.",
+                        pass_count,
+                        results.len()
+                    )],
+                    result: Some(format!("{}/{}", pass_count, results.len())),
+                    error: if all_passed {
+                        None
+                    } else {
+                        Some(format!(
+                            "{}/{} tests failed.",
+                            results.len() - pass_count,
+                            results.len()
+                        ))
+                    },
+                    verify_results: results,
+                },
+                session: next_session,
+            }
+        }
+        Err(message) => RunOutcome {
+            execution: BlockExecution {
+                status: ExecutionStatus::Error,
+                error: Some(message.clone()),
+                ..Default::default()
+            },
+            session: session.clone(),
+        },
+    }
+}
+
 pub fn run_verify(
     cases: &[VerifyCase],
     probes: &HashMap<String, i64>,

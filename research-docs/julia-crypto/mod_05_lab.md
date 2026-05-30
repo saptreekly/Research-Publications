@@ -13,6 +13,22 @@ Mark multiples of each prime starting at $i^2$. Unmarked integers up to $n$ are 
 limit: 30, min=10, max=100
 :::
 
+::: starter id=sieve_impl lang=julia
+```julia
+function sieve(n)
+    # TODO: Sieve of Eratosthenes — return a list of primes up to n
+end
+
+function is_prime(n)
+    # TODO: Return 1 if n is prime, 0 otherwise (use your sieve)
+end
+
+function prime_count(n)
+    # TODO: Return how many primes are <= n
+end
+```
+:::
+
 ::: blueprint id=sieve_impl lang=julia
 ```julia
 function sieve(n)

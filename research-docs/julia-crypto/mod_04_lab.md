@@ -18,6 +18,18 @@ a: 3, min=1, max=20
 n: 10, min=2, max=50
 :::
 
+::: starter id=euler_impl lang=julia
+```julia
+function euler_phi(n)
+    # TODO: Count integers in 1:n-1 that are coprime to n
+end
+
+function fermat_check(a, p)
+    # TODO: Return a^(p-1) mod p using powermod(a, p - 1, p)
+end
+```
+:::
+
 ::: blueprint id=euler_impl lang=julia
 ```julia
 function euler_phi(n)

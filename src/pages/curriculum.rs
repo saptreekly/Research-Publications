@@ -1,7 +1,7 @@
 use leptos::*;
 use leptos_router::*;
 use crate::lab::modules::{modules_in_section, sections, ModuleMeta};
-use crate::utils::{lab_href, module_href};
+use crate::utils::module_href;
 
 #[component]
 pub fn CurriculumPage() -> impl IntoView {
@@ -9,7 +9,8 @@ pub fn CurriculumPage() -> impl IntoView {
         <section id="curriculum">
             <h2>"04 / JULIA CRYPTOGRAPHY"</h2>
             <p class="section-intro">
-                "Computational mathematics for cybersecurity: theory and interactive labs. Select a module to read the curriculum or open its browser-based lab."
+                "Computational mathematics for cybersecurity. Each module pairs theory with an interactive browser lab — "
+                "read the concept on the left, run and verify code on the right."
             </p>
 
             {sections()
@@ -29,26 +30,14 @@ fn CurriculumSection(section: &'static str) -> impl IntoView {
     view! {
         <div class="curriculum-section">
             <h3>{format!("{} // MODULES", section.to_uppercase())}</h3>
-            <ul class="curriculum-module-list">
-                {modules.into_iter().map(|module| view! {
-                    <li class="curriculum-module-item">
-                        <div class="curriculum-module-card">
-                            <div class="cert-title">{module.title}</div>
-                            <div class="curriculum-module-actions">
-                                <A
-                                    href=module_href(module.slug)
-                                    class="social-link cta-link"
-                                >
-                                    "READ MODULE"
-                                </A>
-                                <A
-                                    href=lab_href(module.slug)
-                                    class="social-link cta-link cta-link-secondary"
-                                >
-                                    "OPEN LAB"
-                                </A>
-                            </div>
-                        </div>
+            <ul class="curriculum-problem-list">
+                {modules.into_iter().enumerate().map(|(index, module)| view! {
+                    <li>
+                        <A href=module_href(module.slug) class="curriculum-problem-row">
+                            <span class="curriculum-problem-index">{format!("{:02}", index + 1)}</span>
+                            <span class="curriculum-problem-title">{module.title}</span>
+                            <span class="curriculum-problem-tag">{module.section}</span>
+                        </A>
                     </li>
                 }).collect_view()}
             </ul>

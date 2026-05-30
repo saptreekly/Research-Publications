@@ -76,6 +76,22 @@
     },
     {
       "kind": {
+        "Starter": {
+          "id": "rsa_crypto",
+          "language": "julia",
+          "code": "\nfunction rsa_encrypt(m, e, n)\n    # TODO: Return m^e mod n\nend\n\nfunction rsa_decrypt(c, d, n)\n    # TODO: Return c^d mod n\nend"
+        }
+      },
+      "execution": {
+        "status": "Idle",
+        "stdout": [],
+        "result": null,
+        "error": null,
+        "verify_results": []
+      }
+    },
+    {
+      "kind": {
         "Blueprint": {
           "id": "rsa_crypto",
           "language": "julia",

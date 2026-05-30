@@ -64,6 +64,22 @@
     },
     {
       "kind": {
+        "Starter": {
+          "id": "mod_inverse",
+          "language": "julia",
+          "code": "\nfunction extended_gcd(a, b)\n    # TODO: Base case — when b == 0, return (a, 1, 0)\n    # TODO: Recursive step using extended_gcd(b, a % b)\nend\n\nfunction modInverse(a, n)\n    # TODO: Call extended_gcd(a, n); if gcd != 1, call error(\"Modular inverse does not exist\")\n    # TODO: Normalize the coefficient into [0, n)\nend"
+        }
+      },
+      "execution": {
+        "status": "Idle",
+        "stdout": [],
+        "result": null,
+        "error": null,
+        "verify_results": []
+      }
+    },
+    {
+      "kind": {
         "Blueprint": {
           "id": "mod_inverse",
           "language": "julia",

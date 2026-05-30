@@ -55,6 +55,9 @@ pub fn BlockStream(
                                 />
                             }.into_view()
                         }
+                        Some(LabBlock { kind: BlockKind::Starter { .. }, .. }) => {
+                            view! { <div></div> }.into_view()
+                        }
                         Some(LabBlock { kind: BlockKind::Verify { .. }, .. }) => {
                             view! {
                                 <VerifyBlock

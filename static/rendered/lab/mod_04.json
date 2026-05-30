@@ -64,6 +64,22 @@
     },
     {
       "kind": {
+        "Starter": {
+          "id": "euler_impl",
+          "language": "julia",
+          "code": "\nfunction euler_phi(n)\n    # TODO: Count integers in 1:n-1 that are coprime to n\nend\n\nfunction fermat_check(a, p)\n    # TODO: Return a^(p-1) mod p using powermod(a, p - 1, p)\nend"
+        }
+      },
+      "execution": {
+        "status": "Idle",
+        "stdout": [],
+        "result": null,
+        "error": null,
+        "verify_results": []
+      }
+    },
+    {
+      "kind": {
         "Blueprint": {
           "id": "euler_impl",
           "language": "julia",

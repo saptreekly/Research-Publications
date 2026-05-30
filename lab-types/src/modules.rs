@@ -79,6 +79,16 @@ pub fn find_by_slug(slug: &str) -> Option<&'static ModuleMeta> {
     ALL_MODULES.iter().find(|module| module.slug == slug)
 }
 
+pub fn prev_module(slug: &str) -> Option<&'static ModuleMeta> {
+    let index = ALL_MODULES.iter().position(|module| module.slug == slug)?;
+    index.checked_sub(1).map(|i| &ALL_MODULES[i])
+}
+
+pub fn next_module(slug: &str) -> Option<&'static ModuleMeta> {
+    let index = ALL_MODULES.iter().position(|module| module.slug == slug)?;
+    ALL_MODULES.get(index + 1)
+}
+
 pub fn sections() -> &'static [&'static str] {
     &["Number Theory", "Primes", "RSA"]
 }

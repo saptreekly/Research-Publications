@@ -12,7 +12,12 @@ use crate::lab::types::{
 use crate::utils::{markdown::rendered_lab_cache_path, resolve_asset_url};
 
 #[component]
-pub fn LabWorkspace(module_src: &'static str, module_id: &'static str, module_title: &'static str) -> impl IntoView {
+pub fn LabWorkspace(
+    module_src: &'static str,
+    module_id: &'static str,
+    module_title: &'static str,
+    #[prop(default = false)] embedded: bool,
+) -> impl IntoView {
     let _ = module_src;
     let module = create_resource(
         move || (module_id, module_title),
@@ -43,7 +48,7 @@ pub fn LabWorkspace(module_src: &'static str, module_id: &'static str, module_ti
                     <p class="doc-error">"Unable to load lab module."</p>
                 }.into_view(),
                 Some(Some(loaded)) => view! {
-                    <LabWorkspaceLoaded module=loaded />
+                    <LabWorkspaceLoaded module=loaded embedded=embedded />
                 }.into_view(),
             }}
         </Suspense>
@@ -51,7 +56,7 @@ pub fn LabWorkspace(module_src: &'static str, module_id: &'static str, module_ti
 }
 
 #[component]
-fn LabWorkspaceLoaded(module: LabModule) -> impl IntoView {
+fn LabWorkspaceLoaded(module: LabModule, #[prop(default = false)] embedded: bool) -> impl IntoView {
     let blocks_signal = create_rw_signal(module.blocks);
     let selected = create_rw_signal(None::<usize>);
     let session = create_rw_signal(KernelSession::local_stub());
@@ -163,13 +168,20 @@ fn LabWorkspaceLoaded(module: LabModule) -> impl IntoView {
     };
 
     view! {
-        <section class="lab-workspace" tabindex="-1" on:keydown=handle_keydown>
-            <div class="lab-workspace-header">
-                <h2>{format!("LAB // {}", module.title.to_uppercase())}</h2>
-                <p class="section-intro lab-workspace-intro">
-                    "Adjust probe parameters, run blueprint code, and verify against reference test cases."
-                </p>
-            </div>
+        <section
+            class="lab-workspace"
+            class:lab-workspace-embedded=embedded
+            tabindex="-1"
+            on:keydown=handle_keydown
+        >
+            {(!embedded).then(|| view! {
+                <div class="lab-workspace-header">
+                    <h2>{format!("LAB // {}", module.title.to_uppercase())}</h2>
+                    <p class="section-intro lab-workspace-intro">
+                        "Adjust probe parameters, run blueprint code, and verify against reference test cases."
+                    </p>
+                </div>
+            })}
 
             <div class="lab-workspace-body">
                 <div class="lab-workspace-main">

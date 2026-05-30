@@ -18,6 +18,11 @@ pub enum BlockKind {
         language: String,
         code: String,
     },
+    Starter {
+        id: String,
+        language: String,
+        code: String,
+    },
     Verify {
         id: String,
         cases: Vec<VerifyCase>,
@@ -95,6 +100,7 @@ impl LabBlock {
             BlockKind::Brief { id, .. } => id,
             BlockKind::Probe { id, .. } => id,
             BlockKind::Blueprint { id, .. } => id,
+            BlockKind::Starter { id, .. } => id,
             BlockKind::Verify { id, .. } => id,
         }
     }
@@ -104,6 +110,7 @@ impl LabBlock {
             BlockKind::Brief { .. } => "BRIEF",
             BlockKind::Probe { .. } => "PROBE",
             BlockKind::Blueprint { .. } => "BLUEPRINT",
+            BlockKind::Starter { .. } => "STARTER",
             BlockKind::Verify { .. } => "VERIFY",
         }
     }

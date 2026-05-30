@@ -75,12 +75,12 @@ ROUTES: list[dict[str, str]] = [
         "description": "Tidy Tuesday · SE4ALL country-level energy metrics · Julia analysis · Data analysis",
     },
     {
-        "path": "/malware-traffic",
-        "title": "Malware Traffic Analysis | Jack Weekly",
-        "description": "Interactive PCAP-driven malware traffic analyses with kill chain reconstruction and IOC extraction.",
+        "path": "/malware-reports",
+        "title": "Malware Reports | Jack Weekly",
+        "description": "Forensic malware analysis and PCAP-driven traffic investigations with kill chain reconstruction and IOC extraction.",
     },
     {
-        "path": "/malware-traffic/smartapesg-2026-05-22",
+        "path": "/malware-reports/smartapesg-2026-05-22",
         "title": "SmartApeSG ClickFix → NetSupport RAT | Jack Weekly",
         "description": "Malware traffic analysis · SmartApeSG ClickFix loader · NetSupport RAT · PCAP forensics",
     },
@@ -112,7 +112,7 @@ ROUTE_CONTENT: dict[str, list[str]] = {
     "/projects/siem-ensemble": ["research-docs/projects/siem-ensemble.md"],
     "/projects/geospatial-intel": ["research-docs/projects/geospatial-intel.md"],
     "/tidy-tuesday/se4all-2026-05-26": ["research-docs/tidy-tuesday/se4all-2026-05-26.md"],
-    "/malware-traffic/smartapesg-2026-05-22": [
+    "/malware-reports/smartapesg-2026-05-22": [
         "research-docs/malware-traffic/smartapesg-2026-05-22.md",
         "research-docs/malware-traffic/smartapesg-2026-05-22-ioc.md",
         "research-docs/malware-traffic/smartapesg-2026-05-22-sigma.md",

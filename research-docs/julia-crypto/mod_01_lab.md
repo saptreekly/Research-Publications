@@ -20,6 +20,20 @@ a: 3, min=1, max=20
 n: 11, min=2, max=50
 :::
 
+::: starter id=mod_inverse lang=julia
+```julia
+function extended_gcd(a, b)
+    # TODO: Base case — when b == 0, return (a, 1, 0)
+    # TODO: Recursive step using extended_gcd(b, a % b)
+end
+
+function modInverse(a, n)
+    # TODO: Call extended_gcd(a, n); if gcd != 1, call error("Modular inverse does not exist")
+    # TODO: Normalize the coefficient into [0, n)
+end
+```
+:::
+
 ::: blueprint id=mod_inverse lang=julia
 ```julia
 function extended_gcd(a, b)

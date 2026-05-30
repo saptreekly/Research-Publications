@@ -70,6 +70,22 @@
     },
     {
       "kind": {
+        "Starter": {
+          "id": "powermod_impl",
+          "language": "julia",
+          "code": "\nfunction powermod(a, k, m)\n    # TODO: Square-and-multiply — keep every intermediate value in [0, m)\n    # Hint: result = 1, base = a % m, loop while k > 0\nend"
+        }
+      },
+      "execution": {
+        "status": "Idle",
+        "stdout": [],
+        "result": null,
+        "error": null,
+        "verify_results": []
+      }
+    },
+    {
+      "kind": {
         "Blueprint": {
           "id": "powermod_impl",
           "language": "julia",

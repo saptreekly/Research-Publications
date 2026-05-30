@@ -1,5 +1,7 @@
 use std::collections::HashMap;
 
+use lab_types::types::{VerifyArg, VerifyCase, VerifyExpectation, VerifyResult};
+
 use crate::lab::crypto;
 
 #[derive(Clone, Debug, PartialEq)]
@@ -198,6 +200,100 @@ pub fn execute_with_budget(
 
     let result = last_value.map(|v| v.display());
     Ok((interpreter.stdout, result))
+}
+
+pub fn grade_user_code(
+    source: &str,
+    cases: &[VerifyCase],
+    probes: &HashMap<String, i64>,
+) -> Result<Vec<VerifyResult>, String> {
+    let mut interpreter = Interpreter {
+        globals: HashMap::new(),
+        functions: HashMap::new(),
+        stdout: Vec::new(),
+        instruction_budget: DEFAULT_INSTRUCTION_BUDGET,
+    };
+
+    let mut parser = Parser::new(source);
+    let program = parser.parse_program()?;
+
+    for item in program {
+        if let ProgramItem::Function(def) = item {
+            interpreter.functions.insert(def.name.clone(), def);
+        }
+    }
+
+    for (name, value) in probes {
+        interpreter
+            .globals
+            .insert(name.clone(), Value::Int(*value));
+    }
+
+    let mut results = Vec::with_capacity(cases.len());
+    for case in cases {
+        results.push(evaluate_user_case(&mut interpreter, case));
+    }
+    Ok(results)
+}
+
+fn evaluate_user_case(interpreter: &mut Interpreter, case: &VerifyCase) -> VerifyResult {
+    let args: Vec<Expr> = match resolve_verify_args(&case.args, interpreter) {
+        Ok(args) => args,
+        Err(message) => {
+            return VerifyResult {
+                expression: case.expression.clone(),
+                passed: false,
+                expected: format_expectation(&case.expected),
+                got: message,
+            };
+        }
+    };
+
+    let outcome = interpreter.eval_call(&case.function, &args);
+
+    let (passed, got) = match (&case.expected, outcome) {
+        (VerifyExpectation::Value(expected), Ok(value)) => {
+            match value.as_int() {
+                Ok(got) => (*expected == got, got.to_string()),
+                Err(message) => (false, message),
+            }
+        }
+        (VerifyExpectation::Value(expected), Err(_)) => (false, format!("error (expected {expected})")),
+        (VerifyExpectation::Error, Ok(value)) => (false, value.display()),
+        (VerifyExpectation::Error, Err(_)) => (true, "error".to_string()),
+    };
+
+    VerifyResult {
+        expression: case.expression.clone(),
+        passed,
+        expected: format_expectation(&case.expected),
+        got,
+    }
+}
+
+fn resolve_verify_args(
+    args: &[VerifyArg],
+    interpreter: &Interpreter,
+) -> Result<Vec<Expr>, String> {
+    args.iter()
+        .map(|arg| match arg {
+            VerifyArg::Literal(value) => Ok(Expr::Int(*value)),
+            VerifyArg::Probe(name) => {
+                if interpreter.globals.contains_key(name) {
+                    Ok(Expr::Var(name.clone()))
+                } else {
+                    Err(format!("Unknown probe: {name}"))
+                }
+            }
+        })
+        .collect()
+}
+
+fn format_expectation(expected: &VerifyExpectation) -> String {
+    match expected {
+        VerifyExpectation::Value(value) => value.to_string(),
+        VerifyExpectation::Error => "error".to_string(),
+    }
 }
 
 enum ProgramItem {

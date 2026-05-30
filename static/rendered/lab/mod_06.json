@@ -58,6 +58,22 @@
     },
     {
       "kind": {
+        "Starter": {
+          "id": "primes_demo",
+          "language": "julia",
+          "code": "\nfunction nth_prime(n)\n    # TODO: Return the nth prime (1-indexed). Hint: `prime(n)` is available as a builtin\nend\n\nfunction isprime_check(n)\n    # TODO: Return 1 if n is prime, 0 otherwise\nend"
+        }
+      },
+      "execution": {
+        "status": "Idle",
+        "stdout": [],
+        "result": null,
+        "error": null,
+        "verify_results": []
+      }
+    },
+    {
+      "kind": {
         "Blueprint": {
           "id": "primes_demo",
           "language": "julia",

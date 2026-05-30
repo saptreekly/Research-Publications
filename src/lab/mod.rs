@@ -13,6 +13,10 @@ pub mod crypto;
 #[cfg(feature = "lab")]
 pub mod editor;
 #[cfg(feature = "lab")]
+pub mod editor_keys;
+#[cfg(feature = "lab")]
 pub mod julia_interp;
+#[cfg(feature = "lab")]
+pub mod layout;
 #[cfg(feature = "lab")]
 pub mod kernel;

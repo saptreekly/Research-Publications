@@ -1,7 +1,10 @@
 use leptos::*;
 use leptos_router::*;
 use crate::components::theme_toggle::ThemeToggle;
-use crate::utils::{contact_href, curriculum_href, home_href, situation_monitor_href, tidy_tuesday_index_href};
+use crate::utils::{
+    contact_href, curriculum_href, home_href, malware_reports_index_href, situation_monitor_href,
+    tidy_tuesday_index_href,
+};
 
 #[component]
 pub fn RootLayout(children: Children) -> impl IntoView {
@@ -48,6 +51,16 @@ pub fn RootLayout(children: Children) -> impl IntoView {
                                 <li><A href=home_href() class="nav-link">"HOME"</A></li>
                                 <li><A href=curriculum_href() class="nav-link">"CURRICULUM"</A></li>
                                 <li><A href=tidy_tuesday_index_href() class="nav-link">"TIDY TUESDAY"</A></li>
+                                {#[cfg(feature = "malware-traffic")]
+                                {
+                                    view! {
+                                        <li>
+                                            <A href=malware_reports_index_href() class="nav-link">
+                                                "MALWARE REPORTS"
+                                            </A>
+                                        </li>
+                                    }.into_view()
+                                }}
                                 <li><A href=situation_monitor_href() class="nav-link">"SITUATION MONITOR"</A></li>
                                 <li><A href=contact_href() class="nav-link">"CONTACT"</A></li>
                                 <li>

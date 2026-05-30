@@ -17,6 +17,15 @@ exp: 13, min=1, max=100
 modulus: 97, min=2, max=200
 :::
 
+::: starter id=powermod_impl lang=julia
+```julia
+function powermod(a, k, m)
+    # TODO: Square-and-multiply — keep every intermediate value in [0, m)
+    # Hint: result = 1, base = a % m, loop while k > 0
+end
+```
+:::
+
 ::: blueprint id=powermod_impl lang=julia
 ```julia
 function manual_powermod(a, k, m)

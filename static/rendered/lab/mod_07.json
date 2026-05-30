@@ -70,6 +70,22 @@
     },
     {
       "kind": {
+        "Starter": {
+          "id": "rsa_keygen",
+          "language": "julia",
+          "code": "\nfunction rsa_phi(p, q)\n    # TODO: Return Euler's totient (p-1) * (q-1)\nend\n\nfunction rsa_ed_check(e, d, phi_n)\n    # TODO: Return 1 if (e * d) % phi_n == 1, else 0\nend"
+        }
+      },
+      "execution": {
+        "status": "Idle",
+        "stdout": [],
+        "result": null,
+        "error": null,
+        "verify_results": []
+      }
+    },
+    {
+      "kind": {
         "Blueprint": {
           "id": "rsa_keygen",
           "language": "julia",

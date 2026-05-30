@@ -142,6 +142,21 @@ fn parse_directive(
                 execution,
             })
         }
+        "starter" => {
+            let id = require_id(attrs, line)?;
+            let language = optional_attr(attrs, "lang")
+                .unwrap_or("julia")
+                .to_string();
+            let code = extract_fenced_code(&body, &language).unwrap_or_else(|| body.trim().to_string());
+            Ok(LabBlock {
+                kind: BlockKind::Starter {
+                    id,
+                    language,
+                    code,
+                },
+                execution,
+            })
+        }
         "verify" => {
             let id = require_id(attrs, line)?;
             let cases = parse_verify_body(&body)?;

@@ -76,6 +76,22 @@
     },
     {
       "kind": {
+        "Starter": {
+          "id": "crt_impl",
+          "language": "julia",
+          "code": "\nfunction crt_two(r1, m1, r2, m2)\n    # TODO: N = m1 * m2, N1 = N ÷ m1, N2 = N ÷ m2\n    # TODO: Combine residues with invmod(N1, m1) and invmod(N2, m2)\nend"
+        }
+      },
+      "execution": {
+        "status": "Idle",
+        "stdout": [],
+        "result": null,
+        "error": null,
+        "verify_results": []
+      }
+    },
+    {
+      "kind": {
         "Blueprint": {
           "id": "crt_impl",
           "language": "julia",

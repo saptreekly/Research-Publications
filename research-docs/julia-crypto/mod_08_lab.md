@@ -16,6 +16,18 @@ d: 1783, min=100, max=5000
 n: 3233, min=100, max=10000
 :::
 
+::: starter id=rsa_crypto lang=julia
+```julia
+function rsa_encrypt(m, e, n)
+    # TODO: Return m^e mod n
+end
+
+function rsa_decrypt(c, d, n)
+    # TODO: Return c^d mod n
+end
+```
+:::
+
 ::: blueprint id=rsa_crypto lang=julia
 ```julia
 p, q = 61, 53

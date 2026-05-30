@@ -14,6 +14,7 @@ pub fn init(textarea: &web_sys::HtmlTextAreaElement) {
     leptos::spawn_local(async move {
         crate::utils::script_loader::ensure_lab_editor().await;
         init_lab_code_editor(&element);
+        refresh_lab_code_editor(&element);
     });
 }
 
