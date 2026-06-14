@@ -1,6 +1,6 @@
 {
-  "updated_at": "2026-06-14T17:51Z",
-  "updated_label": "14 Jun 2026 · 17:51Z",
+  "updated_at": "2026-06-14T19:15Z",
+  "updated_label": "14 Jun 2026 · 19:15Z",
   "categories": [
     {
       "id": "nz-pacific",
@@ -10,17 +10,17 @@
     {
       "id": "apac-security",
       "label": "APAC Security",
-      "count": 84
+      "count": 82
     },
     {
       "id": "cyber",
       "label": "Cyber",
-      "count": 10
+      "count": 15
     },
     {
       "id": "global",
       "label": "Global",
-      "count": 28
+      "count": 25
     },
     {
       "id": "osint",
@@ -124,9 +124,9 @@
       "name": "The Record",
       "category": "cyber",
       "url": "https://therecord.media/feed/",
-      "item_count": 0,
-      "status": "error",
-      "error": "HTTP Error 520: <none>"
+      "item_count": 5,
+      "status": "ok",
+      "error": null
     },
     {
       "id": "krebs",
@@ -176,104 +176,13 @@
   ],
   "items": [
     {
-      "id": "7927b38bbbb43d03",
-      "title": "New mental health funding may not match need",
-      "summary": "Psychiatrists say the lack of data on the most pressing shortages - and absence of comprehensive planning - make new funding look piecemeal",
-      "url": "https://www.rnz.co.nz/news/health/598171/new-mental-health-funding-may-not-match-need",
-      "published_at": "2026-06-14T17:42:48Z",
-      "published_label": "14 Jun 2026 · 17:42Z",
-      "age_label": "8m ago",
-      "source_id": "rnz-news",
-      "source_name": "RNZ News",
-      "source_kind": "rss",
-      "category": "nz-pacific",
-      "regions": [
-        "pacific"
-      ],
-      "priority": 30,
-      "cluster_key": "new mental health funding may not match need"
-    },
-    {
-      "id": "4429734c592a77e7",
-      "title": "China’s direct strike threat to Australia is ‘growing’, think tank report finds",
-      "summary": "China is capable of a direct missile strike on Australia and the threat is growing as Beijing amasses long-range and hypersonic weapons and builds islands in the South China Sea, an Australian think tank said on Sunday. A Lowy Institute report found the main threat to Australia…",
-      "url": "https://www.scmp.com/news/asia/australasia/article/3357080/chinas-direct-strike-threat-australia-growing-think-tank-report-finds?utm_source=rss_feed",
-      "published_at": "2026-06-14T17:37:22Z",
-      "published_label": "14 Jun 2026 · 17:37Z",
-      "age_label": "14m ago",
-      "source_id": "scmp",
-      "source_name": "South China Morning Post",
-      "source_kind": "rss",
-      "category": "apac-security",
-      "regions": [
-        "australia",
-        "china"
-      ],
-      "priority": 48,
-      "cluster_key": "chinas direct strike threat to australia is growing think tank report finds"
-    },
-    {
-      "id": "7093283e6bafde8a",
-      "title": "How the food industry shapes your child's fussy eating",
-      "summary": "Heavy-handed marketing is a winning recipe for processed-food companies that target kids.",
-      "url": "https://www.rnz.co.nz/life/food/how-the-food-industry-shapes-your-child-s-fussy-eating",
-      "published_at": "2026-06-14T17:27:22Z",
-      "published_label": "14 Jun 2026 · 17:27Z",
-      "age_label": "24m ago",
-      "source_id": "rnz-news",
-      "source_name": "RNZ News",
-      "source_kind": "rss",
-      "category": "nz-pacific",
-      "regions": [
-        "pacific"
-      ],
-      "priority": 30,
-      "cluster_key": "how the food industry shapes your childs fussy eating"
-    },
-    {
-      "id": "a562fdc191b9e800",
-      "title": "Ratio that shows share prices at level well above dot-com boom",
-      "summary": "The long-run Tobin Q average is 0.85 - it reached 1.47 in 2000 at the dot-com boom. It is now more than 2.1.",
-      "url": "https://www.rnz.co.nz/news/business/598168/ratio-that-shows-share-prices-at-level-well-above-dot-com-boom",
-      "published_at": "2026-06-14T17:27:22Z",
-      "published_label": "14 Jun 2026 · 17:27Z",
-      "age_label": "24m ago",
-      "source_id": "rnz-news",
-      "source_name": "RNZ News",
-      "source_kind": "rss",
-      "category": "nz-pacific",
-      "regions": [
-        "pacific"
-      ],
-      "priority": 30,
-      "cluster_key": "ratio that shows share prices at level well above dotcom boom"
-    },
-    {
-      "id": "9ba4a9bd3258f616",
-      "title": "New OCD therapy a 'gamechanger' for 17-year-old",
-      "summary": "Clinical psychologists are hoping the four-day intensive exposure therapy, which costs thousands of dollars, will become part of the health system.",
-      "url": "https://www.rnz.co.nz/news/health/598167/new-ocd-therapy-a-gamechanger-for-17-year-old",
-      "published_at": "2026-06-14T17:17:48Z",
-      "published_label": "14 Jun 2026 · 17:17Z",
-      "age_label": "33m ago",
-      "source_id": "rnz-news",
-      "source_name": "RNZ News",
-      "source_kind": "rss",
-      "category": "nz-pacific",
-      "regions": [
-        "pacific"
-      ],
-      "priority": 30,
-      "cluster_key": "new ocd therapy a gamechanger for 17yearold"
-    },
-    {
       "id": "49078d6a9e9e50fc",
       "title": "Watchdog needed to quell election-year squabbles over spending - economist",
       "summary": "National's finance spokesperson has attacked Labour's spending policies, with claims of an $18.2 billion shortfall.",
       "url": "https://www.rnz.co.nz/news/political/598166/watchdog-needed-to-quell-election-year-squabbles-over-spending-economist",
-      "published_at": "2026-06-14T17:10:23Z",
-      "published_label": "14 Jun 2026 · 17:10Z",
-      "age_label": "41m ago",
+      "published_at": "2026-06-14T19:01:25Z",
+      "published_label": "14 Jun 2026 · 19:01Z",
+      "age_label": "13m ago",
       "source_id": "rnz-news",
       "source_name": "RNZ News",
       "source_kind": "rss",
@@ -285,31 +194,212 @@
       "cluster_key": "watchdog needed to quell electionyear squabbles over spending economist"
     },
     {
-      "id": "252ed3402cc15b0a",
-      "title": "Thousands hold G7 protest in Geneva as world leaders prepare for summit in nearby France",
-      "summary": "Protesters in Geneva clashed with police, set a car on fire and smashed the windows of a bank on Sunday to show their discontent with the G7 group of major advanced economies on the eve of a summit in nearby France to be attended by the group’s leaders including US President Don…",
-      "url": "https://www.scmp.com/news/world/europe/article/3357079/thousands-hold-g7-protest-geneva-world-leaders-prepare-summit-nearby-france?utm_source=rss_feed",
-      "published_at": "2026-06-14T17:08:43Z",
-      "published_label": "14 Jun 2026 · 17:08Z",
-      "age_label": "42m ago",
+      "id": "b3883a1a7ad6ecb8",
+      "title": "Health NZ's work on medical scanning systems due to be completed",
+      "summary": "Faults were reported to have risen from a few dozen a year to more than 800 in 2024.",
+      "url": "https://www.rnz.co.nz/news/health/598180/health-nz-s-work-on-medical-scanning-systems-due-to-be-completed",
+      "published_at": "2026-06-14T18:48:51Z",
+      "published_label": "14 Jun 2026 · 18:48Z",
+      "age_label": "26m ago",
+      "source_id": "rnz-news",
+      "source_name": "RNZ News",
+      "source_kind": "rss",
+      "category": "nz-pacific",
+      "regions": [
+        "pacific"
+      ],
+      "priority": 30,
+      "cluster_key": "health nzs work on medical scanning systems due to be completed"
+    },
+    {
+      "id": "c3f39598534c67cf",
+      "title": "Researchers use tiny radio backpacks to track elusive gecko species",
+      "summary": "The northern striped gecko live on Coromandel Peninsula and are so skilled at camouflage, they weren't discovered until 1997.",
+      "url": "https://www.rnz.co.nz/news/environment/598179/researchers-use-tiny-radio-backpacks-to-track-elusive-gecko-species",
+      "published_at": "2026-06-14T18:48:51Z",
+      "published_label": "14 Jun 2026 · 18:48Z",
+      "age_label": "26m ago",
+      "source_id": "rnz-news",
+      "source_name": "RNZ News",
+      "source_kind": "rss",
+      "category": "nz-pacific",
+      "regions": [
+        "pacific"
+      ],
+      "priority": 30,
+      "cluster_key": "researchers use tiny radio backpacks to track elusive gecko species"
+    },
+    {
+      "id": "54796488494cb58b",
+      "title": "Scrutiny Week: How does it work and what are the drawbacks?",
+      "summary": "Politicians are gearing up for the verbal combat of Scrutiny Week - but what is it, and how did it come to be?",
+      "url": "https://www.rnz.co.nz/news/political/598178/scrutiny-week-how-does-it-work-and-what-are-the-drawbacks",
+      "published_at": "2026-06-14T18:48:51Z",
+      "published_label": "14 Jun 2026 · 18:48Z",
+      "age_label": "26m ago",
+      "source_id": "rnz-news",
+      "source_name": "RNZ News",
+      "source_kind": "rss",
+      "category": "nz-pacific",
+      "regions": [
+        "pacific"
+      ],
+      "priority": 30,
+      "cluster_key": "scrutiny week how does it work and what are the drawbacks"
+    },
+    {
+      "id": "8dcddaf7e27480c9",
+      "title": "6 killed after helicopters collide in Rio de Janeiro, crashing into car park",
+      "summary": "At least six people died in Brazil on Sunday after two helicopters collided in western Rio de Janeiro, firefighters said. The helicopters crashed into the car park of an electric car showroom, igniting a fire that engulfed at least 20 cars. A statement from firefighters said ini…",
+      "url": "https://www.scmp.com/news/world/americas/article/3357082/6-killed-after-helicopters-collide-rio-de-janeiro-crashing-car-park?utm_source=rss_feed",
+      "published_at": "2026-06-14T18:43:49Z",
+      "published_label": "14 Jun 2026 · 18:43Z",
+      "age_label": "31m ago",
       "source_id": "scmp",
       "source_name": "South China Morning Post",
       "source_kind": "rss",
       "category": "apac-security",
       "regions": [
-        "europe"
+        "se-asia"
       ],
       "priority": 30,
-      "cluster_key": "thousands hold g7 protest in geneva as world leaders prepare for summit in nearby france"
+      "cluster_key": "6 killed after helicopters collide in rio de janeiro crashing into car park"
     },
     {
-      "id": "c8c32c567c1a69ca",
-      "title": "Lebanon says three killed in Israeli strike on Beirut suburb",
-      "summary": "Israel says it targeted the Iran-backed Hezbollah, as Tehran warns this could derail a US-Iran deal to end the fighting.",
+      "id": "55630743b94ca367",
+      "title": "Woman sentenced in cold meds meth case after fleeing for 20 years",
+      "summary": "The case should have been finalised in 2007, but the defendant fled, leaving possibly one of New Zealand's longest‑running active court files untouched.",
+      "url": "https://www.rnz.co.nz/news/crime-and-justice/598145/amanda-mcjarrow-sentenced-in-whangarei-cold-meds-meth-case-after-fleeing-nz-for-20-years",
+      "published_at": "2026-06-14T18:41:35Z",
+      "published_label": "14 Jun 2026 · 18:41Z",
+      "age_label": "33m ago",
+      "source_id": "rnz-news",
+      "source_name": "RNZ News",
+      "source_kind": "rss",
+      "category": "nz-pacific",
+      "regions": [
+        "nz"
+      ],
+      "priority": 30,
+      "cluster_key": "woman sentenced in cold meds meth case after fleeing for 20 years"
+    },
+    {
+      "id": "1fe14aa7e0b023fc",
+      "title": "Fieldays record turnout comes with growing pains",
+      "summary": "Exhibitor and vendor sites were sold out a month before the event, with 1100 stalls on display.",
+      "url": "https://www.rnz.co.nz/news/business/598160/fieldays-record-turnout-comes-with-growing-pains",
+      "published_at": "2026-06-14T18:41:35Z",
+      "published_label": "14 Jun 2026 · 18:41Z",
+      "age_label": "33m ago",
+      "source_id": "rnz-news",
+      "source_name": "RNZ News",
+      "source_kind": "rss",
+      "category": "nz-pacific",
+      "regions": [
+        "pacific"
+      ],
+      "priority": 30,
+      "cluster_key": "fieldays record turnout comes with growing pains"
+    },
+    {
+      "id": "a794fceb35d107d6",
+      "title": "Nicola Willis shows she is ready to fight her way back into power in November",
+      "summary": "Analysis: Finance Minister replaced one flak jacket for another as she went after Labour.",
+      "url": "https://www.rnz.co.nz/news/political/598175/nicola-willis-shows-she-is-ready-to-fight-her-way-back-into-power-in-november",
+      "published_at": "2026-06-14T18:41:31Z",
+      "published_label": "14 Jun 2026 · 18:41Z",
+      "age_label": "33m ago",
+      "source_id": "rnz-news",
+      "source_name": "RNZ News",
+      "source_kind": "rss",
+      "category": "nz-pacific",
+      "regions": [
+        "pacific"
+      ],
+      "priority": 30,
+      "cluster_key": "nicola willis shows she is ready to fight her way back into power in november"
+    },
+    {
+      "id": "9ba4a9bd3258f616",
+      "title": "New OCD therapy a 'gamechanger' for 17-year-old",
+      "summary": "Psychologists are hoping the four-day intensive exposure therapy, which costs thousands, will become part of the system.",
+      "url": "https://www.rnz.co.nz/news/health/598167/new-ocd-therapy-a-gamechanger-for-17-year-old",
+      "published_at": "2026-06-14T18:35:03Z",
+      "published_label": "14 Jun 2026 · 18:35Z",
+      "age_label": "40m ago",
+      "source_id": "rnz-news",
+      "source_name": "RNZ News",
+      "source_kind": "rss",
+      "category": "nz-pacific",
+      "regions": [
+        "pacific"
+      ],
+      "priority": 30,
+      "cluster_key": "new ocd therapy a gamechanger for 17yearold"
+    },
+    {
+      "id": "caa12687b12f79eb",
+      "title": "Failed violin project kindles Andrick Li's passion for making chopsticks",
+      "summary": "To feel comfortable in the hand, chopsticks need to be thin at one end and thick at the other, and the ridges must be smooth.",
+      "url": "https://www.rnz.co.nz/news/business/598173/failed-violin-project-kindles-andrick-li-s-passion-for-making-chopsticks",
+      "published_at": "2026-06-14T18:24:05Z",
+      "published_label": "14 Jun 2026 · 18:24Z",
+      "age_label": "51m ago",
+      "source_id": "rnz-news",
+      "source_name": "RNZ News",
+      "source_kind": "rss",
+      "category": "nz-pacific",
+      "regions": [
+        "pacific"
+      ],
+      "priority": 30,
+      "cluster_key": "failed violin project kindles andrick lis passion for making chopsticks"
+    },
+    {
+      "id": "f72c98b328728f7b",
+      "title": "Swiss voters reject 10 million population cap",
+      "summary": "Nearly 55% of participants voted against the proposal to cap population by cutting migration, results show.",
+      "url": "https://www.bbc.com/news/articles/c20ygjem17zo?at_medium=RSS&at_campaign=rss",
+      "published_at": "2026-06-14T18:23:52Z",
+      "published_label": "14 Jun 2026 · 18:23Z",
+      "age_label": "51m ago",
+      "source_id": "bbc-world",
+      "source_name": "BBC World",
+      "source_kind": "rss",
+      "category": "global",
+      "regions": [
+        "global"
+      ],
+      "priority": 30,
+      "cluster_key": "swiss voters reject 10 million population cap"
+    },
+    {
+      "id": "96973c7e7e0b8f12",
+      "title": "Putin and Zelensky hold phone calls with Trump as US president marks his 80th birthday",
+      "summary": "Russian President Vladimir Putin and Ukrainian President Volodymyr Zelensky each held phone calls with US President Donald Trump on Sunday, as Trump marked his 80th birthday and the war in Ukraine remained a flashpoint ahead of this week’s G7 summit. Putin’s call with Trump last…",
+      "url": "https://www.scmp.com/news/world/united-states-canada/article/3357081/putin-and-zelensky-hold-phone-calls-trump-us-president-marks-his-80th-birthday?utm_source=rss_feed",
+      "published_at": "2026-06-14T18:16:26Z",
+      "published_label": "14 Jun 2026 · 18:16Z",
+      "age_label": "58m ago",
+      "source_id": "scmp",
+      "source_name": "South China Morning Post",
+      "source_kind": "rss",
+      "category": "apac-security",
+      "regions": [
+        "europe",
+        "russia"
+      ],
+      "priority": 30,
+      "cluster_key": "putin and zelensky hold phone calls with trump as us president marks his 80th birthday"
+    },
+    {
+      "id": "2a0638f74600b337",
+      "title": "Israeli military says Hezbollah targets struck in Beirut",
+      "summary": "Israel says it targeted the Iran-backed armed group Hezbollah, as Tehran warns this could derail a US-Iran deal to end the fighting.",
       "url": "https://www.bbc.com/news/articles/czj83zlx1vjo?at_medium=RSS&at_campaign=rss",
-      "published_at": "2026-06-14T15:34:32Z",
-      "published_label": "14 Jun 2026 · 15:34Z",
-      "age_label": "2h ago",
+      "published_at": "2026-06-14T17:52:36Z",
+      "published_label": "14 Jun 2026 · 17:52Z",
+      "age_label": "1h ago",
       "source_id": "bbc-world",
       "source_name": "BBC World",
       "source_kind": "rss",
@@ -318,7 +408,98 @@
         "middle-east"
       ],
       "priority": 20,
-      "cluster_key": "lebanon says three killed in israeli strike on beirut suburb"
+      "cluster_key": "israeli military says hezbollah targets struck in beirut"
+    },
+    {
+      "id": "7927b38bbbb43d03",
+      "title": "New mental health funding may not match need",
+      "summary": "Psychiatrists say the lack of data on the most pressing shortages - and absence of comprehensive planning - make new funding look piecemeal",
+      "url": "https://www.rnz.co.nz/news/health/598171/new-mental-health-funding-may-not-match-need",
+      "published_at": "2026-06-14T17:42:48Z",
+      "published_label": "14 Jun 2026 · 17:42Z",
+      "age_label": "1h ago",
+      "source_id": "rnz-news",
+      "source_name": "RNZ News",
+      "source_kind": "rss",
+      "category": "nz-pacific",
+      "regions": [
+        "pacific"
+      ],
+      "priority": 20,
+      "cluster_key": "new mental health funding may not match need"
+    },
+    {
+      "id": "4429734c592a77e7",
+      "title": "China’s direct strike threat to Australia is ‘growing’, think tank report finds",
+      "summary": "China is capable of a direct missile strike on Australia and the threat is growing as Beijing amasses long-range and hypersonic weapons and builds islands in the South China Sea, an Australian think tank said on Sunday. A Lowy Institute report found the main threat to Australia…",
+      "url": "https://www.scmp.com/news/asia/australasia/article/3357080/chinas-direct-strike-threat-australia-growing-think-tank-report-finds?utm_source=rss_feed",
+      "published_at": "2026-06-14T17:37:22Z",
+      "published_label": "14 Jun 2026 · 17:37Z",
+      "age_label": "1h ago",
+      "source_id": "scmp",
+      "source_name": "South China Morning Post",
+      "source_kind": "rss",
+      "category": "apac-security",
+      "regions": [
+        "australia",
+        "china"
+      ],
+      "priority": 38,
+      "cluster_key": "chinas direct strike threat to australia is growing think tank report finds"
+    },
+    {
+      "id": "7093283e6bafde8a",
+      "title": "How the food industry shapes your child's fussy eating",
+      "summary": "Heavy-handed marketing is a winning recipe for processed-food companies that target kids.",
+      "url": "https://www.rnz.co.nz/life/food/how-the-food-industry-shapes-your-child-s-fussy-eating",
+      "published_at": "2026-06-14T17:27:22Z",
+      "published_label": "14 Jun 2026 · 17:27Z",
+      "age_label": "1h ago",
+      "source_id": "rnz-news",
+      "source_name": "RNZ News",
+      "source_kind": "rss",
+      "category": "nz-pacific",
+      "regions": [
+        "pacific"
+      ],
+      "priority": 20,
+      "cluster_key": "how the food industry shapes your childs fussy eating"
+    },
+    {
+      "id": "a562fdc191b9e800",
+      "title": "Ratio that shows share prices at level well above dot-com boom",
+      "summary": "\"We should expect a more volatile market, with that volatility concentrated in the handful of mega-cap names.\"",
+      "url": "https://www.rnz.co.nz/news/business/598168/ratio-that-shows-share-prices-at-level-well-above-dot-com-boom",
+      "published_at": "2026-06-14T17:27:22Z",
+      "published_label": "14 Jun 2026 · 17:27Z",
+      "age_label": "1h ago",
+      "source_id": "rnz-news",
+      "source_name": "RNZ News",
+      "source_kind": "rss",
+      "category": "nz-pacific",
+      "regions": [
+        "pacific"
+      ],
+      "priority": 20,
+      "cluster_key": "ratio that shows share prices at level well above dotcom boom"
+    },
+    {
+      "id": "252ed3402cc15b0a",
+      "title": "Thousands hold G7 protest in Geneva as world leaders prepare for summit in nearby France",
+      "summary": "Protesters in Geneva clashed with police, set a car on fire and smashed the windows of a bank on Sunday to show their discontent with the G7 group of major advanced economies on the eve of a summit in nearby France to be attended by the group’s leaders including US President Don…",
+      "url": "https://www.scmp.com/news/world/europe/article/3357079/thousands-hold-g7-protest-geneva-world-leaders-prepare-summit-nearby-france?utm_source=rss_feed",
+      "published_at": "2026-06-14T17:08:43Z",
+      "published_label": "14 Jun 2026 · 17:08Z",
+      "age_label": "2h ago",
+      "source_id": "scmp",
+      "source_name": "South China Morning Post",
+      "source_kind": "rss",
+      "category": "apac-security",
+      "regions": [
+        "europe"
+      ],
+      "priority": 20,
+      "cluster_key": "thousands hold g7 protest in geneva as world leaders prepare for summit in nearby france"
     },
     {
       "id": "2a251a3baa5b9702",
@@ -327,7 +508,7 @@
       "url": "https://www.scmp.com/news/world/middle-east/article/3357078/israeli-strikes-beirut-foil-us-peace-plans-iran-says-no-point-talks?utm_source=rss_feed",
       "published_at": "2026-06-14T15:25:53Z",
       "published_label": "14 Jun 2026 · 15:25Z",
-      "age_label": "2h ago",
+      "age_label": "3h ago",
       "source_id": "scmp",
       "source_name": "South China Morning Post",
       "source_kind": "rss",
@@ -345,7 +526,7 @@
       "url": "https://www.bbc.com/news/articles/cx2kjwgwxwlo?at_medium=RSS&at_campaign=rss",
       "published_at": "2026-06-14T15:25:33Z",
       "published_label": "14 Jun 2026 · 15:25Z",
-      "age_label": "2h ago",
+      "age_label": "3h ago",
       "source_id": "bbc-asia",
       "source_name": "BBC Asia",
       "source_kind": "rss",
@@ -363,7 +544,7 @@
       "url": "https://www.bbc.com/news/articles/cly9eljexnno?at_medium=RSS&at_campaign=rss",
       "published_at": "2026-06-14T14:52:35Z",
       "published_label": "14 Jun 2026 · 14:52Z",
-      "age_label": "2h ago",
+      "age_label": "4h ago",
       "source_id": "bbc-world",
       "source_name": "BBC World",
       "source_kind": "rss",
@@ -381,7 +562,7 @@
       "url": "https://www.scmp.com/news/hong-kong/law-and-crime/article/3357076/hk751000-worth-jewellery-stolen-while-owners-dine-hong-kong-luxury-home?utm_source=rss_feed",
       "published_at": "2026-06-14T14:46:07Z",
       "published_label": "14 Jun 2026 · 14:46Z",
-      "age_label": "3h ago",
+      "age_label": "4h ago",
       "source_id": "scmp",
       "source_name": "South China Morning Post",
       "source_kind": "rss",
@@ -399,7 +580,7 @@
       "url": "https://www.scmp.com/news/hong-kong/health-environment/article/3357075/should-hong-kong-close-swimming-pools-during-thunderstorms?utm_source=rss_feed",
       "published_at": "2026-06-14T14:38:06Z",
       "published_label": "14 Jun 2026 · 14:38Z",
-      "age_label": "3h ago",
+      "age_label": "4h ago",
       "source_id": "scmp",
       "source_name": "South China Morning Post",
       "source_kind": "rss",
@@ -417,7 +598,7 @@
       "url": "https://www.scmp.com/news/world/europe/article/3357074/italian-former-general-starts-far-right-party-attack-pm-meloni-eu?utm_source=rss_feed",
       "published_at": "2026-06-14T14:33:33Z",
       "published_label": "14 Jun 2026 · 14:33Z",
-      "age_label": "3h ago",
+      "age_label": "4h ago",
       "source_id": "scmp",
       "source_name": "South China Morning Post",
       "source_kind": "rss",
@@ -435,7 +616,7 @@
       "url": "https://www.scmp.com/news/hong-kong/society/article/3357073/hong-kong-observatory-issues-amber-rainstorm-warning?utm_source=rss_feed",
       "published_at": "2026-06-14T14:23:17Z",
       "published_label": "14 Jun 2026 · 14:23Z",
-      "age_label": "3h ago",
+      "age_label": "4h ago",
       "source_id": "scmp",
       "source_name": "South China Morning Post",
       "source_kind": "rss",
@@ -453,7 +634,7 @@
       "url": "https://www.scmp.com/news/asia/east-asia/article/3357072/takaichi-hails-uk-defence-ties-despite-next-gen-jet-spending-uncertainty?utm_source=rss_feed",
       "published_at": "2026-06-14T14:08:14Z",
       "published_label": "14 Jun 2026 · 14:08Z",
-      "age_label": "3h ago",
+      "age_label": "5h ago",
       "source_id": "scmp",
       "source_name": "South China Morning Post",
       "source_kind": "rss",
@@ -471,7 +652,7 @@
       "url": "https://www.bbc.com/news/articles/c8623n5pq2vo?at_medium=RSS&at_campaign=rss",
       "published_at": "2026-06-14T14:08:03Z",
       "published_label": "14 Jun 2026 · 14:08Z",
-      "age_label": "3h ago",
+      "age_label": "5h ago",
       "source_id": "bbc-world",
       "source_name": "BBC World",
       "source_kind": "rss",
@@ -489,7 +670,7 @@
       "url": "https://www.lowyinstitute.org/the-interpreter/silenced-abroad-silenced-here",
       "published_at": "2026-06-14T14:00:00Z",
       "published_label": "14 Jun 2026 · 14:00Z",
-      "age_label": "3h ago",
+      "age_label": "5h ago",
       "source_id": "lowy-interpreter",
       "source_name": "Lowy Interpreter",
       "source_kind": "rss",
@@ -507,7 +688,7 @@
       "url": "https://www.scmp.com/news/china/military/article/3357065/quiet-escalation-unfolding-around-taiwans-remote-outposts-beijing-sends-ships?utm_source=rss_feed",
       "published_at": "2026-06-14T13:51:53Z",
       "published_label": "14 Jun 2026 · 13:51Z",
-      "age_label": "3h ago",
+      "age_label": "5h ago",
       "source_id": "scmp",
       "source_name": "South China Morning Post",
       "source_kind": "rss",
@@ -526,7 +707,7 @@
       "url": "https://www.scmp.com/economy/global-economy/article/3356946/world-cup-mexico-leans-china-tech-and-transport-keep-tournament-kicking?utm_source=rss_feed",
       "published_at": "2026-06-14T13:00:06Z",
       "published_label": "14 Jun 2026 · 13:00Z",
-      "age_label": "4h ago",
+      "age_label": "6h ago",
       "source_id": "scmp",
       "source_name": "South China Morning Post",
       "source_kind": "rss",
@@ -534,7 +715,7 @@
       "regions": [
         "china"
       ],
-      "priority": 20,
+      "priority": 10,
       "cluster_key": "at world cup mexico leans on china tech and transport to keep the tournament kicking"
     },
     {
@@ -544,7 +725,7 @@
       "url": "https://www.scmp.com/news/world/europe/article/3357070/swiss-voters-reject-right-wing-plan-cap-population-10-million?utm_source=rss_feed",
       "published_at": "2026-06-14T12:58:38Z",
       "published_label": "14 Jun 2026 · 12:58Z",
-      "age_label": "4h ago",
+      "age_label": "6h ago",
       "source_id": "scmp",
       "source_name": "South China Morning Post",
       "source_kind": "rss",
@@ -552,7 +733,7 @@
       "regions": [
         "se-asia"
       ],
-      "priority": 20,
+      "priority": 10,
       "cluster_key": "swiss voters reject rightwing plan to cap population at 10 million"
     },
     {
@@ -562,7 +743,7 @@
       "url": "https://www.scmp.com/business/article/3357069/li-ka-shings-ck-asset-sets-2026-record-us462-million-mid-levels-penthouse-sale?utm_source=rss_feed",
       "published_at": "2026-06-14T12:40:12Z",
       "published_label": "14 Jun 2026 · 12:40Z",
-      "age_label": "5h ago",
+      "age_label": "6h ago",
       "source_id": "scmp",
       "source_name": "South China Morning Post",
       "source_kind": "rss",
@@ -570,7 +751,7 @@
       "regions": [
         "se-asia"
       ],
-      "priority": 20,
+      "priority": 10,
       "cluster_key": "li kashings ck asset sets a 2026 record with us462 million midlevels penthouse sale"
     },
     {
@@ -580,7 +761,7 @@
       "url": "https://www.bbc.com/news/articles/c14yn10jzyeo?at_medium=RSS&at_campaign=rss",
       "published_at": "2026-06-14T12:04:54Z",
       "published_label": "14 Jun 2026 · 12:04Z",
-      "age_label": "5h ago",
+      "age_label": "7h ago",
       "source_id": "bbc-world",
       "source_name": "BBC World",
       "source_kind": "rss",
@@ -588,7 +769,7 @@
       "regions": [
         "global"
       ],
-      "priority": 20,
+      "priority": 10,
       "cluster_key": "tourist train overturns and injures 17 during cártama tapas festival"
     },
     {
@@ -598,7 +779,7 @@
       "url": "https://www.scmp.com/news/china/diplomacy/article/3357048/bollywood-drops-beijing-villain-russia-china-india-axis-next?utm_source=rss_feed",
       "published_at": "2026-06-14T12:00:07Z",
       "published_label": "14 Jun 2026 · 12:00Z",
-      "age_label": "5h ago",
+      "age_label": "7h ago",
       "source_id": "scmp",
       "source_name": "South China Morning Post",
       "source_kind": "rss",
@@ -608,62 +789,26 @@
         "india",
         "russia"
       ],
-      "priority": 20,
+      "priority": 10,
       "cluster_key": "bollywood drops beijing as a villain is a russiachinaindia axis next"
     },
     {
-      "id": "905d78681ea49fe7",
-      "title": "Hundreds gather in Hong Kong to watch Knicks clinch first NBA title in 5 decades",
-      "summary": "Hundreds of Hong Kong basketball fans packed a Kowloon Bay cinema on Sunday to witness the New York Knicks secure their first NBA championship in 53 years, joined by seven-time ring winner Robert Horry as the franchise ended one of the longest title droughts in professional spor…",
-      "url": "https://www.scmp.com/news/hong-kong/society/article/3357066/hundreds-gather-hong-kong-watch-knicks-clinch-first-nba-title-5-decades?utm_source=rss_feed",
-      "published_at": "2026-06-14T11:34:02Z",
-      "published_label": "14 Jun 2026 · 11:34Z",
-      "age_label": "6h ago",
-      "source_id": "scmp",
-      "source_name": "South China Morning Post",
+      "id": "d768c1c39073abb0",
+      "title": "Straight woman steals a young gay man's story in Josh Silver's debut novel",
+      "summary": "Described as one of the books of the year, Fruit Fly asks who has the right to tell which stories.",
+      "url": "https://www.rnz.co.nz/life/books/straight-woman-steals-a-young-gay-man-s-story-in-josh-silver-s-debut-novel",
+      "published_at": "2026-06-14T10:39:28Z",
+      "published_label": "14 Jun 2026 · 10:39Z",
+      "age_label": "8h ago",
+      "source_id": "rnz-news",
+      "source_name": "RNZ News",
       "source_kind": "rss",
-      "category": "apac-security",
+      "category": "nz-pacific",
       "regions": [
-        "se-asia"
+        "pacific"
       ],
       "priority": 10,
-      "cluster_key": "hundreds gather in hong kong to watch knicks clinch first nba title in 5 decades"
-    },
-    {
-      "id": "342723b862b888cc",
-      "title": "Swiss voters reject 10 million population cap, early projections say",
-      "summary": "Not all votes have been counted, but the current trend suggests 55% of participants voted against the proposal.",
-      "url": "https://www.bbc.com/news/articles/c20ygjem17zo?at_medium=RSS&at_campaign=rss",
-      "published_at": "2026-06-14T11:31:32Z",
-      "published_label": "14 Jun 2026 · 11:31Z",
-      "age_label": "6h ago",
-      "source_id": "bbc-world",
-      "source_name": "BBC World",
-      "source_kind": "rss",
-      "category": "global",
-      "regions": [
-        "global"
-      ],
-      "priority": 10,
-      "cluster_key": "swiss voters reject 10 million population cap early projections say"
-    },
-    {
-      "id": "0e7091b469460d81",
-      "title": "Hong Kong landlord and tenant arrested after rental dispute turns violent",
-      "summary": "A landlord and a tenant have been arrested after a rental dispute turned violent inside a subdivided flat in Hong Kong. Police received a report at about 11 a.m. on Sunday that a man had splashed suspected corrosive liquid on another man at a flat in a building on Prince Edward…",
-      "url": "https://www.scmp.com/news/hong-kong/law-and-crime/article/3357062/hong-kong-landlord-and-tenant-arrested-after-rental-dispute-turns-violent?utm_source=rss_feed",
-      "published_at": "2026-06-14T11:30:08Z",
-      "published_label": "14 Jun 2026 · 11:30Z",
-      "age_label": "6h ago",
-      "source_id": "scmp",
-      "source_name": "South China Morning Post",
-      "source_kind": "rss",
-      "category": "apac-security",
-      "regions": [
-        "se-asia"
-      ],
-      "priority": 10,
-      "cluster_key": "hong kong landlord and tenant arrested after rental dispute turns violent"
+      "cluster_key": "straight woman steals a young gay mans story in josh silvers debut novel"
     },
     {
       "id": "0f26a0db5fe07aee",
@@ -672,7 +817,7 @@
       "url": "https://www.rnz.co.nz/news/political/598135/demonstrators-say-they-won-t-rest-until-bill-to-define-woman-and-man-is-stopped",
       "published_at": "2026-06-14T09:24:17Z",
       "published_label": "14 Jun 2026 · 09:24Z",
-      "age_label": "8h ago",
+      "age_label": "9h ago",
       "source_id": "rnz-news",
       "source_name": "RNZ News",
       "source_kind": "rss",
@@ -690,7 +835,7 @@
       "url": "https://www.rnz.co.nz/news/health/598164/major-study-uncovers-hidden-pandemic-of-lung-complications-after-surgery",
       "published_at": "2026-06-14T09:12:41Z",
       "published_label": "14 Jun 2026 · 09:12Z",
-      "age_label": "8h ago",
+      "age_label": "10h ago",
       "source_id": "rnz-news",
       "source_name": "RNZ News",
       "source_kind": "rss",
@@ -703,31 +848,13 @@
       "cluster_key": "major study uncovers hidden pandemic of lung complications after surgery"
     },
     {
-      "id": "30037799be5b3c8e",
-      "title": "Porirua City Councillor Mike Duncan dies suddenly",
-      "summary": "Mike Duncan had an array of Christmas jumpers and a knack for finding spelling mistakes in council reports.",
-      "url": "https://www.rnz.co.nz/news/regional/598163/porirua-city-councillor-mike-duncan-dies-suddenly",
-      "published_at": "2026-06-14T09:01:14Z",
-      "published_label": "14 Jun 2026 · 09:01Z",
-      "age_label": "8h ago",
-      "source_id": "rnz-news",
-      "source_name": "RNZ News",
-      "source_kind": "rss",
-      "category": "nz-pacific",
-      "regions": [
-        "pacific"
-      ],
-      "priority": 10,
-      "cluster_key": "porirua city councillor mike duncan dies suddenly"
-    },
-    {
       "id": "f3731c3d6fca1f28",
       "title": "Fifa to pay Somali referee Artan full World Cup fee",
       "summary": "Somali referee Omar Artan, who was denied entry to the United States to officiate at the World Cup, will still receive his tournament fee from Fifa in full.",
       "url": "https://www.bbc.com/sport/football/articles/c79y10r2plzo?at_medium=RSS&at_campaign=rss",
       "published_at": "2026-06-14T09:00:08Z",
       "published_label": "14 Jun 2026 · 09:00Z",
-      "age_label": "8h ago",
+      "age_label": "10h ago",
       "source_id": "bbc-world",
       "source_name": "BBC World",
       "source_kind": "rss",
@@ -745,7 +872,7 @@
       "url": "https://www.bbc.com/news/articles/cz9le087414o?at_medium=RSS&at_campaign=rss",
       "published_at": "2026-06-14T08:07:55Z",
       "published_label": "14 Jun 2026 · 08:07Z",
-      "age_label": "9h ago",
+      "age_label": "11h ago",
       "source_id": "bbc-world",
       "source_name": "BBC World",
       "source_kind": "rss",
@@ -757,31 +884,13 @@
       "cluster_key": "armed men kidnap highranking security official in haiti"
     },
     {
-      "id": "1fe14aa7e0b023fc",
-      "title": "Fieldays record turnout comes with growing pains",
-      "summary": "Exhibitor and vendor sites were sold out a month before the event, with 1100 stalls on display.",
-      "url": "https://www.rnz.co.nz/news/business/598160/fieldays-record-turnout-comes-with-growing-pains",
-      "published_at": "2026-06-14T07:01:01Z",
-      "published_label": "14 Jun 2026 · 07:01Z",
-      "age_label": "10h ago",
-      "source_id": "rnz-news",
-      "source_name": "RNZ News",
-      "source_kind": "rss",
-      "category": "nz-pacific",
-      "regions": [
-        "pacific"
-      ],
-      "priority": 10,
-      "cluster_key": "fieldays record turnout comes with growing pains"
-    },
-    {
       "id": "2f5fa07b9b63eaf0",
       "title": "US kills leader of Venezuela's Tren de Aragua gang in air strike, Trump says",
       "summary": "Niño Guerrero was killed in a \"swift and lethal kinetic strike,\" the US President wrote in a social media post.",
       "url": "https://www.bbc.com/news/articles/cp36z37knlko?at_medium=RSS&at_campaign=rss",
       "published_at": "2026-06-14T06:39:29Z",
       "published_label": "14 Jun 2026 · 06:39Z",
-      "age_label": "11h ago",
+      "age_label": "12h ago",
       "source_id": "bbc-world",
       "source_name": "BBC World",
       "source_kind": "rss",
@@ -793,31 +902,13 @@
       "cluster_key": "us kills leader of venezuelas tren de aragua gang in air strike trump says"
     },
     {
-      "id": "5cdc31f03bf8c91f",
-      "title": "NZ First says overhaul of GMO laws unlikely before election",
-      "summary": "The Gene Technology Bill seeks to end an effective 30-year ban on the use of technologies like gene editing outside the laboratory.",
-      "url": "https://www.rnz.co.nz/news/political/598158/nz-first-says-overhaul-of-gmo-laws-unlikely-before-election",
-      "published_at": "2026-06-14T06:19:23Z",
-      "published_label": "14 Jun 2026 · 06:19Z",
-      "age_label": "11h ago",
-      "source_id": "rnz-news",
-      "source_name": "RNZ News",
-      "source_kind": "rss",
-      "category": "nz-pacific",
-      "regions": [
-        "pacific"
-      ],
-      "priority": 10,
-      "cluster_key": "nz first says overhaul of gmo laws unlikely before election"
-    },
-    {
       "id": "881de06f168b107e",
       "title": "Why the US economy keeps defying the odds",
       "summary": "Why has the American economy continued to outperform so many of its peers, despite facing the same global shocks?",
       "url": "https://www.bbc.com/news/articles/cwy031el03po?at_medium=RSS&at_campaign=rss",
       "published_at": "2026-06-14T05:14:17Z",
       "published_label": "14 Jun 2026 · 05:14Z",
-      "age_label": "12h ago",
+      "age_label": "14h ago",
       "source_id": "bbc-world",
       "source_name": "BBC World",
       "source_kind": "rss",
@@ -829,15 +920,15 @@
       "cluster_key": "why the us economy keeps defying the odds"
     },
     {
-      "id": "4cdf5e746bc44f51",
+      "id": "394576db5d798d5d",
       "title": "Commission reviewing criminal cases sees strong demand",
       "summary": "The Criminal Cases Review Commission has told the Justice Select Committee it had seen increased demand with 110 applications this financial year.",
       "url": "https://www.rnz.co.nz/news/crime-and-justice/598156/commission-reviewing-criminal-cases-sees-strong-demand",
       "published_at": "2026-06-14T04:56:29Z",
       "published_label": "14 Jun 2026 · 04:56Z",
-      "age_label": "12h ago",
-      "source_id": "rnz-news",
-      "source_name": "RNZ News",
+      "age_label": "14h ago",
+      "source_id": "rnz-national",
+      "source_name": "RNZ National",
       "source_kind": "rss",
       "category": "nz-pacific",
       "regions": [
@@ -847,15 +938,15 @@
       "cluster_key": "commission reviewing criminal cases sees strong demand"
     },
     {
-      "id": "8a67df9fdbbd4d8f",
+      "id": "eecb084cd4a0b654",
       "title": "Church billboard opposes Bill to define woman and man",
       "summary": "The government Bill is \"clearly discriminatory of a very small group\", the Reverend Doctor of the church says.",
       "url": "https://www.rnz.co.nz/news/community/598153/church-billboard-opposes-bill-to-define-woman-and-man",
       "published_at": "2026-06-14T04:30:30Z",
       "published_label": "14 Jun 2026 · 04:30Z",
-      "age_label": "13h ago",
-      "source_id": "rnz-news",
-      "source_name": "RNZ News",
+      "age_label": "14h ago",
+      "source_id": "rnz-national",
+      "source_name": "RNZ National",
       "source_kind": "rss",
       "category": "nz-pacific",
       "regions": [
@@ -866,67 +957,13 @@
       "cluster_key": "church billboard opposes bill to define woman and man"
     },
     {
-      "id": "1420efdb955c17ff",
-      "title": "Thousands turn out for anti-racism rally after Belfast unrest",
-      "summary": "Thousands of people gathered for an anti-racism rally in the Northern Irish city of Belfast after unrest sparked by a horrific stabbing.",
-      "url": "https://www.rnz.co.nz/news/world/598132/thousands-turn-out-for-anti-racism-rally-after-belfast-unrest",
-      "published_at": "2026-06-14T04:13:02Z",
-      "published_label": "14 Jun 2026 · 04:13Z",
-      "age_label": "13h ago",
-      "source_id": "rnz-news",
-      "source_name": "RNZ News",
-      "source_kind": "rss",
-      "category": "nz-pacific",
-      "regions": [
-        "pacific"
-      ],
-      "priority": 10,
-      "cluster_key": "thousands turn out for antiracism rally after belfast unrest"
-    },
-    {
-      "id": "a5b5eb3279399c41",
-      "title": "National's Nicola Willis attacks Labour's economic plans",
-      "summary": "National's finance spokesperson said Labour needed to \"come clean\" on how it was going to close the $18.2 billion gap between its spending plans and revenue intentions.",
-      "url": "https://www.rnz.co.nz/news/political/598144/national-s-nicola-willis-attacks-labour-s-economic-plans",
-      "published_at": "2026-06-14T03:29:23Z",
-      "published_label": "14 Jun 2026 · 03:29Z",
-      "age_label": "14h ago",
-      "source_id": "rnz-news",
-      "source_name": "RNZ News",
-      "source_kind": "rss",
-      "category": "nz-pacific",
-      "regions": [
-        "pacific"
-      ],
-      "priority": 10,
-      "cluster_key": "nationals nicola willis attacks labours economic plans"
-    },
-    {
-      "id": "66bc0f30bd729217",
-      "title": "My colleague hasn't paid tax - do I have any recourse since I did? - Ask Susan",
-      "summary": "RNZ's money correspondent Susan Edmunds answers your questions.",
-      "url": "https://www.rnz.co.nz/news/business/598102/my-colleague-hasn-t-paid-tax-do-i-have-any-recourse-since-i-did-ask-susan",
-      "published_at": "2026-06-14T02:51:43Z",
-      "published_label": "14 Jun 2026 · 02:51Z",
-      "age_label": "14h ago",
-      "source_id": "rnz-news",
-      "source_name": "RNZ News",
-      "source_kind": "rss",
-      "category": "nz-pacific",
-      "regions": [
-        "nz"
-      ],
-      "priority": 10,
-      "cluster_key": "my colleague hasnt paid tax do i have any recourse since i did ask susan"
-    },
-    {
       "id": "75e74a38d38adf7c",
       "title": "Author Chimamanda Adichie accuses hospital of stalling review into son's death",
       "summary": "Chimamanda Ngozi Adichie's 21-month old son died in a Lagos hospital, which she says is trying to stop an inquest into the circumstances of his death.",
       "url": "https://www.bbc.com/news/articles/cgk6jzkr0xvo?at_medium=RSS&at_campaign=rss",
       "published_at": "2026-06-14T01:08:20Z",
       "published_label": "14 Jun 2026 · 01:08Z",
-      "age_label": "16h ago",
+      "age_label": "18h ago",
       "source_id": "bbc-world",
       "source_name": "BBC World",
       "source_kind": "rss",
@@ -944,7 +981,7 @@
       "url": "https://www.rnz.co.nz/news/health/598051/exhausted-workers-in-palmerston-north-mental-health-ward-facing-risk-of-assault-every-day",
       "published_at": "2026-06-14T00:55:24Z",
       "published_label": "14 Jun 2026 · 00:55Z",
-      "age_label": "16h ago",
+      "age_label": "18h ago",
       "source_id": "rnz-national",
       "source_name": "RNZ National",
       "source_kind": "rss",
@@ -962,7 +999,7 @@
       "url": "https://www.rnz.co.nz/news/weather/598143/heavy-rain-strong-wind-watches-following-fog-disruption",
       "published_at": "2026-06-14T00:33:48Z",
       "published_label": "14 Jun 2026 · 00:33Z",
-      "age_label": "17h ago",
+      "age_label": "18h ago",
       "source_id": "rnz-national",
       "source_name": "RNZ National",
       "source_kind": "rss",
@@ -980,7 +1017,7 @@
       "url": "https://www.rnz.co.nz/news/health/598140/parents-of-student-who-died-at-mental-health-ward-oppose-name-suppression",
       "published_at": "2026-06-14T00:29:16Z",
       "published_label": "14 Jun 2026 · 00:29Z",
-      "age_label": "17h ago",
+      "age_label": "18h ago",
       "source_id": "rnz-national",
       "source_name": "RNZ National",
       "source_kind": "rss",
@@ -998,7 +1035,7 @@
       "url": "https://www.rnz.co.nz/news/country/598142/fieldays-saw-largest-opening-day-crowd-in-recent-history",
       "published_at": "2026-06-13T23:51:47Z",
       "published_label": "13 Jun 2026 · 23:51Z",
-      "age_label": "17h ago",
+      "age_label": "19h ago",
       "source_id": "rnz-national",
       "source_name": "RNZ National",
       "source_kind": "rss",
@@ -1016,7 +1053,7 @@
       "url": "https://www.rnz.co.nz/news/regions_wellington/598130/residents-furious-at-month-of-wellington-water-s-noisy-overnight-works",
       "published_at": "2026-06-13T23:43:40Z",
       "published_label": "13 Jun 2026 · 23:43Z",
-      "age_label": "18h ago",
+      "age_label": "19h ago",
       "source_id": "rnz-national",
       "source_name": "RNZ National",
       "source_kind": "rss",
@@ -1034,7 +1071,7 @@
       "url": "https://www.bbc.com/news/articles/cm20vyxppneo?at_medium=RSS&at_campaign=rss",
       "published_at": "2026-06-13T23:22:52Z",
       "published_label": "13 Jun 2026 · 23:22Z",
-      "age_label": "18h ago",
+      "age_label": "19h ago",
       "source_id": "bbc-world",
       "source_name": "BBC World",
       "source_kind": "rss",
@@ -1052,7 +1089,7 @@
       "url": "https://www.bbc.com/news/articles/cwy24v72n19o?at_medium=RSS&at_campaign=rss",
       "published_at": "2026-06-13T23:19:52Z",
       "published_label": "13 Jun 2026 · 23:19Z",
-      "age_label": "18h ago",
+      "age_label": "19h ago",
       "source_id": "bbc-world",
       "source_name": "BBC World",
       "source_kind": "rss",
@@ -1071,7 +1108,7 @@
       "url": "https://www.bbc.com/news/articles/cd95xvk4vn2o?at_medium=RSS&at_campaign=rss",
       "published_at": "2026-06-13T23:11:28Z",
       "published_label": "13 Jun 2026 · 23:11Z",
-      "age_label": "18h ago",
+      "age_label": "20h ago",
       "source_id": "bbc-world",
       "source_name": "BBC World",
       "source_kind": "rss",
@@ -1089,7 +1126,7 @@
       "url": "https://www.rnz.co.nz/news/crime-and-justice/598136/man-found-holding-a-loaded-crossbow-after-a-crash-in-palmerston-north",
       "published_at": "2026-06-13T22:45:00Z",
       "published_label": "13 Jun 2026 · 22:45Z",
-      "age_label": "19h ago",
+      "age_label": "20h ago",
       "source_id": "rnz-national",
       "source_name": "RNZ National",
       "source_kind": "rss",
@@ -1107,7 +1144,7 @@
       "url": "https://www.bbc.com/news/articles/cpq3dnr5vlzo?at_medium=RSS&at_campaign=rss",
       "published_at": "2026-06-13T22:05:24Z",
       "published_label": "13 Jun 2026 · 22:05Z",
-      "age_label": "19h ago",
+      "age_label": "21h ago",
       "source_id": "bbc-asia",
       "source_name": "BBC Asia",
       "source_kind": "rss",
@@ -1117,42 +1154,6 @@
       ],
       "priority": 28,
       "cluster_key": "vincents parents never say hes good enough so he turned to a middleaged couple online"
-    },
-    {
-      "id": "d14665fc17bb95da",
-      "title": "Chatbot teddies for three‑year‑olds? Why AI toys are risky for kids",
-      "summary": "Young children are particularly prone to developing strong attachments to conversational AI agents, research shows.",
-      "url": "https://www.rnz.co.nz/life/wellbeing/chatbot-teddies-for-three-year-olds-why-ai-toys-are-risky-for-kids",
-      "published_at": "2026-06-13T20:50:48Z",
-      "published_label": "13 Jun 2026 · 20:50Z",
-      "age_label": "21h ago",
-      "source_id": "rnz-national",
-      "source_name": "RNZ National",
-      "source_kind": "rss",
-      "category": "nz-pacific",
-      "regions": [
-        "pacific"
-      ],
-      "priority": 10,
-      "cluster_key": "chatbot teddies for threeyearolds why ai toys are risky for kids"
-    },
-    {
-      "id": "023d6c99516e7fc7",
-      "title": "Unclear if MSD will re-examine declined abuse in care compensation claims after court ruling",
-      "summary": "The Ministry of Social Development says it's accepted a High Court ruling that found it wasn't following its own assessment policy when considering claims for abuse in care.",
-      "url": "https://www.rnz.co.nz/news/crime-and-justice/598125/unclear-if-msd-will-re-examine-declined-abuse-in-care-compensation-claims-after-court-ruling",
-      "published_at": "2026-06-13T19:40:17Z",
-      "published_label": "13 Jun 2026 · 19:40Z",
-      "age_label": "22h ago",
-      "source_id": "rnz-national",
-      "source_name": "RNZ National",
-      "source_kind": "rss",
-      "category": "nz-pacific",
-      "regions": [
-        "pacific"
-      ],
-      "priority": 10,
-      "cluster_key": "unclear if msd will reexamine declined abuse in care compensation claims after court ruling"
     },
     {
       "id": "6a1a60246e1f821f",
@@ -1198,7 +1199,7 @@
       "url": "https://news.usni.org/2026/06/12/usni-news-western-pacific-pulse-june-12-2026",
       "published_at": "2026-06-12T19:08:47Z",
       "published_label": "12 Jun 2026 · 19:08Z",
-      "age_label": "1d ago",
+      "age_label": "2d ago",
       "source_id": "usni",
       "source_name": "USNI News",
       "source_kind": "rss",
@@ -1209,6 +1210,60 @@
       ],
       "priority": 0,
       "cluster_key": "usni news western pacific pulse june 12 2026"
+    },
+    {
+      "id": "060bc769f22a33c5",
+      "title": "Bankruptcy admin approves settlement fund of $47 million for 23andMe data breach victims",
+      "summary": "About 7 million customers of the genetics testing company had their data stolen by hackers starting in April 2023, and many had their information posted on the dark web.",
+      "url": "https://therecord.media/bankruptcy-admin-approves-settlement-for-23andme-breach-victims",
+      "published_at": "2026-06-12T17:12:00Z",
+      "published_label": "12 Jun 2026 · 17:12Z",
+      "age_label": "2d ago",
+      "source_id": "the-record",
+      "source_name": "The Record",
+      "source_kind": "rss",
+      "category": "cyber",
+      "regions": [
+        "global"
+      ],
+      "priority": 12,
+      "cluster_key": "bankruptcy admin approves settlement fund of 47 million for 23andme data breach victims"
+    },
+    {
+      "id": "840264e8fbc60b75",
+      "title": "Major US surveillance program poised to lapse after legislative deadlock",
+      "summary": "It is the first lapse of the spy program, known as Section 702 of the Foreign Intelligence Surveillance Act (FISA), since it was passed into law in 2008.",
+      "url": "https://therecord.media/major-us-surveillance-program-set-to-lapse-702-fisa",
+      "published_at": "2026-06-12T17:08:00Z",
+      "published_label": "12 Jun 2026 · 17:08Z",
+      "age_label": "2d ago",
+      "source_id": "the-record",
+      "source_name": "The Record",
+      "source_kind": "rss",
+      "category": "cyber",
+      "regions": [
+        "global"
+      ],
+      "priority": 12,
+      "cluster_key": "major us surveillance program poised to lapse after legislative deadlock"
+    },
+    {
+      "id": "c6b9e8250075d7eb",
+      "title": "South Korea hits Coupang with record $409 million fine over data breach",
+      "summary": "The penalty is the largest ever issued by the commission for a personal data breach, surpassing the record 134.8 billion won ($88.8 million) fine levied against SK Telecom earlier this year.",
+      "url": "https://therecord.media/south-korea-data-breach-record-fine-coupang",
+      "published_at": "2026-06-12T15:56:00Z",
+      "published_label": "12 Jun 2026 · 15:56Z",
+      "age_label": "2d ago",
+      "source_id": "the-record",
+      "source_name": "The Record",
+      "source_kind": "rss",
+      "category": "cyber",
+      "regions": [
+        "korea"
+      ],
+      "priority": 30,
+      "cluster_key": "south korea hits coupang with record 409 million fine over data breach"
     },
     {
       "id": "02dcfceb9ae403bb",
@@ -1861,7 +1916,7 @@
       "url": "https://thediplomat.com/2026/06/xis-summit-with-kim-views-from-the-neighborhood/",
       "published_at": "2026-06-11T18:50:00Z",
       "published_label": "11 Jun 2026 · 18:50Z",
-      "age_label": "2d ago",
+      "age_label": "3d ago",
       "source_id": "diplomat",
       "source_name": "The Diplomat",
       "source_kind": "rss",
@@ -1929,6 +1984,24 @@
       "cluster_key": "explaining the philippines defeat in the un security council election"
     },
     {
+      "id": "a24eb68cc84730ea",
+      "title": "Cyber Force not included in Senate defense policy roadmap",
+      "summary": "An amendment by Sen. Kirsten Gillibrand (D-NY) to the chamber’s fiscal 2027 national defense authorization bill that would have created the digital-focused service was defeated 14-13 when the Senate Armed Services Committee took up the nearly $1.2 trillion legislation behind clo…",
+      "url": "https://therecord.media/cyber-force-not-included-senate-defense-roadmap",
+      "published_at": "2026-06-11T16:47:00Z",
+      "published_label": "11 Jun 2026 · 16:47Z",
+      "age_label": "3d ago",
+      "source_id": "the-record",
+      "source_name": "The Record",
+      "source_kind": "rss",
+      "category": "cyber",
+      "regions": [
+        "global"
+      ],
+      "priority": 12,
+      "cluster_key": "cyber force not included in senate defense policy roadmap"
+    },
+    {
       "id": "a004158aba5b2363",
       "title": "Thousands march in Pakistan-administered Kashmir as clashes kill at least 15",
       "summary": "An uneasy silence has blanketed the capital, with empty streets, closed shops and patrolling police.",
@@ -1964,6 +2037,24 @@
       ],
       "priority": 0,
       "cluster_key": "the evolution of ukraines asymmetrical combat tactics"
+    },
+    {
+      "id": "e0243672b1b639c9",
+      "title": "British high school sends students home following cyberattack",
+      "summary": "Great Marlow School, which has 1,428 pupils according to the Department for Education (DfE), said it was set to remain closed while it works with specialist IT and cybersecurity professionals to resolve the issue.",
+      "url": "https://therecord.media/british-school-sends-students-home-cyberattack",
+      "published_at": "2026-06-11T15:25:00Z",
+      "published_label": "11 Jun 2026 · 15:25Z",
+      "age_label": "3d ago",
+      "source_id": "the-record",
+      "source_name": "The Record",
+      "source_kind": "rss",
+      "category": "cyber",
+      "regions": [
+        "global"
+      ],
+      "priority": 12,
+      "cluster_key": "british high school sends students home following cyberattack"
     },
     {
       "id": "af74cec17cdea87a",
@@ -2738,7 +2829,7 @@
       "url": "https://www.defenseone.com/defense-systems/2026/06/apparent-first-navy-drone-boat-rescues-helicopter-crew-downed-sea/414066/",
       "published_at": "2026-06-09T19:09:37Z",
       "published_label": "09 Jun 2026 · 19:09Z",
-      "age_label": "4d ago",
+      "age_label": "5d ago",
       "source_id": "defense-one",
       "source_name": "Defense One",
       "source_kind": "rss",
@@ -2756,7 +2847,7 @@
       "url": "https://www.defenseone.com/policy/2026/06/cisa-directive-cyber-risk/414081/",
       "published_at": "2026-06-09T19:00:00Z",
       "published_label": "09 Jun 2026 · 19:00Z",
-      "age_label": "4d ago",
+      "age_label": "5d ago",
       "source_id": "defense-one",
       "source_name": "Defense One",
       "source_kind": "rss",
@@ -2774,7 +2865,7 @@
       "url": "https://www.rnz.co.nz/news/pacific/597733/latest-paris-court-ruling-triggers-polarised-reactions-in-new-caledonia",
       "published_at": "2026-06-09T18:47:59Z",
       "published_label": "09 Jun 2026 · 18:47Z",
-      "age_label": "4d ago",
+      "age_label": "5d ago",
       "source_id": "rnz-pacific",
       "source_name": "RNZ Pacific",
       "source_kind": "rss",
@@ -3002,111 +3093,15 @@
       ],
       "priority": 0,
       "cluster_key": "report to congress on defense of taiwan"
-    },
-    {
-      "id": "2f97641dc96650f1",
-      "title": "From Pyongyang to Primorsk: When Sanctions Evasion Becomes System Design",
-      "summary": "Rarely a week passes without a new story about Russia’s shadow fleet. Tankers catch fire in the Mediterranean, are added to sanctions lists, or are boarded while passing through European waters. But the bigger story is not the vessels that are caught, but those that aren’t — shi…",
-      "url": "https://warontherocks.com/from-pyongyang-to-primorsk-when-sanctions-evasion-becomes-system-design/",
-      "published_at": "2026-06-09T07:30:36Z",
-      "published_label": "09 Jun 2026 · 07:30Z",
-      "age_label": "5d ago",
-      "source_id": "war-on-the-rocks",
-      "source_name": "War on the Rocks",
-      "source_kind": "rss",
-      "category": "apac-security",
-      "regions": [
-        "korea",
-        "europe",
-        "russia"
-      ],
-      "priority": 18,
-      "cluster_key": "from pyongyang to primorsk when sanctions evasion becomes system design"
-    },
-    {
-      "id": "5e1e500f2ae16b24",
-      "title": "The director of national intelligence needs more than political loyalty to do the job",
-      "summary": "A veteran of White House intelligence operations explains why.",
-      "url": "https://www.defenseone.com/ideas/2026/06/director-national-intelligence-political-loyalty/414046/",
-      "published_at": "2026-06-09T03:42:58Z",
-      "published_label": "09 Jun 2026 · 03:42Z",
-      "age_label": "5d ago",
-      "source_id": "defense-one",
-      "source_name": "Defense One",
-      "source_kind": "rss",
-      "category": "global",
-      "regions": [
-        "us"
-      ],
-      "priority": 0,
-      "cluster_key": "the director of national intelligence needs more than political loyalty to do the job"
-    },
-    {
-      "id": "318ef22181901b40",
-      "title": "What if the A-10 had AI & electronic-warfare gear?",
-      "summary": "House lawmakers wonder whether new missions could help keep the Warthog useful.",
-      "url": "https://www.defenseone.com/defense-systems/2026/06/warthog-ai-electronic-warfare/414045/",
-      "published_at": "2026-06-09T03:19:15Z",
-      "published_label": "09 Jun 2026 · 03:19Z",
-      "age_label": "5d ago",
-      "source_id": "defense-one",
-      "source_name": "Defense One",
-      "source_kind": "rss",
-      "category": "global",
-      "regions": [
-        "global"
-      ],
-      "priority": 0,
-      "cluster_key": "what if the a10 had ai electronicwarfare gear"
-    },
-    {
-      "id": "c17323e26c657b2e",
-      "title": "Trump memo pushes national-security agencies to move faster on AI",
-      "summary": "FBI, ODNI directed to build “deep, proactive” relationships with frontier-AI companies.",
-      "url": "https://www.defenseone.com/policy/2026/06/trump-memo-pushes-national-security-agencies-move-faster-ai/414047/",
-      "published_at": "2026-06-08T17:46:00Z",
-      "published_label": "08 Jun 2026 · 17:46Z",
-      "age_label": "6d ago",
-      "source_id": "defense-one",
-      "source_name": "Defense One",
-      "source_kind": "rss",
-      "category": "global",
-      "regions": [
-        "global"
-      ],
-      "priority": 0,
-      "cluster_key": "trump memo pushes nationalsecurity agencies to move faster on ai"
-    },
-    {
-      "id": "30d692c8accd0465",
-      "title": "Is Skepticism Ukraine’s Foreign Policy Playbook?",
-      "summary": "Welcome to The Ukraine Compass, a weekly digest of Ukrainian commentary and analysis from across the political spectrum only for War on the Rocks members. Each Monday, we bring you a curated selection of articles from Ukrainian media offering insight into how Ukrainians themselv…",
-      "url": "https://warontherocks.com/is-skepticism-ukraines-foreign-policy-playbook/",
-      "published_at": "2026-06-08T17:43:42Z",
-      "published_label": "08 Jun 2026 · 17:43Z",
-      "age_label": "6d ago",
-      "source_id": "war-on-the-rocks",
-      "source_name": "War on the Rocks",
-      "source_kind": "rss",
-      "category": "apac-security",
-      "regions": [
-        "europe"
-      ],
-      "priority": 0,
-      "cluster_key": "is skepticism ukraines foreign policy playbook"
     }
   ],
   "trends": [
-    {
-      "term": "three",
-      "count": 7
-    },
     {
       "term": "china",
       "count": 6
     },
     {
-      "term": "strike",
+      "term": "health",
       "count": 6
     },
     {
@@ -3114,7 +3109,7 @@
       "count": 6
     },
     {
-      "term": "court",
+      "term": "defense",
       "count": 5
     },
     {
@@ -3122,19 +3117,23 @@
       "count": 5
     },
     {
-      "term": "health",
-      "count": 5
-    },
-    {
-      "term": "hong",
-      "count": 5
-    },
-    {
       "term": "killed",
       "count": 5
     },
     {
-      "term": "kong",
+      "term": "korea",
+      "count": 5
+    },
+    {
+      "term": "million",
+      "count": 5
+    },
+    {
+      "term": "navy",
+      "count": 5
+    },
+    {
+      "term": "security",
       "count": 5
     }
   ]
