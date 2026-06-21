@@ -1,21 +1,21 @@
 {
-  "updated_at": "2026-06-21T05:09Z",
-  "updated_label": "21 Jun 2026 · 05:09Z",
+  "updated_at": "2026-06-21T09:02Z",
+  "updated_label": "21 Jun 2026 · 09:02Z",
   "categories": [
     {
       "id": "nz-pacific",
       "label": "NZ & Pacific",
-      "count": 37
+      "count": 38
     },
     {
       "id": "apac-security",
       "label": "APAC Security",
-      "count": 90
+      "count": 87
     },
     {
       "id": "cyber",
       "label": "Cyber",
-      "count": 4
+      "count": 6
     },
     {
       "id": "global",
@@ -124,9 +124,9 @@
       "name": "The Record",
       "category": "cyber",
       "url": "https://therecord.media/feed/",
-      "item_count": 0,
-      "status": "error",
-      "error": "HTTP Error 520: <none>"
+      "item_count": 5,
+      "status": "ok",
+      "error": null
     },
     {
       "id": "krebs",
@@ -176,31 +176,13 @@
   ],
   "items": [
     {
-      "id": "024e9a177cd7b6d6",
-      "title": "National's Simeon Brown discourages members from strategic voting",
-      "summary": "In a speech to the party membership, Simeon Brown took aim at opposition while discouraging a vote for the coalition.",
-      "url": "https://www.rnz.co.nz/news/political/610017/national-s-simeon-brown-discourages-members-from-strategic-voting",
-      "published_at": "2026-06-21T04:51:42Z",
-      "published_label": "21 Jun 2026 · 04:51Z",
-      "age_label": "17m ago",
-      "source_id": "rnz-news",
-      "source_name": "RNZ News",
-      "source_kind": "rss",
-      "category": "nz-pacific",
-      "regions": [
-        "pacific"
-      ],
-      "priority": 30,
-      "cluster_key": "nationals simeon brown discourages members from strategic voting"
-    },
-    {
-      "id": "2ccfc9a45400e779",
-      "title": "Hong Kong only place in China that can adopt model akin to SpaceX, CY Leung says",
-      "summary": "Hong Kong is the only place in China capable of replicating the financing model of US tech giant SpaceX, which leverages market forces to grow rapidly, former leader Leung Chun-ying has said, urging the city to develop professional services for the emerging aerospace industry. L…",
-      "url": "https://www.scmp.com/news/hong-kong/hong-kong-economy/article/3357807/hong-kong-only-place-china-can-adopt-model-akin-spacex-cy-leung-says?utm_source=rss_feed",
-      "published_at": "2026-06-21T04:49:11Z",
-      "published_label": "21 Jun 2026 · 04:49Z",
-      "age_label": "20m ago",
+      "id": "8c83b81d723f7d61",
+      "title": "The US town, the Chinese company and the bankrupting battle over a battery plant",
+      "summary": "Less than three years ago, residents of a small rural township in the US state of Michigan packed a community hall to celebrate what many saw as a victory for local democracy over a Chinese-headquartered battery manufacturer. The residents of Green Charter Township prayed, cheer…",
+      "url": "https://www.scmp.com/news/china/diplomacy/article/3357820/us-town-chinese-company-and-bankrupting-battle-over-battery-plant?utm_source=rss_feed",
+      "published_at": "2026-06-21T09:00:06Z",
+      "published_label": "21 Jun 2026 · 09:00Z",
+      "age_label": "2m ago",
       "source_id": "scmp",
       "source_name": "South China Morning Post",
       "source_kind": "rss",
@@ -209,16 +191,52 @@
         "china"
       ],
       "priority": 30,
-      "cluster_key": "hong kong only place in china that can adopt model akin to spacex cy leung says"
+      "cluster_key": "the us town the chinese company and the bankrupting battle over a battery plant"
     },
     {
-      "id": "cbf47e088ee689c2",
-      "title": "Can New Zealanders really afford compulsory KiwiSaver?",
-      "summary": "National wants to make it compulsory for all workers to contribute to KiwiSaver or a comparable retirement savings scheme from mid-2028.",
-      "url": "https://www.rnz.co.nz/news/personal-finance/611383/can-new-zealanders-really-afford-compulsory-kiwisaver",
-      "published_at": "2026-06-21T04:48:55Z",
-      "published_label": "21 Jun 2026 · 04:48Z",
-      "age_label": "20m ago",
+      "id": "4c15d5d16c631a91",
+      "title": "Teahouse scores big as Hongkongers celebrate Father’s Day with yum cha, football",
+      "summary": "Hong Kong families cheered for Japan as it beat Tunisia 4-0 during a Sunday lunchtime broadcast of the Fifa World Cup, making for a memorable Father’s Day that combined the family tradition of yum cha with live football. The occasion highlighted the catering sector’s creative ef…",
+      "url": "https://www.scmp.com/news/hong-kong/hong-kong-economy/article/3357823/teahouse-scores-big-hongkongers-celebrate-fathers-day-yum-cha-football?utm_source=rss_feed",
+      "published_at": "2026-06-21T08:45:28Z",
+      "published_label": "21 Jun 2026 · 08:45Z",
+      "age_label": "17m ago",
+      "source_id": "scmp",
+      "source_name": "South China Morning Post",
+      "source_kind": "rss",
+      "category": "apac-security",
+      "regions": [
+        "japan"
+      ],
+      "priority": 30,
+      "cluster_key": "teahouse scores big as hongkongers celebrate fathers day with yum cha football"
+    },
+    {
+      "id": "0bfaa978d035ca23",
+      "title": "For Hong Kong to succeed in AI, energy cannot be an afterthought",
+      "summary": "The artificial intelligence competition is by nature an energy competition. The conventional narrative focuses on faster chips, yet training and inference consume vast amounts of power. The harsh geographic paradox is that the regions most advanced in artificial intelligence (AI…",
+      "url": "https://www.scmp.com/opinion/hong-kong-opinion/article/3357309/hong-kong-succeed-ai-energy-cannot-be-afterthought?utm_source=rss_feed",
+      "published_at": "2026-06-21T08:30:04Z",
+      "published_label": "21 Jun 2026 · 08:30Z",
+      "age_label": "32m ago",
+      "source_id": "scmp",
+      "source_name": "South China Morning Post",
+      "source_kind": "rss",
+      "category": "apac-security",
+      "regions": [
+        "se-asia"
+      ],
+      "priority": 30,
+      "cluster_key": "for hong kong to succeed in ai energy cannot be an afterthought"
+    },
+    {
+      "id": "1c13d3b06c376e0e",
+      "title": "'Gone too far': Wellington Water traffic management under fire",
+      "summary": "Wellington city councillor Andrea Compton claims the management required for a small roadside leak was over the top.",
+      "url": "https://www.rnz.co.nz/news/regional/612464/gone-too-far-wellington-water-traffic-management-under-fire",
+      "published_at": "2026-06-21T08:27:09Z",
+      "published_label": "21 Jun 2026 · 08:27Z",
+      "age_label": "35m ago",
       "source_id": "rnz-news",
       "source_name": "RNZ News",
       "source_kind": "rss",
@@ -227,35 +245,163 @@
         "nz"
       ],
       "priority": 30,
-      "cluster_key": "can new zealanders really afford compulsory kiwisaver"
+      "cluster_key": "gone too far wellington water traffic management under fire"
     },
     {
-      "id": "1b457ee58b2daf08",
-      "title": "US-Iran talks to begin in Switzerland as Tehran says it closed Strait of Hormuz",
-      "summary": "The US disputed Iran's claim the waterway is shut, a move Tehran says was a response to Israeli attacks in Lebanon.",
-      "url": "https://www.bbc.com/news/articles/cwyekkwm1mmo?at_medium=RSS&at_campaign=rss",
-      "published_at": "2026-06-21T04:34:00Z",
-      "published_label": "21 Jun 2026 · 04:34Z",
-      "age_label": "35m ago",
-      "source_id": "bbc-world",
-      "source_name": "BBC World",
+      "id": "441e3139e581d66e",
+      "title": "US and Iranian negotiators arrive in Swiss resort for latest round of peace talks",
+      "summary": "Top negotiators from the United States, Iran and Pakistan have arrived in Switzerland ahead of talks that aim to secure the fragile ceasefire and reach a deal on the future of Iran’s nuclear programme. The US team was led by Vice-President J.D. Vance, who arrived in Burgenstock…",
+      "url": "https://www.scmp.com/news/china/diplomacy/article/3357821/us-and-iranian-negotiators-arrive-swiss-restort-latest-round-peace-talks?utm_source=rss_feed",
+      "published_at": "2026-06-21T08:19:08Z",
+      "published_label": "21 Jun 2026 · 08:19Z",
+      "age_label": "43m ago",
+      "source_id": "scmp",
+      "source_name": "South China Morning Post",
       "source_kind": "rss",
-      "category": "global",
+      "category": "apac-security",
       "regions": [
-        "taiwan",
-        "middle-east"
+        "middle-east",
+        "us"
       ],
-      "priority": 30,
-      "cluster_key": "usiran talks to begin in switzerland as tehran says it closed strait of hormuz"
+      "priority": 48,
+      "cluster_key": "us and iranian negotiators arrive in swiss resort for latest round of peace talks"
     },
     {
-      "id": "ed8bf00b0e85c992",
-      "title": "'It just blew up': Tītahi Bay residents describe fast growing blaze",
-      "summary": "Residents have told of a loud boom, enormous flames spreading between two buildings, and the warning to be ready to evacuate if the flames spread further in strong winds.",
-      "url": "https://www.rnz.co.nz/news/emergencies_local/609900/it-just-blew-up-titahi-bay-residents-describe-fast-growing-blaze",
-      "published_at": "2026-06-21T04:29:34Z",
-      "published_label": "21 Jun 2026 · 04:29Z",
-      "age_label": "39m ago",
+      "id": "8b95fdfcf252a68d",
+      "title": "China cabby drives against traffic, runs red lights to rush unconscious toddler to hospital",
+      "summary": "A taxi driver in central China won widespread praise online after racing an unconscious child to the hospital, running red lights and driving against traffic. The incident unfolded in Wuhan, Hubei province, on June 5, according to the mainland media outlet Ping An Hubei. The thr…",
+      "url": "https://www.scmp.com/news/people-culture/trending-china/article/3357319/china-cabby-drives-against-traffic-runs-red-lights-rush-unconscious-toddler-hospital?utm_source=rss_feed",
+      "published_at": "2026-06-21T08:00:08Z",
+      "published_label": "21 Jun 2026 · 08:00Z",
+      "age_label": "1h ago",
+      "source_id": "scmp",
+      "source_name": "South China Morning Post",
+      "source_kind": "rss",
+      "category": "apac-security",
+      "regions": [
+        "china"
+      ],
+      "priority": 20,
+      "cluster_key": "china cabby drives against traffic runs red lights to rush unconscious toddler to hospital"
+    },
+    {
+      "id": "df857804d5de457d",
+      "title": "Hong Kong a ‘strategic adaptation ground’ for mainland Chinese tech giants: Paul Chan",
+      "summary": "Mainland Chinese technology giants in cutting-edge fields are increasingly treating Hong Kong as a “strategic adaptation ground” to transform themselves into global multinational enterprises, the city’s finance chief has said. Following his trip to attend a forum and visit tech…",
+      "url": "https://www.scmp.com/news/hong-kong/hong-kong-economy/article/3357818/hong-kong-strategic-adaptation-ground-mainland-chinese-tech-giants-paul-chan?utm_source=rss_feed",
+      "published_at": "2026-06-21T07:41:13Z",
+      "published_label": "21 Jun 2026 · 07:41Z",
+      "age_label": "1h ago",
+      "source_id": "scmp",
+      "source_name": "South China Morning Post",
+      "source_kind": "rss",
+      "category": "apac-security",
+      "regions": [
+        "china"
+      ],
+      "priority": 20,
+      "cluster_key": "hong kong a strategic adaptation ground for mainland chinese tech giants paul chan"
+    },
+    {
+      "id": "cef98f79c8650288",
+      "title": "Hong Kong considers expanding priority care scheme to better flag high-risk cases",
+      "summary": "Hong Kong will consider expanding priority community care to include dementia patients and carers aged over 60 of people with severe disabilities, the city’s welfare chief has said, in a bid to better identify high-risk cases vulnerable to tragedy. Secretary for Labour and Welfa…",
+      "url": "https://www.scmp.com/news/hong-kong/society/article/3357817/hong-kong-considers-expanding-priority-care-scheme-better-flag-high-risk-cases?utm_source=rss_feed",
+      "published_at": "2026-06-21T07:37:39Z",
+      "published_label": "21 Jun 2026 · 07:37Z",
+      "age_label": "1h ago",
+      "source_id": "scmp",
+      "source_name": "South China Morning Post",
+      "source_kind": "rss",
+      "category": "apac-security",
+      "regions": [
+        "se-asia"
+      ],
+      "priority": 20,
+      "cluster_key": "hong kong considers expanding priority care scheme to better flag highrisk cases"
+    },
+    {
+      "id": "36ddde73b43928e3",
+      "title": "Residents in 2 villages can turn houses fully into tourist sites under pilot scheme",
+      "summary": "Hong Kong residents living in the villages of Ho Sheung Heung and Yin Kong in Sheung Shui will be allowed to convert their entire houses into restaurants, guest houses or shops without prior application under a pilot scheme aimed at boosting rural tourism. The relevant urban pla…",
+      "url": "https://www.scmp.com/news/hong-kong/hong-kong-economy/article/3357815/residents-2-villages-can-turn-houses-fully-tourist-sites-under-pilot-scheme?utm_source=rss_feed",
+      "published_at": "2026-06-21T06:47:05Z",
+      "published_label": "21 Jun 2026 · 06:47Z",
+      "age_label": "2h ago",
+      "source_id": "scmp",
+      "source_name": "South China Morning Post",
+      "source_kind": "rss",
+      "category": "apac-security",
+      "regions": [
+        "se-asia"
+      ],
+      "priority": 20,
+      "cluster_key": "residents in 2 villages can turn houses fully into tourist sites under pilot scheme"
+    },
+    {
+      "id": "f2a6ab75096ce0b6",
+      "title": "South Korea jostles with Germany for US$39 billion Canadian submarine deal",
+      "summary": "The South Korean government and defence players are making last-ditch efforts to win Canada’s next-generation submarine project worth up to 60 trillion won (US$39.14 billion), as Ottawa is expected to select a preferred bidder by the end of this month. Under the Canadian Patrol…",
+      "url": "https://www.scmp.com/news/asia/east-asia/article/3357814/south-korea-jostles-germany-us39-billion-canadian-submarine-deal?utm_source=rss_feed",
+      "published_at": "2026-06-21T06:34:29Z",
+      "published_label": "21 Jun 2026 · 06:34Z",
+      "age_label": "2h ago",
+      "source_id": "scmp",
+      "source_name": "South China Morning Post",
+      "source_kind": "rss",
+      "category": "apac-security",
+      "regions": [
+        "korea"
+      ],
+      "priority": 20,
+      "cluster_key": "south korea jostles with germany for us39 billion canadian submarine deal"
+    },
+    {
+      "id": "2369f091ff347384",
+      "title": "How Benin is on the road to reshaping its cotton industry, with China’s help",
+      "summary": "For decades, moving Benin’s cotton harvest from the north of the country to its southern ports was a slow, difficult journey along unpaved roads. Benin is Africa’s largest cotton producer, but it lacked the infrastructure needed to connect its northern cotton-growing belt to the…",
+      "url": "https://www.scmp.com/news/china/diplomacy/article/3357810/how-benin-road-reshaping-its-cotton-industry-chinas-help?utm_source=rss_feed",
+      "published_at": "2026-06-21T06:00:05Z",
+      "published_label": "21 Jun 2026 · 06:00Z",
+      "age_label": "3h ago",
+      "source_id": "scmp",
+      "source_name": "South China Morning Post",
+      "source_kind": "rss",
+      "category": "apac-security",
+      "regions": [
+        "china",
+        "africa"
+      ],
+      "priority": 20,
+      "cluster_key": "how benin is on the road to reshaping its cotton industry with chinas help"
+    },
+    {
+      "id": "c97aef1668f9b0fd",
+      "title": "Why New Zealand exporters need not fear China's focus on growing domestic food security",
+      "summary": "In recent years China's shifted to focus on growing its domestic food production, creating competition for New Zealand exporters.",
+      "url": "https://www.rnz.co.nz/news/country/611756/why-new-zealand-exporters-need-not-fear-china-s-focus-on-growing-domestic-food-security",
+      "published_at": "2026-06-21T05:58:54Z",
+      "published_label": "21 Jun 2026 · 05:58Z",
+      "age_label": "3h ago",
+      "source_id": "rnz-news",
+      "source_name": "RNZ News",
+      "source_kind": "rss",
+      "category": "nz-pacific",
+      "regions": [
+        "nz",
+        "china"
+      ],
+      "priority": 20,
+      "cluster_key": "why new zealand exporters need not fear chinas focus on growing domestic food security"
+    },
+    {
+      "id": "1ed2643edc863777",
+      "title": "One dead after crash on SH1 at Hunterville",
+      "summary": "State Highway One near Hunterville was closed for several following a serious two-vehicle crash.",
+      "url": "https://www.rnz.co.nz/news/emergencies_local/610552/one-dead-after-crash-on-sh1-at-hunterville",
+      "published_at": "2026-06-21T05:58:54Z",
+      "published_label": "21 Jun 2026 · 05:58Z",
+      "age_label": "3h ago",
       "source_id": "rnz-news",
       "source_name": "RNZ News",
       "source_kind": "rss",
@@ -263,71 +409,17 @@
       "regions": [
         "pacific"
       ],
-      "priority": 30,
-      "cluster_key": "it just blew up tītahi bay residents describe fast growing blaze"
-    },
-    {
-      "id": "2b3dd0c8e3849ac7",
-      "title": "Dear You gets 8 extra Teochew shows in Singapore after ‘overwhelming’ demand",
-      "summary": "Theatre chain Golden Village (GV) and film distributor Clover Films have added eight more screenings of Dear You in its original Teochew language in Singapore. The additional screenings will take place from June 25 to 29 at GVmax at GV VivoCity. Tickets will go on sale at 3pm on…",
-      "url": "https://www.scmp.com/news/asia/southeast-asia/article/3357805/dear-you-gets-8-extra-teochew-shows-singapore-after-overwhelming-demand?utm_source=rss_feed",
-      "published_at": "2026-06-21T04:15:27Z",
-      "published_label": "21 Jun 2026 · 04:15Z",
-      "age_label": "54m ago",
-      "source_id": "scmp",
-      "source_name": "South China Morning Post",
-      "source_kind": "rss",
-      "category": "apac-security",
-      "regions": [
-        "se-asia"
-      ],
-      "priority": 30,
-      "cluster_key": "dear you gets 8 extra teochew shows in singapore after overwhelming demand"
-    },
-    {
-      "id": "bef73a186fcb5ce5",
-      "title": "Hong Kong parents turn to summer school options in Asia amid soaring airfares",
-      "summary": "Hong Kong families are turning away from long-standing summer school favourites in Britain and North America amid soaring airfares, with education consultants reporting a sharp surge in demand for alternatives in Asia. Applications for British summer schools fell 35 per cent thi…",
-      "url": "https://www.scmp.com/news/hong-kong/education/article/3357803/hong-kong-parents-turn-summer-school-options-asia-amid-soaring-airfares?utm_source=rss_feed",
-      "published_at": "2026-06-21T04:00:20Z",
-      "published_label": "21 Jun 2026 · 04:00Z",
-      "age_label": "1h ago",
-      "source_id": "scmp",
-      "source_name": "South China Morning Post",
-      "source_kind": "rss",
-      "category": "apac-security",
-      "regions": [
-        "se-asia"
-      ],
       "priority": 20,
-      "cluster_key": "hong kong parents turn to summer school options in asia amid soaring airfares"
-    },
-    {
-      "id": "b11e1790b12cf5d5",
-      "title": "Singaporean men are fighting to be heard. A movement is letting them do just that",
-      "summary": "Danny Loong did not fully grieve his father’s death until he became a parent himself. For two decades after his father’s passing, Loong remembered him mostly as a provider and disciplinarian: a man who pushed hard, cared quietly and offered little by way of tenderness. “He would…",
-      "url": "https://www.scmp.com/week-asia/people/article/3357753/singaporean-men-are-fighting-be-heard-movement-letting-them-do-just?utm_source=rss_feed",
-      "published_at": "2026-06-21T04:00:12Z",
-      "published_label": "21 Jun 2026 · 04:00Z",
-      "age_label": "1h ago",
-      "source_id": "scmp",
-      "source_name": "South China Morning Post",
-      "source_kind": "rss",
-      "category": "apac-security",
-      "regions": [
-        "se-asia"
-      ],
-      "priority": 20,
-      "cluster_key": "singaporean men are fighting to be heard a movement is letting them do just that"
+      "cluster_key": "one dead after crash on sh1 at hunterville"
     },
     {
       "id": "9dde79f3ed1b72f9",
       "title": "Greens propose wealth, corporate, and inheritance taxes to fund income tax changes",
       "summary": "Dubbed \"a tax system for all of us\", the proposal would see tax cuts for 96 percent of New Zealanders, the Greens say.",
       "url": "https://www.rnz.co.nz/news/political/609649/greens-propose-wealth-corporate-and-inheritance-taxes-to-fund-income-tax-changes",
-      "published_at": "2026-06-21T03:31:46Z",
-      "published_label": "21 Jun 2026 · 03:31Z",
-      "age_label": "1h ago",
+      "published_at": "2026-06-21T05:38:22Z",
+      "published_label": "21 Jun 2026 · 05:38Z",
+      "age_label": "3h ago",
       "source_id": "rnz-news",
       "source_name": "RNZ News",
       "source_kind": "rss",
@@ -339,13 +431,159 @@
       "cluster_key": "greens propose wealth corporate and inheritance taxes to fund income tax changes"
     },
     {
-      "id": "10349580833dc214",
-      "title": "Thai property crackdown: Foreign buyers hit pause on villas as nominee loophole closes",
-      "summary": "Thailand’s crackdown on a loophole that effectively bypasses its restrictions on land ownership by foreigners is causing prospective buyers to delay purchase decisions on luxury villas in resort destinations such as Phuket and Koh Samui, according to agents. Bangkok has stepped…",
-      "url": "https://www.scmp.com/business/article/3357761/thai-property-crackdown-foreign-buyers-hit-pause-villas-nominee-loophole-closes?utm_source=rss_feed",
-      "published_at": "2026-06-21T03:30:09Z",
-      "published_label": "21 Jun 2026 · 03:30Z",
-      "age_label": "1h ago",
+      "id": "a732c7cc14070e0c",
+      "title": "Airliner stuck in mud at Christchurch Airport",
+      "summary": "An Air New Zealand plane has become mired down near the runway, at Christchurch Airport.",
+      "url": "https://www.rnz.co.nz/news/regions_northland/609579/airliner-stuck-in-mud-at-christchurch-airport",
+      "published_at": "2026-06-21T05:34:04Z",
+      "published_label": "21 Jun 2026 · 05:34Z",
+      "age_label": "3h ago",
+      "source_id": "rnz-news",
+      "source_name": "RNZ News",
+      "source_kind": "rss",
+      "category": "nz-pacific",
+      "regions": [
+        "nz"
+      ],
+      "priority": 20,
+      "cluster_key": "airliner stuck in mud at christchurch airport"
+    },
+    {
+      "id": "3512723da4dfb6c1",
+      "title": "Korean drama Teach You a Lesson serves up a reality check on education",
+      "summary": "Within a week of its release, Netflix’s new Korean drama Teach You a Lesson, directed by Hong Jong-chan, topped the platform’s global non-English rankings for the week of June 1 to 7. Adapted from the popular webtoon Get Schooled (2020), the 10-episode series about a government-…",
+      "url": "https://www.scmp.com/week-asia/opinion/article/3357715/korean-drama-teach-you-lesson-serves-reality-check-education?utm_source=rss_feed",
+      "published_at": "2026-06-21T05:30:05Z",
+      "published_label": "21 Jun 2026 · 05:30Z",
+      "age_label": "3h ago",
+      "source_id": "scmp",
+      "source_name": "South China Morning Post",
+      "source_kind": "rss",
+      "category": "apac-security",
+      "regions": [
+        "korea"
+      ],
+      "priority": 20,
+      "cluster_key": "korean drama teach you a lesson serves up a reality check on education"
+    },
+    {
+      "id": "20981b4f918fd204",
+      "title": "Vance in Switzerland for US-Iran talks as Strait of Hormuz closed again",
+      "summary": "A new round of negotiations over the Middle East war was set to kick off on Sunday as Iranian negotiators and US Vice-President J.D. Vance arrived in the Swiss host city, even as Tehran said it was closing the Strait of Hormuz again over Israeli attacks in Lebanon. Before boardi…",
+      "url": "https://www.scmp.com/news/world/middle-east/article/3357809/vance-switzerland-us-iran-talks-strait-hormuz-closed-again?utm_source=rss_feed",
+      "published_at": "2026-06-21T05:19:33Z",
+      "published_label": "21 Jun 2026 · 05:19Z",
+      "age_label": "3h ago",
+      "source_id": "scmp",
+      "source_name": "South China Morning Post",
+      "source_kind": "rss",
+      "category": "apac-security",
+      "regions": [
+        "taiwan",
+        "middle-east"
+      ],
+      "priority": 20,
+      "cluster_key": "vance in switzerland for usiran talks as strait of hormuz closed again"
+    },
+    {
+      "id": "024e9a177cd7b6d6",
+      "title": "National's Simeon Brown discourages members from strategic voting",
+      "summary": "In a speech to the party membership, Simeon Brown took aim at opposition while discouraging a vote for the coalition.",
+      "url": "https://www.rnz.co.nz/news/political/610017/national-s-simeon-brown-discourages-members-from-strategic-voting",
+      "published_at": "2026-06-21T04:51:42Z",
+      "published_label": "21 Jun 2026 · 04:51Z",
+      "age_label": "4h ago",
+      "source_id": "rnz-news",
+      "source_name": "RNZ News",
+      "source_kind": "rss",
+      "category": "nz-pacific",
+      "regions": [
+        "pacific"
+      ],
+      "priority": 20,
+      "cluster_key": "nationals simeon brown discourages members from strategic voting"
+    },
+    {
+      "id": "2ccfc9a45400e779",
+      "title": "Hong Kong only place in China that can adopt model akin to SpaceX, CY Leung says",
+      "summary": "Hong Kong is the only place in China capable of replicating the financing model of US tech giant SpaceX, which leverages market forces to grow rapidly, former leader Leung Chun-ying has said, urging the city to develop professional services for the emerging aerospace industry. L…",
+      "url": "https://www.scmp.com/news/hong-kong/hong-kong-economy/article/3357807/hong-kong-only-place-china-can-adopt-model-akin-spacex-cy-leung-says?utm_source=rss_feed",
+      "published_at": "2026-06-21T04:49:11Z",
+      "published_label": "21 Jun 2026 · 04:49Z",
+      "age_label": "4h ago",
+      "source_id": "scmp",
+      "source_name": "South China Morning Post",
+      "source_kind": "rss",
+      "category": "apac-security",
+      "regions": [
+        "china"
+      ],
+      "priority": 20,
+      "cluster_key": "hong kong only place in china that can adopt model akin to spacex cy leung says"
+    },
+    {
+      "id": "cbf47e088ee689c2",
+      "title": "Can New Zealanders really afford compulsory KiwiSaver?",
+      "summary": "National wants to make it compulsory for all workers to contribute to KiwiSaver or a comparable retirement savings scheme from mid-2028.",
+      "url": "https://www.rnz.co.nz/news/personal-finance/611383/can-new-zealanders-really-afford-compulsory-kiwisaver",
+      "published_at": "2026-06-21T04:48:55Z",
+      "published_label": "21 Jun 2026 · 04:48Z",
+      "age_label": "4h ago",
+      "source_id": "rnz-news",
+      "source_name": "RNZ News",
+      "source_kind": "rss",
+      "category": "nz-pacific",
+      "regions": [
+        "nz"
+      ],
+      "priority": 20,
+      "cluster_key": "can new zealanders really afford compulsory kiwisaver"
+    },
+    {
+      "id": "1b457ee58b2daf08",
+      "title": "US-Iran talks to begin in Switzerland as Tehran says it closed Strait of Hormuz",
+      "summary": "The US disputed Iran's claim the waterway is shut, a move Tehran says was a response to Israeli attacks in Lebanon.",
+      "url": "https://www.bbc.com/news/articles/cwyekkwm1mmo?at_medium=RSS&at_campaign=rss",
+      "published_at": "2026-06-21T04:34:00Z",
+      "published_label": "21 Jun 2026 · 04:34Z",
+      "age_label": "4h ago",
+      "source_id": "bbc-world",
+      "source_name": "BBC World",
+      "source_kind": "rss",
+      "category": "global",
+      "regions": [
+        "taiwan",
+        "middle-east"
+      ],
+      "priority": 20,
+      "cluster_key": "usiran talks to begin in switzerland as tehran says it closed strait of hormuz"
+    },
+    {
+      "id": "ed8bf00b0e85c992",
+      "title": "'It just blew up': Tītahi Bay residents describe fast growing blaze",
+      "summary": "Residents have told of a loud boom, enormous flames spreading between two buildings, and the warning to be ready to evacuate if the flames spread further in strong winds.",
+      "url": "https://www.rnz.co.nz/news/emergencies_local/609900/it-just-blew-up-titahi-bay-residents-describe-fast-growing-blaze",
+      "published_at": "2026-06-21T04:29:34Z",
+      "published_label": "21 Jun 2026 · 04:29Z",
+      "age_label": "4h ago",
+      "source_id": "rnz-news",
+      "source_name": "RNZ News",
+      "source_kind": "rss",
+      "category": "nz-pacific",
+      "regions": [
+        "pacific"
+      ],
+      "priority": 20,
+      "cluster_key": "it just blew up tītahi bay residents describe fast growing blaze"
+    },
+    {
+      "id": "2b3dd0c8e3849ac7",
+      "title": "Dear You gets 8 extra Teochew shows in Singapore after ‘overwhelming’ demand",
+      "summary": "Theatre chain Golden Village (GV) and film distributor Clover Films have added eight more screenings of Dear You in its original Teochew language in Singapore. The additional screenings will take place from June 25 to 29 at GVmax at GV VivoCity. Tickets will go on sale at 3pm on…",
+      "url": "https://www.scmp.com/news/asia/southeast-asia/article/3357805/dear-you-gets-8-extra-teochew-shows-singapore-after-overwhelming-demand?utm_source=rss_feed",
+      "published_at": "2026-06-21T04:15:27Z",
+      "published_label": "21 Jun 2026 · 04:15Z",
+      "age_label": "4h ago",
       "source_id": "scmp",
       "source_name": "South China Morning Post",
       "source_kind": "rss",
@@ -354,7 +592,25 @@
         "se-asia"
       ],
       "priority": 20,
-      "cluster_key": "thai property crackdown foreign buyers hit pause on villas as nominee loophole closes"
+      "cluster_key": "dear you gets 8 extra teochew shows in singapore after overwhelming demand"
+    },
+    {
+      "id": "bef73a186fcb5ce5",
+      "title": "Hong Kong parents turn to summer school options in Asia amid soaring airfares",
+      "summary": "Hong Kong families are turning away from long-standing summer school favourites in Britain and North America amid soaring airfares, with education consultants reporting a sharp surge in demand for alternatives in Asia. Applications for British summer schools fell 35 per cent thi…",
+      "url": "https://www.scmp.com/news/hong-kong/education/article/3357803/hong-kong-parents-turn-summer-school-options-asia-amid-soaring-airfares?utm_source=rss_feed",
+      "published_at": "2026-06-21T04:00:20Z",
+      "published_label": "21 Jun 2026 · 04:00Z",
+      "age_label": "5h ago",
+      "source_id": "scmp",
+      "source_name": "South China Morning Post",
+      "source_kind": "rss",
+      "category": "apac-security",
+      "regions": [
+        "se-asia"
+      ],
+      "priority": 20,
+      "cluster_key": "hong kong parents turn to summer school options in asia amid soaring airfares"
     },
     {
       "id": "c0d892da076bc21f",
@@ -363,7 +619,7 @@
       "url": "https://www.rnz.co.nz/news/crime-and-justice/610882/canterbury-police-target-anti-social-road-user-gathering",
       "published_at": "2026-06-21T03:20:07Z",
       "published_label": "21 Jun 2026 · 03:20Z",
-      "age_label": "1h ago",
+      "age_label": "5h ago",
       "source_id": "rnz-news",
       "source_name": "RNZ News",
       "source_kind": "rss",
@@ -375,31 +631,13 @@
       "cluster_key": "canterbury police target antisocial road user gathering"
     },
     {
-      "id": "78073b65282b35b3",
-      "title": "SH1 closed at Hunterville after crash",
-      "summary": "State Highway One near Hunterville is closed following a serious two-vehicle crash.",
-      "url": "https://www.rnz.co.nz/news/emergencies_local/610552/sh1-closed-at-hunterville-after-crash",
-      "published_at": "2026-06-21T02:20:05Z",
-      "published_label": "21 Jun 2026 · 02:20Z",
-      "age_label": "2h ago",
-      "source_id": "rnz-news",
-      "source_name": "RNZ News",
-      "source_kind": "rss",
-      "category": "nz-pacific",
-      "regions": [
-        "pacific"
-      ],
-      "priority": 20,
-      "cluster_key": "sh1 closed at hunterville after crash"
-    },
-    {
       "id": "50794f56f9ca5aac",
       "title": "National to make KiwiSaver compulsory, if elected",
       "summary": "The National Party plans to make KiwiSaver compulsory for all workers, if re-elected, as part of a suite of changes that would cost more than $1 billion over four years.",
       "url": "https://www.rnz.co.nz/news/political/609851/national-to-make-kiwisaver-compulsory-if-elected",
       "published_at": "2026-06-21T02:09:02Z",
       "published_label": "21 Jun 2026 · 02:09Z",
-      "age_label": "3h ago",
+      "age_label": "6h ago",
       "source_id": "rnz-news",
       "source_name": "RNZ News",
       "source_kind": "rss",
@@ -407,44 +645,8 @@
       "regions": [
         "pacific"
       ],
-      "priority": 20,
+      "priority": 10,
       "cluster_key": "national to make kiwisaver compulsory if elected"
-    },
-    {
-      "id": "7c06df3659f2db00",
-      "title": "Italy’s Meloni let Trump’s jibes slide for so long. Now, she’s hitting back",
-      "summary": "US Donald Trump has sparred with most of his fellow Group of Seven leaders at some point. But Italy’s Giorgia Meloni this week did something none of them dared: she escalated. Unlike Spanish Socialist Pedro Sanchez, one of the few leaders in Europe who has made political capital…",
-      "url": "https://www.scmp.com/news/world/europe/article/3357801/italys-meloni-let-trumps-jibes-slide-so-long-now-shes-hitting-back?utm_source=rss_feed",
-      "published_at": "2026-06-21T02:02:52Z",
-      "published_label": "21 Jun 2026 · 02:02Z",
-      "age_label": "3h ago",
-      "source_id": "scmp",
-      "source_name": "South China Morning Post",
-      "source_kind": "rss",
-      "category": "apac-security",
-      "regions": [
-        "europe"
-      ],
-      "priority": 20,
-      "cluster_key": "italys meloni let trumps jibes slide for so long now shes hitting back"
-    },
-    {
-      "id": "2318b15af23200cc",
-      "title": "China-led team develops AI system to track radar-disrupting space hurricanes",
-      "summary": "A China-led team has developed an AI system to detect space hurricanes, a phenomenon in the Earth’s upper atmosphere that can disrupt satellite signals, radar and radio communications. While the hurricane-like atmospheric phenomenon can have major space weather effects, detectio…",
-      "url": "https://www.scmp.com/news/china/science/article/3357777/china-led-team-develops-ai-system-track-radar-disrupting-space-hurricanes?utm_source=rss_feed",
-      "published_at": "2026-06-21T02:00:11Z",
-      "published_label": "21 Jun 2026 · 02:00Z",
-      "age_label": "3h ago",
-      "source_id": "scmp",
-      "source_name": "South China Morning Post",
-      "source_kind": "rss",
-      "category": "apac-security",
-      "regions": [
-        "china"
-      ],
-      "priority": 20,
-      "cluster_key": "chinaled team develops ai system to track radardisrupting space hurricanes"
     },
     {
       "id": "ba4bfaf0bd5f875d",
@@ -453,7 +655,7 @@
       "url": "https://www.rnz.co.nz/news/business/610354/higher-immigration-leads-to-higher-house-prices-and-lower-unemployment-report",
       "published_at": "2026-06-21T01:39:04Z",
       "published_label": "21 Jun 2026 · 01:39Z",
-      "age_label": "3h ago",
+      "age_label": "7h ago",
       "source_id": "rnz-news",
       "source_name": "RNZ News",
       "source_kind": "rss",
@@ -461,45 +663,8 @@
       "regions": [
         "pacific"
       ],
-      "priority": 20,
+      "priority": 10,
       "cluster_key": "higher immigration leads to higher house prices and lower unemployment report"
-    },
-    {
-      "id": "f7775f0556bb2e5f",
-      "title": "Cross-border biotech deals grow more complex as US targets China investment links",
-      "summary": "Cross-border biotech deals between China and the United States are becoming more complicated and could face a modest slowdown as Washington steps up efforts to restrict investment and technology transfers, according to industry analysts. “There will be more geopolitical scrutiny…",
-      "url": "https://www.scmp.com/business/china-business/article/3357699/cross-border-biotech-deals-grow-more-complex-us-targets-china-investment-links?utm_source=rss_feed",
-      "published_at": "2026-06-21T01:30:08Z",
-      "published_label": "21 Jun 2026 · 01:30Z",
-      "age_label": "3h ago",
-      "source_id": "scmp",
-      "source_name": "South China Morning Post",
-      "source_kind": "rss",
-      "category": "apac-security",
-      "regions": [
-        "china",
-        "us"
-      ],
-      "priority": 20,
-      "cluster_key": "crossborder biotech deals grow more complex as us targets china investment links"
-    },
-    {
-      "id": "4ff13aed33852ebe",
-      "title": "To lead in global education, Hong Kong must go beyond narrow metrics",
-      "summary": "Hong Kong’s universities are often celebrated for their global rankings, research output and international reputation. Yet behind these achievements lies a quieter, more fundamental question: how do we define academic excellence and are we measuring the right things? Academic li…",
-      "url": "https://www.scmp.com/opinion/hong-kong-opinion/article/3357329/lead-global-education-hong-kong-must-go-beyond-narrow-metrics?utm_source=rss_feed",
-      "published_at": "2026-06-21T01:30:05Z",
-      "published_label": "21 Jun 2026 · 01:30Z",
-      "age_label": "3h ago",
-      "source_id": "scmp",
-      "source_name": "South China Morning Post",
-      "source_kind": "rss",
-      "category": "apac-security",
-      "regions": [
-        "se-asia"
-      ],
-      "priority": 20,
-      "cluster_key": "to lead in global education hong kong must go beyond narrow metrics"
     },
     {
       "id": "129b8376fc286dd4",
@@ -508,7 +673,7 @@
       "url": "https://www.rnz.co.nz/news/community/610211/northland-woman-s-astounding-effort-to-tackle-thousands-of-moth-plants",
       "published_at": "2026-06-21T01:04:23Z",
       "published_label": "21 Jun 2026 · 01:04Z",
-      "age_label": "4h ago",
+      "age_label": "7h ago",
       "source_id": "rnz-news",
       "source_name": "RNZ News",
       "source_kind": "rss",
@@ -516,44 +681,8 @@
       "regions": [
         "pacific"
       ],
-      "priority": 20,
+      "priority": 10,
       "cluster_key": "northland womans astounding effort to tackle thousands of moth plants"
-    },
-    {
-      "id": "6ddfbc204de5886d",
-      "title": "Concerns raised as Hong Kong stops compiling voter turnout data by age and sex",
-      "summary": "Hong Kong election authorities have stopped compiling voter turnout data by age and sex, citing a lack of operational need, in a move that has raised concerns about undermining the transparency of polls. Analysts and politicians said such statistics were valuable for election ho…",
-      "url": "https://www.scmp.com/news/hong-kong/politics/article/3357759/concerns-raised-hong-kong-stops-compiling-voter-turnout-data-age-and-sex?utm_source=rss_feed",
-      "published_at": "2026-06-21T01:00:10Z",
-      "published_label": "21 Jun 2026 · 01:00Z",
-      "age_label": "4h ago",
-      "source_id": "scmp",
-      "source_name": "South China Morning Post",
-      "source_kind": "rss",
-      "category": "apac-security",
-      "regions": [
-        "se-asia"
-      ],
-      "priority": 20,
-      "cluster_key": "concerns raised as hong kong stops compiling voter turnout data by age and sex"
-    },
-    {
-      "id": "8efd497b183276e2",
-      "title": "‘Only death can stop me’: terminally ill Chinese tycoon works 12 hours daily to cure ALS",
-      "summary": "A former Chinese e-commerce executive in the final stages of a rare disease is still working 12-hour days, devoting what time he has left to accelerating the search for a cure. Cai Lei, 48, a former vice-president of JD.com, one of China’s largest e-commerce companies, has spent…",
-      "url": "https://www.scmp.com/news/people-culture/china-personalities/article/3357415/only-death-can-stop-me-terminally-ill-chinese-tycoon-works-12-hours-daily-cure-als?utm_source=rss_feed",
-      "published_at": "2026-06-21T01:00:06Z",
-      "published_label": "21 Jun 2026 · 01:00Z",
-      "age_label": "4h ago",
-      "source_id": "scmp",
-      "source_name": "South China Morning Post",
-      "source_kind": "rss",
-      "category": "apac-security",
-      "regions": [
-        "china"
-      ],
-      "priority": 20,
-      "cluster_key": "only death can stop me terminally ill chinese tycoon works 12 hours daily to cure als"
     },
     {
       "id": "bc2f282ef2f640e2",
@@ -562,7 +691,7 @@
       "url": "https://www.rnz.co.nz/news/regional/610177/westport-man-clears-more-than-eight-tonnes-of-steel-from-beach",
       "published_at": "2026-06-21T00:57:49Z",
       "published_label": "21 Jun 2026 · 00:57Z",
-      "age_label": "4h ago",
+      "age_label": "8h ago",
       "source_id": "rnz-news",
       "source_name": "RNZ News",
       "source_kind": "rss",
@@ -570,7 +699,7 @@
       "regions": [
         "pacific"
       ],
-      "priority": 38,
+      "priority": 28,
       "cluster_key": "westport man clears more than eight tonnes of steel from beach"
     },
     {
@@ -580,7 +709,7 @@
       "url": "https://www.rnz.co.nz/news/emergencies_local/610077/kerikeri-fatal-crash-occurred-on-one-way-bridge",
       "published_at": "2026-06-21T00:40:02Z",
       "published_label": "21 Jun 2026 · 00:40Z",
-      "age_label": "4h ago",
+      "age_label": "8h ago",
       "source_id": "rnz-news",
       "source_name": "RNZ News",
       "source_kind": "rss",
@@ -588,17 +717,17 @@
       "regions": [
         "pacific"
       ],
-      "priority": 38,
+      "priority": 28,
       "cluster_key": "kerikeri fatal crash occurred on oneway bridge"
     },
     {
-      "id": "f808b4d2c76a332a",
-      "title": "France bans alcohol consumption at music festival events under red heatwave alert",
-      "summary": "The annual Fête de la Musique celebrations draw millions to the streets but the most serious heatwave warnings have been issued for 35 of the country's departments.",
+      "id": "2b7633654258cef6",
+      "title": "France bans alcohol at music festival events under red heatwave alert",
+      "summary": "Annual street parties attended by millions ordered to help “preserve” healthcare services in 40C (104F) heat.",
       "url": "https://www.bbc.com/news/articles/cgmdw4vn7y2o?at_medium=RSS&at_campaign=rss",
       "published_at": "2026-06-21T00:29:51Z",
       "published_label": "21 Jun 2026 · 00:29Z",
-      "age_label": "4h ago",
+      "age_label": "8h ago",
       "source_id": "bbc-world",
       "source_name": "BBC World",
       "source_kind": "rss",
@@ -606,8 +735,8 @@
       "regions": [
         "europe"
       ],
-      "priority": 20,
-      "cluster_key": "france bans alcohol consumption at music festival events under red heatwave alert"
+      "priority": 10,
+      "cluster_key": "france bans alcohol at music festival events under red heatwave alert"
     },
     {
       "id": "e3e6fc26eda8a33c",
@@ -616,7 +745,7 @@
       "url": "https://www.rnz.co.nz/news/te-manu-korihi/610046/ten-new-social-homes-in-porirua-expected-to-fill-up",
       "published_at": "2026-06-21T00:22:26Z",
       "published_label": "21 Jun 2026 · 00:22Z",
-      "age_label": "4h ago",
+      "age_label": "8h ago",
       "source_id": "rnz-news",
       "source_name": "RNZ News",
       "source_kind": "rss",
@@ -624,98 +753,44 @@
       "regions": [
         "pacific"
       ],
-      "priority": 20,
+      "priority": 10,
       "cluster_key": "ten new social homes in porirua expected to fill up"
     },
     {
-      "id": "7b1c01597c220f33",
-      "title": "Search for 69 year old Christchurch woman narrowed down",
-      "summary": "Police are now urging Burwood residents to check their properties as search for 69-year-old Adele continues.",
-      "url": "https://www.rnz.co.nz/news/regional/609984/search-for-69-year-old-christchurch-woman-narrowed-down",
-      "published_at": "2026-06-21T00:01:35Z",
-      "published_label": "21 Jun 2026 · 00:01Z",
-      "age_label": "5h ago",
-      "source_id": "rnz-news",
-      "source_name": "RNZ News",
-      "source_kind": "rss",
-      "category": "nz-pacific",
-      "regions": [
-        "nz"
-      ],
-      "priority": 20,
-      "cluster_key": "search for 69 year old christchurch woman narrowed down"
-    },
-    {
-      "id": "23ff83a4a4cbfbef",
-      "title": "Japan confronts the dark side of its teenagers’ AI addiction",
-      "summary": "She was among five girls in Japan believed to have beaten a boy so severely that he required hospital treatment. Yet her most pressing concern was how much money the group should demand from him. To find an answer, she turned to artificial intelligence. The alleged assault took…",
-      "url": "https://www.scmp.com/week-asia/lifestyle-culture/article/3357713/japan-confronts-dark-side-its-teenagers-ai-addiction?utm_source=rss_feed",
-      "published_at": "2026-06-21T00:00:11Z",
-      "published_label": "21 Jun 2026 · 00:00Z",
-      "age_label": "5h ago",
-      "source_id": "scmp",
-      "source_name": "South China Morning Post",
-      "source_kind": "rss",
-      "category": "apac-security",
-      "regions": [
-        "japan"
-      ],
-      "priority": 20,
-      "cluster_key": "japan confronts the dark side of its teenagers ai addiction"
-    },
-    {
-      "id": "4bbb9455fa62b6a4",
-      "title": "How Singapore’s most notorious mall found God",
-      "summary": "Orchard Towers, a building in Singapore once notorious enough to earn the nickname “Four Floors of Whores”, has found an unlikely new tenant. On weekends, the site of former nightclubs, illegal massage parlours and at least one murder is now flooded with church-goers. Cornerston…",
-      "url": "https://www.scmp.com/week-asia/lifestyle-culture/article/3357712/how-singapores-most-notorious-mall-found-god?utm_source=rss_feed",
-      "published_at": "2026-06-21T00:00:09Z",
-      "published_label": "21 Jun 2026 · 00:00Z",
-      "age_label": "5h ago",
-      "source_id": "scmp",
-      "source_name": "South China Morning Post",
-      "source_kind": "rss",
-      "category": "apac-security",
-      "regions": [
-        "se-asia"
-      ],
-      "priority": 20,
-      "cluster_key": "how singapores most notorious mall found god"
-    },
-    {
-      "id": "d06e24a364922f82",
+      "id": "69aa2e16cad083cf",
       "title": "Time for NZ to prepare, epidemiologist says as bird flu reaches Australia",
       "summary": "New Zealand needs to update its national pandemic plan as a deadly bird flu virus hits Australia, a public health expert is warning.",
       "url": "https://www.rnz.co.nz/news/health/609885/time-for-nz-to-prepare-epidemiologist-says-as-bird-flu-reaches-australia",
       "published_at": "2026-06-20T23:29:42Z",
       "published_label": "20 Jun 2026 · 23:29Z",
-      "age_label": "5h ago",
-      "source_id": "rnz-news",
-      "source_name": "RNZ News",
+      "age_label": "9h ago",
+      "source_id": "rnz-national",
+      "source_name": "RNZ National",
       "source_kind": "rss",
       "category": "nz-pacific",
       "regions": [
         "nz",
         "australia"
       ],
-      "priority": 20,
+      "priority": 10,
       "cluster_key": "time for nz to prepare epidemiologist says as bird flu reaches australia"
     },
     {
-      "id": "a88fbb825fb739e8",
+      "id": "b30f17500e2521e7",
       "title": "National members 'nervously optimistic' about election campaign",
       "summary": "One member told RNZ she was concerned Labour was ahead on issues such as health and education, at the party's 90th AGM, in Wellington.",
       "url": "https://www.rnz.co.nz/news/political/609082/national-members-nervously-optimistic-about-election-campaign",
       "published_at": "2026-06-20T23:22:47Z",
       "published_label": "20 Jun 2026 · 23:22Z",
-      "age_label": "5h ago",
-      "source_id": "rnz-news",
-      "source_name": "RNZ News",
+      "age_label": "9h ago",
+      "source_id": "rnz-national",
+      "source_name": "RNZ National",
       "source_kind": "rss",
       "category": "nz-pacific",
       "regions": [
         "nz"
       ],
-      "priority": 20,
+      "priority": 10,
       "cluster_key": "national members nervously optimistic about election campaign"
     },
     {
@@ -725,7 +800,7 @@
       "url": "https://www.bbc.com/news/articles/cvgqv8q1ndpo?at_medium=RSS&at_campaign=rss",
       "published_at": "2026-06-20T23:17:51Z",
       "published_label": "20 Jun 2026 · 23:17Z",
-      "age_label": "5h ago",
+      "age_label": "9h ago",
       "source_id": "bbc-world",
       "source_name": "BBC World",
       "source_kind": "rss",
@@ -733,26 +808,8 @@
       "regions": [
         "europe"
       ],
-      "priority": 20,
-      "cluster_key": "colombias escalating brutal internal conflict is defining its presidential election"
-    },
-    {
-      "id": "0affdcdbf062b1b3",
-      "title": "Airliner stuck in mud at Christchurch Airport",
-      "summary": "An Air New Zealand plane has become mired down near the runway, at Christchurch Airport.",
-      "url": "https://www.rnz.co.nz/news/regions_northland/609579/airliner-stuck-in-mud-at-christchurch-airport",
-      "published_at": "2026-06-20T22:35:48Z",
-      "published_label": "20 Jun 2026 · 22:35Z",
-      "age_label": "6h ago",
-      "source_id": "rnz-national",
-      "source_name": "RNZ National",
-      "source_kind": "rss",
-      "category": "nz-pacific",
-      "regions": [
-        "nz"
-      ],
       "priority": 10,
-      "cluster_key": "airliner stuck in mud at christchurch airport"
+      "cluster_key": "colombias escalating brutal internal conflict is defining its presidential election"
     },
     {
       "id": "5685fa70dad8f07f",
@@ -761,7 +818,7 @@
       "url": "https://www.rnz.co.nz/news/emergencies_local/609306/man-missing-in-hanmer-springs-found",
       "published_at": "2026-06-20T22:16:56Z",
       "published_label": "20 Jun 2026 · 22:16Z",
-      "age_label": "6h ago",
+      "age_label": "10h ago",
       "source_id": "rnz-national",
       "source_name": "RNZ National",
       "source_kind": "rss",
@@ -773,49 +830,13 @@
       "cluster_key": "man missing in hanmer springs found"
     },
     {
-      "id": "04d21d44083f1063",
-      "title": "British PM Keir Starmer ready to quit, report says",
-      "summary": "Britain’s Observer newspaper said Prime Minister Keir Starmer was expected to resign on Monday and set out a timetable for his departure, though a government source said Starmer remained focused on getting on with the job of governing. The threat to Starmer’s position, which has…",
-      "url": "https://www.scmp.com/news/world/europe/article/3357799/report-says-uk-pm-starmer-ready-quit-source-says-he-still-focused-job?utm_source=rss_feed",
-      "published_at": "2026-06-20T22:14:53Z",
-      "published_label": "20 Jun 2026 · 22:14Z",
-      "age_label": "6h ago",
-      "source_id": "scmp",
-      "source_name": "South China Morning Post",
-      "source_kind": "rss",
-      "category": "apac-security",
-      "regions": [
-        "se-asia"
-      ],
-      "priority": 10,
-      "cluster_key": "british pm keir starmer ready to quit report says"
-    },
-    {
-      "id": "5a87fa0ef412f0e9",
-      "title": "How ‘lying flat’ went from a niche subculture to mainstream phenomenon",
-      "summary": "In late April, China’s top intelligence agency claimed that foreign forces were weaponising the concept of “lying flat” to dispel young people’s “belief in striving” and undermine social values. Once a niche subculture, “lying flat” has evolved into a mainstream phenomenon over…",
-      "url": "https://www.scmp.com/news/china/politics/article/3357771/how-lying-flat-went-niche-subculture-mainstream-phenomenon?utm_source=rss_feed",
-      "published_at": "2026-06-20T22:00:15Z",
-      "published_label": "20 Jun 2026 · 22:00Z",
-      "age_label": "7h ago",
-      "source_id": "scmp",
-      "source_name": "South China Morning Post",
-      "source_kind": "rss",
-      "category": "apac-security",
-      "regions": [
-        "china"
-      ],
-      "priority": 10,
-      "cluster_key": "how lying flat went from a niche subculture to mainstream phenomenon"
-    },
-    {
       "id": "7fcb6fa21f9ae5e8",
       "title": "Israeli strikes kill six people in Gaza including Al Jazeera cameraman, officials say",
       "summary": "The Israeli military accused Ahmed Wishah of being a \"Hamas sniper operative\", without providing evidence.",
       "url": "https://www.bbc.com/news/articles/c4gy26p6pwzo?at_medium=RSS&at_campaign=rss",
       "published_at": "2026-06-20T21:57:36Z",
       "published_label": "20 Jun 2026 · 21:57Z",
-      "age_label": "7h ago",
+      "age_label": "11h ago",
       "source_id": "bbc-world",
       "source_name": "BBC World",
       "source_kind": "rss",
@@ -833,7 +854,7 @@
       "url": "https://www.rnz.co.nz/news/health/609462/the-invercargill-father-writing-children-s-books-with-his-eyes",
       "published_at": "2026-06-20T21:25:24Z",
       "published_label": "20 Jun 2026 · 21:25Z",
-      "age_label": "7h ago",
+      "age_label": "11h ago",
       "source_id": "rnz-national",
       "source_name": "RNZ National",
       "source_kind": "rss",
@@ -851,7 +872,7 @@
       "url": "https://www.rnz.co.nz/news/emergencies_local/609199/canterbury-fires-doused-by-overnight-rain",
       "published_at": "2026-06-20T19:55:10Z",
       "published_label": "20 Jun 2026 · 19:55Z",
-      "age_label": "9h ago",
+      "age_label": "13h ago",
       "source_id": "rnz-national",
       "source_name": "RNZ National",
       "source_kind": "rss",
@@ -869,7 +890,7 @@
       "url": "https://www.rnz.co.nz/news/crime-and-justice/609188/court-date-set-for-man-accused-of-panmure-stabbing",
       "published_at": "2026-06-20T19:47:45Z",
       "published_label": "20 Jun 2026 · 19:47Z",
-      "age_label": "9h ago",
+      "age_label": "13h ago",
       "source_id": "rnz-national",
       "source_name": "RNZ National",
       "source_kind": "rss",
@@ -883,11 +904,11 @@
     {
       "id": "b46f0b8c2b150297",
       "title": "Lebanese turtle conservationist Mona Khalil killed by Israeli strike",
-      "summary": "Mona Khalil, who had refused to leave the beach she had spent years protecting, died from her injuries after the Israeli strike.",
+      "summary": "Mona Khalil, who had refused to leave the beach she had spent years protecting, died after several days in hospital, an environmental group said.",
       "url": "https://www.bbc.com/news/articles/cwylx1vq18zo?at_medium=RSS&at_campaign=rss",
       "published_at": "2026-06-20T17:40:43Z",
       "published_label": "20 Jun 2026 · 17:40Z",
-      "age_label": "11h ago",
+      "age_label": "15h ago",
       "source_id": "bbc-world",
       "source_name": "BBC World",
       "source_kind": "rss",
@@ -905,7 +926,7 @@
       "url": "https://www.bbc.com/news/articles/c932k8010j1o?at_medium=RSS&at_campaign=rss",
       "published_at": "2026-06-20T17:33:25Z",
       "published_label": "20 Jun 2026 · 17:33Z",
-      "age_label": "11h ago",
+      "age_label": "15h ago",
       "source_id": "bbc-world",
       "source_name": "BBC World",
       "source_kind": "rss",
@@ -923,7 +944,7 @@
       "url": "https://www.bbc.com/news/videos/c8r2pyv3e2po?at_medium=RSS&at_campaign=rss",
       "published_at": "2026-06-20T16:37:03Z",
       "published_label": "20 Jun 2026 · 16:37Z",
-      "age_label": "12h ago",
+      "age_label": "16h ago",
       "source_id": "bbc-world",
       "source_name": "BBC World",
       "source_kind": "rss",
@@ -941,7 +962,7 @@
       "url": "https://www.bbc.com/news/articles/c2lye7xje9yo?at_medium=RSS&at_campaign=rss",
       "published_at": "2026-06-20T16:34:15Z",
       "published_label": "20 Jun 2026 · 16:34Z",
-      "age_label": "12h ago",
+      "age_label": "16h ago",
       "source_id": "bbc-world",
       "source_name": "BBC World",
       "source_kind": "rss",
@@ -959,7 +980,7 @@
       "url": "https://www.bbc.com/news/articles/cgqj77909jpo?at_medium=RSS&at_campaign=rss",
       "published_at": "2026-06-20T15:31:12Z",
       "published_label": "20 Jun 2026 · 15:31Z",
-      "age_label": "13h ago",
+      "age_label": "17h ago",
       "source_id": "bbc-world",
       "source_name": "BBC World",
       "source_kind": "rss",
@@ -977,7 +998,7 @@
       "url": "https://www.bbc.com/news/articles/cr47wn92zdgo?at_medium=RSS&at_campaign=rss",
       "published_at": "2026-06-20T15:27:09Z",
       "published_label": "20 Jun 2026 · 15:27Z",
-      "age_label": "13h ago",
+      "age_label": "17h ago",
       "source_id": "bbc-world",
       "source_name": "BBC World",
       "source_kind": "rss",
@@ -995,7 +1016,7 @@
       "url": "https://www.rnz.co.nz/news/emergencies_local/608291/wildfires-in-canterbury-brought-mostly-under-control",
       "published_at": "2026-06-20T10:56:56Z",
       "published_label": "20 Jun 2026 · 10:56Z",
-      "age_label": "18h ago",
+      "age_label": "22h ago",
       "source_id": "rnz-national",
       "source_name": "RNZ National",
       "source_kind": "rss",
@@ -1013,7 +1034,7 @@
       "url": "https://www.rnz.co.nz/news/emergencies_local/608298/caravan-burnt-down-after-wellington-house-fire",
       "published_at": "2026-06-20T08:57:40Z",
       "published_label": "20 Jun 2026 · 08:57Z",
-      "age_label": "20h ago",
+      "age_label": "1d ago",
       "source_id": "rnz-national",
       "source_name": "RNZ National",
       "source_kind": "rss",
@@ -1021,7 +1042,7 @@
       "regions": [
         "nz"
       ],
-      "priority": 10,
+      "priority": 0,
       "cluster_key": "caravan burnt down after wellington house fire"
     },
     {
@@ -1355,6 +1376,24 @@
       "cluster_key": "south koreas nuclear ambitions clash with political realities"
     },
     {
+      "id": "7a0842ff94ad6b03",
+      "title": "Police raid malware network tied to Russia's Evil Corp hacker group",
+      "summary": "An international operation targeted the SocGholish botnet, which has been linked to the Russia-based cybercrime group Evil Corp.",
+      "url": "https://therecord.media/socgholish-botnet-disrupted",
+      "published_at": "2026-06-19T12:57:00Z",
+      "published_label": "19 Jun 2026 · 12:57Z",
+      "age_label": "1d ago",
+      "source_id": "the-record",
+      "source_name": "The Record",
+      "source_kind": "rss",
+      "category": "cyber",
+      "regions": [
+        "russia"
+      ],
+      "priority": 12,
+      "cluster_key": "police raid malware network tied to russias evil corp hacker group"
+    },
+    {
       "id": "f0dd66eda856286d",
       "title": "In China, Christianity Is Treated as a Cult",
       "summary": "The CCP has decided some fundamental tenets of Christianity mark out the world’s largest faith as a cult, and one that needs vigorous suppression.",
@@ -1427,6 +1466,24 @@
       "cluster_key": "a simple prayer and a blasted bridge marine john ripley receives posthumous medal of honor"
     },
     {
+      "id": "ae685c11b55ff7bd",
+      "title": "UK's information commissioner resigns over ‘inappropriate humour’",
+      "summary": "Writing on LinkedIn, Edwards said that while he has not agreed with how the investigation into him has been conducted, he has come to accept that his position “has become untenable.”",
+      "url": "https://therecord.media/uk-information-commissioner-resigns-over-inappropriate-humor",
+      "published_at": "2026-06-19T11:12:00Z",
+      "published_label": "19 Jun 2026 · 11:12Z",
+      "age_label": "1d ago",
+      "source_id": "the-record",
+      "source_name": "The Record",
+      "source_kind": "rss",
+      "category": "cyber",
+      "regions": [
+        "global"
+      ],
+      "priority": 12,
+      "cluster_key": "uks information commissioner resigns over inappropriate humour"
+    },
+    {
       "id": "910d73837bb8c8d0",
       "title": "Boy, 12, wins hearts after trying to check sick chicken into Ethiopian hospital",
       "summary": "Markos's beloved hen was not responding to any treatments - so he did the only thing he could think of.",
@@ -1470,7 +1527,7 @@
       "url": "https://warontherocks.com/why-india-will-stick-with-america/",
       "published_at": "2026-06-19T07:30:45Z",
       "published_label": "19 Jun 2026 · 07:30Z",
-      "age_label": "1d ago",
+      "age_label": "2d ago",
       "source_id": "war-on-the-rocks",
       "source_name": "War on the Rocks",
       "source_kind": "rss",
@@ -1489,7 +1546,7 @@
       "url": "https://www.rnz.co.nz/news/pacific/602360/air-force-plane-finds-fisherman-missing-more-than-a-week-in-northern-cook-islands",
       "published_at": "2026-06-19T06:15:57Z",
       "published_label": "19 Jun 2026 · 06:15Z",
-      "age_label": "1d ago",
+      "age_label": "2d ago",
       "source_id": "rnz-pacific",
       "source_name": "RNZ Pacific",
       "source_kind": "rss",
@@ -1507,7 +1564,7 @@
       "url": "https://thediplomat.com/2026/06/asean-and-russia-agree-to-deepen-cooperation-during-special-summit-in-kazan/",
       "published_at": "2026-06-19T05:12:00Z",
       "published_label": "19 Jun 2026 · 05:12Z",
-      "age_label": "1d ago",
+      "age_label": "2d ago",
       "source_id": "diplomat",
       "source_name": "The Diplomat",
       "source_kind": "rss",
@@ -1778,6 +1835,24 @@
       "cluster_key": "sasc wants navy to develop new ddgx destroyer in tandem with trump battleship"
     },
     {
+      "id": "6f9c86c82d59f28d",
+      "title": "Bulgaria allowed surveillance tech firm to sell products to repressive regimes, report says",
+      "summary": "The nonprofit Human Rights Watch obtained export licensing records covering 2018 through 2023, which show the Bulgarian government allowed the surveillance firm Circles to peddle the tech to law enforcement and intelligence agencies in several countries known for human rights ab…",
+      "url": "https://therecord.media/bulgaria-allowed-surveillance-tech-firm-to-sell-to-repressive-regimes-report",
+      "published_at": "2026-06-18T19:30:00Z",
+      "published_label": "18 Jun 2026 · 19:30Z",
+      "age_label": "2d ago",
+      "source_id": "the-record",
+      "source_name": "The Record",
+      "source_kind": "rss",
+      "category": "cyber",
+      "regions": [
+        "global"
+      ],
+      "priority": 12,
+      "cluster_key": "bulgaria allowed surveillance tech firm to sell products to repressive regimes report says"
+    },
+    {
       "id": "8ffa30c50b54b4ef",
       "title": "Indian Joint Air Defense Doctrine: Implications for South Asian Stability",
       "summary": "In the South Asian strategic environment, even defensive measures can generate negative outcomes.",
@@ -1963,6 +2038,24 @@
       "cluster_key": "chinas farm drones a trojan horse washington overlooks"
     },
     {
+      "id": "4af8a62c3951057f",
+      "title": "Australian sugar producer works to restore operations as ransomware group claims attack",
+      "summary": "Mackay Sugar said it was \"working urgently\" to verify claims that a highly active ransomware group was behind a cyberattack that shut down harvesting and milling operations.",
+      "url": "https://therecord.media/mackay-sugar-cyberattack-claimed-gentlemen",
+      "published_at": "2026-06-18T14:20:00Z",
+      "published_label": "18 Jun 2026 · 14:20Z",
+      "age_label": "2d ago",
+      "source_id": "the-record",
+      "source_name": "The Record",
+      "source_kind": "rss",
+      "category": "cyber",
+      "regions": [
+        "australia"
+      ],
+      "priority": 12,
+      "cluster_key": "australian sugar producer works to restore operations as ransomware group claims attack"
+    },
+    {
       "id": "4bb49ade733541ae",
       "title": "Drones, cables, and the Indonesia–Australia maritime frontier",
       "summary": "Closing maritime technology gaps has been the focus of a series of recent exchanges.",
@@ -2025,7 +2118,7 @@
       "url": "https://warontherocks.com/cogs-of-war/cogs-of-war-turns-one/",
       "published_at": "2026-06-18T08:00:15Z",
       "published_label": "18 Jun 2026 · 08:00Z",
-      "age_label": "2d ago",
+      "age_label": "3d ago",
       "source_id": "war-on-the-rocks",
       "source_name": "War on the Rocks",
       "source_kind": "rss",
@@ -2043,7 +2136,7 @@
       "url": "https://www.defenseone.com/business/2026/06/defense-business-brief-tech-summit-recap-invoking-defense-production-act-and-indopacoms-name-change/414267/",
       "published_at": "2026-06-18T07:45:14Z",
       "published_label": "18 Jun 2026 · 07:45Z",
-      "age_label": "2d ago",
+      "age_label": "3d ago",
       "source_id": "defense-one",
       "source_name": "Defense One",
       "source_kind": "rss",
@@ -2061,7 +2154,7 @@
       "url": "https://warontherocks.com/good-medicine-is-combat-power-clinical-innovation-and-the-lessons-of-the-russo-ukrainian-war/",
       "published_at": "2026-06-18T07:30:55Z",
       "published_label": "18 Jun 2026 · 07:30Z",
-      "age_label": "2d ago",
+      "age_label": "3d ago",
       "source_id": "war-on-the-rocks",
       "source_name": "War on the Rocks",
       "source_kind": "rss",
@@ -2239,6 +2332,24 @@
       "cluster_key": "george washington carrier strike group in guam for first port call of spring patrol"
     },
     {
+      "id": "03db39be083dc8e1",
+      "title": "Hostile states behind three-quarters of attacks on Britain's critical infrastructure, cyber chief warns",
+      "summary": "NCSC CEO Richard Horne warned that “kinetic targeting in any conflict tomorrow will be based on intelligence gathered today” and that nation-state adversaries were “prepositioning” throughout British critical infrastructure.",
+      "url": "https://therecord.media/britain-nation-state-cyberattacks-richard-horne-rusi",
+      "published_at": "2026-06-17T17:55:00Z",
+      "published_label": "17 Jun 2026 · 17:55Z",
+      "age_label": "3d ago",
+      "source_id": "the-record",
+      "source_name": "The Record",
+      "source_kind": "rss",
+      "category": "cyber",
+      "regions": [
+        "global"
+      ],
+      "priority": 48,
+      "cluster_key": "hostile states behind threequarters of attacks on britains critical infrastructure cyber chief w"
+    },
+    {
       "id": "6429d5ebbe922dba",
       "title": "Want to join NGA? Bring AI skills, agency leader says",
       "summary": "Even current National Geospatial-Intelligence Agency workers are getting new training.",
@@ -2390,7 +2501,7 @@
       "url": "https://www.bbc.com/news/articles/c0ly0k88e61o?at_medium=RSS&at_campaign=rss",
       "published_at": "2026-06-17T07:33:39Z",
       "published_label": "17 Jun 2026 · 07:33Z",
-      "age_label": "3d ago",
+      "age_label": "4d ago",
       "source_id": "bbc-asia",
       "source_name": "BBC Asia",
       "source_kind": "rss",
@@ -2408,7 +2519,7 @@
       "url": "https://warontherocks.com/macrons-nuclear-gamble-building-a-european-deterrent-faster-than-french-politics-can-tear-down/",
       "published_at": "2026-06-17T07:30:35Z",
       "published_label": "17 Jun 2026 · 07:30Z",
-      "age_label": "3d ago",
+      "age_label": "4d ago",
       "source_id": "war-on-the-rocks",
       "source_name": "War on the Rocks",
       "source_kind": "rss",
@@ -2426,7 +2537,7 @@
       "url": "https://warontherocks.com/three-short-tales-on-war-brad-carson-wants-you-to-read/",
       "published_at": "2026-06-17T07:15:51Z",
       "published_label": "17 Jun 2026 · 07:15Z",
-      "age_label": "3d ago",
+      "age_label": "4d ago",
       "source_id": "war-on-the-rocks",
       "source_name": "War on the Rocks",
       "source_kind": "rss",
@@ -2444,7 +2555,7 @@
       "url": "https://www.rnz.co.nz/news/pacific/598452/pacific-community-feeling-the-pinch-in-wairarapa",
       "published_at": "2026-06-17T07:01:44Z",
       "published_label": "17 Jun 2026 · 07:01Z",
-      "age_label": "3d ago",
+      "age_label": "4d ago",
       "source_id": "rnz-pacific",
       "source_name": "RNZ Pacific",
       "source_kind": "rss",
@@ -2462,7 +2573,7 @@
       "url": "https://www.bbc.com/news/articles/c4gy40q8wz0o?at_medium=RSS&at_campaign=rss",
       "published_at": "2026-06-17T06:56:27Z",
       "published_label": "17 Jun 2026 · 06:56Z",
-      "age_label": "3d ago",
+      "age_label": "4d ago",
       "source_id": "bbc-asia",
       "source_name": "BBC Asia",
       "source_kind": "rss",
@@ -2736,7 +2847,7 @@
       "url": "https://www.bbc.com/news/articles/cjdgl213dpzo?at_medium=RSS&at_campaign=rss",
       "published_at": "2026-06-16T08:26:30Z",
       "published_label": "16 Jun 2026 · 08:26Z",
-      "age_label": "4d ago",
+      "age_label": "5d ago",
       "source_id": "bbc-asia",
       "source_name": "BBC Asia",
       "source_kind": "rss",
@@ -2754,7 +2865,7 @@
       "url": "https://warontherocks.com/the-fall-of-fortress-singapore-three-lessons-from-the-collapse-of-britains-great-asian-bastion/",
       "published_at": "2026-06-16T07:30:44Z",
       "published_label": "16 Jun 2026 · 07:30Z",
-      "age_label": "4d ago",
+      "age_label": "5d ago",
       "source_id": "war-on-the-rocks",
       "source_name": "War on the Rocks",
       "source_kind": "rss",
@@ -2772,7 +2883,7 @@
       "url": "https://www.bbc.com/news/articles/c7vyzgl2142o?at_medium=RSS&at_campaign=rss",
       "published_at": "2026-06-16T07:05:54Z",
       "published_label": "16 Jun 2026 · 07:05Z",
-      "age_label": "4d ago",
+      "age_label": "5d ago",
       "source_id": "bbc-asia",
       "source_name": "BBC Asia",
       "source_kind": "rss",
@@ -2918,7 +3029,7 @@
       "url": "https://warontherocks.com/cogs-of-war/how-japan-could-co-produce-the-navys-future-fleet/",
       "published_at": "2026-06-15T08:00:39Z",
       "published_label": "15 Jun 2026 · 08:00Z",
-      "age_label": "5d ago",
+      "age_label": "6d ago",
       "source_id": "war-on-the-rocks",
       "source_name": "War on the Rocks",
       "source_kind": "rss",
@@ -2936,7 +3047,7 @@
       "url": "https://warontherocks.com/south-korea-could-build-nuclear-submarines-but-it-shouldnt/",
       "published_at": "2026-06-15T07:30:50Z",
       "published_label": "15 Jun 2026 · 07:30Z",
-      "age_label": "5d ago",
+      "age_label": "6d ago",
       "source_id": "war-on-the-rocks",
       "source_name": "War on the Rocks",
       "source_kind": "rss",
@@ -2982,126 +3093,12 @@
       ],
       "priority": 18,
       "cluster_key": "the gulf arab states need a shield built for limited trust"
-    },
-    {
-      "id": "c646b93cc22f4cea",
-      "title": "Strike, Counterstrike, Repeat",
-      "summary": "Welcome to The Adversarial. Every other week, we’ll provide you with expert analysis on America’s greatest challengers: China, Russia, Iran, North Korea, and jihadists. Read more below.***Iran Hostilities have increased notably in the last few days, effectively ending the U.S.-I…",
-      "url": "https://warontherocks.com/strike-counterstrike-repeat/",
-      "published_at": "2026-06-11T20:20:17Z",
-      "published_label": "11 Jun 2026 · 20:20Z",
-      "age_label": "11 Jun 2026 · 20:20Z",
-      "source_id": "war-on-the-rocks",
-      "source_name": "War on the Rocks",
-      "source_kind": "rss",
-      "category": "apac-security",
-      "regions": [
-        "china",
-        "korea",
-        "middle-east",
-        "us",
-        "russia"
-      ],
-      "priority": 0,
-      "cluster_key": "strike counterstrike repeat"
-    },
-    {
-      "id": "38a4ff97514a2965",
-      "title": "The Evolution of Ukraine’s Asymmetrical Combat Tactics",
-      "summary": "In 2022, Scott Sweetow wrote, “Of Roadside Bombs and Drones: Putin’s Looming Insurgency Problem,” where he argued Ukraine’s fight against Russia would rely on a combination of conventional and asymmetrical insurgent tactics. Four years of combat later, we asked Scott to revisit…",
-      "url": "https://warontherocks.com/the-evolution-of-ukraines-asymmetrical-combat-tactics/",
-      "published_at": "2026-06-11T16:00:43Z",
-      "published_label": "11 Jun 2026 · 16:00Z",
-      "age_label": "11 Jun 2026 · 16:00Z",
-      "source_id": "war-on-the-rocks",
-      "source_name": "War on the Rocks",
-      "source_kind": "rss",
-      "category": "apac-security",
-      "regions": [
-        "europe",
-        "russia"
-      ],
-      "priority": 0,
-      "cluster_key": "the evolution of ukraines asymmetrical combat tactics"
-    },
-    {
-      "id": "0d7db25f8bf7fd31",
-      "title": "Wargaming for Improved Acquisition: What Does It Take?",
-      "summary": "A few months ago, I attended a panel discussion for a wargame simulating rapid industrial mobilization for armed conflict. Conducted by a leading university, with teams composed of former senior defense officials, the game probed how government and industry collaboration would p…",
-      "url": "https://warontherocks.com/cogs-of-war/wargaming-for-improved-acquisition-what-does-it-take/",
-      "published_at": "2026-06-11T08:00:33Z",
-      "published_label": "11 Jun 2026 · 08:00Z",
-      "age_label": "11 Jun 2026 · 08:00Z",
-      "source_id": "war-on-the-rocks",
-      "source_name": "War on the Rocks",
-      "source_kind": "rss",
-      "category": "apac-security",
-      "regions": [
-        "se-asia"
-      ],
-      "priority": 0,
-      "cluster_key": "wargaming for improved acquisition what does it take"
-    },
-    {
-      "id": "2bf2be6c98f26625",
-      "title": "Who Runs the Ransomware Group ‘The Gentlemen?’",
-      "summary": "A cybercrime group known as The Gentlemen has emerged as the second most active ransomware gang by victim count, rapidly attracting a talented pool of hackers through an aggressive recruitment strategy that promises affiliates 90 percent of any ransom paid by victims. This post…",
-      "url": "https://krebsonsecurity.com/2026/06/who-runs-the-ransomware-group-the-gentlemen/",
-      "published_at": "2026-06-10T14:03:44Z",
-      "published_label": "10 Jun 2026 · 14:03Z",
-      "age_label": "10 Jun 2026 · 14:03Z",
-      "source_id": "krebs",
-      "source_name": "Krebs on Security",
-      "source_kind": "rss",
-      "category": "cyber",
-      "regions": [
-        "global"
-      ],
-      "priority": 12,
-      "cluster_key": "who runs the ransomware group the gentlemen"
-    },
-    {
-      "id": "d028d710ef2e4f84",
-      "title": "A Record-Breaking Patch Tuesday for June 2026",
-      "summary": "Microsoft today released software updates to plug nearly 200 security holes across its Windows operating systems and supported software, a record number of fixes for the company's monthly Patch Tuesday cycle. Nearly three dozen of those bugs earned Microsoft's most dire \"critica…",
-      "url": "https://krebsonsecurity.com/2026/06/a-record-breaking-patch-tuesday-for-june-2026/",
-      "published_at": "2026-06-09T22:07:28Z",
-      "published_label": "09 Jun 2026 · 22:07Z",
-      "age_label": "09 Jun 2026 · 22:07Z",
-      "source_id": "krebs",
-      "source_name": "Krebs on Security",
-      "source_kind": "rss",
-      "category": "cyber",
-      "regions": [
-        "global"
-      ],
-      "priority": 30,
-      "cluster_key": "a recordbreaking patch tuesday for june 2026"
-    },
-    {
-      "id": "f93cb9b3d865b6f4",
-      "title": "Hackers Used Meta’s AI Support Bot to Seize Instagram Accounts",
-      "summary": "The Instagram accounts for the Obama White House and the Chief Master Sergeant of the U.S. Space Force were briefly defaced with pro-Iranian images and messages over the weekend, after instructions began circulating on Telegram showing how to trick Meta's \"AI support assistant\"…",
-      "url": "https://krebsonsecurity.com/2026/06/hackers-used-metas-ai-support-bot-to-seize-instagram-accounts/",
-      "published_at": "2026-06-01T17:32:50Z",
-      "published_label": "01 Jun 2026 · 17:32Z",
-      "age_label": "01 Jun 2026 · 17:32Z",
-      "source_id": "krebs",
-      "source_name": "Krebs on Security",
-      "source_kind": "rss",
-      "category": "cyber",
-      "regions": [
-        "middle-east",
-        "us"
-      ],
-      "priority": 12,
-      "cluster_key": "hackers used metas ai support bot to seize instagram accounts"
     }
   ],
   "trends": [
     {
       "term": "china",
-      "count": 8
+      "count": 10
     },
     {
       "term": "india",
@@ -3112,7 +3109,11 @@
       "count": 6
     },
     {
-      "term": "japan",
+      "term": "hong",
+      "count": 5
+    },
+    {
+      "term": "kong",
       "count": 5
     },
     {
@@ -3124,19 +3125,15 @@
       "count": 5
     },
     {
-      "term": "trump",
+      "term": "south",
       "count": 5
     },
     {
+      "term": "chinese",
+      "count": 4
+    },
+    {
       "term": "first",
-      "count": 4
-    },
-    {
-      "term": "hong",
-      "count": 4
-    },
-    {
-      "term": "kong",
       "count": 4
     }
   ]
