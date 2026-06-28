@@ -1,6 +1,6 @@
 {
-  "updated_at": "2026-06-28T13:00Z",
-  "updated_label": "28 Jun 2026 · 13:00Z",
+  "updated_at": "2026-06-28T14:54Z",
+  "updated_label": "28 Jun 2026 · 14:54Z",
   "categories": [
     {
       "id": "nz-pacific",
@@ -124,16 +124,16 @@
       "name": "The Record",
       "category": "cyber",
       "url": "https://therecord.media/feed/",
-      "item_count": 5,
-      "status": "ok",
-      "error": null
+      "item_count": 0,
+      "status": "error",
+      "error": "HTTP Error 520: <none>"
     },
     {
       "id": "krebs",
       "name": "Krebs on Security",
       "category": "cyber",
       "url": "https://krebsonsecurity.com/feed/",
-      "item_count": 0,
+      "item_count": 10,
       "status": "ok",
       "error": null
     },
@@ -176,31 +176,52 @@
   ],
   "items": [
     {
-      "id": "cdf42bf75d3cd75d",
-      "title": "11 killed in plane crash in northeastern France",
-      "summary": "Eleven people were killed in ‌a plane crash in the town of Tomblaine in northeastern France on Sunday, ⁠the local prefecture said. The ‌plane belonged to a parachutist ‌school. The pilot and all ⁠10 ⁠passengers – five students ‌and five instructors – died in the accident, ‌the ‌…",
-      "url": "https://www.scmp.com/news/world/europe/article/3358666/11-killed-plane-crash-northeastern-france?utm_source=rss_feed",
-      "published_at": "2026-06-28T12:57:01Z",
-      "published_label": "28 Jun 2026 · 12:57Z",
-      "age_label": "3m ago",
+      "id": "64e560a719d87b23",
+      "title": "Australian man charged with murder after girl found dead in suitcase in Thailand",
+      "summary": "The 17-year-old's body was found discarded near a railway track on Saturday, police say.",
+      "url": "https://www.bbc.co.uk/news/articles/cd0my5zy821o?at_medium=RSS&at_campaign=rss",
+      "published_at": "2026-06-28T14:30:05Z",
+      "published_label": "28 Jun 2026 · 14:30Z",
+      "age_label": "24m ago",
+      "source_id": "bbc-world",
+      "source_name": "BBC World",
+      "source_kind": "rss",
+      "category": "global",
+      "regions": [
+        "australia",
+        "se-asia"
+      ],
+      "priority": 30,
+      "cluster_key": "australian man charged with murder after girl found dead in suitcase in thailand"
+    },
+    {
+      "id": "fa38ab21ee1913eb",
+      "title": "How is China shaping up in the global competition to sell air defence weapons?",
+      "summary": "Chinese firms joined their global competitors at Eurosatory, the recently concluded arms fair, where the latest air defences were the centre of attention in a market made more important by the drone warfare seen in Ukraine and the Middle East. Experts said China could anticipate…",
+      "url": "https://www.scmp.com/news/china/military/article/3358646/how-china-shaping-global-competition-sell-air-defence-weapons?utm_source=rss_feed",
+      "published_at": "2026-06-28T14:00:05Z",
+      "published_label": "28 Jun 2026 · 14:00Z",
+      "age_label": "54m ago",
       "source_id": "scmp",
       "source_name": "South China Morning Post",
       "source_kind": "rss",
       "category": "apac-security",
       "regions": [
+        "china",
+        "middle-east",
         "europe"
       ],
       "priority": 30,
-      "cluster_key": "11 killed in plane crash in northeastern france"
+      "cluster_key": "how is china shaping up in the global competition to sell air defence weapons"
     },
     {
       "id": "1667282aae225928",
       "title": "Eleven killed after plane carrying skydivers crashes in eastern France",
       "summary": "The pilot and 10 passengers died in the incident, local officials said.",
       "url": "https://www.bbc.co.uk/news/articles/c5yz9yj9x74o?at_medium=RSS&at_campaign=rss",
-      "published_at": "2026-06-28T12:51:59Z",
-      "published_label": "28 Jun 2026 · 12:51Z",
-      "age_label": "8m ago",
+      "published_at": "2026-06-28T13:21:33Z",
+      "published_label": "28 Jun 2026 · 13:21Z",
+      "age_label": "1h ago",
       "source_id": "bbc-world",
       "source_name": "BBC World",
       "source_kind": "rss",
@@ -208,8 +229,44 @@
       "regions": [
         "europe"
       ],
-      "priority": 30,
+      "priority": 20,
       "cluster_key": "eleven killed after plane carrying skydivers crashes in eastern france"
+    },
+    {
+      "id": "f867f13b10ef86cb",
+      "title": "The final insurance frontier: Hong Kong spots opportunity in mainland China’s space boom",
+      "summary": "Elon Musk’s recent record-breaking SpaceX IPO has thrust the space economy into the financial mainstream, but mainland China’s trillion-yuan commercial space sector remains strikingly underinsured – a gap industry insiders say presents a rare opportunity for Hong Kong. On the ma…",
+      "url": "https://www.scmp.com/tech/article/3358494/final-insurance-frontier-hong-kong-spots-opportunity-mainland-chinas-space-boom?utm_source=rss_feed",
+      "published_at": "2026-06-28T13:00:10Z",
+      "published_label": "28 Jun 2026 · 13:00Z",
+      "age_label": "1h ago",
+      "source_id": "scmp",
+      "source_name": "South China Morning Post",
+      "source_kind": "rss",
+      "category": "apac-security",
+      "regions": [
+        "china"
+      ],
+      "priority": 38,
+      "cluster_key": "the final insurance frontier hong kong spots opportunity in mainland chinas space boom"
+    },
+    {
+      "id": "cdf42bf75d3cd75d",
+      "title": "11 killed in plane crash in northeastern France",
+      "summary": "Eleven people were killed in ‌a plane crash in the town of Tomblaine in northeastern France on Sunday, ⁠the local prefecture said. The ‌plane belonged to a parachutist ‌school. The pilot and all ⁠10 ⁠passengers – five students ‌and five instructors – died in the accident, ‌the ‌…",
+      "url": "https://www.scmp.com/news/world/europe/article/3358666/11-killed-plane-crash-northeastern-france?utm_source=rss_feed",
+      "published_at": "2026-06-28T12:57:01Z",
+      "published_label": "28 Jun 2026 · 12:57Z",
+      "age_label": "1h ago",
+      "source_id": "scmp",
+      "source_name": "South China Morning Post",
+      "source_kind": "rss",
+      "category": "apac-security",
+      "regions": [
+        "europe"
+      ],
+      "priority": 20,
+      "cluster_key": "11 killed in plane crash in northeastern france"
     },
     {
       "id": "34e5a21405855d46",
@@ -218,7 +275,7 @@
       "url": "https://www.bbc.co.uk/news/articles/cr47dvywvy5o?at_medium=RSS&at_campaign=rss",
       "published_at": "2026-06-28T12:39:41Z",
       "published_label": "28 Jun 2026 · 12:39Z",
-      "age_label": "20m ago",
+      "age_label": "2h ago",
       "source_id": "bbc-world",
       "source_name": "BBC World",
       "source_kind": "rss",
@@ -226,7 +283,7 @@
       "regions": [
         "global"
       ],
-      "priority": 48,
+      "priority": 38,
       "cluster_key": "two boys rescued from venezuela earthquake rubble after days of being trapped"
     },
     {
@@ -236,7 +293,7 @@
       "url": "https://www.scmp.com/opinion/world-opinion/article/3358104/china-isnt-europes-real-problem?utm_source=rss_feed",
       "published_at": "2026-06-28T12:30:05Z",
       "published_label": "28 Jun 2026 · 12:30Z",
-      "age_label": "29m ago",
+      "age_label": "2h ago",
       "source_id": "scmp",
       "source_name": "South China Morning Post",
       "source_kind": "rss",
@@ -245,7 +302,7 @@
         "china",
         "europe"
       ],
-      "priority": 30,
+      "priority": 20,
       "cluster_key": "china isnt europes real problem"
     },
     {
@@ -255,7 +312,7 @@
       "url": "https://www.scmp.com/news/world/americas/article/3358665/uk-man-arrested-after-womans-body-found-suitcase-colombia?utm_source=rss_feed",
       "published_at": "2026-06-28T12:29:16Z",
       "published_label": "28 Jun 2026 · 12:29Z",
-      "age_label": "30m ago",
+      "age_label": "2h ago",
       "source_id": "scmp",
       "source_name": "South China Morning Post",
       "source_kind": "rss",
@@ -263,7 +320,7 @@
       "regions": [
         "se-asia"
       ],
-      "priority": 30,
+      "priority": 20,
       "cluster_key": "uk man arrested after womans body found in suitcase in colombia"
     },
     {
@@ -273,7 +330,7 @@
       "url": "https://www.scmp.com/news/world/middle-east/article/3358664/saudi-aramco-helicopter-crash-kills-14?utm_source=rss_feed",
       "published_at": "2026-06-28T12:19:25Z",
       "published_label": "28 Jun 2026 · 12:19Z",
-      "age_label": "40m ago",
+      "age_label": "2h ago",
       "source_id": "scmp",
       "source_name": "South China Morning Post",
       "source_kind": "rss",
@@ -282,7 +339,7 @@
         "taiwan",
         "middle-east"
       ],
-      "priority": 30,
+      "priority": 20,
       "cluster_key": "saudi aramco helicopter crash kills 14"
     },
     {
@@ -292,7 +349,7 @@
       "url": "https://www.scmp.com/news/china/science/article/3358415/china-leads-gps-style-reconnaissance-and-anti-satellite-abilities-us-report-says?utm_source=rss_feed",
       "published_at": "2026-06-28T12:00:06Z",
       "published_label": "28 Jun 2026 · 12:00Z",
-      "age_label": "59m ago",
+      "age_label": "2h ago",
       "source_id": "scmp",
       "source_name": "South China Morning Post",
       "source_kind": "rss",
@@ -301,7 +358,7 @@
         "china",
         "us"
       ],
-      "priority": 30,
+      "priority": 20,
       "cluster_key": "china leads in gpsstyle reconnaissance and antisatellite abilities us report says"
     },
     {
@@ -311,7 +368,7 @@
       "url": "https://www.defenseone.com/technology/2026/06/agentic-ai-tool-aims-give-us-commanders-new-target-options-within-seconds/414491/",
       "published_at": "2026-06-28T12:00:00Z",
       "published_label": "28 Jun 2026 · 12:00Z",
-      "age_label": "1h ago",
+      "age_label": "2h ago",
       "source_id": "defense-one",
       "source_name": "Defense One",
       "source_kind": "rss",
@@ -329,7 +386,7 @@
       "url": "https://www.rnz.co.nz/news/emergencies_local/636912/magnitude-4-point-8-quake-shakes-lower-north-island",
       "published_at": "2026-06-28T11:31:58Z",
       "published_label": "28 Jun 2026 · 11:31Z",
-      "age_label": "1h ago",
+      "age_label": "3h ago",
       "source_id": "rnz-news",
       "source_name": "RNZ News",
       "source_kind": "rss",
@@ -347,7 +404,7 @@
       "url": "https://www.scmp.com/news/hong-kong/health-environment/article/3358611/i-see-hope-how-mindset-shifts-help-hong-kong-cancer-patients-cope-diagnosis?utm_source=rss_feed",
       "published_at": "2026-06-28T11:00:05Z",
       "published_label": "28 Jun 2026 · 11:00Z",
-      "age_label": "1h ago",
+      "age_label": "3h ago",
       "source_id": "scmp",
       "source_name": "South China Morning Post",
       "source_kind": "rss",
@@ -361,11 +418,11 @@
     {
       "id": "7b6f53881b1688b9",
       "title": "1 dead, 2 seriously injured after minibus mounts pavement, crashes in Hong Kong",
-      "summary": "One pedestrian was killed and two people seriously injured after a minibus mounted a pavement and crashed in Hong Kong’s Kowloon City district on Sunday. Police received a report at around 5.48pm that a minibus travelling along Argyle Street had mounted the pavement outside Kowl…",
+      "summary": "One pedestrian was killed and two others were seriously injured after a minibus mounted a pavement and crashed in Hong Kong’s Kowloon City district on Sunday. Police received a report at around 5.48pm that a minibus travelling along Argyle Street had mounted the pavement outside…",
       "url": "https://www.scmp.com/news/hong-kong/health-environment/article/3358662/3-seriously-injured-after-minibus-mounts-pavement-hong-kong?utm_source=rss_feed",
       "published_at": "2026-06-28T10:44:54Z",
       "published_label": "28 Jun 2026 · 10:44Z",
-      "age_label": "2h ago",
+      "age_label": "4h ago",
       "source_id": "scmp",
       "source_name": "South China Morning Post",
       "source_kind": "rss",
@@ -383,7 +440,7 @@
       "url": "https://www.scmp.com/news/hong-kong/society/article/3358661/heart-kwun-tong-hundreds-say-goodbye-old-yue-man-square-hong-kong?utm_source=rss_feed",
       "published_at": "2026-06-28T10:36:18Z",
       "published_label": "28 Jun 2026 · 10:36Z",
-      "age_label": "2h ago",
+      "age_label": "4h ago",
       "source_id": "scmp",
       "source_name": "South China Morning Post",
       "source_kind": "rss",
@@ -401,7 +458,7 @@
       "url": "https://www.scmp.com/news/hong-kong/hong-kong-economy/article/3358650/net-result-how-hong-kong-dim-sum-restaurant-went-big-world-cup?utm_source=rss_feed",
       "published_at": "2026-06-28T10:20:04Z",
       "published_label": "28 Jun 2026 · 10:20Z",
-      "age_label": "2h ago",
+      "age_label": "4h ago",
       "source_id": "scmp",
       "source_name": "South China Morning Post",
       "source_kind": "rss",
@@ -420,7 +477,7 @@
       "url": "https://www.bbc.co.uk/news/articles/cj9gyk1z7ngo?at_medium=RSS&at_campaign=rss",
       "published_at": "2026-06-28T10:11:35Z",
       "published_label": "28 Jun 2026 · 10:11Z",
-      "age_label": "2h ago",
+      "age_label": "4h ago",
       "source_id": "bbc-world",
       "source_name": "BBC World",
       "source_kind": "rss",
@@ -438,7 +495,7 @@
       "url": "https://www.rnz.co.nz/news/regions_taranaki/636336/injured-climber-rescued-on-taranaki-maunga",
       "published_at": "2026-06-28T10:02:45Z",
       "published_label": "28 Jun 2026 · 10:02Z",
-      "age_label": "2h ago",
+      "age_label": "4h ago",
       "source_id": "rnz-news",
       "source_name": "RNZ News",
       "source_kind": "rss",
@@ -456,7 +513,7 @@
       "url": "https://www.scmp.com/news/china/science/article/3358642/china-fires-worlds-biggest-superconducting-magnet-nuclear-fusion-project?utm_source=rss_feed",
       "published_at": "2026-06-28T10:00:10Z",
       "published_label": "28 Jun 2026 · 10:00Z",
-      "age_label": "2h ago",
+      "age_label": "4h ago",
       "source_id": "scmp",
       "source_name": "South China Morning Post",
       "source_kind": "rss",
@@ -474,7 +531,7 @@
       "url": "https://www.defenseone.com/ideas/2026/06/what-chinese-military-thinking-about-iran-war/414482/",
       "published_at": "2026-06-28T10:00:00Z",
       "published_label": "28 Jun 2026 · 10:00Z",
-      "age_label": "3h ago",
+      "age_label": "4h ago",
       "source_id": "defense-one",
       "source_name": "Defense One",
       "source_kind": "rss",
@@ -493,7 +550,7 @@
       "url": "https://www.rnz.co.nz/news/political/633845/election-26-labour-proposes-apprenticeship-boost-expansion",
       "published_at": "2026-06-28T09:53:37Z",
       "published_label": "28 Jun 2026 · 09:53Z",
-      "age_label": "3h ago",
+      "age_label": "5h ago",
       "source_id": "rnz-news",
       "source_name": "RNZ News",
       "source_kind": "rss",
@@ -511,7 +568,7 @@
       "url": "https://www.scmp.com/week-asia/politics/article/3358655/singapores-pritam-singh-survives-vote-no-confidence?utm_source=rss_feed",
       "published_at": "2026-06-28T09:48:32Z",
       "published_label": "28 Jun 2026 · 09:48Z",
-      "age_label": "3h ago",
+      "age_label": "5h ago",
       "source_id": "scmp",
       "source_name": "South China Morning Post",
       "source_kind": "rss",
@@ -529,7 +586,7 @@
       "url": "https://www.scmp.com/news/hong-kong/law-and-crime/article/3358653/3-held-hong-kong-police-seize-hk180m-suspected-cocaine-typhoon-shelter?utm_source=rss_feed",
       "published_at": "2026-06-28T09:45:23Z",
       "published_label": "28 Jun 2026 · 09:45Z",
-      "age_label": "3h ago",
+      "age_label": "5h ago",
       "source_id": "scmp",
       "source_name": "South China Morning Post",
       "source_kind": "rss",
@@ -547,7 +604,7 @@
       "url": "https://www.scmp.com/news/world/europe/article/3358652/france-sees-1000-excess-deaths-during-record-breaking-heatwave?utm_source=rss_feed",
       "published_at": "2026-06-28T09:32:05Z",
       "published_label": "28 Jun 2026 · 09:32Z",
-      "age_label": "3h ago",
+      "age_label": "5h ago",
       "source_id": "scmp",
       "source_name": "South China Morning Post",
       "source_kind": "rss",
@@ -565,7 +622,7 @@
       "url": "https://www.rnz.co.nz/news/emergencies_local/635960/police-seek-witnesses-to-alleged-dannevirke-assault",
       "published_at": "2026-06-28T09:03:50Z",
       "published_label": "28 Jun 2026 · 09:03Z",
-      "age_label": "3h ago",
+      "age_label": "5h ago",
       "source_id": "rnz-news",
       "source_name": "RNZ News",
       "source_kind": "rss",
@@ -577,50 +634,13 @@
       "cluster_key": "police seek witnesses to alleged dannevirke assault"
     },
     {
-      "id": "3101cd0acced1ee6",
-      "title": "Australian arrested after Thai teen girl found dead in suitcase",
-      "summary": "The family of a 17-year-old Thai ⁠girl whose body ⁠was found in a suitcase ⁠in Pattaya said they were devastated by her death, for which an Australian man has been arrested and charged with murder. Thai police said they arrested an Australian man in his 40s at Bangkok’s Suvarnab…",
-      "url": "https://www.scmp.com/news/asia/southeast-asia/article/3358651/australian-arrested-after-thai-teen-girl-found-dead-suitcase?utm_source=rss_feed",
-      "published_at": "2026-06-28T09:03:23Z",
-      "published_label": "28 Jun 2026 · 09:03Z",
-      "age_label": "3h ago",
-      "source_id": "scmp",
-      "source_name": "South China Morning Post",
-      "source_kind": "rss",
-      "category": "apac-security",
-      "regions": [
-        "australia"
-      ],
-      "priority": 20,
-      "cluster_key": "australian arrested after thai teen girl found dead in suitcase"
-    },
-    {
-      "id": "e4c40d5bebeeb472",
-      "title": "For an Africa seeking growth, China is proving a reliable partner",
-      "summary": "On June 4, at a packing facility in Limuru near Nairobi, Kenya, avocados were being prepared for the Chinese market. The scene may seem mundane, but the politics behind it is significant. China has removed tariffs on imports from 53 African countries. African exporters are begin…",
-      "url": "https://www.scmp.com/opinion/china-opinion/article/3358072/africa-seeking-growth-china-proving-reliable-partner?utm_source=rss_feed",
-      "published_at": "2026-06-28T08:30:05Z",
-      "published_label": "28 Jun 2026 · 08:30Z",
-      "age_label": "4h ago",
-      "source_id": "scmp",
-      "source_name": "South China Morning Post",
-      "source_kind": "rss",
-      "category": "apac-security",
-      "regions": [
-        "china",
-        "africa"
-      ],
-      "priority": 20,
-      "cluster_key": "for an africa seeking growth china is proving a reliable partner"
-    },
-    {
       "id": "10327d0b0fa97937",
       "title": "Polling stations close in New Caledonia provincial elections",
       "summary": "Polling stations have now closed in New Caledonia, as electoral officials begin tallying votes in Sunday's provincial elections.",
       "url": "https://www.rnz.co.nz/news/pacific/635434/polling-stations-close-in-new-caledonia-provincial-elections",
       "published_at": "2026-06-28T08:02:35Z",
       "published_label": "28 Jun 2026 · 08:02Z",
-      "age_label": "4h ago",
+      "age_label": "6h ago",
       "source_id": "rnz-news",
       "source_name": "RNZ News",
       "source_kind": "rss",
@@ -628,7 +648,7 @@
       "regions": [
         "pacific"
       ],
-      "priority": 20,
+      "priority": 10,
       "cluster_key": "polling stations close in new caledonia provincial elections"
     },
     {
@@ -638,7 +658,7 @@
       "url": "https://www.rnz.co.nz/news/political/634881/act-party-leader-david-seymour-takes-aim-at-parliamentary-allies-opponents-but-especially-labour",
       "published_at": "2026-06-28T06:27:07Z",
       "published_label": "28 Jun 2026 · 06:27Z",
-      "age_label": "6h ago",
+      "age_label": "8h ago",
       "source_id": "rnz-news",
       "source_name": "RNZ News",
       "source_kind": "rss",
@@ -656,7 +676,7 @@
       "url": "https://www.rnz.co.nz/news/emergencies_local/634309/one-person-rescued-from-auckland-apartment-fire",
       "published_at": "2026-06-28T05:25:21Z",
       "published_label": "28 Jun 2026 · 05:25Z",
-      "age_label": "7h ago",
+      "age_label": "9h ago",
       "source_id": "rnz-news",
       "source_name": "RNZ News",
       "source_kind": "rss",
@@ -674,7 +694,7 @@
       "url": "https://www.rnz.co.nz/news/regional/634283/cause-of-unsightly-wellington-wastewater-blockage-explained",
       "published_at": "2026-06-28T05:25:21Z",
       "published_label": "28 Jun 2026 · 05:25Z",
-      "age_label": "7h ago",
+      "age_label": "9h ago",
       "source_id": "rnz-news",
       "source_name": "RNZ News",
       "source_kind": "rss",
@@ -692,7 +712,7 @@
       "url": "https://www.rnz.co.nz/news/political/633508/labour-s-ginny-andersen-received-complaint-about-police-commissioner-last-year",
       "published_at": "2026-06-28T05:06:00Z",
       "published_label": "28 Jun 2026 · 05:06Z",
-      "age_label": "7h ago",
+      "age_label": "9h ago",
       "source_id": "rnz-news",
       "source_name": "RNZ News",
       "source_kind": "rss",
@@ -710,7 +730,7 @@
       "url": "https://www.bbc.co.uk/news/articles/cdxdwkgqgq0o?at_medium=RSS&at_campaign=rss",
       "published_at": "2026-06-28T04:54:50Z",
       "published_label": "28 Jun 2026 · 04:54Z",
-      "age_label": "8h ago",
+      "age_label": "9h ago",
       "source_id": "bbc-world",
       "source_name": "BBC World",
       "source_kind": "rss",
@@ -728,7 +748,7 @@
       "url": "https://www.rnz.co.nz/news/political/633846/nicole-mckee-announced-as-act-s-new-deputy",
       "published_at": "2026-06-28T04:04:25Z",
       "published_label": "28 Jun 2026 · 04:04Z",
-      "age_label": "8h ago",
+      "age_label": "10h ago",
       "source_id": "rnz-news",
       "source_name": "RNZ News",
       "source_kind": "rss",
@@ -746,7 +766,7 @@
       "url": "https://www.rnz.co.nz/news/weather/633733/hundreds-expected-to-be-cut-off-for-days-after-storm-washes-out-vital-bridge",
       "published_at": "2026-06-28T02:59:28Z",
       "published_label": "28 Jun 2026 · 02:59Z",
-      "age_label": "10h ago",
+      "age_label": "11h ago",
       "source_id": "rnz-news",
       "source_name": "RNZ News",
       "source_kind": "rss",
@@ -764,7 +784,7 @@
       "url": "https://www.rnz.co.nz/news/political/633090/english-language-bill-no-changes-suggested-by-justice-select-committee",
       "published_at": "2026-06-28T01:56:18Z",
       "published_label": "28 Jun 2026 · 01:56Z",
-      "age_label": "11h ago",
+      "age_label": "12h ago",
       "source_id": "rnz-news",
       "source_name": "RNZ News",
       "source_kind": "rss",
@@ -782,7 +802,7 @@
       "url": "https://www.rnz.co.nz/news/pacific/632442/heavy-security-deployed-as-new-caledonia-s-crucial-elections-begin",
       "published_at": "2026-06-28T01:27:05Z",
       "published_label": "28 Jun 2026 · 01:27Z",
-      "age_label": "11h ago",
+      "age_label": "13h ago",
       "source_id": "rnz-news",
       "source_name": "RNZ News",
       "source_kind": "rss",
@@ -800,7 +820,7 @@
       "url": "https://www.bbc.co.uk/news/articles/cj4gqz5lx1eo?at_medium=RSS&at_campaign=rss",
       "published_at": "2026-06-28T00:06:19Z",
       "published_label": "28 Jun 2026 · 00:06Z",
-      "age_label": "12h ago",
+      "age_label": "14h ago",
       "source_id": "bbc-world",
       "source_name": "BBC World",
       "source_kind": "rss",
@@ -818,7 +838,7 @@
       "url": "https://www.bbc.co.uk/news/articles/c1dy5y3y2g3o?at_medium=RSS&at_campaign=rss",
       "published_at": "2026-06-27T23:40:43Z",
       "published_label": "27 Jun 2026 · 23:40Z",
-      "age_label": "13h ago",
+      "age_label": "15h ago",
       "source_id": "bbc-asia",
       "source_name": "BBC Asia",
       "source_kind": "rss",
@@ -836,7 +856,7 @@
       "url": "https://www.rnz.co.nz/news/political/632986/question-time-not-campaign-time",
       "published_at": "2026-06-27T23:22:10Z",
       "published_label": "27 Jun 2026 · 23:22Z",
-      "age_label": "13h ago",
+      "age_label": "15h ago",
       "source_id": "rnz-news",
       "source_name": "RNZ News",
       "source_kind": "rss",
@@ -854,7 +874,7 @@
       "url": "https://www.bbc.co.uk/news/articles/cpvp3xn489no?at_medium=RSS&at_campaign=rss",
       "published_at": "2026-06-27T23:10:39Z",
       "published_label": "27 Jun 2026 · 23:10Z",
-      "age_label": "13h ago",
+      "age_label": "15h ago",
       "source_id": "bbc-asia",
       "source_name": "BBC Asia",
       "source_kind": "rss",
@@ -872,7 +892,7 @@
       "url": "https://www.rnz.co.nz/news/crime-and-justice/632910/two-seriously-injured-in-hamilton-service-station-fight",
       "published_at": "2026-06-27T23:03:28Z",
       "published_label": "27 Jun 2026 · 23:03Z",
-      "age_label": "13h ago",
+      "age_label": "15h ago",
       "source_id": "rnz-news",
       "source_name": "RNZ News",
       "source_kind": "rss",
@@ -890,7 +910,7 @@
       "url": "https://www.bbc.co.uk/news/articles/c78yv5g74e9o?at_medium=RSS&at_campaign=rss",
       "published_at": "2026-06-27T22:34:11Z",
       "published_label": "27 Jun 2026 · 22:34Z",
-      "age_label": "14h ago",
+      "age_label": "16h ago",
       "source_id": "bbc-world",
       "source_name": "BBC World",
       "source_kind": "rss",
@@ -908,7 +928,7 @@
       "url": "https://www.bbc.co.uk/news/articles/cx2kpn0eeweo?at_medium=RSS&at_campaign=rss",
       "published_at": "2026-06-27T21:35:40Z",
       "published_label": "27 Jun 2026 · 21:35Z",
-      "age_label": "15h ago",
+      "age_label": "17h ago",
       "source_id": "bbc-world",
       "source_name": "BBC World",
       "source_kind": "rss",
@@ -926,7 +946,7 @@
       "url": "https://www.bbc.co.uk/news/videos/c23yezpg2ypo?at_medium=RSS&at_campaign=rss",
       "published_at": "2026-06-27T21:28:04Z",
       "published_label": "27 Jun 2026 · 21:28Z",
-      "age_label": "15h ago",
+      "age_label": "17h ago",
       "source_id": "bbc-world",
       "source_name": "BBC World",
       "source_kind": "rss",
@@ -944,7 +964,7 @@
       "url": "https://www.rnz.co.nz/news/health/631760/health-nz-to-front-community-as-palmerston-north-loses-last-gastro-doctor",
       "published_at": "2026-06-27T21:05:41Z",
       "published_label": "27 Jun 2026 · 21:05Z",
-      "age_label": "15h ago",
+      "age_label": "17h ago",
       "source_id": "rnz-national",
       "source_name": "RNZ National",
       "source_kind": "rss",
@@ -962,7 +982,7 @@
       "url": "https://www.rnz.co.nz/news/health/631840/ai-promises-breakthrough-in-bowel-cancer-detection",
       "published_at": "2026-06-27T21:04:32Z",
       "published_label": "27 Jun 2026 · 21:04Z",
-      "age_label": "15h ago",
+      "age_label": "17h ago",
       "source_id": "rnz-national",
       "source_name": "RNZ National",
       "source_kind": "rss",
@@ -980,7 +1000,7 @@
       "url": "https://www.bbc.co.uk/news/articles/cx2vdydz31no?at_medium=RSS&at_campaign=rss",
       "published_at": "2026-06-27T20:48:16Z",
       "published_label": "27 Jun 2026 · 20:48Z",
-      "age_label": "16h ago",
+      "age_label": "18h ago",
       "source_id": "bbc-world",
       "source_name": "BBC World",
       "source_kind": "rss",
@@ -998,7 +1018,7 @@
       "url": "https://www.bbc.co.uk/news/articles/ce3ewkdgw9ro?at_medium=RSS&at_campaign=rss",
       "published_at": "2026-06-27T20:03:26Z",
       "published_label": "27 Jun 2026 · 20:03Z",
-      "age_label": "16h ago",
+      "age_label": "18h ago",
       "source_id": "bbc-world",
       "source_name": "BBC World",
       "source_kind": "rss",
@@ -1016,7 +1036,7 @@
       "url": "https://www.rnz.co.nz/news/weather/622241/wind-snow-rain-and-swells-pound-north-island-amid-severe-weather-warnings",
       "published_at": "2026-06-27T18:49:47Z",
       "published_label": "27 Jun 2026 · 18:49Z",
-      "age_label": "18h ago",
+      "age_label": "20h ago",
       "source_id": "rnz-national",
       "source_name": "RNZ National",
       "source_kind": "rss",
@@ -1034,7 +1054,7 @@
       "url": "https://www.rnz.co.nz/news/health/626452/one-dead-after-five-overdose-on-fantasy-in-separate-incidents",
       "published_at": "2026-06-27T18:49:46Z",
       "published_label": "27 Jun 2026 · 18:49Z",
-      "age_label": "18h ago",
+      "age_label": "20h ago",
       "source_id": "rnz-national",
       "source_name": "RNZ National",
       "source_kind": "rss",
@@ -1052,7 +1072,7 @@
       "url": "https://thediplomat.com/2026/06/pakistan-wants-the-world-to-see-it-as-a-peacemaker-i-want-it-to-find-my-father/",
       "published_at": "2026-06-27T15:03:00Z",
       "published_label": "27 Jun 2026 · 15:03Z",
-      "age_label": "21h ago",
+      "age_label": "23h ago",
       "source_id": "diplomat",
       "source_name": "The Diplomat",
       "source_kind": "rss",
@@ -1070,7 +1090,7 @@
       "url": "https://www.bbc.co.uk/news/articles/cdjk8zwe7z3o?at_medium=RSS&at_campaign=rss",
       "published_at": "2026-06-27T14:22:37Z",
       "published_label": "27 Jun 2026 · 14:22Z",
-      "age_label": "22h ago",
+      "age_label": "1d ago",
       "source_id": "bbc-world",
       "source_name": "BBC World",
       "source_kind": "rss",
@@ -1078,7 +1098,7 @@
       "regions": [
         "global"
       ],
-      "priority": 10,
+      "priority": 0,
       "cluster_key": "in caracas this feels like the hardest moment in venezuelas modern history"
     },
     {
@@ -1088,7 +1108,7 @@
       "url": "https://www.bbc.co.uk/news/articles/c7vymlgl5vgo?at_medium=RSS&at_campaign=rss",
       "published_at": "2026-06-27T14:21:31Z",
       "published_label": "27 Jun 2026 · 14:21Z",
-      "age_label": "22h ago",
+      "age_label": "1d ago",
       "source_id": "bbc-world",
       "source_name": "BBC World",
       "source_kind": "rss",
@@ -1097,7 +1117,7 @@
         "europe",
         "africa"
       ],
-      "priority": 10,
+      "priority": 0,
       "cluster_key": "burkina faso severs diplomatic ties with france"
     },
     {
@@ -1207,24 +1227,6 @@
       ],
       "priority": 0,
       "cluster_key": "religion row as texas makes bible stories required reading in schools"
-    },
-    {
-      "id": "3674e599c09d6823",
-      "title": "Meloni and Trump: A very public fall-out that is proving very hard to fix",
-      "summary": "Italy's PM was not long ago being called the \"Trump whisperer\", but their relationship has gone from public attacks to personal insults.",
-      "url": "https://www.bbc.co.uk/news/articles/cze962pgk27o?at_medium=RSS&at_campaign=rss",
-      "published_at": "2026-06-26T23:01:50Z",
-      "published_label": "26 Jun 2026 · 23:01Z",
-      "age_label": "1d ago",
-      "source_id": "bbc-world",
-      "source_name": "BBC World",
-      "source_kind": "rss",
-      "category": "global",
-      "regions": [
-        "global"
-      ],
-      "priority": 0,
-      "cluster_key": "meloni and trump a very public fallout that is proving very hard to fix"
     },
     {
       "id": "73c0de9266bf24f5",
@@ -1363,7 +1365,7 @@
       "url": "https://thediplomat.com/2026/06/tariff-proof-but-not-china-proof-the-geopolitics-of-indias-pharma-power/",
       "published_at": "2026-06-26T14:16:00Z",
       "published_label": "26 Jun 2026 · 14:16Z",
-      "age_label": "1d ago",
+      "age_label": "2d ago",
       "source_id": "diplomat",
       "source_name": "The Diplomat",
       "source_kind": "rss",
@@ -1383,7 +1385,7 @@
       "url": "https://warontherocks.com/not-imaginary-the-deterrence-gap-is-real-and-america-needs-low-yield-nukes/",
       "published_at": "2026-06-26T14:15:37Z",
       "published_label": "26 Jun 2026 · 14:15Z",
-      "age_label": "1d ago",
+      "age_label": "2d ago",
       "source_id": "war-on-the-rocks",
       "source_name": "War on the Rocks",
       "source_kind": "rss",
@@ -1401,7 +1403,7 @@
       "url": "https://thediplomat.com/2026/06/10-years-after-the-south-china-sea-arbitration-will-asean-remain-silent/",
       "published_at": "2026-06-26T14:05:00Z",
       "published_label": "26 Jun 2026 · 14:05Z",
-      "age_label": "1d ago",
+      "age_label": "2d ago",
       "source_id": "diplomat",
       "source_name": "The Diplomat",
       "source_kind": "rss",
@@ -1420,7 +1422,7 @@
       "url": "https://news.usni.org/2026/06/26/french-seizes-5th-russian-shadow-fleet-tanker",
       "published_at": "2026-06-26T14:02:28Z",
       "published_label": "26 Jun 2026 · 14:02Z",
-      "age_label": "1d ago",
+      "age_label": "2d ago",
       "source_id": "usni",
       "source_name": "USNI News",
       "source_kind": "rss",
@@ -1438,7 +1440,7 @@
       "url": "https://thediplomat.com/2026/06/indias-drone-production-ecosystem-is-evolving/",
       "published_at": "2026-06-26T13:43:00Z",
       "published_label": "26 Jun 2026 · 13:43Z",
-      "age_label": "1d ago",
+      "age_label": "2d ago",
       "source_id": "diplomat",
       "source_name": "The Diplomat",
       "source_kind": "rss",
@@ -1450,31 +1452,13 @@
       "cluster_key": "indias drone production ecosystem is evolving"
     },
     {
-      "id": "cf40bbfeacec3a3a",
-      "title": "Russia accuses Apple of ‘political censorship’ after VK apps removed from App Store",
-      "summary": "Apple removed VK's flagship social network VKontakte, often described as Russia's equivalent of Facebook, along with VK Music, VK Messenger, VK Video, Odnoklassniki and Mail.ru services, including its email application.",
-      "url": "https://therecord.media/russia-accuses-apple-of-political-censorship-after-vk-removal",
-      "published_at": "2026-06-26T13:42:00Z",
-      "published_label": "26 Jun 2026 · 13:42Z",
-      "age_label": "1d ago",
-      "source_id": "the-record",
-      "source_name": "The Record",
-      "source_kind": "rss",
-      "category": "cyber",
-      "regions": [
-        "russia"
-      ],
-      "priority": 12,
-      "cluster_key": "russia accuses apple of political censorship after vk apps removed from app store"
-    },
-    {
       "id": "d2005ac2821ae86f",
       "title": "Can China’s Dong Minority Keep Their Unique Cultural Heritage?",
       "summary": "An ambitious university-led research project to document the Dong people’s distinctive architecture is revealing a great deal about this marginalized Indigenous group’s way of life.",
       "url": "https://thediplomat.com/2026/06/can-chinas-dong-minority-keep-their-unique-cultural-heritage/",
       "published_at": "2026-06-26T13:39:00Z",
       "published_label": "26 Jun 2026 · 13:39Z",
-      "age_label": "1d ago",
+      "age_label": "2d ago",
       "source_id": "diplomat",
       "source_name": "The Diplomat",
       "source_kind": "rss",
@@ -1486,32 +1470,13 @@
       "cluster_key": "can chinas dong minority keep their unique cultural heritage"
     },
     {
-      "id": "ca96e92d2f29138a",
-      "title": "Turla group adds more malware to Russia’s espionage efforts against Ukraine",
-      "summary": "Threat intelligence researchers at Google described StockStay, the latest malware developed by the Russian cyber-espionage group known as Turla.",
-      "url": "https://therecord.media/russia-turla-espionage-ukraine-stockstay-malware",
-      "published_at": "2026-06-26T13:30:00Z",
-      "published_label": "26 Jun 2026 · 13:30Z",
-      "age_label": "1d ago",
-      "source_id": "the-record",
-      "source_name": "The Record",
-      "source_kind": "rss",
-      "category": "cyber",
-      "regions": [
-        "europe",
-        "russia"
-      ],
-      "priority": 12,
-      "cluster_key": "turla group adds more malware to russias espionage efforts against ukraine"
-    },
-    {
       "id": "6128f3a7cf44ca55",
       "title": "After the Iran War, China’s Middle East Strategy Will Prioritize the Gulf",
       "summary": "China’s top priority is now keeping the Gulf states, and above all Saudi Arabia and the UAE, from drawing closer to Washington.",
       "url": "https://thediplomat.com/2026/06/after-the-iran-war-chinas-middle-east-strategy-will-prioritize-the-gulf/",
       "published_at": "2026-06-26T13:23:00Z",
       "published_label": "26 Jun 2026 · 13:23Z",
-      "age_label": "1d ago",
+      "age_label": "2d ago",
       "source_id": "diplomat",
       "source_name": "The Diplomat",
       "source_kind": "rss",
@@ -1525,32 +1490,13 @@
       "cluster_key": "after the iran war chinas middle east strategy will prioritize the gulf"
     },
     {
-      "id": "d7ebfcd14823c49c",
-      "title": "Russia used social engineering to breach prominent messaging accounts, Ukraine says",
-      "summary": "Ukraine's SBU described a long-running Russian operation that used fake tech-support workers to persuade people to hand over credentials to their messaging apps.",
-      "url": "https://therecord.media/russia-ukraine-social-engineering-messaging-accounts",
-      "published_at": "2026-06-26T13:10:00Z",
-      "published_label": "26 Jun 2026 · 13:10Z",
-      "age_label": "1d ago",
-      "source_id": "the-record",
-      "source_name": "The Record",
-      "source_kind": "rss",
-      "category": "cyber",
-      "regions": [
-        "europe",
-        "russia"
-      ],
-      "priority": 12,
-      "cluster_key": "russia used social engineering to breach prominent messaging accounts ukraine says"
-    },
-    {
       "id": "d36036de2fb05032",
       "title": "Chun Jae-soo’s New Blueprint for Busan",
       "summary": "South Korea’s second largest city will chart the country’s new maritime plan. And its new mayor will lead the way.",
       "url": "https://thediplomat.com/2026/06/chun-jae-soos-new-blueprint-for-busan/",
       "published_at": "2026-06-26T13:03:00Z",
       "published_label": "26 Jun 2026 · 13:03Z",
-      "age_label": "1d ago",
+      "age_label": "2d ago",
       "source_id": "diplomat",
       "source_name": "The Diplomat",
       "source_kind": "rss",
@@ -1617,24 +1563,6 @@
       ],
       "priority": 0,
       "cluster_key": "taiwan to build chip and ev factories in poland replacing china and the us"
-    },
-    {
-      "id": "e9d031b628ca08d8",
-      "title": "FCC votes to toughen rules in bid to better protect undersea cables",
-      "summary": "In an unprecedented move, the FCC also said it plans to mandate that owners and operators of submarine line terminal equipment (SLTE) be licensed.",
-      "url": "https://therecord.media/fcc-votes-to-toughen-rules-undersea-cables",
-      "published_at": "2026-06-26T12:10:00Z",
-      "published_label": "26 Jun 2026 · 12:10Z",
-      "age_label": "2d ago",
-      "source_id": "the-record",
-      "source_name": "The Record",
-      "source_kind": "rss",
-      "category": "cyber",
-      "regions": [
-        "global"
-      ],
-      "priority": 12,
-      "cluster_key": "fcc votes to toughen rules in bid to better protect undersea cables"
     },
     {
       "id": "81a9eef7a60a64a0",
@@ -2007,31 +1935,13 @@
       "cluster_key": "air force wants new 1000nautical mile range missile for air sea targets"
     },
     {
-      "id": "4e26ef15b882d122",
-      "title": "DHS chief says president has met with likely CISA nominee; agency plans to hire 600",
-      "summary": "Once a new CISA director is in place, the agency will ramp up hiring efforts, Homeland Security Secretary Markwayne Mullin told lawmakers. The White House has not yet announced a nominee.",
-      "url": "https://therecord.media/cisa-director-nominee-workforce-hires-mullin-house-hearing",
-      "published_at": "2026-06-25T18:47:51Z",
-      "published_label": "25 Jun 2026 · 18:47Z",
-      "age_label": "2d ago",
-      "source_id": "the-record",
-      "source_name": "The Record",
-      "source_kind": "rss",
-      "category": "cyber",
-      "regions": [
-        "us"
-      ],
-      "priority": 12,
-      "cluster_key": "dhs chief says president has met with likely cisa nominee agency plans to hire 600"
-    },
-    {
       "id": "8ce90e2318f70213",
       "title": "USS Indianapolis Suffers Fire, 7 Sailors Treated for Minor Injuries",
       "summary": "The Littoral Combat Ship USS Indianapolis (LCS-17) suffered an in-port fire on Wednesday while in port at Naval Station Mayport, Fla., USNI News has learned. Seven sailors were taken to area hospitals, treated for minor injuries and released. “All have since been released and cl…",
       "url": "https://news.usni.org/2026/06/25/uss-indianapolis-suffers-fire-7-sailors-treated-for-minor-injuries",
       "published_at": "2026-06-25T14:31:32Z",
       "published_label": "25 Jun 2026 · 14:31Z",
-      "age_label": "2d ago",
+      "age_label": "3d ago",
       "source_id": "usni",
       "source_name": "USNI News",
       "source_kind": "rss",
@@ -2049,7 +1959,7 @@
       "url": "https://www.lowyinstitute.org/the-interpreter/indonesia-s-cyber-coordinator-page-not-found",
       "published_at": "2026-06-25T14:00:00Z",
       "published_label": "25 Jun 2026 · 14:00Z",
-      "age_label": "2d ago",
+      "age_label": "3d ago",
       "source_id": "lowy-interpreter",
       "source_name": "Lowy Interpreter",
       "source_kind": "rss",
@@ -2068,7 +1978,7 @@
       "url": "https://www.lowyinstitute.org/the-interpreter/global-ocean-protection-is-no-simple-equation",
       "published_at": "2026-06-25T14:00:00Z",
       "published_label": "25 Jun 2026 · 14:00Z",
-      "age_label": "2d ago",
+      "age_label": "3d ago",
       "source_id": "lowy-interpreter",
       "source_name": "Lowy Interpreter",
       "source_kind": "rss",
@@ -2086,7 +1996,7 @@
       "url": "https://www.lowyinstitute.org/the-interpreter/new-caledonia-s-reckoning-goes-beyond-the-ballot",
       "published_at": "2026-06-25T14:00:00Z",
       "published_label": "25 Jun 2026 · 14:00Z",
-      "age_label": "2d ago",
+      "age_label": "3d ago",
       "source_id": "lowy-interpreter",
       "source_name": "Lowy Interpreter",
       "source_kind": "rss",
@@ -2484,7 +2394,7 @@
       "url": "https://news.usni.org/2026/06/24/report-to-congress-on-u-s-panama-relations",
       "published_at": "2026-06-24T14:06:43Z",
       "published_label": "24 Jun 2026 · 14:06Z",
-      "age_label": "3d ago",
+      "age_label": "4d ago",
       "source_id": "usni",
       "source_name": "USNI News",
       "source_kind": "rss",
@@ -2502,7 +2412,7 @@
       "url": "https://www.lowyinstitute.org/the-interpreter/the-new-political-logic-of-global-tech-and-trade",
       "published_at": "2026-06-24T14:00:00Z",
       "published_label": "24 Jun 2026 · 14:00Z",
-      "age_label": "3d ago",
+      "age_label": "4d ago",
       "source_id": "lowy-interpreter",
       "source_name": "Lowy Interpreter",
       "source_kind": "rss",
@@ -2520,7 +2430,7 @@
       "url": "https://www.lowyinstitute.org/the-interpreter/could-a-democracy-festival-take-the-agro-out-of-australian-politics",
       "published_at": "2026-06-24T14:00:00Z",
       "published_label": "24 Jun 2026 · 14:00Z",
-      "age_label": "3d ago",
+      "age_label": "4d ago",
       "source_id": "lowy-interpreter",
       "source_name": "Lowy Interpreter",
       "source_kind": "rss",
@@ -2538,7 +2448,7 @@
       "url": "https://www.lowyinstitute.org/the-interpreter/growing-economy-shrinking-job-prospects-india-s-prosperity-paradox",
       "published_at": "2026-06-24T14:00:00Z",
       "published_label": "24 Jun 2026 · 14:00Z",
-      "age_label": "3d ago",
+      "age_label": "4d ago",
       "source_id": "lowy-interpreter",
       "source_name": "Lowy Interpreter",
       "source_kind": "rss",
@@ -2556,7 +2466,7 @@
       "url": "https://www.lowyinstitute.org/the-interpreter/principled-to-a-fault-india-s-foreign-policy-trap",
       "published_at": "2026-06-24T14:00:00Z",
       "published_label": "24 Jun 2026 · 14:00Z",
-      "age_label": "3d ago",
+      "age_label": "4d ago",
       "source_id": "lowy-interpreter",
       "source_name": "Lowy Interpreter",
       "source_kind": "rss",
@@ -2789,6 +2699,24 @@
       "cluster_key": "adapting to uncertainty in the strait of hormuz"
     },
     {
+      "id": "aacce50447b91d29",
+      "title": "Scattered Spider Hackers Plead Guilty on Day 1 of Trial",
+      "summary": "Two men pleaded guilty in the United Kingdom this week to criminal charges stemming from an August 2024 cyberattack that crippled Transport for London, the entity responsible for the public transport network in the Greater London area. The duo were key members of a prolific cybe…",
+      "url": "https://krebsonsecurity.com/2026/06/scattered-spider-hackers-plead-guilty-on-day-1-of-trial/",
+      "published_at": "2026-06-23T16:12:49Z",
+      "published_label": "23 Jun 2026 · 16:12Z",
+      "age_label": "4d ago",
+      "source_id": "krebs",
+      "source_name": "Krebs on Security",
+      "source_kind": "rss",
+      "category": "cyber",
+      "regions": [
+        "europe"
+      ],
+      "priority": 12,
+      "cluster_key": "scattered spider hackers plead guilty on day 1 of trial"
+    },
+    {
       "id": "1c60043f9a0b21a6",
       "title": "U.S. Asymmetric Aid Program Transfers Unmanned Vessels to the Philippines, Plans Attack Drone Transfer by 2027",
       "summary": "MANILA, PHILIPPINES – The latest tranche of American-made and funded drones were formally received by Philippine forces this week ahead of Washington’s larger plans to equip the Southeast Asian ally with asymmetric capabilities that could prove crucial in monitoring and deterrin…",
@@ -2814,7 +2742,7 @@
       "url": "https://news.usni.org/2026/06/23/gao-report-on-countering-china",
       "published_at": "2026-06-23T14:48:47Z",
       "published_label": "23 Jun 2026 · 14:48Z",
-      "age_label": "4d ago",
+      "age_label": "5d ago",
       "source_id": "usni",
       "source_name": "USNI News",
       "source_kind": "rss",
@@ -2833,7 +2761,7 @@
       "url": "https://www.bbc.co.uk/news/articles/cpweywvygylo?at_medium=RSS&at_campaign=rss",
       "published_at": "2026-06-23T14:30:06Z",
       "published_label": "23 Jun 2026 · 14:30Z",
-      "age_label": "4d ago",
+      "age_label": "5d ago",
       "source_id": "bbc-asia",
       "source_name": "BBC Asia",
       "source_kind": "rss",
@@ -2851,7 +2779,7 @@
       "url": "https://www.lowyinstitute.org/the-interpreter/thailand-s-auto-industry-has-a-bigger-problem-than-china",
       "published_at": "2026-06-23T14:00:00Z",
       "published_label": "23 Jun 2026 · 14:00Z",
-      "age_label": "4d ago",
+      "age_label": "5d ago",
       "source_id": "lowy-interpreter",
       "source_name": "Lowy Interpreter",
       "source_kind": "rss",
@@ -2870,7 +2798,7 @@
       "url": "https://www.lowyinstitute.org/the-interpreter/caution-over-vision-how-the-un-s-next-chief-gets-chosen",
       "published_at": "2026-06-23T14:00:00Z",
       "published_label": "23 Jun 2026 · 14:00Z",
-      "age_label": "4d ago",
+      "age_label": "5d ago",
       "source_id": "lowy-interpreter",
       "source_name": "Lowy Interpreter",
       "source_kind": "rss",
@@ -2888,7 +2816,7 @@
       "url": "https://www.lowyinstitute.org/the-interpreter/coherence-one-nation-would-bulldoze-australian-foreign-policy",
       "published_at": "2026-06-23T14:00:00Z",
       "published_label": "23 Jun 2026 · 14:00Z",
-      "age_label": "4d ago",
+      "age_label": "5d ago",
       "source_id": "lowy-interpreter",
       "source_name": "Lowy Interpreter",
       "source_kind": "rss",
@@ -2906,7 +2834,7 @@
       "url": "https://www.lowyinstitute.org/the-interpreter/asean-can-manage-a-typhoon-a-taiwan-contingency-is-another-matter",
       "published_at": "2026-06-23T14:00:00Z",
       "published_label": "23 Jun 2026 · 14:00Z",
-      "age_label": "4d ago",
+      "age_label": "5d ago",
       "source_id": "lowy-interpreter",
       "source_name": "Lowy Interpreter",
       "source_kind": "rss",
@@ -2997,7 +2925,7 @@
       "url": "https://www.lowyinstitute.org/the-interpreter/southeast-asia-can-share-refugee-responsibility-without-a-common-regime",
       "published_at": "2026-06-22T14:00:00Z",
       "published_label": "22 Jun 2026 · 14:00Z",
-      "age_label": "5d ago",
+      "age_label": "6d ago",
       "source_id": "lowy-interpreter",
       "source_name": "Lowy Interpreter",
       "source_kind": "rss",
@@ -3015,7 +2943,7 @@
       "url": "https://www.lowyinstitute.org/the-interpreter/how-fiji-s-water-pipeline-ran-out-of-road",
       "published_at": "2026-06-22T14:00:00Z",
       "published_label": "22 Jun 2026 · 14:00Z",
-      "age_label": "5d ago",
+      "age_label": "6d ago",
       "source_id": "lowy-interpreter",
       "source_name": "Lowy Interpreter",
       "source_kind": "rss",
@@ -3033,7 +2961,7 @@
       "url": "https://www.lowyinstitute.org/the-interpreter/lowy-poll-2026-australia-s-nuclear-taboo-is-under-scrutiny",
       "published_at": "2026-06-22T14:00:00Z",
       "published_label": "22 Jun 2026 · 14:00Z",
-      "age_label": "5d ago",
+      "age_label": "6d ago",
       "source_id": "lowy-interpreter",
       "source_name": "Lowy Interpreter",
       "source_kind": "rss",
@@ -3051,7 +2979,7 @@
       "url": "https://www.lowyinstitute.org/the-interpreter/the-crisis-in-the-strait-of-hormuz-will-not-replay-itself-in-the-south-china-sea",
       "published_at": "2026-06-22T14:00:00Z",
       "published_label": "22 Jun 2026 · 14:00Z",
-      "age_label": "5d ago",
+      "age_label": "6d ago",
       "source_id": "lowy-interpreter",
       "source_name": "Lowy Interpreter",
       "source_kind": "rss",
@@ -3099,19 +3027,100 @@
       ],
       "priority": 0,
       "cluster_key": "why india will stick with america"
+    },
+    {
+      "id": "676b17462bb1c18d",
+      "title": "‘Popa’ Botnet Linked to Publicly-Traded Israeli Firm",
+      "summary": "For the past four years, a sprawling Android-based botnet called Popa has forced millions of consumer TV boxes to relay Internet traffic linked to advertising fraud, account takeovers, and mass data-scraping efforts. This week, researchers from multiple security firms concluded…",
+      "url": "https://krebsonsecurity.com/2026/06/popa-botnet-linked-to-publicly-traded-israeli-firm/",
+      "published_at": "2026-06-18T17:37:58Z",
+      "published_label": "18 Jun 2026 · 17:37Z",
+      "age_label": "18 Jun 2026 · 17:37Z",
+      "source_id": "krebs",
+      "source_name": "Krebs on Security",
+      "source_kind": "rss",
+      "category": "cyber",
+      "regions": [
+        "middle-east"
+      ],
+      "priority": 12,
+      "cluster_key": "popa botnet linked to publiclytraded israeli firm"
+    },
+    {
+      "id": "2bf2be6c98f26625",
+      "title": "Who Runs the Ransomware Group ‘The Gentlemen?’",
+      "summary": "A cybercrime group known as The Gentlemen has emerged as the second most active ransomware gang by victim count, rapidly attracting a talented pool of hackers through an aggressive recruitment strategy that promises affiliates 90 percent of any ransom paid by victims. This post…",
+      "url": "https://krebsonsecurity.com/2026/06/who-runs-the-ransomware-group-the-gentlemen/",
+      "published_at": "2026-06-10T14:03:44Z",
+      "published_label": "10 Jun 2026 · 14:03Z",
+      "age_label": "10 Jun 2026 · 14:03Z",
+      "source_id": "krebs",
+      "source_name": "Krebs on Security",
+      "source_kind": "rss",
+      "category": "cyber",
+      "regions": [
+        "global"
+      ],
+      "priority": 12,
+      "cluster_key": "who runs the ransomware group the gentlemen"
+    },
+    {
+      "id": "d028d710ef2e4f84",
+      "title": "A Record-Breaking Patch Tuesday for June 2026",
+      "summary": "Microsoft today released software updates to plug nearly 200 security holes across its Windows operating systems and supported software, a record number of fixes for the company's monthly Patch Tuesday cycle. Nearly three dozen of those bugs earned Microsoft's most dire \"critica…",
+      "url": "https://krebsonsecurity.com/2026/06/a-record-breaking-patch-tuesday-for-june-2026/",
+      "published_at": "2026-06-09T22:07:28Z",
+      "published_label": "09 Jun 2026 · 22:07Z",
+      "age_label": "09 Jun 2026 · 22:07Z",
+      "source_id": "krebs",
+      "source_name": "Krebs on Security",
+      "source_kind": "rss",
+      "category": "cyber",
+      "regions": [
+        "global"
+      ],
+      "priority": 30,
+      "cluster_key": "a recordbreaking patch tuesday for june 2026"
+    },
+    {
+      "id": "f93cb9b3d865b6f4",
+      "title": "Hackers Used Meta’s AI Support Bot to Seize Instagram Accounts",
+      "summary": "The Instagram accounts for the Obama White House and the Chief Master Sergeant of the U.S. Space Force were briefly defaced with pro-Iranian images and messages over the weekend, after instructions began circulating on Telegram showing how to trick Meta's \"AI support assistant\"…",
+      "url": "https://krebsonsecurity.com/2026/06/hackers-used-metas-ai-support-bot-to-seize-instagram-accounts/",
+      "published_at": "2026-06-01T17:32:50Z",
+      "published_label": "01 Jun 2026 · 17:32Z",
+      "age_label": "01 Jun 2026 · 17:32Z",
+      "source_id": "krebs",
+      "source_name": "Krebs on Security",
+      "source_kind": "rss",
+      "category": "cyber",
+      "regions": [
+        "middle-east",
+        "us"
+      ],
+      "priority": 12,
+      "cluster_key": "hackers used metas ai support bot to seize instagram accounts"
     }
   ],
   "trends": [
     {
       "term": "china",
-      "count": 13
+      "count": 14
     },
     {
       "term": "india",
       "count": 12
     },
     {
+      "term": "hong",
+      "count": 6
+    },
+    {
       "term": "iran",
+      "count": 6
+    },
+    {
+      "term": "kong",
       "count": 6
     },
     {
@@ -3119,24 +3128,16 @@
       "count": 6
     },
     {
+      "term": "2026",
+      "count": 5
+    },
+    {
       "term": "found",
-      "count": 5
-    },
-    {
-      "term": "hong",
-      "count": 5
-    },
-    {
-      "term": "kong",
       "count": 5
     },
     {
       "term": "report",
       "count": 5
-    },
-    {
-      "term": "2026",
-      "count": 4
     },
     {
       "term": "asia",
