@@ -1,21 +1,21 @@
 {
-  "updated_at": "2026-07-03T18:20Z",
-  "updated_label": "03 Jul 2026 · 18:20Z",
+  "updated_at": "2026-07-03T19:56Z",
+  "updated_label": "03 Jul 2026 · 19:56Z",
   "categories": [
     {
       "id": "nz-pacific",
       "label": "NZ & Pacific",
-      "count": 38
+      "count": 39
     },
     {
       "id": "apac-security",
       "label": "APAC Security",
-      "count": 88
+      "count": 90
     },
     {
       "id": "cyber",
       "label": "Cyber",
-      "count": 6
+      "count": 3
     },
     {
       "id": "global",
@@ -124,9 +124,9 @@
       "name": "The Record",
       "category": "cyber",
       "url": "https://therecord.media/feed/",
-      "item_count": 5,
-      "status": "ok",
-      "error": null
+      "item_count": 0,
+      "status": "error",
+      "error": "HTTP Error 520: <none>"
     },
     {
       "id": "krebs",
@@ -176,13 +176,104 @@
   ],
   "items": [
     {
+      "id": "cffd71ea7d79e2b6",
+      "title": "Advocates horrified by report of human rights abuse at Wakari Hospital",
+      "summary": "Take a wider look at psychiatric facilities in New Zealand, patient advocate says, after inspectors found some inpatient treatment amounted to torture.",
+      "url": "https://www.rnz.co.nz/news/health/664212/advocates-horrified-by-report-of-human-rights-abuse-at-wakari-hospital",
+      "published_at": "2026-07-03T19:51:57Z",
+      "published_label": "03 Jul 2026 · 19:51Z",
+      "age_label": "4m ago",
+      "source_id": "rnz-national",
+      "source_name": "RNZ National",
+      "source_kind": "rss",
+      "category": "nz-pacific",
+      "regions": [
+        "nz"
+      ],
+      "priority": 30,
+      "cluster_key": "advocates horrified by report of human rights abuse at wakari hospital"
+    },
+    {
+      "id": "6327649820ddf2a1",
+      "title": "Country Life: What will it take to get New Zealanders eating insects?",
+      "summary": "To capture the domestic market, edible insects must become \"familiar, tasty, safe [and] affordable.\"",
+      "url": "https://www.rnz.co.nz/news/country/664087/country-life-what-will-it-take-to-get-new-zealanders-eating-insects",
+      "published_at": "2026-07-03T19:29:02Z",
+      "published_label": "03 Jul 2026 · 19:29Z",
+      "age_label": "27m ago",
+      "source_id": "rnz-news",
+      "source_name": "RNZ News",
+      "source_kind": "rss",
+      "category": "nz-pacific",
+      "regions": [
+        "nz"
+      ],
+      "priority": 30,
+      "cluster_key": "country life what will it take to get new zealanders eating insects"
+    },
+    {
+      "id": "4081d7b06a43506e",
+      "title": "Tall Blacks pip Philippines in double overtime thriller",
+      "summary": "New Zealand hold their nerve in a 106-102 win in Auckland, which books their berth in the second round of World Cup qualifying.",
+      "url": "https://www.rnz.co.nz/news/sport/664054/tall-blacks-pip-philippines-in-double-overtime-thriller",
+      "published_at": "2026-07-03T19:23:58Z",
+      "published_label": "03 Jul 2026 · 19:23Z",
+      "age_label": "32m ago",
+      "source_id": "rnz-news",
+      "source_name": "RNZ News",
+      "source_kind": "rss",
+      "category": "nz-pacific",
+      "regions": [
+        "nz",
+        "se-asia"
+      ],
+      "priority": 30,
+      "cluster_key": "tall blacks pip philippines in double overtime thriller"
+    },
+    {
+      "id": "7111e45f5a6583e3",
+      "title": "Iran begins public mourning for Ayatollah killed in February",
+      "summary": "Ali Khamenei's body will lie in state in Tehran's Grand Mosalla from Friday ahead of days-long funeral events.",
+      "url": "https://www.bbc.co.uk/news/articles/cx2k4k7jqeno?at_medium=RSS&at_campaign=rss",
+      "published_at": "2026-07-03T19:03:45Z",
+      "published_label": "03 Jul 2026 · 19:03Z",
+      "age_label": "52m ago",
+      "source_id": "bbc-world",
+      "source_name": "BBC World",
+      "source_kind": "rss",
+      "category": "global",
+      "regions": [
+        "middle-east"
+      ],
+      "priority": 30,
+      "cluster_key": "iran begins public mourning for ayatollah killed in february"
+    },
+    {
+      "id": "7cb1f83fa1655a75",
+      "title": "Nasa launches robotic mission to save space telescope",
+      "summary": "Nasa launched a robotic mission on Friday to try to prevent one of its ageing telescopes from burning up in the atmosphere, a complicated operation expected to last several months. The unprecedented US$30 million effort involves sending a robot to rescue the Swift space telescop…",
+      "url": "https://www.scmp.com/news/world/united-states-canada/article/3359382/nasa-launches-robotic-mission-save-space-telescope?utm_source=rss_feed",
+      "published_at": "2026-07-03T19:01:15Z",
+      "published_label": "03 Jul 2026 · 19:01Z",
+      "age_label": "54m ago",
+      "source_id": "scmp",
+      "source_name": "South China Morning Post",
+      "source_kind": "rss",
+      "category": "apac-security",
+      "regions": [
+        "se-asia"
+      ],
+      "priority": 30,
+      "cluster_key": "nasa launches robotic mission to save space telescope"
+    },
+    {
       "id": "fd30dba0315a2495",
       "title": "New Zealand's warmest June on record",
       "summary": "The highest temperature of 26.0°C was observed at Bromley in Christchurch on 20 June.",
       "url": "https://www.rnz.co.nz/news/environment_climate/663297/new-zealand-s-warmest-june-on-record",
       "published_at": "2026-07-03T16:59:41Z",
       "published_label": "03 Jul 2026 · 16:59Z",
-      "age_label": "1h ago",
+      "age_label": "2h ago",
       "source_id": "rnz-news",
       "source_name": "RNZ News",
       "source_kind": "rss",
@@ -200,7 +291,7 @@
       "url": "https://www.bbc.co.uk/news/articles/cj0gp88q4l4o?at_medium=RSS&at_campaign=rss",
       "published_at": "2026-07-03T16:41:00Z",
       "published_label": "03 Jul 2026 · 16:41Z",
-      "age_label": "1h ago",
+      "age_label": "3h ago",
       "source_id": "bbc-world",
       "source_name": "BBC World",
       "source_kind": "rss",
@@ -218,7 +309,7 @@
       "url": "https://www.bbc.co.uk/news/articles/cvge0gd6lnqo?at_medium=RSS&at_campaign=rss",
       "published_at": "2026-07-03T16:39:00Z",
       "published_label": "03 Jul 2026 · 16:39Z",
-      "age_label": "1h ago",
+      "age_label": "3h ago",
       "source_id": "bbc-world",
       "source_name": "BBC World",
       "source_kind": "rss",
@@ -237,7 +328,7 @@
       "url": "https://www.bbc.co.uk/news/articles/cwy0wy0nenvo?at_medium=RSS&at_campaign=rss",
       "published_at": "2026-07-03T16:31:40Z",
       "published_label": "03 Jul 2026 · 16:31Z",
-      "age_label": "1h ago",
+      "age_label": "3h ago",
       "source_id": "bbc-world",
       "source_name": "BBC World",
       "source_kind": "rss",
@@ -255,7 +346,7 @@
       "url": "https://www.scmp.com/news/hong-kong/health-environment/article/3359381/im-so-scared-parents-dying-hong-kong-girl-13-pray-organ-miracle?utm_source=rss_feed",
       "published_at": "2026-07-03T16:03:39Z",
       "published_label": "03 Jul 2026 · 16:03Z",
-      "age_label": "2h ago",
+      "age_label": "3h ago",
       "source_id": "scmp",
       "source_name": "South China Morning Post",
       "source_kind": "rss",
@@ -273,7 +364,7 @@
       "url": "https://www.bbc.co.uk/news/articles/c4gy603z2qlo?at_medium=RSS&at_campaign=rss",
       "published_at": "2026-07-03T15:20:57Z",
       "published_label": "03 Jul 2026 · 15:20Z",
-      "age_label": "2h ago",
+      "age_label": "4h ago",
       "source_id": "bbc-world",
       "source_name": "BBC World",
       "source_kind": "rss",
@@ -291,7 +382,7 @@
       "url": "https://www.bbc.co.uk/news/articles/cvgm4e0316zo?at_medium=RSS&at_campaign=rss",
       "published_at": "2026-07-03T15:01:27Z",
       "published_label": "03 Jul 2026 · 15:01Z",
-      "age_label": "3h ago",
+      "age_label": "4h ago",
       "source_id": "bbc-asia",
       "source_name": "BBC Asia",
       "source_kind": "rss",
@@ -309,7 +400,7 @@
       "url": "https://www.scmp.com/news/china/diplomacy/article/3359298/americas-first-sphere-influence-becomes-test-its-power-250?utm_source=rss_feed",
       "published_at": "2026-07-03T15:00:07Z",
       "published_label": "03 Jul 2026 · 15:00Z",
-      "age_label": "3h ago",
+      "age_label": "4h ago",
       "source_id": "scmp",
       "source_name": "South China Morning Post",
       "source_kind": "rss",
@@ -328,7 +419,7 @@
       "url": "https://www.bbc.co.uk/news/articles/c4gyxnj38m1o?at_medium=RSS&at_campaign=rss",
       "published_at": "2026-07-03T14:56:30Z",
       "published_label": "03 Jul 2026 · 14:56Z",
-      "age_label": "3h ago",
+      "age_label": "4h ago",
       "source_id": "bbc-world",
       "source_name": "BBC World",
       "source_kind": "rss",
@@ -346,7 +437,7 @@
       "url": "https://www.scmp.com/tech/big-tech/article/3359375/alibaba-bans-staff-using-claude-code-over-anthropic-spyware-concerns?utm_source=rss_feed",
       "published_at": "2026-07-03T14:15:48Z",
       "published_label": "03 Jul 2026 · 14:15Z",
-      "age_label": "4h ago",
+      "age_label": "5h ago",
       "source_id": "scmp",
       "source_name": "South China Morning Post",
       "source_kind": "rss",
@@ -364,7 +455,7 @@
       "url": "https://www.bbc.co.uk/news/articles/cwylkvpl80xo?at_medium=RSS&at_campaign=rss",
       "published_at": "2026-07-03T14:00:50Z",
       "published_label": "03 Jul 2026 · 14:00Z",
-      "age_label": "4h ago",
+      "age_label": "5h ago",
       "source_id": "bbc-world",
       "source_name": "BBC World",
       "source_kind": "rss",
@@ -382,7 +473,7 @@
       "url": "https://www.scmp.com/news/china/science/article/3359363/chinas-satellite-engine-smashes-record-leaves-us-rival-far-behind?utm_source=rss_feed",
       "published_at": "2026-07-03T14:00:10Z",
       "published_label": "03 Jul 2026 · 14:00Z",
-      "age_label": "4h ago",
+      "age_label": "5h ago",
       "source_id": "scmp",
       "source_name": "South China Morning Post",
       "source_kind": "rss",
@@ -400,7 +491,7 @@
       "url": "https://www.scmp.com/week-asia/people/article/3359370/will-johor-singapore-causeway-bottlenecks-sway-outcome-malaysias-state-election?utm_source=rss_feed",
       "published_at": "2026-07-03T13:50:54Z",
       "published_label": "03 Jul 2026 · 13:50Z",
-      "age_label": "4h ago",
+      "age_label": "6h ago",
       "source_id": "scmp",
       "source_name": "South China Morning Post",
       "source_kind": "rss",
@@ -408,7 +499,7 @@
       "regions": [
         "se-asia"
       ],
-      "priority": 20,
+      "priority": 10,
       "cluster_key": "will johorsingapore causeway bottlenecks sway outcome of malaysias state election"
     },
     {
@@ -418,7 +509,7 @@
       "url": "https://www.scmp.com/news/world/europe/article/3359369/merz-hits-back-trump-ridiculing-germanys-defence-spending-drive?utm_source=rss_feed",
       "published_at": "2026-07-03T13:43:12Z",
       "published_label": "03 Jul 2026 · 13:43Z",
-      "age_label": "4h ago",
+      "age_label": "6h ago",
       "source_id": "scmp",
       "source_name": "South China Morning Post",
       "source_kind": "rss",
@@ -426,7 +517,7 @@
       "regions": [
         "europe"
       ],
-      "priority": 20,
+      "priority": 10,
       "cluster_key": "merz hits back at trump for ridiculing germanys defence spending drive"
     },
     {
@@ -436,7 +527,7 @@
       "url": "https://www.scmp.com/week-asia/politics/article/3359368/anwar-vows-malaysia-pursue-jho-low-over-1mdb-despite-potential-us-pardon?utm_source=rss_feed",
       "published_at": "2026-07-03T13:41:55Z",
       "published_label": "03 Jul 2026 · 13:41Z",
-      "age_label": "4h ago",
+      "age_label": "6h ago",
       "source_id": "scmp",
       "source_name": "South China Morning Post",
       "source_kind": "rss",
@@ -444,7 +535,7 @@
       "regions": [
         "se-asia"
       ],
-      "priority": 20,
+      "priority": 10,
       "cluster_key": "anwar vows malaysia to pursue jho low over 1mdb despite potential us pardon"
     },
     {
@@ -454,7 +545,7 @@
       "url": "https://news.usni.org/2026/07/03/americas-navy-at-250-a-naval-history-and-heritage-command-publication",
       "published_at": "2026-07-03T13:30:51Z",
       "published_label": "03 Jul 2026 · 13:30Z",
-      "age_label": "4h ago",
+      "age_label": "6h ago",
       "source_id": "usni",
       "source_name": "USNI News",
       "source_kind": "rss",
@@ -462,7 +553,7 @@
       "regions": [
         "se-asia"
       ],
-      "priority": 20,
+      "priority": 10,
       "cluster_key": "americas navy at 250 a naval history and heritage command publication"
     },
     {
@@ -472,7 +563,7 @@
       "url": "https://www.scmp.com/week-asia/people/article/3359365/thai-beer-dynasty-heirs-mother-drops-suit-under-ungrateful-child-law?utm_source=rss_feed",
       "published_at": "2026-07-03T13:11:58Z",
       "published_label": "03 Jul 2026 · 13:11Z",
-      "age_label": "5h ago",
+      "age_label": "6h ago",
       "source_id": "scmp",
       "source_name": "South China Morning Post",
       "source_kind": "rss",
@@ -481,7 +572,7 @@
         "se-asia",
         "middle-east"
       ],
-      "priority": 20,
+      "priority": 10,
       "cluster_key": "thai singha beer dynasty heirs mother drops suit under ungrateful child law"
     },
     {
@@ -491,7 +582,7 @@
       "url": "https://www.scmp.com/news/china/diplomacy/article/3359361/carlsons-split-republicans-deepen-rifts-us-right-chinese-think-tank-says?utm_source=rss_feed",
       "published_at": "2026-07-03T13:00:16Z",
       "published_label": "03 Jul 2026 · 13:00Z",
-      "age_label": "5h ago",
+      "age_label": "6h ago",
       "source_id": "scmp",
       "source_name": "South China Morning Post",
       "source_kind": "rss",
@@ -499,7 +590,7 @@
       "regions": [
         "china"
       ],
-      "priority": 20,
+      "priority": 10,
       "cluster_key": "carlsons split with republicans to deepen rifts in us right chinese think tank says"
     },
     {
@@ -509,7 +600,7 @@
       "url": "https://news.usni.org/2026/07/03/uss-nimitz-an-aircraft-carriers-final-journey",
       "published_at": "2026-07-03T12:57:35Z",
       "published_label": "03 Jul 2026 · 12:57Z",
-      "age_label": "5h ago",
+      "age_label": "6h ago",
       "source_id": "usni",
       "source_name": "USNI News",
       "source_kind": "rss",
@@ -517,7 +608,7 @@
       "regions": [
         "us"
       ],
-      "priority": 20,
+      "priority": 10,
       "cluster_key": "uss nimitz an aircraft carriers final journey"
     },
     {
@@ -527,7 +618,7 @@
       "url": "https://www.rnz.co.nz/news/regions_wellington/662627/another-sewage-discharge-on-wellington-s-south-coast",
       "published_at": "2026-07-03T12:34:39Z",
       "published_label": "03 Jul 2026 · 12:34Z",
-      "age_label": "5h ago",
+      "age_label": "7h ago",
       "source_id": "rnz-news",
       "source_name": "RNZ News",
       "source_kind": "rss",
@@ -535,7 +626,7 @@
       "regions": [
         "nz"
       ],
-      "priority": 20,
+      "priority": 10,
       "cluster_key": "another sewage discharge on wellingtons south coast"
     },
     {
@@ -545,7 +636,7 @@
       "url": "https://www.scmp.com/opinion/world-opinion/article/3359166/us-marks-its-250th-birthday-it-operates-empire-all-name?utm_source=rss_feed",
       "published_at": "2026-07-03T12:31:08Z",
       "published_label": "03 Jul 2026 · 12:31Z",
-      "age_label": "5h ago",
+      "age_label": "7h ago",
       "source_id": "scmp",
       "source_name": "South China Morning Post",
       "source_kind": "rss",
@@ -553,7 +644,7 @@
       "regions": [
         "us"
       ],
-      "priority": 20,
+      "priority": 10,
       "cluster_key": "as the us marks its 250th birthday it operates an empire in all but name"
     },
     {
@@ -563,7 +654,7 @@
       "url": "https://www.bbc.co.uk/news/articles/c36yrlzew39o?at_medium=RSS&at_campaign=rss",
       "published_at": "2026-07-03T12:28:43Z",
       "published_label": "03 Jul 2026 · 12:28Z",
-      "age_label": "5h ago",
+      "age_label": "7h ago",
       "source_id": "bbc-world",
       "source_name": "BBC World",
       "source_kind": "rss",
@@ -571,7 +662,7 @@
       "regions": [
         "global"
       ],
-      "priority": 20,
+      "priority": 10,
       "cluster_key": "standup comic held for jokes about erdogan and islam in turkey crackdown"
     },
     {
@@ -581,7 +672,7 @@
       "url": "https://www.scmp.com/news/hong-kong/hong-kong-economy/article/3359362/can-hong-kongs-arbitration-skills-help-new-global-space-race-take?utm_source=rss_feed",
       "published_at": "2026-07-03T12:10:46Z",
       "published_label": "03 Jul 2026 · 12:10Z",
-      "age_label": "6h ago",
+      "age_label": "7h ago",
       "source_id": "scmp",
       "source_name": "South China Morning Post",
       "source_kind": "rss",
@@ -599,7 +690,7 @@
       "url": "https://news.usni.org/2026/07/03/usni-news-western-pacific-pulse-july-3-2026",
       "published_at": "2026-07-03T12:08:23Z",
       "published_label": "03 Jul 2026 · 12:08Z",
-      "age_label": "6h ago",
+      "age_label": "7h ago",
       "source_id": "usni",
       "source_name": "USNI News",
       "source_kind": "rss",
@@ -617,7 +708,7 @@
       "url": "https://www.scmp.com/business/article/3359360/chinas-momenta-ipo-oversubscribed-414-times-hong-kong-listings-pack-calendar?utm_source=rss_feed",
       "published_at": "2026-07-03T12:01:16Z",
       "published_label": "03 Jul 2026 · 12:01Z",
-      "age_label": "6h ago",
+      "age_label": "7h ago",
       "source_id": "scmp",
       "source_name": "South China Morning Post",
       "source_kind": "rss",
@@ -635,7 +726,7 @@
       "url": "https://www.scmp.com/economy/china-economy/article/3359328/ai-skills-required-4-out-10-graduate-jobs-china-says-recruitment-portal?utm_source=rss_feed",
       "published_at": "2026-07-03T12:00:11Z",
       "published_label": "03 Jul 2026 · 12:00Z",
-      "age_label": "6h ago",
+      "age_label": "7h ago",
       "source_id": "scmp",
       "source_name": "South China Morning Post",
       "source_kind": "rss",
@@ -653,7 +744,7 @@
       "url": "https://www.scmp.com/news/china/science/article/3359292/many-chinese-scientists-use-research-funding-buy-home-appliances-and-skincare-study?utm_source=rss_feed",
       "published_at": "2026-07-03T12:00:07Z",
       "published_label": "03 Jul 2026 · 12:00Z",
-      "age_label": "6h ago",
+      "age_label": "7h ago",
       "source_id": "scmp",
       "source_name": "South China Morning Post",
       "source_kind": "rss",
@@ -671,7 +762,7 @@
       "url": "https://www.defenseone.com/technology/2026/07/these-light-weight-power-cells-run-nuclear-waste-and-could-power-next-gen-drones/414585/",
       "published_at": "2026-07-03T12:00:00Z",
       "published_label": "03 Jul 2026 · 12:00Z",
-      "age_label": "6h ago",
+      "age_label": "7h ago",
       "source_id": "defense-one",
       "source_name": "Defense One",
       "source_kind": "rss",
@@ -683,31 +774,13 @@
       "cluster_key": "these lightweight power cells run on nuclear waste and could power nextgen drones"
     },
     {
-      "id": "aa5a7821398f6fc9",
-      "title": "Fine firms for data breaches, Hong Kong cybersecurity experts urge",
-      "summary": "Cybersecurity experts have called on authorities to impose fines on firms that suffer data breaches after the personal information of more than 1 million people linked to a leading Hong Kong appliance distributor was maliciously encrypted. They made the comments on Friday, a day…",
-      "url": "https://www.scmp.com/news/hong-kong/society/article/3359358/fine-firms-data-breaches-hong-kong-cybersecurity-experts-urge?utm_source=rss_feed",
-      "published_at": "2026-07-03T11:50:04Z",
-      "published_label": "03 Jul 2026 · 11:50Z",
-      "age_label": "6h ago",
-      "source_id": "scmp",
-      "source_name": "South China Morning Post",
-      "source_kind": "rss",
-      "category": "apac-security",
-      "regions": [
-        "se-asia"
-      ],
-      "priority": 10,
-      "cluster_key": "fine firms for data breaches hong kong cybersecurity experts urge"
-    },
-    {
       "id": "25daa40c757ea89a",
       "title": "Nasa launches mission to save falling space telescope",
       "summary": "A Nasa-funded robot has blasted off to catch a falling telescope in mid-orbit and blast it back to safety before it burns up.",
       "url": "https://www.bbc.co.uk/news/articles/c0ry4xx7rk8o?at_medium=RSS&at_campaign=rss",
       "published_at": "2026-07-03T10:28:17Z",
       "published_label": "03 Jul 2026 · 10:28Z",
-      "age_label": "7h ago",
+      "age_label": "9h ago",
       "source_id": "bbc-world",
       "source_name": "BBC World",
       "source_kind": "rss",
@@ -725,7 +798,7 @@
       "url": "https://www.bbc.co.uk/news/articles/c3ry307rxqro?at_medium=RSS&at_campaign=rss",
       "published_at": "2026-07-03T10:23:32Z",
       "published_label": "03 Jul 2026 · 10:23Z",
-      "age_label": "7h ago",
+      "age_label": "9h ago",
       "source_id": "bbc-world",
       "source_name": "BBC World",
       "source_kind": "rss",
@@ -743,7 +816,7 @@
       "url": "https://www.bbc.co.uk/news/articles/czrxezg60x1o?at_medium=RSS&at_campaign=rss",
       "published_at": "2026-07-03T09:56:57Z",
       "published_label": "03 Jul 2026 · 09:56Z",
-      "age_label": "8h ago",
+      "age_label": "9h ago",
       "source_id": "bbc-asia",
       "source_name": "BBC Asia",
       "source_kind": "rss",
@@ -761,7 +834,7 @@
       "url": "https://www.bbc.co.uk/news/articles/c8r2485pngyo?at_medium=RSS&at_campaign=rss",
       "published_at": "2026-07-03T09:39:09Z",
       "published_label": "03 Jul 2026 · 09:39Z",
-      "age_label": "8h ago",
+      "age_label": "10h ago",
       "source_id": "bbc-asia",
       "source_name": "BBC Asia",
       "source_kind": "rss",
@@ -779,7 +852,7 @@
       "url": "https://www.bbc.co.uk/news/articles/cjeg4j3kjego?at_medium=RSS&at_campaign=rss",
       "published_at": "2026-07-03T09:23:10Z",
       "published_label": "03 Jul 2026 · 09:23Z",
-      "age_label": "8h ago",
+      "age_label": "10h ago",
       "source_id": "bbc-asia",
       "source_name": "BBC Asia",
       "source_kind": "rss",
@@ -797,7 +870,7 @@
       "url": "https://www.rnz.co.nz/news/health/660871/potential-human-rights-abuses-uncovered-at-dunedin-s-wakari-hospital-ombudsman",
       "published_at": "2026-07-03T08:56:00Z",
       "published_label": "03 Jul 2026 · 08:56Z",
-      "age_label": "9h ago",
+      "age_label": "11h ago",
       "source_id": "rnz-news",
       "source_name": "RNZ News",
       "source_kind": "rss",
@@ -815,7 +888,7 @@
       "url": "https://www.bbc.co.uk/news/articles/cpv3x3p7mdvo?at_medium=RSS&at_campaign=rss",
       "published_at": "2026-07-03T08:55:50Z",
       "published_label": "03 Jul 2026 · 08:55Z",
-      "age_label": "9h ago",
+      "age_label": "11h ago",
       "source_id": "bbc-asia",
       "source_name": "BBC Asia",
       "source_kind": "rss",
@@ -827,31 +900,13 @@
       "cluster_key": "alex ealas historic wimbledon run thrills boxingobsessed philippines"
     },
     {
-      "id": "7111e45f5a6583e3",
-      "title": "Iran begins public mourning for Ayatollah killed in February",
-      "summary": "Ali Khamenei's body will lie in state in Tehran's Grand Mosalla from Friday ahead of days-long funeral events.",
-      "url": "https://www.bbc.co.uk/news/articles/cx2k4k7jqeno?at_medium=RSS&at_campaign=rss",
-      "published_at": "2026-07-03T08:50:21Z",
-      "published_label": "03 Jul 2026 · 08:50Z",
-      "age_label": "9h ago",
-      "source_id": "bbc-world",
-      "source_name": "BBC World",
-      "source_kind": "rss",
-      "category": "global",
-      "regions": [
-        "middle-east"
-      ],
-      "priority": 10,
-      "cluster_key": "iran begins public mourning for ayatollah killed in february"
-    },
-    {
       "id": "316e2d387f053760",
       "title": "Person seriously injured after crash involving vehicle and horse",
       "summary": "Tram Road in Swannanoa was closed following the crash.",
       "url": "https://www.rnz.co.nz/news/emergencies_local/661994/person-seriously-injured-after-crash-involving-vehicle-and-horse",
       "published_at": "2026-07-03T08:37:18Z",
       "published_label": "03 Jul 2026 · 08:37Z",
-      "age_label": "9h ago",
+      "age_label": "11h ago",
       "source_id": "rnz-news",
       "source_name": "RNZ News",
       "source_kind": "rss",
@@ -869,7 +924,7 @@
       "url": "https://warontherocks.com/cogs-of-war/the-integrated-circuit-and-the-future-of-ai-leadership/",
       "published_at": "2026-07-03T08:00:02Z",
       "published_label": "03 Jul 2026 · 08:00Z",
-      "age_label": "10h ago",
+      "age_label": "11h ago",
       "source_id": "war-on-the-rocks",
       "source_name": "War on the Rocks",
       "source_kind": "rss",
@@ -887,7 +942,7 @@
       "url": "https://www.rnz.co.nz/news/te-manu-korihi/661772/te-koutu-from-rotorua-wins-secondary-schools-kapa-haka-title",
       "published_at": "2026-07-03T07:38:14Z",
       "published_label": "03 Jul 2026 · 07:38Z",
-      "age_label": "10h ago",
+      "age_label": "12h ago",
       "source_id": "rnz-news",
       "source_name": "RNZ News",
       "source_kind": "rss",
@@ -905,7 +960,7 @@
       "url": "https://warontherocks.com/misguided-and-misunderstood-trumps-approach-to-u-s-troops-in-europe/",
       "published_at": "2026-07-03T07:30:40Z",
       "published_label": "03 Jul 2026 · 07:30Z",
-      "age_label": "10h ago",
+      "age_label": "12h ago",
       "source_id": "war-on-the-rocks",
       "source_name": "War on the Rocks",
       "source_kind": "rss",
@@ -924,7 +979,7 @@
       "url": "https://www.rnz.co.nz/news/environment/661635/nelson-tenths-nick-smith-concerned-settlement-will-mean-loss-of-protection-for-abel-tasman",
       "published_at": "2026-07-03T06:56:05Z",
       "published_label": "03 Jul 2026 · 06:56Z",
-      "age_label": "11h ago",
+      "age_label": "12h ago",
       "source_id": "rnz-news",
       "source_name": "RNZ News",
       "source_kind": "rss",
@@ -942,7 +997,7 @@
       "url": "https://www.bbc.co.uk/news/articles/cn0vwxyz40zo?at_medium=RSS&at_campaign=rss",
       "published_at": "2026-07-03T06:42:14Z",
       "published_label": "03 Jul 2026 · 06:42Z",
-      "age_label": "11h ago",
+      "age_label": "13h ago",
       "source_id": "bbc-world",
       "source_name": "BBC World",
       "source_kind": "rss",
@@ -960,7 +1015,7 @@
       "url": "https://www.rnz.co.nz/news/community/661674/charity-wandersearch-which-provides-trackers-for-at-risk-people-sees-big-jump-in-interest",
       "published_at": "2026-07-03T06:39:21Z",
       "published_label": "03 Jul 2026 · 06:39Z",
-      "age_label": "11h ago",
+      "age_label": "13h ago",
       "source_id": "rnz-news",
       "source_name": "RNZ News",
       "source_kind": "rss",
@@ -978,7 +1033,7 @@
       "url": "https://www.bbc.co.uk/news/articles/ce375v12z0qo?at_medium=RSS&at_campaign=rss",
       "published_at": "2026-07-03T06:38:45Z",
       "published_label": "03 Jul 2026 · 06:38Z",
-      "age_label": "11h ago",
+      "age_label": "13h ago",
       "source_id": "bbc-world",
       "source_name": "BBC World",
       "source_kind": "rss",
@@ -996,7 +1051,7 @@
       "url": "https://thediplomat.com/2026/07/the-prabowo-administrations-hostility-to-expertise-is-degrading-indonesian-governance/",
       "published_at": "2026-07-03T06:32:00Z",
       "published_label": "03 Jul 2026 · 06:32Z",
-      "age_label": "11h ago",
+      "age_label": "13h ago",
       "source_id": "diplomat",
       "source_name": "The Diplomat",
       "source_kind": "rss",
@@ -1014,7 +1069,7 @@
       "url": "https://www.rnz.co.nz/news/environment/660641/giant-petrel-found-dead-on-farewell-spit-to-be-tested-for-bird-flu",
       "published_at": "2026-07-03T05:45:00Z",
       "published_label": "03 Jul 2026 · 05:45Z",
-      "age_label": "12h ago",
+      "age_label": "14h ago",
       "source_id": "rnz-news",
       "source_name": "RNZ News",
       "source_kind": "rss",
@@ -1032,7 +1087,7 @@
       "url": "https://www.rnz.co.nz/news/environment/661426/women-devastated-wetland-forest-could-be-felled-to-make-way-for-highway",
       "published_at": "2026-07-03T05:34:53Z",
       "published_label": "03 Jul 2026 · 05:34Z",
-      "age_label": "12h ago",
+      "age_label": "14h ago",
       "source_id": "rnz-news",
       "source_name": "RNZ News",
       "source_kind": "rss",
@@ -1050,7 +1105,7 @@
       "url": "https://www.rnz.co.nz/news/sport/661421/pro-wrestler-aaron-henare-returns-to-the-ring-in-aotearoa",
       "published_at": "2026-07-03T05:33:57Z",
       "published_label": "03 Jul 2026 · 05:33Z",
-      "age_label": "12h ago",
+      "age_label": "14h ago",
       "source_id": "rnz-news",
       "source_name": "RNZ News",
       "source_kind": "rss",
@@ -1068,7 +1123,7 @@
       "url": "https://www.rnz.co.nz/news/regional/661344/concrete-filled-golf-holes-deepen-pegasus-development-dispute",
       "published_at": "2026-07-03T05:18:53Z",
       "published_label": "03 Jul 2026 · 05:18Z",
-      "age_label": "13h ago",
+      "age_label": "14h ago",
       "source_id": "rnz-news",
       "source_name": "RNZ News",
       "source_kind": "rss",
@@ -1080,31 +1135,13 @@
       "cluster_key": "concretefilled golf holes deepen pegasus development dispute"
     },
     {
-      "id": "1768e940829db2e9",
-      "title": "Spyware found on phone of European Parliament member probing it",
-      "summary": "Stelios Kouloglou, formerly a member of the European Parliament's committee investigating abuses of commercial spyware, was twice infected with Pegasus while serving, researchers said.",
-      "url": "https://therecord.media/pegasus-spyware-european-parliament-pega-committee-member",
-      "published_at": "2026-07-03T05:00:00Z",
-      "published_label": "03 Jul 2026 · 05:00Z",
-      "age_label": "13h ago",
-      "source_id": "the-record",
-      "source_name": "The Record",
-      "source_kind": "rss",
-      "category": "cyber",
-      "regions": [
-        "europe"
-      ],
-      "priority": 22,
-      "cluster_key": "spyware found on phone of european parliament member probing it"
-    },
-    {
       "id": "920f1f47a27f6cb8",
       "title": "'Most massive' Russian attack on Kyiv kills at least 30",
       "summary": "The latest barrage deployed the largest number of weapons on the capital and hit locations over a wide area.",
       "url": "https://www.bbc.co.uk/news/articles/c4gyv05gk4do?at_medium=RSS&at_campaign=rss",
       "published_at": "2026-07-03T04:41:05Z",
       "published_label": "03 Jul 2026 · 04:41Z",
-      "age_label": "13h ago",
+      "age_label": "15h ago",
       "source_id": "bbc-world",
       "source_name": "BBC World",
       "source_kind": "rss",
@@ -1122,7 +1159,7 @@
       "url": "https://thediplomat.com/2026/07/with-laos-trip-min-aung-hlaing-drives-a-wedge-into-asean/",
       "published_at": "2026-07-03T04:34:00Z",
       "published_label": "03 Jul 2026 · 04:34Z",
-      "age_label": "13h ago",
+      "age_label": "15h ago",
       "source_id": "diplomat",
       "source_name": "The Diplomat",
       "source_kind": "rss",
@@ -1140,7 +1177,7 @@
       "url": "https://www.rnz.co.nz/news/political/660035/new-us-ambassador-would-like-chance-to-work-on-new-zealand-s-nuclear-policy",
       "published_at": "2026-07-03T04:29:45Z",
       "published_label": "03 Jul 2026 · 04:29Z",
-      "age_label": "13h ago",
+      "age_label": "15h ago",
       "source_id": "rnz-news",
       "source_name": "RNZ News",
       "source_kind": "rss",
@@ -1158,7 +1195,7 @@
       "url": "https://thediplomat.com/2026/07/indonesia-recovers-body-of-american-pilot-killed-by-papuan-separatists/",
       "published_at": "2026-07-03T04:20:00Z",
       "published_label": "03 Jul 2026 · 04:20Z",
-      "age_label": "14h ago",
+      "age_label": "15h ago",
       "source_id": "diplomat",
       "source_name": "The Diplomat",
       "source_kind": "rss",
@@ -1178,7 +1215,7 @@
       "url": "https://www.rnz.co.nz/news/indonz-featured/660996/more-than-10-000-expected-to-welcome-modi-in-auckland",
       "published_at": "2026-07-03T04:15:37Z",
       "published_label": "03 Jul 2026 · 04:15Z",
-      "age_label": "14h ago",
+      "age_label": "15h ago",
       "source_id": "rnz-news",
       "source_name": "RNZ News",
       "source_kind": "rss",
@@ -1191,15 +1228,15 @@
       "cluster_key": "more than 10000 expected to welcome modi in auckland"
     },
     {
-      "id": "544a36fba5891802",
+      "id": "e8e214984034b428",
       "title": "Weather: Rain, wind and snow to disrupt start of school holidays",
       "summary": "And forecasters say worse still could be on the cards.",
       "url": "https://www.rnz.co.nz/news/weather/660386/weather-rain-wind-and-snow-to-disrupt-start-of-school-holidays",
       "published_at": "2026-07-03T04:14:37Z",
       "published_label": "03 Jul 2026 · 04:14Z",
-      "age_label": "14h ago",
-      "source_id": "rnz-news",
-      "source_name": "RNZ News",
+      "age_label": "15h ago",
+      "source_id": "rnz-national",
+      "source_name": "RNZ National",
       "source_kind": "rss",
       "category": "nz-pacific",
       "regions": [
@@ -1209,31 +1246,13 @@
       "cluster_key": "weather rain wind and snow to disrupt start of school holidays"
     },
     {
-      "id": "5ea4c8f5d44973e7",
-      "title": "Rangatahi use kapa haka to share identity, stories and healing",
-      "summary": "The country's top secondary school kapa haka groups are preparing to take the stage for Friday's national finals in Tauranga Moana.",
-      "url": "https://www.rnz.co.nz/news/te-manu-korihi/657276/rangatahi-use-kapa-haka-to-share-identity-stories-and-healing",
-      "published_at": "2026-07-03T03:57:47Z",
-      "published_label": "03 Jul 2026 · 03:57Z",
-      "age_label": "14h ago",
-      "source_id": "rnz-news",
-      "source_name": "RNZ News",
-      "source_kind": "rss",
-      "category": "nz-pacific",
-      "regions": [
-        "pacific"
-      ],
-      "priority": 10,
-      "cluster_key": "rangatahi use kapa haka to share identity stories and healing"
-    },
-    {
       "id": "ec8bc08dfaa74da8",
       "title": "Waikato Hospital ward will not be ready until 2027, health minister says",
       "summary": "The new 28-bed ward was supposed to be ready this year.",
       "url": "https://www.rnz.co.nz/news/political/659839/waikato-hospital-ward-will-not-be-ready-until-2027-health-minister-says",
       "published_at": "2026-07-03T03:42:14Z",
       "published_label": "03 Jul 2026 · 03:42Z",
-      "age_label": "14h ago",
+      "age_label": "16h ago",
       "source_id": "rnz-national",
       "source_name": "RNZ National",
       "source_kind": "rss",
@@ -1251,7 +1270,7 @@
       "url": "https://www.rnz.co.nz/news/education/659998/advisory-group-proposes-axing-pay-parity-for-early-childhood-teachers",
       "published_at": "2026-07-03T03:35:07Z",
       "published_label": "03 Jul 2026 · 03:35Z",
-      "age_label": "14h ago",
+      "age_label": "16h ago",
       "source_id": "rnz-national",
       "source_name": "RNZ National",
       "source_kind": "rss",
@@ -1269,7 +1288,7 @@
       "url": "https://www.rnz.co.nz/news/pacific/659917/fears-for-more-conflict-in-west-papua-after-american-pilot-killed",
       "published_at": "2026-07-03T02:58:33Z",
       "published_label": "03 Jul 2026 · 02:58Z",
-      "age_label": "15h ago",
+      "age_label": "16h ago",
       "source_id": "rnz-pacific",
       "source_name": "RNZ Pacific",
       "source_kind": "rss",
@@ -1282,13 +1301,13 @@
       "cluster_key": "fears for more conflict in west papua after american pilot killed"
     },
     {
-      "id": "2d785e418f15990c",
-      "title": "Fiji, Smaoa and Tonga name squads for new World Rugby tournaments",
+      "id": "8d572728aab69b77",
+      "title": "Fiji, Samoa and Tonga name squads for new World Rugby tournaments",
       "summary": "The Flying Fijians take on Wales in their opening Nations Championship match, Manu Samoa takes on Hong Kong China and Tonga meets Zimbabwe in the new World Rugby Nations Cup.",
-      "url": "https://www.rnz.co.nz/news/pacific/660454/fiji-smaoa-and-tonga-name-squads-for-new-world-rugby-tournaments",
+      "url": "https://www.rnz.co.nz/news/pacific/660454/fiji-samoa-and-tonga-name-squads-for-new-world-rugby-tournaments",
       "published_at": "2026-07-03T02:46:34Z",
       "published_label": "03 Jul 2026 · 02:46Z",
-      "age_label": "15h ago",
+      "age_label": "17h ago",
       "source_id": "rnz-pacific",
       "source_name": "RNZ Pacific",
       "source_kind": "rss",
@@ -1298,7 +1317,7 @@
         "china"
       ],
       "priority": 10,
-      "cluster_key": "fiji smaoa and tonga name squads for new world rugby tournaments"
+      "cluster_key": "fiji samoa and tonga name squads for new world rugby tournaments"
     },
     {
       "id": "5172a6d245f6cc70",
@@ -1307,7 +1326,7 @@
       "url": "https://www.rnz.co.nz/news/pacific/660117/pacific-business-briefs-relief-at-the-pump-samoa-s-labour-migration-fiji-s-waste-to-energy-controversy",
       "published_at": "2026-07-03T02:14:30Z",
       "published_label": "03 Jul 2026 · 02:14Z",
-      "age_label": "16h ago",
+      "age_label": "17h ago",
       "source_id": "rnz-pacific",
       "source_name": "RNZ Pacific",
       "source_kind": "rss",
@@ -1325,7 +1344,7 @@
       "url": "https://thediplomat.com/2026/07/myanmar-to-push-ahead-with-suspended-myitsone-dam-project-officials-say/",
       "published_at": "2026-07-03T02:00:00Z",
       "published_label": "03 Jul 2026 · 02:00Z",
-      "age_label": "16h ago",
+      "age_label": "17h ago",
       "source_id": "diplomat",
       "source_name": "The Diplomat",
       "source_kind": "rss",
@@ -1344,7 +1363,7 @@
       "url": "https://www.rnz.co.nz/news/crime-and-justice/660024/mother-charged-with-manslaughter-after-death-of-3-year-old",
       "published_at": "2026-07-03T01:56:06Z",
       "published_label": "03 Jul 2026 · 01:56Z",
-      "age_label": "16h ago",
+      "age_label": "17h ago",
       "source_id": "rnz-national",
       "source_name": "RNZ National",
       "source_kind": "rss",
@@ -1362,7 +1381,7 @@
       "url": "https://news.usni.org/2026/07/02/theyre-here-we-might-as-well-train",
       "published_at": "2026-07-03T01:28:00Z",
       "published_label": "03 Jul 2026 · 01:28Z",
-      "age_label": "16h ago",
+      "age_label": "18h ago",
       "source_id": "usni",
       "source_name": "USNI News",
       "source_kind": "rss",
@@ -1380,7 +1399,7 @@
       "url": "https://www.rnz.co.nz/news/pacific/657653/indonesia-defends-high-number-of-military-in-papua",
       "published_at": "2026-07-03T01:17:45Z",
       "published_label": "03 Jul 2026 · 01:17Z",
-      "age_label": "17h ago",
+      "age_label": "18h ago",
       "source_id": "rnz-pacific",
       "source_name": "RNZ Pacific",
       "source_kind": "rss",
@@ -1399,7 +1418,7 @@
       "url": "https://www.rnz.co.nz/news/pacific/659606/exhibition-celebrates-porirua-s-trailblazing-pacific-women",
       "published_at": "2026-07-03T00:50:07Z",
       "published_label": "03 Jul 2026 · 00:50Z",
-      "age_label": "17h ago",
+      "age_label": "19h ago",
       "source_id": "rnz-pacific",
       "source_name": "RNZ Pacific",
       "source_kind": "rss",
@@ -1417,7 +1436,7 @@
       "url": "https://www.rnz.co.nz/news/emergencies_local/659352/emergency-services-rush-to-scene-of-bus-and-car-crash-in-dunedin",
       "published_at": "2026-07-03T00:45:56Z",
       "published_label": "03 Jul 2026 · 00:45Z",
-      "age_label": "17h ago",
+      "age_label": "19h ago",
       "source_id": "rnz-national",
       "source_name": "RNZ National",
       "source_kind": "rss",
@@ -1435,7 +1454,7 @@
       "url": "https://www.rnz.co.nz/news/crime-and-justice/659179/man-charged-after-assault-on-north-shore-bus-last-month",
       "published_at": "2026-07-02T23:48:26Z",
       "published_label": "02 Jul 2026 · 23:48Z",
-      "age_label": "18h ago",
+      "age_label": "20h ago",
       "source_id": "rnz-national",
       "source_name": "RNZ National",
       "source_kind": "rss",
@@ -1453,7 +1472,7 @@
       "url": "https://www.rnz.co.nz/news/regions_auckland/657510/local-board-votes-for-widespread-intensification-in-auckland-s-central-suburbs",
       "published_at": "2026-07-02T23:29:28Z",
       "published_label": "02 Jul 2026 · 23:29Z",
-      "age_label": "18h ago",
+      "age_label": "20h ago",
       "source_id": "rnz-national",
       "source_name": "RNZ National",
       "source_kind": "rss",
@@ -1471,7 +1490,7 @@
       "url": "https://www.rnz.co.nz/news/pacific/658353/typhoon-bavi-poses-significant-threat-to-mariana-islands",
       "published_at": "2026-07-02T22:18:30Z",
       "published_label": "02 Jul 2026 · 22:18Z",
-      "age_label": "20h ago",
+      "age_label": "21h ago",
       "source_id": "rnz-pacific",
       "source_name": "RNZ Pacific",
       "source_kind": "rss",
@@ -1489,7 +1508,7 @@
       "url": "https://www.rnz.co.nz/news/education/657396/lingers-on-their-skin-puzzling-odour-forces-children-out-of-classrooms",
       "published_at": "2026-07-02T22:12:32Z",
       "published_label": "02 Jul 2026 · 22:12Z",
-      "age_label": "20h ago",
+      "age_label": "21h ago",
       "source_id": "rnz-national",
       "source_name": "RNZ National",
       "source_kind": "rss",
@@ -1507,7 +1526,7 @@
       "url": "https://www.bbc.co.uk/news/articles/ckg0xdn0134o?at_medium=RSS&at_campaign=rss",
       "published_at": "2026-07-02T22:00:25Z",
       "published_label": "02 Jul 2026 · 22:00Z",
-      "age_label": "20h ago",
+      "age_label": "21h ago",
       "source_id": "bbc-asia",
       "source_name": "BBC Asia",
       "source_kind": "rss",
@@ -1525,7 +1544,7 @@
       "url": "https://www.bbc.co.uk/news/articles/c1mykzj15xno?at_medium=RSS&at_campaign=rss",
       "published_at": "2026-07-02T22:00:11Z",
       "published_label": "02 Jul 2026 · 22:00Z",
-      "age_label": "20h ago",
+      "age_label": "21h ago",
       "source_id": "bbc-asia",
       "source_name": "BBC Asia",
       "source_kind": "rss",
@@ -1537,49 +1556,13 @@
       "cluster_key": "a mayor in japan announced her maternity leave and got the whole country talking"
     },
     {
-      "id": "f12576b1a568705f",
-      "title": "Heads-up on El Niño gives rural sector time to prepare",
-      "summary": "On-farm decisions are being influenced by the incoming El Niño weather pattern, which could mean a dry spring for many.",
-      "url": "https://www.rnz.co.nz/news/country/658074/heads-up-on-el-nino-gives-rural-sector-time-to-prepare",
-      "published_at": "2026-07-02T20:46:22Z",
-      "published_label": "02 Jul 2026 · 20:46Z",
-      "age_label": "21h ago",
-      "source_id": "rnz-national",
-      "source_name": "RNZ National",
-      "source_kind": "rss",
-      "category": "nz-pacific",
-      "regions": [
-        "pacific"
-      ],
-      "priority": 10,
-      "cluster_key": "headsup on el niño gives rural sector time to prepare"
-    },
-    {
-      "id": "12907f5b198eb5be",
-      "title": "Launch of UK's National Cyber Action Plan delayed amid Labour leadership crisis",
-      "summary": "The plan had been due for publication on Monday, the sources said. It has been postponed amid the uncertainty over the governing Labour Party’s leadership contest, which opens July 9.",
-      "url": "https://therecord.media/launch-of-uk-national-cyber-action-plan-delayed",
-      "published_at": "2026-07-02T20:32:00Z",
-      "published_label": "02 Jul 2026 · 20:32Z",
-      "age_label": "21h ago",
-      "source_id": "the-record",
-      "source_name": "The Record",
-      "source_kind": "rss",
-      "category": "cyber",
-      "regions": [
-        "global"
-      ],
-      "priority": 22,
-      "cluster_key": "launch of uks national cyber action plan delayed amid labour leadership crisis"
-    },
-    {
       "id": "aedf4db4013f5f91",
       "title": "Bollinger Quietly Cut Steel for First Arctic Security Cutter in April Ahead of $2.2B Award",
       "summary": "The network of Bollinger shipyards in Louisiana wasted no time starting work on their Coast Arctic Security Cutter, beginning fabrication of the first planned U.S. hull two months ahead of the finalized contract, Bollinger president Ben Bordelon told USNI News this week. This we…",
       "url": "https://news.usni.org/2026/07/02/bollinger-quietly-cut-steel-for-first-arctic-security-cutter-in-april-ahead-of-2-2b-award",
       "published_at": "2026-07-02T19:47:32Z",
       "published_label": "02 Jul 2026 · 19:47Z",
-      "age_label": "22h ago",
+      "age_label": "1d ago",
       "source_id": "usni",
       "source_name": "USNI News",
       "source_kind": "rss",
@@ -1587,7 +1570,7 @@
       "regions": [
         "us"
       ],
-      "priority": 10,
+      "priority": 0,
       "cluster_key": "bollinger quietly cut steel for first arctic security cutter in april ahead of 22b award"
     },
     {
@@ -1597,7 +1580,7 @@
       "url": "https://www.rnz.co.nz/news/pacific/657713/eight-pasifika-heritage-players-named-in-all-blacks-season-opener-against-france",
       "published_at": "2026-07-02T19:40:35Z",
       "published_label": "02 Jul 2026 · 19:40Z",
-      "age_label": "22h ago",
+      "age_label": "1d ago",
       "source_id": "rnz-pacific",
       "source_name": "RNZ Pacific",
       "source_kind": "rss",
@@ -1606,7 +1589,7 @@
         "nz",
         "europe"
       ],
-      "priority": 10,
+      "priority": 0,
       "cluster_key": "eight pasifika heritage players named in all blacks season opener against france"
     },
     {
@@ -1616,7 +1599,7 @@
       "url": "https://krebsonsecurity.com/2026/07/fbi-seizes-netnut-proxy-platform-popa-botnet/",
       "published_at": "2026-07-02T19:27:33Z",
       "published_label": "02 Jul 2026 · 19:27Z",
-      "age_label": "22h ago",
+      "age_label": "1d ago",
       "source_id": "krebs",
       "source_name": "Krebs on Security",
       "source_kind": "rss",
@@ -1624,7 +1607,7 @@
       "regions": [
         "middle-east"
       ],
-      "priority": 22,
+      "priority": 12,
       "cluster_key": "fbi seizes netnut proxy platform popa botnet"
     },
     {
@@ -1662,25 +1645,6 @@
       ],
       "priority": 0,
       "cluster_key": "czechtaiwan ties are cooling in rhetoric not reality"
-    },
-    {
-      "id": "cb5b2ead646ca4aa",
-      "title": "Supreme Court decision threatens EU-US data transfer agreement",
-      "summary": "In a Tuesday letter, Max Schrems, the founder of the Vienna-based privacy advocacy organization noyb, told European officials he plans to sue to invalidate the EU-U.S. Data Privacy Framework (DPF) that allows for the transfer of personal data from the EU to U.S. companies.",
-      "url": "https://therecord.media/supreme-court-decision-threatens-eu-us-data-sharing",
-      "published_at": "2026-07-02T16:50:00Z",
-      "published_label": "02 Jul 2026 · 16:50Z",
-      "age_label": "1d ago",
-      "source_id": "the-record",
-      "source_name": "The Record",
-      "source_kind": "rss",
-      "category": "cyber",
-      "regions": [
-        "europe",
-        "us"
-      ],
-      "priority": 12,
-      "cluster_key": "supreme court decision threatens euus data transfer agreement"
     },
     {
       "id": "9bd9da861372a68a",
@@ -2196,31 +2160,13 @@
       "cluster_key": "pasifika sipoti in brief for 2 july 2026"
     },
     {
-      "id": "a9da8f645babc69e",
-      "title": "Teen suspect in Scattered Spider hacks is extradited to US",
-      "summary": "A complaint unsealed this week accuses a 19-year-old of participating in incidents including a breach of a \"luxury-jewelry retailer\" in 2025.",
-      "url": "https://therecord.media/teen-suspect-in-scattered-spider-hacks-extradited-to-us",
-      "published_at": "2026-07-01T20:13:00Z",
-      "published_label": "01 Jul 2026 · 20:13Z",
-      "age_label": "1d ago",
-      "source_id": "the-record",
-      "source_name": "The Record",
-      "source_kind": "rss",
-      "category": "cyber",
-      "regions": [
-        "global"
-      ],
-      "priority": 12,
-      "cluster_key": "teen suspect in scattered spider hacks is extradited to us"
-    },
-    {
       "id": "e732191e6af5ad47",
       "title": "Vanuatu regains 150 places in Australia's Pacific visa ballot after Nakamal Agreement",
       "summary": "Australia has restored Vanuatu's Pacific Engagement Visa allocation following the signing of the security deal.",
       "url": "https://www.rnz.co.nz/news/pacific/652343/vanuatu-regains-150-places-in-australia-s-pacific-visa-ballot-after-nakamal-agreement",
       "published_at": "2026-07-01T19:54:03Z",
       "published_label": "01 Jul 2026 · 19:54Z",
-      "age_label": "1d ago",
+      "age_label": "2d ago",
       "source_id": "rnz-pacific",
       "source_name": "RNZ Pacific",
       "source_kind": "rss",
@@ -2239,7 +2185,7 @@
       "url": "https://news.usni.org/2026/07/01/u-s-partners-wrap-exercise-valiant-shield",
       "published_at": "2026-07-01T19:18:45Z",
       "published_label": "01 Jul 2026 · 19:18Z",
-      "age_label": "1d ago",
+      "age_label": "2d ago",
       "source_id": "usni",
       "source_name": "USNI News",
       "source_kind": "rss",
@@ -2435,24 +2381,6 @@
       "cluster_key": "europe leans in on taiwan but to what end"
     },
     {
-      "id": "20439a0f020cc22f",
-      "title": "US lifts export controls on Anthropic’s frontier cybersecurity AI models",
-      "summary": "Anthropic said export controls on certain models had been lifted after the company came to a series of agreements with the government.",
-      "url": "https://therecord.media/us-lifts-export-controls-anthropic-cyber-models",
-      "published_at": "2026-07-01T13:16:00Z",
-      "published_label": "01 Jul 2026 · 13:16Z",
-      "age_label": "2d ago",
-      "source_id": "the-record",
-      "source_name": "The Record",
-      "source_kind": "rss",
-      "category": "cyber",
-      "regions": [
-        "global"
-      ],
-      "priority": 12,
-      "cluster_key": "us lifts export controls on anthropics frontier cybersecurity ai models"
-    },
-    {
       "id": "3f7f70262e83bf8a",
       "title": "Philippine exercise showcased Marine Littoral Regiment’s growth",
       "summary": "3rd MLR basically did exactly what it was designed to do,” Col. Gabe Diana said.",
@@ -2640,7 +2568,7 @@
       "url": "https://www.bbc.co.uk/news/articles/cr7x38lle1jo?at_medium=RSS&at_campaign=rss",
       "published_at": "2026-06-30T19:36:48Z",
       "published_label": "30 Jun 2026 · 19:36Z",
-      "age_label": "2d ago",
+      "age_label": "3d ago",
       "source_id": "bbc-asia",
       "source_name": "BBC Asia",
       "source_kind": "rss",
@@ -2658,7 +2586,7 @@
       "url": "https://news.usni.org/2026/06/30/russia-china-fly-joint-bomber-missions-near-japan-south-korea",
       "published_at": "2026-06-30T19:14:58Z",
       "published_label": "30 Jun 2026 · 19:14Z",
-      "age_label": "2d ago",
+      "age_label": "3d ago",
       "source_id": "usni",
       "source_name": "USNI News",
       "source_kind": "rss",
@@ -2679,7 +2607,7 @@
       "url": "https://www.bbc.co.uk/news/videos/cyv09p2vy87o?at_medium=RSS&at_campaign=rss",
       "published_at": "2026-06-30T18:37:59Z",
       "published_label": "30 Jun 2026 · 18:37Z",
-      "age_label": "2d ago",
+      "age_label": "3d ago",
       "source_id": "bbc-asia",
       "source_name": "BBC Asia",
       "source_kind": "rss",
@@ -3093,12 +3021,85 @@
       ],
       "priority": 18,
       "cluster_key": "a new force posture concept for europeanizing extended nuclear deterrence"
+    },
+    {
+      "id": "2a892017e0758f71",
+      "title": "The Art of Statecraft in an Age of Strategic Failure",
+      "summary": "Jack Watling, Statecraft: The New Rules of Power in a Divided World (Macmillan, 2026)The war against Iran exposed a multitude of forced errors and own goals in the conduct of statecraft. The purpose of sound statecraft is the integrated application of a state’s tools and its rep…",
+      "url": "https://warontherocks.com/the-art-of-statecraft-in-an-age-of-strategic-failure/",
+      "published_at": "2026-06-29T07:15:56Z",
+      "published_label": "29 Jun 2026 · 07:15Z",
+      "age_label": "4d ago",
+      "source_id": "war-on-the-rocks",
+      "source_name": "War on the Rocks",
+      "source_kind": "rss",
+      "category": "apac-security",
+      "regions": [
+        "middle-east"
+      ],
+      "priority": 0,
+      "cluster_key": "the art of statecraft in an age of strategic failure"
+    },
+    {
+      "id": "40d1dd985058814c",
+      "title": "The four o’clock field: The easy goal for Australia’s Pacific sport money",
+      "summary": "The PNG Chiefs are only the beginning – Australia’s spending should go beyond elite pathways to the community game.",
+      "url": "https://www.lowyinstitute.org/the-interpreter/the-four-o-clock-field-the-easy-goal-for-australia-s-pacific-sport-money",
+      "published_at": "2026-06-28T14:00:00Z",
+      "published_label": "28 Jun 2026 · 14:00Z",
+      "age_label": "5d ago",
+      "source_id": "lowy-interpreter",
+      "source_name": "Lowy Interpreter",
+      "source_kind": "rss",
+      "category": "apac-security",
+      "regions": [
+        "pacific",
+        "australia"
+      ],
+      "priority": 0,
+      "cluster_key": "the four oclock field the easy goal for australias pacific sport money"
+    },
+    {
+      "id": "aacce50447b91d29",
+      "title": "Scattered Spider Hackers Plead Guilty on Day 1 of Trial",
+      "summary": "Two men pleaded guilty in the United Kingdom this week to criminal charges stemming from an August 2024 cyberattack that crippled Transport for London, the entity responsible for the public transport network in the Greater London area. The duo were key members of a prolific cybe…",
+      "url": "https://krebsonsecurity.com/2026/06/scattered-spider-hackers-plead-guilty-on-day-1-of-trial/",
+      "published_at": "2026-06-23T16:12:49Z",
+      "published_label": "23 Jun 2026 · 16:12Z",
+      "age_label": "23 Jun 2026 · 16:12Z",
+      "source_id": "krebs",
+      "source_name": "Krebs on Security",
+      "source_kind": "rss",
+      "category": "cyber",
+      "regions": [
+        "europe"
+      ],
+      "priority": 12,
+      "cluster_key": "scattered spider hackers plead guilty on day 1 of trial"
+    },
+    {
+      "id": "676b17462bb1c18d",
+      "title": "‘Popa’ Botnet Linked to Publicly-Traded Israeli Firm",
+      "summary": "For the past four years, a sprawling Android-based botnet called Popa has forced millions of consumer TV boxes to relay Internet traffic linked to advertising fraud, account takeovers, and mass data-scraping efforts. This week, researchers from multiple security firms concluded…",
+      "url": "https://krebsonsecurity.com/2026/06/popa-botnet-linked-to-publicly-traded-israeli-firm/",
+      "published_at": "2026-06-18T17:37:58Z",
+      "published_label": "18 Jun 2026 · 17:37Z",
+      "age_label": "18 Jun 2026 · 17:37Z",
+      "source_id": "krebs",
+      "source_name": "Krebs on Security",
+      "source_kind": "rss",
+      "category": "cyber",
+      "regions": [
+        "middle-east"
+      ],
+      "priority": 12,
+      "cluster_key": "popa botnet linked to publiclytraded israeli firm"
     }
   ],
   "trends": [
     {
       "term": "pacific",
-      "count": 11
+      "count": 12
     },
     {
       "term": "china",
@@ -3121,19 +3122,19 @@
       "count": 5
     },
     {
-      "term": "hong",
-      "count": 5
-    },
-    {
       "term": "india",
       "count": 5
     },
     {
-      "term": "kong",
-      "count": 5
+      "term": "america",
+      "count": 4
     },
     {
-      "term": "america",
+      "term": "hong",
+      "count": 4
+    },
+    {
+      "term": "intelligence",
       "count": 4
     }
   ]
