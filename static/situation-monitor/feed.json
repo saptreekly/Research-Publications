@@ -1,11 +1,11 @@
 {
-  "updated_at": "2026-07-15T22:41Z",
-  "updated_label": "15 Jul 2026 · 22:41Z",
+  "updated_at": "2026-07-15T23:42Z",
+  "updated_label": "15 Jul 2026 · 23:42Z",
   "categories": [
     {
       "id": "nz-pacific",
       "label": "NZ & Pacific",
-      "count": 36
+      "count": 37
     },
     {
       "id": "apac-security",
@@ -15,12 +15,12 @@
     {
       "id": "cyber",
       "label": "Cyber",
-      "count": 7
+      "count": 5
     },
     {
       "id": "global",
       "label": "Global",
-      "count": 27
+      "count": 28
     },
     {
       "id": "osint",
@@ -124,9 +124,9 @@
       "name": "The Record",
       "category": "cyber",
       "url": "https://therecord.media/feed/",
-      "item_count": 5,
-      "status": "ok",
-      "error": null
+      "item_count": 0,
+      "status": "error",
+      "error": "HTTP Error 520: <none>"
     },
     {
       "id": "krebs",
@@ -176,13 +176,31 @@
   ],
   "items": [
     {
-      "id": "2f1885e46bfda316",
-      "title": "'So depressing': Residents push for answers over Wellington ghost houses",
-      "summary": "A neighbour is questioning why blocks of state houses in Strathmore have been vacant for years.",
-      "url": "https://www.rnz.co.nz/news/regions_wellington/723806/so-depressing-residents-push-for-answers-over-wellington-ghost-houses",
-      "published_at": "2026-07-15T22:33:07Z",
-      "published_label": "15 Jul 2026 · 22:33Z",
-      "age_label": "8m ago",
+      "id": "9f0f33c84466ecee",
+      "title": "DSE exam success: Hong Kong’s top scorers share their revision secrets",
+      "summary": "Setting a timer to take a short break after every 25 minutes of study, compiling a “mistakes booklet” to learn from past errors and using artificial intelligence to boost English skills are among the strategies used by top scorers in this year’s university entrance exam in Hong…",
+      "url": "https://www.scmp.com/news/hong-kong/education/article/3360714/dse-exam-success-hong-kongs-top-scorers-share-their-revision-secrets?utm_source=rss_feed",
+      "published_at": "2026-07-15T23:30:07Z",
+      "published_label": "15 Jul 2026 · 23:30Z",
+      "age_label": "12m ago",
+      "source_id": "scmp",
+      "source_name": "South China Morning Post",
+      "source_kind": "rss",
+      "category": "apac-security",
+      "regions": [
+        "se-asia"
+      ],
+      "priority": 30,
+      "cluster_key": "dse exam success hong kongs top scorers share their revision secrets"
+    },
+    {
+      "id": "93eb7286c941a967",
+      "title": "Man pleads guilty to dangerous driving causing death after crash that killed cyclist",
+      "summary": "Tyson Stechman also pleaded guilty to a charge of failing to stop to ascertain injury when he appeared in Christchurch District Court on Thursday.",
+      "url": "https://www.rnz.co.nz/news/crime-and-justice/724730/man-pleads-guilty-to-dangerous-driving-causing-death-after-crash-that-killed-cyclist",
+      "published_at": "2026-07-15T23:23:07Z",
+      "published_label": "15 Jul 2026 · 23:23Z",
+      "age_label": "19m ago",
       "source_id": "rnz-news",
       "source_name": "RNZ News",
       "source_kind": "rss",
@@ -191,6 +209,204 @@
         "nz"
       ],
       "priority": 30,
+      "cluster_key": "man pleads guilty to dangerous driving causing death after crash that killed cyclist"
+    },
+    {
+      "id": "3ad036ec5c18485b",
+      "title": "New Zealand investors among those losing money in SpaceX price slump",
+      "summary": "SpaceX's share price slump is a reminder to New Zealand investors of the hype that can circle a new listing, commentators say.",
+      "url": "https://www.rnz.co.nz/news/business/724638/new-zealand-investors-among-those-losing-money-in-spacex-price-slump",
+      "published_at": "2026-07-15T23:16:46Z",
+      "published_label": "15 Jul 2026 · 23:16Z",
+      "age_label": "25m ago",
+      "source_id": "rnz-news",
+      "source_name": "RNZ News",
+      "source_kind": "rss",
+      "category": "nz-pacific",
+      "regions": [
+        "nz"
+      ],
+      "priority": 30,
+      "cluster_key": "new zealand investors among those losing money in spacex price slump"
+    },
+    {
+      "id": "f779a4ec563fc636",
+      "title": "AA Insurance customers billed incorrectly",
+      "summary": "The error was due to the way the policyholders' ages were recorded, AA says.",
+      "url": "https://www.rnz.co.nz/news/business/724704/aa-insurance-customers-billed-incorrectly",
+      "published_at": "2026-07-15T23:16:05Z",
+      "published_label": "15 Jul 2026 · 23:16Z",
+      "age_label": "26m ago",
+      "source_id": "rnz-news",
+      "source_name": "RNZ News",
+      "source_kind": "rss",
+      "category": "nz-pacific",
+      "regions": [
+        "pacific"
+      ],
+      "priority": 30,
+      "cluster_key": "aa insurance customers billed incorrectly"
+    },
+    {
+      "id": "58607952c82eb32b",
+      "title": "Workplace testing shows cocaine 'entrenched' in NZ drug scene",
+      "summary": "The Drug Detection Agency's latest quarterly report shows positive workplace cocaine tests up nearly 70 percent year-on-year.",
+      "url": "https://www.rnz.co.nz/news/crime-and-justice/724688/workplace-testing-shows-cocaine-entrenched-in-nz-drug-scene",
+      "published_at": "2026-07-15T23:11:57Z",
+      "published_label": "15 Jul 2026 · 23:11Z",
+      "age_label": "30m ago",
+      "source_id": "rnz-news",
+      "source_name": "RNZ News",
+      "source_kind": "rss",
+      "category": "nz-pacific",
+      "regions": [
+        "pacific"
+      ],
+      "priority": 30,
+      "cluster_key": "workplace testing shows cocaine entrenched in nz drug scene"
+    },
+    {
+      "id": "4d60fa9bf59d04b3",
+      "title": "Winston Peters to meet with Ministers from Niue, Fiji and Samoa",
+      "summary": "Winston Peters said in uncertain geostrategic times, it is more important than ever to connect.",
+      "url": "https://www.rnz.co.nz/news/political/724687/winston-peters-to-meet-with-ministers-from-niue-fiji-and-samoa",
+      "published_at": "2026-07-15T23:11:52Z",
+      "published_label": "15 Jul 2026 · 23:11Z",
+      "age_label": "30m ago",
+      "source_id": "rnz-news",
+      "source_name": "RNZ News",
+      "source_kind": "rss",
+      "category": "nz-pacific",
+      "regions": [
+        "pacific"
+      ],
+      "priority": 30,
+      "cluster_key": "winston peters to meet with ministers from niue fiji and samoa"
+    },
+    {
+      "id": "a11fa429b2c8727a",
+      "title": "New monkey species with orange lips found 'hiding' in DRC forest",
+      "summary": "Scientists describe \"amazing feeling\" to look into the face of an animal that so few people knew existed.",
+      "url": "https://www.bbc.co.uk/news/articles/c15y5wgj4x8o?at_medium=RSS&at_campaign=rss",
+      "published_at": "2026-07-15T23:02:49Z",
+      "published_label": "15 Jul 2026 · 23:02Z",
+      "age_label": "39m ago",
+      "source_id": "bbc-world",
+      "source_name": "BBC World",
+      "source_kind": "rss",
+      "category": "global",
+      "regions": [
+        "global"
+      ],
+      "priority": 30,
+      "cluster_key": "new monkey species with orange lips found hiding in drc forest"
+    },
+    {
+      "id": "845ef53cfddb9c69",
+      "title": "Families of 43 victims await verdict in Genoa bridge disaster",
+      "summary": "A large section of the giant Morandi motorway bridge crumbled and collapsed on to the railway tracks below.",
+      "url": "https://www.bbc.co.uk/news/articles/c20y00712ezo?at_medium=RSS&at_campaign=rss",
+      "published_at": "2026-07-15T23:02:37Z",
+      "published_label": "15 Jul 2026 · 23:02Z",
+      "age_label": "39m ago",
+      "source_id": "bbc-world",
+      "source_name": "BBC World",
+      "source_kind": "rss",
+      "category": "global",
+      "regions": [
+        "global"
+      ],
+      "priority": 30,
+      "cluster_key": "families of 43 victims await verdict in genoa bridge disaster"
+    },
+    {
+      "id": "7f99ddf61e535138",
+      "title": "Ex-US Fed adviser gets 3 years in prison in China secrets case",
+      "summary": "A former senior adviser for the Federal Reserve Board of Governors was sentenced to more than three years in prison for lying to federal investigators looking into whether he shared confidential data with Chinese intelligence operatives, the Justice Department said. John Harold…",
+      "url": "https://www.scmp.com/news/world/united-states-canada/article/3360731/ex-us-fed-adviser-gets-3-years-prison-china-secrets-case?utm_source=rss_feed",
+      "published_at": "2026-07-15T22:53:23Z",
+      "published_label": "15 Jul 2026 · 22:53Z",
+      "age_label": "49m ago",
+      "source_id": "scmp",
+      "source_name": "South China Morning Post",
+      "source_kind": "rss",
+      "category": "apac-security",
+      "regions": [
+        "china"
+      ],
+      "priority": 30,
+      "cluster_key": "exus fed adviser gets 3 years in prison in china secrets case"
+    },
+    {
+      "id": "a273be2ca63ed681",
+      "title": "Argentina face fine for Falklands banner in semi-final win",
+      "summary": "Argentina face the prospect of a Fifa fine after their players celebrate the World Cup semi-final win against England with a banner in support of their country's claims to the Falkland Islands.",
+      "url": "https://www.bbc.co.uk/sport/football/articles/c935pgr4dklo?at_medium=RSS&at_campaign=rss",
+      "published_at": "2026-07-15T22:49:47Z",
+      "published_label": "15 Jul 2026 · 22:49Z",
+      "age_label": "52m ago",
+      "source_id": "bbc-world",
+      "source_name": "BBC World",
+      "source_kind": "rss",
+      "category": "global",
+      "regions": [
+        "global"
+      ],
+      "priority": 30,
+      "cluster_key": "argentina face fine for falklands banner in semifinal win"
+    },
+    {
+      "id": "2eb384670a81f805",
+      "title": "US military to start testosterone testing, Hegseth says",
+      "summary": "\"We owe our warriors the absolute best medical care in the world, and this program delivers on that obligation,\" Hegseth said in a video.",
+      "url": "https://www.bbc.co.uk/news/articles/cn0nlx18rz0o?at_medium=RSS&at_campaign=rss",
+      "published_at": "2026-07-15T22:46:02Z",
+      "published_label": "15 Jul 2026 · 22:46Z",
+      "age_label": "56m ago",
+      "source_id": "bbc-world",
+      "source_name": "BBC World",
+      "source_kind": "rss",
+      "category": "global",
+      "regions": [
+        "global"
+      ],
+      "priority": 30,
+      "cluster_key": "us military to start testosterone testing hegseth says"
+    },
+    {
+      "id": "f86f4b569fe2422b",
+      "title": "'Christchurch is my tomb': From homelessness to hopelessness",
+      "summary": "Caitlin McDonald's life was fragile and fleeting. She told her own story in hundreds of videos filmed on her phone.",
+      "url": "https://www.rnz.co.nz/news/regions_canterbury/723765/christchurch-is-my-tomb-from-homelessness-to-hopelessness",
+      "published_at": "2026-07-15T22:36:54Z",
+      "published_label": "15 Jul 2026 · 22:36Z",
+      "age_label": "1h ago",
+      "source_id": "rnz-news",
+      "source_name": "RNZ News",
+      "source_kind": "rss",
+      "category": "nz-pacific",
+      "regions": [
+        "nz"
+      ],
+      "priority": 20,
+      "cluster_key": "christchurch is my tomb from homelessness to hopelessness"
+    },
+    {
+      "id": "2f1885e46bfda316",
+      "title": "'So depressing': Residents push for answers over Wellington ghost houses",
+      "summary": "A neighbour is questioning why blocks of state houses in Strathmore have been vacant for years.",
+      "url": "https://www.rnz.co.nz/news/regions_wellington/723806/so-depressing-residents-push-for-answers-over-wellington-ghost-houses",
+      "published_at": "2026-07-15T22:33:07Z",
+      "published_label": "15 Jul 2026 · 22:33Z",
+      "age_label": "1h ago",
+      "source_id": "rnz-news",
+      "source_name": "RNZ News",
+      "source_kind": "rss",
+      "category": "nz-pacific",
+      "regions": [
+        "nz"
+      ],
+      "priority": 20,
       "cluster_key": "so depressing residents push for answers over wellington ghost houses"
     },
     {
@@ -200,7 +416,7 @@
       "url": "https://www.scmp.com/news/world/middle-east/article/3360730/us-launches-more-iran-strikes-hits-oil-tanker-trying-break-hormuz-blockade?utm_source=rss_feed",
       "published_at": "2026-07-15T22:32:49Z",
       "published_label": "15 Jul 2026 · 22:32Z",
-      "age_label": "8m ago",
+      "age_label": "1h ago",
       "source_id": "scmp",
       "source_name": "South China Morning Post",
       "source_kind": "rss",
@@ -210,7 +426,7 @@
         "middle-east",
         "us"
       ],
-      "priority": 30,
+      "priority": 20,
       "cluster_key": "us launches more iran strikes hits oil tanker trying to break hormuz blockade"
     },
     {
@@ -220,7 +436,7 @@
       "url": "https://www.rnz.co.nz/news/environment/723766/newly-arrived-h5n1-bird-flu-likely-to-take-hold-in-new-zealand-mpi-says",
       "published_at": "2026-07-15T22:21:09Z",
       "published_label": "15 Jul 2026 · 22:21Z",
-      "age_label": "20m ago",
+      "age_label": "1h ago",
       "source_id": "rnz-news",
       "source_name": "RNZ News",
       "source_kind": "rss",
@@ -228,7 +444,7 @@
       "regions": [
         "nz"
       ],
-      "priority": 30,
+      "priority": 20,
       "cluster_key": "newly arrived h5n1 bird flu likely to take hold in new zealand mpi says"
     },
     {
@@ -238,7 +454,7 @@
       "url": "https://www.scmp.com/news/us/article/3360729/us-hardens-ai-stance-china-anthropic-calls-extending-lead?utm_source=rss_feed",
       "published_at": "2026-07-15T22:05:35Z",
       "published_label": "15 Jul 2026 · 22:05Z",
-      "age_label": "36m ago",
+      "age_label": "1h ago",
       "source_id": "scmp",
       "source_name": "South China Morning Post",
       "source_kind": "rss",
@@ -247,7 +463,7 @@
         "china",
         "us"
       ],
-      "priority": 30,
+      "priority": 20,
       "cluster_key": "us hardens ai stance on china as anthropic calls for extending lead"
     },
     {
@@ -257,7 +473,7 @@
       "url": "https://www.bbc.co.uk/news/articles/cm2j2jw117lo?at_medium=RSS&at_campaign=rss",
       "published_at": "2026-07-15T22:04:12Z",
       "published_label": "15 Jul 2026 · 22:04Z",
-      "age_label": "37m ago",
+      "age_label": "1h ago",
       "source_id": "bbc-asia",
       "source_name": "BBC Asia",
       "source_kind": "rss",
@@ -266,7 +482,7 @@
         "china",
         "korea"
       ],
-      "priority": 30,
+      "priority": 20,
       "cluster_key": "i must get out into the free world dissident who fled china on boat tells bbc"
     },
     {
@@ -276,7 +492,7 @@
       "url": "https://www.bbc.co.uk/news/articles/cd6e68n3jz5o?at_medium=RSS&at_campaign=rss",
       "published_at": "2026-07-15T22:03:47Z",
       "published_label": "15 Jul 2026 · 22:03Z",
-      "age_label": "37m ago",
+      "age_label": "1h ago",
       "source_id": "bbc-asia",
       "source_name": "BBC Asia",
       "source_kind": "rss",
@@ -284,7 +500,7 @@
       "regions": [
         "se-asia"
       ],
-      "priority": 30,
+      "priority": 20,
       "cluster_key": "bangkoks bar fire is the citys latest deadly blaze will anything ever change"
     },
     {
@@ -294,7 +510,7 @@
       "url": "https://www.rnz.co.nz/news/country/724411/drone-delivers-supplies-to-cut-off-marlborough-community",
       "published_at": "2026-07-15T22:02:27Z",
       "published_label": "15 Jul 2026 · 22:02Z",
-      "age_label": "39m ago",
+      "age_label": "1h ago",
       "source_id": "rnz-news",
       "source_name": "RNZ News",
       "source_kind": "rss",
@@ -302,7 +518,7 @@
       "regions": [
         "pacific"
       ],
-      "priority": 30,
+      "priority": 20,
       "cluster_key": "drone delivers supplies to cut off marlborough community"
     },
     {
@@ -312,7 +528,7 @@
       "url": "https://news.usni.org/2026/07/15/blue-water-autonomy-saildrone-sue-navy-over-musv-rejection",
       "published_at": "2026-07-15T22:01:05Z",
       "published_label": "15 Jul 2026 · 22:01Z",
-      "age_label": "40m ago",
+      "age_label": "1h ago",
       "source_id": "usni",
       "source_name": "USNI News",
       "source_kind": "rss",
@@ -320,7 +536,7 @@
       "regions": [
         "us"
       ],
-      "priority": 30,
+      "priority": 20,
       "cluster_key": "blue water autonomy saildrone sue navy over musv rejection"
     },
     {
@@ -330,7 +546,7 @@
       "url": "https://www.bbc.co.uk/news/articles/c9323zgq6wvo?at_medium=RSS&at_campaign=rss",
       "published_at": "2026-07-15T21:55:04Z",
       "published_label": "15 Jul 2026 · 21:55Z",
-      "age_label": "46m ago",
+      "age_label": "1h ago",
       "source_id": "bbc-world",
       "source_name": "BBC World",
       "source_kind": "rss",
@@ -338,7 +554,7 @@
       "regions": [
         "middle-east"
       ],
-      "priority": 30,
+      "priority": 20,
       "cluster_key": "us launches fresh strikes on iran as trump warns tehran it better behave"
     },
     {
@@ -348,7 +564,7 @@
       "url": "https://www.rnz.co.nz/news/personal-finance/723771/the-power-company-losing-the-most-customers",
       "published_at": "2026-07-15T21:49:10Z",
       "published_label": "15 Jul 2026 · 21:49Z",
-      "age_label": "52m ago",
+      "age_label": "1h ago",
       "source_id": "rnz-news",
       "source_name": "RNZ News",
       "source_kind": "rss",
@@ -356,26 +572,8 @@
       "regions": [
         "pacific"
       ],
-      "priority": 30,
+      "priority": 20,
       "cluster_key": "the power company losing the most customers"
-    },
-    {
-      "id": "f86f4b569fe2422b",
-      "title": "'Christchurch is my tomb': From homelessness to hopelessness",
-      "summary": "Caitlin McDonald's life was fragile and fleeting. She told her own story in hundreds of videos filmed on her phone.",
-      "url": "https://www.rnz.co.nz/news/regions_canterbury/723765/christchurch-is-my-tomb-from-homelessness-to-hopelessness",
-      "published_at": "2026-07-15T21:48:39Z",
-      "published_label": "15 Jul 2026 · 21:48Z",
-      "age_label": "53m ago",
-      "source_id": "rnz-news",
-      "source_name": "RNZ News",
-      "source_kind": "rss",
-      "category": "nz-pacific",
-      "regions": [
-        "nz"
-      ],
-      "priority": 30,
-      "cluster_key": "christchurch is my tomb from homelessness to hopelessness"
     },
     {
       "id": "48877e640c45b50f",
@@ -384,7 +582,7 @@
       "url": "https://www.rnz.co.nz/news/political/723770/rnz-poll-most-voters-want-super-age-to-stay-at-65",
       "published_at": "2026-07-15T21:48:17Z",
       "published_label": "15 Jul 2026 · 21:48Z",
-      "age_label": "53m ago",
+      "age_label": "1h ago",
       "source_id": "rnz-news",
       "source_name": "RNZ News",
       "source_kind": "rss",
@@ -392,7 +590,7 @@
       "regions": [
         "nz"
       ],
-      "priority": 30,
+      "priority": 20,
       "cluster_key": "rnz poll most voters want super age to stay at 65"
     },
     {
@@ -402,7 +600,7 @@
       "url": "https://www.scmp.com/opinion/china-opinion/article/3360419/14-nation-south-china-sea-statement-expansionist-overreach?utm_source=rss_feed",
       "published_at": "2026-07-15T21:30:06Z",
       "published_label": "15 Jul 2026 · 21:30Z",
-      "age_label": "1h ago",
+      "age_label": "2h ago",
       "source_id": "scmp",
       "source_name": "South China Morning Post",
       "source_kind": "rss",
@@ -426,7 +624,7 @@
       "url": "https://www.bbc.co.uk/news/articles/c8929jv8kdzo?at_medium=RSS&at_campaign=rss",
       "published_at": "2026-07-15T21:21:19Z",
       "published_label": "15 Jul 2026 · 21:21Z",
-      "age_label": "1h ago",
+      "age_label": "2h ago",
       "source_id": "bbc-world",
       "source_name": "BBC World",
       "source_kind": "rss",
@@ -445,7 +643,7 @@
       "url": "https://www.defenseone.com/policy/2026/07/space-force-budget-retirement/414796/",
       "published_at": "2026-07-15T20:50:38Z",
       "published_label": "15 Jul 2026 · 20:50Z",
-      "age_label": "1h ago",
+      "age_label": "2h ago",
       "source_id": "defense-one",
       "source_name": "Defense One",
       "source_kind": "rss",
@@ -463,7 +661,7 @@
       "url": "https://news.usni.org/2026/07/15/cahill-takes-command-of-u-s-naval-surface-force",
       "published_at": "2026-07-15T20:44:34Z",
       "published_label": "15 Jul 2026 · 20:44Z",
-      "age_label": "1h ago",
+      "age_label": "2h ago",
       "source_id": "usni",
       "source_name": "USNI News",
       "source_kind": "rss",
@@ -481,7 +679,7 @@
       "url": "https://www.scmp.com/news/world/united-states-canada/article/3360727/trump-defence-chief-hegseth-unveils-plan-test-us-troops-low-testosterone?utm_source=rss_feed",
       "published_at": "2026-07-15T20:42:44Z",
       "published_label": "15 Jul 2026 · 20:42Z",
-      "age_label": "1h ago",
+      "age_label": "2h ago",
       "source_id": "scmp",
       "source_name": "South China Morning Post",
       "source_kind": "rss",
@@ -499,7 +697,7 @@
       "url": "https://www.rnz.co.nz/news/political/724167/paul-goldsmith-says-move-on-bill-being-mischaracterised-as-police-association-raises-concerns",
       "published_at": "2026-07-15T20:40:50Z",
       "published_label": "15 Jul 2026 · 20:40Z",
-      "age_label": "2h ago",
+      "age_label": "3h ago",
       "source_id": "rnz-news",
       "source_name": "RNZ News",
       "source_kind": "rss",
@@ -517,7 +715,7 @@
       "url": "https://www.scmp.com/news/us/diplomacy/article/3360726/trump-intelligence-pick-play-helpful-role-agreeing-economic-strategy-china?utm_source=rss_feed",
       "published_at": "2026-07-15T20:14:57Z",
       "published_label": "15 Jul 2026 · 20:14Z",
-      "age_label": "2h ago",
+      "age_label": "3h ago",
       "source_id": "scmp",
       "source_name": "South China Morning Post",
       "source_kind": "rss",
@@ -536,7 +734,7 @@
       "url": "https://www.rnz.co.nz/news/community/724077/christine-fleming-awarded-350-000-court-costs-as-family-carer-fight-continues",
       "published_at": "2026-07-15T20:05:14Z",
       "published_label": "15 Jul 2026 · 20:05Z",
-      "age_label": "2h ago",
+      "age_label": "3h ago",
       "source_id": "rnz-news",
       "source_name": "RNZ News",
       "source_kind": "rss",
@@ -548,31 +746,13 @@
       "cluster_key": "christine fleming awarded 350000 court costs as family carer fight continues"
     },
     {
-      "id": "75b236dc88b6d803",
-      "title": "Trump administration unveils AI-supported clearinghouse for cyber vulnerabilities",
-      "summary": "The Gold Eagle program will allowe industry, critical infrastructure operators and the government to use artificial intelligence to rapidly detect, prioritize and patch cybersecurity vulnerabilities, officials said.",
-      "url": "https://therecord.media/gold-eagle-cybersecurity-vulnerabilities-clearinghouse",
-      "published_at": "2026-07-15T20:00:00Z",
-      "published_label": "15 Jul 2026 · 20:00Z",
-      "age_label": "2h ago",
-      "source_id": "the-record",
-      "source_name": "The Record",
-      "source_kind": "rss",
-      "category": "cyber",
-      "regions": [
-        "global"
-      ],
-      "priority": 50,
-      "cluster_key": "trump administration unveils aisupported clearinghouse for cyber vulnerabilities"
-    },
-    {
       "id": "1237cb38037e40ba",
       "title": "Todd Blanche grilled by US lawmakers over Epstein files, Trump tax immunity",
       "summary": "US President Donald Trump’s attorney general nominee, Todd Blanche, faced ⁠tense bipartisan questioning at a US Senate panel on Wednesday about the roll-out of the Epstein files and a settlement that gave the president sweeping tax immunity. Blanche, the president’s former perso…",
       "url": "https://www.scmp.com/news/world/united-states-canada/article/3360725/todd-blanche-grilled-us-lawmakers-over-epstein-files-trump-tax-immunity?utm_source=rss_feed",
       "published_at": "2026-07-15T19:33:42Z",
       "published_label": "15 Jul 2026 · 19:33Z",
-      "age_label": "3h ago",
+      "age_label": "4h ago",
       "source_id": "scmp",
       "source_name": "South China Morning Post",
       "source_kind": "rss",
@@ -590,7 +770,7 @@
       "url": "https://www.rnz.co.nz/news/emergencies_local/723958/one-dead-after-two-vehicle-crash-on-sh2-in-waikato",
       "published_at": "2026-07-15T19:22:18Z",
       "published_label": "15 Jul 2026 · 19:22Z",
-      "age_label": "3h ago",
+      "age_label": "4h ago",
       "source_id": "rnz-news",
       "source_name": "RNZ News",
       "source_kind": "rss",
@@ -608,7 +788,7 @@
       "url": "https://www.rnz.co.nz/news/regional/723855/fog-restrictions-in-place-at-auckland-airport",
       "published_at": "2026-07-15T19:19:42Z",
       "published_label": "15 Jul 2026 · 19:19Z",
-      "age_label": "3h ago",
+      "age_label": "4h ago",
       "source_id": "rnz-news",
       "source_name": "RNZ News",
       "source_kind": "rss",
@@ -620,33 +800,15 @@
       "cluster_key": "fog restrictions in place at auckland airport"
     },
     {
-      "id": "9b6652265aa3854c",
-      "title": "2026 Rugby League World Cup: Fiji Bati Mick Potter coach secures work visa",
-      "summary": "Fiji Bati head coach Mick Potter will move to Fiji in the next few weeks to lead the team's preparation for the upcoming Rugby League World Cup.",
-      "url": "https://www.rnz.co.nz/news/pacific/723923/2026-rugby-league-world-cup-fiji-bati-mick-potter-coach-secures-work-visa",
-      "published_at": "2026-07-15T19:12:13Z",
-      "published_label": "15 Jul 2026 · 19:12Z",
-      "age_label": "3h ago",
-      "source_id": "rnz-news",
-      "source_name": "RNZ News",
-      "source_kind": "rss",
-      "category": "nz-pacific",
-      "regions": [
-        "pacific"
-      ],
-      "priority": 20,
-      "cluster_key": "2026 rugby league world cup fiji bati mick potter coach secures work visa"
-    },
-    {
-      "id": "9778373680e95294",
+      "id": "870178d0704bbb19",
       "title": "Badminton returns to CNMI after typhoon",
       "summary": "Oceania Badminton has confirmed over 200 players and officials from 20 countries are in Saipan to compete in the Northern Marianas Open and the Saipan International tournaments.",
       "url": "https://www.rnz.co.nz/news/pacific/723922/badminton-returns-to-cnmi-after-typhoon",
       "published_at": "2026-07-15T19:12:13Z",
       "published_label": "15 Jul 2026 · 19:12Z",
-      "age_label": "3h ago",
-      "source_id": "rnz-news",
-      "source_name": "RNZ News",
+      "age_label": "4h ago",
+      "source_id": "rnz-pacific",
+      "source_name": "RNZ Pacific",
       "source_kind": "rss",
       "category": "nz-pacific",
       "regions": [
@@ -656,15 +818,33 @@
       "cluster_key": "badminton returns to cnmi after typhoon"
     },
     {
-      "id": "ff2c024158e2d87a",
+      "id": "41510aeeda7d32ff",
+      "title": "2026 Rugby League World Cup: Fiji Bati Mick Potter coach secures work visa",
+      "summary": "Fiji Bati head coach Mick Potter will move to Fiji in the next few weeks to lead the team's preparation for the upcoming Rugby League World Cup.",
+      "url": "https://www.rnz.co.nz/news/pacific/723923/2026-rugby-league-world-cup-fiji-bati-mick-potter-coach-secures-work-visa",
+      "published_at": "2026-07-15T19:12:13Z",
+      "published_label": "15 Jul 2026 · 19:12Z",
+      "age_label": "4h ago",
+      "source_id": "rnz-pacific",
+      "source_name": "RNZ Pacific",
+      "source_kind": "rss",
+      "category": "nz-pacific",
+      "regions": [
+        "pacific"
+      ],
+      "priority": 20,
+      "cluster_key": "2026 rugby league world cup fiji bati mick potter coach secures work visa"
+    },
+    {
+      "id": "4517d3e063bbb1f8",
       "title": "Uni students who work while studying usually have better pass rates - report",
       "summary": "A student association president says the high levels of employment aren't surprising, because many students are under a lot of financial pressure.",
       "url": "https://www.rnz.co.nz/news/education/723767/uni-students-who-work-while-studying-usually-have-better-pass-rates-report",
       "published_at": "2026-07-15T18:47:51Z",
       "published_label": "15 Jul 2026 · 18:47Z",
-      "age_label": "3h ago",
-      "source_id": "rnz-news",
-      "source_name": "RNZ News",
+      "age_label": "4h ago",
+      "source_id": "rnz-national",
+      "source_name": "RNZ National",
       "source_kind": "rss",
       "category": "nz-pacific",
       "regions": [
@@ -674,31 +854,13 @@
       "cluster_key": "uni students who work while studying usually have better pass rates report"
     },
     {
-      "id": "39fa6f8fd932a635",
-      "title": "Housing pressure hardest on working households not getting a benefit - report",
-      "summary": "While official data shows rents have been flat or falling in many parts of the country, it obscures the experience of many households struggling to get by.",
-      "url": "https://www.rnz.co.nz/news/business/723845/housing-pressure-hardest-on-working-households-not-getting-a-benefit-report",
-      "published_at": "2026-07-15T18:30:52Z",
-      "published_label": "15 Jul 2026 · 18:30Z",
-      "age_label": "4h ago",
-      "source_id": "rnz-news",
-      "source_name": "RNZ News",
-      "source_kind": "rss",
-      "category": "nz-pacific",
-      "regions": [
-        "pacific"
-      ],
-      "priority": 20,
-      "cluster_key": "housing pressure hardest on working households not getting a benefit report"
-    },
-    {
       "id": "78f5f39c03aaa562",
       "title": "French parliament adopts landmark assisted-dying bill",
       "summary": "French lawmakers on Wednesday adopted ⁠a bill that will create a legal right to assisted dying for adults with incurable illnesses, capping an intense ethical and political debate. The legislation will, under strict conditions, allow a person who requests it to receive a lethal…",
       "url": "https://www.scmp.com/news/world/europe/article/3360724/french-parliament-adopts-landmark-assisted-dying-bill?utm_source=rss_feed",
       "published_at": "2026-07-15T18:05:26Z",
       "published_label": "15 Jul 2026 · 18:05Z",
-      "age_label": "4h ago",
+      "age_label": "5h ago",
       "source_id": "scmp",
       "source_name": "South China Morning Post",
       "source_kind": "rss",
@@ -710,31 +872,13 @@
       "cluster_key": "french parliament adopts landmark assisteddying bill"
     },
     {
-      "id": "3c53cd2a63a689a4",
-      "title": "Trump’s DNI pick grilled about election security, voter fraud",
-      "summary": "Senators pressed director of national intelligence nominee Jay Clayton about his stance on the 2020 election and previous statements about voter fraud. Other issues took a back seat.",
-      "url": "https://therecord.media/jay-clayton-odni-nominee-senate-confirmation-hearing",
-      "published_at": "2026-07-15T17:50:00Z",
-      "published_label": "15 Jul 2026 · 17:50Z",
-      "age_label": "4h ago",
-      "source_id": "the-record",
-      "source_name": "The Record",
-      "source_kind": "rss",
-      "category": "cyber",
-      "regions": [
-        "europe"
-      ],
-      "priority": 32,
-      "cluster_key": "trumps dni pick grilled about election security voter fraud"
-    },
-    {
       "id": "b0f0abd02964fcf7",
       "title": "EU accuses China of seeking to reshape global order in stark new strategy paper",
       "summary": "The European Union has accused China – along with Russia – of trying to “reshape the global order in line with their interests” and “fostering a return to a sphere-of-influence logic”, in an explosive new position paper that contains some of the bloc’s strongest ever official cr…",
       "url": "https://www.scmp.com/news/china/diplomacy/article/3360723/eu-accuses-china-seeking-reshape-global-order-stark-new-strategy-paper?utm_source=rss_feed",
       "published_at": "2026-07-15T17:46:00Z",
       "published_label": "15 Jul 2026 · 17:46Z",
-      "age_label": "4h ago",
+      "age_label": "5h ago",
       "source_id": "scmp",
       "source_name": "South China Morning Post",
       "source_kind": "rss",
@@ -748,31 +892,13 @@
       "cluster_key": "eu accuses china of seeking to reshape global order in stark new strategy paper"
     },
     {
-      "id": "8e7fe05ba90a0aab",
-      "title": "23andMe reaches $18 million settlement with states for massive breach",
-      "summary": "A coalition of 42 state attorneys general reached an $18 million settlement with 23andMe for cybersecurity failings that led to a data breach.",
-      "url": "https://therecord.media/genetic-testing-settlement-data-breach",
-      "published_at": "2026-07-15T17:45:00Z",
-      "published_label": "15 Jul 2026 · 17:45Z",
-      "age_label": "4h ago",
-      "source_id": "the-record",
-      "source_name": "The Record",
-      "source_kind": "rss",
-      "category": "cyber",
-      "regions": [
-        "global"
-      ],
-      "priority": 32,
-      "cluster_key": "23andme reaches 18 million settlement with states for massive breach"
-    },
-    {
       "id": "cd4fd9b6b9673360",
       "title": "One Size Doesn’t Fit All: The Many Faces of Africa’s Foreign Fighters",
       "summary": "In 2020, Austin Doctor wrote, “The Looming Influx of Foreign Fighters in Sub-Saharan Africa,” in which he predicted the region would see an influx of foreign fighters to aid Islamist extremist groups. Six years later, we asked Austin to revisit his arguments.Image: African Union…",
       "url": "https://warontherocks.com/one-size-doesnt-fit-all-the-many-faces-of-africas-foreign-fighters/",
       "published_at": "2026-07-15T17:30:26Z",
       "published_label": "15 Jul 2026 · 17:30Z",
-      "age_label": "5h ago",
+      "age_label": "6h ago",
       "source_id": "war-on-the-rocks",
       "source_name": "War on the Rocks",
       "source_kind": "rss",
@@ -780,7 +906,7 @@
       "regions": [
         "africa"
       ],
-      "priority": 20,
+      "priority": 10,
       "cluster_key": "one size doesnt fit all the many faces of africas foreign fighters"
     },
     {
@@ -790,7 +916,7 @@
       "url": "https://www.bbc.co.uk/news/articles/cvg7g2z4pv3o?at_medium=RSS&at_campaign=rss",
       "published_at": "2026-07-15T17:29:26Z",
       "published_label": "15 Jul 2026 · 17:29Z",
-      "age_label": "5h ago",
+      "age_label": "6h ago",
       "source_id": "bbc-world",
       "source_name": "BBC World",
       "source_kind": "rss",
@@ -798,25 +924,25 @@
       "regions": [
         "global"
       ],
-      "priority": 20,
+      "priority": 10,
       "cluster_key": "french mps approve assisted dying law with strict rules after years of argument"
     },
     {
-      "id": "0821a344c1f7abf5",
+      "id": "7383644b24526bd5",
       "title": "Climate response bill unlikely to pass before election, minister says",
       "summary": "The Climate Change Response Amendment Bill proposes mandatory adaptation planning for areas at high risk from climate change hazards.",
       "url": "https://www.rnz.co.nz/news/environment_climate/723772/climate-response-bill-unlikely-to-pass-before-election-minister-says",
       "published_at": "2026-07-15T17:19:50Z",
       "published_label": "15 Jul 2026 · 17:19Z",
-      "age_label": "5h ago",
-      "source_id": "rnz-news",
-      "source_name": "RNZ News",
+      "age_label": "6h ago",
+      "source_id": "rnz-national",
+      "source_name": "RNZ National",
       "source_kind": "rss",
       "category": "nz-pacific",
       "regions": [
         "pacific"
       ],
-      "priority": 20,
+      "priority": 10,
       "cluster_key": "climate response bill unlikely to pass before election minister says"
     },
     {
@@ -826,7 +952,7 @@
       "url": "https://www.bbc.co.uk/news/articles/cd959q11g54o?at_medium=RSS&at_campaign=rss",
       "published_at": "2026-07-15T17:02:41Z",
       "published_label": "15 Jul 2026 · 17:02Z",
-      "age_label": "5h ago",
+      "age_label": "6h ago",
       "source_id": "bbc-world",
       "source_name": "BBC World",
       "source_kind": "rss",
@@ -834,7 +960,7 @@
       "regions": [
         "china"
       ],
-      "priority": 20,
+      "priority": 10,
       "cluster_key": "more people around the world now favour china over the us pew study suggests"
     },
     {
@@ -844,7 +970,7 @@
       "url": "https://www.scmp.com/news/us/diplomacy/article/3360722/global-views-china-and-xi-improve-perceptions-us-decline-pew-survey-finds?utm_source=rss_feed",
       "published_at": "2026-07-15T17:00:28Z",
       "published_label": "15 Jul 2026 · 17:00Z",
-      "age_label": "5h ago",
+      "age_label": "6h ago",
       "source_id": "scmp",
       "source_name": "South China Morning Post",
       "source_kind": "rss",
@@ -853,7 +979,7 @@
         "china",
         "us"
       ],
-      "priority": 20,
+      "priority": 10,
       "cluster_key": "global views of china and xi improve as perceptions of us decline pew survey finds"
     },
     {
@@ -863,7 +989,7 @@
       "url": "https://www.bbc.co.uk/news/articles/cq61660qpdpo?at_medium=RSS&at_campaign=rss",
       "published_at": "2026-07-15T16:51:07Z",
       "published_label": "15 Jul 2026 · 16:51Z",
-      "age_label": "5h ago",
+      "age_label": "6h ago",
       "source_id": "bbc-asia",
       "source_name": "BBC Asia",
       "source_kind": "rss",
@@ -871,7 +997,7 @@
       "regions": [
         "se-asia"
       ],
-      "priority": 20,
+      "priority": 10,
       "cluster_key": "five arrested after hong kong police raid independent bookshops"
     },
     {
@@ -881,7 +1007,7 @@
       "url": "https://news.usni.org/2026/07/15/taiwan-mobilizes-himars-anti-ship-missiles-for-major-defense-drill",
       "published_at": "2026-07-15T16:25:37Z",
       "published_label": "15 Jul 2026 · 16:25Z",
-      "age_label": "6h ago",
+      "age_label": "7h ago",
       "source_id": "usni",
       "source_name": "USNI News",
       "source_kind": "rss",
@@ -900,7 +1026,7 @@
       "url": "https://www.defenseone.com/policy/2026/07/space-development-agency-satellite-launches-criticisms/414781/",
       "published_at": "2026-07-15T16:00:00Z",
       "published_label": "15 Jul 2026 · 16:00Z",
-      "age_label": "6h ago",
+      "age_label": "7h ago",
       "source_id": "defense-one",
       "source_name": "Defense One",
       "source_kind": "rss",
@@ -918,7 +1044,7 @@
       "url": "https://www.scmp.com/news/world/europe/article/3360718/uk-police-arrest-man-over-threat-shoot-reform-leader-nigel-farage?utm_source=rss_feed",
       "published_at": "2026-07-15T15:37:45Z",
       "published_label": "15 Jul 2026 · 15:37Z",
-      "age_label": "7h ago",
+      "age_label": "8h ago",
       "source_id": "scmp",
       "source_name": "South China Morning Post",
       "source_kind": "rss",
@@ -936,7 +1062,7 @@
       "url": "https://www.bbc.co.uk/news/articles/cm2d2qlgj71o?at_medium=RSS&at_campaign=rss",
       "published_at": "2026-07-15T15:33:30Z",
       "published_label": "15 Jul 2026 · 15:33Z",
-      "age_label": "7h ago",
+      "age_label": "8h ago",
       "source_id": "bbc-world",
       "source_name": "BBC World",
       "source_kind": "rss",
@@ -954,7 +1080,7 @@
       "url": "https://www.scmp.com/news/hong-kong/education/article/3360716/dse-candidates-overcome-physical-challenges-achieve-hard-earned-results?utm_source=rss_feed",
       "published_at": "2026-07-15T15:18:29Z",
       "published_label": "15 Jul 2026 · 15:18Z",
-      "age_label": "7h ago",
+      "age_label": "8h ago",
       "source_id": "scmp",
       "source_name": "South China Morning Post",
       "source_kind": "rss",
@@ -972,7 +1098,7 @@
       "url": "https://www.scmp.com/news/asia/southeast-asia/article/3360717/vietnam-arrests-3-publishing-bosses-over-controversial-ho-chi-minh-book?utm_source=rss_feed",
       "published_at": "2026-07-15T15:08:40Z",
       "published_label": "15 Jul 2026 · 15:08Z",
-      "age_label": "7h ago",
+      "age_label": "8h ago",
       "source_id": "scmp",
       "source_name": "South China Morning Post",
       "source_kind": "rss",
@@ -990,7 +1116,7 @@
       "url": "https://www.scmp.com/news/china/diplomacy/article/3360711/us-iran-war-trump-falling-vietnam-quagmire?utm_source=rss_feed",
       "published_at": "2026-07-15T15:00:07Z",
       "published_label": "15 Jul 2026 · 15:00Z",
-      "age_label": "7h ago",
+      "age_label": "8h ago",
       "source_id": "scmp",
       "source_name": "South China Morning Post",
       "source_kind": "rss",
@@ -1004,32 +1130,13 @@
       "cluster_key": "usiran war is trump falling into a vietnam quagmire"
     },
     {
-      "id": "33592248bb4493ce",
-      "title": "Christmas tree troubles, new Pacific missile launch: 7 US-China relations reads",
-      "summary": "We have selected seven of the most interesting and important news stories covering US-China relations from the past few weeks. If you would like to see more of our reporting, please consider subscribing. 1. US lawmakers push for fewer tax breaks to reduce reliance on China techn…",
-      "url": "https://www.scmp.com/news/china/article/3360578/chinas-anthropic-snub-new-pacific-missile-launch-7-us-china-relations-reads?utm_source=rss_feed",
-      "published_at": "2026-07-15T14:49:32Z",
-      "published_label": "15 Jul 2026 · 14:49Z",
-      "age_label": "7h ago",
-      "source_id": "scmp",
-      "source_name": "South China Morning Post",
-      "source_kind": "rss",
-      "category": "apac-security",
-      "regions": [
-        "pacific",
-        "china"
-      ],
-      "priority": 28,
-      "cluster_key": "christmas tree troubles new pacific missile launch 7 uschina relations reads"
-    },
-    {
       "id": "162d4889cff4ced7",
       "title": "Australia Wants to ‘Manage’ AI. What Will That Look Like?",
       "summary": "“This is our time to decide what AI looks like here in Australia,” Prime Minister Albanese said.",
       "url": "https://thediplomat.com/2026/07/australia-wants-to-manage-ai-what-will-that-look-like/",
       "published_at": "2026-07-15T14:15:00Z",
       "published_label": "15 Jul 2026 · 14:15Z",
-      "age_label": "8h ago",
+      "age_label": "9h ago",
       "source_id": "diplomat",
       "source_name": "The Diplomat",
       "source_kind": "rss",
@@ -1041,49 +1148,13 @@
       "cluster_key": "australia wants to manage ai what will that look like"
     },
     {
-      "id": "f44bc1eef3752f7d",
-      "title": "Dutch police dismantle global crypto investment scam, arrest alleged mastermind",
-      "summary": "Authorities said Wednesday that the group operated like a legitimate international business since at least 2021, running about two dozen call centers across several countries and employing more than 700 people who posed as professional financial advisers.",
-      "url": "https://therecord.media/dutch-police-dismantle-global-crypto-investment-scam",
-      "published_at": "2026-07-15T14:14:00Z",
-      "published_label": "15 Jul 2026 · 14:14Z",
-      "age_label": "8h ago",
-      "source_id": "the-record",
-      "source_name": "The Record",
-      "source_kind": "rss",
-      "category": "cyber",
-      "regions": [
-        "global"
-      ],
-      "priority": 22,
-      "cluster_key": "dutch police dismantle global crypto investment scam arrest alleged mastermind"
-    },
-    {
-      "id": "c05f8bf8a36afb6d",
-      "title": "CUHK launches first cross-border clinical trial centre in Nansha",
-      "summary": "The Chinese University of Hong Kong (CUHK) has set up its first clinical trial centre outside Hong Kong, teaming up with mainland Chinese authorities to strengthen research collaboration and help develop the Greater Bay Area into an international hub for medical innovation. The…",
-      "url": "https://www.scmp.com/news/hong-kong/health-environment/article/3360710/cuhk-launches-first-cross-border-clinical-trial-centre-nansha?utm_source=rss_feed",
-      "published_at": "2026-07-15T14:03:01Z",
-      "published_label": "15 Jul 2026 · 14:03Z",
-      "age_label": "8h ago",
-      "source_id": "scmp",
-      "source_name": "South China Morning Post",
-      "source_kind": "rss",
-      "category": "apac-security",
-      "regions": [
-        "china"
-      ],
-      "priority": 10,
-      "cluster_key": "cuhk launches first crossborder clinical trial centre in nansha"
-    },
-    {
       "id": "64fcda52d6d2dc6a",
       "title": "India’s Monsoon Deluge Reflects Intensifying Global Climate Emergency",
       "summary": "From floods to heatwaves, cascading climate disasters expose mounting vulnerabilities demanding coordinated scientific and policy responses.",
       "url": "https://thediplomat.com/2026/07/indias-monsoon-deluge-reflects-intensifying-global-climate-emergency/",
       "published_at": "2026-07-15T14:02:00Z",
       "published_label": "15 Jul 2026 · 14:02Z",
-      "age_label": "8h ago",
+      "age_label": "9h ago",
       "source_id": "diplomat",
       "source_name": "The Diplomat",
       "source_kind": "rss",
@@ -1101,7 +1172,7 @@
       "url": "https://www.lowyinstitute.org/the-interpreter/png-s-answer-to-the-deepfake-problem",
       "published_at": "2026-07-15T14:00:00Z",
       "published_label": "15 Jul 2026 · 14:00Z",
-      "age_label": "8h ago",
+      "age_label": "9h ago",
       "source_id": "lowy-interpreter",
       "source_name": "Lowy Interpreter",
       "source_kind": "rss",
@@ -1119,7 +1190,7 @@
       "url": "https://thediplomat.com/2026/07/the-china-factor-in-cuba-us-tensions/",
       "published_at": "2026-07-15T13:44:00Z",
       "published_label": "15 Jul 2026 · 13:44Z",
-      "age_label": "8h ago",
+      "age_label": "9h ago",
       "source_id": "diplomat",
       "source_name": "The Diplomat",
       "source_kind": "rss",
@@ -1137,7 +1208,7 @@
       "url": "https://news.usni.org/2026/07/15/report-to-congress-on-japans-evolving-defense-policy-and-the-u-s-japan-alliance",
       "published_at": "2026-07-15T13:37:08Z",
       "published_label": "15 Jul 2026 · 13:37Z",
-      "age_label": "9h ago",
+      "age_label": "10h ago",
       "source_id": "usni",
       "source_name": "USNI News",
       "source_kind": "rss",
@@ -1156,7 +1227,7 @@
       "url": "https://thediplomat.com/2026/07/south-koreas-biggest-criminal-justice-reform/",
       "published_at": "2026-07-15T13:17:00Z",
       "published_label": "15 Jul 2026 · 13:17Z",
-      "age_label": "9h ago",
+      "age_label": "10h ago",
       "source_id": "diplomat",
       "source_name": "The Diplomat",
       "source_kind": "rss",
@@ -1174,7 +1245,7 @@
       "url": "https://thediplomat.com/2026/07/amid-the-afghanistan-pakistan-conflict-india-taliban-diplomatic-ties-are-strengthening/",
       "published_at": "2026-07-15T13:08:00Z",
       "published_label": "15 Jul 2026 · 13:08Z",
-      "age_label": "9h ago",
+      "age_label": "10h ago",
       "source_id": "diplomat",
       "source_name": "The Diplomat",
       "source_kind": "rss",
@@ -1186,49 +1257,13 @@
       "cluster_key": "amid the afghanistanpakistan conflict indiataliban diplomatic ties are strengthening"
     },
     {
-      "id": "b8abac8234ee5dbd",
-      "title": "LAPD sidelines relationship with license-plate reader company Flock Safety",
-      "summary": "The Los Angeles Police Department is the latest U.S. municipal agency to rethink its relationship to ALPR company Flock Safety.",
-      "url": "https://therecord.media/lapd-halts-flock-safety-alpr-contract",
-      "published_at": "2026-07-15T13:00:00Z",
-      "published_label": "15 Jul 2026 · 13:00Z",
-      "age_label": "9h ago",
-      "source_id": "the-record",
-      "source_name": "The Record",
-      "source_kind": "rss",
-      "category": "cyber",
-      "regions": [
-        "us"
-      ],
-      "priority": 22,
-      "cluster_key": "lapd sidelines relationship with licenseplate reader company flock safety"
-    },
-    {
-      "id": "a9b69d51ab26e2a9",
-      "title": "Seven Britons among those killed in Spain wildfires",
-      "summary": "Twelve of the 13 victims were foreign nationals, Spanish authorities said on Tuesday.",
-      "url": "https://www.bbc.co.uk/news/articles/cp8l87784ngo?at_medium=RSS&at_campaign=rss",
-      "published_at": "2026-07-15T12:21:32Z",
-      "published_label": "15 Jul 2026 · 12:21Z",
-      "age_label": "10h ago",
-      "source_id": "bbc-world",
-      "source_name": "BBC World",
-      "source_kind": "rss",
-      "category": "global",
-      "regions": [
-        "global"
-      ],
-      "priority": 10,
-      "cluster_key": "seven britons among those killed in spain wildfires"
-    },
-    {
       "id": "01bacfe7582c54ef",
       "title": "Venezuela government to launch formal talks with opposition members",
       "summary": "The opposition says the aim of the talks is to strengthen the democratic institutions and the electoral system.",
       "url": "https://www.bbc.co.uk/news/articles/c1eye5320g5o?at_medium=RSS&at_campaign=rss",
       "published_at": "2026-07-15T12:21:21Z",
       "published_label": "15 Jul 2026 · 12:21Z",
-      "age_label": "10h ago",
+      "age_label": "11h ago",
       "source_id": "bbc-world",
       "source_name": "BBC World",
       "source_kind": "rss",
@@ -1246,7 +1281,7 @@
       "url": "https://thediplomat.com/2026/07/china-cant-talk-about-birth-rates-without-talking-about-rural-pensions/",
       "published_at": "2026-07-15T12:13:00Z",
       "published_label": "15 Jul 2026 · 12:13Z",
-      "age_label": "10h ago",
+      "age_label": "11h ago",
       "source_id": "diplomat",
       "source_name": "The Diplomat",
       "source_kind": "rss",
@@ -1264,7 +1299,7 @@
       "url": "https://www.bbc.co.uk/news/articles/c1kykx3vnyyo?at_medium=RSS&at_campaign=rss",
       "published_at": "2026-07-15T11:44:28Z",
       "published_label": "15 Jul 2026 · 11:44Z",
-      "age_label": "10h ago",
+      "age_label": "11h ago",
       "source_id": "bbc-world",
       "source_name": "BBC World",
       "source_kind": "rss",
@@ -1276,31 +1311,13 @@
       "cluster_key": "italys meloni suffers surprise setback in close vote on electoral reform"
     },
     {
-      "id": "c02b2eb047f41b88",
-      "title": "Sierra Leone drops treason charge against ex-president over attempted coup",
-      "summary": "Ernest Bai Koroma was arrested in 2023 after gunmen broke into an armoury and some jails, freeing inmates.",
-      "url": "https://www.bbc.co.uk/news/articles/cx2w2k3vklgo?at_medium=RSS&at_campaign=rss",
-      "published_at": "2026-07-15T11:43:15Z",
-      "published_label": "15 Jul 2026 · 11:43Z",
-      "age_label": "10h ago",
-      "source_id": "bbc-world",
-      "source_name": "BBC World",
-      "source_kind": "rss",
-      "category": "global",
-      "regions": [
-        "global"
-      ],
-      "priority": 28,
-      "cluster_key": "sierra leone drops treason charge against expresident over attempted coup"
-    },
-    {
       "id": "f2e0aa63c616a1cc",
       "title": "Heatwave prompts Italy's delivery riders to strike for extra rights",
       "summary": "Delivery riders in Milan, Bologna and Florence want to protect their health and their wages.",
       "url": "https://www.bbc.co.uk/news/articles/c1dydw0r246o?at_medium=RSS&at_campaign=rss",
       "published_at": "2026-07-15T11:38:37Z",
       "published_label": "15 Jul 2026 · 11:38Z",
-      "age_label": "11h ago",
+      "age_label": "12h ago",
       "source_id": "bbc-world",
       "source_name": "BBC World",
       "source_kind": "rss",
@@ -1318,7 +1335,7 @@
       "url": "https://www.bbc.co.uk/news/articles/c0lyl5ryyr4o?at_medium=RSS&at_campaign=rss",
       "published_at": "2026-07-15T10:50:09Z",
       "published_label": "15 Jul 2026 · 10:50Z",
-      "age_label": "11h ago",
+      "age_label": "12h ago",
       "source_id": "bbc-world",
       "source_name": "BBC World",
       "source_kind": "rss",
@@ -1336,7 +1353,7 @@
       "url": "https://www.bbc.co.uk/news/articles/cd959x4edy8o?at_medium=RSS&at_campaign=rss",
       "published_at": "2026-07-15T10:21:48Z",
       "published_label": "15 Jul 2026 · 10:21Z",
-      "age_label": "12h ago",
+      "age_label": "13h ago",
       "source_id": "bbc-asia",
       "source_name": "BBC Asia",
       "source_kind": "rss",
@@ -1355,7 +1372,7 @@
       "url": "https://thediplomat.com/2026/07/the-film-satluj-revisits-a-turbulent-chapter-in-indias-counterinsurgency-history/",
       "published_at": "2026-07-15T09:52:00Z",
       "published_label": "15 Jul 2026 · 09:52Z",
-      "age_label": "12h ago",
+      "age_label": "13h ago",
       "source_id": "diplomat",
       "source_name": "The Diplomat",
       "source_kind": "rss",
@@ -1373,7 +1390,7 @@
       "url": "https://www.bbc.co.uk/news/articles/cjrgrgx2d9qo?at_medium=RSS&at_campaign=rss",
       "published_at": "2026-07-15T09:45:21Z",
       "published_label": "15 Jul 2026 · 09:45Z",
-      "age_label": "12h ago",
+      "age_label": "13h ago",
       "source_id": "bbc-asia",
       "source_name": "BBC Asia",
       "source_kind": "rss",
@@ -1391,7 +1408,7 @@
       "url": "https://warontherocks.com/cogs-of-war/molle-pals-and-the-empty-loops-of-americas-civil-military-divide/",
       "published_at": "2026-07-15T08:00:05Z",
       "published_label": "15 Jul 2026 · 08:00Z",
-      "age_label": "14h ago",
+      "age_label": "15h ago",
       "source_id": "war-on-the-rocks",
       "source_name": "War on the Rocks",
       "source_kind": "rss",
@@ -1409,7 +1426,7 @@
       "url": "https://warontherocks.com/before-the-next-mythos-moment-the-case-for-an-ai-threat-fusion-center/",
       "published_at": "2026-07-15T07:30:14Z",
       "published_label": "15 Jul 2026 · 07:30Z",
-      "age_label": "15h ago",
+      "age_label": "16h ago",
       "source_id": "war-on-the-rocks",
       "source_name": "War on the Rocks",
       "source_kind": "rss",
@@ -1427,7 +1444,7 @@
       "url": "https://warontherocks.com/breaking-americas-promise-to-pacific-island-veterans/",
       "published_at": "2026-07-15T07:15:55Z",
       "published_label": "15 Jul 2026 · 07:15Z",
-      "age_label": "15h ago",
+      "age_label": "16h ago",
       "source_id": "war-on-the-rocks",
       "source_name": "War on the Rocks",
       "source_kind": "rss",
@@ -1446,7 +1463,7 @@
       "url": "https://www.rnz.co.nz/news/political/723634/govt-s-amalgamation-plans-causing-quite-a-lot-of-chaos-selwyn-councillors",
       "published_at": "2026-07-15T06:59:24Z",
       "published_label": "15 Jul 2026 · 06:59Z",
-      "age_label": "15h ago",
+      "age_label": "16h ago",
       "source_id": "rnz-national",
       "source_name": "RNZ National",
       "source_kind": "rss",
@@ -1464,7 +1481,7 @@
       "url": "https://www.rnz.co.nz/news/crime-and-justice/723631/arthur-easton-case-former-police-officer-on-trial-takes-stand-for-first-time",
       "published_at": "2026-07-15T06:48:15Z",
       "published_label": "15 Jul 2026 · 06:48Z",
-      "age_label": "15h ago",
+      "age_label": "16h ago",
       "source_id": "rnz-national",
       "source_name": "RNZ National",
       "source_kind": "rss",
@@ -1482,7 +1499,7 @@
       "url": "https://www.rnz.co.nz/news/pacific/721619/nz-s-pacific-islands-forum-leaders-summit-budget-could-face-a-10m-squeeze-oia-reveals",
       "published_at": "2026-07-15T06:28:54Z",
       "published_label": "15 Jul 2026 · 06:28Z",
-      "age_label": "16h ago",
+      "age_label": "17h ago",
       "source_id": "rnz-pacific",
       "source_name": "RNZ Pacific",
       "source_kind": "rss",
@@ -1501,7 +1518,7 @@
       "url": "https://www.rnz.co.nz/news/business/722509/dave-letele-could-turn-nz-muscle-around-but-standard-apology-won-t-cut-it",
       "published_at": "2026-07-15T05:31:49Z",
       "published_label": "15 Jul 2026 · 05:31Z",
-      "age_label": "17h ago",
+      "age_label": "18h ago",
       "source_id": "rnz-national",
       "source_name": "RNZ National",
       "source_kind": "rss",
@@ -1519,7 +1536,7 @@
       "url": "https://thediplomat.com/2026/07/pakistans-operation-shaban-targets-both-the-ttp-and-bla-in-balochistan/",
       "published_at": "2026-07-15T05:28:00Z",
       "published_label": "15 Jul 2026 · 05:28Z",
-      "age_label": "17h ago",
+      "age_label": "18h ago",
       "source_id": "diplomat",
       "source_name": "The Diplomat",
       "source_kind": "rss",
@@ -1537,7 +1554,7 @@
       "url": "https://www.rnz.co.nz/news/crime-and-justice/723508/shoplifters-blaming-cost-of-living-crisis-for-their-crimes-police-say",
       "published_at": "2026-07-15T05:21:59Z",
       "published_label": "15 Jul 2026 · 05:21Z",
-      "age_label": "17h ago",
+      "age_label": "18h ago",
       "source_id": "rnz-national",
       "source_name": "RNZ National",
       "source_kind": "rss",
@@ -1555,7 +1572,7 @@
       "url": "https://www.rnz.co.nz/news/community/723446/tasers-used-by-police-to-bring-aggressive-dog-under-control",
       "published_at": "2026-07-15T04:40:47Z",
       "published_label": "15 Jul 2026 · 04:40Z",
-      "age_label": "18h ago",
+      "age_label": "19h ago",
       "source_id": "rnz-national",
       "source_name": "RNZ National",
       "source_kind": "rss",
@@ -1573,7 +1590,7 @@
       "url": "https://www.rnz.co.nz/news/crime-and-justice/723425/auckland-bus-driver-assaulted-in-apparent-road-rage-incident",
       "published_at": "2026-07-15T04:31:37Z",
       "published_label": "15 Jul 2026 · 04:31Z",
-      "age_label": "18h ago",
+      "age_label": "19h ago",
       "source_id": "rnz-national",
       "source_name": "RNZ National",
       "source_kind": "rss",
@@ -1591,7 +1608,7 @@
       "url": "https://www.rnz.co.nz/news/pacific/723316/vanuatu-to-take-decades-long-dispute-with-france-to-international-court",
       "published_at": "2026-07-15T03:43:19Z",
       "published_label": "15 Jul 2026 · 03:43Z",
-      "age_label": "18h ago",
+      "age_label": "19h ago",
       "source_id": "rnz-pacific",
       "source_name": "RNZ Pacific",
       "source_kind": "rss",
@@ -1610,7 +1627,7 @@
       "url": "https://www.rnz.co.nz/news/emergencies_local/722052/person-dies-after-crash-between-bus-and-car-south-of-cardrona",
       "published_at": "2026-07-15T03:26:21Z",
       "published_label": "15 Jul 2026 · 03:26Z",
-      "age_label": "19h ago",
+      "age_label": "20h ago",
       "source_id": "rnz-national",
       "source_name": "RNZ National",
       "source_kind": "rss",
@@ -1622,31 +1639,13 @@
       "cluster_key": "person dies after crash between bus and car south of cardrona"
     },
     {
-      "id": "512ff9377de093f5",
-      "title": "Former owner of The Captain Cook Hotel jailed for paying minor for sex",
-      "summary": "Michael McLeod's actions were \"sickening and unconscionable\", Judge David Robinson said during sentencing.",
-      "url": "https://www.rnz.co.nz/news/crime-and-justice/722848/former-owner-of-the-captain-cook-hotel-jailed-for-paying-minor-for-sex",
-      "published_at": "2026-07-15T02:42:57Z",
-      "published_label": "15 Jul 2026 · 02:42Z",
-      "age_label": "19h ago",
-      "source_id": "rnz-national",
-      "source_name": "RNZ National",
-      "source_kind": "rss",
-      "category": "nz-pacific",
-      "regions": [
-        "pacific"
-      ],
-      "priority": 10,
-      "cluster_key": "former owner of the captain cook hotel jailed for paying minor for sex"
-    },
-    {
       "id": "bd46fb1d603f23ee",
       "title": "Drua focus on collision and execution for Super W semifinal against Reds",
       "summary": "Fijian Drua Women's head coach Mike Legge says his players are excited about playing at home and understand the importance of the occasion.",
       "url": "https://www.rnz.co.nz/news/pacific/723133/drua-focus-on-collision-and-execution-for-super-w-semifinal-against-reds",
       "published_at": "2026-07-15T02:33:27Z",
       "published_label": "15 Jul 2026 · 02:33Z",
-      "age_label": "20h ago",
+      "age_label": "21h ago",
       "source_id": "rnz-pacific",
       "source_name": "RNZ Pacific",
       "source_kind": "rss",
@@ -1658,31 +1657,13 @@
       "cluster_key": "drua focus on collision and execution for super w semifinal against reds"
     },
     {
-      "id": "76baffc29ad3c7df",
-      "title": "Police announce system review after concerns over senior officer's case handling",
-      "summary": "Police have reopened 40 cases of child protection complaints, alongside 12 adult sexual assaults and two other types of crime.",
-      "url": "https://www.rnz.co.nz/news/crime-and-justice/720260/police-announce-system-review-after-concerns-over-senior-officer-s-case-handling",
-      "published_at": "2026-07-15T02:24:04Z",
-      "published_label": "15 Jul 2026 · 02:24Z",
-      "age_label": "20h ago",
-      "source_id": "rnz-national",
-      "source_name": "RNZ National",
-      "source_kind": "rss",
-      "category": "nz-pacific",
-      "regions": [
-        "pacific"
-      ],
-      "priority": 10,
-      "cluster_key": "police announce system review after concerns over senior officers case handling"
-    },
-    {
       "id": "1a8a65597352b239",
       "title": "China detains US scientist who studied North Korea nuclear tests",
       "summary": "Chen Youlin's family says he has been wrongfully detained for nearly two years on spying charges.",
       "url": "https://www.bbc.co.uk/news/articles/cqx1xdn3g4eo?at_medium=RSS&at_campaign=rss",
       "published_at": "2026-07-15T02:14:37Z",
       "published_label": "15 Jul 2026 · 02:14Z",
-      "age_label": "20h ago",
+      "age_label": "21h ago",
       "source_id": "bbc-asia",
       "source_name": "BBC Asia",
       "source_kind": "rss",
@@ -1701,7 +1682,7 @@
       "url": "https://www.rnz.co.nz/news/pacific/722938/daniel-tupou-celebrates-300th-nrl-game-with-royal-support-and-a-hat-trick",
       "published_at": "2026-07-15T01:57:54Z",
       "published_label": "15 Jul 2026 · 01:57Z",
-      "age_label": "20h ago",
+      "age_label": "21h ago",
       "source_id": "rnz-pacific",
       "source_name": "RNZ Pacific",
       "source_kind": "rss",
@@ -1719,7 +1700,7 @@
       "url": "https://www.rnz.co.nz/news/pacific/722380/northern-marianas-tourism-revival-gathers-pace-as-hk-airlines-returns",
       "published_at": "2026-07-15T01:06:41Z",
       "published_label": "15 Jul 2026 · 01:06Z",
-      "age_label": "21h ago",
+      "age_label": "22h ago",
       "source_id": "rnz-pacific",
       "source_name": "RNZ Pacific",
       "source_kind": "rss",
@@ -1737,7 +1718,7 @@
       "url": "https://www.rnz.co.nz/news/pacific/722302/papua-new-guinea-pm-announces-cabinet-reshuffle-government-reforms",
       "published_at": "2026-07-15T00:03:27Z",
       "published_label": "15 Jul 2026 · 00:03Z",
-      "age_label": "22h ago",
+      "age_label": "23h ago",
       "source_id": "rnz-pacific",
       "source_name": "RNZ Pacific",
       "source_kind": "rss",
@@ -1755,7 +1736,7 @@
       "url": "https://www.rnz.co.nz/news/pacific/722158/fiji-keeps-world-rugby-top-10-ranking-despite-nations-championship-losses",
       "published_at": "2026-07-14T23:28:25Z",
       "published_label": "14 Jul 2026 · 23:28Z",
-      "age_label": "23h ago",
+      "age_label": "1d ago",
       "source_id": "rnz-pacific",
       "source_name": "RNZ Pacific",
       "source_kind": "rss",
@@ -1763,26 +1744,8 @@
       "regions": [
         "pacific"
       ],
-      "priority": 10,
+      "priority": 0,
       "cluster_key": "fiji keeps world rugby top10 ranking despite nations championship losses"
-    },
-    {
-      "id": "db45e741223713a8",
-      "title": "Trump retreat over Hormuz tolls suggests he is struggling to end Iran war",
-      "summary": "The abrupt about-face from the US president was the latest twist in a conflict that has now lasted more than four months.",
-      "url": "https://www.bbc.co.uk/news/articles/crele3r8j19o?at_medium=RSS&at_campaign=rss",
-      "published_at": "2026-07-14T23:17:27Z",
-      "published_label": "14 Jul 2026 · 23:17Z",
-      "age_label": "23h ago",
-      "source_id": "bbc-world",
-      "source_name": "BBC World",
-      "source_kind": "rss",
-      "category": "global",
-      "regions": [
-        "middle-east"
-      ],
-      "priority": 10,
-      "cluster_key": "trump retreat over hormuz tolls suggests he is struggling to end iran war"
     },
     {
       "id": "911110aeafa38123",
@@ -2287,7 +2250,7 @@
       "url": "https://www.rnz.co.nz/news/pacific/715122/faith-and-family-keep-all-black-george-bower-grounded",
       "published_at": "2026-07-13T22:53:59Z",
       "published_label": "13 Jul 2026 · 22:53Z",
-      "age_label": "1d ago",
+      "age_label": "2d ago",
       "source_id": "rnz-pacific",
       "source_name": "RNZ Pacific",
       "source_kind": "rss",
@@ -2686,25 +2649,6 @@
       ],
       "priority": 0,
       "cluster_key": "how indian scientists are mapping the brains last frontier"
-    },
-    {
-      "id": "238c324a12fe4298",
-      "title": "Fiji Police confirm 76 washed-up parcels tested positive for cocaine",
-      "summary": "The Fiji Police Force is liaising with the Australian Federal Police (AFP), their Australian counterparts, to ascertain the parcels' source and destination.",
-      "url": "https://www.rnz.co.nz/news/pacific/707615/fiji-police-confirm-76-washed-up-parcels-tested-positive-for-cocaine",
-      "published_at": "2026-07-12T21:15:18Z",
-      "published_label": "12 Jul 2026 · 21:15Z",
-      "age_label": "3d ago",
-      "source_id": "rnz-pacific",
-      "source_name": "RNZ Pacific",
-      "source_kind": "rss",
-      "category": "nz-pacific",
-      "regions": [
-        "pacific",
-        "australia"
-      ],
-      "priority": 0,
-      "cluster_key": "fiji police confirm 76 washedup parcels tested positive for cocaine"
     },
     {
       "id": "f84f12a0655f7fbf",
@@ -3112,19 +3056,69 @@
       ],
       "priority": 0,
       "cluster_key": "shifting gears away from being just a policy shop qa with the pentagon cio"
+    },
+    {
+      "id": "ee3f797121c571e2",
+      "title": "Felons, Fraudsters Flog Offensive Cybersecurity Startup",
+      "summary": "A cybersecurity startup dangling millions of dollars to acquire zero-day security vulnerabilities in popular software is run by a pair of far-right conspiracy theorists and convicted felons whose most recent ventures included fake intelligence companies and a now-defunct AI-base…",
+      "url": "https://krebsonsecurity.com/2026/07/felons-fraudsters-flog-offensive-cybersecurity-startup/",
+      "published_at": "2026-07-08T12:31:39Z",
+      "published_label": "08 Jul 2026 · 12:31Z",
+      "age_label": "08 Jul 2026 · 12:31Z",
+      "source_id": "krebs",
+      "source_name": "Krebs on Security",
+      "source_kind": "rss",
+      "category": "cyber",
+      "regions": [
+        "global"
+      ],
+      "priority": 30,
+      "cluster_key": "felons fraudsters flog offensive cybersecurity startup"
+    },
+    {
+      "id": "0ee375148353329c",
+      "title": "FBI Seizes NetNut Proxy Platform, Popa Botnet",
+      "summary": "The Federal Bureau of Investigation (FBI) said today it worked with industry partners to seize hundreds of domains associated with NetNut, a sprawling residential proxy service operated by the publicly-traded Israeli company Alarum Technologies [NASDAQ: ALAR]. The action comes r…",
+      "url": "https://krebsonsecurity.com/2026/07/fbi-seizes-netnut-proxy-platform-popa-botnet/",
+      "published_at": "2026-07-02T19:27:33Z",
+      "published_label": "02 Jul 2026 · 19:27Z",
+      "age_label": "02 Jul 2026 · 19:27Z",
+      "source_id": "krebs",
+      "source_name": "Krebs on Security",
+      "source_kind": "rss",
+      "category": "cyber",
+      "regions": [
+        "middle-east"
+      ],
+      "priority": 12,
+      "cluster_key": "fbi seizes netnut proxy platform popa botnet"
+    },
+    {
+      "id": "aacce50447b91d29",
+      "title": "Scattered Spider Hackers Plead Guilty on Day 1 of Trial",
+      "summary": "Two men pleaded guilty in the United Kingdom this week to criminal charges stemming from an August 2024 cyberattack that crippled Transport for London, the entity responsible for the public transport network in the Greater London area. The duo were key members of a prolific cybe…",
+      "url": "https://krebsonsecurity.com/2026/06/scattered-spider-hackers-plead-guilty-on-day-1-of-trial/",
+      "published_at": "2026-06-23T16:12:49Z",
+      "published_label": "23 Jun 2026 · 16:12Z",
+      "age_label": "23 Jun 2026 · 16:12Z",
+      "source_id": "krebs",
+      "source_name": "Krebs on Security",
+      "source_kind": "rss",
+      "category": "cyber",
+      "regions": [
+        "europe"
+      ],
+      "priority": 12,
+      "cluster_key": "scattered spider hackers plead guilty on day 1 of trial"
     }
   ],
   "trends": [
     {
       "term": "china",
-      "count": 15
+      "count": 16
     },
     {
       "term": "police",
-      "count": 11
-    },
-    {
-      "term": "trump",
       "count": 8
     },
     {
@@ -3136,15 +3130,7 @@
       "count": 6
     },
     {
-      "term": "pacific",
-      "count": 6
-    },
-    {
       "term": "pentagon",
-      "count": 6
-    },
-    {
-      "term": "report",
       "count": 6
     },
     {
@@ -3153,6 +3139,18 @@
     },
     {
       "term": "fire",
+      "count": 5
+    },
+    {
+      "term": "pacific",
+      "count": 5
+    },
+    {
+      "term": "report",
+      "count": 5
+    },
+    {
+      "term": "south",
       "count": 5
     }
   ]
