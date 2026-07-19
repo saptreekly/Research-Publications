@@ -1,21 +1,21 @@
 {
-  "updated_at": "2026-07-19T17:28Z",
-  "updated_label": "19 Jul 2026 · 17:28Z",
+  "updated_at": "2026-07-19T18:31Z",
+  "updated_label": "19 Jul 2026 · 18:31Z",
   "categories": [
     {
       "id": "nz-pacific",
       "label": "NZ & Pacific",
-      "count": 37
+      "count": 36
     },
     {
       "id": "apac-security",
       "label": "APAC Security",
-      "count": 89
+      "count": 88
     },
     {
       "id": "cyber",
       "label": "Cyber",
-      "count": 5
+      "count": 7
     },
     {
       "id": "global",
@@ -124,9 +124,9 @@
       "name": "The Record",
       "category": "cyber",
       "url": "https://therecord.media/feed/",
-      "item_count": 0,
-      "status": "error",
-      "error": "HTTP Error 520: <none>"
+      "item_count": 5,
+      "status": "ok",
+      "error": null
     },
     {
       "id": "krebs",
@@ -176,103 +176,67 @@
   ],
   "items": [
     {
-      "id": "0a970336aae0ac61",
-      "title": "US and Iran trade fire after two US soldiers killed in Jordan",
-      "summary": "Kuwait says an electricity and water plant is on fire after the second such attack in two days. Iran says US strikes hit an under-construction nuclear power plant.",
-      "url": "https://www.bbc.co.uk/news/articles/cgk417jp83po?at_medium=RSS&at_campaign=rss",
-      "published_at": "2026-07-19T17:22:23Z",
-      "published_label": "19 Jul 2026 · 17:22Z",
-      "age_label": "5m ago",
+      "id": "157dc0af265b1ad8",
+      "title": "Russia launches major ballistic missile attack on Ukrainian cities",
+      "summary": "Eight people die and dozens are injured as several cities are hit by missile and drone attacks, while Kyiv continues its own assault on Russian infrastructure.",
+      "url": "https://www.bbc.co.uk/news/articles/c2el7xpnzrpo?at_medium=RSS&at_campaign=rss",
+      "published_at": "2026-07-19T18:25:40Z",
+      "published_label": "19 Jul 2026 · 18:25Z",
+      "age_label": "6m ago",
       "source_id": "bbc-world",
       "source_name": "BBC World",
       "source_kind": "rss",
       "category": "global",
       "regions": [
+        "russia"
+      ],
+      "priority": 48,
+      "cluster_key": "russia launches major ballistic missile attack on ukrainian cities"
+    },
+    {
+      "id": "05e5e2ff849568b4",
+      "title": "Israeli PM’s office slams New York mayor over Netanyahu arrest remarks",
+      "summary": "The office of Israeli Prime Minister Benjamin Netanyahu on Sunday denounced New York Mayor Zohran Mamdani after he said he is considering whether to arrest the Israeli leader during a coming United Nations summit. “Mr Mamdani should focus on fixing the damage his policies have c…",
+      "url": "https://www.scmp.com/news/world/united-states-canada/article/3361126/israeli-pms-office-slams-new-york-mayor-over-netanyahu-arrest-remarks?utm_source=rss_feed",
+      "published_at": "2026-07-19T18:24:29Z",
+      "published_label": "19 Jul 2026 · 18:24Z",
+      "age_label": "7m ago",
+      "source_id": "scmp",
+      "source_name": "South China Morning Post",
+      "source_kind": "rss",
+      "category": "apac-security",
+      "regions": [
         "middle-east"
       ],
-      "priority": 48,
-      "cluster_key": "us and iran trade fire after two us soldiers killed in jordan"
+      "priority": 30,
+      "cluster_key": "israeli pms office slams new york mayor over netanyahu arrest remarks"
     },
     {
-      "id": "f393dbc329181eed",
-      "title": "At least 6 dead, 21 injured after 2 earthquakes hit Peru",
-      "summary": "At least six people were killed and 21 injured after two earthquakes struck a mountainous region of Peru, the country’s civil defence chief said ‌on Sunday. The earthquakes, measuring magnitudes 5.1 and 3.7, hit on Saturday night in Chupaca province in the Junin region, about 30…",
-      "url": "https://www.scmp.com/news/world/americas/article/3361124/least-6-dead-21-injured-after-2-earthquakes-hit-peru?utm_source=rss_feed",
-      "published_at": "2026-07-19T17:18:18Z",
-      "published_label": "19 Jul 2026 · 17:18Z",
+      "id": "cb3ff57bd3121835",
+      "title": "Auckland Council ponders ways to increase voter turnout at 2028 elections",
+      "summary": "Just 29 percent of Auckland voted at last year's local elections and council staff doubt changing the voting method alone would fix that.",
+      "url": "https://www.rnz.co.nz/news/political/747745/auckland-council-ponders-ways-to-increase-voter-turnout-at-2028-elections",
+      "published_at": "2026-07-19T18:22:30Z",
+      "published_label": "19 Jul 2026 · 18:22Z",
       "age_label": "9m ago",
-      "source_id": "scmp",
-      "source_name": "South China Morning Post",
-      "source_kind": "rss",
-      "category": "apac-security",
-      "regions": [
-        "se-asia"
-      ],
-      "priority": 48,
-      "cluster_key": "at least 6 dead 21 injured after 2 earthquakes hit peru"
-    },
-    {
-      "id": "adfa00b21f7447cf",
-      "title": "Can NZ First pull off the 'drill baby drill' moment it dreams of?",
-      "summary": "Analysis - The party is playing the long game - both in building support and policy.",
-      "url": "https://www.rnz.co.nz/news/political/747450/can-nz-first-pull-off-the-drill-baby-drill-moment-it-dreams-of",
-      "published_at": "2026-07-19T16:46:49Z",
-      "published_label": "19 Jul 2026 · 16:46Z",
-      "age_label": "41m ago",
-      "source_id": "rnz-news",
-      "source_name": "RNZ News",
+      "source_id": "rnz-national",
+      "source_name": "RNZ National",
       "source_kind": "rss",
       "category": "nz-pacific",
       "regions": [
-        "pacific"
+        "nz"
       ],
       "priority": 30,
-      "cluster_key": "can nz first pull off the drill baby drill moment it dreams of"
-    },
-    {
-      "id": "75fc39064c9d7f73",
-      "title": "Trump welcomes reports Andy Burnham could open up North Sea oil drilling",
-      "summary": "US President Donald Trump has said people in the Scottish city of Aberdeen will be “dancing in the streets” following reports Andy Burnham could back new oil and gas drilling in the North Sea. The incoming UK prime minister, dubbed the “King of the North” for his work as ‌the ma…",
-      "url": "https://www.scmp.com/news/world/europe/article/3361123/trump-welcomes-reports-andy-burnham-could-open-north-sea-oil-drilling?utm_source=rss_feed",
-      "published_at": "2026-07-19T16:46:36Z",
-      "published_label": "19 Jul 2026 · 16:46Z",
-      "age_label": "41m ago",
-      "source_id": "scmp",
-      "source_name": "South China Morning Post",
-      "source_kind": "rss",
-      "category": "apac-security",
-      "regions": [
-        "se-asia"
-      ],
-      "priority": 30,
-      "cluster_key": "trump welcomes reports andy burnham could open up north sea oil drilling"
-    },
-    {
-      "id": "1bba2007e09dd3e7",
-      "title": "Job website visits slump despite $22m replacement",
-      "summary": "The Tertiary Education Commission said it spent $21.7m on the project, but the number of users this year had dropped.",
-      "url": "https://www.rnz.co.nz/news/education/747451/job-website-visits-slump-despite-22m-replacement",
-      "published_at": "2026-07-19T16:38:26Z",
-      "published_label": "19 Jul 2026 · 16:38Z",
-      "age_label": "49m ago",
-      "source_id": "rnz-news",
-      "source_name": "RNZ News",
-      "source_kind": "rss",
-      "category": "nz-pacific",
-      "regions": [
-        "pacific"
-      ],
-      "priority": 30,
-      "cluster_key": "job website visits slump despite 22m replacement"
+      "cluster_key": "auckland council ponders ways to increase voter turnout at 2028 elections"
     },
     {
       "id": "9182d798a272a050",
       "title": "Ferry carrying 133 passengers and crew sinks off Guyana coast",
       "summary": "Fifteen children are among 67 people rescued, officials say, with dozens still missing.",
       "url": "https://www.bbc.co.uk/news/articles/cm2gm99nrm7o?at_medium=RSS&at_campaign=rss",
-      "published_at": "2026-07-19T16:35:02Z",
-      "published_label": "19 Jul 2026 · 16:35Z",
-      "age_label": "53m ago",
+      "published_at": "2026-07-19T18:18:05Z",
+      "published_label": "19 Jul 2026 · 18:18Z",
+      "age_label": "13m ago",
       "source_id": "bbc-world",
       "source_name": "BBC World",
       "source_kind": "rss",
@@ -284,13 +248,157 @@
       "cluster_key": "ferry carrying 133 passengers and crew sinks off guyana coast"
     },
     {
+      "id": "77b8c2e56f6988a4",
+      "title": "Struggle to hear at parties? You're not alone",
+      "summary": "At age 25, Ke-Xin Li could hear clearly in normal situations, but struggled at events where many people were speaking at the same time.",
+      "url": "https://www.rnz.co.nz/news/health/747671/struggle-to-hear-at-parties-you-re-not-alone",
+      "published_at": "2026-07-19T18:05:09Z",
+      "published_label": "19 Jul 2026 · 18:05Z",
+      "age_label": "26m ago",
+      "source_id": "rnz-news",
+      "source_name": "RNZ News",
+      "source_kind": "rss",
+      "category": "nz-pacific",
+      "regions": [
+        "pacific"
+      ],
+      "priority": 30,
+      "cluster_key": "struggle to hear at parties youre not alone"
+    },
+    {
+      "id": "3ad2ed4430733d15",
+      "title": "Chinese company demands compensation from the UK over British Steel nationalisation",
+      "summary": "The Chinese company that formerly owned British Steel demanded on Sunday compensation from the UK government for investment losses following the nationalisation of the manufacturer last week. The British government took operational control of the company last year after Jingye G…",
+      "url": "https://www.scmp.com/news/world/europe/article/3361125/chinese-company-demands-compensation-uk-over-british-steel-nationalisation?utm_source=rss_feed",
+      "published_at": "2026-07-19T18:00:40Z",
+      "published_label": "19 Jul 2026 · 18:00Z",
+      "age_label": "31m ago",
+      "source_id": "scmp",
+      "source_name": "South China Morning Post",
+      "source_kind": "rss",
+      "category": "apac-security",
+      "regions": [
+        "china"
+      ],
+      "priority": 30,
+      "cluster_key": "chinese company demands compensation from the uk over british steel nationalisation"
+    },
+    {
+      "id": "d97a50848b19bccc",
+      "title": "'Simplistic' colour-coded school reports get mixed reviews from principals",
+      "summary": "The Education Review Office has judged schools on a dark green, light green, orange and red scale.",
+      "url": "https://www.rnz.co.nz/news/education/747579/simplistic-colour-coded-school-reports-get-mixed-reviews-from-principals",
+      "published_at": "2026-07-19T17:31:58Z",
+      "published_label": "19 Jul 2026 · 17:31Z",
+      "age_label": "59m ago",
+      "source_id": "rnz-news",
+      "source_name": "RNZ News",
+      "source_kind": "rss",
+      "category": "nz-pacific",
+      "regions": [
+        "pacific"
+      ],
+      "priority": 30,
+      "cluster_key": "simplistic colourcoded school reports get mixed reviews from principals"
+    },
+    {
+      "id": "0a970336aae0ac61",
+      "title": "US and Iran trade fire after two US soldiers killed in Jordan",
+      "summary": "Kuwait says an electricity and water plant is on fire after the second such attack in two days. Iran says US strikes hit an under-construction nuclear power plant.",
+      "url": "https://www.bbc.co.uk/news/articles/cgk417jp83po?at_medium=RSS&at_campaign=rss",
+      "published_at": "2026-07-19T17:22:23Z",
+      "published_label": "19 Jul 2026 · 17:22Z",
+      "age_label": "1h ago",
+      "source_id": "bbc-world",
+      "source_name": "BBC World",
+      "source_kind": "rss",
+      "category": "global",
+      "regions": [
+        "middle-east"
+      ],
+      "priority": 38,
+      "cluster_key": "us and iran trade fire after two us soldiers killed in jordan"
+    },
+    {
+      "id": "f393dbc329181eed",
+      "title": "At least 6 dead, 21 injured after 2 earthquakes hit Peru",
+      "summary": "At least six people were killed and 21 injured after two earthquakes struck a mountainous region of Peru, the country’s civil defence chief said ‌on Sunday. The earthquakes, measuring magnitudes 5.1 and 3.7, hit on Saturday night in Chupaca province in the Junin region, about 30…",
+      "url": "https://www.scmp.com/news/world/americas/article/3361124/least-6-dead-21-injured-after-2-earthquakes-hit-peru?utm_source=rss_feed",
+      "published_at": "2026-07-19T17:18:18Z",
+      "published_label": "19 Jul 2026 · 17:18Z",
+      "age_label": "1h ago",
+      "source_id": "scmp",
+      "source_name": "South China Morning Post",
+      "source_kind": "rss",
+      "category": "apac-security",
+      "regions": [
+        "se-asia"
+      ],
+      "priority": 38,
+      "cluster_key": "at least 6 dead 21 injured after 2 earthquakes hit peru"
+    },
+    {
+      "id": "adfa00b21f7447cf",
+      "title": "Can NZ First pull off the 'drill baby drill' moment it dreams of?",
+      "summary": "Analysis - The party is playing the long game - both in building support and policy.",
+      "url": "https://www.rnz.co.nz/news/political/747450/can-nz-first-pull-off-the-drill-baby-drill-moment-it-dreams-of",
+      "published_at": "2026-07-19T16:46:49Z",
+      "published_label": "19 Jul 2026 · 16:46Z",
+      "age_label": "1h ago",
+      "source_id": "rnz-news",
+      "source_name": "RNZ News",
+      "source_kind": "rss",
+      "category": "nz-pacific",
+      "regions": [
+        "pacific"
+      ],
+      "priority": 20,
+      "cluster_key": "can nz first pull off the drill baby drill moment it dreams of"
+    },
+    {
+      "id": "75fc39064c9d7f73",
+      "title": "Trump welcomes reports Andy Burnham could open up North Sea oil drilling",
+      "summary": "US President Donald Trump has said people in the Scottish city of Aberdeen will be “dancing in the streets” following reports Andy Burnham could back new oil and gas drilling in the North Sea. The incoming UK prime minister, dubbed the “King of the North” for his work as ‌the ma…",
+      "url": "https://www.scmp.com/news/world/europe/article/3361123/trump-welcomes-reports-andy-burnham-could-open-north-sea-oil-drilling?utm_source=rss_feed",
+      "published_at": "2026-07-19T16:46:36Z",
+      "published_label": "19 Jul 2026 · 16:46Z",
+      "age_label": "1h ago",
+      "source_id": "scmp",
+      "source_name": "South China Morning Post",
+      "source_kind": "rss",
+      "category": "apac-security",
+      "regions": [
+        "se-asia"
+      ],
+      "priority": 20,
+      "cluster_key": "trump welcomes reports andy burnham could open up north sea oil drilling"
+    },
+    {
+      "id": "1bba2007e09dd3e7",
+      "title": "Job website visits slump despite $22m replacement",
+      "summary": "The Tertiary Education Commission said it spent $21.7m on the project, but the number of users this year had dropped.",
+      "url": "https://www.rnz.co.nz/news/education/747451/job-website-visits-slump-despite-22m-replacement",
+      "published_at": "2026-07-19T16:38:26Z",
+      "published_label": "19 Jul 2026 · 16:38Z",
+      "age_label": "1h ago",
+      "source_id": "rnz-news",
+      "source_name": "RNZ News",
+      "source_kind": "rss",
+      "category": "nz-pacific",
+      "regions": [
+        "pacific"
+      ],
+      "priority": 20,
+      "cluster_key": "job website visits slump despite 22m replacement"
+    },
+    {
       "id": "f573d47e44820690",
       "title": "ASTRI and NAMI merger begins yielding hybrid AI and materials technologies",
       "summary": "[The content of this article has been produced by our advertising partner.] Hong Kong Applied Science and Technology Research Institute (ASTRI) has begun to realise tangible results from its merger with the Nano and Advanced Materials Institute (NAMI), completed in April 2026, w…",
       "url": "https://www.scmp.com/presented/news/hong-kong/topics/astri-merger-drives-hybrid-tech/article/3360639/astri-and-nami-merger-begins-yielding-hybrid-ai-and-materials-technologies?utm_source=rss_feed",
       "published_at": "2026-07-19T16:00:06Z",
       "published_label": "19 Jul 2026 · 16:00Z",
-      "age_label": "1h ago",
+      "age_label": "2h ago",
       "source_id": "scmp",
       "source_name": "South China Morning Post",
       "source_kind": "rss",
@@ -308,7 +416,7 @@
       "url": "https://www.scmp.com/news/hong-kong/article/3361122/hong-kong-tourist-left-coma-after-quad-bike-accident-japan?utm_source=rss_feed",
       "published_at": "2026-07-19T15:39:12Z",
       "published_label": "19 Jul 2026 · 15:39Z",
-      "age_label": "1h ago",
+      "age_label": "2h ago",
       "source_id": "scmp",
       "source_name": "South China Morning Post",
       "source_kind": "rss",
@@ -327,7 +435,7 @@
       "url": "https://www.bbc.co.uk/news/articles/c4gw9n1kx9do?at_medium=RSS&at_campaign=rss",
       "published_at": "2026-07-19T15:17:23Z",
       "published_label": "19 Jul 2026 · 15:17Z",
-      "age_label": "2h ago",
+      "age_label": "3h ago",
       "source_id": "bbc-world",
       "source_name": "BBC World",
       "source_kind": "rss",
@@ -345,7 +453,7 @@
       "url": "https://www.scmp.com/news/hong-kong/politics/article/3361121/end-us-sanctions-some-hong-kong-officials-olive-branch?utm_source=rss_feed",
       "published_at": "2026-07-19T14:52:33Z",
       "published_label": "19 Jul 2026 · 14:52Z",
-      "age_label": "2h ago",
+      "age_label": "3h ago",
       "source_id": "scmp",
       "source_name": "South China Morning Post",
       "source_kind": "rss",
@@ -364,7 +472,7 @@
       "url": "https://www.bbc.co.uk/news/articles/c5ywxp2d826o?at_medium=RSS&at_campaign=rss",
       "published_at": "2026-07-19T14:50:11Z",
       "published_label": "19 Jul 2026 · 14:50Z",
-      "age_label": "2h ago",
+      "age_label": "3h ago",
       "source_id": "bbc-world",
       "source_name": "BBC World",
       "source_kind": "rss",
@@ -382,7 +490,7 @@
       "url": "https://www.bbc.co.uk/news/videos/c9q9lw5rql4o?at_medium=RSS&at_campaign=rss",
       "published_at": "2026-07-19T14:06:08Z",
       "published_label": "19 Jul 2026 · 14:06Z",
-      "age_label": "3h ago",
+      "age_label": "4h ago",
       "source_id": "bbc-world",
       "source_name": "BBC World",
       "source_kind": "rss",
@@ -400,7 +508,7 @@
       "url": "https://www.scmp.com/news/china/diplomacy/article/3361097/fewer-opportunities-less-passion-no-clue-how-us-china-expertise-fading?utm_source=rss_feed",
       "published_at": "2026-07-19T14:00:06Z",
       "published_label": "19 Jul 2026 · 14:00Z",
-      "age_label": "3h ago",
+      "age_label": "4h ago",
       "source_id": "scmp",
       "source_name": "South China Morning Post",
       "source_kind": "rss",
@@ -419,7 +527,7 @@
       "url": "https://www.lowyinstitute.org/the-interpreter/the-taliban-s-harder-task-to-turn-conquest-into-control",
       "published_at": "2026-07-19T14:00:00Z",
       "published_label": "19 Jul 2026 · 14:00Z",
-      "age_label": "3h ago",
+      "age_label": "4h ago",
       "source_id": "lowy-interpreter",
       "source_name": "Lowy Interpreter",
       "source_kind": "rss",
@@ -437,7 +545,7 @@
       "url": "https://www.scmp.com/news/hong-kong/law-and-crime/article/3361120/online-photo-overloaded-motorcycle-carrying-child-and-2-riders-leads-arrest?utm_source=rss_feed",
       "published_at": "2026-07-19T13:20:58Z",
       "published_label": "19 Jul 2026 · 13:20Z",
-      "age_label": "4h ago",
+      "age_label": "5h ago",
       "source_id": "scmp",
       "source_name": "South China Morning Post",
       "source_kind": "rss",
@@ -455,7 +563,7 @@
       "url": "https://www.scmp.com/tech/article/3361119/alibaba-says-newest-qwen-ai-model-second-only-anthropics-claude-fable-5?utm_source=rss_feed",
       "published_at": "2026-07-19T13:20:24Z",
       "published_label": "19 Jul 2026 · 13:20Z",
-      "age_label": "4h ago",
+      "age_label": "5h ago",
       "source_id": "scmp",
       "source_name": "South China Morning Post",
       "source_kind": "rss",
@@ -473,7 +581,7 @@
       "url": "https://www.scmp.com/news/china/science/article/3361108/chinas-ai-weather-warning-system-mazu-expanding-across-global-south?utm_source=rss_feed",
       "published_at": "2026-07-19T13:00:06Z",
       "published_label": "19 Jul 2026 · 13:00Z",
-      "age_label": "4h ago",
+      "age_label": "5h ago",
       "source_id": "scmp",
       "source_name": "South China Morning Post",
       "source_kind": "rss",
@@ -491,7 +599,7 @@
       "url": "https://www.bbc.co.uk/news/articles/cwymly9yd33o?at_medium=RSS&at_campaign=rss",
       "published_at": "2026-07-19T12:53:20Z",
       "published_label": "19 Jul 2026 · 12:53Z",
-      "age_label": "4h ago",
+      "age_label": "5h ago",
       "source_id": "bbc-world",
       "source_name": "BBC World",
       "source_kind": "rss",
@@ -509,7 +617,7 @@
       "url": "https://www.scmp.com/news/world/europe/article/3361115/kyiv-pounded-russian-missile-barrage-air-defences-run-low?utm_source=rss_feed",
       "published_at": "2026-07-19T12:49:36Z",
       "published_label": "19 Jul 2026 · 12:49Z",
-      "age_label": "4h ago",
+      "age_label": "5h ago",
       "source_id": "scmp",
       "source_name": "South China Morning Post",
       "source_kind": "rss",
@@ -528,7 +636,7 @@
       "url": "https://www.scmp.com/opinion/china-opinion/article/3360649/can-russia-and-china-ever-have-truly-equal-relationship?utm_source=rss_feed",
       "published_at": "2026-07-19T12:30:04Z",
       "published_label": "19 Jul 2026 · 12:30Z",
-      "age_label": "4h ago",
+      "age_label": "6h ago",
       "source_id": "scmp",
       "source_name": "South China Morning Post",
       "source_kind": "rss",
@@ -537,7 +645,7 @@
         "china",
         "russia"
       ],
-      "priority": 20,
+      "priority": 10,
       "cluster_key": "can russia and china ever have a truly equal relationship"
     },
     {
@@ -547,7 +655,7 @@
       "url": "https://www.scmp.com/news/hong-kong/society/article/3361113/10000-hong-kong-homes-face-24-hour-wait-water-after-pipe-bursts-shau-kei-wan?utm_source=rss_feed",
       "published_at": "2026-07-19T12:14:59Z",
       "published_label": "19 Jul 2026 · 12:14Z",
-      "age_label": "5h ago",
+      "age_label": "6h ago",
       "source_id": "scmp",
       "source_name": "South China Morning Post",
       "source_kind": "rss",
@@ -555,7 +663,7 @@
       "regions": [
         "se-asia"
       ],
-      "priority": 20,
+      "priority": 10,
       "cluster_key": "10000 hong kong homes face 24hour wait for water after pipe bursts in shau kei wan"
     },
     {
@@ -565,7 +673,7 @@
       "url": "https://www.scmp.com/tech/big-tech/article/3361109/how-chinese-tech-giants-ant-tencent-use-ai-agents-win-over-enterprise-clients?utm_source=rss_feed",
       "published_at": "2026-07-19T12:00:12Z",
       "published_label": "19 Jul 2026 · 12:00Z",
-      "age_label": "5h ago",
+      "age_label": "6h ago",
       "source_id": "scmp",
       "source_name": "South China Morning Post",
       "source_kind": "rss",
@@ -573,63 +681,8 @@
       "regions": [
         "china"
       ],
-      "priority": 20,
+      "priority": 10,
       "cluster_key": "how chinese tech giants from ant to tencent use ai agents to win over enterprise clients"
-    },
-    {
-      "id": "ba7f7f0ccc3c323a",
-      "title": "China plans to hit an asteroid with a Mach 26 projectile in planet defence test",
-      "summary": "China’s first planetary defence mission appears to be far more ambitious than Nasa’s Double Asteroid Redirection Test (Dart), according to a new paper outlining its plan to slam a spacecraft into an asteroid before 2030. Unlike Dart, a proof-of-concept that nudged one asteroid’s…",
-      "url": "https://www.scmp.com/news/china/science/article/3360752/china-plans-hit-asteroid-mach-26-projectile-planet-defence-test?utm_source=rss_feed",
-      "published_at": "2026-07-19T12:00:08Z",
-      "published_label": "19 Jul 2026 · 12:00Z",
-      "age_label": "5h ago",
-      "source_id": "scmp",
-      "source_name": "South China Morning Post",
-      "source_kind": "rss",
-      "category": "apac-security",
-      "regions": [
-        "china"
-      ],
-      "priority": 20,
-      "cluster_key": "china plans to hit an asteroid with a mach 26 projectile in planet defence test"
-    },
-    {
-      "id": "415cb490f8dc2515",
-      "title": "Hong Kong to tighten contractor oversight after Tai Po blaze, minister vows",
-      "summary": "Hong Kong’s development minister has vowed to tighten monitoring of contractors and explore harsher penalties for industry misconduct following criticisms that the government’s reliance on their self-supervision was partly to blame for the deadly Tai Po blaze. But Bernadette Lin…",
-      "url": "https://www.scmp.com/news/hong-kong/society/article/3361112/hong-kong-tighten-contractor-oversight-after-tai-po-blaze-minister-vows?utm_source=rss_feed",
-      "published_at": "2026-07-19T11:41:13Z",
-      "published_label": "19 Jul 2026 · 11:41Z",
-      "age_label": "5h ago",
-      "source_id": "scmp",
-      "source_name": "South China Morning Post",
-      "source_kind": "rss",
-      "category": "apac-security",
-      "regions": [
-        "se-asia"
-      ],
-      "priority": 20,
-      "cluster_key": "hong kong to tighten contractor oversight after tai po blaze minister vows"
-    },
-    {
-      "id": "157dc0af265b1ad8",
-      "title": "Russia launches major ballistic missile attack on Ukrainian cities",
-      "summary": "Five people are killed and at least 35 injured as Ukraine's two largest cities are targeted, as Kyiv continues its own assault on Russian infrastructure.",
-      "url": "https://www.bbc.co.uk/news/articles/c2el7xpnzrpo?at_medium=RSS&at_campaign=rss",
-      "published_at": "2026-07-19T11:28:24Z",
-      "published_label": "19 Jul 2026 · 11:28Z",
-      "age_label": "5h ago",
-      "source_id": "bbc-world",
-      "source_name": "BBC World",
-      "source_kind": "rss",
-      "category": "global",
-      "regions": [
-        "europe",
-        "russia"
-      ],
-      "priority": 38,
-      "cluster_key": "russia launches major ballistic missile attack on ukrainian cities"
     },
     {
       "id": "0374ad465796b017",
@@ -638,7 +691,7 @@
       "url": "https://www.rnz.co.nz/news/political/746095/leave-bill-workers-will-be-worse-off-labour-and-greens-say",
       "published_at": "2026-07-19T10:41:03Z",
       "published_label": "19 Jul 2026 · 10:41Z",
-      "age_label": "6h ago",
+      "age_label": "7h ago",
       "source_id": "rnz-news",
       "source_name": "RNZ News",
       "source_kind": "rss",
@@ -656,7 +709,7 @@
       "url": "https://www.rnz.co.nz/news/environment/741605/stormy-weather-still-most-likely-cause-of-eagle-ray-mass-death",
       "published_at": "2026-07-19T09:36:22Z",
       "published_label": "19 Jul 2026 · 09:36Z",
-      "age_label": "7h ago",
+      "age_label": "8h ago",
       "source_id": "rnz-news",
       "source_name": "RNZ News",
       "source_kind": "rss",
@@ -674,7 +727,7 @@
       "url": "https://www.bbc.co.uk/news/articles/crmrznw82j4o?at_medium=RSS&at_campaign=rss",
       "published_at": "2026-07-19T08:18:32Z",
       "published_label": "19 Jul 2026 · 08:18Z",
-      "age_label": "9h ago",
+      "age_label": "10h ago",
       "source_id": "bbc-world",
       "source_name": "BBC World",
       "source_kind": "rss",
@@ -692,7 +745,7 @@
       "url": "https://www.bbc.co.uk/news/articles/cx2k77p2r1xo?at_medium=RSS&at_campaign=rss",
       "published_at": "2026-07-19T07:47:02Z",
       "published_label": "19 Jul 2026 · 07:47Z",
-      "age_label": "9h ago",
+      "age_label": "10h ago",
       "source_id": "bbc-world",
       "source_name": "BBC World",
       "source_kind": "rss",
@@ -710,7 +763,7 @@
       "url": "https://www.rnz.co.nz/news/sport/743330/spca-not-seeking-to-extend-new-zealand-greyhound-racing-ban-to-horse-racing",
       "published_at": "2026-07-19T07:16:05Z",
       "published_label": "19 Jul 2026 · 07:16Z",
-      "age_label": "10h ago",
+      "age_label": "11h ago",
       "source_id": "rnz-news",
       "source_name": "RNZ News",
       "source_kind": "rss",
@@ -728,7 +781,7 @@
       "url": "https://www.rnz.co.nz/news/political/742372/nz-first-promises-to-invest-in-oil-gas-surveys",
       "published_at": "2026-07-19T05:27:00Z",
       "published_label": "19 Jul 2026 · 05:27Z",
-      "age_label": "12h ago",
+      "age_label": "13h ago",
       "source_id": "rnz-news",
       "source_name": "RNZ News",
       "source_kind": "rss",
@@ -746,7 +799,7 @@
       "url": "https://www.rnz.co.nz/news/regions_taranaki/741806/taranaki-s-st-andrew-s-church-scheduled-for-4-point-2m-restoration",
       "published_at": "2026-07-19T05:03:03Z",
       "published_label": "19 Jul 2026 · 05:03Z",
-      "age_label": "12h ago",
+      "age_label": "13h ago",
       "source_id": "rnz-news",
       "source_name": "RNZ News",
       "source_kind": "rss",
@@ -764,7 +817,7 @@
       "url": "https://www.rnz.co.nz/news/political/742195/firearms-safety-authority-rebukes-lobby-group-over-claims-of-police-bullying-standover-tactics",
       "published_at": "2026-07-19T03:36:45Z",
       "published_label": "19 Jul 2026 · 03:36Z",
-      "age_label": "13h ago",
+      "age_label": "14h ago",
       "source_id": "rnz-news",
       "source_name": "RNZ News",
       "source_kind": "rss",
@@ -782,7 +835,7 @@
       "url": "https://www.rnz.co.nz/news/te-manu-korihi/742513/kurahaupo-waka-returned-to-shores-of-lake-horowhenua",
       "published_at": "2026-07-19T03:34:42Z",
       "published_label": "19 Jul 2026 · 03:34Z",
-      "age_label": "13h ago",
+      "age_label": "14h ago",
       "source_id": "rnz-news",
       "source_name": "RNZ News",
       "source_kind": "rss",
@@ -800,7 +853,7 @@
       "url": "https://www.rnz.co.nz/news/political/741529/former-labour-national-mps-explain-their-switch-to-nz-first",
       "published_at": "2026-07-19T02:22:48Z",
       "published_label": "19 Jul 2026 · 02:22Z",
-      "age_label": "15h ago",
+      "age_label": "16h ago",
       "source_id": "rnz-news",
       "source_name": "RNZ News",
       "source_kind": "rss",
@@ -818,7 +871,7 @@
       "url": "https://www.rnz.co.nz/news/regional/742135/police-renew-appeal-as-search-for-missing-dargaville-man-saxzin-steedman-enters-third-week",
       "published_at": "2026-07-19T02:20:32Z",
       "published_label": "19 Jul 2026 · 02:20Z",
-      "age_label": "15h ago",
+      "age_label": "16h ago",
       "source_id": "rnz-news",
       "source_name": "RNZ News",
       "source_kind": "rss",
@@ -836,7 +889,7 @@
       "url": "https://www.bbc.co.uk/news/articles/ckg5gg6n9x3o?at_medium=RSS&at_campaign=rss",
       "published_at": "2026-07-19T01:47:59Z",
       "published_label": "19 Jul 2026 · 01:47Z",
-      "age_label": "15h ago",
+      "age_label": "16h ago",
       "source_id": "bbc-world",
       "source_name": "BBC World",
       "source_kind": "rss",
@@ -854,7 +907,7 @@
       "url": "https://www.rnz.co.nz/news/crime-and-justice/741708/national-promises-stricter-rules-on-sexual-consent",
       "published_at": "2026-07-19T01:03:53Z",
       "published_label": "19 Jul 2026 · 01:03Z",
-      "age_label": "16h ago",
+      "age_label": "17h ago",
       "source_id": "rnz-news",
       "source_name": "RNZ News",
       "source_kind": "rss",
@@ -872,7 +925,7 @@
       "url": "https://www.rnz.co.nz/news/crime-and-justice/741814/cold-classrooms-await-after-thieves-target-school-s-copper-pipes",
       "published_at": "2026-07-19T00:09:51Z",
       "published_label": "19 Jul 2026 · 00:09Z",
-      "age_label": "17h ago",
+      "age_label": "18h ago",
       "source_id": "rnz-news",
       "source_name": "RNZ News",
       "source_kind": "rss",
@@ -884,33 +937,15 @@
       "cluster_key": "cold classrooms await after thieves target schools copper pipes"
     },
     {
-      "id": "34bb7e06254b2b3a",
-      "title": "A Parliamentary Budget Office: Why and how?",
-      "summary": "Cross-party support for an independent fiscal watchdog has grown, but what should it actually do?",
-      "url": "https://www.rnz.co.nz/news/political/741490/a-parliamentary-budget-office-why-and-how",
-      "published_at": "2026-07-18T23:11:22Z",
-      "published_label": "18 Jul 2026 · 23:11Z",
-      "age_label": "18h ago",
-      "source_id": "rnz-news",
-      "source_name": "RNZ News",
-      "source_kind": "rss",
-      "category": "nz-pacific",
-      "regions": [
-        "pacific"
-      ],
-      "priority": 10,
-      "cluster_key": "a parliamentary budget office why and how"
-    },
-    {
-      "id": "7df4d286e49484f4",
+      "id": "e62b869d83285723",
       "title": "Should NZ follow Australia's lead and increase fuel reserves? AA says no",
       "summary": "New Zealand has about a month's supply of petrol and jet fuel. A new bulk reserve of fuel is soon to arrive in Australia - should New Zealand do the same to protect access here?",
       "url": "https://www.rnz.co.nz/news/business/741620/should-nz-follow-australia-s-lead-and-increase-fuel-reserves-aa-says-no",
       "published_at": "2026-07-18T23:00:03Z",
       "published_label": "18 Jul 2026 · 23:00Z",
-      "age_label": "18h ago",
-      "source_id": "rnz-news",
-      "source_name": "RNZ News",
+      "age_label": "19h ago",
+      "source_id": "rnz-national",
+      "source_name": "RNZ National",
       "source_kind": "rss",
       "category": "nz-pacific",
       "regions": [
@@ -927,7 +962,7 @@
       "url": "https://www.bbc.co.uk/news/articles/cpd7q7eev7po?at_medium=RSS&at_campaign=rss",
       "published_at": "2026-07-18T19:34:16Z",
       "published_label": "18 Jul 2026 · 19:34Z",
-      "age_label": "21h ago",
+      "age_label": "22h ago",
       "source_id": "bbc-world",
       "source_name": "BBC World",
       "source_kind": "rss",
@@ -945,7 +980,7 @@
       "url": "https://www.rnz.co.nz/news/sport/741130/i-lied-to-our-nutritionist-asafo-aumua-sheds-10kg-to-get-back-in-black",
       "published_at": "2026-07-18T19:21:37Z",
       "published_label": "18 Jul 2026 · 19:21Z",
-      "age_label": "22h ago",
+      "age_label": "23h ago",
       "source_id": "rnz-pacific",
       "source_name": "RNZ Pacific",
       "source_kind": "rss",
@@ -963,7 +998,7 @@
       "url": "https://www.rnz.co.nz/news/community/741083/christchurch-debt-still-hampers-selwyn-amalgamation-discussions",
       "published_at": "2026-07-18T18:40:46Z",
       "published_label": "18 Jul 2026 · 18:40Z",
-      "age_label": "22h ago",
+      "age_label": "23h ago",
       "source_id": "rnz-national",
       "source_name": "RNZ National",
       "source_kind": "rss",
@@ -981,7 +1016,7 @@
       "url": "https://www.bbc.co.uk/news/articles/cwyq93j34lgo?at_medium=RSS&at_campaign=rss",
       "published_at": "2026-07-18T17:29:50Z",
       "published_label": "18 Jul 2026 · 17:29Z",
-      "age_label": "23h ago",
+      "age_label": "1d ago",
       "source_id": "bbc-world",
       "source_name": "BBC World",
       "source_kind": "rss",
@@ -989,7 +1024,7 @@
       "regions": [
         "global"
       ],
-      "priority": 10,
+      "priority": 0,
       "cluster_key": "trump threatens new canada tariffs over fires sending filthy air into us cities"
     },
     {
@@ -1155,60 +1190,6 @@
       "cluster_key": "senior doctors plan strike as acc refuses rights to speak about concerns"
     },
     {
-      "id": "98da1ef983321cca",
-      "title": "Move-on orders risk 'punishing' children: Commissioner",
-      "summary": "Children's Commissioner Claire Achmad told MPs that move-on orders would disproportionately affect Māori and the hundreds of young people who leave state care each year.",
-      "url": "https://www.rnz.co.nz/news/community/738775/move-on-orders-risk-punishing-children-commissioner",
-      "published_at": "2026-07-17T23:18:48Z",
-      "published_label": "17 Jul 2026 · 23:18Z",
-      "age_label": "1d ago",
-      "source_id": "rnz-national",
-      "source_name": "RNZ National",
-      "source_kind": "rss",
-      "category": "nz-pacific",
-      "regions": [
-        "pacific"
-      ],
-      "priority": 0,
-      "cluster_key": "moveon orders risk punishing children commissioner"
-    },
-    {
-      "id": "ccbc558e10b02c56",
-      "title": "Auckland Zoo euthanises ageing giraffe matriarch Rukiya",
-      "summary": "Rukiya the giraffe was a geriatric animal, her health closely monitored in recent years.",
-      "url": "https://www.rnz.co.nz/news/regional/738587/auckland-zoo-euthanises-ageing-giraffe-matriarch-rukiya",
-      "published_at": "2026-07-17T22:52:30Z",
-      "published_label": "17 Jul 2026 · 22:52Z",
-      "age_label": "1d ago",
-      "source_id": "rnz-national",
-      "source_name": "RNZ National",
-      "source_kind": "rss",
-      "category": "nz-pacific",
-      "regions": [
-        "nz"
-      ],
-      "priority": 0,
-      "cluster_key": "auckland zoo euthanises ageing giraffe matriarch rukiya"
-    },
-    {
-      "id": "2379726b6da4a27a",
-      "title": "Festival organisers say Wellington hospitality holding up despite downturn",
-      "summary": "Wellington On a Plate has attracted its biggest-ever regional participation and strong growth in areas including Kāpiti and the Hutt Valley.",
-      "url": "https://www.rnz.co.nz/news/business/738486/festival-organisers-say-wellington-hospitality-holding-up-despite-downturn",
-      "published_at": "2026-07-17T22:37:08Z",
-      "published_label": "17 Jul 2026 · 22:37Z",
-      "age_label": "1d ago",
-      "source_id": "rnz-national",
-      "source_name": "RNZ National",
-      "source_kind": "rss",
-      "category": "nz-pacific",
-      "regions": [
-        "nz"
-      ],
-      "priority": 0,
-      "cluster_key": "festival organisers say wellington hospitality holding up despite downturn"
-    },
-    {
       "id": "469bfaaac3c7d710",
       "title": "Kim Jong Un was meant to be their only idol - then North Koreans discovered K-pop",
       "summary": "Defectors tell the BBC that despite restrictions, K-pop has cut through in the stifling dictatorship.",
@@ -1290,7 +1271,7 @@
       "url": "https://www.defenseone.com/ideas/2026/07/trump-terrorism-national-security-memo/414853/",
       "published_at": "2026-07-17T17:37:07Z",
       "published_label": "17 Jul 2026 · 17:37Z",
-      "age_label": "1d ago",
+      "age_label": "2d ago",
       "source_id": "defense-one",
       "source_name": "Defense One",
       "source_kind": "rss",
@@ -1308,7 +1289,7 @@
       "url": "https://warontherocks.com/the-fedorov-dismissal-on-trust-technology-and-turnover-2/",
       "published_at": "2026-07-17T17:30:33Z",
       "published_label": "17 Jul 2026 · 17:30Z",
-      "age_label": "1d ago",
+      "age_label": "2d ago",
       "source_id": "war-on-the-rocks",
       "source_name": "War on the Rocks",
       "source_kind": "rss",
@@ -1520,6 +1501,43 @@
       ],
       "priority": 18,
       "cluster_key": "what indias operationalization of integrated battle groups means for pakistan"
+    },
+    {
+      "id": "b88a7864dea16ea1",
+      "title": "Dairy company Fairlife suspends production in US after cyber incident",
+      "summary": "Fairlife’s U.S. operation includes plants in Michigan, New York and Arizona, and the company's retail sales passed $1 billion in 2022.",
+      "url": "https://therecord.media/dairy-company-fairlife-suspends-production-us-cyber-incident",
+      "published_at": "2026-07-17T13:40:00Z",
+      "published_label": "17 Jul 2026 · 13:40Z",
+      "age_label": "2d ago",
+      "source_id": "the-record",
+      "source_name": "The Record",
+      "source_kind": "rss",
+      "category": "cyber",
+      "regions": [
+        "us"
+      ],
+      "priority": 12,
+      "cluster_key": "dairy company fairlife suspends production in us after cyber incident"
+    },
+    {
+      "id": "87dfc962323b99a9",
+      "title": "Zelensky appoints Ukraine's acting security service chief as acting defense minister",
+      "summary": "Yevhenii Khmara, a major general with deep experience in intelligence, counterterrorism and long-range strikes against Russia, is Ukraine's new acting defense minister.",
+      "url": "https://therecord.media/ukraine-acting-defense-minister-yevhenii-khmara",
+      "published_at": "2026-07-17T12:50:00Z",
+      "published_label": "17 Jul 2026 · 12:50Z",
+      "age_label": "2d ago",
+      "source_id": "the-record",
+      "source_name": "The Record",
+      "source_kind": "rss",
+      "category": "cyber",
+      "regions": [
+        "europe",
+        "russia"
+      ],
+      "priority": 12,
+      "cluster_key": "zelensky appoints ukraines acting security service chief as acting defense minister"
     },
     {
       "id": "281a905ad07b1636",
@@ -1929,6 +1947,25 @@
       "cluster_key": "ministry defends 200k funding for documentary about fijian politician"
     },
     {
+      "id": "3179ca744991bea9",
+      "title": "Senator calls on Rubio, Blanche to push back against Canadian surveillance legislation",
+      "summary": "Democratic Sen. Ron Wyden says the Trump administration should pressure Canada not to enact a proposal that would \"weaponize American technology infrastructure\" for surveillance purposes.",
+      "url": "https://therecord.media/canada-lawful-access-act-surveillance-wyden-letter",
+      "published_at": "2026-07-16T21:00:35Z",
+      "published_label": "16 Jul 2026 · 21:00Z",
+      "age_label": "2d ago",
+      "source_id": "the-record",
+      "source_name": "The Record",
+      "source_kind": "rss",
+      "category": "cyber",
+      "regions": [
+        "europe",
+        "us"
+      ],
+      "priority": 12,
+      "cluster_key": "senator calls on rubio blanche to push back against canadian surveillance legislation"
+    },
+    {
       "id": "d5b97cce44c3d576",
       "title": "Coast Guard Ends Middle East Mission, Moves Cutter Squadron to Western Pacific",
       "summary": "The U.S. Coast Guard is transitioning its Patrol Forces Southwest Asia (PATFORSWA) to the Western Pacific, ending a more than 20-year forward-deployed mission in the Middle East. The Coast Guard’s Expeditionary Cutter Squadron that makes up PATFORSWA, which was previously forwar…",
@@ -2168,6 +2205,42 @@
       ],
       "priority": 0,
       "cluster_key": "space force cant figure out what personnel it needs for its missions gao says"
+    },
+    {
+      "id": "dab28dda5c325f53",
+      "title": "UK investigates TikTok for alleged age-verification lapses, exposing kids to online harms",
+      "summary": "“Age checks are a cornerstone of the UK’s online safety laws,” said Ofcom’s Chief Executive, Melanie Dawes. “Too many services have no or inadequate age checks in place, which is not good enough.”",
+      "url": "https://therecord.media/ofcom-investigation-tiktok-age-verification",
+      "published_at": "2026-07-16T16:15:00Z",
+      "published_label": "16 Jul 2026 · 16:15Z",
+      "age_label": "3d ago",
+      "source_id": "the-record",
+      "source_name": "The Record",
+      "source_kind": "rss",
+      "category": "cyber",
+      "regions": [
+        "global"
+      ],
+      "priority": 12,
+      "cluster_key": "uk investigates tiktok for alleged ageverification lapses exposing kids to online harms"
+    },
+    {
+      "id": "65eaba9ae8d4ec84",
+      "title": "Ukrainians rally against dismissal of tech-minded defense minister Fedorov",
+      "summary": "Ukraine President Volodymyr Zelensky dismissed Defense Minister Mykhailo Fedorov, who championed the push to integrate drone technology and digital innovation into the military.",
+      "url": "https://therecord.media/ukraine-fedorov-drones-dismissal",
+      "published_at": "2026-07-16T16:00:00Z",
+      "published_label": "16 Jul 2026 · 16:00Z",
+      "age_label": "3d ago",
+      "source_id": "the-record",
+      "source_name": "The Record",
+      "source_kind": "rss",
+      "category": "cyber",
+      "regions": [
+        "europe"
+      ],
+      "priority": 12,
+      "cluster_key": "ukrainians rally against dismissal of techminded defense minister fedorov"
     },
     {
       "id": "28c74010fdccefb0",
@@ -2520,7 +2593,7 @@
       "url": "https://warontherocks.com/one-size-doesnt-fit-all-the-many-faces-of-africas-foreign-fighters/",
       "published_at": "2026-07-15T17:30:26Z",
       "published_label": "15 Jul 2026 · 17:30Z",
-      "age_label": "3d ago",
+      "age_label": "4d ago",
       "source_id": "war-on-the-rocks",
       "source_name": "War on the Rocks",
       "source_kind": "rss",
@@ -2850,7 +2923,7 @@
       "url": "https://warontherocks.com/natos-unity-on-paper-and-fractures-beneath-the-surface/",
       "published_at": "2026-07-14T18:00:17Z",
       "published_label": "14 Jul 2026 · 18:00Z",
-      "age_label": "4d ago",
+      "age_label": "5d ago",
       "source_id": "war-on-the-rocks",
       "source_name": "War on the Rocks",
       "source_kind": "rss",
@@ -3029,88 +3102,20 @@
       ],
       "priority": 0,
       "cluster_key": "indias defence export rise opens a door for australia"
-    },
-    {
-      "id": "c3e36f829cffbe4c",
-      "title": "AI regulation answers the wrong question",
-      "summary": "Governments are focused on regulating AI when the real challenge is building the institutions a new economy requires.",
-      "url": "https://www.lowyinstitute.org/the-interpreter/ai-regulation-answers-the-wrong-question",
-      "published_at": "2026-07-13T14:00:00Z",
-      "published_label": "13 Jul 2026 · 14:00Z",
-      "age_label": "6d ago",
-      "source_id": "lowy-interpreter",
-      "source_name": "Lowy Interpreter",
-      "source_kind": "rss",
-      "category": "apac-security",
-      "regions": [
-        "se-asia"
-      ],
-      "priority": 0,
-      "cluster_key": "ai regulation answers the wrong question"
-    },
-    {
-      "id": "ee3f797121c571e2",
-      "title": "Felons, Fraudsters Flog Offensive Cybersecurity Startup",
-      "summary": "A cybersecurity startup dangling millions of dollars to acquire zero-day security vulnerabilities in popular software is run by a pair of far-right conspiracy theorists and convicted felons whose most recent ventures included fake intelligence companies and a now-defunct AI-base…",
-      "url": "https://krebsonsecurity.com/2026/07/felons-fraudsters-flog-offensive-cybersecurity-startup/",
-      "published_at": "2026-07-08T12:31:39Z",
-      "published_label": "08 Jul 2026 · 12:31Z",
-      "age_label": "08 Jul 2026 · 12:31Z",
-      "source_id": "krebs",
-      "source_name": "Krebs on Security",
-      "source_kind": "rss",
-      "category": "cyber",
-      "regions": [
-        "global"
-      ],
-      "priority": 30,
-      "cluster_key": "felons fraudsters flog offensive cybersecurity startup"
-    },
-    {
-      "id": "0ee375148353329c",
-      "title": "FBI Seizes NetNut Proxy Platform, Popa Botnet",
-      "summary": "The Federal Bureau of Investigation (FBI) said today it worked with industry partners to seize hundreds of domains associated with NetNut, a sprawling residential proxy service operated by the publicly-traded Israeli company Alarum Technologies [NASDAQ: ALAR]. The action comes r…",
-      "url": "https://krebsonsecurity.com/2026/07/fbi-seizes-netnut-proxy-platform-popa-botnet/",
-      "published_at": "2026-07-02T19:27:33Z",
-      "published_label": "02 Jul 2026 · 19:27Z",
-      "age_label": "02 Jul 2026 · 19:27Z",
-      "source_id": "krebs",
-      "source_name": "Krebs on Security",
-      "source_kind": "rss",
-      "category": "cyber",
-      "regions": [
-        "middle-east"
-      ],
-      "priority": 12,
-      "cluster_key": "fbi seizes netnut proxy platform popa botnet"
-    },
-    {
-      "id": "aacce50447b91d29",
-      "title": "Scattered Spider Hackers Plead Guilty on Day 1 of Trial",
-      "summary": "Two men pleaded guilty in the United Kingdom this week to criminal charges stemming from an August 2024 cyberattack that crippled Transport for London, the entity responsible for the public transport network in the Greater London area. The duo were key members of a prolific cybe…",
-      "url": "https://krebsonsecurity.com/2026/06/scattered-spider-hackers-plead-guilty-on-day-1-of-trial/",
-      "published_at": "2026-06-23T16:12:49Z",
-      "published_label": "23 Jun 2026 · 16:12Z",
-      "age_label": "23 Jun 2026 · 16:12Z",
-      "source_id": "krebs",
-      "source_name": "Krebs on Security",
-      "source_kind": "rss",
-      "category": "cyber",
-      "regions": [
-        "europe"
-      ],
-      "priority": 12,
-      "cluster_key": "scattered spider hackers plead guilty on day 1 of trial"
     }
   ],
   "trends": [
     {
       "term": "china",
-      "count": 15
+      "count": 14
     },
     {
       "term": "india",
       "count": 9
+    },
+    {
+      "term": "defense",
+      "count": 7
     },
     {
       "term": "force",
@@ -3129,19 +3134,15 @@
       "count": 6
     },
     {
-      "term": "defense",
-      "count": 5
-    },
-    {
       "term": "first",
       "count": 5
     },
     {
-      "term": "hong",
+      "term": "security",
       "count": 5
     },
     {
-      "term": "kong",
+      "term": "trump",
       "count": 5
     }
   ]
