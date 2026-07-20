@@ -471,11 +471,6 @@ body::before {
         grid-template-columns: 1fr;
     }
 
-    .stack-row {
-        grid-template-columns: 1fr;
-        gap: 8px;
-    }
-
     .markdown-content {
         overflow-x: auto;
         -webkit-overflow-scrolling: touch;
@@ -1482,16 +1477,6 @@ a:focus-visible,
     outline-offset: 2px;
 }
 
-.home-page .stack-matrix {
-    margin-top: 0;
-    max-width: 100%;
-}
-
-.home-page .stack-label {
-    font-size: 0.72rem;
-    color: var(--text-body);
-}
-
 @media (max-width: 600px) {
     .home-page {
         gap: 44px;
@@ -1729,50 +1714,6 @@ aside .row-tag {
 .markdown-content td code,
 .markdown-content th code {
     font-size: 0.95em;
-}
-
-/* Stack matrix */
-.stack-matrix {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-    margin-top: 8px;
-    max-width: 720px;
-}
-
-.stack-heading {
-    margin-bottom: 15px;
-    border: none;
-    padding: 0;
-}
-
-.stack-audit {
-    margin-top: 15px;
-    font-size: 0.55rem;
-}
-
-.stack-row {
-    display: grid;
-    grid-template-columns: minmax(120px, 180px) 1fr;
-    align-items: center;
-    gap: 16px;
-}
-
-.stack-label {
-    font-family: var(--mono);
-    font-size: 0.6rem;
-    color: var(--text-color);
-}
-
-.bar-container {
-    background: var(--bg-subtle);
-    height: 4px;
-    width: 100%;
-}
-
-.bar {
-    background: var(--purple);
-    height: 100%;
 }
 
 /* Social links & CTAs */

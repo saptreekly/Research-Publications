@@ -1,6 +1,5 @@
 use leptos::*;
 use leptos_router::*;
-use crate::components::stack_matrix::StackMatrix;
 use crate::projects::find_by_slug;
 use crate::utils::{contact_href, curriculum_href, malware_reports_href, module_href, project_href, report_href, tidy_tuesday_href, tidy_tuesday_index_href, malware_reports_index_href};
 
@@ -371,17 +370,6 @@ pub fn HomePage() -> impl IntoView {
                     </p>
                 </div>
                 <A href=curriculum_href() class="home-cta">"Browse curriculum & labs"</A>
-            </section>
-
-            <section class="home-section home-section-muted" id="stack" aria-labelledby="stack-heading">
-                <div class="home-section-header">
-                    <p class="home-section-kicker">"Codebase snapshot"</p>
-                    <h2 id="stack-heading" class="home-section-title">"Languages in active repos"</h2>
-                    <p class="home-section-desc">
-                        "Where my recent engineering and research time is concentrated across GitHub projects."
-                    </p>
-                </div>
-                <StackMatrix />
             </section>
         </div>
     }

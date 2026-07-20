@@ -5,5 +5,4 @@ pub mod contact_form;
 pub mod clearance_block;
 pub mod lazy_section;
 pub mod markdown_content;
-pub mod stack_matrix;
 pub mod technical_document;
