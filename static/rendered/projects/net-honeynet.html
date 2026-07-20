@@ -1,0 +1,87 @@
+<p>Medium-interaction Rust honeynet for collecting threat intelligence. Emulates SSH, HTTP, SMTP, and SMB services, ships structured events to a collector, and stores them locally or in S3 for later intel export.</p>
+<h2>Problem</h2>
+<p>Low-interaction honeypots capture little beyond connection metadata; full high-interaction systems are expensive and risky to operate. This honeynet sits in the middle: enough protocol surface to attract and profile attackers, with a clean event pipeline for scoring and export—not a laptop exposed to the open internet.</p>
+<h2>Architecture</h2>
+<table>
+<thead>
+<tr>
+<th>Component</th>
+<th>Role</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Honeypots (<code>ssh</code>, <code>http</code>, <code>smtp</code>, <code>smb</code>)</td>
+<td>Accept attacker traffic and emit JSON events</td>
+</tr>
+<tr>
+<td>Collector</td>
+<td>Ingests via <code>POST /v1/events</code>; writes partitioned JSONL to file or S3</td>
+</tr>
+<tr>
+<td>Intel export CLI</td>
+<td>Scores source IPs and exports malicious IP lists from local files or S3</td>
+</tr>
+</tbody>
+</table>
+<h3>Crates</h3>
+<table>
+<thead>
+<tr>
+<th>Crate</th>
+<th>Binary</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>net-common</code></td>
+<td>—</td>
+<td>Shared event schema and collector client</td>
+</tr>
+<tr>
+<td><code>net-collector</code></td>
+<td><code>net-collector</code></td>
+<td>Event ingest API</td>
+</tr>
+<tr>
+<td><code>net-ssh-honeypot</code></td>
+<td><code>net-ssh-honeypot</code></td>
+<td>SSH fake shell</td>
+</tr>
+<tr>
+<td><code>net-http-honeypot</code></td>
+<td><code>net-http-honeypot</code></td>
+<td>HTTP decoy routes</td>
+</tr>
+<tr>
+<td><code>net-smtp-honeypot</code></td>
+<td><code>net-smtp-honeypot</code></td>
+<td>Inbound SMTP capture</td>
+</tr>
+<tr>
+<td><code>net-smb-honeypot</code></td>
+<td><code>net-smb-honeypot</code></td>
+<td>SMB2 negotiate/auth logging</td>
+</tr>
+<tr>
+<td><code>net-intel-export</code></td>
+<td><code>net-intel-export</code></td>
+<td>Malicious IP export CLI</td>
+</tr>
+</tbody>
+</table>
+<h2>Personas and deployment</h2>
+<p>Environment variables use the <code>NET_</code> prefix. Set <code>NET_PERSONA=wellington_water</code> for an NZ water-utility critical-infrastructure decoy profile across honeypots.</p>
+<p>Deployment paths include Docker Compose for local integration testing, Terraform for AWS scaffolding, and Kubernetes overlays for persona-specific manifests. Use an isolated AWS account/VPC—do not run production honeypots on a personal laptop exposed to the internet.</p>
+<h2>Local sketch</h2>
+<pre><code class="language-bash">cargo build --release
+cargo run -p net-collector &amp;
+cargo run -p net-ssh-honeypot -- --bind 0.0.0.0:2222
+</code></pre>
+<p>Or <code>docker compose up --build</code> under <code>deploy/docker</code> (non-privileged ports for local dev).</p>
+<p>Intel export:</p>
+<pre><code class="language-bash">cargo run -p net-intel-export -- local --input-dir ./data/events --output ./data/malicious-ips.txt
+</code></pre>
+<h2>Status</h2>
+<p>Public research codebase for defensive security on infrastructure you control. Review data retention and privacy requirements before any deployment.</p>

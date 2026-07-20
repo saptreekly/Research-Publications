@@ -160,6 +160,42 @@ pub fn HomePage() -> impl IntoView {
                     </p>
                 </div>
                 <div class="home-card-grid">
+                    <A href=project_href("casre") class="home-card home-card-link">
+                        <div class="home-card-meta">
+                            <span class="home-tag">{project_tag("casre")}</span>
+                            <time class="home-date" datetime="2026-07">"Jul 2026"</time>
+                        </div>
+                        <h3 class="home-card-title">"CASRE"</h3>
+                        <p class="home-card-body">
+                            "Concurrent Go CLI for host recon and phishing URL campaigns: DNS/TLS/HTTP enrichment, "
+                            "hop graphs with role classification, MITRE tags, verdict scoring, and IOC export."
+                        </p>
+                        <span class="home-card-cta">"VIEW PROJECT →"</span>
+                    </A>
+                    <A href=project_href("vanguard-re") class="home-card home-card-link">
+                        <div class="home-card-meta">
+                            <span class="home-tag">{project_tag("vanguard-re")}</span>
+                            <time class="home-date" datetime="2026-07">"Jul 2026"</time>
+                        </div>
+                        <h3 class="home-card-title">"Vanguard-RE"</h3>
+                        <p class="home-card-body">
+                            "Rust TUI for static malware triage: zero-copy scanning, formal PE/ELF/Mach-O parsing, "
+                            "YARA-X signatures, and in-memory quarantine so samples are never executed."
+                        </p>
+                        <span class="home-card-cta">"VIEW PROJECT →"</span>
+                    </A>
+                    <A href=project_href("net-honeynet") class="home-card home-card-link">
+                        <div class="home-card-meta">
+                            <span class="home-tag">{project_tag("net-honeynet")}</span>
+                            <time class="home-date" datetime="2026-07">"Jul 2026"</time>
+                        </div>
+                        <h3 class="home-card-title">"Net Honeynet"</h3>
+                        <p class="home-card-body">
+                            "Medium-interaction Rust honeynet emulating SSH, HTTP, SMTP, and SMB with a collector "
+                            "pipeline to file or S3 and an intel-export CLI for malicious IP scoring."
+                        </p>
+                        <span class="home-card-cta">"VIEW PROJECT →"</span>
+                    </A>
                     <A href=project_href("hlidskjalf") class="home-card home-card-link">
                         <div class="home-card-meta">
                             <span class="home-tag">{project_tag("hlidskjalf")}</span>

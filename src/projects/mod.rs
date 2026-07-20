@@ -10,6 +10,33 @@ pub struct ProjectMeta {
 
 pub const PROJECTS: &[ProjectMeta] = &[
     ProjectMeta {
+        slug: "casre",
+        title: "CASRE",
+        subtitle: "Concurrent attack-surface recon and phishing URL campaign graphs",
+        tag: "Go",
+        date: "2026-07",
+        src: "research-docs/projects/casre.md",
+        repo_url: "https://github.com/saptreekly/casre",
+    },
+    ProjectMeta {
+        slug: "vanguard-re",
+        title: "Vanguard-RE",
+        subtitle: "Memory-safe static malware triage with an interactive TUI",
+        tag: "Rust",
+        date: "2026-07",
+        src: "research-docs/projects/vanguard-re.md",
+        repo_url: "https://github.com/saptreekly/Vanguard-RE",
+    },
+    ProjectMeta {
+        slug: "net-honeynet",
+        title: "Net Honeynet",
+        subtitle: "Medium-interaction Rust honeynet for threat intelligence collection",
+        tag: "Rust · AWS",
+        date: "2026-07",
+        src: "research-docs/projects/net-honeynet.md",
+        repo_url: "https://github.com/saptreekly/net-honeynet",
+    },
+    ProjectMeta {
         slug: "hlidskjalf",
         title: "Project Hliðskjálf",
         subtitle: "Type-1.5 thin hypervisor for legacy x86_64 host hardening",

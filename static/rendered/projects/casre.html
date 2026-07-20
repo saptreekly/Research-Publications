@@ -1,0 +1,59 @@
+<p>High-speed Go CLI for external infrastructure recon and phishing URL investigation. Maps DNS, TLS, banners, HTTP, and CDN/ASN enrichment; for full URLs it builds campaign hop graphs with page signals, MITRE ATT&amp;CK tags, a verdict score/narrative, and IOC indicators.</p>
+<h2>Problem</h2>
+<p>Phishing delivery chains and external attack surface are often investigated with ad-hoc curl scripts, browser hops, and disconnected scanners. CASRE collapses host recon and URL campaign crawling into one concurrent CLI so analysts can follow ESP → cloaker → deepview → lander paths and leave with a structured verdict plus IOCs.</p>
+<h2>Architecture</h2>
+<table>
+<thead>
+<tr>
+<th>Module</th>
+<th>What it does</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>dns</strong></td>
+<td>A, AAAA, CNAME, MX, NS, TXT (+ SPF/DMARC signals)</td>
+</tr>
+<tr>
+<td><strong>tls</strong></td>
+<td>Handshake version, cipher, cert chain, SANs, expiry</td>
+</tr>
+<tr>
+<td><strong>banner</strong></td>
+<td>TCP connect + banner grab on selected ports</td>
+</tr>
+<tr>
+<td><strong>http</strong></td>
+<td>Redirects, headers, security-header gaps, tech fingerprints, page analysis</td>
+</tr>
+<tr>
+<td><strong>enrich</strong></td>
+<td>CDN detection, Team Cymru ASN, mail/hosting hints</td>
+</tr>
+</tbody>
+</table>
+<h3>URL campaign mode</h3>
+<ol>
+<li>Follows delivery hops in parallel (configurable hop workers and wall-clock budget).</li>
+<li>Classifies nodes (<code>tracker</code> / <code>cloaker</code> / <code>deepview</code> / <code>lander</code> / <code>decoy</code>). Landers require strong signals (cleartext from cloaker, credentials, suspicious TLD); brand deepview destinations are not auto-landers.</li>
+<li>Stops expanding brand / CDN / social decoys unless <code>-full-crawl</code> is set.</li>
+<li>Emits a <strong>VERDICT</strong> (score + short narrative) and an <strong>IOC</strong> section in the report tree.</li>
+</ol>
+<h2>Usage sketch</h2>
+<pre><code class="language-bash">go install github.com/saptreekly/casre/cmd/casre@latest
+
+casre example.com
+casre -modules dns,tls,enrich -ports 22,80,443 scanme.nmap.org
+casre -v 'https://bit.ly/suspicious'
+casre -evidence ./evidence 'https://lure.example/path'
+</code></pre>
+<p>Batch, JSON, and baseline-diff modes support scoped recon workflows (<code>-f</code>, <code>-json</code>, <code>-o</code>, <code>-diff</code>).</p>
+<h2>Output contract</h2>
+<ul>
+<li><strong>Verdict:</strong> <code>score</code> (0–100), <code>story</code> narrative, and top contributing <code>signals</code>.</li>
+<li><strong>IOC tree:</strong> deduped domain / IP / URL / ASN indicators (truncated unless <code>-v</code>).</li>
+<li><strong>MITRE ATT&amp;CK:</strong> findings tagged with confidence (<code>high</code> / <code>medium</code> / <code>low</code>); low-confidence rollups hidden unless verbose.</li>
+<li><strong>Evidence:</strong> optional HTML snapshots of cloaker/lander pages under <code>-evidence</code>.</li>
+</ul>
+<h2>Status</h2>
+<p>Public Go 1.22+ CLI. Authorization required: only scan hosts and URLs you own or have explicit permission to test.</p>

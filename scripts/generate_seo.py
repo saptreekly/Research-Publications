@@ -45,6 +45,21 @@ ROUTES: list[dict[str, str]] = [
         "description": "Strategic studies writing sample · Victoria University of Wellington · MStrat with Merit · Strategic analysis",
     },
     {
+        "path": "/projects/casre",
+        "title": "CASRE | Jack Weekly",
+        "description": "Concurrent attack-surface recon and phishing URL campaign graphs · Go",
+    },
+    {
+        "path": "/projects/vanguard-re",
+        "title": "Vanguard-RE | Jack Weekly",
+        "description": "Memory-safe static malware triage with an interactive TUI · Rust",
+    },
+    {
+        "path": "/projects/net-honeynet",
+        "title": "Net Honeynet | Jack Weekly",
+        "description": "Medium-interaction Rust honeynet for threat intelligence collection · Rust · AWS",
+    },
+    {
         "path": "/projects/hlidskjalf",
         "title": "Project Hliðskjálf | Jack Weekly",
         "description": "Type-1.5 thin hypervisor for legacy x86_64 host hardening · Rust · Assembly",
@@ -108,6 +123,9 @@ for slug in MODULE_SLUGS:
 ROUTE_CONTENT: dict[str, list[str]] = {
     "/research/lovely-malware": ["research-docs/reports/lovely-malware.md"],
     "/research/thesis-summary": ["research-docs/thesis-summary.md"],
+    "/projects/casre": ["research-docs/projects/casre.md"],
+    "/projects/vanguard-re": ["research-docs/projects/vanguard-re.md"],
+    "/projects/net-honeynet": ["research-docs/projects/net-honeynet.md"],
     "/projects/hlidskjalf": ["research-docs/projects/hlidskjalf.md"],
     "/projects/siem-ensemble": ["research-docs/projects/siem-ensemble.md"],
     "/projects/geospatial-intel": ["research-docs/projects/geospatial-intel.md"],
@@ -356,6 +374,9 @@ def site_nav_html() -> str:
             </ul>
             <h2>Engineering Projects</h2>
             <ul>
+                <li><a href="/Research-Publications/projects/casre">CASRE</a></li>
+                <li><a href="/Research-Publications/projects/vanguard-re">Vanguard-RE</a></li>
+                <li><a href="/Research-Publications/projects/net-honeynet">Net Honeynet</a></li>
                 <li><a href="/Research-Publications/projects/hlidskjalf">Project Hliðskjálf</a></li>
                 <li><a href="/Research-Publications/projects/siem-ensemble">SIEM Ensemble</a></li>
                 <li><a href="/Research-Publications/projects/geospatial-intel">Geospatial Intel Server</a></li>
