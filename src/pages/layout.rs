@@ -1,10 +1,27 @@
 use leptos::*;
 use leptos_router::*;
+use wasm_bindgen::JsCast;
 use crate::components::theme_toggle::ThemeToggle;
 use crate::utils::{
     contact_href, curriculum_href, home_href, malware_reports_index_href, projects_index_href,
     situation_monitor_href, tidy_tuesday_index_href,
 };
+
+fn scroll_to_id_when_ready(id: String, attempt: u8) {
+    if let Some(document) = web_sys::window().and_then(|w| w.document()) {
+        if let Some(element) = document.get_element_by_id(&id) {
+            element.scroll_into_view();
+            return;
+        }
+    }
+    if attempt >= 20 {
+        return;
+    }
+    gloo_timers::callback::Timeout::new(16, move || {
+        scroll_to_id_when_ready(id, attempt + 1);
+    })
+    .forget();
+}
 
 #[component]
 pub fn RootLayout(children: Children) -> impl IntoView {
@@ -19,13 +36,30 @@ pub fn RootLayout(children: Children) -> impl IntoView {
             let hash = window.location().hash().unwrap_or_default();
             if hash.is_empty() {
                 let _ = window.scroll_to_with_x_and_y(0.0, 0.0);
-            } else if let Some(document) = window.document() {
-                let id = hash.trim_start_matches('#');
-                if let Some(element) = document.get_element_by_id(id) {
-                    element.scroll_into_view();
+                return;
+            }
+
+            // Route views mount after this effect; retry until the target exists.
+            scroll_to_id_when_ready(hash.trim_start_matches('#').to_string(), 0);
+        }
+    });
+
+    // Same-page hash jumps (hero CTAs / Projects nav) do not change pathname.
+    create_effect(move |_| {
+        let window = match web_sys::window() {
+            Some(window) => window,
+            None => return,
+        };
+        let closure = wasm_bindgen::closure::Closure::wrap(Box::new(move |_event: web_sys::Event| {
+            if let Some(window) = web_sys::window() {
+                let hash = window.location().hash().unwrap_or_default();
+                if !hash.is_empty() {
+                    scroll_to_id_when_ready(hash.trim_start_matches('#').to_string(), 0);
                 }
             }
-        }
+        }) as Box<dyn FnMut(_)>);
+        let _ = window.add_event_listener_with_callback("hashchange", closure.as_ref().unchecked_ref());
+        closure.forget();
     });
 
     view! {

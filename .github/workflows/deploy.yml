@@ -45,7 +45,9 @@ jobs:
       - name: Install Trunk
         uses: jetli/trunk-action@v0.5.0
         with:
-          version: 'latest'
+          # Pin: "latest" intermittently resolves to 0.19.x, which ignores
+          # data-wasm-opt-params and fails release builds on bulk-memory.
+          version: 'v0.21.14'
 
       - name: Pre-render markdown assets
         run: cargo run -p prebuild --release

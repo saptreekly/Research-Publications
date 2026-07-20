@@ -2,8 +2,8 @@ use leptos::*;
 use leptos_router::*;
 use crate::projects::find_by_slug;
 use crate::utils::{
-    contact_href, curriculum_href, malware_reports_href, module_href, project_href, report_href,
-    tidy_tuesday_href, tidy_tuesday_index_href, malware_reports_index_href,
+    contact_href, curriculum_href, malware_reports_href, module_href, project_href, projects_index_href,
+    report_href, start_here_href, tidy_tuesday_href, tidy_tuesday_index_href, malware_reports_index_href,
 };
 
 fn project_tag(slug: &str) -> &'static str {
@@ -24,8 +24,8 @@ pub fn HomePage() -> impl IntoView {
                     "finished analytic writing, operational tooling, and research that connects policy to operational reality."
                 </p>
                 <div class="home-hero-actions">
-                    <a href="#projects" class="home-hero-action home-hero-action-primary">"View engineering projects"</a>
-                    <a href="#start-here" class="home-hero-action">"Start here for reviewers"</a>
+                    <a href=projects_index_href() class="home-hero-action home-hero-action-primary">"View engineering projects"</a>
+                    <a href=start_here_href() class="home-hero-action">"Start here for reviewers"</a>
                 </div>
                 <ul class="home-highlights" aria-label="Core focus areas">
                     <li class="home-highlight">

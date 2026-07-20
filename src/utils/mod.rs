@@ -77,6 +77,10 @@ pub fn projects_index_href() -> String {
     format!("{APP_BASE}/#projects")
 }
 
+pub fn start_here_href() -> String {
+    format!("{APP_BASE}/#start-here")
+}
+
 pub fn tidy_tuesday_href(slug: &str) -> String {
     format!("{APP_BASE}/tidy-tuesday/{slug}")
 }

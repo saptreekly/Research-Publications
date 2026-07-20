@@ -4,6 +4,10 @@ dist = "dist"
 public_url = "/Research-Publications/"
 release = false
 
+[tools]
+# Keep in sync with a wasm-opt that understands modern Rust WASM features.
+wasm_opt = "version_123"
+
 [serve]
 addresses = ["127.0.0.1"]
 port = 8080
