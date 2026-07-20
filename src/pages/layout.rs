@@ -2,8 +2,8 @@ use leptos::*;
 use leptos_router::*;
 use crate::components::theme_toggle::ThemeToggle;
 use crate::utils::{
-    contact_href, curriculum_href, home_href, malware_reports_index_href, situation_monitor_href,
-    tidy_tuesday_index_href,
+    contact_href, curriculum_href, home_href, malware_reports_index_href, projects_index_href,
+    situation_monitor_href, tidy_tuesday_index_href,
 };
 
 #[component]
@@ -16,7 +16,15 @@ pub fn RootLayout(children: Children) -> impl IntoView {
         let _ = path();
         mobile_nav_open.set(false);
         if let Some(window) = web_sys::window() {
-            let _ = window.scroll_to_with_x_and_y(0.0, 0.0);
+            let hash = window.location().hash().unwrap_or_default();
+            if hash.is_empty() {
+                let _ = window.scroll_to_with_x_and_y(0.0, 0.0);
+            } else if let Some(document) = window.document() {
+                let id = hash.trim_start_matches('#');
+                if let Some(element) = document.get_element_by_id(id) {
+                    element.scroll_into_view();
+                }
+            }
         }
     });
 
@@ -49,6 +57,9 @@ pub fn RootLayout(children: Children) -> impl IntoView {
                             <div class="site-nav-label">"NAVIGATION"</div>
                             <ul class="site-nav-list">
                                 <li><A href=home_href() class="nav-link">"HOME"</A></li>
+                                <li>
+                                    <a href=projects_index_href() class="nav-link">"PROJECTS"</a>
+                                </li>
                                 <li><A href=curriculum_href() class="nav-link">"CURRICULUM"</A></li>
                                 <li><A href=tidy_tuesday_index_href() class="nav-link">"TIDY TUESDAY"</A></li>
                                 {#[cfg(feature = "malware-traffic")]

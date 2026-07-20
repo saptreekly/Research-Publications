@@ -364,13 +364,9 @@ def site_nav_html() -> str:
             <h2>Pages</h2>
             <ul>
                 <li><a href="/Research-Publications/">Home</a></li>
+                <li><a href="/Research-Publications/#projects">Engineering Projects</a></li>
                 <li><a href="/Research-Publications/contact">Contact</a></li>
                 <li><a href="/Research-Publications/curriculum">Julia Cryptography Curriculum</a></li>
-            </ul>
-            <h2>Research &amp; Writing</h2>
-            <ul>
-                <li><a href="/Research-Publications/research/lovely-malware">LovelyMalware Analysis Report</a></li>
-                <li><a href="/Research-Publications/research/thesis-summary">5th-Gen Fighter Exports as Strategic Competition</a></li>
             </ul>
             <h2>Engineering Projects</h2>
             <ul>
@@ -380,6 +376,11 @@ def site_nav_html() -> str:
                 <li><a href="/Research-Publications/projects/hlidskjalf">Project Hliðskjálf</a></li>
                 <li><a href="/Research-Publications/projects/siem-ensemble">SIEM Ensemble</a></li>
                 <li><a href="/Research-Publications/projects/geospatial-intel">Geospatial Intel Server</a></li>
+            </ul>
+            <h2>Research &amp; Writing</h2>
+            <ul>
+                <li><a href="/Research-Publications/research/lovely-malware">LovelyMalware Analysis Report</a></li>
+                <li><a href="/Research-Publications/research/thesis-summary">5th-Gen Fighter Exports as Strategic Competition</a></li>
             </ul>
         </nav>""".strip()
 

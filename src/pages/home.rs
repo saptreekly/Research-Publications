@@ -1,7 +1,10 @@
 use leptos::*;
 use leptos_router::*;
 use crate::projects::find_by_slug;
-use crate::utils::{contact_href, curriculum_href, malware_reports_href, module_href, project_href, report_href, tidy_tuesday_href, tidy_tuesday_index_href, malware_reports_index_href};
+use crate::utils::{
+    contact_href, curriculum_href, malware_reports_href, module_href, project_href, report_href,
+    tidy_tuesday_href, tidy_tuesday_index_href, malware_reports_index_href,
+};
 
 fn project_tag(slug: &str) -> &'static str {
     find_by_slug(slug).expect("registered project").tag
@@ -20,6 +23,10 @@ pub fn HomePage() -> impl IntoView {
                     "I use cyber to demonstrate depth, but this portfolio is built for general intelligence work: "
                     "finished analytic writing, operational tooling, and research that connects policy to operational reality."
                 </p>
+                <div class="home-hero-actions">
+                    <a href="#projects" class="home-hero-action home-hero-action-primary">"View engineering projects"</a>
+                    <a href="#start-here" class="home-hero-action">"Start here for reviewers"</a>
+                </div>
                 <ul class="home-highlights" aria-label="Core focus areas">
                     <li class="home-highlight">
                         <span class="home-highlight-label">"Analysis"</span>
@@ -36,126 +43,13 @@ pub fn HomePage() -> impl IntoView {
                 </ul>
             </header>
 
-            <section class="home-section home-start-section" id="start-here" aria-labelledby="start-here-heading">
+            <section class="home-section home-section-featured" id="projects" aria-labelledby="projects-heading">
                 <div class="home-section-header">
-                    <p class="home-section-kicker">"For reviewers"</p>
-                    <h2 id="start-here-heading" class="home-section-title">"Start here"</h2>
-                    <p class="home-section-desc">
-                        "Curated entry points for intelligence and national security roles. "
-                        "Each link is a finished deliverable, not a project overview."
-                    </p>
-                </div>
-                <ol class="home-start-list">
-                    <li class="home-start-item">
-                        <A href=report_href("lovely-malware") class="home-start-link">
-                            <span class="home-start-track">"Cyber threat intelligence"</span>
-                            <span class="home-start-title">"LovelyMalware forensic report"</span>
-                            <span class="home-start-body">
-                                "End-to-end CTI deliverable: static/dynamic forensics, network analysis, decryption, "
-                                "Sigma detection rules, and IOC packages formatted for operational use."
-                            </span>
-                            <span class="home-start-cta">"Open CTI sample →"</span>
-                        </A>
-                    </li>
-                    <li class="home-start-item">
-                        <A href=report_href("thesis-summary") class="home-start-link">
-                            <span class="home-start-track">"Strategic & all-source analysis"</span>
-                            <span class="home-start-title">"5th-gen fighter exports & APAC competition"</span>
-                            <span class="home-start-body">
-                                "MStrat writing sample on coercive statecraft, export controls, and alignment pressure "
-                                "on Indonesia, Malaysia, Pakistan, and other Asia-Pacific middle powers."
-                            </span>
-                            <span class="home-start-cta">"Open writing sample →"</span>
-                        </A>
-                    </li>
-                    <li class="home-start-item">
-                        <A href=project_href("geospatial-intel") class="home-start-link">
-                            <span class="home-start-track">"Systems engineering"</span>
-                            <span class="home-start-title">"Geospatial Intel Server"</span>
-                            <span class="home-start-body">
-                                "Real-time streaming architecture: OpenSky ingest, viewport-filtered WebSocket streaming, "
-                                "H3 spatial indexing, and delta updates for sub-100k entity workloads."
-                            </span>
-                            <span class="home-start-cta">"Open engineering sample →"</span>
-                        </A>
-                    </li>
-                    <li class="home-start-item">
-                        <A href=module_href("mod-01") class="home-start-link">
-                            <span class="home-start-track">"Applied cryptography & tradecraft depth"</span>
-                            <span class="home-start-title">"Interactive modular arithmetic lab"</span>
-                            <span class="home-start-body">
-                                "Browser-based Julia lab with automated verification. Demonstrates math foundations "
-                                "relevant to cryptologic and cyber operations work (inverses, modular arithmetic)."
-                            </span>
-                            <span class="home-start-cta">"Run live lab →"</span>
-                        </A>
-                    </li>
-                </ol>
-                <p class="home-start-footer">
-                    "Prefer a single PDF or clearance conversation? "
-                    <A href=contact_href() class="home-start-footer-link">"Contact"</A>
-                    " · "
-                    <A href=curriculum_href() class="home-start-footer-link">"Full curriculum"</A>
-                </p>
-            </section>
-
-            <section class="home-section" id="research" aria-labelledby="research-heading">
-                <div class="home-section-header">
-                    <p class="home-section-kicker">"Intelligence products"</p>
-                    <h2 id="research-heading" class="home-section-title">"Technical analysis & reporting"</h2>
-                    <p class="home-section-desc">
-                        "Finished analytic work, from malware forensics to strategic studies writing samples."
-                    </p>
-                </div>
-                <div class="home-card-grid">
-                    <A href=report_href("lovely-malware") class="home-card home-card-link">
-                        <div class="home-card-meta">
-                            <span class="home-tag">"Malware analysis"</span>
-                            <time class="home-date" datetime="2026-04">"Apr 2026"</time>
-                        </div>
-                        <h3 class="home-card-title">"LovelyMalware analysis report"</h3>
-                        <p class="home-card-body">
-                            "Intelligence-style forensic report on a PE32+ ransomware sample: static and dynamic analysis, PCAP review, "
-                            "decryption, Sigma rules, and IOC packages suitable for operational use."
-                        </p>
-                        <span class="home-card-cta">"READ REPORT →"</span>
-                    </A>
-                    <A href=report_href("thesis-summary") class="home-card home-card-link">
-                        <div class="home-card-meta">
-                            <span class="home-tag">"Strategic analysis"</span>
-                            <time class="home-date" datetime="2024">"2024"</time>
-                        </div>
-                        <h3 class="home-card-title">"5th-gen fighter exports & APAC middle-power competition"</h3>
-                        <p class="home-card-body">
-                            "Condensed writing sample from MStrat thesis work: how US export controls and China's FC-31 programme "
-                            "reshape alignment choices for Indonesia, Malaysia, Pakistan, and other APAC middle powers."
-                        </p>
-                        <span class="home-card-cta">"READ ESSAY →"</span>
-                    </A>
-                    <A href=malware_reports_href("smartapesg-2026-05-22") class="home-card home-card-link">
-                        <div class="home-card-meta">
-                            <span class="home-tag">"Malware traffic"</span>
-                            <time class="home-date" datetime="2026-05-22">"May 2026"</time>
-                        </div>
-                        <h3 class="home-card-title">"SmartApeSG ClickFix → NetSupport RAT"</h3>
-                        <p class="home-card-body">
-                            "Interactive PCAP analysis of a ClickFix infection chain: compromised WordPress site, PowerShell staging, "
-                            "33 MB ZIP payload, unidentified RAT C2, and NetSupport persistence."
-                        </p>
-                        <span class="home-card-cta">"OPEN ANALYSIS →"</span>
-                    </A>
-                </div>
-                <p class="home-section-footer">
-                    <A href=malware_reports_index_href() class="home-start-footer-link">"All malware reports →"</A>
-                </p>
-            </section>
-
-            <section class="home-section" id="projects" aria-labelledby="projects-heading">
-                <div class="home-section-header">
-                    <p class="home-section-kicker">"Operational tooling"</p>
+                    <p class="home-section-kicker">"Primary work"</p>
                     <h2 id="projects-heading" class="home-section-title">"Engineering projects"</h2>
                     <p class="home-section-desc">
-                        "Systems work oriented toward ingestion, enrichment, isolation, and security operations at scale."
+                        "The center of this portfolio: operational tooling for recon, malware triage, honeynets, "
+                        "ingestion pipelines, isolation, and geospatial monitoring."
                     </p>
                 </div>
                 <div class="home-card-grid">
@@ -232,6 +126,131 @@ pub fn HomePage() -> impl IntoView {
                         <span class="home-card-cta">"VIEW PROJECT →"</span>
                     </A>
                 </div>
+            </section>
+
+            <section class="home-section home-start-section" id="start-here" aria-labelledby="start-here-heading">
+                <div class="home-section-header">
+                    <p class="home-section-kicker">"For reviewers"</p>
+                    <h2 id="start-here-heading" class="home-section-title">"Start here"</h2>
+                    <p class="home-section-desc">
+                        "Curated entry points for intelligence and national security roles. "
+                        "Each link is a finished deliverable, not a project overview."
+                    </p>
+                </div>
+                <ol class="home-start-list">
+                    <li class="home-start-item">
+                        <A href=project_href("casre") class="home-start-link">
+                            <span class="home-start-track">"Systems engineering"</span>
+                            <span class="home-start-title">"CASRE — recon & phishing campaign graphs"</span>
+                            <span class="home-start-body">
+                                "High-speed Go CLI that follows ESP → cloaker → lander chains with verdict scoring, "
+                                "MITRE tags, and IOC export — a concrete engineering sample of operational tooling."
+                            </span>
+                            <span class="home-start-cta">"Open engineering sample →"</span>
+                        </A>
+                    </li>
+                    <li class="home-start-item">
+                        <A href=project_href("vanguard-re") class="home-start-link">
+                            <span class="home-start-track">"Malware triage tooling"</span>
+                            <span class="home-start-title">"Vanguard-RE — static malware triage TUI"</span>
+                            <span class="home-start-body">
+                                "Memory-safe Rust TUI for PE/ELF/Mach-O triage: zero-copy scanning, YARA-X signatures, "
+                                "disassembly deep-dives, and in-memory quarantine so samples are never executed."
+                            </span>
+                            <span class="home-start-cta">"Open triage sample →"</span>
+                        </A>
+                    </li>
+                    <li class="home-start-item">
+                        <A href=report_href("lovely-malware") class="home-start-link">
+                            <span class="home-start-track">"Cyber threat intelligence"</span>
+                            <span class="home-start-title">"LovelyMalware forensic report"</span>
+                            <span class="home-start-body">
+                                "End-to-end CTI deliverable: static/dynamic forensics, network analysis, decryption, "
+                                "Sigma detection rules, and IOC packages formatted for operational use."
+                            </span>
+                            <span class="home-start-cta">"Open CTI sample →"</span>
+                        </A>
+                    </li>
+                    <li class="home-start-item">
+                        <A href=report_href("thesis-summary") class="home-start-link">
+                            <span class="home-start-track">"Strategic & all-source analysis"</span>
+                            <span class="home-start-title">"5th-gen fighter exports & APAC competition"</span>
+                            <span class="home-start-body">
+                                "MStrat writing sample on coercive statecraft, export controls, and alignment pressure "
+                                "on Indonesia, Malaysia, Pakistan, and other Asia-Pacific middle powers."
+                            </span>
+                            <span class="home-start-cta">"Open writing sample →"</span>
+                        </A>
+                    </li>
+                    <li class="home-start-item">
+                        <A href=module_href("mod-01") class="home-start-link">
+                            <span class="home-start-track">"Applied cryptography & tradecraft depth"</span>
+                            <span class="home-start-title">"Interactive modular arithmetic lab"</span>
+                            <span class="home-start-body">
+                                "Browser-based Julia lab with automated verification. Demonstrates math foundations "
+                                "relevant to cryptologic and cyber operations work (inverses, modular arithmetic)."
+                            </span>
+                            <span class="home-start-cta">"Run live lab →"</span>
+                        </A>
+                    </li>
+                </ol>
+                <p class="home-start-footer">
+                    "Prefer a single PDF or clearance conversation? "
+                    <A href=contact_href() class="home-start-footer-link">"Contact"</A>
+                    " · "
+                    <A href=curriculum_href() class="home-start-footer-link">"Full curriculum"</A>
+                </p>
+            </section>
+
+            <section class="home-section" id="research" aria-labelledby="research-heading">
+                <div class="home-section-header">
+                    <p class="home-section-kicker">"Intelligence products"</p>
+                    <h2 id="research-heading" class="home-section-title">"Technical analysis & reporting"</h2>
+                    <p class="home-section-desc">
+                        "Finished analytic work, from malware forensics to strategic studies writing samples."
+                    </p>
+                </div>
+                <div class="home-card-grid">
+                    <A href=report_href("lovely-malware") class="home-card home-card-link">
+                        <div class="home-card-meta">
+                            <span class="home-tag">"Malware analysis"</span>
+                            <time class="home-date" datetime="2026-04">"Apr 2026"</time>
+                        </div>
+                        <h3 class="home-card-title">"LovelyMalware analysis report"</h3>
+                        <p class="home-card-body">
+                            "Intelligence-style forensic report on a PE32+ ransomware sample: static and dynamic analysis, PCAP review, "
+                            "decryption, Sigma rules, and IOC packages suitable for operational use."
+                        </p>
+                        <span class="home-card-cta">"READ REPORT →"</span>
+                    </A>
+                    <A href=report_href("thesis-summary") class="home-card home-card-link">
+                        <div class="home-card-meta">
+                            <span class="home-tag">"Strategic analysis"</span>
+                            <time class="home-date" datetime="2024">"2024"</time>
+                        </div>
+                        <h3 class="home-card-title">"5th-gen fighter exports & APAC middle-power competition"</h3>
+                        <p class="home-card-body">
+                            "Condensed writing sample from MStrat thesis work: how US export controls and China's FC-31 programme "
+                            "reshape alignment choices for Indonesia, Malaysia, Pakistan, and other APAC middle powers."
+                        </p>
+                        <span class="home-card-cta">"READ ESSAY →"</span>
+                    </A>
+                    <A href=malware_reports_href("smartapesg-2026-05-22") class="home-card home-card-link">
+                        <div class="home-card-meta">
+                            <span class="home-tag">"Malware traffic"</span>
+                            <time class="home-date" datetime="2026-05-22">"May 2026"</time>
+                        </div>
+                        <h3 class="home-card-title">"SmartApeSG ClickFix → NetSupport RAT"</h3>
+                        <p class="home-card-body">
+                            "Interactive PCAP analysis of a ClickFix infection chain: compromised WordPress site, PowerShell staging, "
+                            "33 MB ZIP payload, unidentified RAT C2, and NetSupport persistence."
+                        </p>
+                        <span class="home-card-cta">"OPEN ANALYSIS →"</span>
+                    </A>
+                </div>
+                <p class="home-section-footer">
+                    <A href=malware_reports_index_href() class="home-start-footer-link">"All malware reports →"</A>
+                </p>
             </section>
 
             <section class="home-section" id="education" aria-labelledby="education-heading">
