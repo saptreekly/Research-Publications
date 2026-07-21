@@ -52,7 +52,7 @@ ROUTES: list[dict[str, str]] = [
     {
         "path": "/research/cyber-neomedievalism",
         "title": "Cyber neo-medievalism WIP | Jack Weekly",
-        "description": "Working paper · Hedley Bull, Thomas Rid, panoptic infrastructures, and SWIFT as a comparative chokepoint",
+        "description": "Working paper · Hedley Bull, Thomas Rid, Farrell and Newman on weaponized interdependence, and SWIFT",
     },
     {
         "path": "/research/thesis-summary",

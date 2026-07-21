@@ -53,8 +53,8 @@ pub fn HomePage() -> impl IntoView {
                     <p class="home-section-kicker">"For reviewers"</p>
                     <h2 id="start-here-heading" class="home-section-title">"Start here"</h2>
                     <p class="home-section-desc">
-                        "Four finished deliverables that show how I work: method, judgment, writing, and tooling. "
-                        "Read these before the rest of the site."
+                        "Four samples that show how I work: technical method, strategic framing, and tooling. "
+                        "The working paper is unfinished on purpose. Read it for the analytic lane, not as a final judgment."
                     </p>
                 </div>
                 <ol class="home-start-list">
@@ -70,14 +70,14 @@ pub fn HomePage() -> impl IntoView {
                         </A>
                     </li>
                     <li class="home-start-item">
-                        <A href=report_href("thesis-summary") class="home-start-link">
-                            <span class="home-start-track">"Strategic & all-source writing"</span>
-                            <span class="home-start-title">"5th-gen fighter exports & APAC competition"</span>
+                        <A href=report_href("cyber-neomedievalism") class="home-start-link">
+                            <span class="home-start-track">"Strategic analysis · WIP"</span>
+                            <span class="home-start-title">"Cyber, neo-medievalism, and panoptic rails"</span>
                             <span class="home-start-body">
-                                "MStrat writing sample on coercive statecraft, export controls, and alignment pressure "
-                                "on Indonesia, Malaysia, Pakistan, and other Asia-Pacific middle powers."
+                                "Working paper joining Hedley Bull, Thomas Rid, and Farrell and Newman on weaponized interdependence "
+                                "to SWIFT as a comparative hub. Scaffolding for middle-power assurance under overlapping authority."
                             </span>
-                            <span class="home-start-cta">"Open writing sample →"</span>
+                            <span class="home-start-cta">"Open working paper →"</span>
                         </A>
                     </li>
                     <li class="home-start-item">
@@ -109,7 +109,7 @@ pub fn HomePage() -> impl IntoView {
                     " · "
                     <A href=report_href("conti-locker") class="home-start-footer-link">"Conti analysis"</A>
                     " · "
-                    <A href=report_href("cyber-neomedievalism") class="home-start-footer-link">"WIP working papers"</A>
+                    <A href=report_href("thesis-summary") class="home-start-footer-link">"MStrat writing sample"</A>
                     " · "
                     <A href=curriculum_href() class="home-start-footer-link">"Crypto curriculum"</A>
                 </p>
@@ -207,8 +207,8 @@ pub fn HomePage() -> impl IntoView {
                         </div>
                         <h3 class="home-card-title">"Cyber, neo-medievalism, and panoptic rails"</h3>
                         <p class="home-card-body">
-                            "Draft analysis joining Hedley Bull's neo-medievalism to cyberspace, Bentham and Foucault on the panopticon, "
-                            "and SWIFT as a comparative chokepoint for overlapping authority and asymmetric visibility."
+                            "Draft analysis joining Hedley Bull, Thomas Rid, and Farrell and Newman on weaponized interdependence "
+                            "to SWIFT as a comparative hub for panoptic visibility, chokepoint exclusion, and sub-war coercion."
                         </p>
                         <span class="home-card-cta">"OPEN WORKING PAPER →"</span>
                     </A>
