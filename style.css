@@ -825,6 +825,15 @@ a:focus-visible,
     margin: 0 0 20px 0;
 }
 
+.home-lead-posture {
+    margin-top: -8px;
+    margin-bottom: 24px;
+    font-size: 1rem;
+    color: var(--text-soft);
+    border-left: 2px solid var(--line-color);
+    padding-left: 14px;
+}
+
 .home-hero-actions {
     display: flex;
     flex-wrap: wrap;

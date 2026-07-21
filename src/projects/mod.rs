@@ -21,7 +21,7 @@ pub const PROJECTS: &[ProjectMeta] = &[
     ProjectMeta {
         slug: "vanguard-re",
         title: "Vanguard-RE",
-        subtitle: "Memory-safe static malware triage with an interactive TUI",
+        subtitle: "Memory-safe static malware triage from the command line",
         tag: "Rust",
         date: "2026-07",
         src: "research-docs/projects/vanguard-re.md",
