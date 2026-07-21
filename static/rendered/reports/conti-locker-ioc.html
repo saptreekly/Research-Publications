@@ -1,0 +1,232 @@
+<p>Actionable indicators extracted from the Conti (ContiLocker_v2) analysis. Note that the two analyzed binaries are <strong>debug builds from the leaked source/builder tree</strong> — their config fields are unfilled templates, so host/network indicators reflect the family's <em>design</em>, not a live campaign. Use the hashes for corpus/sample tracking and the behavioral indicators for hunting real Conti intrusions.</p>
+<h2>File indicators</h2>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Value</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Archive SHA256</td>
+<td><code>e403aa3f4273cd11fa13597586cbf353ecef4040344f6ee9fff23168156fb29a</code></td>
+<td><code>conti_locker.zip</code></td>
+</tr>
+<tr>
+<td>Archive MD5</td>
+<td><code>33724d7ca2a6888d7880e0fa49c43e9b</code></td>
+<td>password-protected pack</td>
+</tr>
+<tr>
+<td>Binary SHA256 (A)</td>
+<td><code>9aed278f54f65e546fb9f7f34dff26d0835a0a21a5a4fc4c026bf84596ed277e</code></td>
+<td><code>decryptor.exe</code>, 110,592 B</td>
+</tr>
+<tr>
+<td>Binary MD5 (A)</td>
+<td><code>31ee2755a455b1c8c743f51cec3845fd</code></td>
+<td>statically-linked CRT</td>
+</tr>
+<tr>
+<td>ImpHash (A)</td>
+<td><code>ac80ef907c0b25dff5f5ca08ca8f21ef</code></td>
+<td>VT pivot: <code>imphash:ac80ef907c0b25dff5f5ca08ca8f21ef</code></td>
+</tr>
+<tr>
+<td>Binary SHA256 (B)</td>
+<td><code>142cf75bc8dbfbd76f21f48b86ecbe11297e94071c9c55c1ee280d95c6ac6814</code></td>
+<td><code>decryptor.exe</code>, 158,720 B</td>
+</tr>
+<tr>
+<td>Binary MD5 (B)</td>
+<td><code>04dce97942dfb520fb4c12527c82164b</code></td>
+<td>debug CRT (<code>ucrtbased</code>)</td>
+</tr>
+<tr>
+<td>ImpHash (B)</td>
+<td><code>8d4376cd52bea4b09fa664f1bb329e91</code></td>
+<td>VT pivot: <code>imphash:8d4376cd52bea4b09fa664f1bb329e91</code></td>
+</tr>
+<tr>
+<td>PDB path</td>
+<td><code>c:\source\ContiLocker_v2\Debug\decryptor.pdb</code></td>
+<td>embedded debug path</td>
+</tr>
+<tr>
+<td>Type</td>
+<td>PE32 x86 Windows console, MSVC, unsigned</td>
+<td>no packer</td>
+</tr>
+</tbody>
+</table>
+<h2>Config placeholders (builder templates — NOT live IOCs)</h2>
+<p>These strings appear verbatim in the binary because the builder had not patched them. Seeing the <em>placeholders</em> is itself a strong indicator that a sample was built from this leaked kit.</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Placeholder value</th>
+<th>Source</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Ransom note</td>
+<td><code>__DECRYPT_NOTE__</code></td>
+<td><code>global_parameters.cpp</code> (<code>g_DecryptNote[2048]</code>)</td>
+</tr>
+<tr>
+<td>Mutex name</td>
+<td><code>__MUTEX_NAME__</code></td>
+<td><code>global_parameters.cpp</code> (<code>g_MutexName[65]</code>)</td>
+</tr>
+<tr>
+<td>Encrypted extension</td>
+<td><code>.EXTEN</code> (<code>L&quot;.EXTEN&quot;</code>)</td>
+<td><code>global_parameters.cpp</code> (<code>g_Extention[7]</code>)</td>
+</tr>
+</tbody>
+</table>
+<h2>Network indicators (design, from source)</h2>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Value</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Spreading protocol</td>
+<td>SMB, <code>445/tcp</code></td>
+<td><code>network_scanner.cpp</code> <code>#define SMB_PORT 445</code></td>
+</tr>
+<tr>
+<td>Host discovery</td>
+<td>ARP cache (<code>GetIpNetTable</code>)</td>
+<td>seeds intranet host list</td>
+</tr>
+<tr>
+<td>Share discovery</td>
+<td><code>NetShareEnum</code> (NETAPI32)</td>
+<td>enumerates admin/user shares</td>
+</tr>
+<tr>
+<td>C2 / beacon</td>
+<td><strong>none</strong></td>
+<td>human-operated; no locker beacon by design</td>
+</tr>
+</tbody>
+</table>
+<h2>Host and behavioral indicators</h2>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Value</th>
+<th>MITRE</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>File encryption</td>
+<td>ChaCha20 (256-bit) body + RSA key wrap</td>
+<td>T1486</td>
+</tr>
+<tr>
+<td>Encrypted-key blob</td>
+<td>524-byte <code>EncryptedKey</code> appended per file</td>
+<td>T1486</td>
+</tr>
+<tr>
+<td>Shadow copy deletion</td>
+<td><code>DeleteShadowCopies()</code> (locker module)</td>
+<td>T1490</td>
+</tr>
+<tr>
+<td>Process termination</td>
+<td><code>process_killer::KillAll()</code> w/ whitelist</td>
+<td>T1489</td>
+</tr>
+<tr>
+<td>Network share discovery</td>
+<td><code>NetShareEnum</code> over SMB/445</td>
+<td>T1135 / T1021.002</td>
+</tr>
+<tr>
+<td>Local + ARP discovery</td>
+<td>drive enum + <code>GetIpNetTable</code></td>
+<td>T1083 / T1016</td>
+</tr>
+<tr>
+<td>Dynamic API resolution</td>
+<td>hashed-API loader (<code>GetApi.h</code>)</td>
+<td>T1106 / T1027</td>
+</tr>
+<tr>
+<td>Userland unhooking</td>
+<td><code>removeHooks()</code> — reload clean <code>ntdll</code></td>
+<td>T1562.001</td>
+</tr>
+<tr>
+<td>Compile-time string obf.</td>
+<td><code>MetaString.h</code> XOR string encoding</td>
+<td>T1027</td>
+</tr>
+<tr>
+<td>Anti-debug</td>
+<td><code>IsDebuggerPresent</code></td>
+<td>T1622</td>
+</tr>
+<tr>
+<td>Multithreaded encryption</td>
+<td>IOCP (<code>CreateIoCompletionPort</code>)</td>
+<td>—</td>
+</tr>
+</tbody>
+</table>
+<h2>Cryptographic indicators</h2>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Value</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Stream cipher constant</td>
+<td><code>expand 32-byte k</code> (ChaCha20 256-bit sigma)</td>
+<td>high-fidelity YARA anchor</td>
+</tr>
+<tr>
+<td>Cipher source</td>
+<td>DJB <code>chacha-merged.c</code> (public domain)</td>
+<td><code>chacha20/chacha.c</code></td>
+</tr>
+<tr>
+<td>Key transport</td>
+<td>Windows CryptoAPI <code>CryptImportKey</code> + <code>CryptDecrypt</code></td>
+<td>RSA envelope</td>
+</tr>
+<tr>
+<td>Per-file key material</td>
+<td>32-byte ChaCha key + 8-byte IV</td>
+<td>fresh per file</td>
+</tr>
+<tr>
+<td>Config string</td>
+<td><code>EncryptedKeySize</code></td>
+<td>present in binary</td>
+</tr>
+</tbody>
+</table>
+<h2>Triage caveats</h2>
+<ul>
+<li><strong>False positive:</strong> YARA <code>Suspicious_Delphi_CODE_Section</code> fires, but these are MSVC C++ binaries — ignore the Delphi attribution.</li>
+<li><strong>Label caveat:</strong> the automated &quot;injection / hollow patterns&quot; verdict is not supported by the imports — no <code>VirtualAllocEx</code>/<code>WriteProcessMemory</code>/<code>CreateRemoteThread</code>. Treat as generic high-severity, not injection.</li>
+</ul>

@@ -11,6 +11,16 @@ pub struct ReportMeta {
 
 pub const REPORTS: &[ReportMeta] = &[
     ReportMeta {
+        slug: "conti-locker",
+        title: "Conti Locker v2",
+        subtitle: "Malware analysis report · leaked ransomware build tree · Vanguard-RE",
+        tag: "Malware analysis",
+        date: "2026-07",
+        src: "research-docs/reports/conti-locker.md",
+        sigma_src: Some("research-docs/reports/conti-locker-sigma.md"),
+        ioc_src: Some("research-docs/reports/conti-locker-ioc.md"),
+    },
+    ReportMeta {
         slug: "lovely-malware",
         title: "LovelyMalware",
         subtitle: "Malware analysis report · HackTheBox Insane",

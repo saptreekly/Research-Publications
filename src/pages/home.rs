@@ -235,6 +235,18 @@ pub fn HomePage() -> impl IntoView {
                         </p>
                         <span class="home-card-cta">"READ ESSAY →"</span>
                     </A>
+                    <A href=report_href("conti-locker") class="home-card home-card-link">
+                        <div class="home-card-meta">
+                            <span class="home-tag">"Malware analysis"</span>
+                            <time class="home-date" datetime="2026-07">"Jul 2026"</time>
+                        </div>
+                        <h3 class="home-card-title">"Conti Locker v2 analysis"</h3>
+                        <p class="home-card-body">
+                            "Static reverse-engineering of the leaked Conti ransomware build tree with the in-house Vanguard-RE engine: "
+                            "hybrid ChaCha20 + RSA crypto, SMB spreading, and static inferences cross-validated against leaked source."
+                        </p>
+                        <span class="home-card-cta">"READ REPORT →"</span>
+                    </A>
                     <A href=malware_reports_href("smartapesg-2026-05-22") class="home-card home-card-link">
                         <div class="home-card-meta">
                             <span class="home-tag">"Malware traffic"</span>

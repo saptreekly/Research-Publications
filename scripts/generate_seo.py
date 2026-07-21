@@ -40,6 +40,11 @@ ROUTES: list[dict[str, str]] = [
         "description": "Malware analysis report · HackTheBox Insane · Malware analysis",
     },
     {
+        "path": "/research/conti-locker",
+        "title": "Conti Locker v2 | Jack Weekly",
+        "description": "Malware analysis report · leaked Conti ransomware build tree · Vanguard-RE static analysis",
+    },
+    {
         "path": "/research/thesis-summary",
         "title": "5th-Gen Fighter Exports as Strategic Competition | Jack Weekly",
         "description": "Strategic studies writing sample · Victoria University of Wellington · MStrat with Merit · Strategic analysis",
@@ -122,6 +127,11 @@ for slug in MODULE_SLUGS:
 
 ROUTE_CONTENT: dict[str, list[str]] = {
     "/research/lovely-malware": ["research-docs/reports/lovely-malware.md"],
+    "/research/conti-locker": [
+        "research-docs/reports/conti-locker.md",
+        "research-docs/reports/conti-locker-ioc.md",
+        "research-docs/reports/conti-locker-sigma.md",
+    ],
     "/research/thesis-summary": ["research-docs/thesis-summary.md"],
     "/projects/casre": ["research-docs/projects/casre.md"],
     "/projects/vanguard-re": ["research-docs/projects/vanguard-re.md"],
@@ -380,6 +390,7 @@ def site_nav_html() -> str:
             <h2>Research &amp; Writing</h2>
             <ul>
                 <li><a href="/Research-Publications/research/lovely-malware">LovelyMalware Analysis Report</a></li>
+                <li><a href="/Research-Publications/research/conti-locker">Conti Locker v2 Analysis Report</a></li>
                 <li><a href="/Research-Publications/research/thesis-summary">5th-Gen Fighter Exports as Strategic Competition</a></li>
             </ul>
         </nav>""".strip()

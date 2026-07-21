@@ -1,0 +1,373 @@
+<p>I used my static analysis TUI, <a href="/projects/vanguard-re">Vanguard-RE</a>, to reverse-engineer the leaked Conti (ContiLocker_v2) ransomware build tree without executing anything. This write-up follows the STAR method (Situation, Task, Action, Result) and walks through how I drove Vanguard, what it surfaced, and how I checked those findings against the leaked C++ source.</p>
+<h2>Situation</h2>
+<p>I keep a local malware corpus under password-protected ZIPs (<code>infected</code>) for defensive research. For this exercise I needed a sample that would stress Vanguard end to end: in-memory ZIP quarantine, PE triage, ImpHash, entropy, IAT heuristics, crypto fingerprinting, network IOC scanning, and iced-x86 disassembly.</p>
+<p>I chose <code>conti_locker.zip</code> because it is not a single opaque payload. It is the leaked ContiLocker_v2 Visual Studio project. The archive holds <code>.cpp</code> and <code>.h</code> source, build logs, <code>.obj</code> and <code>.pdb</code> artifacts, and two compiled <code>decryptor.exe</code> binaries. That gave me a rare setup where I could treat the PE files as the unknown and the source as ground truth.</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Family</td>
+<td>Conti (Conti Locker v2)</td>
+</tr>
+<tr>
+<td>Archive</td>
+<td><code>conti_locker.zip</code></td>
+</tr>
+<tr>
+<td>Archive SHA256</td>
+<td><code>e403aa3f4273cd11fa13597586cbf353ecef4040344f6ee9fff23168156fb29a</code></td>
+</tr>
+<tr>
+<td>Archive MD5</td>
+<td><code>33724d7ca2a6888d7880e0fa49c43e9b</code></td>
+</tr>
+<tr>
+<td>Members</td>
+<td>141 (source tree + build artifacts + 2 PE binaries)</td>
+</tr>
+<tr>
+<td>Analyzed binaries</td>
+<td><code>decryptor.exe</code> ×2 (Debug builds)</td>
+</tr>
+<tr>
+<td>PDB path</td>
+<td><code>c:\source\ContiLocker_v2\Debug\decryptor.pdb</code></td>
+</tr>
+<tr>
+<td>Classification</td>
+<td>Ransomware (crypto-locker + SMB worming component)</td>
+</tr>
+<tr>
+<td>Containment</td>
+<td>Static-only, in-memory decryption via Vanguard</td>
+</tr>
+</tbody>
+</table>
+<h2>Task</h2>
+<p>My goals were:</p>
+<ol>
+<li>Run the full Conti archive through Vanguard under the same containment rules I ship in the TUI (map and parse only, never execute, keep ZIP members in RAM).</li>
+<li>Let Vanguard rank members, deep-dive the top hits, and report crypto, imports, strings, YARA, and disassembly insights.</li>
+<li>Cross-check every high-confidence Vanguard claim against the leaked source so I could document where the tool was exact, where it was suggestive, and where the wording overreached.</li>
+<li>Produce defensive artifacts (IOCs, YARA, Sigma) from those validated findings.</li>
+</ol>
+<p>I was not trying to recover a victim environment or recover encrypted files. I was stress-testing my own triage pipeline on a well-documented ransomware family.</p>
+<h2>Action</h2>
+<h3>How I used Vanguard</h3>
+<p>Vanguard is my Rust TUI for high-speed, memory-safe static malware triage. Its design matches what I needed here:</p>
+<table>
+<thead>
+<tr>
+<th>Pillar</th>
+<th>What I relied on</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Speed</td>
+<td><code>memmap2</code> zero-copy I/O and a focused static pipeline</td>
+</tr>
+<tr>
+<td>Accuracy</td>
+<td>Formal PE parsing (<code>goblin</code>), ImpHash, Shannon entropy, IAT capability tags, crypto-constant fingerprints, iced-x86 disasm</td>
+</tr>
+<tr>
+<td>Safety</td>
+<td>In-memory quarantine. Samples are never executed. Passworded ZIPs decrypt into process memory only</td>
+</tr>
+</tbody>
+</table>
+<p>The interactive TUI needs a real terminal. For this scripted write-up I drove the <strong>same library path</strong> the TUI uses (<code>collect_samples</code> → <code>investigate</code>) through a small headless example binary I keep in the Vanguard-RE repo. That matters: I did not invent a second analysis stack. I called Vanguard's public API with the Conti ZIP path and password <code>infected</code>, then read the ranking, triage, and deep-dive report it returned.</p>
+<p>In practice my workflow looked like this:</p>
+<ol>
+<li>Point Vanguard at <code>/Users/.../Malware/conti_locker/conti_locker.zip</code> with password <code>infected</code>.</li>
+<li>Let <code>collect_samples</code> unpack 141 members into quarantined in-memory buffers (no runnable files on disk).</li>
+<li>Run <code>investigate</code> with deep-dives on the top-scoring members and a large disasm instruction budget.</li>
+<li>Read the ranking first, then the PE triage blocks, then the deep-dive sections (crypto, imports, strings, YARA, disasm insights).</li>
+<li>Stream selected source files from the ZIP read-only (<code>main.cpp</code>, <code>chacha.c</code>, <code>locker.h</code>, <code>network_scanner.cpp</code>, <code>global_parameters.cpp</code>) so I could validate or reject each Vanguard claim.</li>
+</ol>
+<h3>What Vanguard ranked first</h3>
+<p>Vanguard ranked both <code>decryptor.exe</code> variants at <strong>93/100 (&quot;critical&quot;)</strong>. They were the only PE files in the tree. Everything else (source, logs, <code>.tlog</code>, <code>.obj</code>) was correctly treated as raw or low-interest.</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Variant A</th>
+<th>Variant B</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>SHA256</td>
+<td><code>9aed278f54f65e546fb9f7f34dff26d0835a0a21a5a4fc4c026bf84596ed277e</code></td>
+<td><code>142cf75bc8dbfbd76f21f48b86ecbe11297e94071c9c55c1ee280d95c6ac6814</code></td>
+</tr>
+<tr>
+<td>MD5</td>
+<td><code>31ee2755a455b1c8c743f51cec3845fd</code></td>
+<td><code>04dce97942dfb520fb4c12527c82164b</code></td>
+</tr>
+<tr>
+<td>Size</td>
+<td>110,592 B</td>
+<td>158,720 B</td>
+</tr>
+<tr>
+<td>ImpHash</td>
+<td><code>ac80ef907c0b25dff5f5ca08ca8f21ef</code></td>
+<td><code>8d4376cd52bea4b09fa664f1bb329e91</code></td>
+</tr>
+<tr>
+<td>Compiled (PE)</td>
+<td>2020-09-15</td>
+<td>2020-08-27</td>
+</tr>
+<tr>
+<td>Entry</td>
+<td><code>0x585e</code></td>
+<td><code>0x11a00</code></td>
+</tr>
+<tr>
+<td>CRT linkage</td>
+<td>statically linked</td>
+<td>dynamic <strong>debug</strong> CRT (<code>ucrtbased</code>, <code>VCRUNTIME140D</code>, <code>MSVCP140D</code>)</td>
+</tr>
+<tr>
+<td>Toolchain (Vanguard)</td>
+<td>MSVC C/C++ (Rich header, 11 records)</td>
+<td>MSVC C/C++ (Rich header, 10 records)</td>
+</tr>
+</tbody>
+</table>
+<p>I treated both as debug builds of the same ContiLocker_v2 project. Vanguard surfaced the shared PDB path <code>c:\source\ContiLocker_v2\Debug\decryptor.pdb</code>, and Variant B still carried debug CRT names plus a <code>.textbss</code> incremental-link section. These are developer artifacts, not polished campaign payloads. That shaped how I later wrote the IOC tab.</p>
+<h3>PE and section analysis in Vanguard</h3>
+<p>Vanguard's formal PE parse told me both binaries were PE32 (x86), unsigned, MSVC console apps. I used its section entropy map to rule packing in or out:</p>
+<pre><code class="language-text">Variant A (110,592 B), Vanguard section report
+  .text    vsize=0x10d5e  entropy=6.64
+  .rdata   vsize=0x6492   entropy=4.82
+  .data    vsize=0x2b90   entropy=0.87
+  .reloc   vsize=0x11fc   entropy=6.53
+</code></pre>
+<p>The peak entropy (~6.6) sits below the ~7.0+ band Vanguard treats as packed or encrypted. I concluded Conti was not relying on whole-file packing. Obfuscation lived elsewhere, which the disasm insight later confirmed.</p>
+<h3>Crypto findings from Vanguard's scanner</h3>
+<p>On both binaries, Vanguard's crypto engine reported:</p>
+<table>
+<thead>
+<tr>
+<th>Finding</th>
+<th>Confidence</th>
+<th>Evidence Vanguard cited</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ChaCha20/Salsa20 (stream)</td>
+<td>92</td>
+<td><code>&quot;expand 32-byte k&quot;</code> sigma constant</td>
+</tr>
+<tr>
+<td>Windows CryptoAPI/CNG (api)</td>
+<td>72</td>
+<td><code>CryptAcquireContextA</code>, <code>CryptDecrypt</code>, <code>CryptImportKey</code></td>
+</tr>
+</tbody>
+</table>
+<p>That combination is exactly what I wanted Vanguard to catch: a stream-cipher constant plus CryptoAPI key-import imports. I then opened <code>chacha20/chacha.c</code> from the archive. It is D. J. Bernstein's public-domain <code>chacha-merged.c</code>, keyed at 256 bits:</p>
+<pre><code class="language-c">static const char sigma[16] = &quot;expand 32-byte k&quot;;
+...
+if (kbits == 256) { /* recommended */ constants = sigma; }
+</code></pre>
+<p>Vanguard's fingerprint was exact. I then checked <code>locker/locker.h</code> for the per-file crypto record:</p>
+<pre><code class="language-c">typedef struct file_info {
+    ...
+    ECRYPT_ctx CryptCtx;
+    BYTE ChachaIV[8];
+    BYTE ChachaKey[32];
+    BYTE EncryptedKey[524];
+} FILE_INFO, *LPFILE_INFO;
+</code></pre>
+<p>Each victim file gets a fresh 256-bit ChaCha20 key and 64-bit IV. Conti RSA-encrypts that key into the 524-byte <code>EncryptedKey</code> blob using the operator public key through CryptoAPI. Vanguard also surfaced the <code>EncryptedKeySize</code> string in the interesting-strings list, which lined up with that struct field.</p>
+<p>Because this artifact is the <em>decryptor</em>, the imports are <code>CryptImportKey</code> and <code>CryptDecrypt</code> rather than <code>CryptEncrypt</code>. It still shares the crypto core with the locker. Vanguard did not invent that distinction for me. I had to interpret the import set against the module name and the source.</p>
+<p>Vanguard's disassembly insight also flagged an <strong>&quot;XOR loop / inline decryption / string decoding&quot; pattern (12 hits)</strong>. I mapped that to Conti's compile-time string obfuscation in <code>MetaString.h</code> and <code>MetaRandom2.h</code>. That explained why Vanguard's plaintext string yield looked thin and why I leaned on its import and crypto views more than its string dump.</p>
+<h3>Network and spreading signals Vanguard gave me</h3>
+<p>Vanguard tagged a <strong>&quot;Network / C2&quot; capability (confidence 52)</strong> from <code>WSASocketW</code>, and listed imports for <code>NetShareEnum</code> (NETAPI32), <code>GetIpNetTable</code> (IPHLPAPI), and <code>WSAIoctl</code> / <code>WSAAddressToStringW</code> (WS2_32). Alone, that set could mean many things. I used it as a hypothesis, then opened <code>network_scanner.cpp</code>.</p>
+<p>That file is an SMB (445/tcp) scanner and spreader built on I/O completion ports:</p>
+<pre><code class="language-c">#define SMB_PORT 445
+#define STOP_MARKER 0xFFFFFFFF
+enum COMPLETION_KEYS { START_COMPLETION_KEY = 1, CONNECT_COMPLETION_KEY = 2, TIMER_COMPLETION_KEY = 3 };
+</code></pre>
+<p><code>GetIpNetTable</code> seeds hosts from the ARP cache. <code>NetShareEnum</code> enumerates shares. Share paths feed the encryption threadpool. <code>main.cpp</code> exposes the operating modes:</p>
+<pre><code class="language-c">enum EncryptModes { ALL_ENCRYPT = 10, LOCAL_ENCRYPT = 11, NETWORK_ENCRYPT = 12 };
+</code></pre>
+<p>and drives local and network work together:</p>
+<pre><code class="language-c">if (filesystem::EnumirateDrives(&amp;DriveList))
+    hLocalSearch = CreateThread(NULL, 0, filesystem::StartLocalSearch, &amp;DriveList, 0, NULL);
+TAILQ_FOREACH(String, &amp;g_HostList, Entries)
+    network_scanner::EnumShares(String-&gt;wszString, &amp;ShareList);
+TAILQ_FOREACH(ShareInfo, &amp;ShareList, Entries)
+    filesystem::SearchFiles(ShareInfo-&gt;wszSharePath, threadpool::NETWORK_THREADPOOL);
+</code></pre>
+<p>Vanguard had already shown me <code>CreateIoCompletionPort</code>, <code>GetQueuedCompletionStatus</code>, and <code>CreateThread</code> in the import table. Once I had the source, I could call that Conti's multithreaded IOCP encryption design, the same design that made Conti one of the faster lockers of its era.</p>
+<h3>Anti-analysis: what Vanguard saw vs what only source showed</h3>
+<table>
+<thead>
+<tr>
+<th>Technique</th>
+<th>Signal from Vanguard</th>
+<th>What I confirmed in source</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Debugger evasion</td>
+<td><code>IsDebuggerPresent</code> (behavior, severity 55)</td>
+<td>Present in decryptor import set</td>
+</tr>
+<tr>
+<td>Dynamic API resolution</td>
+<td><code>LoadLibraryExW</code> + <code>GetProcAddress</code> (behavior, severity 40)</td>
+<td><code>GetApi.h</code>, <code>api.h</code>, <code>ntdll.h</code></td>
+</tr>
+<tr>
+<td>String obfuscation</td>
+<td>XOR string-decode loop (insight, 12 hits)</td>
+<td><code>MetaString.h</code>, <code>MetaRandom2.h</code></td>
+</tr>
+<tr>
+<td>Userland unhooking</td>
+<td>No direct PE signal</td>
+<td><code>antihook/antihooks.h</code>: <code>removeHooks(HMODULE)</code></td>
+</tr>
+<tr>
+<td>Inhibit recovery</td>
+<td>Absent from decryptor deep-dive</td>
+<td><code>locker.h</code>: <code>DeleteShadowCopies()</code></td>
+</tr>
+<tr>
+<td>Process termination</td>
+<td>Absent from decryptor deep-dive</td>
+<td><code>process_killer.h</code>: <code>KillAll()</code>, <code>GetWhiteListProcess()</code></td>
+</tr>
+</tbody>
+</table>
+<p>I care about that last point as a Vanguard user. The locker module shipped mostly as <code>.obj</code> in this tree, so the decryptor PE correctly lacked static signals for shadow-copy deletion and process killing. Vanguard did not invent those behaviors. Absence of evidence stayed absence of evidence until I read the locker headers.</p>
+<h2>Honest review of Vanguard</h2>
+<p>Conti was not only a malware exercise for me. It was a product test of my own tool. I am proud of what Vanguard got right here, and I am equally willing to name where it wasted my time or misled me. Automated triage is a first pass. I still have to read the evidence.</p>
+<h3>Strengths I actually used</h3>
+<p><strong>Containment that I trust.</strong> I pointed Vanguard at a passworded malware ZIP and never wrote a runnable Conti PE to disk. <code>collect_samples</code> kept members in RAM. For defensive research on a personal machine, that is the feature I care about most.</p>
+<p><strong>Ranking that cut through noise.</strong> ContiLocker_v2 is a 141-member mess of source, logs, and objects. Vanguard still put both <code>decryptor.exe</code> binaries at the top with score 93. That is the job I built it for: tell me what to open first.</p>
+<p><strong>Crypto fingerprinting earned its keep.</strong> The <code>&quot;expand 32-byte k&quot;</code> hit at confidence 92 was the single best static finding in this run. When I opened <code>chacha.c</code>, Vanguard was already sitting on the right cipher. That is the kind of win that shortens an analysis from hours to minutes.</p>
+<p><strong>PE, toolchain, and ImpHash views were solid.</strong> Rich-header MSVC detection, section entropy that correctly argued &quot;not packed,&quot; and stable ImpHashes gave me a clean identity for both binaries before I touched source.</p>
+<p><strong>Capability tags beat raw API lists.</strong> Seeing crypto, file_drop, dyn_resolve, anti_debug, and a network tag in one place helped me form a hypothesis fast. I still had to interpret those tags, but I did not start from a blank import dump.</p>
+<p><strong>Conservative absences.</strong> Vanguard did not invent shadow-copy deletion or process killing on the decryptor PE. Those live in the locker module. I want a tool that stays quiet when the PE does not support a claim.</p>
+<h3>Weaknesses Conti exposed (and how I plan to fix them)</h3>
+<p><strong>1. The critical risk label lies.</strong><br />
+When Conti scored 93, Vanguard printed a top-line label that claimed &quot;injection / hollow patterns.&quot; That wording is wrong for this sample. The classic injection triad (<code>VirtualAllocEx</code>, <code>WriteProcessMemory</code>, <code>CreateRemoteThread</code>) is absent. I checked my own scoring code after this run. The bug is blunt: any score at or above 90 is hard-coded to that injection phrase, whether injection was matched or not. That is my mistake, not Conti's.</p>
+<p><em>Plan:</em> I will rewrite <code>risk_label</code> so the high-severity text reflects the actual matched behaviors and top capability IDs (for Conti that should read something like crypto / file_drop / network, not injection). The score can stay numeric. The prose must stop inventing techniques.</p>
+<p><strong>2. Builtin YARA still fires noisy false positives.</strong><br />
+Vanguard raised <code>Suspicious_Delphi_CODE_Section</code> on an MSVC C++ binary whose own toolchain view already said MSVC. I should never have to reconcile that contradiction by hand.</p>
+<p><em>Plan:</em> I will gate that rule behind Delphi toolchain signals (or drop it from the default ruleset), and I will add a &quot;contradicts toolchain&quot; demotion so a Delphi hit cannot outrank a high-confidence MSVC Rich-header result.</p>
+<p><strong>3. Network capability naming is too C2-shaped.</strong><br />
+Vanguard tagged Conti's SMB spreader as &quot;Network / C2.&quot; Conti has no locker beacon. The real story is intranet SMB share discovery and encryption. The imports were useful. The label pushed me toward the wrong mental model until I read <code>network_scanner.cpp</code>.</p>
+<p><em>Plan:</em> I will split network capabilities into narrower tags (for example <code>smb_enum</code>, <code>socket_client</code>, <code>http_client</code>, <code>c2_suspect</code>) and reserve &quot;C2&quot; for stronger evidence such as hardcoded endpoints, beacon-shaped strings, or confirmed C2 libraries.</p>
+<p><strong>4. Source-tree and build-artifact noise.</strong><br />
+Vanguard scored many <code>.tlog</code> and text members around 35 as unrecognized or DOS-like. That is technically consistent with &quot;raw blob&quot; handling, but it pollutes ranking when I feed it a whole Visual Studio tree.</p>
+<p><em>Plan:</em> I will add content-class filters (skip or demote compiler logs, <code>.tlog</code>, <code>.obj</code>, <code>.pdb</code>, and obvious source extensions unless I ask for a full dump) so ranking stays focused on PE/ELF/Mach-O and packed containers.</p>
+<p><strong>5. Native IAT heuristics are blind on managed malware.</strong><br />
+I also ran Vanguard against an AgentTesla sample while choosing Conti. It correctly identified .NET, then scored the PE as 0 / &quot;benign&quot; because the import table is basically <code>mscoree.dll!_CorExeMain</code>. Conti hid that weakness. AgentTesla did not.</p>
+<p><em>Plan:</em> I will add a managed triage path (CLR metadata, module names, suspicious .NET type/method strings, and a .NET-aware score floor) so Vanguard stops calling packed or obfuscated stealers &quot;benign&quot; just because the native IAT is empty.</p>
+<p><strong>6. Disassembly function recovery is still shallow.</strong><br />
+On Conti, Vanguard gave me useful XOR-loop insights near the entry path, but function recovery stayed thin (essentially an entry blob). That is fine for first-pass triage. It is not yet a substitute for a real RE session when I need call-graph structure.</p>
+<p><em>Plan:</em> I will keep improving function boundary heuristics and cluster labels, but I am not pretending Vanguard replaces IDA or Ghidra. My goal is better &quot;where should I look next,&quot; not full decompilation.</p>
+<p><strong>7. No first-class headless CLI in the shipped binary.</strong><br />
+I had to drive this write-up through the library API / example binary because the TUI refuses non-interactive terminals. That is awkward for reproducible reports and CI-style corpus tests.</p>
+<p><em>Plan:</em> I will promote the headless path to a supported <code>vanguard investigate &lt;path&gt;</code> (or similar) subcommand that emits the same report the TUI deep-dive shows, so I can script write-ups without a fake terminal.</p>
+<h3>Conti-specific caveats I still had to apply by hand</h3>
+<ul>
+<li>Builder templates (<code>__DECRYPT_NOTE__</code>, <code>__MUTEX_NAME__</code>, <code>.EXTEN</code>) are not live campaign IOCs. Vanguard surfaced them correctly. I had to interpret them as placeholders.</li>
+<li>An empty high-confidence network-IOC list was the right answer. Conti is human-operated. The locker has no beacon.</li>
+<li>I still needed the leaked source to turn &quot;suggestive imports&quot; into a confident SMB-spreader narrative. Vanguard got me most of the way. It did not finish the story alone.</li>
+</ul>
+<h2>Result</h2>
+<h3>What I got from using Vanguard on Conti</h3>
+<table>
+<thead>
+<tr>
+<th>Behaviour</th>
+<th>What Vanguard told me (static only)</th>
+<th>Leaked source</th>
+<th>My verdict</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Stream cipher = ChaCha20</td>
+<td><code>&quot;expand 32-byte k&quot;</code>, confidence 92</td>
+<td><code>chacha.c</code> (DJB, 256-bit)</td>
+<td>Exact</td>
+</tr>
+<tr>
+<td>Asymmetric key wrap</td>
+<td>CryptoAPI <code>CryptImportKey</code> / <code>CryptDecrypt</code></td>
+<td><code>EncryptedKey[524]</code> in <code>FILE_INFO</code></td>
+<td>Exact</td>
+</tr>
+<tr>
+<td>SMB network spreading</td>
+<td>Inferred from <code>NetShareEnum</code> / <code>GetIpNetTable</code></td>
+<td><code>network_scanner.cpp</code>, <code>SMB_PORT 445</code></td>
+<td>Confirmed</td>
+</tr>
+<tr>
+<td>Multithreaded IOCP encryption</td>
+<td>IOCP + thread imports</td>
+<td><code>threadpool.*</code>, <code>main.cpp</code></td>
+<td>Confirmed</td>
+</tr>
+<tr>
+<td>Compile-time string encryption</td>
+<td>XOR-decode insight</td>
+<td><code>MetaString.h</code></td>
+<td>Confirmed</td>
+</tr>
+<tr>
+<td>Dynamic API resolution</td>
+<td>Behavior match</td>
+<td><code>GetApi.h</code></td>
+<td>Confirmed</td>
+</tr>
+<tr>
+<td>Shadow-copy deletion / proc-kill</td>
+<td>Not present on decryptor</td>
+<td><code>locker.h</code>, <code>process_killer.h</code></td>
+<td>Correctly absent</td>
+</tr>
+</tbody>
+</table>
+<p>Vanguard got me from a 141-member passworded ZIP to a ranked, hashed, capability-tagged deep-dive in one containment-safe pass. The leaked source then let me grade the tool. Crypto and PE/toolchain views were excellent. Network labeling and the critical risk phrase still need work that I own. The missing locker-only behaviors stayed missing, which I still count as a strength.</p>
+<h3>Kill chain I reconstructed (source + Vanguard)</h3>
+<pre><code class="language-text">conti locker.exe
+├── Resolve imports via hashed-API loader (GetApi.h)         [T1106, T1027]
+├── removeHooks(): reload clean ntdll, strip EDR hooks       [T1562.001]
+├── IsDebuggerPresent() anti-debug check                     [T1622]
+├── Decode obfuscated strings on stack (MetaString XOR)      [T1027]
+├── Mode = ALL_ENCRYPT | LOCAL_ENCRYPT | NETWORK_ENCRYPT
+├── process_killer::KillAll() (spare whitelist)              [T1489]
+├── DeleteShadowCopies()                                     [T1490]
+├── Enumerate drives + ARP table (GetIpNetTable)             [T1083, T1016]
+├── NetShareEnum() over SMB/445 → discover shares            [T1135, T1021.002]
+├── For each file (local + network share):
+│   ├── ChaCha20 key(32B) + IV(8B) = fresh random
+│   ├── Encrypt file body with ChaCha20                      [T1486]
+│   ├── RSA-encrypt the ChaCha key (CryptImportKey pubkey)
+│   └── Append EncryptedKey[524] + rename with extension
+└── Drop ransom note (__DECRYPT_NOTE__ template)             [T1486]
+</code></pre>
+<h3>Defensive outputs</h3>
+<p>I packaged the hashes, ImpHashes, host artifacts, and template-config caveats on the <strong>IOCs</strong> tab. On the <strong>Sigma</strong> tab I wrote detection content from the validated Vanguard findings: YARA for the ChaCha20 sigma constant plus Conti-specific markers, and Sigma for shadow-copy deletion, SMB fan-out, and related host behaviors.</p>
+<p>For me, Conti was both a ransomware analysis and a hard look at my own tooling. Vanguard earned its place as my first pass. It kept me inside a static-only containment model, ranked the right PE files out of a noisy build tree, and nailed the ChaCha20 fingerprint hard enough that source review became confirmation instead of a cold start. It also showed me exactly which labels and heuristics I still need to fix before I trust the prose as much as I trust the evidence.</p>
