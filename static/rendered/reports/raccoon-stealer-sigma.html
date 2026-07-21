@@ -1,0 +1,21 @@
+<p>Draft detection ideas from the Raccoon Stealer v2 static pass. These are <strong>not</strong> finished Sigma rules yet. They capture what I want to encode after config decode and a second sample check.</p>
+<h2>Rule ideas</h2>
+<h3>1. Chromium Login Data access by non-browser process</h3>
+<ul>
+<li><strong>Idea:</strong> Process that is not a signed browser touches <code>*\User Data\Default\Login Data</code> or equivalent.</li>
+<li><strong>Why here:</strong> Vanguard surfaced the <code>Login Data</code> string across the ImpHash cluster.</li>
+<li><strong>Caveat:</strong> Installers and backup tools false-positive. Needs parent/image allowlists.</li>
+</ul>
+<h3>2. WinInet HTTP client + dynamic API resolve in a small MSVC PE</h3>
+<ul>
+<li><strong>Idea:</strong> Image imports or resolves <code>LoadLibrary</code>/<code>GetProcAddress</code> and WinInet send/open APIs, size band ~50–80 KB, no rich network IAT at rest.</li>
+<li><strong>Why here:</strong> Thin static IAT plus string-resolved <code>InternetOpenUrl*</code> / <code>HttpSendRequestW</code>.</li>
+<li><strong>Caveat:</strong> Many droppers look similar. Pair with ImpHash or path strings.</li>
+</ul>
+<h3>3. ImpHash hunt (not Sigma)</h3>
+<ul>
+<li><strong>ImpHash:</strong> <code>4ec5227a81c3e90d891321c143c67557</code></li>
+<li>Use VT / local ImpHash index rather than forcing this into Sigma.</li>
+</ul>
+<h2>Status</h2>
+<p>Sigma YAML will land here once I am willing to ship a rule that survives a false-positive pass. Until then, prefer the IOC tab ImpHash and the analysis narrative.</p>

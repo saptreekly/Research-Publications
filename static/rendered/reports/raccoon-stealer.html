@@ -1,0 +1,138 @@
+<p>I used my static analysis CLI, <a href="/projects/vanguard-re">Vanguard-RE</a>, on a passworded Raccoon Stealer v2 pack without executing anything. This write-up is both a stealer analysis and a product stress test: after Conti and WannaCry (high-scoring ransomware paths), I wanted a multi-hash crimeware pack that lives on delayed imports, browser DB strings, and HTTP exfil instead of ChaCha/RSA file encryption.</p>
+<p><strong>Status: analysis in progress.</strong> The Vanguard pass and tool log are done. Config/C2 decode and detection packaging are next.</p>
+<h2>Context</h2>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Family</td>
+<td>Raccoon Stealer v2 (commodity stealer)</td>
+</tr>
+<tr>
+<td>Archive</td>
+<td><code>Raccoon.Stealer.v2.sha.zip</code></td>
+</tr>
+<tr>
+<td>Members</td>
+<td>21 (20 PE32 + 1 raw outlier)</td>
+</tr>
+<tr>
+<td>Shared ImpHash</td>
+<td><code>4ec5227a81c3e90d891321c143c67557</code> (20/21)</td>
+</tr>
+<tr>
+<td>Representative SHA256</td>
+<td><code>0123b26df3c79bac0a3fda79072e36c159cfd1824ae3fd4b7f9dea9bda9c7909</code></td>
+</tr>
+<tr>
+<td>Representative size</td>
+<td>57,344 B (cluster mostly 56,832 B)</td>
+</tr>
+<tr>
+<td>Format</td>
+<td>PE32 x86 GUI, MSVC (Rich header)</td>
+</tr>
+<tr>
+<td>Containment</td>
+<td>Static-only. Outer ZIP stayed in process memory</td>
+</tr>
+</tbody>
+</table>
+<p>Command I ran for the logged pass:</p>
+<pre><code class="language-bash">vanguard Raccoon.Stealer.v2.sha.zip -p infected --deep 5 --disasm-count 6000 --min-deep-score 40
+</code></pre>
+<p>Full stdout and a structured product log live under <code>.van_out/raccoon-stealer-v2.*</code> in the repo workspace (local research notes, not shipped to Pages).</p>
+<h2>What I set out to do</h2>
+<ol>
+<li>Drive a stealer pack through the shipped CLI the same way Conti and WannaCry were driven.</li>
+<li>See whether ImpHash clustering and string/YARA views compensate when the static IAT is deliberately thin.</li>
+<li>Score Vanguard honestly where ransomware stress tests had flattered it.</li>
+<li>Turn validated indicators into IOC/Sigma tabs once config decode is finished.</li>
+</ol>
+<h2>What Vanguard got right</h2>
+<p><strong>Containment and speed.</strong> Twenty-one members from a passworded ZIP in about 0.74s, ~58 MB RSS, exit 0. Nothing executed. That remains the feature I trust most.</p>
+<p><strong>ImpHash clustering.</strong> Twenty of twenty-one members share <code>4ec5227a81c3e90d891321c143c67557</code>. Vanguard emitted a single cluster with a VirusTotal ImpHash pivot. For a stealer “hash pack,” that is the correct first analytic move.</p>
+<p><strong>Structural PE triage.</strong> On the representative sample: PE32 x86, unsigned, entry <code>0x7486</code>, MSVC Rich header (conf 80), section entropies in the mid-6s (not a whole-file packer story). Behaviors correctly flagged <code>LoadLibraryW</code> + <code>GetProcAddress</code>.</p>
+<p><strong>String evidence that tells the stealer story.</strong> Interesting-strings consistently surfaced <code>Login Data</code>, <code>wallet.dat</code>, <code>SOFTWARE\Microsoft\Cryptography</code>, the Uninstall inventory key, and WinInet/Crypt32/Bcrypt DLL names. That is browser credential theft + wallet theft + host inventory, even when the formal capability engine only said <code>dyn_resolve</code> / <code>exec</code>.</p>
+<p><strong>Outlier demotion.</strong> <code>9ee50e94…</code> (55,360 B) failed PE parse, scored 35 as raw/DOS-MZ blob, and did not pollute the ImpHash cluster. Good.</p>
+<h2>Where Vanguard under-performed</h2>
+<p><strong>Absolute scores are too low for this class.</strong> The whole PE cluster capped at <strong>50</strong> (<code>likely malicious tooling</code>). Conti decryptors were 93; WannaCry dropper 96. Stealers that delay-load WinInet and speak in browser-path strings should not sit in the same band as lukewarm “tooling.”</p>
+<p><strong>Genre mislabel.</strong> Deep-dive YARA hit <code>RAT_WinINet_C2_Imports</code>. The API shape is fair. Calling it a RAT is not. This pack’s public story is stealer/exfil.</p>
+<p><strong>Deep-dive budget slipped.</strong> I asked for <code>--deep 5</code> and got <strong>20</strong> deep dives. Every score-50 PE above <code>--min-deep-score 40</code> was expanded. If <code>--deep</code> is a hard budget, tied scores currently blow past it.</p>
+<p><strong>Secrets heuristics were noisy.</strong> Multiple <code>[PASS?]</code> / <code>[KEY?]</code> hits on short opaque blobs. Treat as “decode these,” not as recovered passwords.</p>
+<p><strong>No plaintext C2 in the top string window.</strong> Exfil APIs are visible (<code>InternetOpenUrlA/W</code>, <code>HttpSendRequestW</code>). Destinations look encoded (recurring long Base64 at ~<code>0xb958</code>). That decode is still on my list.</p>
+<h2>Provisional analytic read (pending decode)</h2>
+<p>Static evidence so far supports a <strong>commodity stealer</strong> reading, not ransomware and not a full interactive RAT:</p>
+<ol>
+<li>Thin static IAT with dynamic resolution.</li>
+<li>Strings aimed at Chromium <code>Login Data</code>, <code>wallet.dat</code>, and crypto/product inventory paths.</li>
+<li>WinInet HTTP client imports resolved from strings / delay-load names.</li>
+<li>Near-duplicate PE cluster under one ImpHash (build factory / pack distribution).</li>
+</ol>
+<p>I am not publishing network IOCs until the encoded config blob is decoded and checked. ImpHash + member SHA256s are already hunt-worthy.</p>
+<h2>Honest Vanguard scorecard (this sample)</h2>
+<table>
+<thead>
+<tr>
+<th>Area</th>
+<th>Grade</th>
+<th>Note</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Containment / ZIP ingest</td>
+<td>A</td>
+<td>Sub-second, in-memory</td>
+</tr>
+<tr>
+<td>ImpHash clustering</td>
+<td>A</td>
+<td>20/21</td>
+</tr>
+<tr>
+<td>Ranking usefulness</td>
+<td>B−</td>
+<td>Cluster yes; score ceiling too low</td>
+</tr>
+<tr>
+<td>Capability typing</td>
+<td>C+</td>
+<td>Misses stealer boost from strings</td>
+</tr>
+<tr>
+<td>YARA naming</td>
+<td>C</td>
+<td>RAT label on stealer APIs</td>
+</tr>
+<tr>
+<td>Secrets heuristics</td>
+<td>C</td>
+<td>Noisy</td>
+</tr>
+<tr>
+<td><code>--deep</code> hard cap</td>
+<td>D</td>
+<td>5 requested → 20 ran</td>
+</tr>
+<tr>
+<td>Speed</td>
+<td>A</td>
+<td>Fine for packs this size</td>
+</tr>
+</tbody>
+</table>
+<h2>Still to write</h2>
+<ul>
+<li>Decode recurring Base64/config blob; confirm C2/path structure</li>
+<li>IOC tab (ImpHash, representative hashes, mutex/path strings once validated)</li>
+<li>Sigma tab aimed at browser DB access + WinInet stealer patterns without over-fitting one hash</li>
+<li>Optional: one side-by-side with AgentTesla (prior .NET negative control) to show native vs managed stealer scoring</li>
+</ul>
+<h2>How to read this page</h2>
+<p>This is a defensive static pass and a tool review. It is not a claim about current campaigns, victims, or operators beyond what the sample bytes support.</p>

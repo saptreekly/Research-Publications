@@ -45,6 +45,11 @@ ROUTES: list[dict[str, str]] = [
         "description": "Malware analysis report · leaked Conti ransomware build tree · Vanguard-RE static analysis",
     },
     {
+        "path": "/research/raccoon-stealer",
+        "title": "Raccoon Stealer v2 | Jack Weekly",
+        "description": "Malware analysis report · Vanguard-RE stealer stress test · ImpHash cluster · WIP",
+    },
+    {
         "path": "/research/wannacry",
         "title": "WannaCry | Jack Weekly",
         "description": "Malware analysis report · Vanguard-RE stress test · embedded ZIP unlock · Tor onion and BTC IOCs",
@@ -141,6 +146,11 @@ ROUTE_CONTENT: dict[str, list[str]] = {
         "research-docs/reports/conti-locker.md",
         "research-docs/reports/conti-locker-ioc.md",
         "research-docs/reports/conti-locker-sigma.md",
+    ],
+    "/research/raccoon-stealer": [
+        "research-docs/reports/raccoon-stealer.md",
+        "research-docs/reports/raccoon-stealer-ioc.md",
+        "research-docs/reports/raccoon-stealer-sigma.md",
     ],
     "/research/wannacry": [
         "research-docs/reports/wannacry.md",
@@ -406,6 +416,7 @@ def site_nav_html() -> str:
             <h2>Research &amp; Writing</h2>
             <ul>
                 <li><a href="/Research-Publications/research/cyber-neomedievalism">Cyber Neo-Medievalism (Working Paper · Flagship)</a></li>
+                <li><a href="/Research-Publications/research/raccoon-stealer">Raccoon Stealer v2 (Vanguard Stress Test · WIP)</a></li>
                 <li><a href="/Research-Publications/research/wannacry">WannaCry Vanguard Stress Test</a></li>
                 <li><a href="/Research-Publications/research/conti-locker">Conti Locker v2 Analysis Report</a></li>
                 <li><a href="/Research-Publications/research/thesis-summary">5th-Gen Fighter Exports as Strategic Competition</a></li>

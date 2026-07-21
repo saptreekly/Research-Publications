@@ -21,6 +21,16 @@ pub const REPORTS: &[ReportMeta] = &[
         ioc_src: None,
     },
     ReportMeta {
+        slug: "raccoon-stealer",
+        title: "Raccoon Stealer v2",
+        subtitle: "Malware analysis report · Vanguard-RE stealer stress test · ImpHash cluster",
+        tag: "Malware analysis · WIP",
+        date: "2026-07",
+        src: "research-docs/reports/raccoon-stealer.md",
+        sigma_src: Some("research-docs/reports/raccoon-stealer-sigma.md"),
+        ioc_src: Some("research-docs/reports/raccoon-stealer-ioc.md"),
+    },
+    ReportMeta {
         slug: "wannacry",
         title: "WannaCry",
         subtitle: "Malware analysis report · Vanguard-RE stress test · embedded ZIP unlock",

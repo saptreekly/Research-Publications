@@ -1,0 +1,92 @@
+<p>IOC packaging for the Raccoon Stealer v2 Vanguard pass. Network destinations are withheld until the encoded config blob is decoded. Prefer the ImpHash for clustering hunts.</p>
+<h2>File indicators</h2>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Value</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ImpHash</td>
+<td><code>4ec5227a81c3e90d891321c143c67557</code></td>
+<td>Shared by 20/21 members; primary pivot</td>
+</tr>
+<tr>
+<td>Representative SHA256</td>
+<td><code>0123b26df3c79bac0a3fda79072e36c159cfd1824ae3fd4b7f9dea9bda9c7909</code></td>
+<td>Deep-dive lead sample (57,344 B)</td>
+</tr>
+<tr>
+<td>Cluster member SHA256</td>
+<td><code>022432f770bf0e7c5260100fcde2ec7c49f68716751fd7d8b9e113bf06167e03</code></td>
+<td>Same ImpHash</td>
+</tr>
+<tr>
+<td>Cluster member SHA256</td>
+<td><code>960ce3cc26c8313b0fe41197e2aff5533f5f3efb1ba2970190779bc9a07bea63</code></td>
+<td>Same ImpHash</td>
+</tr>
+<tr>
+<td>Outlier SHA256</td>
+<td><code>9ee50e94a731872a74f47780317850ae2b9fae9d6c53a957ed7187173feb4f42</code></td>
+<td>Non-PE / raw; excluded from ImpHash cluster</td>
+</tr>
+<tr>
+<td>Archive password</td>
+<td><code>infected</code></td>
+<td>Local corpus packaging only</td>
+</tr>
+</tbody>
+</table>
+<h2>Host / string indicators (static)</h2>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Value</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Browser DB string</td>
+<td><code>Login Data</code></td>
+<td>Chromium family credential store name</td>
+</tr>
+<tr>
+<td>Wallet string</td>
+<td><code>wallet.dat</code></td>
+<td>Common crypto wallet filename</td>
+</tr>
+<tr>
+<td>Registry string</td>
+<td><code>SOFTWARE\Microsoft\Cryptography</code></td>
+<td>Often used for machine GUID / crypto context</td>
+</tr>
+<tr>
+<td>Registry string</td>
+<td><code>SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall</code></td>
+<td>Installed-software inventory</td>
+</tr>
+<tr>
+<td>API names (strings)</td>
+<td><code>InternetOpenUrlA</code>, <code>InternetOpenUrlW</code>, <code>HttpSendRequestW</code></td>
+<td>WinInet exfil shape</td>
+</tr>
+<tr>
+<td>Delay-load DLL names</td>
+<td><code>WinInet.dll</code>, <code>Crypt32.dll</code>, <code>Bcrypt.dll</code></td>
+<td>Resolved outside thin static IAT</td>
+</tr>
+</tbody>
+</table>
+<h2>Network indicators</h2>
+<p>Pending config decode. Do not treat the opaque Base64 blobs from Vanguard’s secrets pane as confirmed C2 URLs yet.</p>
+<h2>Notes</h2>
+<ul>
+<li>Full member SHA256 list is in the Vanguard stdout log (21 names = ZIP member filenames).</li>
+<li>This tab will expand once C2/path decode is finished.</li>
+</ul>

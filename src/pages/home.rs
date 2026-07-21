@@ -107,10 +107,23 @@ pub fn HomePage() -> impl IntoView {
                     <p class="home-section-kicker">"Finished products"</p>
                     <h2 id="research-heading" class="home-section-title">"Technical analysis & reporting"</h2>
                     <p class="home-section-desc">
-                        "Analytic writing with evidence, caveats, and defensive outputs. Start with WannaCry or Conti if you want the current standard of my CTI-style work."
+                        "Analytic writing with evidence, caveats, and defensive outputs. "
+                        "Raccoon is the current stealer / Vanguard stress test (WIP). WannaCry and Conti are the finished ransomware baselines."
                     </p>
                 </div>
                 <div class="home-card-grid">
+                    <A href=report_href("raccoon-stealer") class="home-card home-card-link home-card-wip">
+                        <div class="home-card-meta">
+                            <span class="home-tag">"Malware analysis · WIP"</span>
+                            <time class="home-date" datetime="2026-07">"Jul 2026"</time>
+                        </div>
+                        <h3 class="home-card-title">"Raccoon Stealer v2 · Vanguard stress test"</h3>
+                        <p class="home-card-body">
+                            "Static pass on a 21-member stealer pack: ImpHash clustering, thin IAT / delay-load WinInet, "
+                            "and an honest scorecard where Vanguard under-ranks stealers versus ransomware."
+                        </p>
+                        <span class="home-card-cta">"READ WIP REPORT →"</span>
+                    </A>
                     <A href=report_href("wannacry") class="home-card home-card-link">
                         <div class="home-card-meta">
                             <span class="home-tag">"Malware analysis"</span>
