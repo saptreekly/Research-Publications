@@ -111,7 +111,7 @@ I still need a short literature situating against platform sovereignty, polycent
 
 ## How to read this page
 
-If you are reviewing my portfolio, this is the centrepiece: the analytic lane I am building at full stretch, not a completed judgment. For finished technical products beside it, start with the WannaCry or Conti reports and the Master of Strategic Studies writing sample.
+If you are reviewing my portfolio, this working paper shows an analytic lane I am building, not a completed judgment. For finished work, start with the WannaCry or Conti reports and the Master of Strategic Studies writing sample.
 
 ## References
 
