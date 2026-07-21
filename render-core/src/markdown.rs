@@ -89,6 +89,7 @@ pub fn markdown_to_rendered_html(source: &str) -> String {
     let (protected, blocks) = extract_math(source);
     let mut options = Options::default();
     options.extension.table = true;
+    options.extension.footnotes = true;
     let html = markdown_to_html(&protected, &options);
     restore_math(&html, &blocks)
 }
