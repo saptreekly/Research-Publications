@@ -1,6 +1,6 @@
-<p>High-speed, memory-safe static malware triage as an interactive TUI. Samples are never executed: the tool maps binaries in memory, parses PE / ELF / Mach-O formally, ranks candidates, runs signature scans, and supports deep-dive disassembly exploration.</p>
+<p>High-speed, memory-safe static malware triage from the command line. Samples are never executed: the tool maps binaries in memory, parses PE / ELF / Mach-O formally, ranks candidates, runs signature scans, and deep-dives with iced-x86 disassembly.</p>
 <h2>Problem</h2>
-<p>Static triage often means juggling hex viewers, disassemblers, and ad-hoc scripts while passworded malware packs spill runnable files onto disk. Vanguard-RE keeps the workflow in one Rust TUI with zero-copy I/O, in-memory ZIP decryption, and containment-first defaults.</p>
+<p>Static triage often means juggling hex viewers, disassemblers, and ad-hoc scripts while passworded malware packs spill runnable files onto disk. Vanguard-RE keeps the workflow in one Rust CLI with zero-copy I/O, in-memory ZIP decryption, and containment-first defaults.</p>
 <h2>Three pillars</h2>
 <table>
 <thead>
@@ -12,78 +12,71 @@
 <tbody>
 <tr>
 <td><strong>Speed</strong></td>
-<td><code>memmap2</code> zero-copy I/O + rayon data-parallel bulk scanning</td>
+<td><code>memmap2</code> zero-copy I/O + focused static pipelines</td>
 </tr>
 <tr>
 <td><strong>Accuracy</strong></td>
-<td>Formal PE / ELF / Mach-O parsing (<code>goblin</code>), ImpHash, Shannon entropy maps, IAT heuristics, iced-x86 disassembly</td>
+<td>Formal PE / ELF / Mach-O parsing (<code>goblin</code>), ImpHash, Shannon entropy, IAT heuristics, iced-x86 disassembly, crypto fingerprints, network IOCs, toolchain fingerprinting</td>
 </tr>
 <tr>
 <td><strong>Safety</strong></td>
-<td>Rust memory safety + in-memory quarantine — samples are never executed</td>
+<td>Rust memory safety + in-memory quarantine. Samples are never executed</td>
 </tr>
 </tbody>
 </table>
 <h2>Architecture</h2>
-<pre><code class="language-plaintext">┌────────────────────────────────────────┐
-│         Vanguard-RE TUI (ratatui)      │
-└───────────────────┬────────────────────┘
-                    │
-     ┌──────────────┼──────────────┐
-     ▼              ▼              ▼
- Static Triage   Disassembly    Signature Engine
- Header Parser   Call Profiler  (hashes / YARA-X)
+<pre><code class="language-plaintext">┌──────────────────────────────────────────────────┐
+│              Vanguard-RE CLI (vanguard)          │
+└────────────────────────┬─────────────────────────┘
+                         │
+    ┌──────────┬─────────┼─────────┬──────────┐
+    ▼          ▼         ▼         ▼          ▼
+ Static    Disasm +   Signatures  Network   Crypto
+ Triage    Code       (hashes /   IOC       Constants
+           Analysis   builtins)   Extractor Fingerprints
 </code></pre>
 <h2>Workflow</h2>
-<ol>
-<li>Launch <code>vanguard</code>.</li>
-<li>Menu → <strong>Investigate sample / ZIP</strong> → paste path, set password if needed → Run.</li>
-<li>Passworded packs (e.g. <code>infected</code>) decrypt into RAM only, then rank, YARA-scan, and deep-dive in the UI.</li>
-</ol>
-<h3>Keys (selection)</h3>
+<pre><code class="language-bash">vanguard /path/to/sample.zip -p infected
+vanguard /path/to/malware.exe --password &quot;&quot;
+vanguard /path/to/sample.zip --deep 1 --disasm-count 8000
+</code></pre>
+<p>Passworded packs (for example <code>infected</code>) decrypt into RAM only, then Vanguard ranks members, scans signatures, and prints triage plus deep-dives to stdout.</p>
 <table>
 <thead>
 <tr>
-<th>Key</th>
-<th>Action</th>
+<th>Flag</th>
+<th>Default</th>
+<th>Meaning</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>↑↓ / j k</td>
-<td>Move / step instructions</td>
+<td><code>--password</code> / <code>-p</code></td>
+<td><code>infected</code></td>
+<td>Password for encrypted ZIP archives</td>
 </tr>
 <tr>
-<td>Enter</td>
-<td>Select / run / deep-dive / follow call</td>
+<td><code>--deep</code></td>
+<td><code>3</code></td>
+<td>Number of top-scoring samples to deep-dive</td>
 </tr>
 <tr>
-<td>d</td>
-<td>Open function-map disasm explorer</td>
+<td><code>--disasm-count</code></td>
+<td><code>4000</code></td>
+<td>Max instructions to decode per deep-dive</td>
 </tr>
 <tr>
-<td>[ ]</td>
-<td>Previous / next recovered function</td>
-</tr>
-<tr>
-<td>c</td>
-<td>Cycle k-means function cluster filter</td>
-</tr>
-<tr>
-<td>b</td>
-<td>Back to ranking (from deep-dive)</td>
-</tr>
-<tr>
-<td>Esc / q</td>
-<td>Back / quit</td>
+<td><code>--min-deep-score</code></td>
+<td><code>70</code></td>
+<td>Minimum triage score required for a deep-dive</td>
 </tr>
 </tbody>
 </table>
 <h2>Containment</h2>
 <ul>
-<li><strong>Static-only</strong> — nothing is executed on the host.</li>
-<li>ZIP members stay in process memory; never written as runnable files.</li>
+<li><strong>Static-only.</strong> Nothing is executed on the host.</li>
+<li>ZIP members stay in process memory. Never written as runnable files.</li>
 <li>Dynamic analysis (if added later) would use a real microVM, not host exec.</li>
 </ul>
 <h2>Status</h2>
-<p>Public Rust TUI. Build with <code>cargo build --release</code> and install the <code>vanguard</code> binary. MIT licensed.</p>
+<p>Public Rust CLI. Build with <code>cargo build --release</code> and install the <code>vanguard</code> binary. MIT licensed.</p>
