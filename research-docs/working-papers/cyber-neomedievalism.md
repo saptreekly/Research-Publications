@@ -56,15 +56,17 @@ For this paper, Rid does two jobs. The first, he blocks alarmist dependent varia
 
 ### Farrell and Newman: Weaponized interdependence
 
-This is the mechanism paper for the infrastructures I keep circling. Farrell and Newman argue that complex systems tend toward asymmetric topologies in which some nodes become hubs. That topography creates the potential for weaponized interdependence. States with authority over central nodes through which money, goods, and information travel are “uniquely positioned to impose costs on others.”[^farrell-45]
+The concept of weaponized interdependence is the mechanism for the infrastructures I keep circling. Farrell and Newman argue that complex systems tend toward asymmetric topologies in which some nodes become hubs. That topography creates the potential for weaponized interdependence. States with authority over central nodes through which money, goods, and information travel are “uniquely positioned to impose costs on others.”[^farrell-45]
 
-They separate that claim from two older stories: market size alone and bilateral dependence alone. Global networks, they argue, let some states coerce “on the level of the network itself.”[^farrell-54] The two channels are the panopticon effect and the chokepoint effect.
+They also argue that this is not the older dependence story in new clothes. It is not enough that one state has a large market, or that one partner depends on another more than the reverse. What matters is position inside an asymmetric network. Global networks, they argue, let some states coerce “on the level of the network itself.”[^farrell-54] The two channels are the panopticon effect and the chokepoint effect.
 
 On the panopticon effect, they recover Bentham’s architectural point and put it inside network hubs:
 
 > Jeremy Bentham’s conception of the Panopticon was precisely an architectural arrangement in which one or a few central actors could readily observe the activities of others. States that have physical access to or jurisdiction over hub nodes can use this influence to obtain information passing through the hubs. Because hubs are crucial intermediaries in decentralized communications structures, it becomes difficult—or even effectively impossible—for other actors to avoid these hubs while communicating.[^farrell-55]
 
 Under that effect, “states’ direct surveillance abilities may be radically outstripped by their capacity to tap into the information-gathering and information-generating activities of networks of private actors.”[^farrell-55-info] Privileged access thus becomes an informational advantage in an otherwise weak global information environment.
+
+For New Zealand, that lands as an alliance claim rather than a hub-ownership claim. NZ does not need to own the densest commercial or financial hubs to benefit from panoptic effects if it sits inside arrangements that share the informational proceeds of hubs controlled elsewhere. Five Eyes is the clearest example of that posture. The provisional claim here is that NZ’s advantage is long-lasting privileged access through trusted partners with hub jurisdiction, not unilateral surveillance capacity on the scale of those hubs. The corresponding risk has the same topology: access that depends on alliance trust and partner institutions can be shaped, delayed, or conditioned by those partners and by the hubs they can reach.
 
 The chokepoint effect is the exclusion half of the same topology:
 
@@ -76,30 +78,32 @@ For this paper, their framework does what Bentham alone cannot. It turns panopti
 
 ### SWIFT as Farrell and Newman’s bridging case
 
-SWIFT is not “the internet.” Farrell and Newman use it as the cleanest demonstration that both effects can run through one hub. “SWIFT demonstrates how both the panopticon and chokepoint effects can work in global networks.” Because it sits at the centre of international payments, it both generates transaction data and enables those transactions to occur. Over time, key states, especially the United States, “gradually transformed the repository into a surveillance asset and financial sector dependence into a tool of asymmetric interdependence.”[^farrell-65]
+SWIFT is not “the internet.” It sits in the post–Bretton Woods, dollar-centred payments order: a network hub, not a formal monetary institution, which is why panopticon and chokepoint effects can run through it. Farrell and Newman use it as the cleanest example of that dual use. “SWIFT demonstrates how both the panopticon and chokepoint effects can work in global networks.” Because it sits at the centre of international payments, it both generates transaction data and enables those transactions to occur. Over time, key states, especially the United States, “gradually transformed the repository into a surveillance asset and financial sector dependence into a tool of asymmetric interdependence.”[^farrell-65]
 
-The panoptic side is the post-9/11 Terrorist Finance Tracking Program story. SWIFT had earlier refused FATF pressure. After September 11, U.S. Treasury concluded it could compel data, helped by SWIFT’s mirrored records in Virginia. Farrell and Newman quote Juan Zarate on what that access bought. A way to uncover financial links that could expose plots or support networks.[^farrell-66] They summarise the European compromise bluntly. After the fight over civil liberties, the dominant EU coalition “quietly approved of the U.S. use of SWIFT to create a financial data panopticon, so long as the United States was prepared to share the proceeds.”[^farrell-66-pan]
+The panoptic side is the post-9/11 Terrorist Finance Tracking Program story. SWIFT had earlier refused pressure from the Financial Action Task Force (FATF). After September 11, the U.S. Treasury concluded it could compel data, helped by SWIFT’s mirrored records in Virginia. Farrell and Newman quote Juan Zarate on what that access bought, a way to uncover financial links that could expose plots or support networks.[^farrell-66] They summarise the European compromise bluntly. After the fight over civil liberties, the dominant EU coalition “quietly approved of the U.S. use of SWIFT to create a financial data panopticon, so long as the United States was prepared to share the proceeds.”[^farrell-66-pan]
 
-The chokepoint side is exclusion. They cite Joanna Caytas’s claim that disconnection from SWIFT is “the financial market equivalent of crossing the nuclear threshold” because of vital importance and near-complete lack of efficient alternatives.[^farrell-67] Iran is their case. U.S. and European pressure forced SWIFT to cut Iranian institutions. Later, when Washington threatened to re-weaponise SWIFT after leaving the JCPOA, Europe resisted and Iran bargaining made restoration of access a central demand.[^farrell-69]
+The chokepoint side is exclusion. They cite Joanna Caytas’s claim that disconnection from SWIFT is “the financial market equivalent of crossing the nuclear threshold” because of vital importance and near-complete lack of alternatives.[^farrell-67] Iran is their case. U.S. and European pressure forced SWIFT to cut Iranian institutions. Later, when Washington threatened to re-weaponise SWIFT after leaving the JCPOA, Europe resisted and Iran bargaining made restoration of access a central demand.[^farrell-69]
 
 Their theoretical punchline is what I need for the cyber comparison.
 
 > Exactly because the SWIFT organization was a crucial hub in global economic exchange, it allowed those states that had jurisdictional sway over it to employ the panopticon and chokepoint effects, just as our framework expects.[^farrell-69-hub]
 
-I want SWIFT as a comparative case, not a cyber example pretending to be one. Cloud, certificate ecosystems, mobile OS stores, and major identity providers are candidate analogues. They are only good analogues if they show the same combination. Hard exit. Asymmetric visibility. Hub jurisdiction. Coercive leverage through access or denial.
+I want SWIFT as a comparative case, not a cyber example pretending to be one. Cloud, certificate ecosystems, mobile OS stores, and major identity providers are candidate analogues. They are only good analogues if they show the same combination of hard exits, asymmetric visibility, hub jurisdiction, and coercive leverage through access or denial.
 
-| Feature | SWIFT-like chokepoint | Cyber / tech analogue (candidates) |
-| --- | --- | --- |
-| Hard to exit | Membership / correspondent dependence | Major cloud, mobile OS, app stores, certificate ecosystems |
-| Asymmetric visibility | Message metadata and compliance rails | Platform telemetry, CDN logs, identity providers |
-| Governance beyond one state | Cooperative + political pressure | ICANN/IANA, root/DNS politics, hyperscaler ToS + local law |
-| Coercive leverage | Exclusion / restricted access | Account bans, cert distrust, upstream filtering, payment-rail cutoffs |
+
+| Feature                     | SWIFT-like chokepoint                 | Cyber / tech analogue (candidates)                                    |
+| --------------------------- | ------------------------------------- | --------------------------------------------------------------------- |
+| Hard to exit                | Membership / correspondent dependence | Major cloud, mobile OS, app stores, certificate ecosystems            |
+| Asymmetric visibility       | Message metadata and compliance rails | Platform telemetry, CDN logs, identity providers                      |
+| Governance beyond one state | Cooperative + political pressure      | ICANN/IANA, root/DNS politics, hyperscaler ToS + local law            |
+| Coercive leverage           | Exclusion / restricted access         | Account bans, cert distrust, upstream filtering, payment-rail cutoffs |
+
 
 The analytic gain is this. Bull describes the shape of overlapping authority. Farrell and Newman describe how some hubs coerce through panoptic visibility and chokepoint exclusion. Rid describes the character of many cyber offenses that travel across that terrain as sabotage, espionage, and subversion rather than war.
 
 ## What I think the “so what” might become
 
-For NZ and middle-power practice, still drafting. Sovereign control of the full stack is often fantasy, so assurance under fragmented authority is the real craft. Dependence on hubs that can be weaponised (cloud, identity, update channels, payment and messaging adjacencies) is a strategic fact, not only a procurement detail. Defensive capacity should assume partial visibility and partial control through detection, resilience, trusted supplier management, and alliance sharing. Analytic products should separate metaphor from institution. If a claim cannot name a hub, a jurisdiction, an incentive, or an exit cost, it is not ready. If it needs “cyber war” to sound urgent, it probably needs Rid’s categories instead.
+For NZ and middle-powers in practice (still drafting), sovereign control of the full stack is not possible, so assurances under fragmented authority is the real game. Dependence on hubs that can be weaponised (cloud, identity, update channels, payment and messaging adjacencies) is a strategic reality, not a procurement detail. Defensive capacity should assume partial visibility and partial control through detection, resilience, trusted supplier management, and alliance sharing. Analytic products should separate metaphor from institution. If a claim cannot name a hub, a jurisdiction, an incentive, or an exit cost, it is not ready. If it needs “cyber war” to sound urgent, it probably needs Rid’s categories instead.
 
 ## Still to write
 
@@ -108,6 +112,8 @@ I still need a short literature situating against platform sovereignty, polycent
 ## How to read this page
 
 If you are reviewing my portfolio, this working paper shows an analytic lane I am building, not a completed judgment. For finished work, start with the WannaCry or Conti reports and the Master of Strategic Studies writing sample.
+
+## References
 
 [^bull-245]: Hedley Bull, *The Anarchical Society: A Study of Order in World Politics* (London: Macmillan, 1977), 245.
 [^bull-245-246]: Bull, *The Anarchical Society*, 245–246.
