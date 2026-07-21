@@ -5,7 +5,14 @@ use crate::utils::{is_html_content, markdown::rendered_html_path, resolve_asset_
 #[component]
 pub fn TechnicalDocument(src: &'static str) -> impl IntoView {
     let content = create_resource(move || src, |src| async move {
-        let url = resolve_asset_url(&rendered_html_path(src));
+        // GitHub Pages / Fastly cache rendered HTML (~10m). Trunk hashes JS/CSS,
+        // so a new deploy can show a fresh shell while this fetch stays stale.
+        let bust = option_env!("ASSET_CACHE_BUST").unwrap_or("0");
+        let url = format!(
+            "{}?v={}",
+            resolve_asset_url(&rendered_html_path(src)),
+            bust
+        );
         let response = match gloo_net::http::Request::get(&url).send().await {
             Ok(response) => response,
             Err(_) => return Err("Unable to reach document source.".to_string()),

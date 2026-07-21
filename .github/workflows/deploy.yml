@@ -55,6 +55,8 @@ jobs:
       - name: Build (release WASM)
         env:
           WEB3FORMS_ACCESS_KEY: ${{ secrets.WEB3FORMS_ACCESS_KEY }}
+          # Bust browser/CDN cache for static/rendered/*.html fetches.
+          ASSET_CACHE_BUST: ${{ github.sha }}
         run: trunk build --release --public-url /Research-Publications/
 
       - name: Prune unused deploy assets
