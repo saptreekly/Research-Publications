@@ -51,8 +51,8 @@ ROUTES: list[dict[str, str]] = [
     },
     {
         "path": "/research/cyber-neomedievalism",
-        "title": "Cyber neo-medievalism WIP | Jack Weekly",
-        "description": "Working paper · Hedley Bull, Thomas Rid, Farrell and Newman on weaponized interdependence, and SWIFT",
+        "title": "Cyber neo-medievalism | Jack Weekly",
+        "description": "Flagship working paper · Hedley Bull, Thomas Rid, Farrell and Newman on weaponized interdependence, SWIFT, and middle-power assurance",
     },
     {
         "path": "/research/thesis-summary",
@@ -405,11 +405,11 @@ def site_nav_html() -> str:
             </ul>
             <h2>Research &amp; Writing</h2>
             <ul>
-                <li><a href="/Research-Publications/research/lovely-malware">LovelyMalware Analysis Report</a></li>
+                <li><a href="/Research-Publications/research/cyber-neomedievalism">Cyber Neo-Medievalism (Working Paper · Flagship)</a></li>
                 <li><a href="/Research-Publications/research/wannacry">WannaCry Vanguard Stress Test</a></li>
-                <li><a href="/Research-Publications/research/cyber-neomedievalism">Cyber Neo-Medievalism (Working Paper)</a></li>
                 <li><a href="/Research-Publications/research/conti-locker">Conti Locker v2 Analysis Report</a></li>
                 <li><a href="/Research-Publications/research/thesis-summary">5th-Gen Fighter Exports as Strategic Competition</a></li>
+                <li><a href="/Research-Publications/research/lovely-malware">LovelyMalware Analysis Report</a></li>
             </ul>
         </nav>""".strip()
 

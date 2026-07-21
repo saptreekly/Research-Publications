@@ -14,47 +14,45 @@ fn project_tag(slug: &str) -> &'static str {
 pub fn HomePage() -> impl IntoView {
     view! {
         <div class="home-page">
-            <header class="home-hero">
-                <p class="home-eyebrow">"Dual US & NZ citizen · Wellington, New Zealand"</p>
-                <h2 class="home-title">"All-source analysis with technical depth."</h2>
-                <p class="home-lead">
-                    "I'm Jack Weekly. I hold a Master of Strategic Studies (with Merit) focused on Asia-Pacific security "
-                    "competition, and my technical work spans cyber forensics, security engineering, and applied cryptography. "
-                    "I use cyber as technical proof of tradecraft. The portfolio is built around finished analytic writing, "
-                    "defensive tooling, and research that connects policy to operational reality for information-assurance "
-                    "and cyber-defence environments."
-                </p>
-                <p class="home-lead home-lead-posture">
-                    "I am early in my career. I ship work to be scrutinised, not to claim seniority. "
-                    "I am looking for an environment where analytic standards and mentorship are high."
+            <header class="home-flagship" id="flagship" aria-labelledby="flagship-title">
+                <p class="home-flagship-kicker">"Flagship working paper · WIP"</p>
+                <h2 id="flagship-title" class="home-flagship-title">
+                    "Cyber, neo-medievalism, and panoptic rails"
+                </h2>
+                <p class="home-flagship-deck">
+                    "Overlapping authority in cyberspace. Bull, Rid, and Farrell and Newman on weaponized interdependence, "
+                    "with SWIFT as a comparative hub and New Zealand as a middle-power assurance problem."
                 </p>
                 <div class="home-hero-actions">
-                    <a href=start_here_href() class="home-hero-action home-hero-action-primary">"Start here for reviewers"</a>
-                    <a href=projects_index_href() class="home-hero-action">"View engineering projects"</a>
+                    <A href=report_href("cyber-neomedievalism") class="home-hero-action home-hero-action-primary">
+                        "Read the working paper"
+                    </A>
+                    <a href=start_here_href() class="home-hero-action">"Then the supporting samples"</a>
                 </div>
-                <ul class="home-highlights" aria-label="Core focus areas">
-                    <li class="home-highlight">
-                        <span class="home-highlight-label">"Analysis"</span>
-                        <span class="home-highlight-text">"Regional security assessment, coercive statecraft, and structured analytic writing"</span>
-                    </li>
-                    <li class="home-highlight">
-                        <span class="home-highlight-label">"Engineering"</span>
-                        <span class="home-highlight-text">"Defensive security tooling; cyber work as proof of method, not a job title claim"</span>
-                    </li>
-                    <li class="home-highlight">
-                        <span class="home-highlight-label">"Research"</span>
-                        <span class="home-highlight-text">"Asia-Pacific competition, strategic studies, and applied cryptography foundations"</span>
-                    </li>
-                </ul>
+                <p class="home-flagship-note">
+                    "Unfinished on purpose. This is the centre of the portfolio — the analytic lane at full stretch, "
+                    "not a final judgment."
+                </p>
             </header>
+
+            <section class="home-section home-about" aria-labelledby="about-heading">
+                <div class="home-section-header">
+                    <p class="home-section-kicker">"Who this is"</p>
+                    <h2 id="about-heading" class="home-section-title">"Jack Weekly"</h2>
+                    <p class="home-section-desc">
+                        "Dual US & NZ citizen · Wellington. Master of Strategic Studies (with Merit). "
+                        "Technical work in cyber forensics, security engineering, and applied cryptography as proof of method. "
+                        "Early career. I ship work to be scrutinised, not to claim seniority."
+                    </p>
+                </div>
+            </section>
 
             <section class="home-section home-start-section" id="start-here" aria-labelledby="start-here-heading">
                 <div class="home-section-header">
                     <p class="home-section-kicker">"For reviewers"</p>
-                    <h2 id="start-here-heading" class="home-section-title">"Start here"</h2>
+                    <h2 id="start-here-heading" class="home-section-title">"After the paper"</h2>
                     <p class="home-section-desc">
-                        "Four samples that show how I work: technical method, strategic framing, and tooling. "
-                        "The working paper is unfinished on purpose. Read it for the analytic lane, not as a final judgment."
+                        "Three samples that show technical method and tooling beside the flagship analytic piece."
                     </p>
                 </div>
                 <ol class="home-start-list">
@@ -67,17 +65,6 @@ pub fn HomePage() -> impl IntoView {
                                 "and an honest account of where the tool still fails."
                             </span>
                             <span class="home-start-cta">"Open analysis sample →"</span>
-                        </A>
-                    </li>
-                    <li class="home-start-item">
-                        <A href=report_href("cyber-neomedievalism") class="home-start-link">
-                            <span class="home-start-track">"Strategic analysis · WIP"</span>
-                            <span class="home-start-title">"Cyber, neo-medievalism, and panoptic rails"</span>
-                            <span class="home-start-body">
-                                "Working paper joining Hedley Bull, Thomas Rid, and Farrell and Newman on weaponized interdependence "
-                                "to SWIFT as a comparative hub. Scaffolding for middle-power assurance under overlapping authority."
-                            </span>
-                            <span class="home-start-cta">"Open working paper →"</span>
                         </A>
                     </li>
                     <li class="home-start-item">
@@ -188,31 +175,6 @@ pub fn HomePage() -> impl IntoView {
                 <p class="home-section-footer">
                     <A href=malware_reports_index_href() class="home-start-footer-link">"All malware reports →"</A>
                 </p>
-            </section>
-
-            <section class="home-section" id="working-papers-wip" aria-labelledby="working-papers-wip-heading">
-                <div class="home-section-header">
-                    <p class="home-section-kicker">"Under construction"</p>
-                    <h2 id="working-papers-wip-heading" class="home-section-title">"Working papers in progress"</h2>
-                    <p class="home-section-desc">
-                        "Strategic analysis that is not finished yet. "
-                        "I am publishing the scaffolding early so reviewers can see the analytic lane beside the tooling."
-                    </p>
-                </div>
-                <div class="home-card-grid">
-                    <A href=report_href("cyber-neomedievalism") class="home-card home-card-link home-card-wip">
-                        <div class="home-card-meta">
-                            <span class="home-tag">"Working paper"</span>
-                            <time class="home-date" datetime="2026-07">"Jul 2026"</time>
-                        </div>
-                        <h3 class="home-card-title">"Cyber, neo-medievalism, and panoptic rails"</h3>
-                        <p class="home-card-body">
-                            "Draft analysis joining Hedley Bull, Thomas Rid, and Farrell and Newman on weaponized interdependence "
-                            "to SWIFT as a comparative hub for panoptic visibility, chokepoint exclusion, and sub-war coercion."
-                        </p>
-                        <span class="home-card-cta">"OPEN WORKING PAPER →"</span>
-                    </A>
-                </div>
             </section>
 
             <section class="home-section home-section-featured" id="projects" aria-labelledby="projects-heading">
