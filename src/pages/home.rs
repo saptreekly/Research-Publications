@@ -18,8 +18,8 @@ pub fn HomePage() -> impl IntoView {
                 <p class="home-eyebrow">"Dual US & NZ citizen · Wellington, New Zealand"</p>
                 <h2 class="home-title">"All-source analysis with technical depth."</h2>
                 <p class="home-lead">
-                    "I'm Jack Weekly. My training is in strategic studies and Asia-Pacific security competition; "
-                    "my technical work spans cyber forensics, security engineering, and applied cryptography. "
+                    "I'm Jack Weekly. I hold a Master of Strategic Studies (with Merit) focused on Asia-Pacific security "
+                    "competition, and my technical work spans cyber forensics, security engineering, and applied cryptography. "
                     "I use cyber as technical proof of tradecraft. The portfolio is built around finished analytic writing, "
                     "defensive tooling, and research that connects policy to operational reality for information-assurance "
                     "and cyber-defence environments."
@@ -109,7 +109,7 @@ pub fn HomePage() -> impl IntoView {
                     " · "
                     <A href=report_href("conti-locker") class="home-start-footer-link">"Conti analysis"</A>
                     " · "
-                    <A href=report_href("cyber-neomedievalism") class="home-start-footer-link">"WIP briefs"</A>
+                    <A href=report_href("cyber-neomedievalism") class="home-start-footer-link">"WIP working papers"</A>
                     " · "
                     <A href=curriculum_href() class="home-start-footer-link">"Crypto curriculum"</A>
                 </p>
@@ -190,27 +190,27 @@ pub fn HomePage() -> impl IntoView {
                 </p>
             </section>
 
-            <section class="home-section" id="briefs-wip" aria-labelledby="briefs-wip-heading">
+            <section class="home-section" id="working-papers-wip" aria-labelledby="working-papers-wip-heading">
                 <div class="home-section-header">
                     <p class="home-section-kicker">"Under construction"</p>
-                    <h2 id="briefs-wip-heading" class="home-section-title">"Analytic briefs in progress"</h2>
+                    <h2 id="working-papers-wip-heading" class="home-section-title">"Working papers in progress"</h2>
                     <p class="home-section-desc">
-                        "Strategic and sociological notes that are not finished judgments yet. "
-                        "I am publishing the scaffolding early so reviewers can see the non-tooling lane I am building."
+                        "Strategic analysis that is not finished yet. "
+                        "I am publishing the scaffolding early so reviewers can see the analytic lane beside the tooling."
                     </p>
                 </div>
                 <div class="home-card-grid">
                     <A href=report_href("cyber-neomedievalism") class="home-card home-card-link home-card-wip">
                         <div class="home-card-meta">
-                            <span class="home-tag">"Work in progress"</span>
+                            <span class="home-tag">"Working paper"</span>
                             <time class="home-date" datetime="2026-07">"Jul 2026"</time>
                         </div>
                         <h3 class="home-card-title">"Cyber, neo-medievalism, and panoptic rails"</h3>
                         <p class="home-card-body">
-                            "Draft notes joining Hedley Bull's neo-medievalism to cyberspace, Bentham/Foucault's panopticon, "
+                            "Draft analysis joining Hedley Bull's neo-medievalism to cyberspace, Bentham and Foucault on the panopticon, "
                             "and SWIFT as a comparative chokepoint for overlapping authority and asymmetric visibility."
                         </p>
-                        <span class="home-card-cta">"OPEN WIP NOTES →"</span>
+                        <span class="home-card-cta">"OPEN WORKING PAPER →"</span>
                     </A>
                 </div>
             </section>
@@ -321,7 +321,7 @@ pub fn HomePage() -> impl IntoView {
                     <p class="home-section-kicker">"Analytic foundation"</p>
                     <h2 id="education-heading" class="home-section-title">"Education"</h2>
                     <p class="home-section-desc">
-                        "Graduate training in strategic competition and statecraft, paired with undergraduate work in international business."
+                        "A Master of Strategic Studies with Merit in strategic competition and statecraft, paired with undergraduate work in international business."
                     </p>
                 </div>
                 <ul class="home-cred-list">

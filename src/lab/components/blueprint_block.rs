@@ -85,12 +85,12 @@ pub fn BlueprintBlock(
                 <textarea
                     node_ref=textarea_ref
                     class="lab-code-editor language-julia"
-                    prop:value=move || code.get()
                     on:keydown=move |ev| {
                         if let Some(textarea) = textarea_ref.get() {
                             if crate::lab::editor_keys::handle_keydown(&ev, &textarea) {
                                 ev.prevent_default();
                                 ev.stop_propagation();
+                                ev.stop_immediate_propagation();
                                 set_blocks.update(|all| {
                                     if let Some(block) = all.get_mut(index) {
                                         if let BlockKind::Blueprint { code, .. } = &mut block.kind {

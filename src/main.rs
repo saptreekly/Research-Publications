@@ -13,7 +13,6 @@ use research_publications::pages::module::ModulePage;
 use research_publications::pages::project::ProjectPage;
 use research_publications::pages::report::ReportPage;
 use research_publications::theme::provide_theme;
-use research_publications::APP_BASE;
 
 use routes::{
     LabRoute, MalwareTrafficEntryRoute, MalwareTrafficIndexRoute, SituationMonitorRoute,
@@ -35,7 +34,11 @@ fn App() -> impl IntoView {
     view! {
         <Link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;700&family=IBM+Plex+Mono:wght@400&display=swap" rel="stylesheet" />
 
-        <Router base=APP_BASE trailing_slash=TrailingSlash::Redirect>
+        // Route paths already include APP_BASE. Do not also set Router `base=APP_BASE`:
+        // TrailingSlash::Redirect resolves through that base and doubles the prefix
+        // (e.g. /Research-Publications/Research-Publications/...), which leaves only
+        // the animated background after a deep-link refresh on GitHub Pages.
+        <Router trailing_slash=TrailingSlash::Redirect>
             <AnimatedBackground />
             <SeoHead />
             <Routes>

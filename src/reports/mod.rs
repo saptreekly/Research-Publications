@@ -13,10 +13,10 @@ pub const REPORTS: &[ReportMeta] = &[
     ReportMeta {
         slug: "cyber-neomedievalism",
         title: "Cyber, neo-medievalism, and panoptic rails",
-        subtitle: "Work in progress · Bull, panoptic infrastructures, and SWIFT as a comparative chokepoint",
-        tag: "Work in progress",
+        subtitle: "Working paper · Bull, panoptic infrastructures, and SWIFT as a comparative chokepoint",
+        tag: "Working paper",
         date: "2026-07",
-        src: "research-docs/briefs/cyber-neomedievalism.md",
+        src: "research-docs/working-papers/cyber-neomedievalism.md",
         sigma_src: None,
         ioc_src: None,
     },

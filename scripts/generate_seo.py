@@ -52,7 +52,7 @@ ROUTES: list[dict[str, str]] = [
     {
         "path": "/research/cyber-neomedievalism",
         "title": "Cyber neo-medievalism WIP | Jack Weekly",
-        "description": "Work in progress · Hedley Bull, panoptic infrastructures, and SWIFT as a comparative chokepoint",
+        "description": "Working paper · Hedley Bull, panoptic infrastructures, and SWIFT as a comparative chokepoint",
     },
     {
         "path": "/research/thesis-summary",
@@ -147,7 +147,7 @@ ROUTE_CONTENT: dict[str, list[str]] = {
         "research-docs/reports/wannacry-ioc.md",
         "research-docs/reports/wannacry-sigma.md",
     ],
-    "/research/cyber-neomedievalism": ["research-docs/briefs/cyber-neomedievalism.md"],
+    "/research/cyber-neomedievalism": ["research-docs/working-papers/cyber-neomedievalism.md"],
     "/research/thesis-summary": ["research-docs/thesis-summary.md"],
     "/projects/casre": ["research-docs/projects/casre.md"],
     "/projects/vanguard-re": ["research-docs/projects/vanguard-re.md"],
@@ -407,7 +407,7 @@ def site_nav_html() -> str:
             <ul>
                 <li><a href="/Research-Publications/research/lovely-malware">LovelyMalware Analysis Report</a></li>
                 <li><a href="/Research-Publications/research/wannacry">WannaCry Vanguard Stress Test</a></li>
-                <li><a href="/Research-Publications/research/cyber-neomedievalism">Cyber Neo-Medievalism (WIP)</a></li>
+                <li><a href="/Research-Publications/research/cyber-neomedievalism">Cyber Neo-Medievalism (Working Paper)</a></li>
                 <li><a href="/Research-Publications/research/conti-locker">Conti Locker v2 Analysis Report</a></li>
                 <li><a href="/Research-Publications/research/thesis-summary">5th-Gen Fighter Exports as Strategic Competition</a></li>
             </ul>

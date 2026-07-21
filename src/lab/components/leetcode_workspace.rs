@@ -197,8 +197,11 @@ fn LeetCodeCodePanel(
     let textarea_ref = create_node_ref::<html::Textarea>();
 
     create_effect(move |_| {
-        let _ = code.get();
+        let value = code.get();
         if let Some(textarea) = textarea_ref.get() {
+            if textarea.value() != value {
+                textarea.set_value(&value);
+            }
             editor::init(&textarea);
             editor::refresh(&textarea);
         }
@@ -218,6 +221,7 @@ fn LeetCodeCodePanel(
                 if crate::lab::editor_keys::handle_keydown(&event, &textarea) {
                     event.prevent_default();
                     event.stop_propagation();
+                    event.stop_immediate_propagation();
                     code.set(textarea.value());
                     crate::lab::editor::refresh(&textarea);
                 }
@@ -250,7 +254,6 @@ fn LeetCodeCodePanel(
                 <textarea
                     node_ref=textarea_ref
                     class="lab-code-editor language-julia"
-                    prop:value=move || code.get()
                     tabindex="0"
                     on:keydown=handle_keydown
                     on:input=move |ev| {
