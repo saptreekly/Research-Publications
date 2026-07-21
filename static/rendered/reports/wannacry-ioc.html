@@ -1,0 +1,195 @@
+<p>Actionable indicators from the WannaCry Vanguard stress-test. Prefer the dropper hash and Tor onions for hunting. The recovered ZIP password is a static unpacking artifact, not a live campaign secret by itself.</p>
+<h2>File indicators</h2>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Value</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Dropper SHA256</td>
+<td><code>ed01ebfbc9eb5bbea545af4d01bf5f1071661840480439c6e5babe8e080e41aa</code></td>
+<td>Classic WannaCry sample</td>
+</tr>
+<tr>
+<td>Dropper MD5</td>
+<td><code>84c82835a5d21bbcf75a61706d8ab549</code></td>
+<td></td>
+</tr>
+<tr>
+<td>ImpHash</td>
+<td><code>68f013d7437aa653a8a98a05807afeb1</code></td>
+<td>VT pivot</td>
+</tr>
+<tr>
+<td><code>u.wnry</code> SHA256</td>
+<td><code>b9c5d4339809e0ad9a00d4d3dd26fdf44a32819a54abf846bb9b560d81391c25</code></td>
+<td>Encryptor / ransom UI</td>
+</tr>
+<tr>
+<td><code>u.wnry</code> MD5</td>
+<td><code>7bf2b57f2a205768755c07f238fb32cc</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>taskse.exe</code> SHA256</td>
+<td><code>2ca2d550e603d74dedda03156023135b38da3630cb014e3d00b1263358c5f00d</code></td>
+<td>Helper</td>
+</tr>
+<tr>
+<td>Embedded archive password</td>
+<td><code>WNcry@2ol7</code></td>
+<td>Recovered by Vanguard from sample strings</td>
+</tr>
+<tr>
+<td>Helper / drop names</td>
+<td><code>tasksche.exe</code>, <code>taskdl.exe</code>, <code>taskse.exe</code></td>
+<td></td>
+</tr>
+<tr>
+<td>Config / payload names</td>
+<td><code>b.wnry</code>, <code>c.wnry</code>, <code>r.wnry</code>, <code>s.wnry</code>, <code>t.wnry</code>, <code>u.wnry</code></td>
+<td></td>
+</tr>
+<tr>
+<td>Mutex</td>
+<td><code>Global\MsWinZonesCacheCounterMutexA</code></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2>Network indicators</h2>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Value</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Onion</td>
+<td><code>57g7spgrzlojinas.onion</code></td>
+<td>From <code>c.wnry</code></td>
+</tr>
+<tr>
+<td>Onion</td>
+<td><code>76jdd2ir2embyv47.onion</code></td>
+<td>From <code>c.wnry</code></td>
+</tr>
+<tr>
+<td>Onion</td>
+<td><code>cwwnhwhlz52maqm7.onion</code></td>
+<td>From <code>c.wnry</code></td>
+</tr>
+<tr>
+<td>Onion</td>
+<td><code>gx7ekbenv2riucmf.onion</code></td>
+<td>From <code>c.wnry</code></td>
+</tr>
+<tr>
+<td>Onion</td>
+<td><code>xxlvbrloxvriy2c5.onion</code></td>
+<td>From <code>c.wnry</code></td>
+</tr>
+<tr>
+<td>URL</td>
+<td><code>https://dist.torproject.org/torbrowser/6.5.1/tor-win32-0.2.9.10.zip</code></td>
+<td>Tor Browser fetch helper</td>
+</tr>
+<tr>
+<td>URL</td>
+<td><code>http://www.btcfrog.com/qr/bitcoinPNG.php?address=%s</code></td>
+<td>Payment QR helper</td>
+</tr>
+<tr>
+<td>BTC</td>
+<td><code>115p7UMMngoj1pMvkpHijcRdfJNXj6LrLn</code></td>
+<td>Ransom wallet</td>
+</tr>
+<tr>
+<td>BTC</td>
+<td><code>12t9YDPgwueZ9NyMgw519p7AA8isjr6SMw</code></td>
+<td>Ransom wallet</td>
+</tr>
+<tr>
+<td>BTC</td>
+<td><code>13AM4VW2dhxYgXeQepoHkHSQuy6NgaEb94</code></td>
+<td>Ransom wallet</td>
+</tr>
+</tbody>
+</table>
+<h2>Host and behavioral indicators</h2>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Value</th>
+<th>MITRE</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Service install</td>
+<td><code>CreateServiceA</code> / <code>StartServiceA</code></td>
+<td>T1543.003</td>
+</tr>
+<tr>
+<td>File drop</td>
+<td><code>CopyFileA</code>, <code>CreateFileA</code>, <code>WriteFile</code></td>
+<td>T1105 / T1486</td>
+</tr>
+<tr>
+<td>Process launch</td>
+<td><code>CreateProcessA</code>, <code>cmd.exe /c &quot;%s&quot;</code></td>
+<td>T1059.003</td>
+</tr>
+<tr>
+<td>Attribute / path abuse</td>
+<td><code>SetFileAttributesW</code>, Windows directory staging</td>
+<td>T1222</td>
+</tr>
+<tr>
+<td>Ransom UI download helper</td>
+<td><code>URLDownloadToFileA</code> in <code>u.wnry</code></td>
+<td>T1105</td>
+</tr>
+<tr>
+<td>Encrypted extension family</td>
+<td><code>.wnry</code> resource/payload naming</td>
+<td>T1486</td>
+</tr>
+</tbody>
+</table>
+<h2>Cryptographic indicators</h2>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Value</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>AES</td>
+<td>Forward S-box fingerprint (conf 95)</td>
+<td>Dropper image</td>
+</tr>
+<tr>
+<td>Inner ZIP password</td>
+<td><code>WNcry@2ol7</code></td>
+<td>Unlocks <code>embedded-1.zip</code></td>
+</tr>
+</tbody>
+</table>
+<h2>Triage caveats from this Vanguard run</h2>
+<ul>
+<li>Truncated Microsoft schema URL fragments and <code>osoft.com</code> appeared as low-value IOC noise. Ignore them.</li>
+<li><code>taskdl.exe</code> scored 0 / benign in Vanguard. Do not treat that score as a clean bill of health for WannaCry helpers.</li>
+<li>Language-pack <code>m_*.wnry</code> members scored 35 and cluttered ranking. They are ransom note resources, not secondary payloads.</li>
+</ul>

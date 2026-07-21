@@ -45,6 +45,11 @@ ROUTES: list[dict[str, str]] = [
         "description": "Malware analysis report · leaked Conti ransomware build tree · Vanguard-RE static analysis",
     },
     {
+        "path": "/research/wannacry",
+        "title": "WannaCry | Jack Weekly",
+        "description": "Malware analysis report · Vanguard-RE stress test · embedded ZIP unlock · Tor onion and BTC IOCs",
+    },
+    {
         "path": "/research/thesis-summary",
         "title": "5th-Gen Fighter Exports as Strategic Competition | Jack Weekly",
         "description": "Strategic studies writing sample · Victoria University of Wellington · MStrat with Merit · Strategic analysis",
@@ -57,7 +62,7 @@ ROUTES: list[dict[str, str]] = [
     {
         "path": "/projects/vanguard-re",
         "title": "Vanguard-RE | Jack Weekly",
-        "description": "Memory-safe static malware triage with an interactive TUI · Rust",
+        "description": "Memory-safe static malware triage from the command line · Rust",
     },
     {
         "path": "/projects/net-honeynet",
@@ -131,6 +136,11 @@ ROUTE_CONTENT: dict[str, list[str]] = {
         "research-docs/reports/conti-locker.md",
         "research-docs/reports/conti-locker-ioc.md",
         "research-docs/reports/conti-locker-sigma.md",
+    ],
+    "/research/wannacry": [
+        "research-docs/reports/wannacry.md",
+        "research-docs/reports/wannacry-ioc.md",
+        "research-docs/reports/wannacry-sigma.md",
     ],
     "/research/thesis-summary": ["research-docs/thesis-summary.md"],
     "/projects/casre": ["research-docs/projects/casre.md"],
@@ -390,6 +400,7 @@ def site_nav_html() -> str:
             <h2>Research &amp; Writing</h2>
             <ul>
                 <li><a href="/Research-Publications/research/lovely-malware">LovelyMalware Analysis Report</a></li>
+                <li><a href="/Research-Publications/research/wannacry">WannaCry Vanguard Stress Test</a></li>
                 <li><a href="/Research-Publications/research/conti-locker">Conti Locker v2 Analysis Report</a></li>
                 <li><a href="/Research-Publications/research/thesis-summary">5th-Gen Fighter Exports as Strategic Competition</a></li>
             </ul>

@@ -235,6 +235,18 @@ pub fn HomePage() -> impl IntoView {
                         </p>
                         <span class="home-card-cta">"READ ESSAY →"</span>
                     </A>
+                    <A href=report_href("wannacry") class="home-card home-card-link">
+                        <div class="home-card-meta">
+                            <span class="home-tag">"Malware analysis"</span>
+                            <time class="home-date" datetime="2026-07">"Jul 2026"</time>
+                        </div>
+                        <h3 class="home-card-title">"WannaCry Vanguard stress test"</h3>
+                        <p class="home-card-body">
+                            "Deep static pass on WannaCry with Vanguard-RE: in-memory embedded ZIP unlock, WNcry@2ol7 recovery, "
+                            "Tor onion / BTC harvest, plus honest failure modes on .NET and ELF scoring."
+                        </p>
+                        <span class="home-card-cta">"READ REPORT →"</span>
+                    </A>
                     <A href=report_href("conti-locker") class="home-card home-card-link">
                         <div class="home-card-meta">
                             <span class="home-tag">"Malware analysis"</span>

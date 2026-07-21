@@ -1,0 +1,379 @@
+<p>I picked WannaCry as the second Vanguard stress test because Conti never exercised the features I claim as unique: carving an encrypted ZIP out of a PE resource section, recovering the ZIP password from the sample's own strings, and promoting Tor onion endpoints out of an unlocked config blob. Conti was a native MSVC decryptor with leaked source. WannaCry is a self-contained dropper that only becomes readable after Vanguard does recursive in-memory unpacking.</p>
+<p>I also ran AgentTesla and Mirai on the same CLI so I could say honestly where Vanguard still collapses.</p>
+<h2>Context</h2>
+<p>After the Conti write-up and the path-first CLI rewrite, I wanted a sample that would punish shallow PE triage. WannaCry is famous for packing its payload as an encrypted ZIP inside <code>.rsrc</code>, protected by the hard-coded password <code>WNcry@2ol7</code>. If Vanguard cannot carve that archive, crack it from strings, and keep every member in RAM, the rest of the analysis is theater.</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Family</td>
+<td>WannaCry / WannaCryptor</td>
+</tr>
+<tr>
+<td>Archive</td>
+<td><code>Ransomware.WannaCry.zip</code></td>
+</tr>
+<tr>
+<td>Dropper SHA256</td>
+<td><code>ed01ebfbc9eb5bbea545af4d01bf5f1071661840480439c6e5babe8e080e41aa</code></td>
+</tr>
+<tr>
+<td>Dropper MD5</td>
+<td><code>84c82835a5d21bbcf75a61706d8ab549</code></td>
+</tr>
+<tr>
+<td>ImpHash</td>
+<td><code>68f013d7437aa653a8a98a05807afeb1</code></td>
+</tr>
+<tr>
+<td>Size</td>
+<td>3,514,368 B</td>
+</tr>
+<tr>
+<td>Format</td>
+<td>PE32 x86 GUI, MSVC</td>
+</tr>
+<tr>
+<td>Members after unlock</td>
+<td>37 (dropper + 36 embedded ZIP members)</td>
+</tr>
+<tr>
+<td>Containment</td>
+<td>Static-only. Passworded outer ZIP and inner ZIP both stayed in process memory</td>
+</tr>
+</tbody>
+</table>
+<p>Contrast samples I ran the same way:</p>
+<table>
+<thead>
+<tr>
+<th>Sample</th>
+<th>Why I included it</th>
+<th>Headline Vanguard result</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>WannaCry</td>
+<td>Embedded-ZIP + onion + BTC stress test</td>
+<td>Dropper 96, unlocked 36 members, password recovered</td>
+</tr>
+<tr>
+<td>AgentTesla</td>
+<td>Managed .NET stealer</td>
+<td>Toolchain <code>.NET</code> conf 100, threat score <strong>0 / benign</strong></td>
+</tr>
+<tr>
+<td>IoT.Mirai</td>
+<td>Source tree + multi-arch ELF bots</td>
+<td>Source files rank at 35. ELF bots score <strong>0 / benign</strong></td>
+</tr>
+</tbody>
+</table>
+<h2>What I set out to do</h2>
+<ol>
+<li>Drive WannaCry through the shipped CLI with a deep budget and no interactive UI.</li>
+<li>Force every containment path: outer ZIP decrypt, PE map, resource carve, inner ZIP password recovery, recursive member triage.</li>
+<li>Measure what Vanguard got for free versus what I still had to interpret.</li>
+<li>Use AgentTesla and Mirai as negative controls for managed and ELF scoring.</li>
+<li>Turn the validated findings into IOCs and detection content, and keep an honest product review.</li>
+</ol>
+<p>Command I actually ran:</p>
+<pre><code class="language-bash">vanguard Ransomware.WannaCry.zip -p infected --deep 5 --disasm-count 8000 --min-deep-score 50
+</code></pre>
+<h2>How I used Vanguard on WannaCry</h2>
+<h3>The unpack that Conti never needed</h3>
+<p>Vanguard collected <strong>37 members</strong> from one passworded outer ZIP. The dropper alone was not the story. Inside the PE, at file offset <code>26062</code>, Vanguard carved <code>embedded-1.zip</code> (span ~3.48 MB), marked every member encrypted, tried plaintext strings from the sample as passwords, and recovered <strong><code>WNcry@2ol7</code></strong>. It then extracted 36 members in memory, including:</p>
+<ul>
+<li><code>u.wnry</code> (encryptor / ransom UI PE, score 87)</li>
+<li><code>taskse.exe</code> / <code>taskdl.exe</code> (helpers)</li>
+<li><code>c.wnry</code> (Tor/onion config)</li>
+<li><code>b.wnry</code>, <code>s.wnry</code>, <code>t.wnry</code>, <code>r.wnry</code></li>
+<li>28 localized <code>msg/m_*.wnry</code> ransom note resources</li>
+</ul>
+<p>That is the strongest single pass I have seen from Vanguard. Conti ranked two debug decryptors. WannaCry made the tool invent a whole second corpus out of one PE and then analyze it.</p>
+<h3>Ranking and PE triage</h3>
+<table>
+<thead>
+<tr>
+<th>Rank</th>
+<th>Member</th>
+<th>Score</th>
+<th>What Vanguard said</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td>dropper <code>.exe</code></td>
+<td>96</td>
+<td>persistence / file_drop / dyn_resolve</td>
+</tr>
+<tr>
+<td>1</td>
+<td><code>u.wnry</code></td>
+<td>87</td>
+<td>exec / file_drop / c2</td>
+</tr>
+<tr>
+<td>2</td>
+<td><code>taskse.exe</code></td>
+<td>47</td>
+<td>dyn_resolve</td>
+</tr>
+<tr>
+<td>…</td>
+<td>language packs, configs</td>
+<td>35</td>
+<td>unrecognized / raw</td>
+</tr>
+<tr>
+<td>last PE</td>
+<td><code>taskdl.exe</code></td>
+<td><strong>0</strong></td>
+<td>benign / low interest</td>
+</tr>
+</tbody>
+</table>
+<p>On the dropper, Vanguard got the structural story right before I touched any deep-dive pane:</p>
+<ul>
+<li>PE32 x86, unsigned, MSVC (Rich header, conf 100)</li>
+<li><code>.rsrc</code> entropy <strong>8.00</strong> with a packer hint: &quot;1 high-entropy section(s) (packed/compressed/encrypted payload likely)&quot;</li>
+<li>Behaviors: service persistence (<code>CreateServiceA</code>, <code>StartServiceA</code>) and dynamic API resolve</li>
+<li>Capabilities: persistence (88), file_drop (76), dyn_resolve, exec</li>
+<li>Suspicious APIs included <code>VirtualAlloc</code>, <code>VirtualProtect</code>, <code>CreateProcessA</code>, <code>CreateServiceA</code>, <code>RegSetValueExA</code></li>
+</ul>
+<p><code>u.wnry</code> looked like the encryptor / UI stage: <code>ShellExecuteA</code>, <code>URLDownloadToFileA</code>, <code>CreateProcessA</code>, screenshot APIs (<code>BitBlt</code>), and ransom-note strings about bitcoin.</p>
+<h3>Network IOCs after recursive unlock</h3>
+<p>Because Vanguard merges hostname-class IOCs from unlocked children into the parent deep-dive, the dropper report included Tor endpoints that actually live in <code>c.wnry</code>:</p>
+<table>
+<thead>
+<tr>
+<th>Kind</th>
+<th>Value</th>
+<th>Confidence</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>BTC</td>
+<td><code>115p7UMMngoj1pMvkpHijcRdfJNXj6LrLn</code></td>
+<td>96</td>
+</tr>
+<tr>
+<td>BTC</td>
+<td><code>12t9YDPgwueZ9NyMgw519p7AA8isjr6SMw</code></td>
+<td>96</td>
+</tr>
+<tr>
+<td>BTC</td>
+<td><code>13AM4VW2dhxYgXeQepoHkHSQuy6NgaEb94</code></td>
+<td>96</td>
+</tr>
+<tr>
+<td>ONION</td>
+<td><code>57g7spgrzlojinas.onion</code></td>
+<td>95</td>
+</tr>
+<tr>
+<td>ONION</td>
+<td><code>76jdd2ir2embyv47.onion</code></td>
+<td>95</td>
+</tr>
+<tr>
+<td>ONION</td>
+<td><code>cwwnhwhlz52maqm7.onion</code></td>
+<td>95</td>
+</tr>
+<tr>
+<td>ONION</td>
+<td><code>gx7ekbenv2riucmf.onion</code></td>
+<td>95</td>
+</tr>
+<tr>
+<td>ONION</td>
+<td><code>xxlvbrloxvriy2c5.onion</code></td>
+<td>95</td>
+</tr>
+<tr>
+<td>URL</td>
+<td><code>https://dist.torproject.org/torbrowser/6.5.1/tor-win32-0.2.9.10.zip</code></td>
+<td>85</td>
+</tr>
+<tr>
+<td>URL</td>
+<td><code>http://www.btcfrog.com/qr/bitcoinPNG.php?address=%s</code></td>
+<td>85</td>
+</tr>
+</tbody>
+</table>
+<p>The <code>c.wnry</code> deep-dive confirmed the onion list as a single config string. That is exactly the recursive IOC promotion I wanted Conti to prove and could not, because Conti had no embedded payload pack.</p>
+<h3>Crypto and secrets</h3>
+<table>
+<thead>
+<tr>
+<th>Finding</th>
+<th>Confidence</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>AES forward S-box</td>
+<td>95</td>
+<td>Strong static AES fingerprint on the dropper</td>
+</tr>
+<tr>
+<td>CRC32 polynomial</td>
+<td>55</td>
+<td>Weak / common, treat as low value</td>
+</tr>
+<tr>
+<td>Secret candidate <code>WNcry@2ol7</code></td>
+<td>96</td>
+<td>Same string used to unlock the embedded ZIP</td>
+</tr>
+</tbody>
+</table>
+<p>Vanguard did not just list the password as a curiosity. It used it. <code>recovered_password: Some(&quot;WNcry@2ol7&quot;)</code> on the embedded archive record is the product moment that Conti could never surface.</p>
+<h3>Strings that lined up with the kill chain</h3>
+<p>From the dropper interesting-strings list I cared about:</p>
+<ul>
+<li><code>tasksche.exe</code>, <code>taskdl.exe</code>, <code>taskse.exe</code></li>
+<li><code>Global\MsWinZonesCacheCounterMutexA</code></li>
+<li><code>cmd.exe /c &quot;%s&quot;</code></li>
+<li>every <code>msg/m_*.wnry</code> locale name</li>
+<li><code>b.wnry</code> / <code>c.wnry</code> / <code>r.wnry</code> / <code>s.wnry</code> / <code>t.wnry</code> / <code>u.wnry</code></li>
+</ul>
+<p>From <code>u.wnry</code>:</p>
+<ul>
+<li><code>Send $%d worth of bitcoin to this address:</code></li>
+<li><code>How to buy bitcoins?</code></li>
+<li>Tor Browser download URL and payment-helper URLs</li>
+</ul>
+<h3>Contrast runs that hurt</h3>
+<p><strong>AgentTesla.</strong> Vanguard correctly said <code>.NET</code> (conf 100) via BSJB / mscorlib / <code>mscoree.dll</code>, then scored the sample <strong>0 / benign</strong> because the native IAT is only <code>_CorExeMain</code>. Conti hid this. WannaCry does not fix it. Managed malware is still a blind spot.</p>
+<p><strong>Mirai.</strong> The ZIP is mostly leaked source plus multi-arch ELF bots. Source files got the default unrecognized score of 35 and filled the top of the ranking. The ELF bots Vanguard <em>did</em> parse as ELF (ARM, MIPS, x86) scored <strong>0 / benign</strong>. So on a Linux botnet tree, my &quot;what should I open first&quot; answer was <code>admin.go</code>, not a bot binary. That is ranking failure, not a formatting failure.</p>
+<h2>Honest review: where WannaCry pushed Vanguard harder than Conti</h2>
+<h3>Ultimate strengths this run proved</h3>
+<ol>
+<li><strong>Recursive in-memory unpacking is real.</strong> Carve → password guess from strings → unlock → re-triage, all without writing runnable files. Conti never needed this. WannaCry lives or dies by it.</li>
+<li><strong>Credential recovery that changes the analysis.</strong> Recovering <code>WNcry@2ol7</code> was not a side note. It unlocked the encryptor, helpers, config, and 28 language packs.</li>
+<li><strong>Child IOC promotion works.</strong> Onions in <code>c.wnry</code> appeared on the parent deep-dive with confidence 95. That is how a dropper report should behave.</li>
+<li><strong>High-value IOCs are high quality when the shape is right.</strong> Checksum-validated BTC addresses and <code>.onion</code> hostnames were clean and actionable.</li>
+<li><strong>Entropy + resource size told the truth early.</strong> <code>.rsrc</code> at entropy 8.00 plus a 3.4 MB raw size correctly screamed &quot;encrypted payload inside.&quot;</li>
+<li><strong>Windows service persistence heuristics fired correctly.</strong> <code>CreateServiceA</code> + <code>StartServiceA</code> is the right story for the WannaCry service install path.</li>
+<li><strong>The CLI made the stress test reproducible.</strong> One command, redirected stdout, no TUI ceremony.</li>
+</ol>
+<h3>Ultimate weaknesses this run exposed</h3>
+<ol>
+<li><strong>Critical labels still invent injection.</strong> Score 96 still printed &quot;injection / hollow patterns&quot; even though matched behaviors were service persistence and dynamic resolve. Same Conti bug, still open.</li>
+<li><strong>Resource / language-pack noise floods ranking.</strong> Twenty-eight <code>m_*.wnry</code> blobs at score 35 bury <code>taskdl.exe</code> and make the ranking look like a directory listing. I need content-class demotion for message packs and configs once a PE parent exists.</li>
+<li><strong>Small helper PEs can fall to zero.</strong> <code>taskdl.exe</code> scored benign. That is dangerous if an analyst trusts the number more than the filename context.</li>
+<li><strong>IOC extractor still emits garbage around real gold.</strong> Truncated Microsoft schema fragments (<code>http://schemas.micr</code>, domain <code>osoft.com</code>) sat next to perfect onion and BTC hits. Precision on URL truncation needs work.</li>
+<li><strong>C2 tagging is still too greedy.</strong> <code>u.wnry</code> got a Network / C2 capability partly on <code>SendMessageA</code>, which is a UI message API, not command-and-control. <code>URLDownloadToFileA</code> is fairer signal. Conti's SMB-as-C2 problem has a cousin here.</li>
+<li><strong>Managed and ELF scoring remain structurally weak.</strong> AgentTesla (.NET) and Mirai ELF bots both scored 0 despite correct format/toolchain detection. Vanguard's threat model is still Windows IAT-shaped.</li>
+<li><strong>Source trees outrank real binaries when both are &quot;uninteresting.&quot;</strong> Mirai source at 35 beat ELF bots at 0. Default raw-blob scoring is higher than &quot;parsed but no suspicious imports,&quot; which is backwards for triage.</li>
+</ol>
+<h3>What I plan to fix next</h3>
+<table>
+<thead>
+<tr>
+<th>Gap</th>
+<th>Plan</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Fake injection label</td>
+<td>Make <code>risk_label</code> derive from matched behaviors / top capability IDs</td>
+</tr>
+<tr>
+<td>Language-pack ranking noise</td>
+<td>Demote known resource extensions and non-PE children under an unlocked parent unless <code>--full</code></td>
+</tr>
+<tr>
+<td>Helper PE score 0</td>
+<td>Add filename / sibling context boosts and a floor for PE children of a high-score dropper</td>
+</tr>
+<tr>
+<td>Truncated URL IOCs</td>
+<td>Require balanced hostnames and reject obvious schema truncations</td>
+</tr>
+<tr>
+<td>Greedy C2 tags</td>
+<td>Split <code>c2</code> from <code>url_download</code>, <code>ui_msg</code>, <code>smb_enum</code></td>
+</tr>
+<tr>
+<td>.NET score 0</td>
+<td>Managed triage path + score floor when toolchain is <code>.NET</code> with high confidence</td>
+</tr>
+<tr>
+<td>ELF score 0</td>
+<td>ELF import / symbol / string heuristics, and never let raw source outrank parsed ELF/PE at equal interest</td>
+</tr>
+</tbody>
+</table>
+<h2>What came out of the run</h2>
+<h3>Kill chain Vanguard let me reconstruct statically</h3>
+<pre><code class="language-text">WannaCry dropper (ed01ebf…exe)
+├── High-entropy .rsrc holds encrypted ZIP (embedded-1.zip)
+├── Password WNcry@2ol7 recovered from sample strings
+├── Unlocks:
+│   ├── u.wnry          encryptor / ransom UI
+│   ├── taskse.exe      session helper
+│   ├── taskdl.exe      cleanup helper
+│   ├── c.wnry          Tor onion config + Tor Browser URL
+│   ├── b/s/t/r.wnry    supporting payload/config blobs
+│   └── msg/m_*.wnry    localized ransom notes
+├── Installs Windows service (CreateServiceA / StartServiceA)
+├── Drops tasksche.exe / helpers, uses MsWinZonesCacheCounterMutexA
+├── Displays ransom UI with BTC addresses + onion payment sites
+└── AES-related constants present in dropper image
+</code></pre>
+<p>I did not detonate WannaCry. Everything above is static, containment-safe, and re-runnable from the CLI.</p>
+<h3>Compared with Conti</h3>
+<table>
+<thead>
+<tr>
+<th>Question</th>
+<th>Conti</th>
+<th>WannaCry</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Best Vanguard win</td>
+<td>ChaCha20 constant + source validation</td>
+<td>Embedded ZIP unlock + onion/BTC harvest</td>
+</tr>
+<tr>
+<td>Needed leaked source?</td>
+<td>Yes, to finish the SMB story</td>
+<td>No. The sample unpacked itself under Vanguard</td>
+</tr>
+<tr>
+<td>Ranking quality</td>
+<td>Good on PEs, noisy on build logs</td>
+<td>Good on dropper/<code>u.wnry</code>, noisy on language packs</td>
+</tr>
+<tr>
+<td>Label honesty</td>
+<td>Overstated injection</td>
+<td>Same overstated injection</td>
+</tr>
+<tr>
+<td>Hardest new failure</td>
+<td>n/a</td>
+<td>Helper PE and ELF/managed score-0 collapses</td>
+</tr>
+</tbody>
+</table>
+<h3>Defensive outputs</h3>
+<p>Hashes, BTC addresses, onions, the recovered ZIP password, mutex, and helper names are on the <strong>IOCs</strong> tab. Detection content for the dropper hash, embedded-password string, onion endpoints, and service creation path is on the <strong>Sigma</strong> tab.</p>
+<p>WannaCry is the sample I will keep using when I claim Vanguard is more than a pretty IAT printer. Conti proved accuracy against source. WannaCry proved the containment and unpacking story is worth shipping. The contrast runs proved I still have to earn trust on .NET and ELF before I call the threat score anything close to ultimate.</p>
