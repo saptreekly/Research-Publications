@@ -1729,6 +1729,28 @@ aside .row-tag {
     margin-bottom: 10px;
 }
 
+.markdown-content .footnote-ref {
+    font-family: var(--mono);
+    font-size: 0.75em;
+    margin-left: 1px;
+}
+
+.markdown-content .footnotes {
+    margin-top: 40px;
+    padding-top: 20px;
+    border-top: 1px solid var(--line-color);
+    font-size: 0.9rem;
+}
+
+.markdown-content .footnotes ol {
+    padding-left: 20px;
+}
+
+.markdown-content .footnote-backref {
+    text-decoration: none;
+    margin-left: 4px;
+}
+
 .markdown-content .katex {
     color: var(--text-color);
     font-size: 1.05em;
