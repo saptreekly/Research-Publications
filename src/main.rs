@@ -32,7 +32,7 @@ fn App() -> impl IntoView {
     provide_theme();
 
     view! {
-        <Link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;700&family=IBM+Plex+Mono:wght@400&display=swap" rel="stylesheet" />
+        <Link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,400;0,600;0,700;1,400&family=Source+Serif+4:ital,wght@0,400;0,600;0,700;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
 
         // Route paths already include APP_BASE. Do not also set Router `base=APP_BASE`:
         // TrailingSlash::Redirect resolves through that base and doubles the prefix

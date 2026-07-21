@@ -5,44 +5,29 @@ const STORAGE_KEY: &str = "theme";
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Theme {
     Dark,
+    /// Retained for API compatibility; the site is dark-only.
     Light,
 }
 
 impl Theme {
     pub fn as_str(self) -> &'static str {
-        match self {
-            Theme::Dark => "dark",
-            Theme::Light => "light",
-        }
+        "dark"
     }
 
     pub fn toggle(self) -> Self {
-        match self {
-            Theme::Dark => Theme::Light,
-            Theme::Light => Theme::Dark,
-        }
+        Theme::Dark
     }
 
     pub fn from_dom() -> Self {
-        web_sys::window()
-            .and_then(|window| window.document())
-            .and_then(|document| document.document_element())
-            .and_then(|html| html.get_attribute("data-theme"))
-            .map(|value| {
-                if value == "light" {
-                    Theme::Light
-                } else {
-                    Theme::Dark
-                }
-            })
-            .unwrap_or(Theme::Dark)
+        Theme::Dark
     }
 
     pub fn canvas_colors(self) -> (&'static str, &'static str, &'static str) {
-        match self {
-            Theme::Dark => ("#000000", "#a855f7", "rgba(168, 85, 247, 0.85)"),
-            Theme::Light => ("#f5f4f0", "#9333ea", "rgba(147, 51, 234, 0.55)"),
-        }
+        (
+            "#0b0d11",
+            "#8fa9bc",
+            "rgba(143, 169, 188, 0.35)",
+        )
     }
 }
 
@@ -66,7 +51,7 @@ fn persist_theme(theme: Theme) {
 }
 
 pub fn provide_theme() -> RwSignal<Theme> {
-    let theme = create_rw_signal(Theme::from_dom());
+    let theme = create_rw_signal(Theme::Dark);
 
     create_effect(move |_| {
         let current = theme.get();

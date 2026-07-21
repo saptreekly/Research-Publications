@@ -2,77 +2,77 @@
 
 ## Working title
 
-Overlapping authority in cyberspace. Neo-medieval order, weaponized interdependence, and chokepoint systems such as SWIFT.
+Overlapping authority in cyberspace: Neo-medieval order, weaponized interdependence, and chokepoint systems.
 
 ## Why I am writing this
 
-Most of my public work so far is technical. Malware triage, tooling, and CTI-style reports. I also hold a Master of Strategic Studies (with Merit) from Victoria University of Wellington. This working paper is where those lanes meet without turning cyber into loose metaphor.
+Almost all of my public work thus far is technical, from malware reverse engineering, to tooling, and CTI reports. I want to highlight that I also hold a Master of Strategic Studies from Victoria University of Wellington. As part of a wider effort to diversify my portfolio, this paper is where those lanes meet without turning cyber into loose metaphor.
 
-The question I want to answer carefully.
+The question I want to answer carefully:
 
-> Does contemporary cyberspace exhibit features of what Hedley Bull called a neo-medieval pattern of order, and if so, how do panoptic and chokepoint infrastructures, as Farrell and Newman describe them, illuminate that claim for middle-power security practice?
+> Does contemporary cyberspace exhibit features of what Hedley Bull (1977) called a neo-medieval international order, and if so, how do panoptic and chokepoint infrastructures, as Farrell and Newman (2019) describe them, illustrate that claim for middle-powers in modern security practice?
 
-A second question sits underneath it. If Thomas Rid is right that “cyber war” is largely the wrong label, what political form does cyber coercion actually take, and does Bull’s vocabulary of overlapping authority help more than war talk does?
+A second question also sits alongside this: If Thomas Rid (2012) is correct that “cyber war” is largely the wrong label, what *political* form does cyber coercion actually take, and does Bull’s framework of overlapping authority help more than classical war rhetoric does?
 
 ## Provisional thesis
 
-Cyberspace does not abolish the state system. It intensifies overlapping authorities across platforms, standards bodies, private coercive actors, alliance networks, and critical infrastructures that sit across borders. Some of those infrastructures are better read through Henry Farrell and Abraham Newman’s **weaponized interdependence**. Asymmetric networks produce hubs. States with political authority over those hubs can “weaponize networks to gather information or choke off economic and information flows, discover and exploit vulnerabilities, compel policy change, and deter unwanted actions.”[^farrell-45]
+Cyberspace does not abolish the state system. Instead, it intensifies overlapping authorities across platforms, standards bodies, private actors, alliance networks, and critical infrastructures that sit across borders. Some of those infrastructures are better read through Henry Farrell and Abraham Newman’s weaponized interdependence. Asymmetric networks produce hubs. States with political authority over those hubs can “weaponize networks to gather information or choke off economic and information flows, discover and exploit vulnerabilities, compel policy change, and deter unwanted actions.”[^farrell-45]
 
-Rid’s Clausewitzian test is useful here as a guardrail, not as a claim that cyber is unserious. If political cyber attacks are better read as network-enabled sabotage, espionage, and subversion, then the analytic problem for a country like New Zealand is not preparing for a digital Pearl Harbor. It is assurance and defence inside authorities you do not fully own, under continuous sub-war pressure that often travels through hubs you do not control.
+Rid’s Clausewitzian test is useful here as a guardrail, not as a claim that cyber is unserious. If political cyber attacks are better read as network-enabled sabotage, espionage, and subversion, then the analytic problem for a country like New Zealand is not preparing for a digital Pearl Harbor. Rather, it is assurance and defence inside authorities you do not fully own, under continuous below-threshold pressure that travels through hubs you do not control.
 
 ## Concept map (draft)
 
 ### Hedley Bull and neo-medievalism
 
-In *The Anarchical Society*, Bull treats “new mediaevalism” as a possible alternative to both the states system and world government. The medieval precedent matters because no ruler was sovereign in the exclusive territorial sense. Authority was shared “with vassals beneath, and with the Pope and (in Germany and Italy) the Holy Roman Emperor above.”[^bull-245]
+In *The Anarchical Society*, Bull treats “new mediaevalism” as a possible alternative (albeit, not a good alternative) to both the states system and world government. The medieval precedent matters because no ruler was sovereign in the exclusive territorial sense. Authority was shared “with vassals beneath, and with the Pope and (in Germany and Italy) the Holy Roman Emperor above.”[^bull-245]
 
 What Bull wants to keep is not theocracy but the political anatomy.
 
 > [I]t is not fanciful to imagine that there might develop a modern and secular counterpart of it that embodies its central characteristic: a system of overlapping authority and multiple loyalty.[^bull-245-246]
 
-He is explicit about the threshold. A neo-medieval order would exist if states came to share authority and loyalty with regional, world, and sub-state authorities “to such an extent that the concept of sovereignty ceased to be applicable.”[^bull-246] He also refuses romance. A structure of crisscrossing loyalties might avoid some dangers of sovereign rivalry, but a system like Western Christendom could also contain “more ubiquitous and continuous violence and insecurity than does the modern states system.”[^bull-246-danger]
+Bull is explicit about the criteria. A neo-medieval order would exist if states came to share authority and loyalty with regional, world, and sub-state authorities “to such an extent that the concept of sovereignty ceased to be applicable.”[^bull-246] A structure of crisscrossing loyalties might avoid some dangers of sovereign rivalry, but a system like Western Christendom could also contain “more ubiquitous and continuous violence and insecurity than does the modern states system.”[^bull-246-danger]
 
-In chapter 11 he asks whether that transformation is already underway, and points to five pressures on exclusive state authority. Regional integration. State disintegration. The restoration of private international violence. Transnational organisations. The technological unification of the world.[^bull-254] His conclusion in 1977 remains cautious. Those trends complicate sovereignty, but they had not yet replaced the states system.[^bull-265]
+In chapter 11 he asks whether that transformation is already underway, and points to five pressures on exclusive state authority: regional integration, state disintegration, the restoration of private international violence, transnational organisations, and the technological unification of the world.[^bull-254] His conclusion in 1977 is cautious. Those trends complicate sovereignty, but they had not yet replaced the states system.[^bull-265]
 
-I am **not** claiming Bull predicted the internet. I am testing whether parts of cyber governance look more neo-medieval than purely inter-state, especially through private coercion, transnational platforms, and technological interconnection. The counter-case stays front and centre. States still dominate sanctions, extradition, military cyber, licensing, and much attribution. Overlap can exist *inside* a state system, not instead of it.
+To be clear, I am not claiming Bull predicted the internet. I am testing whether parts of cyber governance look more neo-medieval than purely inter-state, especially through private coercion, transnational platforms, and technological interconnection. The counter-case stays front and centre. States still dominate sanctions, extradition, military cyber, licensing, and much attribution. Overlap can exist inside a state system, not instead of it; these are not mutually exclusive.
 
 ### Thomas Rid and the rejection of “cyber war”
 
-Rid’s 2012 article is the other primary text for this draft. His thesis is blunt.
+Rid’s 2012 article is the other primary text for this draft. His thesis is quite blunt:
 
 > This article argues in three steps that cyber war has never happened in the past, that cyber war does not take place in the present, and that it is unlikely that cyber war will occur in the future.[^rid-5]
 
-The test is Clausewitzian. “Any act of war has to have the potential to be lethal; it has to be instrumental; and it has to be political.”[^rid-6] Rid anchors that in Clausewitz’s opening line that war is “an act of force to compel the enemy to do our will.”[^rid-6-cw] Without violence as the pivot, “war” collapses into metaphor.
+The test here is Clausewitzian. “Any act of war has to have the potential to be lethal; it has to be instrumental; and it has to be political.”[^rid-6] Rid anchors that in Clausewitz’s opening line that war is “an act of force to compel the enemy to do our will.”[^rid-6-cw] Without violence as the pivot, “war” collapses into metaphor.
 
-Applied to the record, the result is severe. “If the use of force in war is violent, instrumental, and political, then there is no cyber offense that meets all three criteria.”[^rid-9] At the time of writing he could also say that no cyber offense had killed or injured a person, and that none had damaged a building.[^rid-10] Later incidents may press the damage claim harder than 2012. They do not automatically convert the category into war.
+Applied to the record: “If the use of force in war is violent, instrumental, and political, then there is no cyber offense that meets all three criteria.”[^rid-9] At the time of writing he could also say that no cyber offense had killed or injured a person, and that none had damaged physical infrastructure.[^rid-10] Later incidents may press the damage claim harder than 2012. They do not automatically convert the category into war.
 
-Rid’s positive vocabulary is older and sharper than “cyber war.”
+Rid’s positive vocabulary is older and sharper than “cyber war”:
 
 > Instead, all past and present political cyber attacks are merely sophisticated versions of three activities that are as old as warfare itself: subversion, espionage, and sabotage.[^rid-6-ses]
 
 He returns to that finding in the conclusion. The preceding decade showed “increasingly sophisticated acts of network-enabled sabotage, espionage, and subversion.”[^rid-28] Those activities can support military operations. They are not, on his account, stand-alone acts of war. The Pearl Harbor and Hiroshima analogies fail for the same reason. Unlike 1950s nuclear theory after Little Boy, cyber-war theory had not observed a deadly cyber weapon of that kind, and “there was no and there is no Pearl Harbor of cyber war.”[^rid-29]
 
-For this paper, Rid does two jobs. He blocks alarmist dependent variables. He also hands the evidence back to categories that sit comfortably beside Bull. Private ransomware markets, access brokers, and deniable intrusion look less like a new form of war and more like neo-medieval private force expressed as sabotage, espionage, and subversion.
+For this paper, Rid does two jobs. The first, he blocks alarmist dependent variables. And the second, he hands the evidence back to categories that sit comfortably beside Bull: private malware markets (grey markets), access brokers (shadow brokers), and plausible deniability (attribution problem) look less like a new form of war and more like neo-medieval private force expressed as sabotage, espionage, and subversion.
 
-### Farrell and Newman. Weaponized interdependence
+### Farrell and Newman: Weaponized interdependence
 
 This is the mechanism paper for the infrastructures I keep circling. Farrell and Newman argue that complex systems tend toward asymmetric topologies in which some nodes become hubs. That topography creates the potential for weaponized interdependence. States with authority over central nodes through which money, goods, and information travel are “uniquely positioned to impose costs on others.”[^farrell-45]
 
-They separate that claim from two older stories. Market size alone. Bilateral dependence alone. Global networks, they argue, let some states coerce “on the level of the network itself.”[^farrell-54] The two channels are the panopticon effect and the chokepoint effect.
+They separate that claim from two older stories: market size alone and bilateral dependence alone. Global networks, they argue, let some states coerce “on the level of the network itself.”[^farrell-54] The two channels are the panopticon effect and the chokepoint effect.
 
-On the panopticon effect, they recover Bentham’s architectural point and put it inside network hubs.
+On the panopticon effect, they recover Bentham’s architectural point and put it inside network hubs:
 
 > Jeremy Bentham’s conception of the Panopticon was precisely an architectural arrangement in which one or a few central actors could readily observe the activities of others. States that have physical access to or jurisdiction over hub nodes can use this influence to obtain information passing through the hubs. Because hubs are crucial intermediaries in decentralized communications structures, it becomes difficult—or even effectively impossible—for other actors to avoid these hubs while communicating.[^farrell-55]
 
-Under that effect, “states’ direct surveillance abilities may be radically outstripped by their capacity to tap into the information-gathering and information-generating activities of networks of private actors.”[^farrell-55-info] Privileged access becomes an informational advantage in an otherwise weak global information environment.
+Under that effect, “states’ direct surveillance abilities may be radically outstripped by their capacity to tap into the information-gathering and information-generating activities of networks of private actors.”[^farrell-55-info] Privileged access thus becomes an informational advantage in an otherwise weak global information environment.
 
-The chokepoint effect is the exclusion half of the same topology.
+The chokepoint effect is the exclusion half of the same topology:
 
 > [It] involves privileged states’ capacity to limit or penalize use of hubs by third parties (e.g., other states or private actors). Because hubs offer extraordinary efficiency benefits, and because it is extremely difficult to circumvent them, states that can control hubs have considerable coercive power, and states or other actors that are denied access to hubs can suffer substantial consequences.[^farrell-55-choke]
 
 Jurisdiction matters. Only states with physical or legal grasp over hub nodes can exploit these advantages, and domestic institutions shape whether they can compel hub actors to cooperate.[^farrell-56] That is why Farrell and Newman are not just saying “networks are powerful.” They are saying hub control plus institutional capacity produces durable coercion short of classic territorial conquest.
 
-For this paper, their framework does what Bentham alone cannot. It turns panoptic imagery into a falsifiable institutional claim about hubs, jurisdiction, and exit costs. It also sits cleanly beside Bull. Overlapping authority describes the *shape* of order. Weaponized interdependence describes how some nodes inside that order discipline behaviour.
+For this paper, their framework does what Bentham alone cannot. It turns panoptic imagery into a falsifiable institutional claim about hubs, jurisdiction, and exit costs. It also sits cleanly beside Bull. Overlapping authority describes the shape of order. Weaponized interdependence describes how some nodes inside that order discipline behaviour.
 
 ### SWIFT as Farrell and Newman’s bridging case
 
@@ -86,7 +86,7 @@ Their theoretical punchline is what I need for the cyber comparison.
 
 > Exactly because the SWIFT organization was a crucial hub in global economic exchange, it allowed those states that had jurisdictional sway over it to employ the panopticon and chokepoint effects, just as our framework expects.[^farrell-69-hub]
 
-I want SWIFT as a **comparative case**, not a cyber example pretending to be one. Cloud, certificate ecosystems, mobile OS stores, and major identity providers are candidate analogues. They are only good analogues if they show the same combination. Hard exit. Asymmetric visibility. Hub jurisdiction. Coercive leverage through access or denial.
+I want SWIFT as a comparative case, not a cyber example pretending to be one. Cloud, certificate ecosystems, mobile OS stores, and major identity providers are candidate analogues. They are only good analogues if they show the same combination. Hard exit. Asymmetric visibility. Hub jurisdiction. Coercive leverage through access or denial.
 
 | Feature | SWIFT-like chokepoint | Cyber / tech analogue (candidates) |
 | --- | --- | --- |
@@ -95,7 +95,7 @@ I want SWIFT as a **comparative case**, not a cyber example pretending to be one
 | Governance beyond one state | Cooperative + political pressure | ICANN/IANA, root/DNS politics, hyperscaler ToS + local law |
 | Coercive leverage | Exclusion / restricted access | Account bans, cert distrust, upstream filtering, payment-rail cutoffs |
 
-The analytic gain is this. Bull describes the *shape* of overlapping authority. Farrell and Newman describe *how* some hubs coerce through panoptic visibility and chokepoint exclusion. Rid describes the *character of many cyber offenses* that travel across that terrain as sabotage, espionage, and subversion rather than war.
+The analytic gain is this. Bull describes the shape of overlapping authority. Farrell and Newman describe how some hubs coerce through panoptic visibility and chokepoint exclusion. Rid describes the character of many cyber offenses that travel across that terrain as sabotage, espionage, and subversion rather than war.
 
 ## What I think the “so what” might become
 

@@ -1,7 +1,6 @@
 use leptos::*;
 use leptos_router::*;
 use wasm_bindgen::JsCast;
-use crate::components::theme_toggle::ThemeToggle;
 use crate::utils::{
     contact_href, curriculum_href, home_href, malware_reports_index_href, projects_index_href,
     situation_monitor_href, tidy_tuesday_index_href,
@@ -133,9 +132,6 @@ pub fn RootLayout(children: Children) -> impl IntoView {
                     </div>
 
                     <div class="site-sidebar-bottom">
-                        <div class="site-theme-row">
-                            <ThemeToggle />
-                        </div>
                         <div class="site-nav-label">"CONNECT"</div>
                         <div class="social-links">
                             <a href="https://x.com/weeklyjack1" class="social-link">

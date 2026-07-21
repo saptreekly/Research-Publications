@@ -3,17 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="color-scheme" content="dark light">
+    <meta name="color-scheme" content="dark">
     <script>
     (function () {
-        var theme = 'dark';
         try {
-            var stored = localStorage.getItem('theme');
-            if (stored === 'light' || stored === 'dark') {
-                theme = stored;
-            }
+            localStorage.setItem('theme', 'dark');
         } catch (e) {}
-        document.documentElement.setAttribute('data-theme', theme);
+        document.documentElement.setAttribute('data-theme', 'dark');
     })();
     </script>
     <title>Jack Weekly | Analysis &amp; Security</title>

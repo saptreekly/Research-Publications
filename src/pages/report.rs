@@ -17,6 +17,18 @@ pub fn ReportPage() -> impl IntoView {
     let slug = move || params.get().get("slug").cloned().unwrap_or_default();
     let active_tab = create_rw_signal(ReportTab::Report);
 
+    create_effect(|_| {
+        if let Some(body) = web_sys::window()
+            .and_then(|window| window.document())
+            .and_then(|document| document.body())
+        {
+            let _ = body.class_list().add_1("route-paper");
+            on_cleanup(move || {
+                let _ = body.class_list().remove_1("route-paper");
+            });
+        }
+    });
+
     view! {
         <section id="report-nav">
             <A href=home_href() class="social-link cta-link">"← BACK TO HOME"</A>
@@ -26,7 +38,7 @@ pub fn ReportPage() -> impl IntoView {
             Some(report) => {
                 let has_tabs = report.sigma_src.is_some() || report.ioc_src.is_some();
                 view! {
-                    <section class="report-page">
+                    <section class="report-page paper-document">
                         <header class="report-header">
                             <div class="report-header-meta">
                                 <span class="home-tag">{report.tag}</span>
