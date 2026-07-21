@@ -109,6 +109,8 @@ pub fn HomePage() -> impl IntoView {
                     " · "
                     <A href=report_href("conti-locker") class="home-start-footer-link">"Conti analysis"</A>
                     " · "
+                    <A href=report_href("cyber-neomedievalism") class="home-start-footer-link">"WIP briefs"</A>
+                    " · "
                     <A href=curriculum_href() class="home-start-footer-link">"Crypto curriculum"</A>
                 </p>
             </section>
@@ -186,6 +188,31 @@ pub fn HomePage() -> impl IntoView {
                 <p class="home-section-footer">
                     <A href=malware_reports_index_href() class="home-start-footer-link">"All malware reports →"</A>
                 </p>
+            </section>
+
+            <section class="home-section" id="briefs-wip" aria-labelledby="briefs-wip-heading">
+                <div class="home-section-header">
+                    <p class="home-section-kicker">"Under construction"</p>
+                    <h2 id="briefs-wip-heading" class="home-section-title">"Analytic briefs in progress"</h2>
+                    <p class="home-section-desc">
+                        "Strategic and sociological notes that are not finished judgments yet. "
+                        "I am publishing the scaffolding early so reviewers can see the non-tooling lane I am building."
+                    </p>
+                </div>
+                <div class="home-card-grid">
+                    <A href=report_href("cyber-neomedievalism") class="home-card home-card-link home-card-wip">
+                        <div class="home-card-meta">
+                            <span class="home-tag">"Work in progress"</span>
+                            <time class="home-date" datetime="2026-07">"Jul 2026"</time>
+                        </div>
+                        <h3 class="home-card-title">"Cyber, neo-medievalism, and panoptic rails"</h3>
+                        <p class="home-card-body">
+                            "Draft notes joining Hedley Bull's neo-medievalism to cyberspace, Bentham/Foucault's panopticon, "
+                            "and SWIFT as a comparative chokepoint for overlapping authority and asymmetric visibility."
+                        </p>
+                        <span class="home-card-cta">"OPEN WIP NOTES →"</span>
+                    </A>
+                </div>
             </section>
 
             <section class="home-section home-section-featured" id="projects" aria-labelledby="projects-heading">

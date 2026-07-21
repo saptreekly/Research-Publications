@@ -834,6 +834,15 @@ a:focus-visible,
     padding-left: 14px;
 }
 
+.home-card-wip {
+    border-style: dashed;
+    opacity: 0.96;
+}
+
+.home-card-wip .home-tag {
+    border-style: dashed;
+}
+
 .home-hero-actions {
     display: flex;
     flex-wrap: wrap;

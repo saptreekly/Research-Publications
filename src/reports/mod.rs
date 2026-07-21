@@ -11,6 +11,16 @@ pub struct ReportMeta {
 
 pub const REPORTS: &[ReportMeta] = &[
     ReportMeta {
+        slug: "cyber-neomedievalism",
+        title: "Cyber, neo-medievalism, and panoptic rails",
+        subtitle: "Work in progress · Bull, panoptic infrastructures, and SWIFT as a comparative chokepoint",
+        tag: "Work in progress",
+        date: "2026-07",
+        src: "research-docs/briefs/cyber-neomedievalism.md",
+        sigma_src: None,
+        ioc_src: None,
+    },
+    ReportMeta {
         slug: "wannacry",
         title: "WannaCry",
         subtitle: "Malware analysis report · Vanguard-RE stress test · embedded ZIP unlock",
