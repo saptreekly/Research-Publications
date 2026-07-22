@@ -72,7 +72,7 @@ ROUTES: list[dict[str, str]] = [
     {
         "path": "/projects/vanguard-re",
         "title": "Vanguard-RE | Jack Weekly",
-        "description": "Memory-safe static malware triage from the command line · Rust",
+        "description": "Memory-safe static malware triage CLI · ImpHash, XOR recovery, thin-IAT stealer scoring · Rust",
     },
     {
         "path": "/projects/net-honeynet",

@@ -72,8 +72,8 @@ pub fn HomePage() -> impl IntoView {
                             <span class="home-start-track">"Defensive tooling"</span>
                             <span class="home-start-title">"Vanguard-RE · static malware triage CLI"</span>
                             <span class="home-start-body">
-                                "Memory-safe Rust CLI for PE/ELF/Mach-O triage: zero-copy scanning, crypto fingerprints, "
-                                "in-memory ZIP quarantine, and recursive unpacking without executing samples."
+                                "Memory-safe Rust CLI for PE/ELF/Mach-O triage: ImpHash clustering, delay-load http_client "
+                                "scoring, weak XOR recovery, bomb-bounded in-memory ZIP quarantine, and recursive unpacking."
                             </span>
                             <span class="home-start-cta">"Open tooling sample →"</span>
                         </A>
@@ -119,8 +119,8 @@ pub fn HomePage() -> impl IntoView {
                         </div>
                         <h3 class="home-card-title">"Raccoon Stealer v2 · Vanguard stress test"</h3>
                         <p class="home-card-body">
-                            "Static pass on a 21-member stealer pack: ImpHash clustering, thin IAT / delay-load WinInet, "
-                            "and an honest scorecard where Vanguard under-ranks stealers versus ransomware."
+                            "Static pass on a 21-member stealer pack: ImpHash clustering, thin IAT / delay-load WinINet, "
+                            "and a Vanguard scorecard that now promotes string-resolved http_client evidence."
                         </p>
                         <span class="home-card-cta">"READ WIP REPORT →"</span>
                     </A>
@@ -219,8 +219,8 @@ pub fn HomePage() -> impl IntoView {
                         </div>
                         <h3 class="home-card-title">"Vanguard-RE"</h3>
                         <p class="home-card-body">
-                            "Rust CLI for static malware triage: zero-copy scanning, formal PE/ELF/Mach-O parsing, "
-                            "crypto fingerprints, and in-memory quarantine so samples are never executed."
+                            "Rust CLI for static malware triage: formal PE/ELF/Mach-O parsing, ImpHash clusters, "
+                            "thin-IAT stealer scoring, weak XOR recovery, and bomb-bounded in-memory quarantine."
                         </p>
                         <span class="home-card-cta">"VIEW PROJECT →"</span>
                     </A>

@@ -1,6 +1,7 @@
-<p>High-speed, memory-safe static malware triage from the command line. Samples are never executed: the tool maps binaries in memory, parses PE / ELF / Mach-O formally, ranks candidates, runs signature scans, and deep-dives with iced-x86 disassembly.</p>
+<p>High-speed, memory-safe static malware triage from the command line. Samples are never executed: the tool maps binaries in memory, parses PE / ELF / Mach-O formally, ranks candidates, and deep-dives with iced-x86 disassembly, crypto / XOR recovery, and network IOC extraction.</p>
+<p>Repo: <a href="https://github.com/saptreekly/Vanguard-RE">github.com/saptreekly/Vanguard-RE</a></p>
 <h2>Problem</h2>
-<p>Static triage often means juggling hex viewers, disassemblers, and ad-hoc scripts while passworded malware packs spill runnable files onto disk. Vanguard-RE keeps the workflow in one Rust CLI with zero-copy I/O, in-memory ZIP decryption, and containment-first defaults.</p>
+<p>Static triage often means juggling hex viewers, disassemblers, and ad-hoc scripts while passworded malware packs spill runnable files onto disk. Vanguard-RE keeps the workflow in one Rust CLI with zero-copy I/O, in-memory ZIP decryption, bomb-bounded ingest, and containment-first defaults.</p>
 <h2>Three pillars</h2>
 <table>
 <thead>
@@ -16,11 +17,11 @@
 </tr>
 <tr>
 <td><strong>Accuracy</strong></td>
-<td>Formal PE / ELF / Mach-O parsing (<code>goblin</code>), ImpHash, Shannon entropy, IAT heuristics, iced-x86 disassembly, crypto fingerprints, network IOCs, toolchain fingerprinting</td>
+<td>Formal PE / ELF / Mach-O parsing (<code>goblin</code>), ImpHash, Shannon entropy, IAT + delay-load string capabilities, iced-x86 disassembly, crypto fingerprints, weak XOR recovery, network IOCs, toolchain fingerprinting</td>
 </tr>
 <tr>
 <td><strong>Safety</strong></td>
-<td>Rust memory safety + in-memory quarantine. Samples are never executed</td>
+<td>Rust memory safety + in-memory quarantine. Samples are never executed. ZIP decompression and corpus walks are bounded against zip bombs and symlink poison</td>
 </tr>
 </tbody>
 </table>
@@ -32,15 +33,55 @@
     ┌──────────┬─────────┼─────────┬──────────┐
     ▼          ▼         ▼         ▼          ▼
  Static    Disasm +   Signatures  Network   Crypto
- Triage    Code       (hashes /   IOC       Constants
-           Analysis   builtins)   Extractor Fingerprints
+ Triage    Code       (hashes /   IOC       + XOR
+           Analysis   builtins)   Extractor recovery
 </code></pre>
+<h2>What it surfaces</h2>
+<table>
+<thead>
+<tr>
+<th>Layer</th>
+<th>Signals</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Triage</strong></td>
+<td>PE/ELF/Mach-O headers, ImpHash clusters, entropy / packer hints, capability tags, content-format mix (PE, ZIP, RTF, images, text, known encrypted headers)</td>
+</tr>
+<tr>
+<td><strong>Capabilities</strong></td>
+<td>Evidence-backed labels only (<code>http_client</code>, <code>c2_suspect</code>, <code>persistence</code>, <code>injection</code>, …). Thin-IAT / delay-load samples can earn <code>http_client</code> from exact WinINet name strings when <code>LoadLibrary</code>+<code>GetProcAddress</code> are present</td>
+</tr>
+<tr>
+<td><strong>Toolchain</strong></td>
+<td>Go, Rust, .NET, MSVC Rich header, GCC/MinGW, Delphi, VB6, Nim, AutoIt, PyInstaller</td>
+</tr>
+<tr>
+<td><strong>Embedded archives</strong></td>
+<td>Carves ZIPs from resources, recovers passwords from the sample’s own strings (e.g. WannaCry <code>WNcry@2ol7</code>), unlocks members in RAM, recurses with bomb limits</td>
+</tr>
+<tr>
+<td><strong>Network IOCs</strong></td>
+<td>IPv4 / <code>ip:port</code>, URLs, domains, <code>.onion</code>, emails, checksum-validated BTC — ranked and noise-filtered</td>
+</tr>
+<tr>
+<td><strong>Crypto / XOR</strong></td>
+<td>AES / ChaCha20 / SHA / MD5 / Blowfish / PEM / CryptoAPI constants; deep-dive weak repeating-XOR and reused-keystream recovery (not real ransomware crypto)</td>
+</tr>
+<tr>
+<td><strong>Disassembly</strong></td>
+<td>iced-x86 function recovery, interest ranking, technique insights (XOR loops, PEB access, API hashing, …)</td>
+</tr>
+</tbody>
+</table>
+<p>Stdout is analyst-first: banner summary, ranking table, ImpHash clusters, then one merged block per interesting sample. Defaults hide score-0 noise; <code>--full</code> dumps everything.</p>
 <h2>Workflow</h2>
 <pre><code class="language-bash">vanguard /path/to/sample.zip -p infected
 vanguard /path/to/malware.exe --password &quot;&quot;
-vanguard /path/to/sample.zip --deep 1 --disasm-count 8000
+vanguard /path/to/sample.zip --deep 3 --max-deep 8 --disasm-count 8000
+vanguard /path/to/sample.zip -p infected --full
 </code></pre>
-<p>Passworded packs (for example <code>infected</code>) decrypt into RAM only, then Vanguard ranks members, scans signatures, and prints triage plus deep-dives to stdout.</p>
 <table>
 <thead>
 <tr>
@@ -61,6 +102,11 @@ vanguard /path/to/sample.zip --deep 1 --disasm-count 8000
 <td>Number of top-scoring samples to deep-dive</td>
 </tr>
 <tr>
+<td><code>--max-deep</code></td>
+<td><code>8</code></td>
+<td>Absolute ceiling on deep-dives (stops tied-score pack explosions)</td>
+</tr>
+<tr>
 <td><code>--disasm-count</code></td>
 <td><code>4000</code></td>
 <td>Max instructions to decode per deep-dive</td>
@@ -68,14 +114,49 @@ vanguard /path/to/sample.zip --deep 1 --disasm-count 8000
 <tr>
 <td><code>--min-deep-score</code></td>
 <td><code>70</code></td>
-<td>Minimum triage score required for a deep-dive</td>
+<td>Also deep-dive lower ranks at/above this score, up to <code>--max-deep</code></td>
+</tr>
+<tr>
+<td><code>--full</code></td>
+<td>off</td>
+<td>Keep demoted noise in ranking and print every member / triage block</td>
 </tr>
 </tbody>
 </table>
+<h2>Stress-tested on this site</h2>
+<p>I drive Vanguard against real packs and publish honest scorecards, including where it under-ranked or mislabeled:</p>
+<table>
+<thead>
+<tr>
+<th>Sample</th>
+<th>What it exercised</th>
+<th>Report</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Conti Locker v2</td>
+<td>Native MSVC crypto + ImpHash ranking against leaked source</td>
+<td><a href="research/conti-locker">Conti analysis</a></td>
+</tr>
+<tr>
+<td>WannaCry</td>
+<td>Embedded encrypted ZIP carve, password recovery, onion/BTC IOCs, format mix</td>
+<td><a href="research/wannacry">WannaCry stress test</a></td>
+</tr>
+<tr>
+<td>Raccoon Stealer v2</td>
+<td>Thin-IAT / delay-load WinINet stealer pack, ImpHash cluster, deep-dive budget</td>
+<td><a href="research/raccoon-stealer">Raccoon WIP</a></td>
+</tr>
+</tbody>
+</table>
+<p>Recent scoring work came directly from those runs: PE-child floors for WannaCry helpers, string-resolved <code>http_client</code> for Raccoon-class stealers, and <code>--max-deep</code> so a low <code>--min-deep-score</code> cannot expand to the whole archive.</p>
 <h2>Containment</h2>
 <ul>
 <li><strong>Static-only.</strong> Nothing is executed on the host.</li>
 <li>ZIP members stay in process memory. Never written as runnable files.</li>
+<li>Decompression size, central-directory scans, and host sample size are capped; corpus walks skip symlinks.</li>
 <li>Dynamic analysis (if added later) would use a real microVM, not host exec.</li>
 </ul>
 <h2>Status</h2>
