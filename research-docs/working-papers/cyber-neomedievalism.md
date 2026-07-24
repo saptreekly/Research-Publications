@@ -1,4 +1,4 @@
-**Status: work in progress.** This is a sketch, not a finished assessment. Claims below are provisional. I am still reading, tightening definitions, and collecting concrete cases.
+**Status: work in progress.** This is a sketch, not a finished assessment. The thesis is clear enough in outline but the architecture still needs work. Bull, Rid, Farrell and Newman, SWIFT, and New Zealand implications are all on the page, but they still read more like adjacent reading notes than one spine. I am tightening definitions, cutting duplication, moving NZ payoff to the end, and collecting concrete cases. Treat what follows as scaffolding under construction.
 
 ## Working title
 
@@ -18,15 +18,17 @@ A second question also sits alongside this: If Thomas Rid (2012) is correct that
 
 Cyberspace does not abolish the state system. Instead, it intensifies overlapping authorities across platforms, standards bodies, private actors, alliance networks, and critical infrastructures that sit across borders. Some of those infrastructures are better read through Henry Farrell and Abraham Newman’s weaponized interdependence. Asymmetric networks produce hubs. States with political authority over those hubs can “weaponize networks to gather information or choke off economic and information flows, discover and exploit vulnerabilities, compel policy change, and deter unwanted actions.”[^farrell-45]
 
-Rid’s Clausewitzian test is useful here as a guardrail, not as a claim that cyber is unserious. If political cyber attacks are better read as network-enabled sabotage, espionage, and subversion, then the analytic problem for a country like New Zealand is not preparing for a digital Pearl Harbor. Rather, it is assurance and defence inside authorities you do not fully own, under continuous below-threshold pressure that travels through hubs you do not control.
+Rid’s Clausewitzian test is a guardrail here. It does not make cyber unserious. If political cyber attacks are better read as sabotage, espionage, and subversion, New Zealand’s problem is not a digital Pearl Harbor. It is assurance and defence when you do not fully own the authorities around you, and when pressure arrives below the threshold of war through hubs you do not control.
 
 ## Concept map (draft)
+
+
 
 ### Hedley Bull and neo-medievalism
 
 In *The Anarchical Society*, Bull treats “new mediaevalism” as a possible alternative (albeit, not a good alternative) to both the states system and world government. The medieval precedent matters because no ruler was sovereign in the exclusive territorial sense. Authority was shared “with vassals beneath, and with the Pope and (in Germany and Italy) the Holy Roman Emperor above.”[^bull-245]
 
-What Bull wants to keep is not theocracy but the political anatomy.
+What Bull wants to keep is not theocracy but the political anatomy:
 
 > [I]t is not fanciful to imagine that there might develop a modern and secular counterpart of it that embodies its central characteristic: a system of overlapping authority and multiple loyalty.[^bull-245-246]
 
@@ -34,23 +36,23 @@ Bull is explicit about the criteria. A neo-medieval order would exist if states 
 
 In chapter 11 he asks whether that transformation is already underway, and points to five pressures on exclusive state authority: regional integration, state disintegration, the restoration of private international violence, transnational organisations, and the technological unification of the world.[^bull-254] His conclusion in 1977 is cautious. Those trends complicate sovereignty, but they had not yet replaced the states system.[^bull-265]
 
-To be clear, I am not claiming Bull predicted the internet. I am testing whether parts of cyber governance look more neo-medieval than purely inter-state, especially through private coercion, transnational platforms, and technological interconnection. The counter-case stays front and centre. States still dominate sanctions, extradition, military cyber, licensing, and much attribution. Overlap can exist inside a state system, not instead of it; these are not mutually exclusive.
+To be clear, I am not claiming Bull predicted the internet. I am testing whether parts of cyber governance look more neo-medieval than purely inter-state, especially through the lens of private coercion, transnational platforms, and technological interconnection. The counter-case still stays front and centre. States still dominate sanctions, extradition, military cyber, licensing, and much of the attribution. Overlap can exist inside a state system, not instead of it; these are not mutually exclusive.
 
 ### Thomas Rid and the rejection of “cyber war”
 
-Rid’s 2012 article is the other primary text for this draft. His thesis is quite blunt:
+Rid’s 2012 article is the other primary text for this draft. His thesis is straight-to-the-point:
 
 > This article argues in three steps that cyber war has never happened in the past, that cyber war does not take place in the present, and that it is unlikely that cyber war will occur in the future.[^rid-5]
 
-The test here is Clausewitzian. “Any act of war has to have the potential to be lethal; it has to be instrumental; and it has to be political.”[^rid-6] Rid anchors that in Clausewitz’s opening line that war is “an act of force to compel the enemy to do our will.”[^rid-6-cw] Without violence as the pivot, “war” collapses into metaphor.
+This is a Clausewitzian test. “Any act of war has to have the potential to be lethal; it has to be instrumental; and it has to be political.”[^rid-6] Rid anchors that in Clausewitz’s opening line that war is “an act of force to compel the enemy to do our will.”[^rid-6-cw] Without violence as the pivot, “war” collapses into metaphor.
 
-Applied to the record: “If the use of force in war is violent, instrumental, and political, then there is no cyber offense that meets all three criteria.”[^rid-9] At the time of writing he could also say that no cyber offense had killed or injured a person, and that none had damaged physical infrastructure.[^rid-10] Later incidents may press the damage claim harder than 2012. They do not automatically convert the category into war.
+Applied to the record: “If the use of force in war is violent, instrumental, and political, then there is no cyber offense that meets all three criteria.”[^rid-9] At the time of writing he could also say that no cyber offense had killed or injured a person, and that none had damaged physical infrastructure.[^rid-10] Later incidents may press the damage claim harder than 2012, but they do not automatically convert it into "war".
 
 Rid’s positive vocabulary is older and sharper than “cyber war”:
 
 > Instead, all past and present political cyber attacks are merely sophisticated versions of three activities that are as old as warfare itself: subversion, espionage, and sabotage.[^rid-6-ses]
 
-He returns to that finding in the conclusion. The preceding decade showed “increasingly sophisticated acts of network-enabled sabotage, espionage, and subversion.”[^rid-28] Those activities can support military operations. They are not, on his account, stand-alone acts of war. The Pearl Harbor and Hiroshima analogies fail for the same reason. Unlike 1950s nuclear theory after Little Boy, cyber-war theory had not observed a deadly cyber weapon of that kind, and “there was no and there is no Pearl Harbor of cyber war.”[^rid-29]
+He returns to that finding in the conclusion. The preceding decade showed “increasingly sophisticated acts of network-enabled sabotage, espionage, and subversion.”[^rid-28] Those activities can support military operations. They are not, on his account, stand-alone acts of war. Comparisons to Pearl Harbor and Hiroshima fail for the same reason. Unlike 1950s nuclear theory after Little Boy, cyber-war theory has not observed a deadly cyber weapon of that kind, and “there was no and there is no Pearl Harbor of cyber war.”[^rid-29]
 
 For this paper, Rid does two jobs. The first, he blocks alarmist dependent variables. And the second, he hands the evidence back to categories that sit comfortably beside Bull: private malware markets (grey markets), access brokers (shadow brokers), and plausible deniability (attribution problem) look less like a new form of war and more like neo-medieval private force expressed as sabotage, espionage, and subversion.
 
@@ -66,7 +68,9 @@ On the panopticon effect, they recover Bentham’s architectural point and put i
 
 Under that effect, “states’ direct surveillance abilities may be radically outstripped by their capacity to tap into the information-gathering and information-generating activities of networks of private actors.”[^farrell-55-info] Privileged access thus becomes an informational advantage in an otherwise weak global information environment.
 
-For New Zealand, that lands as an alliance claim rather than a hub-ownership claim. NZ does not need to own the densest commercial or financial hubs to benefit from panoptic effects if it sits inside arrangements that share the informational proceeds of hubs controlled elsewhere. Five Eyes is the clearest example of that posture. The provisional claim here is that NZ’s advantage is long-lasting privileged access through trusted partners with hub jurisdiction, not unilateral surveillance capacity on the scale of those hubs. The corresponding risk has the same topology: access that depends on alliance trust and partner institutions can be shaped, delayed, or conditioned by those partners and by the hubs they can reach.
+For New Zealand, that lands as an alliance claim rather than a hub-ownership claim. NZ does not need to own the densest commercial or financial hubs to benefit from panoptic effects if it sits inside arrangements that share the informational proceeds of hubs controlled elsewhere. Five Eyes is the clearest example of this. It is not a defence alliance. It is a privileged intelligence-sharing arrangement with deep trust and contribution expectations. The provisional claim here is that NZ’s advantage is long-term privileged access through trusted partners with hub jurisdiction, not unilateral surveillance capacity on the scale of those hubs. The corresponding risk has the same topology: access that depends on alliance trust and partner institutions can be shaped, delayed, or conditioned by those partners and by the hubs they can reach.
+
+The sharper claim is this: Five Eyes membership does not only *receive* panoptic proceeds, it also *contributes* collection capacity that partners value, including against targets that matter more to Washington than to Wellington’s trade ledger. New Zealand’s China exposure makes that contribution politically expensive when it becomes visible. Public reporting on a 2013 GCSB–NSA plan to exploit a data link between the Chinese consulate and Chinese Visa Office in Auckland is useful here as a concrete case of that collision: alliance contribution on NZ territory, aimed at Chinese diplomatic communications, at the same time that China sat near the centre of NZ’s economic relationship.[^frostbite-2015] I've made a similar argument in an MStrat paper. Privilege and externality travel together. That is the middle-power version of Farrell and Newman’s topology.
 
 The chokepoint effect is the exclusion half of the same topology:
 
@@ -107,11 +111,11 @@ For NZ and middle-powers in practice (still drafting), sovereign control of the 
 
 ## Still to write
 
-I still need a short literature situating against platform sovereignty, polycentric governance, and the cyber regime complex, then one ransomware or private-force case written explicitly in Rid’s sabotage/espionage/subversion terms, and one platform-jurisdiction case read through Farrell and Newman’s hub tests. The SWIFT section has to stay careful about non-overclaim. I also need one cyber chokepoint chosen for real similarity rather than vibes, NZ implications in BLUF form, and falsifiers that would make me drop or narrow the thesis. I should also check later destructive cases against Rid’s 2012 empirical claims without letting them reopen war rhetoric by default.
+Priority is structure, not more theory. One lead question. Shorter Bull and Rid. Farrell and Newman as mechanism. SWIFT as proof. One cyber analogue tested properly. NZ / Five Eyes payoff at the end rather than mid-theory. I also still need a short literature situating against platform sovereignty, polycentric governance, and the cyber regime complex, then one ransomware or private-force case written explicitly in Rid’s sabotage/espionage/subversion terms, NZ implications in BLUF form, and falsifiers that would make me drop or narrow the thesis.
 
 ## How to read this page
 
-If you are reviewing my portfolio, this working paper shows an analytic lane I am building, not a completed judgment. For finished work, start with the WannaCry or Conti reports and the Master of Strategic Studies writing sample.
+If you are reviewing my portfolio, this working paper shows an analytic lane I am building. It is unfinished and still uneven on purpose. Read it for the thesis stack and judgment under construction, not as a polished memo. For finished work, start with the WannaCry or Conti reports and the Master of Strategic Studies writing sample.
 
 ## References
 
@@ -141,3 +145,4 @@ If you are reviewing my portfolio, this working paper shows an analytic lane I a
 [^farrell-67]: Farrell and Newman, “Weaponized Interdependence,” 67, quoting Joanna Diane Caytas.
 [^farrell-69]: Farrell and Newman, “Weaponized Interdependence,” 67–69.
 [^farrell-69-hub]: Farrell and Newman, “Weaponized Interdependence,” 69.
+[^frostbite-2015]: Nicky Hager and Ryan Gallagher, “How NZ and US agents plotted to spy on China,” *NZ Herald*, 19 April 2015; see also RNZ, “Claim Govt prepared to spy on Chinese consulate,” 19 April 2015. Public reporting describes a planning-phase joint effort (reported GCSB codename Frostbite; NSA Basilhayden) against an Auckland consular/visa data link. Whether the operation was fully executed was not confirmed in those accounts.
