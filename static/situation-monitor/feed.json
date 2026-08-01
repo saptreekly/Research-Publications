@@ -1,21 +1,21 @@
 {
-  "updated_at": "2026-08-01T19:21Z",
-  "updated_label": "01 Aug 2026 · 19:21Z",
+  "updated_at": "2026-08-01T20:24Z",
+  "updated_label": "01 Aug 2026 · 20:24Z",
   "categories": [
     {
       "id": "nz-pacific",
       "label": "NZ & Pacific",
-      "count": 31
+      "count": 32
     },
     {
       "id": "apac-security",
       "label": "APAC Security",
-      "count": 90
+      "count": 86
     },
     {
       "id": "cyber",
       "label": "Cyber",
-      "count": 12
+      "count": 15
     },
     {
       "id": "global",
@@ -88,9 +88,9 @@
       "name": "USNI News",
       "category": "apac-security",
       "url": "https://news.usni.org/feed",
-      "item_count": 15,
-      "status": "ok",
-      "error": null
+      "item_count": 0,
+      "status": "error",
+      "error": "The read operation timed out"
     },
     {
       "id": "bbc-world",
@@ -176,13 +176,67 @@
   ],
   "items": [
     {
-      "id": "27f76bc7adc3f41e",
-      "title": "Govt to spend $500,000 on environmental impacts probe into Whanganui's Balgownie Landfill",
-      "summary": "Operating until 2001, the Balgownie Landfill did not have several features associated with modern landfill containment and risk management.",
-      "url": "https://www.rnz.co.nz/news/environment/857500/govt-to-spend-500-000-on-environmental-impacts-probe-into-whanganui-s-balgownie-landfill",
-      "published_at": "2026-08-01T18:59:45Z",
-      "published_label": "01 Aug 2026 · 18:59Z",
-      "age_label": "21m ago",
+      "id": "f4c1f31ed0c854e5",
+      "title": "Three killed in Moscow restaurant bombing",
+      "summary": "The deadly blast took place in a venue near the centre of the city, as a woman carrying explosives tried to enter.",
+      "url": "https://www.bbc.co.uk/news/articles/c86n4ljxp63o?at_medium=RSS&at_campaign=rss",
+      "published_at": "2026-08-01T20:20:44Z",
+      "published_label": "01 Aug 2026 · 20:20Z",
+      "age_label": "3m ago",
+      "source_id": "bbc-world",
+      "source_name": "BBC World",
+      "source_kind": "rss",
+      "category": "global",
+      "regions": [
+        "russia"
+      ],
+      "priority": 30,
+      "cluster_key": "three killed in moscow restaurant bombing"
+    },
+    {
+      "id": "9c75a7e4efcd9c2b",
+      "title": "Why a one-year home loan fix may be better than two right now",
+      "summary": "In ANZ's latest Property Focus update, it notes that house prices are largely on a \"flat path\".",
+      "url": "https://www.rnz.co.nz/news/personal-finance/857803/why-a-one-year-home-loan-fix-may-be-better-than-two-right-now",
+      "published_at": "2026-08-01T20:16:52Z",
+      "published_label": "01 Aug 2026 · 20:16Z",
+      "age_label": "7m ago",
+      "source_id": "rnz-national",
+      "source_name": "RNZ National",
+      "source_kind": "rss",
+      "category": "nz-pacific",
+      "regions": [
+        "pacific"
+      ],
+      "priority": 30,
+      "cluster_key": "why a oneyear home loan fix may be better than two right now"
+    },
+    {
+      "id": "c49b2c930c50c7e0",
+      "title": "Christchurch food truck operators sick of break-ins, beggars and abuse",
+      "summary": "Three food trucks were broken into, but no one has been arrested yet.",
+      "url": "https://www.rnz.co.nz/news/business/857751/christchurch-food-truck-operators-sick-of-break-ins-beggars-and-abuse",
+      "published_at": "2026-08-01T20:12:04Z",
+      "published_label": "01 Aug 2026 · 20:12Z",
+      "age_label": "12m ago",
+      "source_id": "rnz-national",
+      "source_name": "RNZ National",
+      "source_kind": "rss",
+      "category": "nz-pacific",
+      "regions": [
+        "nz"
+      ],
+      "priority": 30,
+      "cluster_key": "christchurch food truck operators sick of breakins beggars and abuse"
+    },
+    {
+      "id": "e52cbe60cecc5103",
+      "title": "Tori Moorby claims Commonwealth Games javelin silver",
+      "summary": "The veteran thrower secured her first major championship medal of her career.",
+      "url": "https://www.rnz.co.nz/news/sport/857729/tori-moorby-claims-commonwealth-games-javelin-silver",
+      "published_at": "2026-08-01T19:58:06Z",
+      "published_label": "01 Aug 2026 · 19:58Z",
+      "age_label": "25m ago",
       "source_id": "rnz-news",
       "source_name": "RNZ News",
       "source_kind": "rss",
@@ -191,6 +245,60 @@
         "pacific"
       ],
       "priority": 30,
+      "cluster_key": "tori moorby claims commonwealth games javelin silver"
+    },
+    {
+      "id": "86436bfd60039dde",
+      "title": "Trump disputes his own Justice Department’s findings on Reflecting Pool",
+      "summary": "US President ⁠Donald Trump posted on Saturday ⁠that he disagrees with his ⁠own Justice Department’s findings that a flawed installation, not vandalism, caused the lining of the newly renovated Lincoln Memorial Reflecting Pool in Washington to peel. “I disagree 100% with Jeanine…",
+      "url": "https://www.scmp.com/news/world/united-states-canada/article/3362661/trump-disputes-his-own-justice-departments-findings-reflecting-pool?utm_source=rss_feed",
+      "published_at": "2026-08-01T19:52:17Z",
+      "published_label": "01 Aug 2026 · 19:52Z",
+      "age_label": "31m ago",
+      "source_id": "scmp",
+      "source_name": "South China Morning Post",
+      "source_kind": "rss",
+      "category": "apac-security",
+      "regions": [
+        "us"
+      ],
+      "priority": 30,
+      "cluster_key": "trump disputes his own justice departments findings on reflecting pool"
+    },
+    {
+      "id": "c75cdd380d2f8218",
+      "title": "3 dead, 15 injured in explosion near Moscow cafe, police say",
+      "summary": "An explosion on Saturday near a Moscow cafe killed at least three people and wounded another 15, police said, without saying what caused the blast. “From the information we have, an explosion happened today at around 8.10pm near a summer cafe, causing three deaths and 15 injured…",
+      "url": "https://www.scmp.com/news/world/russia-central-asia/article/3362666/3-dead-15-injured-explosion-near-moscow-cafe-police-say?utm_source=rss_feed",
+      "published_at": "2026-08-01T19:28:20Z",
+      "published_label": "01 Aug 2026 · 19:28Z",
+      "age_label": "55m ago",
+      "source_id": "scmp",
+      "source_name": "South China Morning Post",
+      "source_kind": "rss",
+      "category": "apac-security",
+      "regions": [
+        "russia"
+      ],
+      "priority": 30,
+      "cluster_key": "3 dead 15 injured in explosion near moscow cafe police say"
+    },
+    {
+      "id": "27f76bc7adc3f41e",
+      "title": "Govt to spend $500,000 on environmental impacts probe into Whanganui's Balgownie Landfill",
+      "summary": "Operating until 2001, the Balgownie Landfill did not have several features associated with modern landfill containment and risk management.",
+      "url": "https://www.rnz.co.nz/news/environment/857500/govt-to-spend-500-000-on-environmental-impacts-probe-into-whanganui-s-balgownie-landfill",
+      "published_at": "2026-08-01T18:59:45Z",
+      "published_label": "01 Aug 2026 · 18:59Z",
+      "age_label": "1h ago",
+      "source_id": "rnz-news",
+      "source_name": "RNZ News",
+      "source_kind": "rss",
+      "category": "nz-pacific",
+      "regions": [
+        "pacific"
+      ],
+      "priority": 20,
       "cluster_key": "govt to spend 500000 on environmental impacts probe into whanganuis balgownie landfill"
     },
     {
@@ -200,7 +308,7 @@
       "url": "https://www.scmp.com/news/world/americas/article/3362664/truck-explodes-outside-colombia-police-base-injuring-11-officers-and-killing-dog?utm_source=rss_feed",
       "published_at": "2026-08-01T18:49:49Z",
       "published_label": "01 Aug 2026 · 18:49Z",
-      "age_label": "31m ago",
+      "age_label": "1h ago",
       "source_id": "scmp",
       "source_name": "South China Morning Post",
       "source_kind": "rss",
@@ -208,7 +316,7 @@
       "regions": [
         "se-asia"
       ],
-      "priority": 30,
+      "priority": 20,
       "cluster_key": "truck explodes outside colombia police base injuring 11 officers and killing a dog"
     },
     {
@@ -218,7 +326,7 @@
       "url": "https://www.rnz.co.nz/news/sport/857469/commonwealth-games-jamaica-knock-out-australia-to-face-silver-ferns-in-netball-final",
       "published_at": "2026-08-01T18:35:53Z",
       "published_label": "01 Aug 2026 · 18:35Z",
-      "age_label": "45m ago",
+      "age_label": "1h ago",
       "source_id": "rnz-news",
       "source_name": "RNZ News",
       "source_kind": "rss",
@@ -226,7 +334,7 @@
       "regions": [
         "australia"
       ],
-      "priority": 30,
+      "priority": 20,
       "cluster_key": "commonwealth games jamaica knock out australia to face silver ferns in netball final"
     },
     {
@@ -236,7 +344,7 @@
       "url": "https://www.rnz.co.nz/news/sport/857454/commonwealth-games-emma-foy-and-jessie-hodges-win-second-gold-take-nz-s-tally-to-eight",
       "published_at": "2026-08-01T18:27:45Z",
       "published_label": "01 Aug 2026 · 18:27Z",
-      "age_label": "53m ago",
+      "age_label": "1h ago",
       "source_id": "rnz-news",
       "source_name": "RNZ News",
       "source_kind": "rss",
@@ -244,7 +352,7 @@
       "regions": [
         "nz"
       ],
-      "priority": 30,
+      "priority": 20,
       "cluster_key": "commonwealth games emma foy and jessie hodges win second gold take nzs tally to eight"
     },
     {
@@ -254,7 +362,7 @@
       "url": "https://www.scmp.com/news/world/united-states-canada/article/3362663/white-house-uses-anti-trump-singer-bad-bunnys-song-ice-video?utm_source=rss_feed",
       "published_at": "2026-08-01T18:24:48Z",
       "published_label": "01 Aug 2026 · 18:24Z",
-      "age_label": "56m ago",
+      "age_label": "1h ago",
       "source_id": "scmp",
       "source_name": "South China Morning Post",
       "source_kind": "rss",
@@ -262,7 +370,7 @@
       "regions": [
         "us"
       ],
-      "priority": 30,
+      "priority": 20,
       "cluster_key": "white house uses antitrump singer bad bunnys song for ice video"
     },
     {
@@ -272,7 +380,7 @@
       "url": "https://www.bbc.co.uk/news/articles/cr7k4gdrgljo?at_medium=RSS&at_campaign=rss",
       "published_at": "2026-08-01T17:51:46Z",
       "published_label": "01 Aug 2026 · 17:51Z",
-      "age_label": "1h ago",
+      "age_label": "2h ago",
       "source_id": "bbc-world",
       "source_name": "BBC World",
       "source_kind": "rss",
@@ -290,7 +398,7 @@
       "url": "https://www.scmp.com/news/world/middle-east/article/3362660/israel-says-it-killed-several-hezbollah-fighters-south-lebanon?utm_source=rss_feed",
       "published_at": "2026-08-01T17:29:59Z",
       "published_label": "01 Aug 2026 · 17:29Z",
-      "age_label": "1h ago",
+      "age_label": "2h ago",
       "source_id": "scmp",
       "source_name": "South China Morning Post",
       "source_kind": "rss",
@@ -308,7 +416,7 @@
       "url": "https://www.bbc.co.uk/news/articles/cz05yx5dd7yo?at_medium=RSS&at_campaign=rss",
       "published_at": "2026-08-01T17:16:51Z",
       "published_label": "01 Aug 2026 · 17:16Z",
-      "age_label": "2h ago",
+      "age_label": "3h ago",
       "source_id": "bbc-world",
       "source_name": "BBC World",
       "source_kind": "rss",
@@ -326,7 +434,7 @@
       "url": "https://www.bbc.co.uk/sport/football/articles/c04kr2nv3v3o?at_medium=RSS&at_campaign=rss",
       "published_at": "2026-08-01T17:07:46Z",
       "published_label": "01 Aug 2026 · 17:07Z",
-      "age_label": "2h ago",
+      "age_label": "3h ago",
       "source_id": "bbc-world",
       "source_name": "BBC World",
       "source_kind": "rss",
@@ -344,7 +452,7 @@
       "url": "https://www.scmp.com/news/world/middle-east/article/3362658/us-embassies-urge-citizens-consider-departing-middle-east?utm_source=rss_feed",
       "published_at": "2026-08-01T16:57:17Z",
       "published_label": "01 Aug 2026 · 16:57Z",
-      "age_label": "2h ago",
+      "age_label": "3h ago",
       "source_id": "scmp",
       "source_name": "South China Morning Post",
       "source_kind": "rss",
@@ -363,7 +471,7 @@
       "url": "https://www.bbc.co.uk/news/articles/cy07qe0knvzo?at_medium=RSS&at_campaign=rss",
       "published_at": "2026-08-01T16:16:16Z",
       "published_label": "01 Aug 2026 · 16:16Z",
-      "age_label": "3h ago",
+      "age_label": "4h ago",
       "source_id": "bbc-world",
       "source_name": "BBC World",
       "source_kind": "rss",
@@ -381,7 +489,7 @@
       "url": "https://www.bbc.co.uk/news/articles/cx2v91xn1z9o?at_medium=RSS&at_campaign=rss",
       "published_at": "2026-08-01T15:46:08Z",
       "published_label": "01 Aug 2026 · 15:46Z",
-      "age_label": "3h ago",
+      "age_label": "4h ago",
       "source_id": "bbc-world",
       "source_name": "BBC World",
       "source_kind": "rss",
@@ -399,7 +507,7 @@
       "url": "https://www.bbc.co.uk/news/articles/clyljq79kdko?at_medium=RSS&at_campaign=rss",
       "published_at": "2026-08-01T15:25:30Z",
       "published_label": "01 Aug 2026 · 15:25Z",
-      "age_label": "3h ago",
+      "age_label": "4h ago",
       "source_id": "bbc-asia",
       "source_name": "BBC Asia",
       "source_kind": "rss",
@@ -417,7 +525,7 @@
       "url": "https://www.scmp.com/news/hong-kong/health-environment/article/3362655/hong-kong-set-heavy-showers-squally-thunderstorms-over-next-few-days?utm_source=rss_feed",
       "published_at": "2026-08-01T15:06:49Z",
       "published_label": "01 Aug 2026 · 15:06Z",
-      "age_label": "4h ago",
+      "age_label": "5h ago",
       "source_id": "scmp",
       "source_name": "South China Morning Post",
       "source_kind": "rss",
@@ -435,7 +543,7 @@
       "url": "https://www.bbc.co.uk/news/articles/c74gwvygkjdo?at_medium=RSS&at_campaign=rss",
       "published_at": "2026-08-01T15:00:07Z",
       "published_label": "01 Aug 2026 · 15:00Z",
-      "age_label": "4h ago",
+      "age_label": "5h ago",
       "source_id": "bbc-asia",
       "source_name": "BBC Asia",
       "source_kind": "rss",
@@ -453,7 +561,7 @@
       "url": "https://www.scmp.com/news/asia/south-asia/article/3362654/nepals-famed-climber-and-9-others-die-avalanche-pakistan?utm_source=rss_feed",
       "published_at": "2026-08-01T14:25:19Z",
       "published_label": "01 Aug 2026 · 14:25Z",
-      "age_label": "4h ago",
+      "age_label": "5h ago",
       "source_id": "scmp",
       "source_name": "South China Morning Post",
       "source_kind": "rss",
@@ -471,7 +579,7 @@
       "url": "https://www.scmp.com/news/hong-kong/society/article/3362653/hong-kong-gauges-public-views-5050-split-public-flats-subsidised-sale-homes?utm_source=rss_feed",
       "published_at": "2026-08-01T14:11:08Z",
       "published_label": "01 Aug 2026 · 14:11Z",
-      "age_label": "5h ago",
+      "age_label": "6h ago",
       "source_id": "scmp",
       "source_name": "South China Morning Post",
       "source_kind": "rss",
@@ -479,7 +587,7 @@
       "regions": [
         "se-asia"
       ],
-      "priority": 20,
+      "priority": 10,
       "cluster_key": "hong kong gauges views on 5050 split for public flats subsidised sale homes"
     },
     {
@@ -489,7 +597,7 @@
       "url": "https://www.scmp.com/news/china/diplomacy/article/3362641/pain-or-gain-us-moves-decouple-its-defence-industry-chinas-rare-earths?utm_source=rss_feed",
       "published_at": "2026-08-01T14:00:11Z",
       "published_label": "01 Aug 2026 · 14:00Z",
-      "age_label": "5h ago",
+      "age_label": "6h ago",
       "source_id": "scmp",
       "source_name": "South China Morning Post",
       "source_kind": "rss",
@@ -497,7 +605,7 @@
       "regions": [
         "china"
       ],
-      "priority": 38,
+      "priority": 28,
       "cluster_key": "pain or gain us moves to decouple its defence industry from chinas rare earths"
     },
     {
@@ -507,7 +615,7 @@
       "url": "https://www.scmp.com/news/world/europe/article/3362652/germany-storm-leaves-1-dead-3-seriously-injured?utm_source=rss_feed",
       "published_at": "2026-08-01T13:59:54Z",
       "published_label": "01 Aug 2026 · 13:59Z",
-      "age_label": "5h ago",
+      "age_label": "6h ago",
       "source_id": "scmp",
       "source_name": "South China Morning Post",
       "source_kind": "rss",
@@ -515,7 +623,7 @@
       "regions": [
         "se-asia"
       ],
-      "priority": 38,
+      "priority": 28,
       "cluster_key": "germany storm leaves 1 dead 3 seriously injured"
     },
     {
@@ -525,7 +633,7 @@
       "url": "https://www.bbc.co.uk/news/articles/ce973yvk7pko?at_medium=RSS&at_campaign=rss",
       "published_at": "2026-08-01T13:35:39Z",
       "published_label": "01 Aug 2026 · 13:35Z",
-      "age_label": "5h ago",
+      "age_label": "6h ago",
       "source_id": "bbc-world",
       "source_name": "BBC World",
       "source_kind": "rss",
@@ -534,7 +642,7 @@
         "europe",
         "russia"
       ],
-      "priority": 38,
+      "priority": 28,
       "cluster_key": "nine killed in strikes on kyiv as ukraine sinks russian container ship"
     },
     {
@@ -544,7 +652,7 @@
       "url": "https://www.scmp.com/news/hong-kong/society/article/3362650/hong-kong-garrison-holds-reception-marking-99th-anniversary-plas-founding?utm_source=rss_feed",
       "published_at": "2026-08-01T13:05:03Z",
       "published_label": "01 Aug 2026 · 13:05Z",
-      "age_label": "6h ago",
+      "age_label": "7h ago",
       "source_id": "scmp",
       "source_name": "South China Morning Post",
       "source_kind": "rss",
@@ -562,7 +670,7 @@
       "url": "https://www.scmp.com/news/world/europe/article/3362649/sweden-doubles-prison-terms-gang-related-crimes?utm_source=rss_feed",
       "published_at": "2026-08-01T13:01:55Z",
       "published_label": "01 Aug 2026 · 13:01Z",
-      "age_label": "6h ago",
+      "age_label": "7h ago",
       "source_id": "scmp",
       "source_name": "South China Morning Post",
       "source_kind": "rss",
@@ -580,7 +688,7 @@
       "url": "https://www.scmp.com/news/china/military/article/3362639/chinese-test-pilot-who-landed-plane-safely-after-cabin-leak-given-first-class-merit-award?utm_source=rss_feed",
       "published_at": "2026-08-01T13:00:18Z",
       "published_label": "01 Aug 2026 · 13:00Z",
-      "age_label": "6h ago",
+      "age_label": "7h ago",
       "source_id": "scmp",
       "source_name": "South China Morning Post",
       "source_kind": "rss",
@@ -598,7 +706,7 @@
       "url": "https://www.scmp.com/news/hong-kong/law-and-crime/article/3362648/boy-14-among-57-arrested-crackdown-triad-linked-debt-collection-ring?utm_source=rss_feed",
       "published_at": "2026-08-01T12:44:49Z",
       "published_label": "01 Aug 2026 · 12:44Z",
-      "age_label": "6h ago",
+      "age_label": "7h ago",
       "source_id": "scmp",
       "source_name": "South China Morning Post",
       "source_kind": "rss",
@@ -610,50 +718,13 @@
       "cluster_key": "boy 14 among 57 arrested in crackdown on triadlinked debt collection ring"
     },
     {
-      "id": "ec66af71e2137638",
-      "title": "Japan ends rescue at quake-hit shopping centre after explosion kills 7",
-      "summary": "Japan’s Kumamoto prefectural government said on Saturday it has ended rescue operations at an Aeon shopping centre where seven workers died in an explosion shortly after a magnitude 7.1 earthquake struck the southwestern Japan prefecture four days earlier. Officials said there s…",
-      "url": "https://www.scmp.com/news/asia/east-asia/article/3362646/japan-ends-rescue-quake-hit-shopping-centre-after-explosion-kills-7?utm_source=rss_feed",
-      "published_at": "2026-08-01T12:32:00Z",
-      "published_label": "01 Aug 2026 · 12:32Z",
-      "age_label": "6h ago",
-      "source_id": "scmp",
-      "source_name": "South China Morning Post",
-      "source_kind": "rss",
-      "category": "apac-security",
-      "regions": [
-        "japan"
-      ],
-      "priority": 28,
-      "cluster_key": "japan ends rescue at quakehit shopping centre after explosion kills 7"
-    },
-    {
-      "id": "9cb0f0f46c2287d7",
-      "title": "Why China’s JL-3 made waves with first submarine-based missile test in over 40 years",
-      "summary": "The People’s Liberation Army (PLA) carried out a missile test in the Pacific last month. The July 6 launch – in which a dummy warhead travelled 8,000km (5,000 miles) – was China’s first confirmed submarine-based missile test since 1982, and the first known firing from a nuclear-…",
-      "url": "https://www.scmp.com/news/china/military/article/3362640/why-chinas-jl-3-made-waves-first-submarine-based-missile-test-over-40-years?utm_source=rss_feed",
-      "published_at": "2026-08-01T12:00:09Z",
-      "published_label": "01 Aug 2026 · 12:00Z",
-      "age_label": "7h ago",
-      "source_id": "scmp",
-      "source_name": "South China Morning Post",
-      "source_kind": "rss",
-      "category": "apac-security",
-      "regions": [
-        "pacific",
-        "china"
-      ],
-      "priority": 46,
-      "cluster_key": "why chinas jl3 made waves with first submarinebased missile test in over 40 years"
-    },
-    {
       "id": "27f5cdeead27baf7",
       "title": "Shock wave",
       "summary": "What if the U.S. were ahead of China in hypersonic weapons development? Welcome to the latest Fictional Intelligence.",
       "url": "https://www.defenseone.com/ideas/2026/08/shock-wave-fictional-intelligence/415158/",
       "published_at": "2026-08-01T12:00:00Z",
       "published_label": "01 Aug 2026 · 12:00Z",
-      "age_label": "7h ago",
+      "age_label": "8h ago",
       "source_id": "defense-one",
       "source_name": "Defense One",
       "source_kind": "rss",
@@ -672,7 +743,7 @@
       "url": "https://www.rnz.co.nz/news/sport/855915/npc-mo-unga-scores-match-winning-try-for-canterbury-against-auckland",
       "published_at": "2026-08-01T09:04:43Z",
       "published_label": "01 Aug 2026 · 09:04Z",
-      "age_label": "10h ago",
+      "age_label": "11h ago",
       "source_id": "rnz-news",
       "source_name": "RNZ News",
       "source_kind": "rss",
@@ -690,7 +761,7 @@
       "url": "https://www.rnz.co.nz/news/country/792553/country-life-hydroponics-in-horowhenua",
       "published_at": "2026-08-01T08:09:16Z",
       "published_label": "01 Aug 2026 · 08:09Z",
-      "age_label": "11h ago",
+      "age_label": "12h ago",
       "source_id": "rnz-news",
       "source_name": "RNZ News",
       "source_kind": "rss",
@@ -708,7 +779,7 @@
       "url": "https://www.rnz.co.nz/news/sport/855958/commonwealth-games-silver-ferns-face-england-in-netball-semis",
       "published_at": "2026-08-01T07:00:49Z",
       "published_label": "01 Aug 2026 · 07:00Z",
-      "age_label": "12h ago",
+      "age_label": "13h ago",
       "source_id": "rnz-news",
       "source_name": "RNZ News",
       "source_kind": "rss",
@@ -726,7 +797,7 @@
       "url": "https://www.rnz.co.nz/news/crime-and-justice/855906/four-in-custody-after-staff-assaulted-haul-of-perfume-taken-police-say",
       "published_at": "2026-08-01T06:24:00Z",
       "published_label": "01 Aug 2026 · 06:24Z",
-      "age_label": "12h ago",
+      "age_label": "14h ago",
       "source_id": "rnz-news",
       "source_name": "RNZ News",
       "source_kind": "rss",
@@ -744,7 +815,7 @@
       "url": "https://www.rnz.co.nz/news/community/855647/two-new-auckland-stations-part-of-2-point-4b-rail-spend",
       "published_at": "2026-08-01T06:04:03Z",
       "published_label": "01 Aug 2026 · 06:04Z",
-      "age_label": "13h ago",
+      "age_label": "14h ago",
       "source_id": "rnz-news",
       "source_name": "RNZ News",
       "source_kind": "rss",
@@ -762,7 +833,7 @@
       "url": "https://www.bbc.co.uk/news/articles/c4g4djgdyk2o?at_medium=RSS&at_campaign=rss",
       "published_at": "2026-08-01T05:01:56Z",
       "published_label": "01 Aug 2026 · 05:01Z",
-      "age_label": "14h ago",
+      "age_label": "15h ago",
       "source_id": "bbc-world",
       "source_name": "BBC World",
       "source_kind": "rss",
@@ -780,7 +851,7 @@
       "url": "https://www.rnz.co.nz/news/emergencies_local/855722/5-point-2-magnitude-quake-strikes-near-te-anau",
       "published_at": "2026-08-01T04:39:53Z",
       "published_label": "01 Aug 2026 · 04:39Z",
-      "age_label": "14h ago",
+      "age_label": "15h ago",
       "source_id": "rnz-news",
       "source_name": "RNZ News",
       "source_kind": "rss",
@@ -798,7 +869,7 @@
       "url": "https://www.rnz.co.nz/news/crime-and-justice/855714/rising-shop-violence-demands-stronger-penalties-retail-nz",
       "published_at": "2026-08-01T03:59:14Z",
       "published_label": "01 Aug 2026 · 03:59Z",
-      "age_label": "15h ago",
+      "age_label": "16h ago",
       "source_id": "rnz-news",
       "source_name": "RNZ News",
       "source_kind": "rss",
@@ -816,7 +887,7 @@
       "url": "https://www.rnz.co.nz/news/community/855517/queenstown-mayor-wants-ideas-on-relieving-traffic-snarls",
       "published_at": "2026-08-01T02:27:28Z",
       "published_label": "01 Aug 2026 · 02:27Z",
-      "age_label": "16h ago",
+      "age_label": "17h ago",
       "source_id": "rnz-news",
       "source_name": "RNZ News",
       "source_kind": "rss",
@@ -834,7 +905,7 @@
       "url": "https://www.bbc.co.uk/news/articles/cx2j9nj88rro?at_medium=RSS&at_campaign=rss",
       "published_at": "2026-08-01T02:21:29Z",
       "published_label": "01 Aug 2026 · 02:21Z",
-      "age_label": "16h ago",
+      "age_label": "18h ago",
       "source_id": "bbc-world",
       "source_name": "BBC World",
       "source_kind": "rss",
@@ -852,7 +923,7 @@
       "url": "https://www.rnz.co.nz/news/crime-and-justice/855472/police-seek-witnesses-to-fatal-hawke-s-bay-crash",
       "published_at": "2026-08-01T00:46:30Z",
       "published_label": "01 Aug 2026 · 00:46Z",
-      "age_label": "18h ago",
+      "age_label": "19h ago",
       "source_id": "rnz-news",
       "source_name": "RNZ News",
       "source_kind": "rss",
@@ -870,7 +941,7 @@
       "url": "https://www.bbc.co.uk/news/articles/c80nkgdnl4no?at_medium=RSS&at_campaign=rss",
       "published_at": "2026-07-31T23:41:10Z",
       "published_label": "31 Jul 2026 · 23:41Z",
-      "age_label": "19h ago",
+      "age_label": "20h ago",
       "source_id": "bbc-world",
       "source_name": "BBC World",
       "source_kind": "rss",
@@ -888,7 +959,7 @@
       "url": "https://www.rnz.co.nz/news/health/855243/funding-for-more-local-gps-to-remove-suspected-skin-cancer",
       "published_at": "2026-07-31T22:08:30Z",
       "published_label": "31 Jul 2026 · 22:08Z",
-      "age_label": "21h ago",
+      "age_label": "22h ago",
       "source_id": "rnz-news",
       "source_name": "RNZ News",
       "source_kind": "rss",
@@ -900,15 +971,15 @@
       "cluster_key": "funding for more local gps to remove suspected skin cancer"
     },
     {
-      "id": "d662ccdeab9363b0",
+      "id": "0b16025ce088d898",
       "title": "Boxing bronze medals for Fiji and Tuvalu at Commonwealth Games",
       "summary": "The boxing podiums take the Pacific islands' medal tally to eight.",
       "url": "https://www.rnz.co.nz/news/pacific/855232/boxing-bronze-medals-for-fiji-and-tuvalu-at-commonwealth-games",
       "published_at": "2026-07-31T21:59:48Z",
       "published_label": "31 Jul 2026 · 21:59Z",
-      "age_label": "21h ago",
-      "source_id": "rnz-news",
-      "source_name": "RNZ News",
+      "age_label": "22h ago",
+      "source_id": "rnz-pacific",
+      "source_name": "RNZ Pacific",
       "source_kind": "rss",
       "category": "nz-pacific",
       "regions": [
@@ -918,15 +989,15 @@
       "cluster_key": "boxing bronze medals for fiji and tuvalu at commonwealth games"
     },
     {
-      "id": "c4f0e37bd19ab7bc",
+      "id": "e10c3168daeebe47",
       "title": "Kingmaker candidate elected new president of New Caledonia's government",
       "summary": "Candidate from kingmaker party is elected new president of New Caledonia's 'collegial' government.",
       "url": "https://www.rnz.co.nz/news/pacific/854646/kingmaker-candidate-elected-new-president-of-new-caledonia-s-government",
       "published_at": "2026-07-31T21:51:11Z",
       "published_label": "31 Jul 2026 · 21:51Z",
-      "age_label": "21h ago",
-      "source_id": "rnz-news",
-      "source_name": "RNZ News",
+      "age_label": "22h ago",
+      "source_id": "rnz-pacific",
+      "source_name": "RNZ Pacific",
       "source_kind": "rss",
       "category": "nz-pacific",
       "regions": [
@@ -942,7 +1013,7 @@
       "url": "https://www.rnz.co.nz/news/emergencies_local/855220/should-never-be-taken-lightly-police-call-for-caution-after-two-alpine-rescues-in-a-week",
       "published_at": "2026-07-31T21:36:27Z",
       "published_label": "31 Jul 2026 · 21:36Z",
-      "age_label": "21h ago",
+      "age_label": "22h ago",
       "source_id": "rnz-national",
       "source_name": "RNZ National",
       "source_kind": "rss",
@@ -960,7 +1031,7 @@
       "url": "https://www.rnz.co.nz/news/pacific/855188/samoa-captain-and-coach-urge-resolution-for-their-country-s-best-interests",
       "published_at": "2026-07-31T21:14:17Z",
       "published_label": "31 Jul 2026 · 21:14Z",
-      "age_label": "22h ago",
+      "age_label": "23h ago",
       "source_id": "rnz-pacific",
       "source_name": "RNZ Pacific",
       "source_kind": "rss",
@@ -978,7 +1049,7 @@
       "url": "https://www.bbc.co.uk/news/articles/c5y62pe9g3no?at_medium=RSS&at_campaign=rss",
       "published_at": "2026-07-31T21:09:39Z",
       "published_label": "31 Jul 2026 · 21:09Z",
-      "age_label": "22h ago",
+      "age_label": "23h ago",
       "source_id": "bbc-asia",
       "source_name": "BBC Asia",
       "source_kind": "rss",
@@ -997,7 +1068,7 @@
       "url": "https://www.defenseone.com/business/2026/07/hiis-sea-drone-business-growing-revenue-modest-ceo-says/415160/",
       "published_at": "2026-07-31T20:58:25Z",
       "published_label": "31 Jul 2026 · 20:58Z",
-      "age_label": "22h ago",
+      "age_label": "23h ago",
       "source_id": "defense-one",
       "source_name": "Defense One",
       "source_kind": "rss",
@@ -1015,7 +1086,7 @@
       "url": "https://warontherocks.com/the-atlantic-brief-the-strait-of-hormuz-and-the-future-of-free-navigation/",
       "published_at": "2026-07-31T20:27:03Z",
       "published_label": "31 Jul 2026 · 20:27Z",
-      "age_label": "22h ago",
+      "age_label": "23h ago",
       "source_id": "war-on-the-rocks",
       "source_name": "War on the Rocks",
       "source_kind": "rss",
@@ -1027,62 +1098,6 @@
       ],
       "priority": 10,
       "cluster_key": "the atlantic brief the strait of hormuz and the future of free navigation"
-    },
-    {
-      "id": "69e3d5cf85a22650",
-      "title": "Hormuz Traffic Levels Continue Decreasing, Houthis in Yemen Threaten Saudi Tankers",
-      "summary": "Traffic levels in the Strait of Hormuz last week dropped yet again, bringing the flow of ships through the Middle East passageway to levels not seen since March, shortly after the conflict between Iran and the United States began. Transits were down 52.4 percent between July 20…",
-      "url": "https://news.usni.org/2026/07/31/hormuz-traffic-levels-continue-decreasing-houthis-in-yemen-threaten-saudi-tankers",
-      "published_at": "2026-07-31T19:14:28Z",
-      "published_label": "31 Jul 2026 · 19:14Z",
-      "age_label": "1d ago",
-      "source_id": "usni",
-      "source_name": "USNI News",
-      "source_kind": "rss",
-      "category": "apac-security",
-      "regions": [
-        "taiwan",
-        "middle-east",
-        "us"
-      ],
-      "priority": 0,
-      "cluster_key": "hormuz traffic levels continue decreasing houthis in yemen threaten saudi tankers"
-    },
-    {
-      "id": "63547ac8631abbe9",
-      "title": "BREAKING: F-35B Crashes Near Marine Corps Air Station Miramar",
-      "summary": "A Marine Corps F-35B Joint Strike Fighter Lightning II crashed near Marine Corps Air Station Miramar in California on Friday, a service spokesperson confirmed to USNI News. The pilot ejected from the jet and is on their way to a hospital. “We can confirm a mishap involving a Mar…",
-      "url": "https://news.usni.org/2026/07/31/breaking-f-35b-crashes-near-marine-corps-air-station-miramar",
-      "published_at": "2026-07-31T18:48:17Z",
-      "published_label": "31 Jul 2026 · 18:48Z",
-      "age_label": "1d ago",
-      "source_id": "usni",
-      "source_name": "USNI News",
-      "source_kind": "rss",
-      "category": "apac-security",
-      "regions": [
-        "se-asia"
-      ],
-      "priority": 18,
-      "cluster_key": "breaking f35b crashes near marine corps air station miramar"
-    },
-    {
-      "id": "8a2dce93e3de8bd8",
-      "title": "Otago councils want to form unitary authority - without Dunedin",
-      "summary": "A Dunedin city councillor says a proposal to exclude the city from a new Otago unitary authority is \"ridiculous\", but the mayor behind it says it makes sense.",
-      "url": "https://www.rnz.co.nz/news/regions_otago/854923/otago-councils-want-to-form-unitary-authority-without-dunedin",
-      "published_at": "2026-07-31T18:43:22Z",
-      "published_label": "31 Jul 2026 · 18:43Z",
-      "age_label": "1d ago",
-      "source_id": "rnz-national",
-      "source_name": "RNZ National",
-      "source_kind": "rss",
-      "category": "nz-pacific",
-      "regions": [
-        "pacific"
-      ],
-      "priority": 0,
-      "cluster_key": "otago councils want to form unitary authority without dunedin"
     },
     {
       "id": "b233bd86db1e02c6",
@@ -1137,60 +1152,6 @@
       ],
       "priority": 12,
       "cluster_key": "cyber command plans silicon valley office to drive innovation"
-    },
-    {
-      "id": "5b566e27341c4263",
-      "title": "USNI News Western Pacific Pulse: July 31, 2026",
-      "summary": "﻿ The following is a summary of major ship movements and exercises in the Western Pacific over the last week. In Hawaii The Rim of the Pacific (RIMPAC) 2026 exercise in Hawaii closed on Friday after more than a month of drills. Forces from 30 nations, comprising 30,000 personnel…",
-      "url": "https://news.usni.org/2026/07/31/usni-news-western-pacific-pulse-july-31-2026",
-      "published_at": "2026-07-31T16:59:54Z",
-      "published_label": "31 Jul 2026 · 16:59Z",
-      "age_label": "1d ago",
-      "source_id": "usni",
-      "source_name": "USNI News",
-      "source_kind": "rss",
-      "category": "apac-security",
-      "regions": [
-        "pacific"
-      ],
-      "priority": 0,
-      "cluster_key": "usni news western pacific pulse july 31 2026"
-    },
-    {
-      "id": "b09271672149324a",
-      "title": "Doctors considering weight-loss drugs for detained man to be kept in physical restraints",
-      "summary": "Doctors are considering weight-loss drugs for the autistic man, who has been kept in secure care for two decades.",
-      "url": "https://www.rnz.co.nz/news/health/854785/doctors-considering-weight-loss-drugs-for-detained-man-to-be-kept-in-physical-restraints",
-      "published_at": "2026-07-31T16:48:21Z",
-      "published_label": "31 Jul 2026 · 16:48Z",
-      "age_label": "1d ago",
-      "source_id": "rnz-national",
-      "source_name": "RNZ National",
-      "source_kind": "rss",
-      "category": "nz-pacific",
-      "regions": [
-        "pacific"
-      ],
-      "priority": 0,
-      "cluster_key": "doctors considering weightloss drugs for detained man to be kept in physical restraints"
-    },
-    {
-      "id": "3a8558ee498d084a",
-      "title": "Chinese Navy Showcases Hypersonic Anti-ship Capability Aboard Destroyers",
-      "summary": "The Chinese Navy’s most numerous class of guided-missile destroyers can launch long-range hypersonic anti-ship missiles, state military media announced this week. A trailer released on Wednesday for a docuseries showcased the launch of a YJ-20 hypersonic anti-ship missile from a…",
-      "url": "https://news.usni.org/2026/07/31/chinese-navy-showcases-hypersonic-anti-ship-capability-aboard-destroyers",
-      "published_at": "2026-07-31T14:37:48Z",
-      "published_label": "31 Jul 2026 · 14:37Z",
-      "age_label": "1d ago",
-      "source_id": "usni",
-      "source_name": "USNI News",
-      "source_kind": "rss",
-      "category": "apac-security",
-      "regions": [
-        "china"
-      ],
-      "priority": 18,
-      "cluster_key": "chinese navy showcases hypersonic antiship capability aboard destroyers"
     },
     {
       "id": "6f8383e36557728f",
@@ -1634,31 +1595,13 @@
       "cluster_key": "glasgow commonwealth games gold and records for fijis weightlifter rainibogi"
     },
     {
-      "id": "f0361f9a00e11b49",
-      "title": "USS Georgia Completes Final Patrol Ahead of Inactivation, LCS Fort Worth Decommissions",
-      "summary": "Two warships have ended their service with the Navy this week, a 42-year-old nuclear guided-missile submarine and one of the first Littoral Combat Ships, the service announced. USS Georgia (SSGN-729) returned Monday from its final deployment to Submarine Base Kings Bay, Ga., and…",
-      "url": "https://news.usni.org/2026/07/30/uss-georgia-completes-final-patrol-ahead-of-inactivation-lcs-fort-worth-decommissions",
-      "published_at": "2026-07-30T19:42:36Z",
-      "published_label": "30 Jul 2026 · 19:42Z",
-      "age_label": "1d ago",
-      "source_id": "usni",
-      "source_name": "USNI News",
-      "source_kind": "rss",
-      "category": "apac-security",
-      "regions": [
-        "se-asia"
-      ],
-      "priority": 36,
-      "cluster_key": "uss georgia completes final patrol ahead of inactivation lcs fort worth decommissions"
-    },
-    {
       "id": "8d08dccbd063531f",
       "title": "Three countries asked for US$1 million. Then Saudi Arabia stepped in to offer free surgery for Fiji's rare conjoined twins",
       "summary": "A team of paediatric doctors at Fiji's main hospital spent eight months seeking help from multiple other countries, including neighbours Australia and NZ, but only the Saudi's came through.",
       "url": "https://www.rnz.co.nz/news/pacific/849116/three-countries-asked-for-us-1-million-then-saudi-arabia-stepped-in-to-offer-free-surgery-for-fiji-s-rare-conjoined-twins",
       "published_at": "2026-07-30T19:30:09Z",
       "published_label": "30 Jul 2026 · 19:30Z",
-      "age_label": "1d ago",
+      "age_label": "2d ago",
       "source_id": "rnz-pacific",
       "source_name": "RNZ Pacific",
       "source_kind": "rss",
@@ -1688,25 +1631,6 @@
       ],
       "priority": 12,
       "cluster_key": "semiconductor chip titan analog devices reports data breach"
-    },
-    {
-      "id": "f579debbe77728ad",
-      "title": "Japanese Destroyer Launches Tomahawk for the First Time in Drill with U.S. Navy",
-      "summary": "Japanese destroyer JS Chokai (DDG-176) launched a Tomahawk cruise missile for the first time on Wednesday, a major milestone as the archipelago country’s military works alongside the U.S. Navy to expand its capabilities. Chokai conducted a live-fire test of a Tomahawk missile in…",
-      "url": "https://news.usni.org/2026/07/30/japanese-destroyer-launches-tomahawk-for-the-first-time-in-drill-with-u-s-navy",
-      "published_at": "2026-07-30T19:03:26Z",
-      "published_label": "30 Jul 2026 · 19:03Z",
-      "age_label": "2d ago",
-      "source_id": "usni",
-      "source_name": "USNI News",
-      "source_kind": "rss",
-      "category": "apac-security",
-      "regions": [
-        "japan",
-        "us"
-      ],
-      "priority": 18,
-      "cluster_key": "japanese destroyer launches tomahawk for the first time in drill with us navy"
     },
     {
       "id": "cdbb600fce07298c",
@@ -1743,24 +1667,6 @@
       ],
       "priority": 0,
       "cluster_key": "mongolia signs fuel deal with south korea"
-    },
-    {
-      "id": "240c46108055af3c",
-      "title": "Father of teen school shooter sentenced to 15 years in prison",
-      "summary": "\"It is clear you failed as a parent,\" the judge told Colin Gray, who was found guilty earlier this year on charges stemming from the deadly 2024 school attack.",
-      "url": "https://www.bbc.co.uk/news/articles/c78g4y18rxgo?at_medium=RSS&at_campaign=rss",
-      "published_at": "2026-07-30T17:33:41Z",
-      "published_label": "30 Jul 2026 · 17:33Z",
-      "age_label": "2d ago",
-      "source_id": "bbc-world",
-      "source_name": "BBC World",
-      "source_kind": "rss",
-      "category": "global",
-      "regions": [
-        "global"
-      ],
-      "priority": 0,
-      "cluster_key": "father of teen school shooter sentenced to 15 years in prison"
     },
     {
       "id": "e9ebcd428f416f9b",
@@ -1816,26 +1722,6 @@
       ],
       "priority": 18,
       "cluster_key": "missile that left crater deep inside poland was probably russian polish pm"
-    },
-    {
-      "id": "4c3feae3534e6d15",
-      "title": "Report to Congress on Red Sea Security, Yemen",
-      "summary": "The following is the July 21, 2026, Congressional Research Service report, Yemen: Conflict, Red Sea Security, and U.S. Policy. From the Report Yemen is a conflict-afflicted nation along the strategic Bab al Mandab Strait, one of the world’s most active shipping lanes. The Strait…",
-      "url": "https://news.usni.org/2026/07/30/report-to-congress-on-yemen-red-sea-security",
-      "published_at": "2026-07-30T14:04:02Z",
-      "published_label": "30 Jul 2026 · 14:04Z",
-      "age_label": "2d ago",
-      "source_id": "usni",
-      "source_name": "USNI News",
-      "source_kind": "rss",
-      "category": "apac-security",
-      "regions": [
-        "taiwan",
-        "middle-east",
-        "us"
-      ],
-      "priority": 0,
-      "cluster_key": "report to congress on red sea security yemen"
     },
     {
       "id": "1793cc13cd6a81fe",
@@ -1909,25 +1795,6 @@
       ],
       "priority": 0,
       "cluster_key": "australia and tuvalus falepili union was only half the answer"
-    },
-    {
-      "id": "aecf493e4ba3dddd",
-      "title": "USS George Washington Arrives in Da Nang, First Carrier Visit to Vietnam since 2023",
-      "summary": "Aircraft carrier USS George Washington (CVN 73) pulled into Da Nang today for a scheduled port visit, marking the first American aircraft carrier to Vietnam since 2023. George Washington and its two escorts – Ticonderoga-class cruiser USS Robert Smalls (CG-62) and Arleigh Burke-…",
-      "url": "https://news.usni.org/2026/07/30/uss-george-washington-arrives-in-da-nang-first-carrier-visit-to-vietnam-since-2023",
-      "published_at": "2026-07-30T10:51:52Z",
-      "published_label": "30 Jul 2026 · 10:51Z",
-      "age_label": "2d ago",
-      "source_id": "usni",
-      "source_name": "USNI News",
-      "source_kind": "rss",
-      "category": "apac-security",
-      "regions": [
-        "se-asia",
-        "us"
-      ],
-      "priority": 0,
-      "cluster_key": "uss george washington arrives in da nang first carrier visit to vietnam since 2023"
     },
     {
       "id": "9bcf774543e4aa9a",
@@ -2130,24 +1997,6 @@
       "cluster_key": "the chinese robot army transforming the uks retail industry"
     },
     {
-      "id": "d7e7a2cac2293499",
-      "title": "Navy Awards $76.6B for 9 Virginia, 5 Columbia Subs to General Dynamics, HII",
-      "summary": "This post has been updated with an additional statement from the Navy and General Dyanmics. The U.S. Navy awarded General Dynamics Electric Boat and HII $76.6 billion in contracts on Wednesday for the next batch of attack and ballistic missile submarines after a nearly three-yea…",
-      "url": "https://news.usni.org/2026/07/29/navy-awards-76-6b-for-9-virginia-5-columbia-subs-to-general-dynamics-hii",
-      "published_at": "2026-07-29T21:09:35Z",
-      "published_label": "29 Jul 2026 · 21:09Z",
-      "age_label": "2d ago",
-      "source_id": "usni",
-      "source_name": "USNI News",
-      "source_kind": "rss",
-      "category": "apac-security",
-      "regions": [
-        "us"
-      ],
-      "priority": 18,
-      "cluster_key": "navy awards 766b for 9 virginia 5 columbia subs to general dynamics hii"
-    },
-    {
       "id": "a50c6907e42d9b67",
       "title": "Glasgow Commonwealth Games: Gold for Samoa's super Stowers",
       "summary": "18-year-old Samoan weightlifter Seine Stowers has won the women's 77kg category at the Glasgow Commonwealth Games.",
@@ -2220,25 +2069,6 @@
       "cluster_key": "amazon uncovers broad north korean hacking campaign against opensource software"
     },
     {
-      "id": "e457898bd99e44c8",
-      "title": "More than 35 Experiments Test Unmanned Systems, Emerging Technologies During RIMPAC",
-      "summary": "U.S. and partner forces conducted more than 35 experiments to test unmanned systems and emerging technologies, pushing interoperability among nations to new limits during the biennial Rim of the Pacific Exercise. “These efforts help us understand how new capabilities fit into th…",
-      "url": "https://news.usni.org/2026/07/29/more-than-35-experiments-test-unmanned-systems-emerging-technologies-during-rimpac",
-      "published_at": "2026-07-29T18:16:28Z",
-      "published_label": "29 Jul 2026 · 18:16Z",
-      "age_label": "3d ago",
-      "source_id": "usni",
-      "source_name": "USNI News",
-      "source_kind": "rss",
-      "category": "apac-security",
-      "regions": [
-        "pacific",
-        "us"
-      ],
-      "priority": 0,
-      "cluster_key": "more than 35 experiments test unmanned systems emerging technologies during rimpac"
-    },
-    {
       "id": "39779b5539469ba5",
       "title": "Up to six designs could move ahead in Air Force’s next robot-wingman effort",
       "summary": "The concept refinement phase of CCA Increment 2 could wrap by May 2027, portfolio executive says.",
@@ -2273,43 +2103,6 @@
       ],
       "priority": 0,
       "cluster_key": "how mexico locked in its militarized police state"
-    },
-    {
-      "id": "30aff8b31c5da7b6",
-      "title": "U.S. Reveals Coast Guard Cooperation with Taiwan",
-      "summary": "U.S. and Taiwanese officials revealed this week that a joint exercise was held at an unspecified time between their respective Coast Guard agencies. Media from the American Institute in Taiwan and the Ocean Affairs Council show the U.S. Coast Guard Cutter USS Midgett (WMSL 757)…",
-      "url": "https://news.usni.org/2026/07/29/u-s-reveals-coast-guard-cooperation-with-taiwan",
-      "published_at": "2026-07-29T16:30:40Z",
-      "published_label": "29 Jul 2026 · 16:30Z",
-      "age_label": "3d ago",
-      "source_id": "usni",
-      "source_name": "USNI News",
-      "source_kind": "rss",
-      "category": "apac-security",
-      "regions": [
-        "taiwan",
-        "us"
-      ],
-      "priority": 0,
-      "cluster_key": "us reveals coast guard cooperation with taiwan"
-    },
-    {
-      "id": "c29254ff420e69cb",
-      "title": "Report to Congress on the U.S. Marine Corps Ground Combat Element 2040 Initiative",
-      "summary": "The following is the July 28, 2026, Congressional Research Service report, U.S. Marine Corps Ground Combat Element (GCE) 2040 Initiative. From the Report In March 2020, the U.S. Marine Corps announced a major force design initiative it referred to as “Force Design 2030,” now kno…",
-      "url": "https://news.usni.org/2026/07/29/report-to-congress-on-the-u-s-marine-corps-ground-combat-element-2040-initiative",
-      "published_at": "2026-07-29T14:34:50Z",
-      "published_label": "29 Jul 2026 · 14:34Z",
-      "age_label": "3d ago",
-      "source_id": "usni",
-      "source_name": "USNI News",
-      "source_kind": "rss",
-      "category": "apac-security",
-      "regions": [
-        "us"
-      ],
-      "priority": 0,
-      "cluster_key": "report to congress on the us marine corps ground combat element 2040 initiative"
     },
     {
       "id": "0969a65430a0ae09",
@@ -2481,44 +2274,6 @@
       "cluster_key": "the army didnt want this striking rotorcraft but could it be what nato needs"
     },
     {
-      "id": "f758a6b2d6fdb9ef",
-      "title": "Final Bill for Inactivating, Scrapping Carrier Enterprise Now at $1.3B",
-      "summary": "Scrapping “Big E” is costing big bucks. Recycling the Navy’s first nuclear aircraft carrier has cost the branch about $1.3 billion since the former USS Enterprise (CVN-65) was removed from active service in 2012. Earlier this month, NorthStar Maritime Dismantlement Services was…",
-      "url": "https://news.usni.org/2026/07/28/final-bill-for-inactivating-scrapping-carrier-enterprise-now-at-1-3b",
-      "published_at": "2026-07-28T21:25:27Z",
-      "published_label": "28 Jul 2026 · 21:25Z",
-      "age_label": "3d ago",
-      "source_id": "usni",
-      "source_name": "USNI News",
-      "source_kind": "rss",
-      "category": "apac-security",
-      "regions": [
-        "se-asia"
-      ],
-      "priority": 18,
-      "cluster_key": "final bill for inactivating scrapping carrier enterprise now at 13b"
-    },
-    {
-      "id": "f1bd14901db875b4",
-      "title": "U.S. to Fund Philippine Coast Guard Base Expansion Near South China Sea",
-      "summary": "MANILA, PHILIPPINES – The U.S. pledged to fund the expansion of a Coast Guard base used for operations in the South China Sea and increase foreign military financing for Manila last week. The Philippines will receive up to $9 million for the expansion of a pier in the western pr…",
-      "url": "https://news.usni.org/2026/07/28/u-s-to-fund-philippine-coast-guard-base-expansion-near-south-china-sea",
-      "published_at": "2026-07-28T18:28:55Z",
-      "published_label": "28 Jul 2026 · 18:28Z",
-      "age_label": "4d ago",
-      "source_id": "usni",
-      "source_name": "USNI News",
-      "source_kind": "rss",
-      "category": "apac-security",
-      "regions": [
-        "china",
-        "se-asia",
-        "us"
-      ],
-      "priority": 0,
-      "cluster_key": "us to fund philippine coast guard base expansion near south china sea"
-    },
-    {
       "id": "c83cd8ed99aa76cf",
       "title": "Key Areas Where Water Scarcity Intensifies Risks of Conflict",
       "summary": "Water disputes can directly drive conflict, but more often, water scarcity acts as a catalyst — one that, combined with other pressures, raises the risk of conflict. This is nothing new; water has shaped human conflict for millennia. What’s changed is the accumulation of stress,…",
@@ -2535,24 +2290,6 @@
       ],
       "priority": 0,
       "cluster_key": "key areas where water scarcity intensifies risks of conflict"
-    },
-    {
-      "id": "98973c7276ada675",
-      "title": "Report to Congress on the People’s Liberation Army",
-      "summary": "The following is the July 22, 2026, Congressional Research Service report, China Primer: The People’s Liberation Army. From the Report The People’s Liberation Army (PLA) serves the Communist Party of China. Established in 1927, it carried that party to victory in the country’s c…",
-      "url": "https://news.usni.org/2026/07/28/report-to-congress-on-the-peoples-liberation-army-2",
-      "published_at": "2026-07-28T16:59:03Z",
-      "published_label": "28 Jul 2026 · 16:59Z",
-      "age_label": "4d ago",
-      "source_id": "usni",
-      "source_name": "USNI News",
-      "source_kind": "rss",
-      "category": "apac-security",
-      "regions": [
-        "china"
-      ],
-      "priority": 0,
-      "cluster_key": "report to congress on the peoples liberation army"
     },
     {
       "id": "98324d2d3602c251",
@@ -3109,6 +2846,261 @@
       ],
       "priority": 12,
       "cluster_key": "scattered spider hackers plead guilty on day 1 of trial"
+    },
+    {
+      "id": "676b17462bb1c18d",
+      "title": "‘Popa’ Botnet Linked to Publicly-Traded Israeli Firm",
+      "summary": "For the past four years, a sprawling Android-based botnet called Popa has forced millions of consumer TV boxes to relay Internet traffic linked to advertising fraud, account takeovers, and mass data-scraping efforts. This week, researchers from multiple security firms concluded…",
+      "url": "https://krebsonsecurity.com/2026/06/popa-botnet-linked-to-publicly-traded-israeli-firm/",
+      "published_at": "2026-06-18T17:37:58Z",
+      "published_label": "18 Jun 2026 · 17:37Z",
+      "age_label": "18 Jun 2026 · 17:37Z",
+      "source_id": "krebs",
+      "source_name": "Krebs on Security",
+      "source_kind": "rss",
+      "category": "cyber",
+      "regions": [
+        "middle-east"
+      ],
+      "priority": 12,
+      "cluster_key": "popa botnet linked to publiclytraded israeli firm"
+    },
+    {
+      "id": "2bf2be6c98f26625",
+      "title": "Who Runs the Ransomware Group ‘The Gentlemen?’",
+      "summary": "A cybercrime group known as The Gentlemen has emerged as the second most active ransomware gang by victim count, rapidly attracting a talented pool of hackers through an aggressive recruitment strategy that promises affiliates 90 percent of any ransom paid by victims. This post…",
+      "url": "https://krebsonsecurity.com/2026/06/who-runs-the-ransomware-group-the-gentlemen/",
+      "published_at": "2026-06-10T14:03:44Z",
+      "published_label": "10 Jun 2026 · 14:03Z",
+      "age_label": "10 Jun 2026 · 14:03Z",
+      "source_id": "krebs",
+      "source_name": "Krebs on Security",
+      "source_kind": "rss",
+      "category": "cyber",
+      "regions": [
+        "global"
+      ],
+      "priority": 12,
+      "cluster_key": "who runs the ransomware group the gentlemen"
+    },
+    {
+      "id": "d028d710ef2e4f84",
+      "title": "A Record-Breaking Patch Tuesday for June 2026",
+      "summary": "Microsoft today released software updates to plug nearly 200 security holes across its Windows operating systems and supported software, a record number of fixes for the company's monthly Patch Tuesday cycle. Nearly three dozen of those bugs earned Microsoft's most dire \"critica…",
+      "url": "https://krebsonsecurity.com/2026/06/a-record-breaking-patch-tuesday-for-june-2026/",
+      "published_at": "2026-06-09T22:07:28Z",
+      "published_label": "09 Jun 2026 · 22:07Z",
+      "age_label": "09 Jun 2026 · 22:07Z",
+      "source_id": "krebs",
+      "source_name": "Krebs on Security",
+      "source_kind": "rss",
+      "category": "cyber",
+      "regions": [
+        "global"
+      ],
+      "priority": 30,
+      "cluster_key": "a recordbreaking patch tuesday for june 2026"
+    },
+    {
+      "id": "ece63c8e2ca728fc",
+      "title": "Asia's AI boom runs into a power wall",
+      "summary": "",
+      "url": "https://asia.nikkei.com/opinion/asia-s-ai-boom-runs-into-a-power-wall",
+      "published_at": null,
+      "published_label": "Unknown",
+      "age_label": "Unknown",
+      "source_id": "nikkei-asia",
+      "source_name": "Nikkei Asia",
+      "source_kind": "rss",
+      "category": "apac-security",
+      "regions": [
+        "se-asia"
+      ],
+      "priority": 0,
+      "cluster_key": "asias ai boom runs into a power wall"
+    },
+    {
+      "id": "6319ffc06aa1fc0c",
+      "title": "Japan and US step up coordinated push to stem yen's slide",
+      "summary": "",
+      "url": "https://asia.nikkei.com/business/markets/currencies/japan-and-us-step-up-coordinated-push-to-stem-yen-s-slide",
+      "published_at": null,
+      "published_label": "Unknown",
+      "age_label": "Unknown",
+      "source_id": "nikkei-asia",
+      "source_name": "Nikkei Asia",
+      "source_kind": "rss",
+      "category": "apac-security",
+      "regions": [
+        "japan"
+      ],
+      "priority": 0,
+      "cluster_key": "japan and us step up coordinated push to stem yens slide"
+    },
+    {
+      "id": "38a52f806a3db4de",
+      "title": "Modi opens Vizag airport as India's south seeks Southeast Asian travelers",
+      "summary": "",
+      "url": "https://asia.nikkei.com/business/transportation/modi-opens-vizag-airport-as-india-s-south-seeks-southeast-asian-travelers",
+      "published_at": null,
+      "published_label": "Unknown",
+      "age_label": "Unknown",
+      "source_id": "nikkei-asia",
+      "source_name": "Nikkei Asia",
+      "source_kind": "rss",
+      "category": "apac-security",
+      "regions": [
+        "india"
+      ],
+      "priority": 0,
+      "cluster_key": "modi opens vizag airport as indias south seeks southeast asian travelers"
+    },
+    {
+      "id": "834e7f7e87ee6c8c",
+      "title": "Badminton shuttlecock prices surge 30% in Japan on China's feather shortage",
+      "summary": "",
+      "url": "https://asia.nikkei.com/spotlight/sports/badminton-shuttlecock-prices-surge-30-in-japan-on-china-s-feather-shortage",
+      "published_at": null,
+      "published_label": "Unknown",
+      "age_label": "Unknown",
+      "source_id": "nikkei-asia",
+      "source_name": "Nikkei Asia",
+      "source_kind": "rss",
+      "category": "apac-security",
+      "regions": [
+        "china",
+        "japan"
+      ],
+      "priority": 0,
+      "cluster_key": "badminton shuttlecock prices surge 30 in japan on chinas feather shortage"
+    },
+    {
+      "id": "845c2df4115de723",
+      "title": "Chinese trains packed with ACs speed into Europe to help with heat wave",
+      "summary": "",
+      "url": "https://asia.nikkei.com/business/transportation/chinese-trains-packed-with-acs-speed-into-europe-to-help-with-heat-wave",
+      "published_at": null,
+      "published_label": "Unknown",
+      "age_label": "Unknown",
+      "source_id": "nikkei-asia",
+      "source_name": "Nikkei Asia",
+      "source_kind": "rss",
+      "category": "apac-security",
+      "regions": [
+        "china",
+        "europe"
+      ],
+      "priority": 0,
+      "cluster_key": "chinese trains packed with acs speed into europe to help with heat wave"
+    },
+    {
+      "id": "afceae3805f59e4d",
+      "title": "Global development must benefit investors too, including China: UNDP head",
+      "summary": "",
+      "url": "https://asia.nikkei.com/editor-s-picks/interview/global-development-must-benefit-investors-too-including-china-undp-head",
+      "published_at": null,
+      "published_label": "Unknown",
+      "age_label": "Unknown",
+      "source_id": "nikkei-asia",
+      "source_name": "Nikkei Asia",
+      "source_kind": "rss",
+      "category": "apac-security",
+      "regions": [
+        "china"
+      ],
+      "priority": 0,
+      "cluster_key": "global development must benefit investors too including china undp head"
+    },
+    {
+      "id": "f7c6f90a7b07d238",
+      "title": "Living between two worlds on Taiwan's Matsu Islands",
+      "summary": "",
+      "url": "https://asia.nikkei.com/life-arts/life/living-between-two-worlds-on-taiwan-s-matsu-islands",
+      "published_at": null,
+      "published_label": "Unknown",
+      "age_label": "Unknown",
+      "source_id": "nikkei-asia",
+      "source_name": "Nikkei Asia",
+      "source_kind": "rss",
+      "category": "apac-security",
+      "regions": [
+        "taiwan"
+      ],
+      "priority": 0,
+      "cluster_key": "living between two worlds on taiwans matsu islands"
+    },
+    {
+      "id": "e199fc14aebfc33b",
+      "title": "7-Eleven owner forges new capital ties to revamp Japan convenience stores",
+      "summary": "",
+      "url": "https://asia.nikkei.com/business/retail/7-eleven-owner-forges-new-capital-ties-to-revamp-japan-convenience-stores",
+      "published_at": null,
+      "published_label": "Unknown",
+      "age_label": "Unknown",
+      "source_id": "nikkei-asia",
+      "source_name": "Nikkei Asia",
+      "source_kind": "rss",
+      "category": "apac-security",
+      "regions": [
+        "japan"
+      ],
+      "priority": 0,
+      "cluster_key": "7eleven owner forges new capital ties to revamp japan convenience stores"
+    },
+    {
+      "id": "bcd42c9993bf058c",
+      "title": "US Treasury tells banks further yen intervention possible; yen surges",
+      "summary": "",
+      "url": "https://asia.nikkei.com/business/markets/currencies/us-treasury-tells-banks-further-yen-intervention-possible-yen-surges",
+      "published_at": null,
+      "published_label": "Unknown",
+      "age_label": "Unknown",
+      "source_id": "nikkei-asia",
+      "source_name": "Nikkei Asia",
+      "source_kind": "rss",
+      "category": "apac-security",
+      "regions": [
+        "se-asia"
+      ],
+      "priority": 0,
+      "cluster_key": "us treasury tells banks further yen intervention possible yen surges"
+    },
+    {
+      "id": "291a1ea664b425cc",
+      "title": "Japan's NTT Data launches new payment platform in India",
+      "summary": "",
+      "url": "https://asia.nikkei.com/business/technology/japan-s-ntt-data-launches-new-payment-platform-in-india",
+      "published_at": null,
+      "published_label": "Unknown",
+      "age_label": "Unknown",
+      "source_id": "nikkei-asia",
+      "source_name": "Nikkei Asia",
+      "source_kind": "rss",
+      "category": "apac-security",
+      "regions": [
+        "japan",
+        "india"
+      ],
+      "priority": 0,
+      "cluster_key": "japans ntt data launches new payment platform in india"
+    },
+    {
+      "id": "dba2ecbdfad0b287",
+      "title": "Japan PM's phone diplomacy stays silent for 2 months",
+      "summary": "",
+      "url": "https://asia.nikkei.com/spotlight/comment/japan-pm-s-phone-diplomacy-stays-silent-for-2-months",
+      "published_at": null,
+      "published_label": "Unknown",
+      "age_label": "Unknown",
+      "source_id": "nikkei-asia",
+      "source_name": "Nikkei Asia",
+      "source_kind": "rss",
+      "category": "apac-security",
+      "regions": [
+        "japan"
+      ],
+      "priority": 0,
+      "cluster_key": "japan pms phone diplomacy stays silent for 2 months"
     }
   ],
   "trends": [
@@ -3117,15 +3109,27 @@
       "count": 12
     },
     {
+      "term": "commonwealth",
+      "count": 8
+    },
+    {
+      "term": "games",
+      "count": 8
+    },
+    {
       "term": "south",
       "count": 8
     },
     {
-      "term": "commonwealth",
+      "term": "india",
       "count": 7
     },
     {
-      "term": "games",
+      "term": "japan",
+      "count": 7
+    },
+    {
+      "term": "police",
       "count": 7
     },
     {
@@ -3137,19 +3141,7 @@
       "count": 6
     },
     {
-      "term": "police",
-      "count": 6
-    },
-    {
-      "term": "first",
-      "count": 5
-    },
-    {
       "term": "force",
-      "count": 5
-    },
-    {
-      "term": "india",
       "count": 5
     }
   ]
