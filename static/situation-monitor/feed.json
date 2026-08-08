@@ -1,11 +1,11 @@
 {
-  "updated_at": "2026-08-08T19:45Z",
-  "updated_label": "08 Aug 2026 · 19:45Z",
+  "updated_at": "2026-08-08T20:11Z",
+  "updated_label": "08 Aug 2026 · 20:11Z",
   "categories": [
     {
       "id": "nz-pacific",
       "label": "NZ & Pacific",
-      "count": 36
+      "count": 34
     },
     {
       "id": "apac-security",
@@ -15,7 +15,7 @@
     {
       "id": "cyber",
       "label": "Cyber",
-      "count": 7
+      "count": 9
     },
     {
       "id": "global",
@@ -124,9 +124,9 @@
       "name": "The Record",
       "category": "cyber",
       "url": "https://therecord.media/feed/",
-      "item_count": 5,
-      "status": "ok",
-      "error": null
+      "item_count": 0,
+      "status": "error",
+      "error": "HTTP Error 520: <none>"
     },
     {
       "id": "krebs",
@@ -176,15 +176,15 @@
   ],
   "items": [
     {
-      "id": "6839ca0ad3e62927",
+      "id": "c8e745975d288380",
       "title": "Hamilton armed robbers found sleeping on mattress in garage after targeting Four Square for vapes",
       "summary": "Jayden Bint, 24, was jailed two years and 11 months for his part in the offending.",
       "url": "https://www.rnz.co.nz/news/crime-and-justice/944252/hamilton-armed-robbers-found-sleeping-on-mattress-in-garage-after-targeting-four-square-for-vapes",
-      "published_at": "2026-08-08T19:26:44Z",
-      "published_label": "08 Aug 2026 · 19:26Z",
-      "age_label": "18m ago",
-      "source_id": "rnz-news",
-      "source_name": "RNZ News",
+      "published_at": "2026-08-08T19:55:52Z",
+      "published_label": "08 Aug 2026 · 19:55Z",
+      "age_label": "15m ago",
+      "source_id": "rnz-national",
+      "source_name": "RNZ National",
       "source_kind": "rss",
       "category": "nz-pacific",
       "regions": [
@@ -194,13 +194,50 @@
       "cluster_key": "hamilton armed robbers found sleeping on mattress in garage after targeting four square for vape"
     },
     {
+      "id": "f8dba4568aec63e9",
+      "title": "Privacy experts warn of gaps in NZ law, as camera glasses hit Kmart shelves",
+      "summary": "But not everyone sees the technology as a threat, with some pointing out it's a game-changer for people with disabilities.",
+      "url": "https://www.rnz.co.nz/news/science-and-technology/933579/privacy-experts-warn-of-gaps-in-nz-law-as-camera-glasses-hit-kmart-shelves",
+      "published_at": "2026-08-08T19:53:04Z",
+      "published_label": "08 Aug 2026 · 19:53Z",
+      "age_label": "18m ago",
+      "source_id": "rnz-national",
+      "source_name": "RNZ National",
+      "source_kind": "rss",
+      "category": "nz-pacific",
+      "regions": [
+        "pacific"
+      ],
+      "priority": 30,
+      "cluster_key": "privacy experts warn of gaps in nz law as camera glasses hit kmart shelves"
+    },
+    {
+      "id": "d7ce222196d8fc6c",
+      "title": "New Zealand Air Force rescues six people from rough waters near Fiji",
+      "summary": "The six were aboard a small vessel which failed to reach Fulaga.",
+      "url": "https://www.rnz.co.nz/news/emergencies_local/944358/new-zealand-air-force-rescues-six-people-from-rough-waters-near-fiji",
+      "published_at": "2026-08-08T19:34:00Z",
+      "published_label": "08 Aug 2026 · 19:34Z",
+      "age_label": "37m ago",
+      "source_id": "rnz-news",
+      "source_name": "RNZ News",
+      "source_kind": "rss",
+      "category": "nz-pacific",
+      "regions": [
+        "nz",
+        "pacific"
+      ],
+      "priority": 30,
+      "cluster_key": "new zealand air force rescues six people from rough waters near fiji"
+    },
+    {
       "id": "9fa97b53f8f076cb",
       "title": "Hormuz talks positive, Oman says, as Iran warns deal would not open strait",
       "summary": "Both sides suggest progress in talks to agree a new shipping route through the strait, but a breakthrough remains unclear.",
       "url": "https://www.bbc.co.uk/news/articles/c934j5y2lq9o?at_medium=RSS&at_campaign=rss",
       "published_at": "2026-08-08T19:18:57Z",
       "published_label": "08 Aug 2026 · 19:18Z",
-      "age_label": "26m ago",
+      "age_label": "52m ago",
       "source_id": "bbc-world",
       "source_name": "BBC World",
       "source_kind": "rss",
@@ -219,7 +256,7 @@
       "url": "https://www.rnz.co.nz/life/wellbeing/what-s-the-neuroscience-behind-a-runner-s-high",
       "published_at": "2026-08-08T19:18:27Z",
       "published_label": "08 Aug 2026 · 19:18Z",
-      "age_label": "26m ago",
+      "age_label": "53m ago",
       "source_id": "rnz-news",
       "source_name": "RNZ News",
       "source_kind": "rss",
@@ -237,7 +274,7 @@
       "url": "https://www.rnz.co.nz/news/political/943814/the-house-luxon-and-peters-who-are-you-today",
       "published_at": "2026-08-08T18:55:50Z",
       "published_label": "08 Aug 2026 · 18:55Z",
-      "age_label": "49m ago",
+      "age_label": "1h ago",
       "source_id": "rnz-news",
       "source_name": "RNZ News",
       "source_kind": "rss",
@@ -245,7 +282,7 @@
       "regions": [
         "pacific"
       ],
-      "priority": 30,
+      "priority": 20,
       "cluster_key": "the house luxon and peters who are you today"
     },
     {
@@ -273,7 +310,7 @@
       "url": "https://www.bbc.co.uk/news/articles/cz7dy8gq99eo?at_medium=RSS&at_campaign=rss",
       "published_at": "2026-08-08T18:06:25Z",
       "published_label": "08 Aug 2026 · 18:06Z",
-      "age_label": "1h ago",
+      "age_label": "2h ago",
       "source_id": "bbc-world",
       "source_name": "BBC World",
       "source_kind": "rss",
@@ -292,7 +329,7 @@
       "url": "https://www.bbc.co.uk/news/articles/cy9wy3y0e5wo?at_medium=RSS&at_campaign=rss",
       "published_at": "2026-08-08T17:58:42Z",
       "published_label": "08 Aug 2026 · 17:58Z",
-      "age_label": "1h ago",
+      "age_label": "2h ago",
       "source_id": "bbc-world",
       "source_name": "BBC World",
       "source_kind": "rss",
@@ -346,7 +383,7 @@
       "url": "https://www.scmp.com/news/world/europe/article/3363413/kosovo-pm-egged-parliament-political-crisis-spirals?utm_source=rss_feed",
       "published_at": "2026-08-08T17:09:30Z",
       "published_label": "08 Aug 2026 · 17:09Z",
-      "age_label": "2h ago",
+      "age_label": "3h ago",
       "source_id": "scmp",
       "source_name": "South China Morning Post",
       "source_kind": "rss",
@@ -364,7 +401,7 @@
       "url": "https://www.bbc.co.uk/news/videos/cvg8je12xxeo?at_medium=RSS&at_campaign=rss",
       "published_at": "2026-08-08T15:59:37Z",
       "published_label": "08 Aug 2026 · 15:59Z",
-      "age_label": "3h ago",
+      "age_label": "4h ago",
       "source_id": "bbc-world",
       "source_name": "BBC World",
       "source_kind": "rss",
@@ -382,7 +419,7 @@
       "url": "https://www.bbc.co.uk/news/articles/cewr898jy8go?at_medium=RSS&at_campaign=rss",
       "published_at": "2026-08-08T15:56:39Z",
       "published_label": "08 Aug 2026 · 15:56Z",
-      "age_label": "3h ago",
+      "age_label": "4h ago",
       "source_id": "bbc-world",
       "source_name": "BBC World",
       "source_kind": "rss",
@@ -400,7 +437,7 @@
       "url": "https://www.bbc.co.uk/sport/football/articles/c70gn3w5ek5o?at_medium=RSS&at_campaign=rss",
       "published_at": "2026-08-08T15:51:11Z",
       "published_label": "08 Aug 2026 · 15:51Z",
-      "age_label": "3h ago",
+      "age_label": "4h ago",
       "source_id": "bbc-world",
       "source_name": "BBC World",
       "source_kind": "rss",
@@ -437,7 +474,7 @@
       "url": "https://www.scmp.com/news/world/middle-east/article/3363411/iran-targeted-tanker-says-uae-tehran-says-hormuz-deal-oman-close?utm_source=rss_feed",
       "published_at": "2026-08-08T14:56:28Z",
       "published_label": "08 Aug 2026 · 14:56Z",
-      "age_label": "4h ago",
+      "age_label": "5h ago",
       "source_id": "scmp",
       "source_name": "South China Morning Post",
       "source_kind": "rss",
@@ -474,7 +511,7 @@
       "url": "https://www.scmp.com/news/china/military/article/3363386/how-chinas-hypersonic-carrier-killers-could-distract-us-forces-taiwan-conflict?utm_source=rss_feed",
       "published_at": "2026-08-08T14:00:05Z",
       "published_label": "08 Aug 2026 · 14:00Z",
-      "age_label": "5h ago",
+      "age_label": "6h ago",
       "source_id": "scmp",
       "source_name": "South China Morning Post",
       "source_kind": "rss",
@@ -483,7 +520,7 @@
         "china",
         "taiwan"
       ],
-      "priority": 38,
+      "priority": 28,
       "cluster_key": "how beijings hypersonic carrier killers could distract us forces in a taiwan conflict"
     },
     {
@@ -511,7 +548,7 @@
       "url": "https://www.scmp.com/news/china/science/article/3363404/what-glueball-chinese-led-team-finds-rare-particle-made-entirely-force?utm_source=rss_feed",
       "published_at": "2026-08-08T13:00:11Z",
       "published_label": "08 Aug 2026 · 13:00Z",
-      "age_label": "6h ago",
+      "age_label": "7h ago",
       "source_id": "scmp",
       "source_name": "South China Morning Post",
       "source_kind": "rss",
@@ -529,7 +566,7 @@
       "url": "https://www.bbc.co.uk/sport/basketball/articles/czekj4wg41po?at_medium=RSS&at_campaign=rss",
       "published_at": "2026-08-08T12:05:04Z",
       "published_label": "08 Aug 2026 · 12:05Z",
-      "age_label": "7h ago",
+      "age_label": "8h ago",
       "source_id": "bbc-world",
       "source_name": "BBC World",
       "source_kind": "rss",
@@ -547,7 +584,7 @@
       "url": "https://www.scmp.com/news/china/science/article/3363149/chinas-lunar-research-station-could-be-guarded-robot-watchdogs-space-scientists-say?utm_source=rss_feed",
       "published_at": "2026-08-08T12:00:10Z",
       "published_label": "08 Aug 2026 · 12:00Z",
-      "age_label": "7h ago",
+      "age_label": "8h ago",
       "source_id": "scmp",
       "source_name": "South China Morning Post",
       "source_kind": "rss",
@@ -565,7 +602,7 @@
       "url": "https://www.scmp.com/news/hong-kong/transport/article/3363406/manila-bound-flight-returns-hong-kong-after-suspected-cargo-door-issue?utm_source=rss_feed",
       "published_at": "2026-08-08T11:50:35Z",
       "published_label": "08 Aug 2026 · 11:50Z",
-      "age_label": "7h ago",
+      "age_label": "8h ago",
       "source_id": "scmp",
       "source_name": "South China Morning Post",
       "source_kind": "rss",
@@ -639,7 +676,7 @@
       "url": "https://www.scmp.com/news/china/military/article/3363402/taiwans-william-lai-rehearses-late-night-emergency-escape-during-military-drill?utm_source=rss_feed",
       "published_at": "2026-08-08T11:01:34Z",
       "published_label": "08 Aug 2026 · 11:01Z",
-      "age_label": "8h ago",
+      "age_label": "9h ago",
       "source_id": "scmp",
       "source_name": "South China Morning Post",
       "source_kind": "rss",
@@ -657,7 +694,7 @@
       "url": "https://www.scmp.com/news/hong-kong/hong-kong-economy/article/3363401/hong-kong-employer-groups-call-helper-wage-freeze-warn-mass-sackings?utm_source=rss_feed",
       "published_at": "2026-08-08T10:55:32Z",
       "published_label": "08 Aug 2026 · 10:55Z",
-      "age_label": "8h ago",
+      "age_label": "9h ago",
       "source_id": "scmp",
       "source_name": "South China Morning Post",
       "source_kind": "rss",
@@ -711,7 +748,7 @@
       "url": "https://www.scmp.com/news/world/russia-central-asia/article/3363397/russian-attacks-kill-4-ukraine-including-3-year-old-defences-fall-short?utm_source=rss_feed",
       "published_at": "2026-08-08T10:00:17Z",
       "published_label": "08 Aug 2026 · 10:00Z",
-      "age_label": "9h ago",
+      "age_label": "10h ago",
       "source_id": "scmp",
       "source_name": "South China Morning Post",
       "source_kind": "rss",
@@ -796,24 +833,6 @@
       "cluster_key": "whanganui opts out of head start pathway ahead of deadline"
     },
     {
-      "id": "571266106a34f61a",
-      "title": "Privacy experts warn of gaps in NZ law, as camera glasses hit Kmart shelves",
-      "summary": "But not everyone sees the technology as a threat, with some pointing out it's a game-changer for people with disabilities.",
-      "url": "https://www.rnz.co.nz/news/science-and-technology/933579/privacy-experts-warn-of-gaps-in-nz-law-as-camera-glasses-hit-kmart-shelves",
-      "published_at": "2026-08-08T09:07:01Z",
-      "published_label": "08 Aug 2026 · 09:07Z",
-      "age_label": "10h ago",
-      "source_id": "rnz-news",
-      "source_name": "RNZ News",
-      "source_kind": "rss",
-      "category": "nz-pacific",
-      "regions": [
-        "pacific"
-      ],
-      "priority": 10,
-      "cluster_key": "privacy experts warn of gaps in nz law as camera glasses hit kmart shelves"
-    },
-    {
       "id": "442c82a90c985bb5",
       "title": "Courtney Barnett's last NZ tour was 'really special' - this November she's coming back",
       "summary": "Courtney Barnett's last NZ tour was 'really special' - this November she's coming back",
@@ -838,7 +857,7 @@
       "url": "https://www.rnz.co.nz/news/crime-and-justice/936150/brian-tamaki-says-police-have-revoked-his-firearms-licence",
       "published_at": "2026-08-08T07:48:31Z",
       "published_label": "08 Aug 2026 · 07:48Z",
-      "age_label": "11h ago",
+      "age_label": "12h ago",
       "source_id": "rnz-news",
       "source_name": "RNZ News",
       "source_kind": "rss",
@@ -857,7 +876,7 @@
       "url": "https://www.rnz.co.nz/news/political/928789/councils-across-country-meet-to-finalise-amalgamation-proposals-ahead-of-deadline",
       "published_at": "2026-08-08T05:51:25Z",
       "published_label": "08 Aug 2026 · 05:51Z",
-      "age_label": "13h ago",
+      "age_label": "14h ago",
       "source_id": "rnz-news",
       "source_name": "RNZ News",
       "source_kind": "rss",
@@ -875,7 +894,7 @@
       "url": "https://www.rnz.co.nz/news/personal-finance/934608/am-i-too-old-to-be-more-aggressive-with-my-kiwisaver-ask-susan",
       "published_at": "2026-08-08T05:11:37Z",
       "published_label": "08 Aug 2026 · 05:11Z",
-      "age_label": "14h ago",
+      "age_label": "15h ago",
       "source_id": "rnz-news",
       "source_name": "RNZ News",
       "source_kind": "rss",
@@ -903,24 +922,6 @@
       ],
       "priority": 10,
       "cluster_key": "its amazing aucklanders get first look at new city rail link station"
-    },
-    {
-      "id": "d76c98a88ad5d5b2",
-      "title": "Watch: National Party announces list for 2026 General Election",
-      "summary": "Senior National MPs who might have been nervous about the party's polling have been given high list rankings to give them the best shot of returning to Parliament next term.",
-      "url": "https://www.rnz.co.nz/news/politics_election-2026/934651/watch-national-party-announces-list-for-2026-general-election",
-      "published_at": "2026-08-08T03:23:24Z",
-      "published_label": "08 Aug 2026 · 03:23Z",
-      "age_label": "16h ago",
-      "source_id": "rnz-news",
-      "source_name": "RNZ News",
-      "source_kind": "rss",
-      "category": "nz-pacific",
-      "regions": [
-        "pacific"
-      ],
-      "priority": 10,
-      "cluster_key": "watch national party announces list for 2026 general election"
     },
     {
       "id": "f736d2c76ff9458a",
@@ -996,42 +997,6 @@
       "cluster_key": "māori data in māori hands experts want google to adhere to data sovereignty principles"
     },
     {
-      "id": "f2ebdc5d29f5d6d2",
-      "title": "Crash closes West Coast highway",
-      "summary": "One person was reportedly in a critical condition.",
-      "url": "https://www.rnz.co.nz/news/emergencies_local/934576/crash-closes-west-coast-highway",
-      "published_at": "2026-08-08T01:20:47Z",
-      "published_label": "08 Aug 2026 · 01:20Z",
-      "age_label": "18h ago",
-      "source_id": "rnz-national",
-      "source_name": "RNZ National",
-      "source_kind": "rss",
-      "category": "nz-pacific",
-      "regions": [
-        "pacific"
-      ],
-      "priority": 28,
-      "cluster_key": "crash closes west coast highway"
-    },
-    {
-      "id": "6b644ce6a78a0f8d",
-      "title": "Te Matatini o Ngā Taniwha 2027 draw announced",
-      "summary": "Qualifying kapa haka representing 13 different regions have been allocated slots across four performance pools.",
-      "url": "https://www.rnz.co.nz/news/te-manu-korihi/934453/te-matatini-o-nga-taniwha-2027-draw-announced",
-      "published_at": "2026-08-08T00:41:40Z",
-      "published_label": "08 Aug 2026 · 00:41Z",
-      "age_label": "19h ago",
-      "source_id": "rnz-national",
-      "source_name": "RNZ National",
-      "source_kind": "rss",
-      "category": "nz-pacific",
-      "regions": [
-        "pacific"
-      ],
-      "priority": 10,
-      "cluster_key": "te matatini o ngā taniwha 2027 draw announced"
-    },
-    {
       "id": "84806f986483801b",
       "title": "He's been frozen on Everest for 30 years, now 'Green Boots' may finally be coming home",
       "summary": "For decades, an Indian man's lime shoes have been a grim trail marker for many climbing the world's highest peak.",
@@ -1056,7 +1021,7 @@
       "url": "https://www.bbc.co.uk/news/articles/cy8ey458pv5o?at_medium=RSS&at_campaign=rss",
       "published_at": "2026-08-07T22:07:00Z",
       "published_label": "07 Aug 2026 · 22:07Z",
-      "age_label": "21h ago",
+      "age_label": "22h ago",
       "source_id": "bbc-world",
       "source_name": "BBC World",
       "source_kind": "rss",
@@ -1092,7 +1057,7 @@
       "url": "https://thediplomat.com/2026/08/chinas-asian-affairs-reshuffle/",
       "published_at": "2026-08-07T20:04:00Z",
       "published_label": "07 Aug 2026 · 20:04Z",
-      "age_label": "23h ago",
+      "age_label": "1d ago",
       "source_id": "diplomat",
       "source_name": "The Diplomat",
       "source_kind": "rss",
@@ -1100,26 +1065,8 @@
       "regions": [
         "china"
       ],
-      "priority": 10,
+      "priority": 0,
       "cluster_key": "chinas asian affairs reshuffle"
-    },
-    {
-      "id": "fea51bc2f28ee961",
-      "title": "Water utilities group partners with DEF CON offshoot for Water Watch Center",
-      "summary": "The National Rural Water Association and a group of cybersecurity experts have formed a program to help cash-strapped utilities face the increase in threats to their systems.",
-      "url": "https://therecord.media/water-watch-center-utilities-def-con-franklin-nrwa",
-      "published_at": "2026-08-07T18:55:00Z",
-      "published_label": "07 Aug 2026 · 18:55Z",
-      "age_label": "1d ago",
-      "source_id": "the-record",
-      "source_name": "The Record",
-      "source_kind": "rss",
-      "category": "cyber",
-      "regions": [
-        "global"
-      ],
-      "priority": 12,
-      "cluster_key": "water utilities group partners with def con offshoot for water watch center"
     },
     {
       "id": "d5a5a193a8d69d50",
@@ -1139,24 +1086,6 @@
       ],
       "priority": 0,
       "cluster_key": "70 ships trapped in persian gulf as iranus conflict nears six months"
-    },
-    {
-      "id": "9160fb5b08893c4e",
-      "title": "US cyber ambassador nominee Cassady confirmed in Senate",
-      "summary": "NTIA official Adam Cassady becomes the second person confirmed to be the State Department's ambassador-at-large for cyber policy.",
-      "url": "https://therecord.media/adam-cassady-confirmed-senate-cyber-ambassador",
-      "published_at": "2026-08-07T18:14:00Z",
-      "published_label": "07 Aug 2026 · 18:14Z",
-      "age_label": "1d ago",
-      "source_id": "the-record",
-      "source_name": "The Record",
-      "source_kind": "rss",
-      "category": "cyber",
-      "regions": [
-        "global"
-      ],
-      "priority": 12,
-      "cluster_key": "us cyber ambassador nominee cassady confirmed in senate"
     },
     {
       "id": "a75b166210b88f79",
@@ -1216,42 +1145,6 @@
       "cluster_key": "saudi arabia turkey and pakistan sign defence pact"
     },
     {
-      "id": "90c85423c5ca9f84",
-      "title": "New Mexico judge orders Meta to pay $567 million in kids online safety case",
-      "summary": "The money will be used to create a fund to mitigate social media harms, including by carving out $420 million for treatment for New Mexico youth who have been hurt on the platforms.",
-      "url": "https://therecord.media/new-mexico-judge-orders-meta-567-million-kids-safety",
-      "published_at": "2026-08-07T16:58:00Z",
-      "published_label": "07 Aug 2026 · 16:58Z",
-      "age_label": "1d ago",
-      "source_id": "the-record",
-      "source_name": "The Record",
-      "source_kind": "rss",
-      "category": "cyber",
-      "regions": [
-        "global"
-      ],
-      "priority": 12,
-      "cluster_key": "new mexico judge orders meta to pay 567 million in kids online safety case"
-    },
-    {
-      "id": "3ed929a5aebbd711",
-      "title": "Military device manufacturer discloses cyber incident to SEC",
-      "summary": "IEH Corporation — which produces specialized products used in military satellites, missiles and fighter jets — said it discovered a cyberattack on Tuesday and immediately tried to contain it.",
-      "url": "https://therecord.media/military-device-manufacturer-discloses-cyber-incident",
-      "published_at": "2026-08-07T16:52:00Z",
-      "published_label": "07 Aug 2026 · 16:52Z",
-      "age_label": "1d ago",
-      "source_id": "the-record",
-      "source_name": "The Record",
-      "source_kind": "rss",
-      "category": "cyber",
-      "regions": [
-        "global"
-      ],
-      "priority": 30,
-      "cluster_key": "military device manufacturer discloses cyber incident to sec"
-    },
-    {
       "id": "6921d23420ae5609",
       "title": "Spanish police arrest 78 people in bust of 'one of largest' smuggling networks",
       "summary": "The group moved synthetic drugs from Spain to Algeria, then used the return journey to smuggle migrants and weapons.",
@@ -1268,24 +1161,6 @@
       ],
       "priority": 0,
       "cluster_key": "spanish police arrest 78 people in bust of one of largest smuggling networks"
-    },
-    {
-      "id": "1446460e84f333da",
-      "title": "Irregular, firm behind AI hacking incidents, won't say if there were more",
-      "summary": "A spokesperson said Irregular’s investigation into what happened with Anthropic, OpenAI and Meta's AI models was ongoing and that they could not “go into further details.”",
-      "url": "https://therecord.media/irregular-ai-security-company-incidents",
-      "published_at": "2026-08-07T15:00:00Z",
-      "published_label": "07 Aug 2026 · 15:00Z",
-      "age_label": "1d ago",
-      "source_id": "the-record",
-      "source_name": "The Record",
-      "source_kind": "rss",
-      "category": "cyber",
-      "regions": [
-        "global"
-      ],
-      "priority": 12,
-      "cluster_key": "irregular firm behind ai hacking incidents wont say if there were more"
     },
     {
       "id": "0dad05e8225bd590",
@@ -2667,7 +2542,7 @@
       "url": "https://www.defenseone.com/threats/2026/08/chinese-telecoms-crackdowns-probe/415208/",
       "published_at": "2026-08-04T20:00:00Z",
       "published_label": "04 Aug 2026 · 20:00Z",
-      "age_label": "3d ago",
+      "age_label": "4d ago",
       "source_id": "defense-one",
       "source_name": "Defense One",
       "source_kind": "rss",
@@ -3099,6 +2974,132 @@
       ],
       "priority": 30,
       "cluster_key": "read this before you buy that tv streaming stick"
+    },
+    {
+      "id": "6f09a95582d1a5ef",
+      "title": "LG to Ban Residential Proxies from Smart TV Apps",
+      "summary": "The home appliance giant LG Electronics USA said this week it plans to suspend any apps built for its smart TVs that turn one's television into an always-on residential proxy node. The move comes less than a month after researchers found that more than 42 percent of games and ot…",
+      "url": "https://krebsonsecurity.com/2026/07/lg-to-ban-residential-proxies-from-smart-tv-apps/",
+      "published_at": "2026-07-22T01:10:38Z",
+      "published_label": "22 Jul 2026 · 01:10Z",
+      "age_label": "22 Jul 2026 · 01:10Z",
+      "source_id": "krebs",
+      "source_name": "Krebs on Security",
+      "source_kind": "rss",
+      "category": "cyber",
+      "regions": [
+        "global"
+      ],
+      "priority": 12,
+      "cluster_key": "lg to ban residential proxies from smart tv apps"
+    },
+    {
+      "id": "75295ed06c2574d4",
+      "title": "Microsoft Patches a Record 570 Security Flaws",
+      "summary": "Microsoft Corp. today released software updates to plug at least 570 security holes in its Windows operating systems and other software, almost triple the number of vulnerabilities the software giant fixed in its record-smashing Patch Tuesday release last month. Microsoft attrib…",
+      "url": "https://krebsonsecurity.com/2026/07/microsoft-patches-a-record-570-security-flaws/",
+      "published_at": "2026-07-14T19:22:42Z",
+      "published_label": "14 Jul 2026 · 19:22Z",
+      "age_label": "14 Jul 2026 · 19:22Z",
+      "source_id": "krebs",
+      "source_name": "Krebs on Security",
+      "source_kind": "rss",
+      "category": "cyber",
+      "regions": [
+        "global"
+      ],
+      "priority": 12,
+      "cluster_key": "microsoft patches a record 570 security flaws"
+    },
+    {
+      "id": "0ad5fc152f95241f",
+      "title": "Lessons Learned from CISA’s Recent GitHub Leak",
+      "summary": "The Cybersecurity and Infrastructure Security Agency (CISA) has issued a postmortem on a data leak in which a contractor published dozens of internal CISA credentials -- including AWS Govcloud keys -- in a public GitHub repository for almost six months before being notified by K…",
+      "url": "https://krebsonsecurity.com/2026/07/lessons-learned-from-cisas-recent-github-leak/",
+      "published_at": "2026-07-13T15:03:28Z",
+      "published_label": "13 Jul 2026 · 15:03Z",
+      "age_label": "13 Jul 2026 · 15:03Z",
+      "source_id": "krebs",
+      "source_name": "Krebs on Security",
+      "source_kind": "rss",
+      "category": "cyber",
+      "regions": [
+        "global"
+      ],
+      "priority": 12,
+      "cluster_key": "lessons learned from cisas recent github leak"
+    },
+    {
+      "id": "ee3f797121c571e2",
+      "title": "Felons, Fraudsters Flog Offensive Cybersecurity Startup",
+      "summary": "A cybersecurity startup dangling millions of dollars to acquire zero-day security vulnerabilities in popular software is run by a pair of far-right conspiracy theorists and convicted felons whose most recent ventures included fake intelligence companies and a now-defunct AI-base…",
+      "url": "https://krebsonsecurity.com/2026/07/felons-fraudsters-flog-offensive-cybersecurity-startup/",
+      "published_at": "2026-07-08T12:31:39Z",
+      "published_label": "08 Jul 2026 · 12:31Z",
+      "age_label": "08 Jul 2026 · 12:31Z",
+      "source_id": "krebs",
+      "source_name": "Krebs on Security",
+      "source_kind": "rss",
+      "category": "cyber",
+      "regions": [
+        "global"
+      ],
+      "priority": 30,
+      "cluster_key": "felons fraudsters flog offensive cybersecurity startup"
+    },
+    {
+      "id": "0ee375148353329c",
+      "title": "FBI Seizes NetNut Proxy Platform, Popa Botnet",
+      "summary": "The Federal Bureau of Investigation (FBI) said today it worked with industry partners to seize hundreds of domains associated with NetNut, a sprawling residential proxy service operated by the publicly-traded Israeli company Alarum Technologies [NASDAQ: ALAR]. The action comes r…",
+      "url": "https://krebsonsecurity.com/2026/07/fbi-seizes-netnut-proxy-platform-popa-botnet/",
+      "published_at": "2026-07-02T19:27:33Z",
+      "published_label": "02 Jul 2026 · 19:27Z",
+      "age_label": "02 Jul 2026 · 19:27Z",
+      "source_id": "krebs",
+      "source_name": "Krebs on Security",
+      "source_kind": "rss",
+      "category": "cyber",
+      "regions": [
+        "middle-east"
+      ],
+      "priority": 12,
+      "cluster_key": "fbi seizes netnut proxy platform popa botnet"
+    },
+    {
+      "id": "aacce50447b91d29",
+      "title": "Scattered Spider Hackers Plead Guilty on Day 1 of Trial",
+      "summary": "Two men pleaded guilty in the United Kingdom this week to criminal charges stemming from an August 2024 cyberattack that crippled Transport for London, the entity responsible for the public transport network in the Greater London area. The duo were key members of a prolific cybe…",
+      "url": "https://krebsonsecurity.com/2026/06/scattered-spider-hackers-plead-guilty-on-day-1-of-trial/",
+      "published_at": "2026-06-23T16:12:49Z",
+      "published_label": "23 Jun 2026 · 16:12Z",
+      "age_label": "23 Jun 2026 · 16:12Z",
+      "source_id": "krebs",
+      "source_name": "Krebs on Security",
+      "source_kind": "rss",
+      "category": "cyber",
+      "regions": [
+        "europe"
+      ],
+      "priority": 12,
+      "cluster_key": "scattered spider hackers plead guilty on day 1 of trial"
+    },
+    {
+      "id": "676b17462bb1c18d",
+      "title": "‘Popa’ Botnet Linked to Publicly-Traded Israeli Firm",
+      "summary": "For the past four years, a sprawling Android-based botnet called Popa has forced millions of consumer TV boxes to relay Internet traffic linked to advertising fraud, account takeovers, and mass data-scraping efforts. This week, researchers from multiple security firms concluded…",
+      "url": "https://krebsonsecurity.com/2026/06/popa-botnet-linked-to-publicly-traded-israeli-firm/",
+      "published_at": "2026-06-18T17:37:58Z",
+      "published_label": "18 Jun 2026 · 17:37Z",
+      "age_label": "18 Jun 2026 · 17:37Z",
+      "source_id": "krebs",
+      "source_name": "Krebs on Security",
+      "source_kind": "rss",
+      "category": "cyber",
+      "regions": [
+        "middle-east"
+      ],
+      "priority": 12,
+      "cluster_key": "popa botnet linked to publiclytraded israeli firm"
     }
   ],
   "trends": [
@@ -3107,11 +3108,11 @@
       "count": 13
     },
     {
-      "term": "military",
-      "count": 7
+      "term": "japan",
+      "count": 6
     },
     {
-      "term": "japan",
+      "term": "military",
       "count": 6
     },
     {
