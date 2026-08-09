@@ -1,26 +1,26 @@
 {
-  "updated_at": "2026-08-09T08:56Z",
-  "updated_label": "09 Aug 2026 · 08:56Z",
+  "updated_at": "2026-08-09T09:49Z",
+  "updated_label": "09 Aug 2026 · 09:49Z",
   "categories": [
     {
       "id": "nz-pacific",
       "label": "NZ & Pacific",
-      "count": 34
+      "count": 35
     },
     {
       "id": "apac-security",
       "label": "APAC Security",
-      "count": 99
+      "count": 90
     },
     {
       "id": "cyber",
       "label": "Cyber",
-      "count": 15
+      "count": 8
     },
     {
       "id": "global",
       "label": "Global",
-      "count": 12
+      "count": 27
     },
     {
       "id": "osint",
@@ -106,9 +106,9 @@
       "name": "Defense One",
       "category": "global",
       "url": "https://www.defenseone.com/rss/all/",
-      "item_count": 0,
-      "status": "error",
-      "error": "HTTP Error 403: Forbidden"
+      "item_count": 15,
+      "status": "ok",
+      "error": null
     },
     {
       "id": "cisa",
@@ -176,31 +176,31 @@
   ],
   "items": [
     {
-      "id": "6e45c47cf0e0e34a",
-      "title": "At least 12 taken to hospital after fire breaks out at Taikoo Shing flat",
-      "summary": "A fire has broken out at a flat in a Hong Kong housing estate, resulting in at least 12 people feeling unwell from the effects of smoke and residents fleeing to the rooftop for safety. The blaze erupted at Begonia Mansion in Taikoo Shing’s Harbour View Gardens on Sunday afternoo…",
-      "url": "https://www.scmp.com/news/hong-kong/society/article/3363441/least-12-taken-hospital-after-fire-breaks-out-taikoo-shing-flat?utm_source=rss_feed",
-      "published_at": "2026-08-09T08:48:57Z",
-      "published_label": "09 Aug 2026 · 08:48Z",
-      "age_label": "7m ago",
-      "source_id": "scmp",
-      "source_name": "South China Morning Post",
+      "id": "70bf6b7fe23c39cf",
+      "title": "Two arrested after fleeing vehicle collides with police car",
+      "summary": "A driver fleeing police smashed into multiple vehicles - including a police car - and evaded road spikes before crashing into a fence.",
+      "url": "https://www.rnz.co.nz/news/crime-and-justice/947394/two-arrested-after-fleeing-vehicle-collides-with-police-car",
+      "published_at": "2026-08-09T09:43:47Z",
+      "published_label": "09 Aug 2026 · 09:43Z",
+      "age_label": "5m ago",
+      "source_id": "rnz-national",
+      "source_name": "RNZ National",
       "source_kind": "rss",
-      "category": "apac-security",
+      "category": "nz-pacific",
       "regions": [
-        "se-asia"
+        "pacific"
       ],
       "priority": 30,
-      "cluster_key": "at least 12 taken to hospital after fire breaks out at taikoo shing flat"
+      "cluster_key": "two arrested after fleeing vehicle collides with police car"
     },
     {
-      "id": "39bd46587e0e7d13",
-      "title": "Schools closed as Ohakune faces water shutdown",
-      "summary": "Residents and visitors are being told not to use tap water or flush toilets, and to conserve supplies.",
-      "url": "https://www.rnz.co.nz/news/community/945785/schools-closed-as-ohakune-faces-water-shutdown",
-      "published_at": "2026-08-09T08:27:16Z",
-      "published_label": "09 Aug 2026 · 08:27Z",
-      "age_label": "29m ago",
+      "id": "d0ae00d356d8510c",
+      "title": "St John confirms weekly all-time call record has been broken again",
+      "summary": "St John confirms weekly all-time call record has been broken again",
+      "url": "https://www.rnz.co.nz/news/emergencies_national/946116/hato-hone-st-john-declares-major-incident-as-demand-for-ambulances-spikes",
+      "published_at": "2026-08-09T09:26:29Z",
+      "published_label": "09 Aug 2026 · 09:26Z",
+      "age_label": "22m ago",
       "source_id": "rnz-news",
       "source_name": "RNZ News",
       "source_kind": "rss",
@@ -209,34 +209,16 @@
         "pacific"
       ],
       "priority": 30,
-      "cluster_key": "schools closed as ohakune faces water shutdown"
-    },
-    {
-      "id": "c40f8e53d6e7a8f3",
-      "title": "Wellington city councillor Tony Randle dies suddenly",
-      "summary": "The late councillor was always cordial and constructive, while also bringing a healthy scepticism to every issue, says the city's mayor.",
-      "url": "https://www.rnz.co.nz/news/political/946836/wellington-city-councillor-tony-randle-dies-suddenly",
-      "published_at": "2026-08-09T08:23:49Z",
-      "published_label": "09 Aug 2026 · 08:23Z",
-      "age_label": "32m ago",
-      "source_id": "rnz-news",
-      "source_name": "RNZ News",
-      "source_kind": "rss",
-      "category": "nz-pacific",
-      "regions": [
-        "nz"
-      ],
-      "priority": 30,
-      "cluster_key": "wellington city councillor tony randle dies suddenly"
+      "cluster_key": "st john confirms weekly alltime call record has been broken again"
     },
     {
       "id": "8e46832e1475d3eb",
       "title": "Hato Hone St John declares major incident as demand for ambulances spikes",
       "summary": "The ambulance service has received more than 16,000 calls this week, beating the previous weekly record of 15,289 calls.",
       "url": "https://www.rnz.co.nz/news/emergencies_national/946116/hato-hone-st-john-declares-major-incident-as-demand-for-ambulances-spikes",
-      "published_at": "2026-08-09T08:23:23Z",
-      "published_label": "09 Aug 2026 · 08:23Z",
-      "age_label": "33m ago",
+      "published_at": "2026-08-09T09:25:43Z",
+      "published_label": "09 Aug 2026 · 09:25Z",
+      "age_label": "23m ago",
       "source_id": "rnz-news",
       "source_name": "RNZ News",
       "source_kind": "rss",
@@ -248,13 +230,67 @@
       "cluster_key": "hato hone st john declares major incident as demand for ambulances spikes"
     },
     {
-      "id": "fe1beee3c89b5cd3",
-      "title": "Companies must adapt to rising AI costs, tech commentator says",
-      "summary": "Cheap use of AI tools is over: \"For the last three years, the most expensive experiment in technology history has run on someone else's money.\" Businesses now need to put guard rails in place, a tech commentator says.",
-      "url": "https://www.rnz.co.nz/news/business/946676/companies-must-adapt-to-rising-ai-costs-tech-commentator-says",
-      "published_at": "2026-08-09T08:12:54Z",
-      "published_label": "09 Aug 2026 · 08:12Z",
-      "age_label": "43m ago",
+      "id": "c40f8e53d6e7a8f3",
+      "title": "Wellington city councillor Tony Randle dies suddenly",
+      "summary": "The late councillor was always cordial and constructive, while also bringing a healthy scepticism to every issue, says the city's mayor.",
+      "url": "https://www.rnz.co.nz/news/political/946836/wellington-city-councillor-tony-randle-dies-suddenly",
+      "published_at": "2026-08-09T09:20:31Z",
+      "published_label": "09 Aug 2026 · 09:20Z",
+      "age_label": "28m ago",
+      "source_id": "rnz-news",
+      "source_name": "RNZ News",
+      "source_kind": "rss",
+      "category": "nz-pacific",
+      "regions": [
+        "nz"
+      ],
+      "priority": 30,
+      "cluster_key": "wellington city councillor tony randle dies suddenly"
+    },
+    {
+      "id": "d13bfc7396370dee",
+      "title": "China’s AI models spooked Wall Street. But they may turbocharge industry growth",
+      "summary": "Breakthroughs in cheap Chinese open-weight artificial intelligence models have spooked US investors, but analysts argue plummeting model costs will benefit the AI industry in the long run by supercharging global demand for AI systems. Companies across the AI industry have slashe…",
+      "url": "https://www.scmp.com/tech/big-tech/article/3363381/chinas-ai-models-spooked-wall-street-they-may-turbocharge-industry-growth?utm_source=rss_feed",
+      "published_at": "2026-08-09T09:00:06Z",
+      "published_label": "09 Aug 2026 · 09:00Z",
+      "age_label": "49m ago",
+      "source_id": "scmp",
+      "source_name": "South China Morning Post",
+      "source_kind": "rss",
+      "category": "apac-security",
+      "regions": [
+        "china"
+      ],
+      "priority": 30,
+      "cluster_key": "chinas ai models spooked wall street but they may turbocharge industry growth"
+    },
+    {
+      "id": "6e45c47cf0e0e34a",
+      "title": "At least 12 taken to hospital after fire breaks out at Taikoo Shing flat",
+      "summary": "A fire has broken out at a flat in a Hong Kong housing estate, resulting in at least 12 people feeling unwell from the effects of smoke and residents fleeing to the rooftop for safety. The blaze erupted at Begonia Mansion in Taikoo Shing’s Harbour View Gardens on Sunday afternoo…",
+      "url": "https://www.scmp.com/news/hong-kong/society/article/3363441/least-12-taken-hospital-after-fire-breaks-out-taikoo-shing-flat?utm_source=rss_feed",
+      "published_at": "2026-08-09T08:48:57Z",
+      "published_label": "09 Aug 2026 · 08:48Z",
+      "age_label": "1h ago",
+      "source_id": "scmp",
+      "source_name": "South China Morning Post",
+      "source_kind": "rss",
+      "category": "apac-security",
+      "regions": [
+        "se-asia"
+      ],
+      "priority": 20,
+      "cluster_key": "at least 12 taken to hospital after fire breaks out at taikoo shing flat"
+    },
+    {
+      "id": "39bd46587e0e7d13",
+      "title": "Schools closed as Ohakune faces water shutdown",
+      "summary": "Residents and visitors are being told not to use tap water or flush toilets, and to conserve supplies.",
+      "url": "https://www.rnz.co.nz/news/community/945785/schools-closed-as-ohakune-faces-water-shutdown",
+      "published_at": "2026-08-09T08:27:16Z",
+      "published_label": "09 Aug 2026 · 08:27Z",
+      "age_label": "1h ago",
       "source_id": "rnz-news",
       "source_name": "RNZ News",
       "source_kind": "rss",
@@ -262,7 +298,25 @@
       "regions": [
         "pacific"
       ],
-      "priority": 30,
+      "priority": 20,
+      "cluster_key": "schools closed as ohakune faces water shutdown"
+    },
+    {
+      "id": "fe1beee3c89b5cd3",
+      "title": "Companies must adapt to rising AI costs, tech commentator says",
+      "summary": "Cheap use of AI tools is over: \"For the last three years, the most expensive experiment in technology history has run on someone else's money.\" Businesses now need to put guard rails in place, a tech commentator says.",
+      "url": "https://www.rnz.co.nz/news/business/946676/companies-must-adapt-to-rising-ai-costs-tech-commentator-says",
+      "published_at": "2026-08-09T08:12:54Z",
+      "published_label": "09 Aug 2026 · 08:12Z",
+      "age_label": "1h ago",
+      "source_id": "rnz-news",
+      "source_name": "RNZ News",
+      "source_kind": "rss",
+      "category": "nz-pacific",
+      "regions": [
+        "pacific"
+      ],
+      "priority": 20,
       "cluster_key": "companies must adapt to rising ai costs tech commentator says"
     },
     {
@@ -272,7 +326,7 @@
       "url": "https://www.scmp.com/news/china/diplomacy/article/3363433/how-chinas-magic-rice-seeds-are-transforming-fortunes-nigerian-farmers?utm_source=rss_feed",
       "published_at": "2026-08-09T08:00:11Z",
       "published_label": "09 Aug 2026 · 08:00Z",
-      "age_label": "56m ago",
+      "age_label": "1h ago",
       "source_id": "scmp",
       "source_name": "South China Morning Post",
       "source_kind": "rss",
@@ -281,7 +335,7 @@
         "china",
         "africa"
       ],
-      "priority": 30,
+      "priority": 20,
       "cluster_key": "how chinas magic rice seeds are transforming the fortunes of nigerian farmers"
     },
     {
@@ -291,7 +345,7 @@
       "url": "https://www.scmp.com/news/people-culture/china-personalities/article/3363419/iconic-1991-photo-chinese-girl-symbolises-thirst-knowledge-changing-lives?utm_source=rss_feed",
       "published_at": "2026-08-09T08:00:10Z",
       "published_label": "09 Aug 2026 · 08:00Z",
-      "age_label": "56m ago",
+      "age_label": "1h ago",
       "source_id": "scmp",
       "source_name": "South China Morning Post",
       "source_kind": "rss",
@@ -299,7 +353,7 @@
       "regions": [
         "china"
       ],
-      "priority": 30,
+      "priority": 20,
       "cluster_key": "iconic 1991 photo of chinese girl symbolises thirst for knowledge changing lives"
     },
     {
@@ -309,7 +363,7 @@
       "url": "https://www.scmp.com/week-asia/politics/article/3363383/how-saudi-arabia-turkey-pakistan-defence-pact-acts-insurance-over-us-disengagement?utm_source=rss_feed",
       "published_at": "2026-08-09T08:00:06Z",
       "published_label": "09 Aug 2026 · 08:00Z",
-      "age_label": "56m ago",
+      "age_label": "1h ago",
       "source_id": "scmp",
       "source_name": "South China Morning Post",
       "source_kind": "rss",
@@ -318,17 +372,17 @@
         "middle-east",
         "us"
       ],
-      "priority": 30,
+      "priority": 20,
       "cluster_key": "how saudi arabiaturkeypakistan defence pact acts as insurance over us disengagement"
     },
     {
       "id": "368fbd6cae8a0307",
       "title": "How are Hong Kong restaurants faring 1 month into the dog-friendly scheme?",
-      "summary": "Restaurateur Ken Chu Ka-chun recorded a 20 per cent boost in business at one of his restaurants at Kai Tak Sports Park over the past month, thanks to pet owners dining in under a government scheme allowing dogs into nearly 1,000 Hong Kong establishments since July 9. “We saw mor…",
+      "summary": "Restaurateur Ken Chu Ka-chun recorded a 20 per cent boost in business at one of his outlets at Kai Tak Sports Park over the past month, thanks to pet owners dining in under a government scheme allowing dogs into nearly 1,000 Hong Kong establishments since July 9. “We saw more do…",
       "url": "https://www.scmp.com/news/hong-kong/society/article/3363434/how-are-hong-kong-restaurants-faring-1-month-dog-friendly-scheme?utm_source=rss_feed",
       "published_at": "2026-08-09T07:44:27Z",
       "published_label": "09 Aug 2026 · 07:44Z",
-      "age_label": "1h ago",
+      "age_label": "2h ago",
       "source_id": "scmp",
       "source_name": "South China Morning Post",
       "source_kind": "rss",
@@ -346,7 +400,7 @@
       "url": "https://www.rnz.co.nz/life/screens/movies/quite-often-men-don-t-share-the-struggle-the-new-kiwi-film-uncle",
       "published_at": "2026-08-09T07:35:12Z",
       "published_label": "09 Aug 2026 · 07:35Z",
-      "age_label": "1h ago",
+      "age_label": "2h ago",
       "source_id": "rnz-news",
       "source_name": "RNZ News",
       "source_kind": "rss",
@@ -364,7 +418,7 @@
       "url": "https://www.rnz.co.nz/news/emergencies_national/946116/hato-hone-st-john-declares-major-incident-as-demand-for-ambulances-spikes",
       "published_at": "2026-08-09T06:48:20Z",
       "published_label": "09 Aug 2026 · 06:48Z",
-      "age_label": "2h ago",
+      "age_label": "3h ago",
       "source_id": "rnz-news",
       "source_name": "RNZ News",
       "source_kind": "rss",
@@ -382,7 +436,7 @@
       "url": "https://www.bbc.co.uk/news/articles/cx25dkwk3e3o?at_medium=RSS&at_campaign=rss",
       "published_at": "2026-08-09T06:46:40Z",
       "published_label": "09 Aug 2026 · 06:46Z",
-      "age_label": "2h ago",
+      "age_label": "3h ago",
       "source_id": "bbc-world",
       "source_name": "BBC World",
       "source_kind": "rss",
@@ -396,11 +450,11 @@
     {
       "id": "4d906645f408694e",
       "title": "Mega-events drive HK$5.8 billion spending in first half of year, Paul Chan says",
-      "summary": "Visitors to major events in Hong Kong have spent HK$5.8 billion (US$739 million) during in the first half of the year, averaging HK$3,314 per head, the city’s finance chief has said. In his weekly blog on Sunday, Financial Secretary Paul Chan Mo-po said about 1.75 million visito…",
+      "summary": "Visitors to major events in Hong Kong have spent HK$5.8 billion (US$739 million) during the first half of the year, averaging HK$3,314 per head, the city’s finance chief has said. In his weekly blog on Sunday, Financial Secretary Paul Chan Mo-po said about 1.75 million visitors…",
       "url": "https://www.scmp.com/news/hong-kong/hong-kong-economy/article/3363432/mega-events-drive-hk58-billion-visitor-spend-first-half-year-paul-chan?utm_source=rss_feed",
       "published_at": "2026-08-09T06:42:03Z",
       "published_label": "09 Aug 2026 · 06:42Z",
-      "age_label": "2h ago",
+      "age_label": "3h ago",
       "source_id": "scmp",
       "source_name": "South China Morning Post",
       "source_kind": "rss",
@@ -418,7 +472,7 @@
       "url": "https://www.rnz.co.nz/news/political/946566/deadline-for-local-council-amalgamation-plans-arrives",
       "published_at": "2026-08-09T06:21:31Z",
       "published_label": "09 Aug 2026 · 06:21Z",
-      "age_label": "2h ago",
+      "age_label": "3h ago",
       "source_id": "rnz-news",
       "source_name": "RNZ News",
       "source_kind": "rss",
@@ -436,7 +490,7 @@
       "url": "https://www.rnz.co.nz/news/community/946543/great-concerns-for-missing-whanganui-woman-police-say",
       "published_at": "2026-08-09T06:12:02Z",
       "published_label": "09 Aug 2026 · 06:12Z",
-      "age_label": "2h ago",
+      "age_label": "3h ago",
       "source_id": "rnz-news",
       "source_name": "RNZ News",
       "source_kind": "rss",
@@ -450,11 +504,11 @@
     {
       "id": "217b2e4545489b73",
       "title": "Police dismantle alleged triad group that ran account centres to launder HK$600 million",
-      "summary": "Hong Kong police have arrested 147 people after dismantling a triad syndicate suspected of setting up centres to coordinate bank accounts and handle HK$600 million (US$76 million) in allegedly illicit proceeds. Police said on Sunday that they had conducted a citywide operation c…",
+      "summary": "Hong Kong police have arrested 147 people after dismantling a triad syndicate suspected of setting up centres to coordinate bank accounts and handle HK$600 million (US$76 million) in allegedly illicit proceeds. Police said on Sunday that they had conducted a citywide operation,…",
       "url": "https://www.scmp.com/news/hong-kong/law-and-crime/article/3363430/police-dismantle-alleged-triad-group-ran-account-centres-launder-hk600-million?utm_source=rss_feed",
       "published_at": "2026-08-09T06:02:51Z",
       "published_label": "09 Aug 2026 · 06:02Z",
-      "age_label": "2h ago",
+      "age_label": "3h ago",
       "source_id": "scmp",
       "source_name": "South China Morning Post",
       "source_kind": "rss",
@@ -472,7 +526,7 @@
       "url": "https://www.scmp.com/week-asia/politics/article/3363295/maldives-plea-restart-south-asian-bloc-hits-india-pakistan-brick-wall?utm_source=rss_feed",
       "published_at": "2026-08-09T06:00:06Z",
       "published_label": "09 Aug 2026 · 06:00Z",
-      "age_label": "2h ago",
+      "age_label": "3h ago",
       "source_id": "scmp",
       "source_name": "South China Morning Post",
       "source_kind": "rss",
@@ -484,13 +538,13 @@
       "cluster_key": "maldives plea to restart south asian bloc hits indiapakistan brick wall"
     },
     {
-      "id": "674cbd00a7c3e11f",
-      "title": "Hong Kong records hottest day in 142 years as Typhoon Dolphin brings extreme heat",
-      "summary": "Hong Kong has recorded the highest temperature since records began in 1884 on Sunday afternoon under the impact of Severe Typhoon Dolphin. According to the Hong Kong Observatory, the outer subsiding air associated with Dolphin brought generally fine and extremely hot weather to…",
+      "id": "d1e3ac73f470c59f",
+      "title": "‘Like a fridge’: families cool off in snow parks, malls as helpers struggle in record heat",
+      "summary": "Hong Kong families sought relief from the scorching heat on Sunday, with some cooling off at a snow park, while domestic helpers said they had little choice but to remain outdoors as the city endured its hottest temperatures in 142 years. The city recorded the highest temperatur…",
       "url": "https://www.scmp.com/news/hong-kong/health-environment/article/3363429/hong-kong-breaks-record-hottest-day-typhoon-dolphin-brings-extreme-heat?utm_source=rss_feed",
       "published_at": "2026-08-09T05:21:38Z",
       "published_label": "09 Aug 2026 · 05:21Z",
-      "age_label": "3h ago",
+      "age_label": "4h ago",
       "source_id": "scmp",
       "source_name": "South China Morning Post",
       "source_kind": "rss",
@@ -499,7 +553,7 @@
         "se-asia"
       ],
       "priority": 20,
-      "cluster_key": "hong kong records hottest day in 142 years as typhoon dolphin brings extreme heat"
+      "cluster_key": "like a fridge families cool off in snow parks malls as helpers struggle in record heat"
     },
     {
       "id": "cbc2c0983c72de3c",
@@ -508,7 +562,7 @@
       "url": "https://www.scmp.com/news/world/europe/article/3363426/german-arms-giant-boss-says-no-chickening-out-amid-alleged-russian-threats?utm_source=rss_feed",
       "published_at": "2026-08-09T05:15:08Z",
       "published_label": "09 Aug 2026 · 05:15Z",
-      "age_label": "3h ago",
+      "age_label": "4h ago",
       "source_id": "scmp",
       "source_name": "South China Morning Post",
       "source_kind": "rss",
@@ -520,13 +574,13 @@
       "cluster_key": "german arms giant boss says no chickening out amid alleged russian threats"
     },
     {
-      "id": "7df9a4e38047dd39",
-      "title": "Red alert: Shanghai cancels 60% of flights as Typhoon Dolphin closes in",
-      "summary": "Typhoon Dolphin is expected to make landfall along the coast of Zhejiang and Fujian provinces between Sunday night and Monday morning, prompting Shanghai to cancel nearly 60 per cent of flights to and from the metropolis on Sunday. China’s National Meteorological Centre issued a…",
+      "id": "2b26a90828632bdf",
+      "title": "Red alert: Shanghai cancels 80% of flights as Typhoon Dolphin closes in",
+      "summary": "Typhoon Dolphin is expected to make landfall along the coast of Zhejiang province around dusk on Sunday, prompting Shanghai to cancel over 80 per cent of flights to and from the metropolis on Sunday. The typhoon is expected to make landfall around the cities of Yuhuan and Wenlin…",
       "url": "https://www.scmp.com/news/china/article/3363428/red-alert-shanghai-cancels-60-flights-typhoon-dolphin-closes?utm_source=rss_feed",
       "published_at": "2026-08-09T05:10:53Z",
       "published_label": "09 Aug 2026 · 05:10Z",
-      "age_label": "3h ago",
+      "age_label": "4h ago",
       "source_id": "scmp",
       "source_name": "South China Morning Post",
       "source_kind": "rss",
@@ -535,7 +589,7 @@
         "china"
       ],
       "priority": 20,
-      "cluster_key": "red alert shanghai cancels 60 of flights as typhoon dolphin closes in"
+      "cluster_key": "red alert shanghai cancels 80 of flights as typhoon dolphin closes in"
     },
     {
       "id": "58decb18ea044fed",
@@ -544,7 +598,7 @@
       "url": "https://www.rnz.co.nz/life/people/celebrity/eliza-mccartney-on-her-signature-smile-you-convert-all-the-emotions-into-excitement-and-enjoyment",
       "published_at": "2026-08-09T04:58:26Z",
       "published_label": "09 Aug 2026 · 04:58Z",
-      "age_label": "3h ago",
+      "age_label": "4h ago",
       "source_id": "rnz-news",
       "source_name": "RNZ News",
       "source_kind": "rss",
@@ -580,7 +634,7 @@
       "url": "https://www.rnz.co.nz/news/sport/945921/canterbury-defeat-otago-19-15-for-ranfurly-shield",
       "published_at": "2026-08-09T04:32:35Z",
       "published_label": "09 Aug 2026 · 04:32Z",
-      "age_label": "4h ago",
+      "age_label": "5h ago",
       "source_id": "rnz-news",
       "source_name": "RNZ News",
       "source_kind": "rss",
@@ -598,7 +652,7 @@
       "url": "https://www.bbc.co.uk/news/articles/cg5lnqjz497o?at_medium=RSS&at_campaign=rss",
       "published_at": "2026-08-09T04:32:06Z",
       "published_label": "09 Aug 2026 · 04:32Z",
-      "age_label": "4h ago",
+      "age_label": "5h ago",
       "source_id": "bbc-world",
       "source_name": "BBC World",
       "source_kind": "rss",
@@ -616,7 +670,7 @@
       "url": "https://www.scmp.com/week-asia/economics/article/3363375/vietnam-pays-price-home-sending-workers-abroad?utm_source=rss_feed",
       "published_at": "2026-08-09T04:00:12Z",
       "published_label": "09 Aug 2026 · 04:00Z",
-      "age_label": "4h ago",
+      "age_label": "5h ago",
       "source_id": "scmp",
       "source_name": "South China Morning Post",
       "source_kind": "rss",
@@ -664,31 +718,13 @@
       "cluster_key": "privacy fears drive patriotic americans to destroy licence plate cameras"
     },
     {
-      "id": "bc8459730e72076d",
-      "title": "‘I felt like ‌we weren’t going to survive’: how Thai school shooting unfolded",
-      "summary": "When a shot rang out at the Debsirin Nonthaburi School on the outskirts of Bangkok on Friday morning, 14-year-old Khim and her classmates peered over a balcony to see if the noise had come from a construction site. But more loud bangs followed, until a teacher ushered them all i…",
-      "url": "https://www.scmp.com/news/asia/southeast-asia/article/3363423/i-felt-we-werent-going-survive-how-thai-school-shooting-unfolded?utm_source=rss_feed",
-      "published_at": "2026-08-09T03:15:50Z",
-      "published_label": "09 Aug 2026 · 03:15Z",
-      "age_label": "5h ago",
-      "source_id": "scmp",
-      "source_name": "South China Morning Post",
-      "source_kind": "rss",
-      "category": "apac-security",
-      "regions": [
-        "se-asia"
-      ],
-      "priority": 20,
-      "cluster_key": "i felt like we werent going to survive how thai school shooting unfolded"
-    },
-    {
       "id": "0432c067e9c3ac72",
       "title": "National promises Budget Responsibility Rules if elected",
       "summary": "The rules reflect a more \"volatile world\", finance spokesperson Nicola Willis says.",
       "url": "https://www.rnz.co.nz/news/politics_election-2026/945455/national-promises-budget-responsibility-rules-if-elected",
       "published_at": "2026-08-09T02:58:57Z",
       "published_label": "09 Aug 2026 · 02:58Z",
-      "age_label": "5h ago",
+      "age_label": "6h ago",
       "source_id": "rnz-news",
       "source_name": "RNZ News",
       "source_kind": "rss",
@@ -696,7 +732,7 @@
       "regions": [
         "pacific"
       ],
-      "priority": 20,
+      "priority": 10,
       "cluster_key": "national promises budget responsibility rules if elected"
     },
     {
@@ -706,7 +742,7 @@
       "url": "https://www.rnz.co.nz/news/politics_election-2026/945925/greens-propose-2-point-4b-funding-to-back-critical-marae",
       "published_at": "2026-08-09T01:36:16Z",
       "published_label": "09 Aug 2026 · 01:36Z",
-      "age_label": "7h ago",
+      "age_label": "8h ago",
       "source_id": "rnz-news",
       "source_name": "RNZ News",
       "source_kind": "rss",
@@ -718,15 +754,15 @@
       "cluster_key": "greens propose 24b funding to back critical marae"
     },
     {
-      "id": "67fe7fa105c791fb",
+      "id": "070e2d0364128900",
       "title": "Youth accused of murdering Napier teen Kaea Karauria to face trial in October",
       "summary": "A three-week trial has been scheduled to begin in the High Court at Palmerston North on 27 October.",
       "url": "https://www.rnz.co.nz/news/crime-and-justice/945887/youth-accused-of-murdering-napier-teen-kaea-karauria-to-face-trial-in-october",
       "published_at": "2026-08-09T01:03:44Z",
       "published_label": "09 Aug 2026 · 01:03Z",
-      "age_label": "7h ago",
-      "source_id": "rnz-news",
-      "source_name": "RNZ News",
+      "age_label": "8h ago",
+      "source_id": "rnz-national",
+      "source_name": "RNZ National",
       "source_kind": "rss",
       "category": "nz-pacific",
       "regions": [
@@ -736,15 +772,15 @@
       "cluster_key": "youth accused of murdering napier teen kaea karauria to face trial in october"
     },
     {
-      "id": "7ea003f5e6ad223f",
+      "id": "861371a5e181e7e0",
       "title": "Family Court orders no contact after father’s ‘uninhibited, dysregulated’ and abusive behaviour",
       "summary": "No agency was willing to supervise the father's visits to see his children.",
       "url": "https://www.rnz.co.nz/news/crime-and-justice/945843/family-court-orders-no-contact-after-father-s-uninhibited-dysregulated-and-abusive-behaviour",
       "published_at": "2026-08-09T00:44:59Z",
       "published_label": "09 Aug 2026 · 00:44Z",
-      "age_label": "8h ago",
-      "source_id": "rnz-news",
-      "source_name": "RNZ News",
+      "age_label": "9h ago",
+      "source_id": "rnz-national",
+      "source_name": "RNZ National",
       "source_kind": "rss",
       "category": "nz-pacific",
       "regions": [
@@ -760,7 +796,7 @@
       "url": "https://www.rnz.co.nz/news/science-and-technology/945337/80-percent-of-road-travel-out-of-wellington-wouldn-t-be-possible-after-7-point-5-magnitude-quake-study",
       "published_at": "2026-08-09T00:26:19Z",
       "published_label": "09 Aug 2026 · 00:26Z",
-      "age_label": "8h ago",
+      "age_label": "9h ago",
       "source_id": "rnz-national",
       "source_name": "RNZ National",
       "source_kind": "rss",
@@ -778,7 +814,7 @@
       "url": "https://www.bbc.co.uk/news/articles/c2elpz33zp2o?at_medium=RSS&at_campaign=rss",
       "published_at": "2026-08-09T00:15:28Z",
       "published_label": "09 Aug 2026 · 00:15Z",
-      "age_label": "8h ago",
+      "age_label": "9h ago",
       "source_id": "bbc-world",
       "source_name": "BBC World",
       "source_kind": "rss",
@@ -796,7 +832,7 @@
       "url": "https://www.bbc.co.uk/news/articles/cvgxjn92x9jo?at_medium=RSS&at_campaign=rss",
       "published_at": "2026-08-08T23:59:23Z",
       "published_label": "08 Aug 2026 · 23:59Z",
-      "age_label": "8h ago",
+      "age_label": "9h ago",
       "source_id": "bbc-world",
       "source_name": "BBC World",
       "source_kind": "rss",
@@ -814,7 +850,7 @@
       "url": "https://www.bbc.co.uk/news/articles/c20d8qre98do?at_medium=RSS&at_campaign=rss",
       "published_at": "2026-08-08T23:43:44Z",
       "published_label": "08 Aug 2026 · 23:43Z",
-      "age_label": "9h ago",
+      "age_label": "10h ago",
       "source_id": "bbc-world",
       "source_name": "BBC World",
       "source_kind": "rss",
@@ -832,7 +868,7 @@
       "url": "https://www.rnz.co.nz/news/regional/945136/person-in-critical-condition-after-stabbing-in-central-auckland",
       "published_at": "2026-08-08T23:37:03Z",
       "published_label": "08 Aug 2026 · 23:37Z",
-      "age_label": "9h ago",
+      "age_label": "10h ago",
       "source_id": "rnz-national",
       "source_name": "RNZ National",
       "source_kind": "rss",
@@ -850,7 +886,7 @@
       "url": "https://www.rnz.co.nz/news/weather/945513/warnings-issued-as-heavy-rain-heads-to-bay-of-plenty-northland",
       "published_at": "2026-08-08T22:13:07Z",
       "published_label": "08 Aug 2026 · 22:13Z",
-      "age_label": "10h ago",
+      "age_label": "11h ago",
       "source_id": "rnz-national",
       "source_name": "RNZ National",
       "source_kind": "rss",
@@ -868,7 +904,7 @@
       "url": "https://www.rnz.co.nz/news/education/938197/mistake-to-omit-creative-arts-technologies-from-new-school-subjects-drama-teachers-say",
       "published_at": "2026-08-08T22:09:44Z",
       "published_label": "08 Aug 2026 · 22:09Z",
-      "age_label": "10h ago",
+      "age_label": "11h ago",
       "source_id": "rnz-national",
       "source_name": "RNZ National",
       "source_kind": "rss",
@@ -880,31 +916,13 @@
       "cluster_key": "mistake to omit creative arts technologies from new school subjects drama teachers say"
     },
     {
-      "id": "26f222363871be28",
-      "title": "Mt Eden prisoner sent to hospital after injuring themselves",
-      "summary": "A corrections spokesperson said the prisoner appeared to have injured themselves and was in a single cell.",
-      "url": "https://www.rnz.co.nz/news/emergencies_local/940371/mt-eden-prisoner-sent-to-hospital-after-injuring-themselves",
-      "published_at": "2026-08-08T20:52:12Z",
-      "published_label": "08 Aug 2026 · 20:52Z",
-      "age_label": "12h ago",
-      "source_id": "rnz-national",
-      "source_name": "RNZ National",
-      "source_kind": "rss",
-      "category": "nz-pacific",
-      "regions": [
-        "pacific"
-      ],
-      "priority": 10,
-      "cluster_key": "mt eden prisoner sent to hospital after injuring themselves"
-    },
-    {
       "id": "9fa97b53f8f076cb",
       "title": "Hormuz talks positive, Oman says, as Iran warns deal would not open strait",
       "summary": "Both sides suggest progress in talks to agree a new shipping route through the strait, but a breakthrough remains unclear.",
       "url": "https://www.bbc.co.uk/news/articles/c934j5y2lq9o?at_medium=RSS&at_campaign=rss",
       "published_at": "2026-08-08T19:18:57Z",
       "published_label": "08 Aug 2026 · 19:18Z",
-      "age_label": "13h ago",
+      "age_label": "14h ago",
       "source_id": "bbc-world",
       "source_name": "BBC World",
       "source_kind": "rss",
@@ -923,7 +941,7 @@
       "url": "https://www.bbc.co.uk/news/articles/c9q94lxqrzzo?at_medium=RSS&at_campaign=rss",
       "published_at": "2026-08-08T19:00:22Z",
       "published_label": "08 Aug 2026 · 19:00Z",
-      "age_label": "13h ago",
+      "age_label": "14h ago",
       "source_id": "bbc-asia",
       "source_name": "BBC Asia",
       "source_kind": "rss",
@@ -941,7 +959,7 @@
       "url": "https://www.bbc.co.uk/news/articles/cz7dy8gq99eo?at_medium=RSS&at_campaign=rss",
       "published_at": "2026-08-08T18:06:25Z",
       "published_label": "08 Aug 2026 · 18:06Z",
-      "age_label": "14h ago",
+      "age_label": "15h ago",
       "source_id": "bbc-world",
       "source_name": "BBC World",
       "source_kind": "rss",
@@ -960,7 +978,7 @@
       "url": "https://www.bbc.co.uk/news/articles/cy9wy3y0e5wo?at_medium=RSS&at_campaign=rss",
       "published_at": "2026-08-08T17:58:42Z",
       "published_label": "08 Aug 2026 · 17:58Z",
-      "age_label": "14h ago",
+      "age_label": "15h ago",
       "source_id": "bbc-world",
       "source_name": "BBC World",
       "source_kind": "rss",
@@ -1014,7 +1032,7 @@
       "url": "https://www.bbc.co.uk/news/articles/cvglp2zlvrlo?at_medium=RSS&at_campaign=rss",
       "published_at": "2026-08-08T15:15:17Z",
       "published_label": "08 Aug 2026 · 15:15Z",
-      "age_label": "17h ago",
+      "age_label": "18h ago",
       "source_id": "bbc-asia",
       "source_name": "BBC Asia",
       "source_kind": "rss",
@@ -1033,7 +1051,7 @@
       "url": "https://www.bbc.co.uk/news/articles/c5yv5l6yr5ko?at_medium=RSS&at_campaign=rss",
       "published_at": "2026-08-08T14:25:19Z",
       "published_label": "08 Aug 2026 · 14:25Z",
-      "age_label": "18h ago",
+      "age_label": "19h ago",
       "source_id": "bbc-world",
       "source_name": "BBC World",
       "source_kind": "rss",
@@ -1557,6 +1575,42 @@
       "cluster_key": "moment earthquake shakes hospital operating room in japan"
     },
     {
+      "id": "cb8107a410894797",
+      "title": "Defense Business Brief: The enduring case for small USVs | Battleship costs balloon | Rainey joins Bain Capital",
+      "summary": "",
+      "url": "https://www.defenseone.com/business/2026/08/defense-business-brief-enduring-case-small-usvs-battleship-costs-balloon-rainey-joins-bain-capital/415276/",
+      "published_at": "2026-08-07T06:33:00Z",
+      "published_label": "07 Aug 2026 · 06:33Z",
+      "age_label": "2d ago",
+      "source_id": "defense-one",
+      "source_name": "Defense One",
+      "source_kind": "rss",
+      "category": "global",
+      "regions": [
+        "global"
+      ],
+      "priority": 0,
+      "cluster_key": "defense business brief the enduring case for small usvs battleship costs balloon rainey joins ba"
+    },
+    {
+      "id": "842f27fbdeba0a47",
+      "title": "Rough waters help firm demo ‘expeditionary manufacturing’ aboard warship",
+      "summary": "Firestorm Labs says it 3D-printed thousands of parts as waves buffeted USS Essex.",
+      "url": "https://www.defenseone.com/technology/2026/08/rough-waters-help-firm-demo-expeditionary-manufacturing-aboard-warship/415275/",
+      "published_at": "2026-08-07T06:03:37Z",
+      "published_label": "07 Aug 2026 · 06:03Z",
+      "age_label": "2d ago",
+      "source_id": "defense-one",
+      "source_name": "Defense One",
+      "source_kind": "rss",
+      "category": "global",
+      "regions": [
+        "global"
+      ],
+      "priority": 0,
+      "cluster_key": "rough waters help firm demo expeditionary manufacturing aboard warship"
+    },
+    {
       "id": "b1b8c3127d7adfd4",
       "title": "Australian aviation crew carries out daring midwinter Antarctica rescue",
       "summary": "Team evacuated a patient from McMurdo Station after landing plane in total darkness and temperature of -43°C.",
@@ -1943,6 +1997,42 @@
       "cluster_key": "marine corps establishes robotics integration group experiments with drones in field operations"
     },
     {
+      "id": "1b492317bc1c94cd",
+      "title": "Officials hedge SpaceX aircraft-tracking satellite bet with three smaller company contracts",
+      "summary": "Rocket Labs, STR, and one mystery company are the latest space-based AMTI awardees.",
+      "url": "https://www.defenseone.com/defense-systems/2026/08/officials-hedge-spacex-aircraft-tracking-satellite-bet-three-smaller-company-contracts/415252/",
+      "published_at": "2026-08-06T16:00:18Z",
+      "published_label": "06 Aug 2026 · 16:00Z",
+      "age_label": "2d ago",
+      "source_id": "defense-one",
+      "source_name": "Defense One",
+      "source_kind": "rss",
+      "category": "global",
+      "regions": [
+        "global"
+      ],
+      "priority": 0,
+      "cluster_key": "officials hedge spacex aircrafttracking satellite bet with three smaller company contracts"
+    },
+    {
+      "id": "557334813ea425b7",
+      "title": "Did AI blow a $450M Army contract decision? Company lawsuit says yes",
+      "summary": "The Defense Department is increasingly using AI in \"high-impact\" bid evaluations.",
+      "url": "https://www.defenseone.com/policy/2026/08/ai-army-contract-lawsuit/415261/",
+      "published_at": "2026-08-06T15:34:00Z",
+      "published_label": "06 Aug 2026 · 15:34Z",
+      "age_label": "2d ago",
+      "source_id": "defense-one",
+      "source_name": "Defense One",
+      "source_kind": "rss",
+      "category": "global",
+      "regions": [
+        "global"
+      ],
+      "priority": 0,
+      "cluster_key": "did ai blow a 450m army contract decision company lawsuit says yes"
+    },
+    {
       "id": "faa6ad77023a8d98",
       "title": "Does Latent Nuclear Deterrence Really Work?",
       "summary": "In 2025, Matthew Fuhrmann wrote, “U.S. Allies and Adversaries Are Attempting Nuclear Deterrence Without Weapons – Will It Work?,” where he argued countries don’t always need to go as far as actually building nuclear weapons to reap the benefits of nuclear deterrence. A year late…",
@@ -2142,6 +2232,25 @@
       "cluster_key": "where is myanmars aung san suu kyi"
     },
     {
+      "id": "5ce3e0c7592c6ed5",
+      "title": "US has too few interceptors to deter war with China, experts say",
+      "summary": "A new report from Heritage is the latest to sound alarms over the expenditure of munitions in Trump's Iran war.",
+      "url": "https://www.defenseone.com/threats/2026/08/interceptors-war-china-heritage/415241/",
+      "published_at": "2026-08-06T01:33:31Z",
+      "published_label": "06 Aug 2026 · 01:33Z",
+      "age_label": "3d ago",
+      "source_id": "defense-one",
+      "source_name": "Defense One",
+      "source_kind": "rss",
+      "category": "global",
+      "regions": [
+        "china",
+        "middle-east"
+      ],
+      "priority": 0,
+      "cluster_key": "us has too few interceptors to deter war with china experts say"
+    },
+    {
       "id": "5f47d709208532d8",
       "title": "Proposal to scrap RSE worker limits cancelled by Cabinet, documents reveal",
       "summary": "New Zealand's immigration minister wanted to scrap annual limits on Pacific migrant workers under the Recognised Seasonal Employer scheme, but could not get the sign-off from Cabinet.",
@@ -2233,6 +2342,43 @@
       "cluster_key": "manasseh sogavare unleashes on solomon islands government over us agreement"
     },
     {
+      "id": "0ccaa251077f5c58",
+      "title": "Can an Alaskan spaceport ease Pentagon’s launch bottleneck?",
+      "summary": "Rocket Lab says its suborbital launches at Pacific Spaceport Complex-Alaska could lead to national-security ones.",
+      "url": "https://www.defenseone.com/technology/2026/08/can-alaskan-spaceport-ease-pentagons-launch-bottleneck/415238/",
+      "published_at": "2026-08-05T21:30:13Z",
+      "published_label": "05 Aug 2026 · 21:30Z",
+      "age_label": "3d ago",
+      "source_id": "defense-one",
+      "source_name": "Defense One",
+      "source_kind": "rss",
+      "category": "global",
+      "regions": [
+        "pacific",
+        "us"
+      ],
+      "priority": 0,
+      "cluster_key": "can an alaskan spaceport ease pentagons launch bottleneck"
+    },
+    {
+      "id": "1bc7e370503238a4",
+      "title": "How many worked for DOGE? New data emerges, but many agencies stonewall",
+      "summary": "At least 206 people worked for the Trump administration's radical effort to reshape government.",
+      "url": "https://www.defenseone.com/policy/2026/08/watchdog-doge-unknown-agencies/415243/",
+      "published_at": "2026-08-05T20:52:42Z",
+      "published_label": "05 Aug 2026 · 20:52Z",
+      "age_label": "3d ago",
+      "source_id": "defense-one",
+      "source_name": "Defense One",
+      "source_kind": "rss",
+      "category": "global",
+      "regions": [
+        "global"
+      ],
+      "priority": 0,
+      "cluster_key": "how many worked for doge new data emerges but many agencies stonewall"
+    },
+    {
       "id": "4c1861f3102aecba",
       "title": "First Trump-class Battleship Could Cost $23.4B, Says CBO",
       "summary": "The first Trump-class battleship (BBG(X)) could cost about $23 billion with an overall cost for the 15-ship program to be about $275 billion, according to a new Congressional Budget Office estimate published on Wednesday. Based on the published estimate on the size and nuclear p…",
@@ -2286,6 +2432,24 @@
       ],
       "priority": 0,
       "cluster_key": "us marine corps acvs to counter drones with anduril jammer package"
+    },
+    {
+      "id": "f1f0a28509beb506",
+      "title": "As AI models break free, White House works with firms on secret safety measures",
+      "summary": "Lawmakers blast administration's \"ad-hoc\" AI strategy; tech giants pitch ideas to keep federal contracts flowing.",
+      "url": "https://www.defenseone.com/technology/2026/08/ai-models-white-house-and-companies-secret-safety-measures/415227/",
+      "published_at": "2026-08-05T17:25:04Z",
+      "published_label": "05 Aug 2026 · 17:25Z",
+      "age_label": "3d ago",
+      "source_id": "defense-one",
+      "source_name": "Defense One",
+      "source_kind": "rss",
+      "category": "global",
+      "regions": [
+        "us"
+      ],
+      "priority": 0,
+      "cluster_key": "as ai models break free white house works with firms on secret safety measures"
     },
     {
       "id": "500f2830623c3d40",
@@ -2438,6 +2602,24 @@
       "cluster_key": "beyond the output trap haiti and the future of international stabilization"
     },
     {
+      "id": "07351f54331fdfa4",
+      "title": "Pentagon counterdrone task force has a new AI-powered marketplace",
+      "summary": "The platform was developed to make the foreign military sales process more efficient.",
+      "url": "https://www.defenseone.com/technology/2026/08/pentagon-counterdrone-task-force-has-new-ai-powered-marketplace/415216/",
+      "published_at": "2026-08-05T02:18:13Z",
+      "published_label": "05 Aug 2026 · 02:18Z",
+      "age_label": "4d ago",
+      "source_id": "defense-one",
+      "source_name": "Defense One",
+      "source_kind": "rss",
+      "category": "global",
+      "regions": [
+        "us"
+      ],
+      "priority": 0,
+      "cluster_key": "pentagon counterdrone task force has a new aipowered marketplace"
+    },
+    {
       "id": "877df85ddbf170c4",
       "title": "Navy Extends Saildrone USVs in SOUTHCOM",
       "summary": "The Navy has awarded Saildrone a $16.3 million extension to continue assisting the U.S. 4th Fleet in its maritime drug interdiction operations, the company announced Tuesday. Saildrone received the award on June 30, company spokesperson Jenn Virskus told USNI News. Saildrone’s V…",
@@ -2454,6 +2636,24 @@
       ],
       "priority": 0,
       "cluster_key": "navy extends saildrone usvs in southcom"
+    },
+    {
+      "id": "7670fde08cc7bd8e",
+      "title": "Chinese telecoms kept footholds in US despite crackdowns, probe finds",
+      "summary": "Three state-owned firms retained equipment, data center space, and network ties, including one network that appeared in routes to Salt Typhoon servers.",
+      "url": "https://www.defenseone.com/threats/2026/08/chinese-telecoms-crackdowns-probe/415208/",
+      "published_at": "2026-08-04T20:00:00Z",
+      "published_label": "04 Aug 2026 · 20:00Z",
+      "age_label": "4d ago",
+      "source_id": "defense-one",
+      "source_name": "Defense One",
+      "source_kind": "rss",
+      "category": "global",
+      "regions": [
+        "china"
+      ],
+      "priority": 0,
+      "cluster_key": "chinese telecoms kept footholds in us despite crackdowns probe finds"
     },
     {
       "id": "4ac5ca24ee3da0ab",
@@ -2710,6 +2910,24 @@
       "cluster_key": "between highlands and the high sea what awaits the next philippine military chief"
     },
     {
+      "id": "7f2d0e4056d6602c",
+      "title": "OPM breach victims could get identity protection for life",
+      "summary": "The federal government’s coverage for 22.1 million people hoovered up in the 2015 China-linked breaches is scheduled to end Sept. 30.",
+      "url": "https://www.defenseone.com/threats/2026/08/lawmakers-propose-giving-2015-opm-breach-victims-identity-protection-life/415191/",
+      "published_at": "2026-08-03T13:00:00Z",
+      "published_label": "03 Aug 2026 · 13:00Z",
+      "age_label": "5d ago",
+      "source_id": "defense-one",
+      "source_name": "Defense One",
+      "source_kind": "rss",
+      "category": "global",
+      "regions": [
+        "china"
+      ],
+      "priority": 0,
+      "cluster_key": "opm breach victims could get identity protection for life"
+    },
+    {
       "id": "bac0ee494f1b2b0d",
       "title": "How to Stop China from Freeriding on American AI",
       "summary": "The release of the Chinese open-weight AI model Kimi K3 has compressed a year’s worth of unresolved AI policy debate into a single news cycle. On July 21, Treasury Secretary Scott Bessent threatened sanctions against Chinese labs found to have built their models on “theft,” repo…",
@@ -2749,6 +2967,61 @@
       "cluster_key": "possible is not plausible how nightmare scenarios hijack unconventional weapons policy"
     },
     {
+      "id": "6ba6c33b884a2c69",
+      "title": "Attackers are targeting open-source AI just as Big Tech is embracing it",
+      "summary": "“We're going to be doing this forever,” security pros say, describing a race to find and patch holes in the AI era.",
+      "url": "https://www.defenseone.com/business/2026/08/attackers-are-targeting-open-source-ai-just-big-tech-embracing-it/415165/",
+      "published_at": "2026-08-02T12:00:00Z",
+      "published_label": "02 Aug 2026 · 12:00Z",
+      "age_label": "6d ago",
+      "source_id": "defense-one",
+      "source_name": "Defense One",
+      "source_kind": "rss",
+      "category": "global",
+      "regions": [
+        "global"
+      ],
+      "priority": 0,
+      "cluster_key": "attackers are targeting opensource ai just as big tech is embracing it"
+    },
+    {
+      "id": "27f5cdeead27baf7",
+      "title": "Shock wave",
+      "summary": "What if the U.S. were ahead of China in hypersonic weapons development? Welcome to the latest Fictional Intelligence.",
+      "url": "https://www.defenseone.com/ideas/2026/08/shock-wave-fictional-intelligence/415158/",
+      "published_at": "2026-08-01T12:00:00Z",
+      "published_label": "01 Aug 2026 · 12:00Z",
+      "age_label": "01 Aug 2026 · 12:00Z",
+      "source_id": "defense-one",
+      "source_name": "Defense One",
+      "source_kind": "rss",
+      "category": "global",
+      "regions": [
+        "china",
+        "us"
+      ],
+      "priority": 0,
+      "cluster_key": "shock wave"
+    },
+    {
+      "id": "9104c9687986b1f6",
+      "title": "HII’s sea drone business is growing, but revenue is ‘modest,’ CEO says",
+      "summary": "The company recently booked a yearlong production contract extension for its underwater drone, Lionfish.",
+      "url": "https://www.defenseone.com/business/2026/07/hiis-sea-drone-business-growing-revenue-modest-ceo-says/415160/",
+      "published_at": "2026-07-31T20:58:25Z",
+      "published_label": "31 Jul 2026 · 20:58Z",
+      "age_label": "31 Jul 2026 · 20:58Z",
+      "source_id": "defense-one",
+      "source_name": "Defense One",
+      "source_kind": "rss",
+      "category": "global",
+      "regions": [
+        "global"
+      ],
+      "priority": 0,
+      "cluster_key": "hiis sea drone business is growing but revenue is modest ceo says"
+    },
+    {
       "id": "53fc44c1b999e4fb",
       "title": "The Atlantic Brief: The Strait of Hormuz and the Future of Free Navigation",
       "summary": "In February 2026, the United States and Israel initiated a war in the Middle East against Iran. Since then, the warring sides have oscillated between strikes, a fragile ceasefire, and the blocking of the Strait of Hormuz. Open hostilities resumed in mid-July. More recently, the…",
@@ -2767,6 +3040,24 @@
       ],
       "priority": 0,
       "cluster_key": "the atlantic brief the strait of hormuz and the future of free navigation"
+    },
+    {
+      "id": "6f8383e36557728f",
+      "title": "Anthropic confirms its AI breached 3 organizations during testing",
+      "summary": "Three Claude models were inadvertently given access to the internet during security evaluations, and each model took a different approach to hacking external systems.",
+      "url": "https://www.defenseone.com/business/2026/07/anthropic-confirms-its-ai-breached-3-organizations-during-testing/415159/",
+      "published_at": "2026-07-31T13:40:00Z",
+      "published_label": "31 Jul 2026 · 13:40Z",
+      "age_label": "31 Jul 2026 · 13:40Z",
+      "source_id": "defense-one",
+      "source_name": "Defense One",
+      "source_kind": "rss",
+      "category": "global",
+      "regions": [
+        "global"
+      ],
+      "priority": 0,
+      "cluster_key": "anthropic confirms its ai breached 3 organizations during testing"
     },
     {
       "id": "e9ebcd428f416f9b",
@@ -2803,309 +3094,24 @@
       ],
       "priority": 12,
       "cluster_key": "lg to ban residential proxies from smart tv apps"
-    },
-    {
-      "id": "75295ed06c2574d4",
-      "title": "Microsoft Patches a Record 570 Security Flaws",
-      "summary": "Microsoft Corp. today released software updates to plug at least 570 security holes in its Windows operating systems and other software, almost triple the number of vulnerabilities the software giant fixed in its record-smashing Patch Tuesday release last month. Microsoft attrib…",
-      "url": "https://krebsonsecurity.com/2026/07/microsoft-patches-a-record-570-security-flaws/",
-      "published_at": "2026-07-14T19:22:42Z",
-      "published_label": "14 Jul 2026 · 19:22Z",
-      "age_label": "14 Jul 2026 · 19:22Z",
-      "source_id": "krebs",
-      "source_name": "Krebs on Security",
-      "source_kind": "rss",
-      "category": "cyber",
-      "regions": [
-        "global"
-      ],
-      "priority": 12,
-      "cluster_key": "microsoft patches a record 570 security flaws"
-    },
-    {
-      "id": "0ad5fc152f95241f",
-      "title": "Lessons Learned from CISA’s Recent GitHub Leak",
-      "summary": "The Cybersecurity and Infrastructure Security Agency (CISA) has issued a postmortem on a data leak in which a contractor published dozens of internal CISA credentials -- including AWS Govcloud keys -- in a public GitHub repository for almost six months before being notified by K…",
-      "url": "https://krebsonsecurity.com/2026/07/lessons-learned-from-cisas-recent-github-leak/",
-      "published_at": "2026-07-13T15:03:28Z",
-      "published_label": "13 Jul 2026 · 15:03Z",
-      "age_label": "13 Jul 2026 · 15:03Z",
-      "source_id": "krebs",
-      "source_name": "Krebs on Security",
-      "source_kind": "rss",
-      "category": "cyber",
-      "regions": [
-        "global"
-      ],
-      "priority": 12,
-      "cluster_key": "lessons learned from cisas recent github leak"
-    },
-    {
-      "id": "ee3f797121c571e2",
-      "title": "Felons, Fraudsters Flog Offensive Cybersecurity Startup",
-      "summary": "A cybersecurity startup dangling millions of dollars to acquire zero-day security vulnerabilities in popular software is run by a pair of far-right conspiracy theorists and convicted felons whose most recent ventures included fake intelligence companies and a now-defunct AI-base…",
-      "url": "https://krebsonsecurity.com/2026/07/felons-fraudsters-flog-offensive-cybersecurity-startup/",
-      "published_at": "2026-07-08T12:31:39Z",
-      "published_label": "08 Jul 2026 · 12:31Z",
-      "age_label": "08 Jul 2026 · 12:31Z",
-      "source_id": "krebs",
-      "source_name": "Krebs on Security",
-      "source_kind": "rss",
-      "category": "cyber",
-      "regions": [
-        "global"
-      ],
-      "priority": 30,
-      "cluster_key": "felons fraudsters flog offensive cybersecurity startup"
-    },
-    {
-      "id": "0ee375148353329c",
-      "title": "FBI Seizes NetNut Proxy Platform, Popa Botnet",
-      "summary": "The Federal Bureau of Investigation (FBI) said today it worked with industry partners to seize hundreds of domains associated with NetNut, a sprawling residential proxy service operated by the publicly-traded Israeli company Alarum Technologies [NASDAQ: ALAR]. The action comes r…",
-      "url": "https://krebsonsecurity.com/2026/07/fbi-seizes-netnut-proxy-platform-popa-botnet/",
-      "published_at": "2026-07-02T19:27:33Z",
-      "published_label": "02 Jul 2026 · 19:27Z",
-      "age_label": "02 Jul 2026 · 19:27Z",
-      "source_id": "krebs",
-      "source_name": "Krebs on Security",
-      "source_kind": "rss",
-      "category": "cyber",
-      "regions": [
-        "middle-east"
-      ],
-      "priority": 12,
-      "cluster_key": "fbi seizes netnut proxy platform popa botnet"
-    },
-    {
-      "id": "aacce50447b91d29",
-      "title": "Scattered Spider Hackers Plead Guilty on Day 1 of Trial",
-      "summary": "Two men pleaded guilty in the United Kingdom this week to criminal charges stemming from an August 2024 cyberattack that crippled Transport for London, the entity responsible for the public transport network in the Greater London area. The duo were key members of a prolific cybe…",
-      "url": "https://krebsonsecurity.com/2026/06/scattered-spider-hackers-plead-guilty-on-day-1-of-trial/",
-      "published_at": "2026-06-23T16:12:49Z",
-      "published_label": "23 Jun 2026 · 16:12Z",
-      "age_label": "23 Jun 2026 · 16:12Z",
-      "source_id": "krebs",
-      "source_name": "Krebs on Security",
-      "source_kind": "rss",
-      "category": "cyber",
-      "regions": [
-        "europe"
-      ],
-      "priority": 12,
-      "cluster_key": "scattered spider hackers plead guilty on day 1 of trial"
-    },
-    {
-      "id": "676b17462bb1c18d",
-      "title": "‘Popa’ Botnet Linked to Publicly-Traded Israeli Firm",
-      "summary": "For the past four years, a sprawling Android-based botnet called Popa has forced millions of consumer TV boxes to relay Internet traffic linked to advertising fraud, account takeovers, and mass data-scraping efforts. This week, researchers from multiple security firms concluded…",
-      "url": "https://krebsonsecurity.com/2026/06/popa-botnet-linked-to-publicly-traded-israeli-firm/",
-      "published_at": "2026-06-18T17:37:58Z",
-      "published_label": "18 Jun 2026 · 17:37Z",
-      "age_label": "18 Jun 2026 · 17:37Z",
-      "source_id": "krebs",
-      "source_name": "Krebs on Security",
-      "source_kind": "rss",
-      "category": "cyber",
-      "regions": [
-        "middle-east"
-      ],
-      "priority": 12,
-      "cluster_key": "popa botnet linked to publiclytraded israeli firm"
-    },
-    {
-      "id": "2bf2be6c98f26625",
-      "title": "Who Runs the Ransomware Group ‘The Gentlemen?’",
-      "summary": "A cybercrime group known as The Gentlemen has emerged as the second most active ransomware gang by victim count, rapidly attracting a talented pool of hackers through an aggressive recruitment strategy that promises affiliates 90 percent of any ransom paid by victims. This post…",
-      "url": "https://krebsonsecurity.com/2026/06/who-runs-the-ransomware-group-the-gentlemen/",
-      "published_at": "2026-06-10T14:03:44Z",
-      "published_label": "10 Jun 2026 · 14:03Z",
-      "age_label": "10 Jun 2026 · 14:03Z",
-      "source_id": "krebs",
-      "source_name": "Krebs on Security",
-      "source_kind": "rss",
-      "category": "cyber",
-      "regions": [
-        "global"
-      ],
-      "priority": 12,
-      "cluster_key": "who runs the ransomware group the gentlemen"
-    },
-    {
-      "id": "de6d6cde7ccc5032",
-      "title": "Modi independence day speech, To Lam in Australia, SMIC earnings",
-      "summary": "",
-      "url": "https://asia.nikkei.com/spotlight/your-week-in-asia/modi-independence-day-speech-to-lam-in-australia-smic-earnings",
-      "published_at": null,
-      "published_label": "Unknown",
-      "age_label": "Unknown",
-      "source_id": "nikkei-asia",
-      "source_name": "Nikkei Asia",
-      "source_kind": "rss",
-      "category": "apac-security",
-      "regions": [
-        "australia",
-        "india"
-      ],
-      "priority": 0,
-      "cluster_key": "modi independence day speech to lam in australia smic earnings"
-    },
-    {
-      "id": "6bf574c7f1133bad",
-      "title": "K-beauty's rise mirrors TSMC contract manufacturing playbook",
-      "summary": "",
-      "url": "https://asia.nikkei.com/business/consumer/k-beauty-s-rise-mirrors-tsmc-contract-manufacturing-playbook",
-      "published_at": null,
-      "published_label": "Unknown",
-      "age_label": "Unknown",
-      "source_id": "nikkei-asia",
-      "source_name": "Nikkei Asia",
-      "source_kind": "rss",
-      "category": "apac-security",
-      "regions": [
-        "se-asia"
-      ],
-      "priority": 0,
-      "cluster_key": "kbeautys rise mirrors tsmc contract manufacturing playbook"
-    },
-    {
-      "id": "6f024a230b90c344",
-      "title": "Ukrainian evangelists help win support of MAGA followers in US",
-      "summary": "",
-      "url": "https://asia.nikkei.com/politics/ukraine-war/ukrainian-evangelists-help-win-support-of-maga-followers-in-us",
-      "published_at": null,
-      "published_label": "Unknown",
-      "age_label": "Unknown",
-      "source_id": "nikkei-asia",
-      "source_name": "Nikkei Asia",
-      "source_kind": "rss",
-      "category": "apac-security",
-      "regions": [
-        "se-asia"
-      ],
-      "priority": 0,
-      "cluster_key": "ukrainian evangelists help win support of maga followers in us"
-    },
-    {
-      "id": "59c1ed659218e06a",
-      "title": "Temple lodgings preparing for pilgrims on Japan's Shikoku island",
-      "summary": "",
-      "url": "https://asia.nikkei.com/business/travel-leisure/temple-lodgings-preparing-for-pilgrims-on-japan-s-shikoku-island",
-      "published_at": null,
-      "published_label": "Unknown",
-      "age_label": "Unknown",
-      "source_id": "nikkei-asia",
-      "source_name": "Nikkei Asia",
-      "source_kind": "rss",
-      "category": "apac-security",
-      "regions": [
-        "japan"
-      ],
-      "priority": 0,
-      "cluster_key": "temple lodgings preparing for pilgrims on japans shikoku island"
-    },
-    {
-      "id": "a5984df3dfdfa2ce",
-      "title": "Chinese nostalgia makes 'Kung Fu Soccer' a hit but will it score overseas?",
-      "summary": "",
-      "url": "https://asia.nikkei.com/business/media-entertainment/chinese-nostalgia-makes-kung-fu-soccer-a-hit-but-will-it-score-overseas",
-      "published_at": null,
-      "published_label": "Unknown",
-      "age_label": "Unknown",
-      "source_id": "nikkei-asia",
-      "source_name": "Nikkei Asia",
-      "source_kind": "rss",
-      "category": "apac-security",
-      "regions": [
-        "china"
-      ],
-      "priority": 0,
-      "cluster_key": "chinese nostalgia makes kung fu soccer a hit but will it score overseas"
-    },
-    {
-      "id": "225374634dea07f9",
-      "title": "Japan's natural wine scene comes of age",
-      "summary": "",
-      "url": "https://asia.nikkei.com/life-arts/life/eat-drink/japan-s-natural-wine-scene-comes-of-age",
-      "published_at": null,
-      "published_label": "Unknown",
-      "age_label": "Unknown",
-      "source_id": "nikkei-asia",
-      "source_name": "Nikkei Asia",
-      "source_kind": "rss",
-      "category": "apac-security",
-      "regions": [
-        "japan"
-      ],
-      "priority": 0,
-      "cluster_key": "japans natural wine scene comes of age"
-    },
-    {
-      "id": "afbe20395c88634e",
-      "title": "The Grammys should not pigeonhole BTS as Asian pop",
-      "summary": "",
-      "url": "https://asia.nikkei.com/opinion/the-grammys-should-not-pigeonhole-bts-as-asian-pop",
-      "published_at": null,
-      "published_label": "Unknown",
-      "age_label": "Unknown",
-      "source_id": "nikkei-asia",
-      "source_name": "Nikkei Asia",
-      "source_kind": "rss",
-      "category": "apac-security",
-      "regions": [
-        "se-asia"
-      ],
-      "priority": 0,
-      "cluster_key": "the grammys should not pigeonhole bts as asian pop"
-    },
-    {
-      "id": "0a23814f345e5d59",
-      "title": "Kansai Electric, Kawasaki Heavy seek 1st off-site transport of captured CO2",
-      "summary": "",
-      "url": "https://asia.nikkei.com/spotlight/environment/kansai-electric-kawasaki-heavy-seek-1st-off-site-transport-of-captured-co2",
-      "published_at": null,
-      "published_label": "Unknown",
-      "age_label": "Unknown",
-      "source_id": "nikkei-asia",
-      "source_name": "Nikkei Asia",
-      "source_kind": "rss",
-      "category": "apac-security",
-      "regions": [
-        "se-asia"
-      ],
-      "priority": 0,
-      "cluster_key": "kansai electric kawasaki heavy seek 1st offsite transport of captured co2"
-    },
-    {
-      "id": "0cad4a15b2d00108",
-      "title": "Japan's top 3 banks boost foreign currency liquidity buffers to $1.25tn",
-      "summary": "",
-      "url": "https://asia.nikkei.com/business/finance/japan-s-top-3-banks-boost-foreign-currency-liquidity-buffers-to-1.25tn",
-      "published_at": null,
-      "published_label": "Unknown",
-      "age_label": "Unknown",
-      "source_id": "nikkei-asia",
-      "source_name": "Nikkei Asia",
-      "source_kind": "rss",
-      "category": "apac-security",
-      "regions": [
-        "japan"
-      ],
-      "priority": 0,
-      "cluster_key": "japans top 3 banks boost foreign currency liquidity buffers to 125tn"
     }
   ],
   "trends": [
     {
       "term": "china",
-      "count": 12
-    },
-    {
-      "term": "japan",
-      "count": 8
+      "count": 14
     },
     {
       "term": "australia",
-      "count": 6
+      "count": 5
+    },
+    {
+      "term": "defense",
+      "count": 5
+    },
+    {
+      "term": "japan",
+      "count": 5
     },
     {
       "term": "military",
@@ -3120,10 +3126,6 @@
       "count": 5
     },
     {
-      "term": "defense",
-      "count": 4
-    },
-    {
       "term": "first",
       "count": 4
     },
@@ -3132,7 +3134,7 @@
       "count": 4
     },
     {
-      "term": "group",
+      "term": "india",
       "count": 4
     }
   ]
