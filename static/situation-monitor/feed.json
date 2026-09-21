@@ -1,21 +1,21 @@
 {
-  "updated_at": "2026-09-21T18:45Z",
-  "updated_label": "21 Sep 2026 · 18:45Z",
+  "updated_at": "2026-09-21T22:19Z",
+  "updated_label": "21 Sep 2026 · 22:19Z",
   "categories": [
     {
       "id": "nz-pacific",
       "label": "NZ & Pacific",
-      "count": 34
+      "count": 30
     },
     {
       "id": "apac-security",
       "label": "APAC Security",
-      "count": 83
+      "count": 90
     },
     {
       "id": "cyber",
       "label": "Cyber",
-      "count": 15
+      "count": 12
     },
     {
       "id": "global",
@@ -88,9 +88,9 @@
       "name": "USNI News",
       "category": "apac-security",
       "url": "https://news.usni.org/feed",
-      "item_count": 0,
-      "status": "error",
-      "error": "<urlopen error [Errno 104] Connection reset by peer>"
+      "item_count": 15,
+      "status": "ok",
+      "error": null
     },
     {
       "id": "bbc-world",
@@ -176,103 +176,32 @@
   ],
   "items": [
     {
-      "id": "2fcff8d64fcd1064",
-      "title": "'The issue doesn't just stop': Bougainville question shapes as a long game",
-      "summary": "Bougainvilleans may have to wait even longer than expected on whether PNG's parliament will approve their independence.",
-      "url": "https://www.rnz.co.nz/news/pacific/1511110/the-issue-doesn-t-just-stop-bougainville-question-shapes-as-a-long-game",
-      "published_at": "2026-09-21T18:36:52Z",
-      "published_label": "21 Sep 2026 · 18:36Z",
-      "age_label": "8m ago",
-      "source_id": "rnz-pacific",
-      "source_name": "RNZ Pacific",
+      "id": "aa8d1ac3d45908b8",
+      "title": "The US-China tech war has evolved since the last Xi-Trump summit. Who has the edge now?",
+      "summary": "When the presidents of the United States and China meet in Washington, the world will be watching to see whether their two countries can make good on their agreement to work towards “constructive strategic stability”. In the fourth part of this series, Sylvia Ma looks at the eco…",
+      "url": "https://www.scmp.com/economy/global-economy/article/3368262/us-china-tech-war-has-evolved-last-xi-trump-summit-who-has-edge-now?utm_source=rss_feed",
+      "published_at": "2026-09-21T22:00:06Z",
+      "published_label": "21 Sep 2026 · 22:00Z",
+      "age_label": "19m ago",
+      "source_id": "scmp",
+      "source_name": "South China Morning Post",
       "source_kind": "rss",
-      "category": "nz-pacific",
+      "category": "apac-security",
       "regions": [
-        "pacific"
+        "china",
+        "us"
       ],
       "priority": 30,
-      "cluster_key": "the issue doesnt just stop bougainville question shapes as a long game"
+      "cluster_key": "the uschina tech war has evolved since the last xitrump summit who has the edge now"
     },
     {
-      "id": "a7d60b2e23571bdd",
-      "title": "Chorus of complaint over threatened music resource",
-      "summary": "The ministry insists the National Library Music Hire Service is not being discontinued - but the PSA says change proposals show it's very much under threat",
-      "url": "https://www.rnz.co.nz/news/community/1510997/chorus-of-complaint-over-threatened-music-resource",
-      "published_at": "2026-09-21T18:31:39Z",
-      "published_label": "21 Sep 2026 · 18:31Z",
-      "age_label": "13m ago",
-      "source_id": "rnz-news",
-      "source_name": "RNZ News",
-      "source_kind": "rss",
-      "category": "nz-pacific",
-      "regions": [
-        "pacific"
-      ],
-      "priority": 30,
-      "cluster_key": "chorus of complaint over threatened music resource"
-    },
-    {
-      "id": "844c62e9c1d7eb3d",
-      "title": "Chorus of complaint over a threatened music resource",
-      "summary": "The ministry insists the National Library Music Hire Service is not being discontinued - but the PSA says change proposals show it's very much under threat",
-      "url": "https://www.rnz.co.nz/news/community/1510997/chorus-of-complaint-over-a-threatened-music-resource",
-      "published_at": "2026-09-21T18:31:39Z",
-      "published_label": "21 Sep 2026 · 18:31Z",
-      "age_label": "13m ago",
-      "source_id": "rnz-national",
-      "source_name": "RNZ National",
-      "source_kind": "rss",
-      "category": "nz-pacific",
-      "regions": [
-        "pacific"
-      ],
-      "priority": 30,
-      "cluster_key": "chorus of complaint over a threatened music resource"
-    },
-    {
-      "id": "ecd93c4fd95ec72e",
-      "title": "NRL reportedly set to drop referee Ashley Klein after Warriors blunder",
-      "summary": "The NRL admitted the Warriors should have been awarded a penalty with a minute left in the game, which would have given them a chance to tie it up.",
-      "url": "https://www.rnz.co.nz/news/sport/1510314/nrl-reportedly-set-to-drop-referee-ashley-klein-after-warriors-blunder",
-      "published_at": "2026-09-21T18:27:07Z",
-      "published_label": "21 Sep 2026 · 18:27Z",
-      "age_label": "18m ago",
-      "source_id": "rnz-news",
-      "source_name": "RNZ News",
-      "source_kind": "rss",
-      "category": "nz-pacific",
-      "regions": [
-        "pacific"
-      ],
-      "priority": 30,
-      "cluster_key": "nrl reportedly set to drop referee ashley klein after warriors blunder"
-    },
-    {
-      "id": "75b6d866f33d709b",
-      "title": "More beneficiaries may have had payments wrongly suspended - but ministry won't say how many",
-      "summary": "Some unemployed and sole parent beneficiaries may have also had their payments stopped in a botch-up.",
-      "url": "https://www.rnz.co.nz/news/political/1510797/more-beneficiaries-may-have-had-payments-wrongly-suspended-but-ministry-won-t-say-how-many",
-      "published_at": "2026-09-21T18:23:22Z",
-      "published_label": "21 Sep 2026 · 18:23Z",
-      "age_label": "22m ago",
-      "source_id": "rnz-news",
-      "source_name": "RNZ News",
-      "source_kind": "rss",
-      "category": "nz-pacific",
-      "regions": [
-        "pacific"
-      ],
-      "priority": 30,
-      "cluster_key": "more beneficiaries may have had payments wrongly suspended but ministry wont say how many"
-    },
-    {
-      "id": "64b99deb438cb1ed",
-      "title": "Our Changing World: Searching sand dunes for lizards",
-      "summary": "New Zealand's remaining sand dunes are under pressure, and the species living in them can shed light on the health of the dunes.",
-      "url": "https://www.rnz.co.nz/news/science-and-technology/1510711/our-changing-world-searching-sand-dunes-for-lizards",
-      "published_at": "2026-09-21T18:20:55Z",
-      "published_label": "21 Sep 2026 · 18:20Z",
-      "age_label": "24m ago",
+      "id": "b0faa2e1297f3d80",
+      "title": "Second Auckland harbour crossing appears feasible, review finds",
+      "summary": "But NZTA refused to release the report on the grounds doing so might put people off contributing their \"free and frank\" views in future.",
+      "url": "https://www.rnz.co.nz/news/political/1515323/second-auckland-harbour-crossing-appears-feasible-review-finds",
+      "published_at": "2026-09-21T21:56:10Z",
+      "published_label": "21 Sep 2026 · 21:56Z",
+      "age_label": "23m ago",
       "source_id": "rnz-news",
       "source_name": "RNZ News",
       "source_kind": "rss",
@@ -281,34 +210,16 @@
         "nz"
       ],
       "priority": 30,
-      "cluster_key": "our changing world searching sand dunes for lizards"
+      "cluster_key": "second auckland harbour crossing appears feasible review finds"
     },
     {
-      "id": "22cfc76d88a2bf22",
-      "title": "Flights halted at eastern US airports as world leaders arrive for New York UN meeting",
-      "summary": "The ⁠Federal Aviation Administration halted flights at ⁠busy East Coast airports in New York, Philadelphia and Boston on Monday, saying a fibre cable was accidentally cut at a construction site in New Jersey. Ground stops were issued for John ‌F. Kennedy Airport and LaGuardia ai…",
-      "url": "https://www.scmp.com/news/world/united-states-canada/article/3368302/flights-halted-eastern-us-airports-world-leaders-arrive-new-york-un-meeting?utm_source=rss_feed",
-      "published_at": "2026-09-21T18:18:07Z",
-      "published_label": "21 Sep 2026 · 18:18Z",
-      "age_label": "27m ago",
-      "source_id": "scmp",
-      "source_name": "South China Morning Post",
-      "source_kind": "rss",
-      "category": "apac-security",
-      "regions": [
-        "se-asia"
-      ],
-      "priority": 30,
-      "cluster_key": "flights halted at eastern us airports as world leaders arrive for new york un meeting"
-    },
-    {
-      "id": "13cbf751a05c27f9",
-      "title": "Thousands of children under 5 receive flu vaccine as sickness overwhelms health system",
-      "summary": "More than 3000 were vaccinated in just two weeks earlier this month.",
-      "url": "https://www.rnz.co.nz/news/health/1510495/thousands-of-children-under-5-receive-flu-vaccine-as-sickness-overwhelms-health-system",
-      "published_at": "2026-09-21T18:13:42Z",
-      "published_label": "21 Sep 2026 · 18:13Z",
-      "age_label": "31m ago",
+      "id": "f6a2e2600f52ed21",
+      "title": "Steam train operator 'shocked and devastated' after death at station",
+      "summary": "Hundreds were reportedly on board the train at the time.",
+      "url": "https://www.rnz.co.nz/news/emergencies_local/1515257/steam-train-operator-shocked-and-devastated-after-death-at-station",
+      "published_at": "2026-09-21T21:53:42Z",
+      "published_label": "21 Sep 2026 · 21:53Z",
+      "age_label": "25m ago",
       "source_id": "rnz-news",
       "source_name": "RNZ News",
       "source_kind": "rss",
@@ -317,34 +228,52 @@
         "pacific"
       ],
       "priority": 30,
-      "cluster_key": "thousands of children under 5 receive flu vaccine as sickness overwhelms health system"
+      "cluster_key": "steam train operator shocked and devastated after death at station"
     },
     {
-      "id": "e2e34beea884fde7",
-      "title": "Zelensky’s Perception Problem: Are New Partnerships a Solution?",
-      "summary": "Welcome to The Ukraine Compass, a weekly digest of Ukrainian commentary and analysis from across the political spectrum, only for War on the Rocks members. Each Monday, we bring you a curated selection of articles from Ukrainian media offering insight into how Ukrainians themsel…",
-      "url": "https://warontherocks.com/zelenskys-perception-problem-are-new-partnerships-a-solution/",
-      "published_at": "2026-09-21T17:55:46Z",
-      "published_label": "21 Sep 2026 · 17:55Z",
-      "age_label": "49m ago",
-      "source_id": "war-on-the-rocks",
-      "source_name": "War on the Rocks",
+      "id": "1d728506e9034c22",
+      "title": "CNN, MS NOW and Politico file lawsuit against Trump's White House ban",
+      "summary": "Major US networks later suspended White House TV coverage of Trump as he heads to New York for the UN summit.",
+      "url": "https://www.bbc.co.uk/news/articles/cm0e32rwvrryo?at_medium=RSS&at_campaign=rss",
+      "published_at": "2026-09-21T21:52:32Z",
+      "published_label": "21 Sep 2026 · 21:52Z",
+      "age_label": "26m ago",
+      "source_id": "bbc-world",
+      "source_name": "BBC World",
+      "source_kind": "rss",
+      "category": "global",
+      "regions": [
+        "us"
+      ],
+      "priority": 30,
+      "cluster_key": "cnn ms now and politico file lawsuit against trumps white house ban"
+    },
+    {
+      "id": "3c5741099bdeb50e",
+      "title": "Canada’s British Columbia sues OpenAI in US court over school shooting",
+      "summary": "British Columbia filed a lawsuit on Monday against OpenAI in California over the company’s failure to report violent activity on its ChatGPT service by the person who committed a mass school shooting in the western Canadian province. British Columbia Attorney General Niki Sharma…",
+      "url": "https://www.scmp.com/news/world/united-states-canada/article/3368310/canadas-british-columbia-sues-openai-us-court-over-school-shooting?utm_source=rss_feed",
+      "published_at": "2026-09-21T21:50:59Z",
+      "published_label": "21 Sep 2026 · 21:50Z",
+      "age_label": "28m ago",
+      "source_id": "scmp",
+      "source_name": "South China Morning Post",
       "source_kind": "rss",
       "category": "apac-security",
       "regions": [
-        "europe"
+        "se-asia"
       ],
       "priority": 30,
-      "cluster_key": "zelenskys perception problem are new partnerships a solution"
+      "cluster_key": "canadas british columbia sues openai in us court over school shooting"
     },
     {
       "id": "cf733fa5cf278f9e",
       "title": "Property investors relieved at Labour's landlord tax deduction promise",
-      "summary": "Labour ruled out changes to the settings with leader Chris Hipkins saying the party is committed to a capital gains tax instead.",
+      "summary": "Labour has ruled out any changes to interest deductibility for property owners.",
       "url": "https://www.rnz.co.nz/news/politics_election-2026/1509858/property-investors-relieved-at-labour-s-landlord-tax-deduction-promise",
-      "published_at": "2026-09-21T17:52:32Z",
-      "published_label": "21 Sep 2026 · 17:52Z",
-      "age_label": "53m ago",
+      "published_at": "2026-09-21T21:45:41Z",
+      "published_label": "21 Sep 2026 · 21:45Z",
+      "age_label": "33m ago",
       "source_id": "rnz-news",
       "source_name": "RNZ News",
       "source_kind": "rss",
@@ -356,66 +285,177 @@
       "cluster_key": "property investors relieved at labours landlord tax deduction promise"
     },
     {
-      "id": "f793195534b8db7f",
-      "title": "First UK charges brought over 1994 Rwanda genocide",
-      "summary": "Dr Vincent Brown, formerly Dr Vincent Bajinya, 65, will appear at Westminster Magistrates’ Court on Tuesday charged with seven offences.",
-      "url": "https://www.bbc.co.uk/news/articles/cr2092216nywo?at_medium=RSS&at_campaign=rss",
-      "published_at": "2026-09-21T17:48:23Z",
-      "published_label": "21 Sep 2026 · 17:48Z",
-      "age_label": "57m ago",
-      "source_id": "bbc-world",
-      "source_name": "BBC World",
+      "id": "cfcaf3d45f4cc9f7",
+      "title": "Top US Senate Democrat Jeanne Shaheen warns Trump not to waver on Taiwan ahead of Xi meet",
+      "summary": "The top Democrat on the US Senate’s foreign policy panel urged Donald Trump on Monday not to signal any retreat from Taiwan when he hosts Chinese President Xi Jinping this week. Speaking at the Concordia Summit in New York, Senator Jeanne Shaheen said she hoped the president “wi…",
+      "url": "https://www.scmp.com/news/us/diplomacy/article/3368309/top-us-senate-democrat-warns-trump-not-waver-taiwan-xi-heads-washington?utm_source=rss_feed",
+      "published_at": "2026-09-21T21:42:53Z",
+      "published_label": "21 Sep 2026 · 21:42Z",
+      "age_label": "36m ago",
+      "source_id": "scmp",
+      "source_name": "South China Morning Post",
       "source_kind": "rss",
-      "category": "global",
+      "category": "apac-security",
       "regions": [
-        "global"
+        "china",
+        "taiwan",
+        "europe"
       ],
       "priority": 30,
-      "cluster_key": "first uk charges brought over 1994 rwanda genocide"
-    },
-    {
-      "id": "9e60108808302324",
-      "title": "Police wrongly believed they had found Phillips children in 2022, new details reveal",
-      "summary": "Police told Oranga Tamariki that they believed they had found the children in July 2022 and intended to retrieve them that night, but the children were not there.",
-      "url": "https://www.rnz.co.nz/news/crime-and-justice/1509018/police-wrongly-believed-they-had-found-phillips-children-in-2022-new-details-reveal",
-      "published_at": "2026-09-21T17:19:33Z",
-      "published_label": "21 Sep 2026 · 17:19Z",
-      "age_label": "1h ago",
-      "source_id": "rnz-news",
-      "source_name": "RNZ News",
-      "source_kind": "rss",
-      "category": "nz-pacific",
-      "regions": [
-        "pacific"
-      ],
-      "priority": 20,
-      "cluster_key": "police wrongly believed they had found phillips children in 2022 new details reveal"
-    },
-    {
-      "id": "44dad91d8a7bb640",
-      "title": "New rural GP practice opening up in Central Hawke's Bay",
-      "summary": "After fundraising more than $1.2 million, the Takapau Health Centre is transforming into a GP-led practice and moving into a brand new building.",
-      "url": "https://www.rnz.co.nz/news/health/1509020/new-rural-gp-practice-opening-up-in-central-hawke-s-bay",
-      "published_at": "2026-09-21T17:12:48Z",
-      "published_label": "21 Sep 2026 · 17:12Z",
-      "age_label": "1h ago",
-      "source_id": "rnz-news",
-      "source_name": "RNZ News",
-      "source_kind": "rss",
-      "category": "nz-pacific",
-      "regions": [
-        "pacific"
-      ],
-      "priority": 20,
-      "cluster_key": "new rural gp practice opening up in central hawkes bay"
+      "cluster_key": "top us senate democrat jeanne shaheen warns trump not to waver on taiwan ahead of xi meet"
     },
     {
       "id": "52d3b9e7a520ca70",
       "title": "Has New Zealand’s supermarket duopoly created higher prices?",
-      "summary": "The supermarket sector has become an election issue - but has supermarket duopoly actually created higher prices?",
+      "summary": "What the numbers show.",
       "url": "https://www.rnz.co.nz/news/business/1509019/has-new-zealand-s-supermarket-duopoly-created-higher-prices",
-      "published_at": "2026-09-21T17:12:48Z",
-      "published_label": "21 Sep 2026 · 17:12Z",
+      "published_at": "2026-09-21T21:35:32Z",
+      "published_label": "21 Sep 2026 · 21:35Z",
+      "age_label": "43m ago",
+      "source_id": "rnz-news",
+      "source_name": "RNZ News",
+      "source_kind": "rss",
+      "category": "nz-pacific",
+      "regions": [
+        "nz"
+      ],
+      "priority": 30,
+      "cluster_key": "has new zealands supermarket duopoly created higher prices"
+    },
+    {
+      "id": "fc047717a46bba4f",
+      "title": "House for adults living with intellectual disabilities picks up award",
+      "summary": "Te Anua Nua Trust's manager has picked up an industry leadership accolade for bringing mana to two houses in Manurewa, where 10 people live with the support of carers.",
+      "url": "https://www.rnz.co.nz/news/community/1512419/house-for-adults-living-with-intellectual-disabilities-picks-up-award",
+      "published_at": "2026-09-21T21:32:36Z",
+      "published_label": "21 Sep 2026 · 21:32Z",
+      "age_label": "46m ago",
+      "source_id": "rnz-news",
+      "source_name": "RNZ News",
+      "source_kind": "rss",
+      "category": "nz-pacific",
+      "regions": [
+        "pacific"
+      ],
+      "priority": 30,
+      "cluster_key": "house for adults living with intellectual disabilities picks up award"
+    },
+    {
+      "id": "0f1927b2d22dbfec",
+      "title": "Why Trump-Xi summit must put Korean peninsula back on the agenda",
+      "summary": "The September 24 summit between President Xi Jinping and US President Donald Trump is no ordinary engagement. Their May summit took place in Beijing and largely centred on economic issues. This one will be on Trump’s home turf and is expected to put strategic questions on the ta…",
+      "url": "https://www.scmp.com/opinion/asia-opinion/article/3367602/why-trump-xi-summit-must-put-korean-peninsula-back-agenda?utm_source=rss_feed",
+      "published_at": "2026-09-21T21:30:05Z",
+      "published_label": "21 Sep 2026 · 21:30Z",
+      "age_label": "49m ago",
+      "source_id": "scmp",
+      "source_name": "South China Morning Post",
+      "source_kind": "rss",
+      "category": "apac-security",
+      "regions": [
+        "china",
+        "korea"
+      ],
+      "priority": 30,
+      "cluster_key": "why trumpxi summit must put korean peninsula back on the agenda"
+    },
+    {
+      "id": "13cbf751a05c27f9",
+      "title": "Thousands of children under 5 receive flu vaccine as sickness overwhelms health system",
+      "summary": "More than 3000 were vaccinated in just two weeks earlier this month.",
+      "url": "https://www.rnz.co.nz/news/health/1510495/thousands-of-children-under-5-receive-flu-vaccine-as-sickness-overwhelms-health-system",
+      "published_at": "2026-09-21T21:24:25Z",
+      "published_label": "21 Sep 2026 · 21:24Z",
+      "age_label": "54m ago",
+      "source_id": "rnz-news",
+      "source_name": "RNZ News",
+      "source_kind": "rss",
+      "category": "nz-pacific",
+      "regions": [
+        "pacific"
+      ],
+      "priority": 30,
+      "cluster_key": "thousands of children under 5 receive flu vaccine as sickness overwhelms health system"
+    },
+    {
+      "id": "69d07c0b63b6c019",
+      "title": "Explainer: What is a citizen's arrest and how do you make one?",
+      "summary": "Explainer - A Hamilton man was recently arrested after making a citizen's arrest. What are the rules around the recent law changes?",
+      "url": "https://www.rnz.co.nz/news/crime-and-justice/1514344/explainer-what-is-a-citizen-s-arrest-and-how-do-you-make-one",
+      "published_at": "2026-09-21T21:17:38Z",
+      "published_label": "21 Sep 2026 · 21:17Z",
+      "age_label": "1h ago",
+      "source_id": "rnz-news",
+      "source_name": "RNZ News",
+      "source_kind": "rss",
+      "category": "nz-pacific",
+      "regions": [
+        "pacific"
+      ],
+      "priority": 20,
+      "cluster_key": "explainer what is a citizens arrest and how do you make one"
+    },
+    {
+      "id": "39e0ee1785fdbaae",
+      "title": "UK PM Burnham agrees to Saudi request for refuelling support",
+      "summary": "British Prime Minister Andy Burnham said on ⁠Monday he had ⁠agreed to a request ⁠from Saudi Arabia to provide defensive air-to-air refuelling for a limited time period, a move he described as helping to stabilise the wider region. Riyadh requested support after the Houthis, who…",
+      "url": "https://www.scmp.com/news/world/europe/article/3368308/uk-pm-burnham-agrees-saudi-request-refuelling-support?utm_source=rss_feed",
+      "published_at": "2026-09-21T21:12:06Z",
+      "published_label": "21 Sep 2026 · 21:12Z",
+      "age_label": "1h ago",
+      "source_id": "scmp",
+      "source_name": "South China Morning Post",
+      "source_kind": "rss",
+      "category": "apac-security",
+      "regions": [
+        "middle-east"
+      ],
+      "priority": 20,
+      "cluster_key": "uk pm burnham agrees to saudi request for refuelling support"
+    },
+    {
+      "id": "c9fe38786c4ae4ba",
+      "title": "Zelensky and US spy chief Ratcliffe meet in Ireland, sources say",
+      "summary": "Ukrainian President Volodymyr Zelensky ⁠met US CIA chief John Ratcliffe at Shannon Airport in Ireland, two people familiar with the matter said. The meeting took place on Monday, one of ‌the sources said. The other source said the pair spoke informally while their planes were be…",
+      "url": "https://www.scmp.com/news/world/europe/article/3368307/zelensky-and-us-spy-chief-ratcliffe-meet-ireland-sources-say?utm_source=rss_feed",
+      "published_at": "2026-09-21T20:58:39Z",
+      "published_label": "21 Sep 2026 · 20:58Z",
+      "age_label": "1h ago",
+      "source_id": "scmp",
+      "source_name": "South China Morning Post",
+      "source_kind": "rss",
+      "category": "apac-security",
+      "regions": [
+        "se-asia"
+      ],
+      "priority": 20,
+      "cluster_key": "zelensky and us spy chief ratcliffe meet in ireland sources say"
+    },
+    {
+      "id": "c8b40d7379070468",
+      "title": "Drugs, unsafe sex and misinformation in battle against Fiji's 'shocking' HIV surge",
+      "summary": "The country's government has declared a national emergency in response to the virus, with an estimated one in 60 people infected.",
+      "url": "https://www.rnz.co.nz/news/world/1513982/drugs-unsafe-sex-and-misinformation-in-battle-against-fiji-s-shocking-hiv-surge",
+      "published_at": "2026-09-21T20:52:38Z",
+      "published_label": "21 Sep 2026 · 20:52Z",
+      "age_label": "1h ago",
+      "source_id": "rnz-news",
+      "source_name": "RNZ News",
+      "source_kind": "rss",
+      "category": "nz-pacific",
+      "regions": [
+        "pacific"
+      ],
+      "priority": 38,
+      "cluster_key": "drugs unsafe sex and misinformation in battle against fijis shocking hiv surge"
+    },
+    {
+      "id": "de32668dd2c93805",
+      "title": "New Zealand's recognition of Palestinian statehood inevitable - Winston Peters",
+      "summary": "Winston Peters says his decision not to join most other UN member states in recognising Palestine last year was an example of truly independent foreign policy.",
+      "url": "https://www.rnz.co.nz/news/political/1513968/new-zealand-s-recognition-of-palestinian-statehood-inevitable-winston-peters",
+      "published_at": "2026-09-21T20:51:27Z",
+      "published_label": "21 Sep 2026 · 20:51Z",
       "age_label": "1h ago",
       "source_id": "rnz-news",
       "source_name": "RNZ News",
@@ -425,7 +465,408 @@
         "nz"
       ],
       "priority": 20,
-      "cluster_key": "has new zealands supermarket duopoly created higher prices"
+      "cluster_key": "new zealands recognition of palestinian statehood inevitable winston peters"
+    },
+    {
+      "id": "0c8fffc6c46a81ca",
+      "title": "U.S. Strikes 70th Alleged Drug Boat, U.N. Brief Condemns Attacks",
+      "summary": "U.S. forces with Joint Task Force Western Hemisphere struck a go-fast vessel allegedly carrying illicit narcotics on Friday, killing four people aboard. The strike – the 70th since President Donald Trump announced the campaign one year ago – brings the total number of people kil…",
+      "url": "https://news.usni.org/2026/09/21/u-s-strikes-70th-alleged-drug-boat-u-n-brief-condemns-attacks",
+      "published_at": "2026-09-21T20:48:36Z",
+      "published_label": "21 Sep 2026 · 20:48Z",
+      "age_label": "1h ago",
+      "source_id": "usni",
+      "source_name": "USNI News",
+      "source_kind": "rss",
+      "category": "apac-security",
+      "regions": [
+        "us"
+      ],
+      "priority": 20,
+      "cluster_key": "us strikes 70th alleged drug boat un brief condemns attacks"
+    },
+    {
+      "id": "e85c4246f1d38132",
+      "title": "Could you make it at firefighter boot camp?",
+      "summary": "More than 80 percent of New Zealand's firefighters are volunteers. The training course to qualify isn't easy.",
+      "url": "https://www.rnz.co.nz/life/wellbeing/could-you-make-it-at-firefighter-boot-camp",
+      "published_at": "2026-09-21T20:36:18Z",
+      "published_label": "21 Sep 2026 · 20:36Z",
+      "age_label": "1h ago",
+      "source_id": "rnz-news",
+      "source_name": "RNZ News",
+      "source_kind": "rss",
+      "category": "nz-pacific",
+      "regions": [
+        "nz"
+      ],
+      "priority": 20,
+      "cluster_key": "could you make it at firefighter boot camp"
+    },
+    {
+      "id": "3da2af24a0321139",
+      "title": "Pedestrian dead after being hit by car in Pakuranga",
+      "summary": "Enquiries into the circumstances surrounding the crash are ongoing.",
+      "url": "https://www.rnz.co.nz/news/regions_auckland/1512787/pedestrian-dead-after-being-hit-by-car-in-pakuranga",
+      "published_at": "2026-09-21T20:29:12Z",
+      "published_label": "21 Sep 2026 · 20:29Z",
+      "age_label": "1h ago",
+      "source_id": "rnz-news",
+      "source_name": "RNZ News",
+      "source_kind": "rss",
+      "category": "nz-pacific",
+      "regions": [
+        "pacific"
+      ],
+      "priority": 20,
+      "cluster_key": "pedestrian dead after being hit by car in pakuranga"
+    },
+    {
+      "id": "fd16e22129628212",
+      "title": "Millions urged to evacuate as powerful Typhoon Dujuan hits Japan",
+      "summary": "The country's meteorological agency had warned of an \"imminent threat to life,\" but this has now been downgraded.",
+      "url": "https://www.bbc.co.uk/news/articles/cm3wj2lexl97o?at_medium=RSS&at_campaign=rss",
+      "published_at": "2026-09-21T20:26:41Z",
+      "published_label": "21 Sep 2026 · 20:26Z",
+      "age_label": "1h ago",
+      "source_id": "bbc-asia",
+      "source_name": "BBC Asia",
+      "source_kind": "rss",
+      "category": "apac-security",
+      "regions": [
+        "japan"
+      ],
+      "priority": 20,
+      "cluster_key": "millions urged to evacuate as powerful typhoon dujuan hits japan"
+    },
+    {
+      "id": "a37f021c5ca67837",
+      "title": "US, Japan and South Korea launch economic-security talks before Xi summit",
+      "summary": "The United States, Japan and South Korea announced a new economic-security consultation and reinforced their support for stability across the Taiwan Strait on Monday, sending a coordinated message on two of Beijing’s most sensitive issues just days before Chinese President Xi Ji…",
+      "url": "https://www.scmp.com/news/us/diplomacy/article/3368306/us-japan-and-south-korea-launch-economic-security-talks-xi-summit?utm_source=rss_feed",
+      "published_at": "2026-09-21T20:22:31Z",
+      "published_label": "21 Sep 2026 · 20:22Z",
+      "age_label": "1h ago",
+      "source_id": "scmp",
+      "source_name": "South China Morning Post",
+      "source_kind": "rss",
+      "category": "apac-security",
+      "regions": [
+        "china",
+        "taiwan",
+        "japan",
+        "korea",
+        "us"
+      ],
+      "priority": 20,
+      "cluster_key": "us japan and south korea launch economicsecurity talks before xi summit"
+    },
+    {
+      "id": "4d1ccb6adcda236f",
+      "title": "Airlines criticise air traffic control as second glitch causes more disruption in UK",
+      "summary": "Prime Minister Andy Burnham said further issues today \"cause even greater concern\" about the UK's air traffic control and the head of the organisation that runs it.",
+      "url": "https://www.bbc.co.uk/news/articles/cqp80p78mxx5o?at_medium=RSS&at_campaign=rss",
+      "published_at": "2026-09-21T20:21:18Z",
+      "published_label": "21 Sep 2026 · 20:21Z",
+      "age_label": "1h ago",
+      "source_id": "bbc-world",
+      "source_name": "BBC World",
+      "source_kind": "rss",
+      "category": "global",
+      "regions": [
+        "global"
+      ],
+      "priority": 20,
+      "cluster_key": "airlines criticise air traffic control as second glitch causes more disruption in uk"
+    },
+    {
+      "id": "bbd6fd7652720321",
+      "title": "Rotorua at turning point with international mountain biking events, mayor says",
+      "summary": "Tania Tapsell says more regional tourism support is needed, as the city gears up for the final event in its 10-year contract with Crankworx.",
+      "url": "https://www.rnz.co.nz/news/regions_bay-of-plenty/1513226/rotorua-at-turning-point-with-international-mountain-biking-events-mayor-says",
+      "published_at": "2026-09-21T20:14:00Z",
+      "published_label": "21 Sep 2026 · 20:14Z",
+      "age_label": "2h ago",
+      "source_id": "rnz-news",
+      "source_name": "RNZ News",
+      "source_kind": "rss",
+      "category": "nz-pacific",
+      "regions": [
+        "pacific"
+      ],
+      "priority": 20,
+      "cluster_key": "rotorua at turning point with international mountain biking events mayor says"
+    },
+    {
+      "id": "e1b7d26e4a5a4fcd",
+      "title": "Guam demands consultation on CNMI deep-sea mining plan",
+      "summary": "Guam's governor is demanding formal consultation over a proposed deep sea mineral lease sale in federal waters off the Commonwealth of the Northern Mariana Islands.",
+      "url": "https://www.rnz.co.nz/news/pacific/1512900/guam-demands-consultation-on-cnmi-deep-sea-mining-plan",
+      "published_at": "2026-09-21T19:57:46Z",
+      "published_label": "21 Sep 2026 · 19:57Z",
+      "age_label": "2h ago",
+      "source_id": "rnz-news",
+      "source_name": "RNZ News",
+      "source_kind": "rss",
+      "category": "nz-pacific",
+      "regions": [
+        "pacific"
+      ],
+      "priority": 20,
+      "cluster_key": "guam demands consultation on cnmi deepsea mining plan"
+    },
+    {
+      "id": "7859b4adb1715938",
+      "title": "Bespoke aquaculture law floated as weight loss drugs boost farmed fish demand",
+      "summary": "Aquaculture could rival the red meat sector by using open ocean fish farming, as global demand rises partly due to new weight-loss drugs.",
+      "url": "https://www.rnz.co.nz/news/political/1512717/bespoke-aquaculture-law-floated-as-weight-loss-drugs-boost-farmed-fish-demand",
+      "published_at": "2026-09-21T19:49:31Z",
+      "published_label": "21 Sep 2026 · 19:49Z",
+      "age_label": "2h ago",
+      "source_id": "rnz-news",
+      "source_name": "RNZ News",
+      "source_kind": "rss",
+      "category": "nz-pacific",
+      "regions": [
+        "pacific"
+      ],
+      "priority": 20,
+      "cluster_key": "bespoke aquaculture law floated as weight loss drugs boost farmed fish demand"
+    },
+    {
+      "id": "ea4f9f4adab0e40d",
+      "title": "'She was a lost soul': Agencies under microscope at inquest into girl's death",
+      "summary": "The 12-year-old girl's father wants answers about government agencies' response to his daughter's living conditions at the time of her death.",
+      "url": "https://www.rnz.co.nz/news/health/1501428/she-was-a-lost-soul-agencies-under-microscope-at-inquest-into-girl-s-death",
+      "published_at": "2026-09-21T19:37:05Z",
+      "published_label": "21 Sep 2026 · 19:37Z",
+      "age_label": "2h ago",
+      "source_id": "rnz-news",
+      "source_name": "RNZ News",
+      "source_kind": "rss",
+      "category": "nz-pacific",
+      "regions": [
+        "pacific"
+      ],
+      "priority": 20,
+      "cluster_key": "she was a lost soul agencies under microscope at inquest into girls death"
+    },
+    {
+      "id": "2f7c4e03a4fd2431",
+      "title": "Four missing after overloaded boat carrying 14 people capsizes in PNG",
+      "summary": "The boat left Kokopo Beach and was heading to the Duke of York Island. It was licensed to carry eight people but had 14 passengers on board and went to sea despite weather warnings.",
+      "url": "https://www.rnz.co.nz/news/pacific/1512412/four-missing-after-overloaded-boat-carrying-14-people-capsizes-in-png",
+      "published_at": "2026-09-21T19:34:19Z",
+      "published_label": "21 Sep 2026 · 19:34Z",
+      "age_label": "2h ago",
+      "source_id": "rnz-pacific",
+      "source_name": "RNZ Pacific",
+      "source_kind": "rss",
+      "category": "nz-pacific",
+      "regions": [
+        "pacific"
+      ],
+      "priority": 20,
+      "cluster_key": "four missing after overloaded boat carrying 14 people capsizes in png"
+    },
+    {
+      "id": "3cddd0bec3495f06",
+      "title": "Trump’s approval rating falls to career low of 32% as high living costs bite, poll shows",
+      "summary": "US President Donald Trump’s approval ‌rating fell to 32 per cent – the lowest of his political career – as his fellow Republicans soured on his handling of the cost of living amid the unpopular Iran war, a new Reuters/Ipsos poll found. The four-day poll, which closed on Sunday,…",
+      "url": "https://www.scmp.com/news/world/united-states-canada/article/3368305/trumps-approval-rating-falls-career-low-32-high-living-costs-bite-poll-shows?utm_source=rss_feed",
+      "published_at": "2026-09-21T19:34:01Z",
+      "published_label": "21 Sep 2026 · 19:34Z",
+      "age_label": "2h ago",
+      "source_id": "scmp",
+      "source_name": "South China Morning Post",
+      "source_kind": "rss",
+      "category": "apac-security",
+      "regions": [
+        "middle-east"
+      ],
+      "priority": 20,
+      "cluster_key": "trumps approval rating falls to career low of 32 as high living costs bite poll shows"
+    },
+    {
+      "id": "88e66a2d0d7d9850",
+      "title": "EU data regulator fines Google more than $460 million for location data violations",
+      "summary": "Ireland’s Data Protection Commission will fine Google more than €403 million ($462 million) over the tech giant’s processing of location data, concluding an inquiry into the company that began in early 2020.",
+      "url": "https://therecord.media/google-europe-location-data-fine",
+      "published_at": "2026-09-21T19:15:00Z",
+      "published_label": "21 Sep 2026 · 19:15Z",
+      "age_label": "3h ago",
+      "source_id": "the-record",
+      "source_name": "The Record",
+      "source_kind": "rss",
+      "category": "cyber",
+      "regions": [
+        "europe"
+      ],
+      "priority": 32,
+      "cluster_key": "eu data regulator fines google more than 460 million for location data violations"
+    },
+    {
+      "id": "e11adf53149059a7",
+      "title": "Trump inaugurates White House helipad but networks skip coverage over media ban",
+      "summary": "US President Donald Trump showed off his new White House helicopter landing pad on Monday, attempting to brush aside a First Amendment firestorm even as major television networks kept their cameras away because CNN was not allowed to cover the event. Trump used oversized gold sc…",
+      "url": "https://www.scmp.com/news/world/united-states-canada/article/3368304/trump-inaugurates-white-house-helipad-networks-skip-coverage-over-media-ban?utm_source=rss_feed",
+      "published_at": "2026-09-21T19:13:08Z",
+      "published_label": "21 Sep 2026 · 19:13Z",
+      "age_label": "3h ago",
+      "source_id": "scmp",
+      "source_name": "South China Morning Post",
+      "source_kind": "rss",
+      "category": "apac-security",
+      "regions": [
+        "us"
+      ],
+      "priority": 20,
+      "cluster_key": "trump inaugurates white house helipad but networks skip coverage over media ban"
+    },
+    {
+      "id": "130af706a47ba1f7",
+      "title": "New rural GP practice opening up in Central Hawke's Bay",
+      "summary": "After fundraising more than $1.2 million, the Takapau Health Centre is transforming into a GP-led practice and moving into a brand new building.",
+      "url": "https://www.rnz.co.nz/news/health/1509020/new-rural-gp-practice-opening-up-in-central-hawke-s-bay",
+      "published_at": "2026-09-21T19:12:00Z",
+      "published_label": "21 Sep 2026 · 19:12Z",
+      "age_label": "3h ago",
+      "source_id": "rnz-national",
+      "source_name": "RNZ National",
+      "source_kind": "rss",
+      "category": "nz-pacific",
+      "regions": [
+        "pacific"
+      ],
+      "priority": 20,
+      "cluster_key": "new rural gp practice opening up in central hawkes bay"
+    },
+    {
+      "id": "82084aff1977976d",
+      "title": "Moon Festival returns to Auckland with giant lanterns and a taste of Asian culture",
+      "summary": "More than 60 handcrafted lanterns from China will light up the Auckland suburb of Balmoral later this week to celebrate the arrival of the Mid-Autumn Festival.",
+      "url": "https://www.rnz.co.nz/news/chinese-english/1511921/moon-festival-returns-to-auckland-with-giant-lanterns-and-a-taste-of-asian-culture",
+      "published_at": "2026-09-21T19:11:31Z",
+      "published_label": "21 Sep 2026 · 19:11Z",
+      "age_label": "3h ago",
+      "source_id": "rnz-national",
+      "source_name": "RNZ National",
+      "source_kind": "rss",
+      "category": "nz-pacific",
+      "regions": [
+        "nz",
+        "china"
+      ],
+      "priority": 20,
+      "cluster_key": "moon festival returns to auckland with giant lanterns and a taste of asian culture"
+    },
+    {
+      "id": "ecd049175a6d10af",
+      "title": "First charges brought in UK for 1994 Rwanda genocide",
+      "summary": "Prosecutors said on Monday they had brought the first-ever charges in the UK against a man for his alleged role in the 1994 Rwanda genocide, after a complex seven-year investigation. Vincent Brown, 65, was arrested and charged on Monday with one count of being an ancillary to ge…",
+      "url": "https://www.scmp.com/news/world/europe/article/3368303/first-charges-brought-uk-1994-rwanda-genocide?utm_source=rss_feed",
+      "published_at": "2026-09-21T18:51:26Z",
+      "published_label": "21 Sep 2026 · 18:51Z",
+      "age_label": "3h ago",
+      "source_id": "scmp",
+      "source_name": "South China Morning Post",
+      "source_kind": "rss",
+      "category": "apac-security",
+      "regions": [
+        "se-asia"
+      ],
+      "priority": 20,
+      "cluster_key": "first charges brought in uk for 1994 rwanda genocide"
+    },
+    {
+      "id": "2fcff8d64fcd1064",
+      "title": "'The issue doesn't just stop': Bougainville question shapes as a long game",
+      "summary": "Bougainvilleans may have to wait even longer than expected on whether PNG's parliament will approve their independence.",
+      "url": "https://www.rnz.co.nz/news/pacific/1511110/the-issue-doesn-t-just-stop-bougainville-question-shapes-as-a-long-game",
+      "published_at": "2026-09-21T18:39:18Z",
+      "published_label": "21 Sep 2026 · 18:39Z",
+      "age_label": "3h ago",
+      "source_id": "rnz-pacific",
+      "source_name": "RNZ Pacific",
+      "source_kind": "rss",
+      "category": "nz-pacific",
+      "regions": [
+        "pacific"
+      ],
+      "priority": 20,
+      "cluster_key": "the issue doesnt just stop bougainville question shapes as a long game"
+    },
+    {
+      "id": "a462a5206cce0332",
+      "title": "Flights halted on US east coast as world leaders arrive for New York UN meeting",
+      "summary": "Hundreds of flights from US east coast airports were cancelled or delayed on Monday due to a telecommunications line outage caused by a construction mistake, US officials said. Ground stops were issued for John ‌F. Kennedy Airport and LaGuardia airports, as well as an airport in…",
+      "url": "https://www.scmp.com/news/world/united-states-canada/article/3368302/flights-halted-eastern-us-airports-world-leaders-arrive-new-york-un-meeting?utm_source=rss_feed",
+      "published_at": "2026-09-21T18:18:07Z",
+      "published_label": "21 Sep 2026 · 18:18Z",
+      "age_label": "4h ago",
+      "source_id": "scmp",
+      "source_name": "South China Morning Post",
+      "source_kind": "rss",
+      "category": "apac-security",
+      "regions": [
+        "se-asia"
+      ],
+      "priority": 20,
+      "cluster_key": "flights halted on us east coast as world leaders arrive for new york un meeting"
+    },
+    {
+      "id": "a295cab9c5c7e9bb",
+      "title": "Russia is ‘Greatest Threat’ to U.K. Security, Says First Sea Lord",
+      "summary": "The head of the Royal Navy called for Britain to expand its maritime capabilities and strengthen the U.K.-led Joint Expeditionary Force coalition in preparation for a potential conflict with Russia in the North Atlantic during a speech last week. “The reason why we need this is…",
+      "url": "https://news.usni.org/2026/09/21/russia-is-greatest-threat-to-u-k-security-says-first-sea-lord",
+      "published_at": "2026-09-21T18:16:14Z",
+      "published_label": "21 Sep 2026 · 18:16Z",
+      "age_label": "4h ago",
+      "source_id": "usni",
+      "source_name": "USNI News",
+      "source_kind": "rss",
+      "category": "apac-security",
+      "regions": [
+        "russia"
+      ],
+      "priority": 20,
+      "cluster_key": "russia is greatest threat to uk security says first sea lord"
+    },
+    {
+      "id": "e2e34beea884fde7",
+      "title": "Zelensky’s Perception Problem: Are New Partnerships a Solution?",
+      "summary": "Welcome to The Ukraine Compass, a weekly digest of Ukrainian commentary and analysis from across the political spectrum, only for War on the Rocks members. Each Monday, we bring you a curated selection of articles from Ukrainian media offering insight into how Ukrainians themsel…",
+      "url": "https://warontherocks.com/zelenskys-perception-problem-are-new-partnerships-a-solution/",
+      "published_at": "2026-09-21T17:55:46Z",
+      "published_label": "21 Sep 2026 · 17:55Z",
+      "age_label": "4h ago",
+      "source_id": "war-on-the-rocks",
+      "source_name": "War on the Rocks",
+      "source_kind": "rss",
+      "category": "apac-security",
+      "regions": [
+        "europe"
+      ],
+      "priority": 20,
+      "cluster_key": "zelenskys perception problem are new partnerships a solution"
+    },
+    {
+      "id": "f793195534b8db7f",
+      "title": "First UK charges brought over 1994 Rwanda genocide",
+      "summary": "Dr Vincent Brown, formerly Dr Vincent Bajinya, 65, will appear at Westminster Magistrates’ Court on Tuesday charged with seven offences.",
+      "url": "https://www.bbc.co.uk/news/articles/cr2092216nywo?at_medium=RSS&at_campaign=rss",
+      "published_at": "2026-09-21T17:48:23Z",
+      "published_label": "21 Sep 2026 · 17:48Z",
+      "age_label": "4h ago",
+      "source_id": "bbc-world",
+      "source_name": "BBC World",
+      "source_kind": "rss",
+      "category": "global",
+      "regions": [
+        "global"
+      ],
+      "priority": 20,
+      "cluster_key": "first uk charges brought over 1994 rwanda genocide"
     },
     {
       "id": "6472051a239db196",
@@ -434,7 +875,7 @@
       "url": "https://www.bbc.co.uk/news/articles/c617j2x01epjo?at_medium=RSS&at_campaign=rss",
       "published_at": "2026-09-21T17:06:16Z",
       "published_label": "21 Sep 2026 · 17:06Z",
-      "age_label": "1h ago",
+      "age_label": "5h ago",
       "source_id": "bbc-world",
       "source_name": "BBC World",
       "source_kind": "rss",
@@ -452,7 +893,7 @@
       "url": "https://www.bbc.co.uk/news/articles/ckp84pj8zpngo?at_medium=RSS&at_campaign=rss",
       "published_at": "2026-09-21T17:02:47Z",
       "published_label": "21 Sep 2026 · 17:02Z",
-      "age_label": "1h ago",
+      "age_label": "5h ago",
       "source_id": "bbc-world",
       "source_name": "BBC World",
       "source_kind": "rss",
@@ -470,7 +911,7 @@
       "url": "https://www.scmp.com/news/asia/south-asia/article/3368301/sisters-pakistans-imran-khan-arrested-lahore-jailed-ex-pms-party-says?utm_source=rss_feed",
       "published_at": "2026-09-21T16:59:24Z",
       "published_label": "21 Sep 2026 · 16:59Z",
-      "age_label": "1h ago",
+      "age_label": "5h ago",
       "source_id": "scmp",
       "source_name": "South China Morning Post",
       "source_kind": "rss",
@@ -488,7 +929,7 @@
       "url": "https://www.bbc.co.uk/news/articles/cqm27p8enwmko?at_medium=RSS&at_campaign=rss",
       "published_at": "2026-09-21T16:54:56Z",
       "published_label": "21 Sep 2026 · 16:54Z",
-      "age_label": "1h ago",
+      "age_label": "5h ago",
       "source_id": "bbc-world",
       "source_name": "BBC World",
       "source_kind": "rss",
@@ -500,22 +941,22 @@
       "cluster_key": "merz vows to keep coalition together for germanys democratic future"
     },
     {
-      "id": "4d1ccb6adcda236f",
-      "title": "Airlines criticise air traffic control as second glitch causes more disruption in UK",
-      "summary": "Airlines are angry about the delays, with EasyJet saying the latest incident \"once again calls into question the resilience\" of the system.",
-      "url": "https://www.bbc.co.uk/news/articles/cqp80p78mxx5o?at_medium=RSS&at_campaign=rss",
-      "published_at": "2026-09-21T16:39:16Z",
-      "published_label": "21 Sep 2026 · 16:39Z",
-      "age_label": "2h ago",
-      "source_id": "bbc-world",
-      "source_name": "BBC World",
+      "id": "2ea08526b43caed7",
+      "title": "USNI News Fleet and Marine Tracker: Sept. 21, 2026",
+      "summary": "These are the approximate positions of the U.S. Navy’s deployed carrier strike groups and amphibious ready groups throughout the world as of Sept. 21, 2026, based on Navy and public data. In cases in which a CSG or ARG is conducting disaggregated operations, the chart reflects t…",
+      "url": "https://news.usni.org/2026/09/21/usni-news-fleet-and-marine-tracker-sept-21-2026",
+      "published_at": "2026-09-21T16:50:43Z",
+      "published_label": "21 Sep 2026 · 16:50Z",
+      "age_label": "5h ago",
+      "source_id": "usni",
+      "source_name": "USNI News",
       "source_kind": "rss",
-      "category": "global",
+      "category": "apac-security",
       "regions": [
-        "global"
+        "us"
       ],
       "priority": 20,
-      "cluster_key": "airlines criticise air traffic control as second glitch causes more disruption in uk"
+      "cluster_key": "usni news fleet and marine tracker sept 21 2026"
     },
     {
       "id": "0aa63cd070dfea57",
@@ -524,7 +965,7 @@
       "url": "https://www.scmp.com/news/hong-kong/education/article/3368300/president-xi-jinping-calls-china-us-youth-advance-bilateral-cooperation?utm_source=rss_feed",
       "published_at": "2026-09-21T16:30:59Z",
       "published_label": "21 Sep 2026 · 16:30Z",
-      "age_label": "2h ago",
+      "age_label": "5h ago",
       "source_id": "scmp",
       "source_name": "South China Morning Post",
       "source_kind": "rss",
@@ -536,31 +977,13 @@
       "cluster_key": "president xi jinping calls on china us youth to advance bilateral cooperation"
     },
     {
-      "id": "1d728506e9034c22",
-      "title": "CNN, MS NOW and Politico file lawsuit against Trump's White House ban",
-      "summary": "Major US networks later suspended White House TV coverage of Trump as he heads to New York for the UN summit.",
-      "url": "https://www.bbc.co.uk/news/articles/cm0e32rwvrryo?at_medium=RSS&at_campaign=rss",
-      "published_at": "2026-09-21T15:58:53Z",
-      "published_label": "21 Sep 2026 · 15:58Z",
-      "age_label": "2h ago",
-      "source_id": "bbc-world",
-      "source_name": "BBC World",
-      "source_kind": "rss",
-      "category": "global",
-      "regions": [
-        "us"
-      ],
-      "priority": 20,
-      "cluster_key": "cnn ms now and politico file lawsuit against trumps white house ban"
-    },
-    {
       "id": "f2102db6d620d8ff",
       "title": "Gaza children return to in-person schools for first time in 3 years",
       "summary": "Hundreds of thousands of children in Gaza have returned to in-person teaching for the first time in nearly three years, albeit in damaged or makeshift school buildings and tents, and with uniforms, notebooks and pens unaffordable for many families. The United Nations Children’s…",
       "url": "https://www.scmp.com/news/world/middle-east/article/3368299/gaza-children-return-person-schools-first-time-3-years?utm_source=rss_feed",
       "published_at": "2026-09-21T15:32:33Z",
       "published_label": "21 Sep 2026 · 15:32Z",
-      "age_label": "3h ago",
+      "age_label": "6h ago",
       "source_id": "scmp",
       "source_name": "South China Morning Post",
       "source_kind": "rss",
@@ -568,7 +991,7 @@
       "regions": [
         "middle-east"
       ],
-      "priority": 20,
+      "priority": 10,
       "cluster_key": "gaza children return to inperson schools for first time in 3 years"
     },
     {
@@ -578,7 +1001,7 @@
       "url": "https://www.scmp.com/news/us/diplomacy/article/3368297/first-ladies-step-forward-trump-lays-rare-honours-xi?utm_source=rss_feed",
       "published_at": "2026-09-21T15:26:19Z",
       "published_label": "21 Sep 2026 · 15:26Z",
-      "age_label": "3h ago",
+      "age_label": "6h ago",
       "source_id": "scmp",
       "source_name": "South China Morning Post",
       "source_kind": "rss",
@@ -587,7 +1010,7 @@
         "china",
         "us"
       ],
-      "priority": 20,
+      "priority": 10,
       "cluster_key": "first ladies step forward as trump lays on rare honours for xi"
     },
     {
@@ -597,7 +1020,7 @@
       "url": "https://www.bbc.co.uk/sport/football/articles/c3qjkpgengn7o?at_medium=RSS&at_campaign=rss",
       "published_at": "2026-09-21T15:24:51Z",
       "published_label": "21 Sep 2026 · 15:24Z",
-      "age_label": "3h ago",
+      "age_label": "6h ago",
       "source_id": "bbc-world",
       "source_name": "BBC World",
       "source_kind": "rss",
@@ -605,7 +1028,7 @@
       "regions": [
         "global"
       ],
-      "priority": 20,
+      "priority": 10,
       "cluster_key": "xhaka under investigation over covid19 certificate"
     },
     {
@@ -615,7 +1038,7 @@
       "url": "https://thediplomat.com/2026/09/busting-the-myths-of-the-us-militarys-presence-in-hawaii/",
       "published_at": "2026-09-21T15:17:00Z",
       "published_label": "21 Sep 2026 · 15:17Z",
-      "age_label": "3h ago",
+      "age_label": "7h ago",
       "source_id": "diplomat",
       "source_name": "The Diplomat",
       "source_kind": "rss",
@@ -624,7 +1047,7 @@
         "pacific",
         "us"
       ],
-      "priority": 20,
+      "priority": 10,
       "cluster_key": "busting the myths of the us militarys presence in hawaii"
     },
     {
@@ -634,7 +1057,7 @@
       "url": "https://therecord.media/belgium-table-tennis-cyberattack",
       "published_at": "2026-09-21T15:00:00Z",
       "published_label": "21 Sep 2026 · 15:00Z",
-      "age_label": "3h ago",
+      "age_label": "7h ago",
       "source_id": "the-record",
       "source_name": "The Record",
       "source_kind": "rss",
@@ -642,7 +1065,7 @@
       "regions": [
         "global"
       ],
-      "priority": 32,
+      "priority": 22,
       "cluster_key": "belgian table tennis gymnastics federations hit by cyberattacks"
     },
     {
@@ -652,7 +1075,7 @@
       "url": "https://thediplomat.com/2026/09/why-egypt-is-looking-beyond-its-trade-deficit-with-china/",
       "published_at": "2026-09-21T14:47:00Z",
       "published_label": "21 Sep 2026 · 14:47Z",
-      "age_label": "3h ago",
+      "age_label": "7h ago",
       "source_id": "diplomat",
       "source_name": "The Diplomat",
       "source_kind": "rss",
@@ -661,26 +1084,26 @@
         "china",
         "africa"
       ],
-      "priority": 20,
+      "priority": 10,
       "cluster_key": "why egypt is looking beyond its trade deficit with china"
     },
     {
-      "id": "4cee6d21b01639c7",
-      "title": "CNN, MS NOW and Politico sue Trump over White House media ban",
-      "summary": "CNN, MS NOW and Politico sued President Donald Trump and other members of his administration on Monday for banning them from White House grounds, saying it violated their rights to free speech and a free press under the US Constitution’s First Amendment. The news outlets are see…",
-      "url": "https://www.scmp.com/news/world/united-states-canada/article/3368294/trump-sued-cnn-ms-now-politico-over-white-house-ban?utm_source=rss_feed",
-      "published_at": "2026-09-21T14:28:07Z",
-      "published_label": "21 Sep 2026 · 14:28Z",
-      "age_label": "4h ago",
-      "source_id": "scmp",
-      "source_name": "South China Morning Post",
+      "id": "498425b51b477cb7",
+      "title": "U.S. Army Contracts First Batch of Maritime Precision Strike Missiles",
+      "summary": "The U.S. Army contracted the first batch of Precision Strike Missiles designed to strike moving maritime targets last week. Lockheed Martin was awarded $1.2 billion by the ground branch for work on the early operational capability munitions of PrSM Increment 2, a variant that in…",
+      "url": "https://news.usni.org/2026/09/21/u-s-army-contracts-first-batch-of-maritime-precision-strike-missiles",
+      "published_at": "2026-09-21T14:19:47Z",
+      "published_label": "21 Sep 2026 · 14:19Z",
+      "age_label": "7h ago",
+      "source_id": "usni",
+      "source_name": "USNI News",
       "source_kind": "rss",
       "category": "apac-security",
       "regions": [
         "us"
       ],
-      "priority": 20,
-      "cluster_key": "cnn ms now and politico sue trump over white house media ban"
+      "priority": 28,
+      "cluster_key": "us army contracts first batch of maritime precision strike missiles"
     },
     {
       "id": "18bcf9b189ff1d17",
@@ -689,7 +1112,7 @@
       "url": "https://www.bbc.co.uk/news/articles/cw4gm7l742dmo?at_medium=RSS&at_campaign=rss",
       "published_at": "2026-09-21T14:14:16Z",
       "published_label": "21 Sep 2026 · 14:14Z",
-      "age_label": "4h ago",
+      "age_label": "8h ago",
       "source_id": "bbc-world",
       "source_name": "BBC World",
       "source_kind": "rss",
@@ -697,7 +1120,7 @@
       "regions": [
         "middle-east"
       ],
-      "priority": 20,
+      "priority": 10,
       "cluster_key": "yemenis flee across red sea as houthis and saudibacked forces escalate war"
     },
     {
@@ -707,7 +1130,7 @@
       "url": "https://thediplomat.com/2026/09/ahead-of-trump-xi-summit-north-korea-launches-more-missiles/",
       "published_at": "2026-09-21T14:09:00Z",
       "published_label": "21 Sep 2026 · 14:09Z",
-      "age_label": "4h ago",
+      "age_label": "8h ago",
       "source_id": "diplomat",
       "source_name": "The Diplomat",
       "source_kind": "rss",
@@ -715,44 +1138,8 @@
       "regions": [
         "korea"
       ],
-      "priority": 38,
+      "priority": 28,
       "cluster_key": "ahead of trumpxi summit north korea launches more missiles"
-    },
-    {
-      "id": "fd16e22129628212",
-      "title": "Millions urged to evacuate as powerful Typhoon Dujuan hits Japan",
-      "summary": "The country's meteorological agency had warned of an \"imminent threat to life,\" but this has now been downgraded in most areas.",
-      "url": "https://www.bbc.co.uk/news/articles/cm3wj2lexl97o?at_medium=RSS&at_campaign=rss",
-      "published_at": "2026-09-21T14:06:12Z",
-      "published_label": "21 Sep 2026 · 14:06Z",
-      "age_label": "4h ago",
-      "source_id": "bbc-asia",
-      "source_name": "BBC Asia",
-      "source_kind": "rss",
-      "category": "apac-security",
-      "regions": [
-        "japan"
-      ],
-      "priority": 20,
-      "cluster_key": "millions urged to evacuate as powerful typhoon dujuan hits japan"
-    },
-    {
-      "id": "70eb33bfa02bab0e",
-      "title": "China gets closer to Jupiter mission by bringing Nasa’s StarNAV concept to life",
-      "summary": "Chinese researchers have tested a new way for spacecraft to navigate in deep space, putting a concept funded by Nasa into practice and paving the way for the country’s planned mission to Jupiter in 2030. Known as stellar aberration navigation, the approach uses tiny shifts in th…",
-      "url": "https://www.scmp.com/news/china/science/article/3368292/china-gets-closer-jupiter-mission-bringing-nasas-starnav-concept-life?utm_source=rss_feed",
-      "published_at": "2026-09-21T14:02:19Z",
-      "published_label": "21 Sep 2026 · 14:02Z",
-      "age_label": "4h ago",
-      "source_id": "scmp",
-      "source_name": "South China Morning Post",
-      "source_kind": "rss",
-      "category": "apac-security",
-      "regions": [
-        "china"
-      ],
-      "priority": 20,
-      "cluster_key": "china gets closer to jupiter mission by bringing nasas starnav concept to life"
     },
     {
       "id": "4f3121a90eed92cc",
@@ -761,7 +1148,7 @@
       "url": "https://therecord.media/cyberattack-hits-university-of-munich-potentially-exposing-data",
       "published_at": "2026-09-21T14:01:00Z",
       "published_label": "21 Sep 2026 · 14:01Z",
-      "age_label": "4h ago",
+      "age_label": "8h ago",
       "source_id": "the-record",
       "source_name": "The Record",
       "source_kind": "rss",
@@ -769,28 +1156,8 @@
       "regions": [
         "global"
       ],
-      "priority": 32,
+      "priority": 22,
       "cluster_key": "cyberattack hits university of munich potentially exposing student financial data"
-    },
-    {
-      "id": "9ed96148925d55d7",
-      "title": "Survey finds US public opinion shifting in favour of engagement with China",
-      "summary": "On the eve of this week’s summit between US President Donald Trump and Chinese President Xi Jinping, Americans feel better about China, according to a poll released on Monday. They see Beijing as less of a threat, are less supportive of Taiwan and are more likely to favour engag…",
-      "url": "https://www.scmp.com/news/china/article/3368174/survey-finds-us-public-opinion-shifting-favour-engagement-china?utm_source=rss_feed",
-      "published_at": "2026-09-21T14:00:05Z",
-      "published_label": "21 Sep 2026 · 14:00Z",
-      "age_label": "4h ago",
-      "source_id": "scmp",
-      "source_name": "South China Morning Post",
-      "source_kind": "rss",
-      "category": "apac-security",
-      "regions": [
-        "china",
-        "taiwan",
-        "us"
-      ],
-      "priority": 20,
-      "cluster_key": "survey finds us public opinion shifting in favour of engagement with china"
     },
     {
       "id": "4551b4a3d6940798",
@@ -799,7 +1166,7 @@
       "url": "https://therecord.media/shinyhunters-clop-cyberattack-website",
       "published_at": "2026-09-21T14:00:00Z",
       "published_label": "21 Sep 2026 · 14:00Z",
-      "age_label": "4h ago",
+      "age_label": "8h ago",
       "source_id": "the-record",
       "source_name": "The Record",
       "source_kind": "rss",
@@ -807,7 +1174,7 @@
       "regions": [
         "global"
       ],
-      "priority": 32,
+      "priority": 22,
       "cluster_key": "shinyhunters cybercrime gang takes over cl0p ransomware site demands extortion payment"
     },
     {
@@ -817,7 +1184,7 @@
       "url": "https://www.lowyinstitute.org/the-interpreter/prabowo-s-partial-multialignment-is-losing-focus",
       "published_at": "2026-09-21T14:00:00Z",
       "published_label": "21 Sep 2026 · 14:00Z",
-      "age_label": "4h ago",
+      "age_label": "8h ago",
       "source_id": "lowy-interpreter",
       "source_name": "Lowy Interpreter",
       "source_kind": "rss",
@@ -825,62 +1192,8 @@
       "regions": [
         "se-asia"
       ],
-      "priority": 20,
+      "priority": 10,
       "cluster_key": "prabowos partial multialignment is losing focus"
-    },
-    {
-      "id": "8f1d406c13353773",
-      "title": "No US ruling yet on Air China’s bid for extra flights during Xi Jinping’s visit",
-      "summary": "The US Department of Transportation has yet to announce online a decision on Air China’s application to add extra flights to support this week’s US-China high-level visit as of late Monday, Hong Kong time, after a trade association backed by the largest US airlines protested aga…",
-      "url": "https://www.scmp.com/economy/policy/article/3368289/no-us-ruling-yet-air-chinas-bid-extra-flights-during-xi-jinpings-visit?utm_source=rss_feed",
-      "published_at": "2026-09-21T13:56:53Z",
-      "published_label": "21 Sep 2026 · 13:56Z",
-      "age_label": "4h ago",
-      "source_id": "scmp",
-      "source_name": "South China Morning Post",
-      "source_kind": "rss",
-      "category": "apac-security",
-      "regions": [
-        "china"
-      ],
-      "priority": 20,
-      "cluster_key": "no us ruling yet on air chinas bid for extra flights during xi jinpings visit"
-    },
-    {
-      "id": "623ede369b936335",
-      "title": "World leaders meet at UN as planet grapples with climate change, wars, runaway AI",
-      "summary": "Under a global cloud of wars and bitter divisions, world leaders meet at the United Nations in New York this week facing new fears that runaway artificial intelligence could threaten humanity even as climate shocks and escalating prices are already making life much tougher for h…",
-      "url": "https://www.scmp.com/news/world/united-states-canada/article/3368291/world-leaders-meet-un-planet-grapples-climate-change-wars-runaway-ai?utm_source=rss_feed",
-      "published_at": "2026-09-21T13:54:07Z",
-      "published_label": "21 Sep 2026 · 13:54Z",
-      "age_label": "4h ago",
-      "source_id": "scmp",
-      "source_name": "South China Morning Post",
-      "source_kind": "rss",
-      "category": "apac-security",
-      "regions": [
-        "se-asia"
-      ],
-      "priority": 20,
-      "cluster_key": "world leaders meet at un as planet grapples with climate change wars runaway ai"
-    },
-    {
-      "id": "7a03d07496f23141",
-      "title": "Hong Kong school withdraws graduation video guideline on Cantonese after backlash",
-      "summary": "A leading Hong Kong secondary school has expressed regret and withdrawn guidelines accused of banning Cantonese from graduation videos after the policy sparked controversy. Good Hope School issued a public statement on Monday evening, saying it had heard concerns from the wider…",
-      "url": "https://www.scmp.com/news/hong-kong/education/article/3368290/hong-kong-school-withdraws-cantonese-graduation-video-guideline-after-backlash?utm_source=rss_feed",
-      "published_at": "2026-09-21T13:45:10Z",
-      "published_label": "21 Sep 2026 · 13:45Z",
-      "age_label": "5h ago",
-      "source_id": "scmp",
-      "source_name": "South China Morning Post",
-      "source_kind": "rss",
-      "category": "apac-security",
-      "regions": [
-        "se-asia"
-      ],
-      "priority": 20,
-      "cluster_key": "hong kong school withdraws graduation video guideline on cantonese after backlash"
     },
     {
       "id": "bd86160005495a98",
@@ -889,7 +1202,7 @@
       "url": "https://thediplomat.com/2026/09/why-is-lee-jae-myungs-approval-rating-dropping/",
       "published_at": "2026-09-21T13:29:00Z",
       "published_label": "21 Sep 2026 · 13:29Z",
-      "age_label": "5h ago",
+      "age_label": "8h ago",
       "source_id": "diplomat",
       "source_name": "The Diplomat",
       "source_kind": "rss",
@@ -897,81 +1210,8 @@
       "regions": [
         "korea"
       ],
-      "priority": 20,
+      "priority": 10,
       "cluster_key": "why is lee jaemyungs approval rating dropping"
-    },
-    {
-      "id": "1cdc760f50e206d5",
-      "title": "Former top PLA generals expelled from Communist Party for factionalism and disloyalty",
-      "summary": "The Communist Party accused former military leaders Zhang Youxia and Liu Zhenli of factionalism and disloyalty, expelling them from the party and the armed forces following a Politburo meeting on Monday, state media reported. Zhang was once a vice-chairman of the Central Militar…",
-      "url": "https://www.scmp.com/news/china/politics/article/3368287/former-top-pla-generals-expelled-communist-party-factionalism-and-disloyalty?utm_source=rss_feed",
-      "published_at": "2026-09-21T13:10:07Z",
-      "published_label": "21 Sep 2026 · 13:10Z",
-      "age_label": "5h ago",
-      "source_id": "scmp",
-      "source_name": "South China Morning Post",
-      "source_kind": "rss",
-      "category": "apac-security",
-      "regions": [
-        "se-asia"
-      ],
-      "priority": 20,
-      "cluster_key": "former top pla generals expelled from communist party for factionalism and disloyalty"
-    },
-    {
-      "id": "a8fda65bf85c7f5d",
-      "title": "Foreign chambers back Hong Kong 5-year plan, urge progress on Northern Metropolis",
-      "summary": "Representatives of foreign business chambers who met Hong Kong’s leader have said the five-year plan provided clear policy priorities for companies’ strategic planning, but called for more concrete timelines and visible progress on the Northern Metropolis project to attract inve…",
-      "url": "https://www.scmp.com/news/hong-kong/hong-kong-economy/article/3368284/foreign-chambers-back-hong-kong-5-year-plan-urge-progress-northern-metropolis?utm_source=rss_feed",
-      "published_at": "2026-09-21T13:05:09Z",
-      "published_label": "21 Sep 2026 · 13:05Z",
-      "age_label": "5h ago",
-      "source_id": "scmp",
-      "source_name": "South China Morning Post",
-      "source_kind": "rss",
-      "category": "apac-security",
-      "regions": [
-        "se-asia"
-      ],
-      "priority": 20,
-      "cluster_key": "foreign chambers back hong kong 5year plan urge progress on northern metropolis"
-    },
-    {
-      "id": "aaaf85303cf958e1",
-      "title": "Subsidised physiotherapy places slashed by third amid graduate job crunch",
-      "summary": "Hong Kong education authorities have cut the number of subsidised places for physiotherapy and occupational therapy programmes at three self-financing institutions by about a third for the 2027-28 academic year, amid a jobs crunch for graduates. A physiotherapy association backe…",
-      "url": "https://www.scmp.com/news/hong-kong/education/article/3368286/subsidised-physiotherapy-places-slashed-third-amid-graduate-job-crunch?utm_source=rss_feed",
-      "published_at": "2026-09-21T13:05:04Z",
-      "published_label": "21 Sep 2026 · 13:05Z",
-      "age_label": "5h ago",
-      "source_id": "scmp",
-      "source_name": "South China Morning Post",
-      "source_kind": "rss",
-      "category": "apac-security",
-      "regions": [
-        "se-asia"
-      ],
-      "priority": 20,
-      "cluster_key": "subsidised physiotherapy places slashed by third amid graduate job crunch"
-    },
-    {
-      "id": "457852680ea92e51",
-      "title": "As AI safety fears mount, can a US-China hotline prevent a global crisis?",
-      "summary": "The United States and China’s agreement to establish an official AI dialogue, including a proposed threat-notification system, marks a pragmatic step towards crisis prevention in their tech war, even as deep-seated divisions over chip access, model distillation and market domina…",
-      "url": "https://www.scmp.com/tech/tech-war/article/3368281/ai-safety-fears-mount-can-us-china-hotline-prevent-global-crisis?utm_source=rss_feed",
-      "published_at": "2026-09-21T13:00:08Z",
-      "published_label": "21 Sep 2026 · 13:00Z",
-      "age_label": "5h ago",
-      "source_id": "scmp",
-      "source_name": "South China Morning Post",
-      "source_kind": "rss",
-      "category": "apac-security",
-      "regions": [
-        "china",
-        "us"
-      ],
-      "priority": 20,
-      "cluster_key": "as ai safety fears mount can a uschina hotline prevent a global crisis"
     },
     {
       "id": "7fa98786f12c6d78",
@@ -980,7 +1220,7 @@
       "url": "https://therecord.media/linkedin-wins-court-order-blocking-mass-scraping",
       "published_at": "2026-09-21T12:55:00Z",
       "published_label": "21 Sep 2026 · 12:55Z",
-      "age_label": "5h ago",
+      "age_label": "9h ago",
       "source_id": "the-record",
       "source_name": "The Record",
       "source_kind": "rss",
@@ -988,7 +1228,7 @@
       "regions": [
         "global"
       ],
-      "priority": 32,
+      "priority": 22,
       "cluster_key": "linkedin wins court order blocking mass scraping of user data"
     },
     {
@@ -998,7 +1238,7 @@
       "url": "https://thediplomat.com/2026/09/tajikistan-eyes-icc-exit/",
       "published_at": "2026-09-21T12:53:00Z",
       "published_label": "21 Sep 2026 · 12:53Z",
-      "age_label": "5h ago",
+      "age_label": "9h ago",
       "source_id": "diplomat",
       "source_name": "The Diplomat",
       "source_kind": "rss",
@@ -1006,7 +1246,7 @@
       "regions": [
         "russia"
       ],
-      "priority": 20,
+      "priority": 10,
       "cluster_key": "tajikistan eyes icc exit"
     },
     {
@@ -1016,7 +1256,7 @@
       "url": "https://www.bbc.co.uk/news/articles/ck1e52v16ngxo?at_medium=RSS&at_campaign=rss",
       "published_at": "2026-09-21T12:30:54Z",
       "published_label": "21 Sep 2026 · 12:30Z",
-      "age_label": "6h ago",
+      "age_label": "9h ago",
       "source_id": "bbc-world",
       "source_name": "BBC World",
       "source_kind": "rss",
@@ -1028,31 +1268,13 @@
       "cluster_key": "google hit with 403m fine by irish data watchdog over gdpr violations"
     },
     {
-      "id": "1e54c1b532a3e5cf",
-      "title": "Google says Gemini breached three companies during security test",
-      "summary": "Google’s artificial intelligence model Gemini accessed computer systems belonging to three real companies without authorization during a cybersecurity test in May — the latest in a string of similar incidents.",
-      "url": "https://therecord.media/gemini-google-cyber-breach",
-      "published_at": "2026-09-21T12:30:00Z",
-      "published_label": "21 Sep 2026 · 12:30Z",
-      "age_label": "6h ago",
-      "source_id": "the-record",
-      "source_name": "The Record",
-      "source_kind": "rss",
-      "category": "cyber",
-      "regions": [
-        "global"
-      ],
-      "priority": 22,
-      "cluster_key": "google says gemini breached three companies during security test"
-    },
-    {
       "id": "b9c99f026f4237de",
       "title": "US strikes on alleged drug boats could be crimes against humanity, says UN",
       "summary": "A report says the attacks, of which there have been at least 68, were not self-defence.",
       "url": "https://www.bbc.co.uk/news/articles/ck5ye7v88qy7o?at_medium=RSS&at_campaign=rss",
       "published_at": "2026-09-21T12:08:56Z",
       "published_label": "21 Sep 2026 · 12:08Z",
-      "age_label": "6h ago",
+      "age_label": "10h ago",
       "source_id": "bbc-world",
       "source_name": "BBC World",
       "source_kind": "rss",
@@ -1064,31 +1286,13 @@
       "cluster_key": "us strikes on alleged drug boats could be crimes against humanity says un"
     },
     {
-      "id": "a075380f9bb04a66",
-      "title": "Tairāwhiti's beaches overrun with forestry slash",
-      "summary": "Forestry slash is so normal on the beaches that some children have never known the sandy shores in their rōhe without it.",
-      "url": "https://www.rnz.co.nz/news/environment/1500603/tairawhiti-s-beaches-overrun-with-forestry-slash",
-      "published_at": "2026-09-21T09:55:58Z",
-      "published_label": "21 Sep 2026 · 09:55Z",
-      "age_label": "8h ago",
-      "source_id": "rnz-news",
-      "source_name": "RNZ News",
-      "source_kind": "rss",
-      "category": "nz-pacific",
-      "regions": [
-        "pacific"
-      ],
-      "priority": 10,
-      "cluster_key": "tairāwhitis beaches overrun with forestry slash"
-    },
-    {
       "id": "de5fd75ad2da73ee",
       "title": "Why Sri Lanka’s Ruling NPP Has Not Abolished the Executive Presidency Yet",
       "summary": "It is prioritizing economic recovery and establishing accountability of powerful people for past crimes to build the mass support needed to pursue constitutional reform.",
       "url": "https://thediplomat.com/2026/09/why-sri-lankas-ruling-npp-has-not-abolished-the-executive-presidency-yet/",
       "published_at": "2026-09-21T09:42:00Z",
       "published_label": "21 Sep 2026 · 09:42Z",
-      "age_label": "9h ago",
+      "age_label": "12h ago",
       "source_id": "diplomat",
       "source_name": "The Diplomat",
       "source_kind": "rss",
@@ -1100,67 +1304,13 @@
       "cluster_key": "why sri lankas ruling npp has not abolished the executive presidency yet"
     },
     {
-      "id": "66a0bf37ddd6837c",
-      "title": "'She was a lost soul' - agencies under microscope at inquest into girls death",
-      "summary": "The 12-year-old girl's father wants answers about government agencies' response to his daughter's living conditions at the time of her death.",
-      "url": "https://www.rnz.co.nz/news/health/1501428/she-was-a-lost-soul-agencies-under-microscope-at-inquest-into-girls-death",
-      "published_at": "2026-09-21T09:38:14Z",
-      "published_label": "21 Sep 2026 · 09:38Z",
-      "age_label": "9h ago",
-      "source_id": "rnz-news",
-      "source_name": "RNZ News",
-      "source_kind": "rss",
-      "category": "nz-pacific",
-      "regions": [
-        "pacific"
-      ],
-      "priority": 10,
-      "cluster_key": "she was a lost soul agencies under microscope at inquest into girls death"
-    },
-    {
-      "id": "c1c269b447b5d5a5",
-      "title": "Cashmere Club fights for liquor licence after man's fatal fall while heavy drinking",
-      "summary": "Colin Hunt died in hospital the day after hitting his head while celebrating his 70th birthday at the Cashmere Club.",
-      "url": "https://www.rnz.co.nz/news/business/1500005/cashmere-club-fights-for-liquor-licence-after-man-s-fatal-fall-while-heavy-drinking",
-      "published_at": "2026-09-21T08:24:01Z",
-      "published_label": "21 Sep 2026 · 08:24Z",
-      "age_label": "10h ago",
-      "source_id": "rnz-news",
-      "source_name": "RNZ News",
-      "source_kind": "rss",
-      "category": "nz-pacific",
-      "regions": [
-        "pacific"
-      ],
-      "priority": 10,
-      "cluster_key": "cashmere club fights for liquor licence after mans fatal fall while heavy drinking"
-    },
-    {
-      "id": "3fa9e80eabadc278",
-      "title": "Flooding occurred five times at Moa Point in months leading to the failure, new report reveals",
-      "summary": "The newly-released report raises questions about the plant’s alarm systems - including whether alarms were sighted but not acted on, and that others weren’t programmed to trigger immediate pagers.",
-      "url": "https://www.rnz.co.nz/news/regional/1498852/flooding-occurred-five-times-at-moa-point-in-months-leading-to-the-failure-new-report-reveals",
-      "published_at": "2026-09-21T08:06:52Z",
-      "published_label": "21 Sep 2026 · 08:06Z",
-      "age_label": "10h ago",
-      "source_id": "rnz-news",
-      "source_name": "RNZ News",
-      "source_kind": "rss",
-      "category": "nz-pacific",
-      "regions": [
-        "pacific"
-      ],
-      "priority": 10,
-      "cluster_key": "flooding occurred five times at moa point in months leading to the failure new report reveals"
-    },
-    {
       "id": "d8f54b803fd9c75f",
       "title": "Washington’s Foreign Equity Bets Need Better Governance",
       "summary": "What do a rare earth mine in Brazil and a graphite mine in Mozambique have in common? Both have received significant United States government funding. The rub? Neither was subject, when the financing was committed, to the corporate governance standards that American listed compa…",
       "url": "https://warontherocks.com/cogs-of-war/washingtons-foreign-equity-bets-need-better-governance/",
       "published_at": "2026-09-21T08:00:50Z",
       "published_label": "21 Sep 2026 · 08:00Z",
-      "age_label": "10h ago",
+      "age_label": "14h ago",
       "source_id": "war-on-the-rocks",
       "source_name": "War on the Rocks",
       "source_kind": "rss",
@@ -1172,31 +1322,13 @@
       "cluster_key": "washingtons foreign equity bets need better governance"
     },
     {
-      "id": "961d82b88e0e7908",
-      "title": "'It's certainly not safe for the patients': Six staff resign from Pahīatua medical centre",
-      "summary": "A phlebotomist, an administrator, three registered nurses and a nurse practitioner all resigned today from Pahīatua Medical Centre after concerns extreme workloads were impacting patient safety.",
-      "url": "https://www.rnz.co.nz/news/health/1498378/it-s-certainly-not-safe-for-the-patients-six-staff-resign-from-pahiatua-medical-centre",
-      "published_at": "2026-09-21T07:44:10Z",
-      "published_label": "21 Sep 2026 · 07:44Z",
-      "age_label": "11h ago",
-      "source_id": "rnz-news",
-      "source_name": "RNZ News",
-      "source_kind": "rss",
-      "category": "nz-pacific",
-      "regions": [
-        "pacific"
-      ],
-      "priority": 10,
-      "cluster_key": "its certainly not safe for the patients six staff resign from pahīatua medical centre"
-    },
-    {
       "id": "2afcef5e605667fa",
       "title": "Only America Could Have Designed the Field Jacket",
       "summary": "When the M-1943 field jacket was introduced at the height of World War II, it was a revolutionary garment. The jacket was the result of rigorous testing, input from an astonishingly diverse group of experts, and was produced by the most advanced textile and garment industry in t…",
       "url": "https://warontherocks.com/only-america-could-have-designed-the-field-jacket/",
       "published_at": "2026-09-21T07:30:53Z",
       "published_label": "21 Sep 2026 · 07:30Z",
-      "age_label": "11h ago",
+      "age_label": "14h ago",
       "source_id": "war-on-the-rocks",
       "source_name": "War on the Rocks",
       "source_kind": "rss",
@@ -1208,31 +1340,13 @@
       "cluster_key": "only america could have designed the field jacket"
     },
     {
-      "id": "c669c3ffe6f5dd37",
-      "title": "Labour rules out changes to interest deductibility settings for landlords if elected",
-      "summary": "Chris Hipkins says the party is committed to a capital gains tax instead.",
-      "url": "https://www.rnz.co.nz/news/politics_election-2026/1497062/labour-rules-out-changes-to-interest-deductibility-settings-for-landlords-if-elected",
-      "published_at": "2026-09-21T06:33:28Z",
-      "published_label": "21 Sep 2026 · 06:33Z",
-      "age_label": "12h ago",
-      "source_id": "rnz-news",
-      "source_name": "RNZ News",
-      "source_kind": "rss",
-      "category": "nz-pacific",
-      "regions": [
-        "pacific"
-      ],
-      "priority": 10,
-      "cluster_key": "labour rules out changes to interest deductibility settings for landlords if elected"
-    },
-    {
       "id": "a7297f705302b26a",
       "title": "Nvidia boss rejects AI extinction fears as 'doomsday narratives'",
       "summary": "Jensen Huang's comments come after warnings from AI researchers that the technology could lead to human extinction.",
       "url": "https://www.bbc.co.uk/news/articles/cr5ye7p13jg7o?at_medium=RSS&at_campaign=rss",
       "published_at": "2026-09-21T06:25:43Z",
       "published_label": "21 Sep 2026 · 06:25Z",
-      "age_label": "12h ago",
+      "age_label": "15h ago",
       "source_id": "bbc-asia",
       "source_name": "BBC Asia",
       "source_kind": "rss",
@@ -1244,31 +1358,13 @@
       "cluster_key": "nvidia boss rejects ai extinction fears as doomsday narratives"
     },
     {
-      "id": "7a2bfa5b79d2719f",
-      "title": "'My whole world stopped' - Nelson donors raise $30,000 for Nepalese woman's cancer surgery",
-      "summary": "Samira Basnet was ineligible for publicly-funded healthcare that could pay for life-saving surgery, but the community raised $30,000 in four days.",
-      "url": "https://www.rnz.co.nz/news/health/1497891/my-whole-world-stopped-nelson-donors-raise-30-000-for-nepalese-woman-s-cancer-surgery",
-      "published_at": "2026-09-21T06:23:40Z",
-      "published_label": "21 Sep 2026 · 06:23Z",
-      "age_label": "12h ago",
-      "source_id": "rnz-national",
-      "source_name": "RNZ National",
-      "source_kind": "rss",
-      "category": "nz-pacific",
-      "regions": [
-        "pacific"
-      ],
-      "priority": 10,
-      "cluster_key": "my whole world stopped nelson donors raise 30000 for nepalese womans cancer surgery"
-    },
-    {
       "id": "bdf4be910acc5827",
       "title": "US and China discuss AI safety plan ahead of Trump-Xi summit",
       "summary": "Top US and Chinese officials held talks in New York on Sunday ahead of a Trump-Xi summit this week.",
       "url": "https://www.bbc.co.uk/news/articles/c8vgyzn2d31yo?at_medium=RSS&at_campaign=rss",
       "published_at": "2026-09-21T05:50:56Z",
       "published_label": "21 Sep 2026 · 05:50Z",
-      "age_label": "12h ago",
+      "age_label": "16h ago",
       "source_id": "bbc-world",
       "source_name": "BBC World",
       "source_kind": "rss",
@@ -1280,31 +1376,13 @@
       "cluster_key": "us and china discuss ai safety plan ahead of trumpxi summit"
     },
     {
-      "id": "3c32d2804f6b7531",
-      "title": "Vet performs surgery on critically injured skink 'Kevin', who weighs less than 4 grams",
-      "summary": "The tiny lizard had been critically injured in a cat attack.",
-      "url": "https://www.rnz.co.nz/news/environment/1497171/vet-performs-surgery-on-critically-injured-skink-kevin-who-weighs-less-than-4-grams",
-      "published_at": "2026-09-21T05:41:26Z",
-      "published_label": "21 Sep 2026 · 05:41Z",
-      "age_label": "13h ago",
-      "source_id": "rnz-national",
-      "source_name": "RNZ National",
-      "source_kind": "rss",
-      "category": "nz-pacific",
-      "regions": [
-        "pacific"
-      ],
-      "priority": 28,
-      "cluster_key": "vet performs surgery on critically injured skink kevin who weighs less than 4 grams"
-    },
-    {
       "id": "ebd0b7f42131136f",
       "title": "Civil Society Groups File Lawsuit Against Indonesian Government Over Kalimantan Wildfires",
       "summary": "The suit accuses President Prabowo Subianto and other senior officials of deliberate negligence for failing to prevent and properly handle the ongoing blazes.",
       "url": "https://thediplomat.com/2026/09/civil-society-groups-file-lawsuit-against-indonesian-government-over-kalimantan-wildfires/",
       "published_at": "2026-09-21T05:14:00Z",
       "published_label": "21 Sep 2026 · 05:14Z",
-      "age_label": "13h ago",
+      "age_label": "17h ago",
       "source_id": "diplomat",
       "source_name": "The Diplomat",
       "source_kind": "rss",
@@ -1316,31 +1394,13 @@
       "cluster_key": "civil society groups file lawsuit against indonesian government over kalimantan wildfires"
     },
     {
-      "id": "dcb7c4ba9e9d1b7b",
-      "title": "Navy lieutenant denies raping woman during overseas deployment, says complainant 'jealous'",
-      "summary": "He is facing three charges of sexual violation by rape, all involving the same woman on the same night in September 2025.",
-      "url": "https://www.rnz.co.nz/news/crime-and-justice/1495033/navy-lieutenant-denies-raping-woman-during-overseas-deployment-says-complainant-jealous",
-      "published_at": "2026-09-21T04:54:43Z",
-      "published_label": "21 Sep 2026 · 04:54Z",
-      "age_label": "13h ago",
-      "source_id": "rnz-national",
-      "source_name": "RNZ National",
-      "source_kind": "rss",
-      "category": "nz-pacific",
-      "regions": [
-        "pacific"
-      ],
-      "priority": 10,
-      "cluster_key": "navy lieutenant denies raping woman during overseas deployment says complainant jealous"
-    },
-    {
       "id": "bde8d0004d73d22e",
       "title": "UK should 'team up' with Canada in new Europe alliance, Canadian minister tells BBC",
       "summary": "It comes after European Commission President proposed \"opening the door\" for Canada to become an associate member of the EU.",
       "url": "https://www.bbc.co.uk/news/articles/cmed7p06epxjo?at_medium=RSS&at_campaign=rss",
       "published_at": "2026-09-21T04:00:38Z",
       "published_label": "21 Sep 2026 · 04:00Z",
-      "age_label": "14h ago",
+      "age_label": "18h ago",
       "source_id": "bbc-world",
       "source_name": "BBC World",
       "source_kind": "rss",
@@ -1358,7 +1418,7 @@
       "url": "https://thediplomat.com/2026/09/what-can-bangladesh-pm-tarique-rahman-gain-from-his-upcoming-us-visit/",
       "published_at": "2026-09-21T03:40:00Z",
       "published_label": "21 Sep 2026 · 03:40Z",
-      "age_label": "15h ago",
+      "age_label": "18h ago",
       "source_id": "diplomat",
       "source_name": "The Diplomat",
       "source_kind": "rss",
@@ -1377,7 +1437,7 @@
       "url": "https://www.bbc.co.uk/news/videos/cq0lr24x3ep1o?at_medium=RSS&at_campaign=rss",
       "published_at": "2026-09-21T02:27:52Z",
       "published_label": "21 Sep 2026 · 02:27Z",
-      "age_label": "16h ago",
+      "age_label": "19h ago",
       "source_id": "bbc-asia",
       "source_name": "BBC Asia",
       "source_kind": "rss",
@@ -1395,7 +1455,7 @@
       "url": "https://www.rnz.co.nz/news/pacific/1493103/pacific-news-in-brief-for-21-september",
       "published_at": "2026-09-21T01:39:28Z",
       "published_label": "21 Sep 2026 · 01:39Z",
-      "age_label": "17h ago",
+      "age_label": "20h ago",
       "source_id": "rnz-pacific",
       "source_name": "RNZ Pacific",
       "source_kind": "rss",
@@ -1413,7 +1473,7 @@
       "url": "https://thediplomat.com/2026/09/malaysian-king-approves-imprisoned-former-pm-najibs-house-arrest-bid/",
       "published_at": "2026-09-21T01:29:00Z",
       "published_label": "21 Sep 2026 · 01:29Z",
-      "age_label": "17h ago",
+      "age_label": "20h ago",
       "source_id": "diplomat",
       "source_name": "The Diplomat",
       "source_kind": "rss",
@@ -1431,7 +1491,7 @@
       "url": "https://www.rnz.co.nz/news/pacific/1490341/flying-fijians-coaching-decision-looms-after-japan-defeat",
       "published_at": "2026-09-21T00:37:58Z",
       "published_label": "21 Sep 2026 · 00:37Z",
-      "age_label": "18h ago",
+      "age_label": "21h ago",
       "source_id": "rnz-pacific",
       "source_name": "RNZ Pacific",
       "source_kind": "rss",
@@ -1450,7 +1510,7 @@
       "url": "https://www.bbc.co.uk/news/articles/cx4gqv239043o?at_medium=RSS&at_campaign=rss",
       "published_at": "2026-09-21T00:05:11Z",
       "published_label": "21 Sep 2026 · 00:05Z",
-      "age_label": "18h ago",
+      "age_label": "22h ago",
       "source_id": "bbc-world",
       "source_name": "BBC World",
       "source_kind": "rss",
@@ -1469,7 +1529,7 @@
       "url": "https://www.bbc.co.uk/news/articles/c9zrz0nl4p70o?at_medium=RSS&at_campaign=rss",
       "published_at": "2026-09-20T23:12:31Z",
       "published_label": "20 Sep 2026 · 23:12Z",
-      "age_label": "19h ago",
+      "age_label": "23h ago",
       "source_id": "bbc-asia",
       "source_name": "BBC Asia",
       "source_kind": "rss",
@@ -1487,7 +1547,7 @@
       "url": "https://www.bbc.co.uk/news/videos/c5gmrlm7pm0vo?at_medium=RSS&at_campaign=rss",
       "published_at": "2026-09-20T23:09:42Z",
       "published_label": "20 Sep 2026 · 23:09Z",
-      "age_label": "19h ago",
+      "age_label": "23h ago",
       "source_id": "bbc-asia",
       "source_name": "BBC Asia",
       "source_kind": "rss",
@@ -1505,7 +1565,7 @@
       "url": "https://www.bbc.co.uk/news/articles/cqe9e4vjx1e5o?at_medium=RSS&at_campaign=rss",
       "published_at": "2026-09-20T23:09:04Z",
       "published_label": "20 Sep 2026 · 23:09Z",
-      "age_label": "19h ago",
+      "age_label": "23h ago",
       "source_id": "bbc-asia",
       "source_name": "BBC Asia",
       "source_kind": "rss",
@@ -1524,7 +1584,7 @@
       "url": "https://www.rnz.co.nz/news/pacific/1488620/fiji-civil-society-warns-about-government-rushing-constitutional-change",
       "published_at": "2026-09-20T22:51:30Z",
       "published_label": "20 Sep 2026 · 22:51Z",
-      "age_label": "19h ago",
+      "age_label": "23h ago",
       "source_id": "rnz-pacific",
       "source_name": "RNZ Pacific",
       "source_kind": "rss",
@@ -1542,7 +1602,7 @@
       "url": "https://www.rnz.co.nz/news/pacific/1488173/not-the-end-fiji-pearls-vow-to-rebuild-after-missing-2027-netball-world-cup",
       "published_at": "2026-09-20T22:38:13Z",
       "published_label": "20 Sep 2026 · 22:38Z",
-      "age_label": "20h ago",
+      "age_label": "23h ago",
       "source_id": "rnz-pacific",
       "source_name": "RNZ Pacific",
       "source_kind": "rss",
@@ -1561,7 +1621,7 @@
       "url": "https://www.bbc.co.uk/news/articles/cm1j4kl80z56o?at_medium=RSS&at_campaign=rss",
       "published_at": "2026-09-20T22:28:15Z",
       "published_label": "20 Sep 2026 · 22:28Z",
-      "age_label": "20h ago",
+      "age_label": "23h ago",
       "source_id": "bbc-asia",
       "source_name": "BBC Asia",
       "source_kind": "rss",
@@ -1579,7 +1639,7 @@
       "url": "https://thediplomat.com/2026/09/chinese-data-centers-will-shape-aseans-ai-norms/",
       "published_at": "2026-09-20T22:11:00Z",
       "published_label": "20 Sep 2026 · 22:11Z",
-      "age_label": "20h ago",
+      "age_label": "1d ago",
       "source_id": "diplomat",
       "source_name": "The Diplomat",
       "source_kind": "rss",
@@ -1588,7 +1648,7 @@
         "china",
         "se-asia"
       ],
-      "priority": 10,
+      "priority": 0,
       "cluster_key": "chinese data centers will shape aseans ai norms"
     },
     {
@@ -1598,7 +1658,7 @@
       "url": "https://www.rnz.co.nz/news/pacific/1484990/forum-leaders-to-advocate-for-pacific-issues-at-united-nations-general-assembly",
       "published_at": "2026-09-20T19:29:36Z",
       "published_label": "20 Sep 2026 · 19:29Z",
-      "age_label": "23h ago",
+      "age_label": "1d ago",
       "source_id": "rnz-pacific",
       "source_name": "RNZ Pacific",
       "source_kind": "rss",
@@ -1606,7 +1666,7 @@
       "regions": [
         "pacific"
       ],
-      "priority": 10,
+      "priority": 0,
       "cluster_key": "forum leaders to advocate for pacific issues at united nations general assembly"
     },
     {
@@ -1791,6 +1851,26 @@
       "cluster_key": "our head teacher was an abuser we joined forces to get justice now were married"
     },
     {
+      "id": "0b986041f239c354",
+      "title": "Carrier USS Abraham Lincoln Pulls into Guam for Logistics Stop, Deployment Now at 302 Days",
+      "summary": "Carrier USS Abraham Lincoln (CVN-72), the embarked Carrier Air Wing 9 and the guided-missile destroyer USS Frank Petersen (DDG-121) pulled into Guam on Saturday, according to a statement from U.S. 7th Fleet. Lincoln exited the South China Sea this week via the Sulu Sea, accordin…",
+      "url": "https://news.usni.org/2026/09/19/carrier-uss-abraham-lincoln-pulls-into-guam-for-logistics-stop-deployment-now-at-302-days",
+      "published_at": "2026-09-19T11:42:15Z",
+      "published_label": "19 Sep 2026 · 11:42Z",
+      "age_label": "2d ago",
+      "source_id": "usni",
+      "source_name": "USNI News",
+      "source_kind": "rss",
+      "category": "apac-security",
+      "regions": [
+        "pacific",
+        "china",
+        "us"
+      ],
+      "priority": 18,
+      "cluster_key": "carrier uss abraham lincoln pulls into guam for logistics stop deployment now at 302 days"
+    },
+    {
       "id": "9475c3f1d2143798",
       "title": "Tata Sons: India's corporate crown braces for upheaval amid boardroom revolt",
       "summary": "The Tata boardroom battle has intensified over a re-appointment of its chairman and a diktat to go public.",
@@ -1827,13 +1907,33 @@
       "cluster_key": "cape canaveral is building up its counterdrone defenses space force says"
     },
     {
+      "id": "336d914446637c8a",
+      "title": "Hormuz Transits Hit Three-week High, VLCC Rates Explode",
+      "summary": "Non-Iranian linked transits through the Strait of Hormuz climbed to 97 last week, according to preliminary data from London-based Lloyd’s List Intelligence. While the final number will be adjusted as analysts at Lloyd’s are able to confirm dark transits, right now the data sugge…",
+      "url": "https://news.usni.org/2026/09/18/hormuz-transits-hit-three-week-high-vlcc-rates-explode",
+      "published_at": "2026-09-18T22:14:39Z",
+      "published_label": "18 Sep 2026 · 22:14Z",
+      "age_label": "3d ago",
+      "source_id": "usni",
+      "source_name": "USNI News",
+      "source_kind": "rss",
+      "category": "apac-security",
+      "regions": [
+        "taiwan",
+        "middle-east",
+        "europe"
+      ],
+      "priority": 0,
+      "cluster_key": "hormuz transits hit threeweek high vlcc rates explode"
+    },
+    {
       "id": "981f8a75758fd067",
       "title": "When a beloved tree began withering away, locals suspected a killer in their midst",
       "summary": "A neighbourhood’s fight to save a cherished ginkgo pits them against an unlikely foe.",
       "url": "https://www.bbc.co.uk/news/articles/cw5yl228lvzlo?at_medium=RSS&at_campaign=rss",
       "published_at": "2026-09-18T22:03:40Z",
       "published_label": "18 Sep 2026 · 22:03Z",
-      "age_label": "2d ago",
+      "age_label": "3d ago",
       "source_id": "bbc-asia",
       "source_name": "BBC Asia",
       "source_kind": "rss",
@@ -1851,7 +1951,7 @@
       "url": "https://www.rnz.co.nz/news/pacific/1467828/we-re-one-people-a-young-tongan-man-s-te-reo-maori-journey",
       "published_at": "2026-09-18T21:28:54Z",
       "published_label": "18 Sep 2026 · 21:28Z",
-      "age_label": "2d ago",
+      "age_label": "3d ago",
       "source_id": "rnz-pacific",
       "source_name": "RNZ Pacific",
       "source_kind": "rss",
@@ -1870,7 +1970,7 @@
       "url": "https://www.rnz.co.nz/news/pacific/1466657/tonga-claims-oceania-netball-championship-title",
       "published_at": "2026-09-18T20:32:42Z",
       "published_label": "18 Sep 2026 · 20:32Z",
-      "age_label": "2d ago",
+      "age_label": "3d ago",
       "source_id": "rnz-pacific",
       "source_name": "RNZ Pacific",
       "source_kind": "rss",
@@ -1888,7 +1988,7 @@
       "url": "https://www.bbc.co.uk/news/articles/ckn9wenz8wjwo?at_medium=RSS&at_campaign=rss",
       "published_at": "2026-09-18T20:17:50Z",
       "published_label": "18 Sep 2026 · 20:17Z",
-      "age_label": "2d ago",
+      "age_label": "3d ago",
       "source_id": "bbc-asia",
       "source_name": "BBC Asia",
       "source_kind": "rss",
@@ -1906,7 +2006,7 @@
       "url": "https://thediplomat.com/2026/09/indias-new-eye-in-the-sky-eos-05-satellite-and-what-it-means-for-south-asia/",
       "published_at": "2026-09-18T19:18:00Z",
       "published_label": "18 Sep 2026 · 19:18Z",
-      "age_label": "2d ago",
+      "age_label": "3d ago",
       "source_id": "diplomat",
       "source_name": "The Diplomat",
       "source_kind": "rss",
@@ -1937,6 +2037,25 @@
       ],
       "priority": 0,
       "cluster_key": "pressure points"
+    },
+    {
+      "id": "9b8ffc079a74e49d",
+      "title": "USNI News Western Pacific Pulse: Sept. 18, 2026",
+      "summary": "The following is a summary of major ship movements and exercises in the Western Pacific over the last week. In the Philippine Sea The Abraham Lincoln Carrier Strike Group is conducting routine operations in the U.S. 7th Fleet area of operations as it makes its way home to San Di…",
+      "url": "https://news.usni.org/2026/09/18/usni-news-western-pacific-pulse-sept-18-2026",
+      "published_at": "2026-09-18T18:13:01Z",
+      "published_label": "18 Sep 2026 · 18:13Z",
+      "age_label": "3d ago",
+      "source_id": "usni",
+      "source_name": "USNI News",
+      "source_kind": "rss",
+      "category": "apac-security",
+      "regions": [
+        "pacific",
+        "us"
+      ],
+      "priority": 0,
+      "cluster_key": "usni news western pacific pulse sept 18 2026"
     },
     {
       "id": "8092ced21c9e2c2f",
@@ -2028,6 +2147,25 @@
       ],
       "priority": 0,
       "cluster_key": "infrastructure gaps test pakistans flagship cpec industrial zone field survey finds"
+    },
+    {
+      "id": "e98557f0c8a1fcce",
+      "title": "VIDEO: China Coast Guard Rams Philippine Fisheries Vessel in South China Sea",
+      "summary": "Chinese and Philippine maritime forces were involved in a ramming incident on Friday off Manila’s western island province. The incident is the latest high-profile skirmish between China and the Philippines in their long-running territorial dispute over maritime boundaries and fe…",
+      "url": "https://news.usni.org/2026/09/18/video-china-coast-guard-rams-philippine-fisheries-vessel-in-south-china-sea",
+      "published_at": "2026-09-18T16:13:52Z",
+      "published_label": "18 Sep 2026 · 16:13Z",
+      "age_label": "3d ago",
+      "source_id": "usni",
+      "source_name": "USNI News",
+      "source_kind": "rss",
+      "category": "apac-security",
+      "regions": [
+        "china",
+        "se-asia"
+      ],
+      "priority": 0,
+      "cluster_key": "video china coast guard rams philippine fisheries vessel in south china sea"
     },
     {
       "id": "54533bc511fee993",
@@ -2161,13 +2299,31 @@
       "cluster_key": "we are very open fijis tourism minister says hiv emergency should not deter visitors"
     },
     {
+      "id": "6dc859bb60fe9d97",
+      "title": "Virtual Counseling Gives Sailors More Mental Health Options",
+      "summary": "ARLINGTON, Va. — The Navy is using virtual counseling to help meet the mental health needs of its sailors, a panel of suicide prevention experts told reporters Thursday. There are currently 54 virtual counselors available, hired by Commander, Navy Installations Command, to help…",
+      "url": "https://news.usni.org/2026/09/17/virtual-counseling-gives-sailors-more-mental-health-options",
+      "published_at": "2026-09-17T21:07:30Z",
+      "published_label": "17 Sep 2026 · 21:07Z",
+      "age_label": "4d ago",
+      "source_id": "usni",
+      "source_name": "USNI News",
+      "source_kind": "rss",
+      "category": "apac-security",
+      "regions": [
+        "se-asia"
+      ],
+      "priority": 0,
+      "cluster_key": "virtual counseling gives sailors more mental health options"
+    },
+    {
       "id": "e4da55fb932d40d0",
       "title": "Defense Business Brief: Dispatch from AFA’s Air, Space, & Cyber 2026",
       "summary": "",
       "url": "https://www.defenseone.com/business/2026/09/defense-business-brief-dispatch-afas-air-space-cyber-2026/416055/",
       "published_at": "2026-09-17T19:58:47Z",
       "published_label": "17 Sep 2026 · 19:58Z",
-      "age_label": "3d ago",
+      "age_label": "4d ago",
       "source_id": "defense-one",
       "source_name": "Defense One",
       "source_kind": "rss",
@@ -2179,23 +2335,22 @@
       "cluster_key": "defense business brief dispatch from afas air space cyber 2026"
     },
     {
-      "id": "843e0d0717feaf34",
-      "title": "Another whale-watching boat mishap reported in Tonga",
-      "summary": "It comes just over three weeks after another unlicensed boat carrying several New Zealand Anglican Church delegates the capized and sank.",
-      "url": "https://www.rnz.co.nz/news/pacific/1447903/another-whale-watching-boat-mishap-reported-in-tonga",
-      "published_at": "2026-09-17T19:31:47Z",
-      "published_label": "17 Sep 2026 · 19:31Z",
-      "age_label": "3d ago",
-      "source_id": "rnz-pacific",
-      "source_name": "RNZ Pacific",
+      "id": "3d302c34f7246521",
+      "title": "Navy Wants Containerized, Low-cost Interceptors to Defeat Cruise Missiles, Drones",
+      "summary": "The U.S. Navy wants to deploy containerized low-cost interceptors to defeat cruise missiles and attack drones, according to a request for white papers released Wednesday. Dubbed the Naval Affordable Interceptor, the concept seeks to field a container launcher that can carry at l…",
+      "url": "https://news.usni.org/2026/09/17/navy-wants-containerized-low-cost-interceptors-to-defeat-cruise-missiles-drones",
+      "published_at": "2026-09-17T19:32:12Z",
+      "published_label": "17 Sep 2026 · 19:32Z",
+      "age_label": "4d ago",
+      "source_id": "usni",
+      "source_name": "USNI News",
       "source_kind": "rss",
-      "category": "nz-pacific",
+      "category": "apac-security",
       "regions": [
-        "nz",
-        "pacific"
+        "us"
       ],
-      "priority": 0,
-      "cluster_key": "another whalewatching boat mishap reported in tonga"
+      "priority": 18,
+      "cluster_key": "navy wants containerized lowcost interceptors to defeat cruise missiles drones"
     },
     {
       "id": "e9130fb1983b55c4",
@@ -2234,6 +2389,24 @@
       ],
       "priority": 18,
       "cluster_key": "a body blow the war on iran and us military readiness"
+    },
+    {
+      "id": "6a1b23903a3d6528",
+      "title": "Marines Test USV for Littoral Explosive Ordnance Disposal Operations",
+      "summary": "The Marine Corps trialled using an Unmanned Surface Vessel as part of its Littoral Explosive Ordnance Neutralization System last month. The USV trials were carried out by Program Manager Combat Support Systems (PM CSS) of Portfolio Acquisition Executive Marine Corps (PAE MC) wit…",
+      "url": "https://news.usni.org/2026/09/17/marines-test-usv-for-littoral-explosive-ordnance-disposal-operations",
+      "published_at": "2026-09-17T15:48:04Z",
+      "published_label": "17 Sep 2026 · 15:48Z",
+      "age_label": "4d ago",
+      "source_id": "usni",
+      "source_name": "USNI News",
+      "source_kind": "rss",
+      "category": "apac-security",
+      "regions": [
+        "se-asia"
+      ],
+      "priority": 0,
+      "cluster_key": "marines test usv for littoral explosive ordnance disposal operations"
     },
     {
       "id": "95797464ab127c05",
@@ -2308,6 +2481,24 @@
       "cluster_key": "glass ceiling or glass cliff the race for the uns top job"
     },
     {
+      "id": "569dedb1ec17cf1d",
+      "title": "Defense Primer: Control and Command of the U.S. Military",
+      "summary": "The following is the Sept. 11, 2026, Congressional Research Service defense primer, Control and Command of the U.S. Military. From the Report Congress has exercised oversight and a measure of control over the U.S. military, including by, inter alia, legislating the chain of comm…",
+      "url": "https://news.usni.org/2026/09/17/defense-primer-control-and-command-of-the-u-s-military",
+      "published_at": "2026-09-17T13:42:27Z",
+      "published_label": "17 Sep 2026 · 13:42Z",
+      "age_label": "4d ago",
+      "source_id": "usni",
+      "source_name": "USNI News",
+      "source_kind": "rss",
+      "category": "apac-security",
+      "regions": [
+        "us"
+      ],
+      "priority": 0,
+      "cluster_key": "defense primer control and command of the us military"
+    },
+    {
       "id": "d495ed6ccce1a74c",
       "title": "An Army General Talks Fusing Sensors and Shooters on the Eastern Flank",
       "summary": "This exclusive Cogs of War interview is with Brig. Gen. Steven P. Carpenter, the commanding general of Multi-Domain Command – Europe, the U.S. Army’s first multi-domain operations command, headquartered at Clay Kaserne in Mainz-Kastel, Germany. Multi-Domain Command – Europe serv…",
@@ -2346,43 +2537,40 @@
       "cluster_key": "the real ussaudi nuclear deal is better than we thought"
     },
     {
-      "id": "dd81e55071273fc3",
-      "title": "New Zealand and Samoan nationals charged over alleged Vietnam murder",
-      "summary": "A New Zealand national and a Samoan national have been charged by Samoa Police in relation to the alleged shooting murder of a suspected gangleader in Vietnam in May.",
-      "url": "https://www.rnz.co.nz/news/pacific/1433689/new-zealand-and-samoan-nationals-charged-over-alleged-vietnam-murder",
-      "published_at": "2026-09-17T00:58:20Z",
-      "published_label": "17 Sep 2026 · 00:58Z",
-      "age_label": "4d ago",
-      "source_id": "rnz-pacific",
-      "source_name": "RNZ Pacific",
+      "id": "e1838e9b1ed3672b",
+      "title": "Navy, Pentagon Enter Into $1.7 Billion Housing Expansion in Newport News",
+      "summary": "Hunt Military Communities entered into a deal with the Pentagon and Navy to create a $1.7 billion development that will bring more unaccompanied housing for junior sailors in the Hampton Roads, Va., area, the sea service announced Wednesday. The development, which will bring 8,0…",
+      "url": "https://news.usni.org/2026/09/16/navy-pentagon-enter-into-1-7-billion-housing-expansion-in-newport-news",
+      "published_at": "2026-09-16T21:14:22Z",
+      "published_label": "16 Sep 2026 · 21:14Z",
+      "age_label": "5d ago",
+      "source_id": "usni",
+      "source_name": "USNI News",
       "source_kind": "rss",
-      "category": "nz-pacific",
+      "category": "apac-security",
       "regions": [
-        "nz",
-        "pacific",
-        "se-asia"
+        "us"
       ],
       "priority": 0,
-      "cluster_key": "new zealand and samoan nationals charged over alleged vietnam murder"
+      "cluster_key": "navy pentagon enter into 17 billion housing expansion in newport news"
     },
     {
-      "id": "29932b3f2fce0cde",
-      "title": "US military presence at Cook Islands port 'being negotiated', ambassador says",
-      "summary": "In an exclusive interview with RNZ Pacific, US Ambassador to the Cook Islands Jared Novelly said the port upgrade in the northern Cook Islands would be \"an extreme maritime benefit\".",
-      "url": "https://www.rnz.co.nz/news/pacific/1428407/us-military-presence-at-cook-islands-port-being-negotiated-ambassador-says",
-      "published_at": "2026-09-16T21:35:56Z",
-      "published_label": "16 Sep 2026 · 21:35Z",
-      "age_label": "4d ago",
-      "source_id": "rnz-pacific",
-      "source_name": "RNZ Pacific",
+      "id": "86eca1e7ef886ab8",
+      "title": "Japan Air Self-Defense Force Recon Drone Crashes into Sea of Japan",
+      "summary": "One of Japan Air Self-Defense Force’s RQ-4 Global Hawk Unmanned Aircraft System crashed into the Sea of Japan on Tuesday, the service announced. The reconnaissance drone crashed in an area approximately 50 kilometers – 31 miles – north of the Tottori Prefecture, located in the w…",
+      "url": "https://news.usni.org/2026/09/16/japan-air-self-defense-force-recon-drone-crashes-into-sea-of-japan",
+      "published_at": "2026-09-16T19:13:24Z",
+      "published_label": "16 Sep 2026 · 19:13Z",
+      "age_label": "5d ago",
+      "source_id": "usni",
+      "source_name": "USNI News",
       "source_kind": "rss",
-      "category": "nz-pacific",
+      "category": "apac-security",
       "regions": [
-        "nz",
-        "pacific"
+        "japan"
       ],
       "priority": 0,
-      "cluster_key": "us military presence at cook islands port being negotiated ambassador says"
+      "cluster_key": "japan air selfdefense force recon drone crashes into sea of japan"
     },
     {
       "id": "7cfc7d9f911bde66",
@@ -2437,6 +2625,24 @@
       ],
       "priority": 0,
       "cluster_key": "the pentagon must prepare for battles around the moon joint chiefs chair"
+    },
+    {
+      "id": "64efcb6ceaa11096",
+      "title": "Navy Awards $200M for Blackbeard Hypersonic Missile for Carrier Fighters",
+      "summary": "The U.S. Navy awarded $200 million this week for the production of low-cost Blackbeard hypersonic missiles that will be fielded from the sea service’s carrier-based fighters. On Monday, the Portfolio Acquisition Executive Aviation office and low-cost missile start-up Castelion a…",
+      "url": "https://news.usni.org/2026/09/16/navy-awards-200m-for-blackbeard-hypersonic-missile-for-carrier-fighters",
+      "published_at": "2026-09-16T16:35:44Z",
+      "published_label": "16 Sep 2026 · 16:35Z",
+      "age_label": "5d ago",
+      "source_id": "usni",
+      "source_name": "USNI News",
+      "source_kind": "rss",
+      "category": "apac-security",
+      "regions": [
+        "us"
+      ],
+      "priority": 18,
+      "cluster_key": "navy awards 200m for blackbeard hypersonic missile for carrier fighters"
     },
     {
       "id": "ce641c56ce5bbad6",
@@ -2555,7 +2761,7 @@
       "url": "https://www.defenseone.com/policy/2026/09/agencies-spent-nearly-10-billion-feds-not-work-2025/416041/",
       "published_at": "2026-09-15T22:18:20Z",
       "published_label": "15 Sep 2026 · 22:18Z",
-      "age_label": "5d ago",
+      "age_label": "6d ago",
       "source_id": "defense-one",
       "source_name": "Defense One",
       "source_kind": "rss",
@@ -2573,7 +2779,7 @@
       "url": "https://www.defenseone.com/technology/2026/09/nga-official-assumes-top-ai-role-cyber-command/416014/",
       "published_at": "2026-09-15T22:00:00Z",
       "published_label": "15 Sep 2026 · 22:00Z",
-      "age_label": "5d ago",
+      "age_label": "6d ago",
       "source_id": "defense-one",
       "source_name": "Defense One",
       "source_kind": "rss",
@@ -2591,7 +2797,7 @@
       "url": "https://warontherocks.com/the-atlantic-brief-u-s-and-european-perspectives-on-nuclear-deterrence/",
       "published_at": "2026-09-15T18:45:59Z",
       "published_label": "15 Sep 2026 · 18:45Z",
-      "age_label": "5d ago",
+      "age_label": "6d ago",
       "source_id": "war-on-the-rocks",
       "source_name": "War on the Rocks",
       "source_kind": "rss",
@@ -2894,214 +3100,19 @@
       ],
       "priority": 12,
       "cluster_key": "canadian man pleads guilty in snowflake extortions"
-    },
-    {
-      "id": "e9ebcd428f416f9b",
-      "title": "Read This Before You Buy That TV Streaming Stick",
-      "summary": "Security experts have been sounding the alarm for years about the risks of using generic TV boxes that promise unlimited content streaming for a one-time fee, warning that they secretly rent the user's Internet connection out to strangers. But a groundbreaking new analysis finds…",
-      "url": "https://krebsonsecurity.com/2026/07/read-this-before-you-buy-that-tv-streaming-stick/",
-      "published_at": "2026-07-30T16:49:00Z",
-      "published_label": "30 Jul 2026 · 16:49Z",
-      "age_label": "30 Jul 2026 · 16:49Z",
-      "source_id": "krebs",
-      "source_name": "Krebs on Security",
-      "source_kind": "rss",
-      "category": "cyber",
-      "regions": [
-        "global"
-      ],
-      "priority": 30,
-      "cluster_key": "read this before you buy that tv streaming stick"
-    },
-    {
-      "id": "6f09a95582d1a5ef",
-      "title": "LG to Ban Residential Proxies from Smart TV Apps",
-      "summary": "The home appliance giant LG Electronics USA said this week it plans to suspend any apps built for its smart TVs that turn one's television into an always-on residential proxy node. The move comes less than a month after researchers found that more than 42 percent of games and ot…",
-      "url": "https://krebsonsecurity.com/2026/07/lg-to-ban-residential-proxies-from-smart-tv-apps/",
-      "published_at": "2026-07-22T01:10:38Z",
-      "published_label": "22 Jul 2026 · 01:10Z",
-      "age_label": "22 Jul 2026 · 01:10Z",
-      "source_id": "krebs",
-      "source_name": "Krebs on Security",
-      "source_kind": "rss",
-      "category": "cyber",
-      "regions": [
-        "global"
-      ],
-      "priority": 12,
-      "cluster_key": "lg to ban residential proxies from smart tv apps"
-    },
-    {
-      "id": "75295ed06c2574d4",
-      "title": "Microsoft Patches a Record 570 Security Flaws",
-      "summary": "Microsoft Corp. today released software updates to plug at least 570 security holes in its Windows operating systems and other software, almost triple the number of vulnerabilities the software giant fixed in its record-smashing Patch Tuesday release last month. Microsoft attrib…",
-      "url": "https://krebsonsecurity.com/2026/07/microsoft-patches-a-record-570-security-flaws/",
-      "published_at": "2026-07-14T19:22:42Z",
-      "published_label": "14 Jul 2026 · 19:22Z",
-      "age_label": "14 Jul 2026 · 19:22Z",
-      "source_id": "krebs",
-      "source_name": "Krebs on Security",
-      "source_kind": "rss",
-      "category": "cyber",
-      "regions": [
-        "global"
-      ],
-      "priority": 12,
-      "cluster_key": "microsoft patches a record 570 security flaws"
-    },
-    {
-      "id": "729ef04fb658b802",
-      "title": "US-China AI race speeds up as self-improving models advance",
-      "summary": "",
-      "url": "https://asia.nikkei.com/business/technology/artificial-intelligence/us-china-ai-race-speeds-up-as-self-improving-models-advance",
-      "published_at": null,
-      "published_label": "Unknown",
-      "age_label": "Unknown",
-      "source_id": "nikkei-asia",
-      "source_name": "Nikkei Asia",
-      "source_kind": "rss",
-      "category": "apac-security",
-      "regions": [
-        "china"
-      ],
-      "priority": 0,
-      "cluster_key": "uschina ai race speeds up as selfimproving models advance"
-    },
-    {
-      "id": "81eddb6a093e829b",
-      "title": "Japan's Mitsubishi to boost stake in Philippine group Ayala to 20%",
-      "summary": "",
-      "url": "https://asia.nikkei.com/business/companies/japan-s-mitsubishi-to-boost-stake-in-philippine-group-ayala-to-202",
-      "published_at": null,
-      "published_label": "Unknown",
-      "age_label": "Unknown",
-      "source_id": "nikkei-asia",
-      "source_name": "Nikkei Asia",
-      "source_kind": "rss",
-      "category": "apac-security",
-      "regions": [
-        "japan"
-      ],
-      "priority": 0,
-      "cluster_key": "japans mitsubishi to boost stake in philippine group ayala to 20"
-    },
-    {
-      "id": "cca500145ae1ca81",
-      "title": "Turkish stocks rattled by investment fund crisis",
-      "summary": "",
-      "url": "https://asia.nikkei.com/business/markets/turkish-stocks-rattled-by-investment-fund-crisis",
-      "published_at": null,
-      "published_label": "Unknown",
-      "age_label": "Unknown",
-      "source_id": "nikkei-asia",
-      "source_name": "Nikkei Asia",
-      "source_kind": "rss",
-      "category": "apac-security",
-      "regions": [
-        "se-asia"
-      ],
-      "priority": 0,
-      "cluster_key": "turkish stocks rattled by investment fund crisis"
-    },
-    {
-      "id": "c339bfa002b277e6",
-      "title": "Japan aims to ensure domestic vaccine production capacity for next crisis",
-      "summary": "",
-      "url": "https://asia.nikkei.com/business/pharmaceuticals/japan-aims-to-ensure-domestic-vaccine-production-capacity-for-next-crisis",
-      "published_at": null,
-      "published_label": "Unknown",
-      "age_label": "Unknown",
-      "source_id": "nikkei-asia",
-      "source_name": "Nikkei Asia",
-      "source_kind": "rss",
-      "category": "apac-security",
-      "regions": [
-        "japan"
-      ],
-      "priority": 0,
-      "cluster_key": "japan aims to ensure domestic vaccine production capacity for next crisis"
-    },
-    {
-      "id": "c5d9ab2f43654f18",
-      "title": "Taiwan sends labor minister to attend APEC meeting in China",
-      "summary": "",
-      "url": "https://asia.nikkei.com/politics/international-relations/taiwan-tensions/taiwan-sends-labor-minister-to-attend-apec-meeting-in-china",
-      "published_at": null,
-      "published_label": "Unknown",
-      "age_label": "Unknown",
-      "source_id": "nikkei-asia",
-      "source_name": "Nikkei Asia",
-      "source_kind": "rss",
-      "category": "apac-security",
-      "regions": [
-        "china",
-        "taiwan"
-      ],
-      "priority": 0,
-      "cluster_key": "taiwan sends labor minister to attend apec meeting in china"
-    },
-    {
-      "id": "118648aacea3e45b",
-      "title": "Global oil and gas discoveries hit 40-year low on investment cutbacks",
-      "summary": "",
-      "url": "https://asia.nikkei.com/business/energy/global-oil-and-gas-discoveries-hit-40-year-low-on-investment-cutbacks",
-      "published_at": null,
-      "published_label": "Unknown",
-      "age_label": "Unknown",
-      "source_id": "nikkei-asia",
-      "source_name": "Nikkei Asia",
-      "source_kind": "rss",
-      "category": "apac-security",
-      "regions": [
-        "se-asia"
-      ],
-      "priority": 0,
-      "cluster_key": "global oil and gas discoveries hit 40year low on investment cutbacks"
-    },
-    {
-      "id": "ed1e1bf3d77f334f",
-      "title": "SoftBank Group to launch $11bn bond sale to fund OpenAI investment",
-      "summary": "",
-      "url": "https://asia.nikkei.com/business/softbank/softbank-group-to-launch-11bn-bond-sale-to-fund-openai-investment",
-      "published_at": null,
-      "published_label": "Unknown",
-      "age_label": "Unknown",
-      "source_id": "nikkei-asia",
-      "source_name": "Nikkei Asia",
-      "source_kind": "rss",
-      "category": "apac-security",
-      "regions": [
-        "se-asia"
-      ],
-      "priority": 0,
-      "cluster_key": "softbank group to launch 11bn bond sale to fund openai investment"
-    },
-    {
-      "id": "f80775e3033dc9fd",
-      "title": "Takaichi to stress Japanese investment in US in talks with Trump",
-      "summary": "",
-      "url": "https://asia.nikkei.com/politics/international-relations/takaichi-to-stress-japanese-investment-in-us-in-talks-with-trump",
-      "published_at": null,
-      "published_label": "Unknown",
-      "age_label": "Unknown",
-      "source_id": "nikkei-asia",
-      "source_name": "Nikkei Asia",
-      "source_kind": "rss",
-      "category": "apac-security",
-      "regions": [
-        "japan"
-      ],
-      "priority": 0,
-      "cluster_key": "takaichi to stress japanese investment in us in talks with trump"
     }
   ],
   "trends": [
     {
-      "term": "china",
+      "term": "data",
       "count": 7
     },
     {
       "term": "force",
+      "count": 7
+    },
+    {
+      "term": "first",
       "count": 6
     },
     {
@@ -3113,28 +3124,24 @@
       "count": 6
     },
     {
-      "term": "world",
+      "term": "trump",
       "count": 6
     },
     {
-      "term": "data",
+      "term": "china",
+      "count": 5
+    },
+    {
+      "term": "fiji",
+      "count": 5
+    },
+    {
+      "term": "japan",
       "count": 5
     },
     {
       "term": "space",
       "count": 5
-    },
-    {
-      "term": "trump",
-      "count": 5
-    },
-    {
-      "term": "australia",
-      "count": 4
-    },
-    {
-      "term": "crisis",
-      "count": 4
     }
   ]
 }
